@@ -5,11 +5,13 @@ rvm:
 script:
 - xcodebuild clean && xcodebuild test -project ELSpace.xcodeproj -scheme ELSpace -sdk
   iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3' ONLY_ACTIVE_ARCH=NO
+
 notifications:
   slack:
     rooms:
       - secure: "WjnJriEb7XT9v3wtofmvdHMMO+ZCbxfKWOwA6W8ZsIQjs9V82TVKhZJ7chKLj0DGWPLMkypTFPKGc+cK+Oth4K++Di8w33JU9EC9XKZn15/DJfZVN0M/TlbsblB+WJ8nOKilHqRFD51Lt3EBXaE3x3wCjV8H3GBppahENoJbli+8oHuYnsAgcKWNscdIbuK7Ds8+fDPk+yWQ5rLigW1iM2iOiJQ6WZAqFq52A7o9ygtl+7E+KrkyU4Tq0Qu015I02FugWtKDXcrJwA9aabMvNwI5IA5DXxnH8iw184YXwKThEn25npAud2sX4vAAC3JoMULqa9iwHjgSrhRH3JCviSrRQUO9mlSdX19SOQVppZEFZekkHyXJeGkjM8MgiIW4qIY3m7eWqd3bWEHBBIJeY6jKLCOG1/Fyg0Mx/rip2G3LXkmVfNiVgNjScvT/bew95CzqmCHnJDE6aEkYhbKCzbqVgUPQ8tyTW64uCwvnf/sfM61TBU0g5Fk14f1fE2NqCJTE2PkkKn124YfQIT44Ce2DuCq/ZKpwXg9hTHYk4wtheb/ya8DNiOnCWPm8mwUbbL3AvhdjPQHjWIwzcFtEn37Cs3KflspxylZajGPb7T58iqT72yC8kszIVrAFgcnIv/f7VZECn4kFRxi6NxqZRIFnwCAgjoQpxAJliBukfq0="
     on_success: always
     on_failure: always
- after_success:
+
+after_success:
 - bash <(curl -s https://codecov.io/bash)
