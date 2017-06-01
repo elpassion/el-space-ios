@@ -5,6 +5,8 @@ rvm:
 script:
 - xcodebuild clean && xcodebuild test -project ELSpace.xcodeproj -scheme ELSpace -sdk
   iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3' ONLY_ACTIVE_ARCH=NO
+after_success:
+- bash <(curl -s https://codecov.io/bash)
 notifications:
   slack:
     rooms:
