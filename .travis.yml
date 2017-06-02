@@ -2,10 +2,13 @@ osx_image: xcode8.3
 language: objective-c
 rvm:
 - 2.2
+podfile: Podfile
+before_install:
+- bundle install
+- pod repo update
+- pod install
 script:
-- xcodebuild clean && xcodebuild test -project ELSpace.xcodeproj -scheme ELSpace -sdk
-  iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3' ONLY_ACTIVE_ARCH=NO
-
+- xcodebuild clean && xcodebuild test -workspace ELSpace.xcworkspace -scheme ELSpace -sdk iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3' ONLY_ACTIVE_ARCH=NO
 notifications:
   slack:
     rooms:
