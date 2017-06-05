@@ -13,6 +13,7 @@
 		5048F2461EDEE7A2001A487E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2451EDEE7A2001A487E /* MainViewController.swift */; };
 		5048F24B1EDEE7A2001A487E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5048F24A1EDEE7A2001A487E /* Assets.xcassets */; };
 		5048F2591EDEE7A2001A487E /* ELSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */; };
+		866AADE61EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELSpaceTests.swift; sourceTree = "<group>"; };
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElSpaceLaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				5048F24A1EDEE7A2001A487E /* Assets.xcassets */,
 				5048F24F1EDEE7A2001A487E /* Info.plist */,
+				866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */,
 			);
 			name = "Supporting FIles";
 			sourceTree = "<group>";
@@ -219,7 +222,7 @@
 					5048F23F1EDEE7A2001A487E = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = H5QFB36W2F;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5048F2531EDEE7A2001A487E = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5048F24B1EDEE7A2001A487E /* Assets.xcassets in Resources */,
+				866AADE61EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,13 +490,17 @@
 			baseConfigurationReference = E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = ELSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d4cb3946-1335-49ba-a1a2-445092f0d8e3";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development pl.elpassion.ELSpace";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -501,13 +509,17 @@
 			baseConfigurationReference = 1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = ELSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d4cb3946-1335-49ba-a1a2-445092f0d8e3";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development pl.elpassion.ELSpace";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
