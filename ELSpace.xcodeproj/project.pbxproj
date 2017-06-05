@@ -13,6 +13,9 @@
 		5048F2461EDEE7A2001A487E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2451EDEE7A2001A487E /* MainViewController.swift */; };
 		5048F24B1EDEE7A2001A487E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5048F24A1EDEE7A2001A487E /* Assets.xcassets */; };
 		5048F2591EDEE7A2001A487E /* ELSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */; };
+		50902FC61EE5AAC700D43254 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* MainView.swift */; };
+		50902FCE1EE5AE2700D43254 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50902FD01EE5AE2700D43254 /* Localizable.strings */; };
+		50902FD31EE5B06B00D43254 /* ButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* ButtonBase.swift */; };
 		866AADE61EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		5048F2541EDEE7A2001A487E /* ELSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELSpaceTests.swift; sourceTree = "<group>"; };
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50902FC51EE5AAC700D43254 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		50902FD11EE5AE2D00D43254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50902FD21EE5B06B00D43254 /* ButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonBase.swift; path = ButtonBase.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElSpaceLaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,9 +84,9 @@
 			children = (
 				5048F2421EDEE7A2001A487E /* ELSpace */,
 				5048F2571EDEE7A2001A487E /* ELSpaceTests */,
-				5048F2411EDEE7A2001A487E /* Products */,
-				ACF5E16AA40C3E6A3A71A955 /* Pods */,
 				38AB83246424EEB9310A02D4 /* Frameworks */,
+				ACF5E16AA40C3E6A3A71A955 /* Pods */,
+				5048F2411EDEE7A2001A487E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,7 +102,6 @@
 		5048F2421EDEE7A2001A487E /* ELSpace */ = {
 			isa = PBXGroup;
 			children = (
-				509E0D791EDEEB5200414C1D /* Resources */,
 				509E0D781EDEEB2D00414C1D /* Application */,
 				509E0D761EDEE9CE00414C1D /* Screens */,
 				509E0D751EDEE9B700414C1D /* Supporting FIles */,
@@ -113,30 +118,58 @@
 			path = ELSpaceTests;
 			sourceTree = "<group>";
 		};
+		50902FC81EE5AD4700D43254 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		50902FC91EE5AD5200D43254 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				50902FD01EE5AE2700D43254 /* Localizable.strings */,
+			);
+			path = Translations;
+			sourceTree = "<group>";
+		};
+		50902FCA1EE5AD7300D43254 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				50902FD21EE5B06B00D43254 /* ButtonBase.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		509E0D751EDEE9B700414C1D /* Supporting FIles */ = {
 			isa = PBXGroup;
 			children = (
+				50902FC81EE5AD4700D43254 /* Fonts */,
+				50F71ACB1EE5B90100F756BC /* ModelColor */,
+				50902FC91EE5AD5200D43254 /* Translations */,
 				5048F24A1EDEE7A2001A487E /* Assets.xcassets */,
-				5048F24F1EDEE7A2001A487E /* Info.plist */,
 				866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */,
+				5048F24F1EDEE7A2001A487E /* Info.plist */,
 			);
-			name = "Supporting FIles";
+			path = "Supporting FIles";
 			sourceTree = "<group>";
 		};
 		509E0D761EDEE9CE00414C1D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				50902FCA1EE5AD7300D43254 /* Elements */,
 				509E0D771EDEEA0600414C1D /* Main View Controller */,
 			);
-			name = Screens;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		509E0D771EDEEA0600414C1D /* Main View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				50902FC51EE5AAC700D43254 /* MainView.swift */,
 				5048F2451EDEE7A2001A487E /* MainViewController.swift */,
 			);
-			name = "Main View Controller";
+			path = "Main View Controller";
 			sourceTree = "<group>";
 		};
 		509E0D781EDEEB2D00414C1D /* Application */ = {
@@ -144,14 +177,15 @@
 			children = (
 				5048F2431EDEE7A2001A487E /* AppDelegate.swift */,
 			);
-			name = Application;
+			path = Application;
 			sourceTree = "<group>";
 		};
-		509E0D791EDEEB5200414C1D /* Resources */ = {
+		50F71ACB1EE5B90100F756BC /* ModelColor */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Resources;
+			name = ModelColor;
+			path = ModelColor;
 			sourceTree = "<group>";
 		};
 		ACF5E16AA40C3E6A3A71A955 /* Pods */ = {
@@ -198,6 +232,7 @@
 				5048F2521EDEE7A2001A487E /* Resources */,
 				906E81B70CAD04FD955689A3 /* [CP] Embed Pods Frameworks */,
 				623D007B81D699FC01052653 /* [CP] Copy Pods Resources */,
+				50902FCB1EE5ADD500D43254 /* [R.Swift] Script Phase */,
 			);
 			buildRules = (
 			);
@@ -257,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5048F24B1EDEE7A2001A487E /* Assets.xcassets in Resources */,
+				50902FCE1EE5AE2700D43254 /* Localizable.strings in Resources */,
 				866AADE61EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +336,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		50902FCB1EE5ADD500D43254 /* [R.Swift] Script Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[R.Swift] Script Phase";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/IndoorGame/Supporting Files\"";
 		};
 		623D007B81D699FC01052653 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -369,6 +419,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5048F2461EDEE7A2001A487E /* MainViewController.swift in Sources */,
+				50902FC61EE5AAC700D43254 /* MainView.swift in Sources */,
+				50902FD31EE5B06B00D43254 /* ButtonBase.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +442,18 @@
 			targetProxy = 5048F2551EDEE7A2001A487E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		50902FD01EE5AE2700D43254 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50902FD11EE5AE2D00D43254 /* Base */,
+			);
+			name = Localizable.strings;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5048F25B1EDEE7A2001A487E /* Debug */ = {
@@ -493,7 +557,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
-				INFOPLIST_FILE = ELSpace/Info.plist;
+				INFOPLIST_FILE = "ELSpace/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,7 +576,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
-				INFOPLIST_FILE = ELSpace/Info.plist;
+				INFOPLIST_FILE = "ELSpace/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
