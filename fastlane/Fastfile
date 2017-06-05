@@ -15,6 +15,8 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+
     ensure_git_status_clean
     increment_build_number(xcodeproj: "ELSpace.xcodeproj")
     commit_version_bump(xcodeproj: "ELSpace.xcodeproj")
@@ -22,6 +24,7 @@ platform :ios do
     gym(scheme: "ELSpace") # Build your app - more options available
     scan(scheme: "ELSpace")
     pilot
+    slack(message: "Successfully deployed new Beta version (" + get_version_number + ") of ELSpace.")
   end
 
   desc "Deploy a new version to the App Store"
