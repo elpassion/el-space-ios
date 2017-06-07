@@ -28,7 +28,6 @@ class LoginViewController: UIViewController {
     }
 
     private func configureSubviews() {
-        view.backgroundColor = UIColor("1BCEDF")
         loginView.loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
     }
     

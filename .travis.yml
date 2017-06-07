@@ -5,8 +5,6 @@ rvm:
 podfile: Podfile
 before_install:
 - bundle install
-- pod repo remove master
-- pod setup
 - pod repo update
 - pod install
 script:

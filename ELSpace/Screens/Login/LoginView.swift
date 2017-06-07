@@ -10,7 +10,7 @@ import HexColors
 class LoginView: UIView {
     
     private let backgroundView = BackgroundGradientWithLogo()
-    internal let loginButton = Button(frame: .zero)
+    let loginButton = Button(frame: .zero)
     
     init() {
         super.init(frame: .zero)

@@ -15,7 +15,7 @@ class AppCoordinator {
         self.window = window
     }
     
-    internal func present() {
+    func present() {
         window.rootViewController = loginViewController
         window.makeKeyAndVisible()
     }
