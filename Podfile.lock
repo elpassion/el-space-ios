@@ -1,30 +1,30 @@
 PODS:
   - Anchorage (4.0.0)
+  - HexColors (5.0.1)
   - Pastel (0.3.0)
   - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
   - Reveal-SDK (8)
   - SwiftLint (0.19.0)
-  - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
   - Anchorage (~> 4.0)
+  - HexColors (~> 5.0.1)
   - Pastel (~> 0.3.0)
   - R.swift (~> 3.3.0)
   - Reveal-SDK
   - SwiftLint (~> 0.18)
-  - UIColor_Hex_Swift (~> 3.0.2)
 
 SPEC CHECKSUMS:
   Anchorage: fe50dca4e20846b8cb15c859d26fec5132b41577
+  HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
   SwiftLint: 3537a05b34060e78e7510f04fb7537d738247803
-  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 44a13aa8c57f26a0f49f366fb2f1de74cdd8a0a6
+PODFILE CHECKSUM: 95fa99e3a88f01e361f17ba390617e1d7a951228
 
 COCOAPODS: 1.2.1

@@ -3,7 +3,7 @@ inhibit_all_warnings!
 
 def helpers
     pod 'Anchorage', '~> 4.0'
-    pod 'UIColor_Hex_Swift', '~> 3.0.2'
+    pod 'HexColors', '~> 5.0.1'
     pod "Pastel", '~> 0.3.0'
     pod 'R.swift', '~> 3.3.0'
     pod 'Reveal-SDK', :configurations => ['Debug']

@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ButtonBase: UIButton {
+class Button: UIButton {
     
     convenience init() {
         self.init(frame: .zero)
@@ -23,6 +23,7 @@ class ButtonBase: UIButton {
     
     func configureButtonLayout() {
         setTitleColor(UIColor.white, for: .normal)
+        titleLabel?.font = R.font.sourceCodeProBold(size: 16.0)
         layer.cornerRadius = 4.0
         clipsToBounds = true
     }
