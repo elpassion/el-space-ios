@@ -35,6 +35,5 @@ class SelectionViewController: UIViewController {
     }
     
     func didTapDebateButton(){
-        
     }
 }
