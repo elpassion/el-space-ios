@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
 		060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */; };
+		060F4C931EE9463100AA2389 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C921EE9463100AA2389 /* ScreenFactory.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		06BE2E6D1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
@@ -27,8 +28,6 @@
 		5048F2591EDEE7A2001A487E /* ELSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */; };
 		50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* LoginView.swift */; };
 		50902FD31EE5B06B00D43254 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* Button.swift */; };
-		50ECC1511EE964DC00A1D38C /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECC1501EE964DC00A1D38C /* SelectionView.swift */; };
-		50ECC1531EE964E800A1D38C /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECC1521EE964E800A1D38C /* SelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +43,7 @@
 /* Begin PBXFileReference section */
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
+		060F4C921EE9463100AA2389 /* ScreenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06BE2E6E1EE8915C002EED37 /* ELSpace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELSpace-Bridging-Header.h"; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,8 +65,6 @@
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50902FC51EE5AAC700D43254 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		50902FD21EE5B06B00D43254 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Button.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		50ECC1501EE964DC00A1D38C /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
-		50ECC1521EE964E800A1D38C /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +107,14 @@
 				060F4C911EE9461000AA2389 /* GoogleToken */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		060F4C901EE9460600AA2389 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				060F4C921EE9463100AA2389 /* ScreenFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		060F4C911EE9461000AA2389 /* GoogleToken */ = {
@@ -492,7 +498,6 @@
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
-				50ECC1511EE964DC00A1D38C /* SelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
