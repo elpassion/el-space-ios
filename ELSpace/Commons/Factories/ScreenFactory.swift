@@ -6,13 +6,17 @@
 protocol ScreenFactoring {
     
     func loginViewController() -> LoginViewController
-    
+    func selectionViewController() -> SelectionViewController
 }
 
 class ScreenFactory: ScreenFactoring {
     
     func loginViewController() -> LoginViewController {
         return LoginViewController()
+    }
+    
+    func selectionViewController() -> SelectionViewController {
+        return SelectionViewController()
     }
     
 }
