@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class AppCoordinator {
     
@@ -32,17 +33,20 @@ class AppCoordinator {
         window.makeKeyAndVisible()
     }
     
+    fileprivate let disposeBag = DisposeBag()
+    
 }
 
 extension AppCoordinator: LoginViewControllerDelegate {
     
     func loginAction(in viewController: LoginViewController) {
         googleUserProvider.signIn(on: viewController)
-        googleUserProvider.userCompletion = { [weak self] user in
+        .subscribe(onNext: { [weak self] user in
             print("logged in as \(user.profile.email)")
-            
             guard let selectionView = self?.selectionViewController else { return }
             viewController.present(selectionView, animated: true, completion: nil)
-        }
+        }, onError: { error in
+            print(error)
+        }).addDisposableTo(disposeBag)
     }
 }
