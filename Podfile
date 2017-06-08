@@ -8,6 +8,7 @@ def helpers
     pod 'R.swift', '~> 3.3.0'
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SwiftLint', '~> 0.18'
+    pod 'Google/SignIn'
 end
 
 target 'ELSpace' do

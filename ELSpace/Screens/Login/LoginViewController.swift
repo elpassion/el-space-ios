@@ -5,9 +5,18 @@
 
 import UIKit
 import HexColors
+import Anchorage
+
+protocol LoginViewControllerDelegate: class {
+    
+    func loginAction(in viewController: LoginViewController)
+    
+}
 
 class LoginViewController: UIViewController {
 
+    weak var delegate: LoginViewControllerDelegate?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -32,5 +41,7 @@ class LoginViewController: UIViewController {
     }
     
     func didTapLoginButton() {
+        delegate?.loginAction(in: self)
     }
+    
 }
