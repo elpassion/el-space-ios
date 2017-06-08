@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
+		5002D5901EE84D18004C0B10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5851EE84D18004C0B10 /* Assets.xcassets */; };
+		5002D5911EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */; };
+		5002D5921EE84D18004C0B10 /* SourceCodePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */; };
+		5002D5931EE84D18004C0B10 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5891EE84D18004C0B10 /* SourceCodePro-Regular.ttf */; };
+		5002D5941EE84D18004C0B10 /* SourceCodePro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5002D58A1EE84D18004C0B10 /* SourceCodePro-Semibold.ttf */; };
+		5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002D58C1EE84D18004C0B10 /* R.generated.swift */; };
+		5002D5971EE84D18004C0B10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5002D58E1EE84D18004C0B10 /* Localizable.strings */; };
+		500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BC9761EE7EF920060D31B /* BackgroundGradientWithLogo.swift */; };
+		500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BC97B1EE7F7380060D31B /* AppCoordinator.swift */; };
 		5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2431EDEE7A2001A487E /* AppDelegate.swift */; };
-		5048F2461EDEE7A2001A487E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2451EDEE7A2001A487E /* MainViewController.swift */; };
-		5048F24B1EDEE7A2001A487E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5048F24A1EDEE7A2001A487E /* Assets.xcassets */; };
+		5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2451EDEE7A2001A487E /* LoginViewController.swift */; };
 		5048F2591EDEE7A2001A487E /* ELSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */; };
-		866AADE61EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */; };
+		50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* LoginView.swift */; };
+		50902FD31EE5B06B00D43254 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,16 +37,25 @@
 
 /* Begin PBXFileReference section */
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
+		5002D5851EE84D18004C0B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElSpaceLaunchScreen.storyboard; sourceTree = "<group>"; };
+		5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Bold.ttf"; sourceTree = "<group>"; };
+		5002D5891EE84D18004C0B10 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
+		5002D58A1EE84D18004C0B10 /* SourceCodePro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Semibold.ttf"; sourceTree = "<group>"; };
+		5002D58B1EE84D18004C0B10 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5002D58C1EE84D18004C0B10 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		5002D58F1EE84D18004C0B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		500BC9761EE7EF920060D31B /* BackgroundGradientWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientWithLogo.swift; sourceTree = "<group>"; };
+		500BC97B1EE7F7380060D31B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5048F2401EDEE7A2001A487E /* ELSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5048F2431EDEE7A2001A487E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5048F2451EDEE7A2001A487E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5048F24A1EDEE7A2001A487E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5048F24F1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5048F2451EDEE7A2001A487E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5048F2541EDEE7A2001A487E /* ELSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELSpaceTests.swift; sourceTree = "<group>"; };
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50902FC51EE5AAC700D43254 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		50902FD21EE5B06B00D43254 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Button.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElSpaceLaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,14 +91,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5002D5841EE84D18004C0B10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5002D5871EE84D18004C0B10 /* Fonts */,
+				5002D58D1EE84D18004C0B10 /* Translations */,
+				5002D5851EE84D18004C0B10 /* Assets.xcassets */,
+				5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */,
+				5002D58B1EE84D18004C0B10 /* Info.plist */,
+				5002D58C1EE84D18004C0B10 /* R.generated.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5002D5871EE84D18004C0B10 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */,
+				5002D5891EE84D18004C0B10 /* SourceCodePro-Regular.ttf */,
+				5002D58A1EE84D18004C0B10 /* SourceCodePro-Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5002D58D1EE84D18004C0B10 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				5002D58E1EE84D18004C0B10 /* Localizable.strings */,
+			);
+			path = Translations;
+			sourceTree = "<group>";
+		};
+		500BC97A1EE7F6F40060D31B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				500BC97B1EE7F7380060D31B /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		5048F2371EDEE7A2001A487E = {
 			isa = PBXGroup;
 			children = (
 				5048F2421EDEE7A2001A487E /* ELSpace */,
 				5048F2571EDEE7A2001A487E /* ELSpaceTests */,
-				5048F2411EDEE7A2001A487E /* Products */,
-				ACF5E16AA40C3E6A3A71A955 /* Pods */,
 				38AB83246424EEB9310A02D4 /* Frameworks */,
+				ACF5E16AA40C3E6A3A71A955 /* Pods */,
+				5048F2411EDEE7A2001A487E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,10 +153,10 @@
 		5048F2421EDEE7A2001A487E /* ELSpace */ = {
 			isa = PBXGroup;
 			children = (
-				509E0D791EDEEB5200414C1D /* Resources */,
 				509E0D781EDEEB2D00414C1D /* Application */,
+				500BC97A1EE7F6F40060D31B /* Coordinators */,
 				509E0D761EDEE9CE00414C1D /* Screens */,
-				509E0D751EDEE9B700414C1D /* Supporting FIles */,
+				5002D5841EE84D18004C0B10 /* Supporting Files */,
 			);
 			path = ELSpace;
 			sourceTree = "<group>";
@@ -113,30 +170,31 @@
 			path = ELSpaceTests;
 			sourceTree = "<group>";
 		};
-		509E0D751EDEE9B700414C1D /* Supporting FIles */ = {
+		50902FCA1EE5AD7300D43254 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
-				5048F24A1EDEE7A2001A487E /* Assets.xcassets */,
-				5048F24F1EDEE7A2001A487E /* Info.plist */,
-				866AADE51EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard */,
+				500BC9761EE7EF920060D31B /* BackgroundGradientWithLogo.swift */,
+				50902FD21EE5B06B00D43254 /* Button.swift */,
 			);
-			name = "Supporting FIles";
+			path = BaseViews;
 			sourceTree = "<group>";
 		};
 		509E0D761EDEE9CE00414C1D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				509E0D771EDEEA0600414C1D /* Main View Controller */,
+				50902FCA1EE5AD7300D43254 /* BaseViews */,
+				509E0D771EDEEA0600414C1D /* Login */,
 			);
-			name = Screens;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		509E0D771EDEEA0600414C1D /* Main View Controller */ = {
+		509E0D771EDEEA0600414C1D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5048F2451EDEE7A2001A487E /* MainViewController.swift */,
+				50902FC51EE5AAC700D43254 /* LoginView.swift */,
+				5048F2451EDEE7A2001A487E /* LoginViewController.swift */,
 			);
-			name = "Main View Controller";
+			path = Login;
 			sourceTree = "<group>";
 		};
 		509E0D781EDEEB2D00414C1D /* Application */ = {
@@ -144,14 +202,7 @@
 			children = (
 				5048F2431EDEE7A2001A487E /* AppDelegate.swift */,
 			);
-			name = Application;
-			sourceTree = "<group>";
-		};
-		509E0D791EDEEB5200414C1D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		ACF5E16AA40C3E6A3A71A955 /* Pods */ = {
@@ -173,6 +224,7 @@
 			buildConfigurationList = 5048F25D1EDEE7A2001A487E /* Build configuration list for PBXNativeTarget "ELSpace" */;
 			buildPhases = (
 				DB9B6134B471CE550212AD33 /* [CP] Check Pods Manifest.lock */,
+				50104C331EE6DF9D008543D9 /* [R.Swift] Script Phase */,
 				5048F23C1EDEE7A2001A487E /* Sources */,
 				5048F23D1EDEE7A2001A487E /* Frameworks */,
 				5048F23E1EDEE7A2001A487E /* Resources */,
@@ -256,8 +308,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5048F24B1EDEE7A2001A487E /* Assets.xcassets in Resources */,
-				866AADE61EE1A8BA00FAEB6D /* ElSpaceLaunchScreen.storyboard in Resources */,
+				5002D5941EE84D18004C0B10 /* SourceCodePro-Semibold.ttf in Resources */,
+				5002D5921EE84D18004C0B10 /* SourceCodePro-Bold.ttf in Resources */,
+				5002D5971EE84D18004C0B10 /* Localizable.strings in Resources */,
+				5002D5931EE84D18004C0B10 /* SourceCodePro-Regular.ttf in Resources */,
+				5002D5901EE84D18004C0B10 /* Assets.xcassets in Resources */,
+				5002D5911EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +356,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		50104C331EE6DF9D008543D9 /* [R.Swift] Script Phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[R.Swift] Script Phase";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/ELSpace/Supporting Files\"";
 		};
 		623D007B81D699FC01052653 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -368,7 +438,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5048F2461EDEE7A2001A487E /* MainViewController.swift in Sources */,
+				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
+				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
+				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
+				50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */,
+				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
+				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +465,18 @@
 			targetProxy = 5048F2551EDEE7A2001A487E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5002D58E1EE84D18004C0B10 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5002D58F1EE84D18004C0B10 /* Base */,
+			);
+			name = Localizable.strings;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5048F25B1EDEE7A2001A487E /* Debug */ = {
@@ -493,7 +580,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
-				INFOPLIST_FILE = ELSpace/Info.plist;
+				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,7 +599,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
-				INFOPLIST_FILE = ELSpace/Info.plist;
+				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
