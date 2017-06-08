@@ -10,8 +10,8 @@ import HexColors
 class SelectionView: UIView {
     
     private let backgroundView = BackgroundGradientWithLogo()
-    let hubButton = UIButton(frame: .zero)
-    let debateButton = UIButton(frame: .zero)
+    let hubButton = Button(frame: .zero)
+    let debateButton = Button(frame: .zero)
     
     init() {
         super.init(frame: .zero)

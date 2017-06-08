@@ -11,11 +11,15 @@ class AppCoordinator {
     
     fileprivate let loginViewController: LoginViewController
     
+    fileprivate let selectionViewController: SelectionViewController
+    
     fileprivate let googleUserProvider: GoogleUserProviding
+    
     
     init(window: UIWindow, screenFactory: ScreenFactoring = ScreenFactory(), googleUserProvider: GoogleUserProviding = GoogleUserProvider()) {
         self.window = window
         self.loginViewController = screenFactory.loginViewController()
+        self.selectionViewController = screenFactory.selectionViewController()
         
         self.googleUserProvider = googleUserProvider
         self.googleUserProvider.configure()
@@ -34,9 +38,11 @@ extension AppCoordinator: LoginViewControllerDelegate {
     
     func loginAction(in viewController: LoginViewController) {
         googleUserProvider.signIn(on: viewController)
-        googleUserProvider.userCompletion = { user in
+        googleUserProvider.userCompletion = { [weak self] user in
             print("logged in as \(user.profile.email)")
+            
+            guard let selectionView = self?.selectionViewController else { return }
+            viewController.present(selectionView, animated: true, completion: nil)
         }
     }
-    
 }
