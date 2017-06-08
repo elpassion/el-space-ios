@@ -23,6 +23,8 @@
 		5048F2591EDEE7A2001A487E /* ELSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */; };
 		50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* LoginView.swift */; };
 		50902FD31EE5B06B00D43254 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* Button.swift */; };
+		50ECC1511EE964DC00A1D38C /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECC1501EE964DC00A1D38C /* SelectionView.swift */; };
+		50ECC1531EE964E800A1D38C /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ECC1521EE964E800A1D38C /* SelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50902FC51EE5AAC700D43254 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		50902FD21EE5B06B00D43254 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Button.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		50ECC1501EE964DC00A1D38C /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		50ECC1521EE964E800A1D38C /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			children = (
 				50902FCA1EE5AD7300D43254 /* BaseViews */,
 				509E0D771EDEEA0600414C1D /* Login */,
+				50ECC1541EE964F200A1D38C /* Selection */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -203,6 +208,16 @@
 				5048F2431EDEE7A2001A487E /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		50ECC1541EE964F200A1D38C /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				50ECC1501EE964DC00A1D38C /* SelectionView.swift */,
+				50ECC1521EE964E800A1D38C /* SelectionViewController.swift */,
+			);
+			name = Selection;
+			path = Selection;
 			sourceTree = "<group>";
 		};
 		ACF5E16AA40C3E6A3A71A955 /* Pods */ = {
@@ -442,9 +457,11 @@
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */,
+				50ECC1531EE964E800A1D38C /* SelectionViewController.swift in Sources */,
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
+				50ECC1511EE964DC00A1D38C /* SelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
