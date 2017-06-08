@@ -5,10 +5,11 @@ rvm:
 podfile: Podfile
 before_install:
 - bundle install
+- gem install cocoapods --conservative
 - pod repo update
 - pod install
 script:
-- xcodebuild clean && xcodebuild test -workspace ELSpace.xcworkspace -scheme ELSpace -enableCodeCoverage YES -sdk iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3' ONLY_ACTIVE_ARCH=NO
+- xcodebuild test -workspace ELSpace.xcworkspace -scheme ELSpace -enableCodeCoverage YES -sdk iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3.1' ONLY_ACTIVE_ARCH=NO
 notifications:
   slack:
     rooms:
