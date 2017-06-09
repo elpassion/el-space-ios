@@ -20,8 +20,8 @@ platform :ios do
     ensure_git_status_clean
     increment_build_number(xcodeproj: "ELSpace.xcodeproj")
     commit_version_bump(xcodeproj: "ELSpace.xcodeproj")
-    gym(scheme: "ELSpace") # Build your app - more options available
     scan(scheme: "ELSpace")
+    gym(scheme: "ELSpace") # Build your app - more options available
     pilot
     
   end
