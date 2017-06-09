@@ -1,3 +1,5 @@
 app_identifier "pl.elpassion.ELSpace" # The bundle identifier of your app
 
 team_id "H5QFB36W2F" # Developer Portal Team ID
+
+itc_team_id "33869801"
