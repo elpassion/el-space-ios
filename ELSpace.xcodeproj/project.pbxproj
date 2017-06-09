@@ -656,7 +656,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ELSpace/ELSpace.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -679,7 +679,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ELSpace/ELSpace.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
