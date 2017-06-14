@@ -31,6 +31,7 @@
 		5048F2591EDEE7A2001A487E /* ELSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2581EDEE7A2001A487E /* ELSpaceTests.swift */; };
 		50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* LoginView.swift */; };
 		50902FD31EE5B06B00D43254 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* Button.swift */; };
+		862F49AD1EF1478D0033112C /* ObservableType+EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49AC1EF1478D0033112C /* ObservableType+EmailValidation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		50902FC51EE5AAC700D43254 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		50902FD21EE5B06B00D43254 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Button.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		862F49AC1EF1478D0033112C /* ObservableType+EmailValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+EmailValidation.swift"; sourceTree = "<group>"; };
 		862F49B01EF151A50033112C /* UIAlertController+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Creation.swift"; sourceTree = "<group>"; };
 		86508AAE1EEAA979003FD730 /* ELSpace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ELSpace.entitlements; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				060A936C1EEF031D00EA3293 /* NSError+Creation.swift */,
+				862F49AC1EF1478D0033112C /* ObservableType+EmailValidation.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				060F4C931EE9463100AA2389 /* ScreenFactory.swift in Sources */,
+				862F49AD1EF1478D0033112C /* ObservableType+EmailValidation.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
