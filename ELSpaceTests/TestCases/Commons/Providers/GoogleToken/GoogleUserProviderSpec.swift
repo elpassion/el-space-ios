@@ -5,7 +5,6 @@
 
 import Quick
 import Nimble
-import RxBlocking
 
 @testable
 import ELSpace

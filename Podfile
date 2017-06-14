@@ -16,7 +16,6 @@ end
 def test_helpers
     pod 'Nimble', '~> 7.0.0'
     pod 'Quick', '~> 1.1.0'
-    pod 'RxBlocking', '~> 3.5.0'
 end
 
 target 'ELSpace' do
