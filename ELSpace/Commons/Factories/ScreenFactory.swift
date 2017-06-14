@@ -7,6 +7,8 @@ protocol ScreenFactoring {
     
     func loginViewController() -> LoginViewController
     func selectionViewController() -> SelectionViewController
+    
+    func messageAlertController(message: String) -> UIAlertController
 }
 
 class ScreenFactory: ScreenFactoring {
@@ -17,6 +19,10 @@ class ScreenFactory: ScreenFactoring {
     
     func selectionViewController() -> SelectionViewController {
         return SelectionViewController()
+    }
+    
+    func messageAlertController(message: String) -> UIAlertController {
+        return UIAlertController.messageAlertViewController(with: message)
     }
     
 }
