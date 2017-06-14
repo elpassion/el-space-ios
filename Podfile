@@ -1,3 +1,6 @@
+source 'git@github.com:elpassion/podspecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '10.0'
 inhibit_all_warnings!
 
@@ -13,8 +16,13 @@ def helpers
     pod 'RxCocoa'
 end
 
+def elPods
+     pod 'ElDebate', '~> 1.0'
+end
+
 target 'ELSpace' do
     helpers
+    elPods
     use_frameworks!
     
     target 'ELSpaceTests' do
