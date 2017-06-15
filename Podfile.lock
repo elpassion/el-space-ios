@@ -36,7 +36,9 @@ PODS:
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
   - HexColors (5.0.1)
+  - Nimble (7.0.1)
   - Pastel (0.3.0)
+  - Quick (1.1.0)
   - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
@@ -50,7 +52,9 @@ DEPENDENCIES:
   - Anchorage (~> 4.0)
   - Google/SignIn
   - HexColors (~> 5.0.1)
+  - Nimble (~> 7.0.0)
   - Pastel (~> 0.3.0)
+  - Quick (~> 1.1.0)
   - R.swift (~> 3.3.0)
   - Reveal-SDK
   - RxCocoa
@@ -68,7 +72,9 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
+  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
@@ -76,6 +82,6 @@ SPEC CHECKSUMS:
   RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
   SwiftLint: 3537a05b34060e78e7510f04fb7537d738247803
 
-PODFILE CHECKSUM: 45866742daf7df7f6d589d408a6ef628ad5e0bf1
+PODFILE CHECKSUM: a9a64361f560df71d81fd98cf1d5067ee319b11b
 
 COCOAPODS: 1.2.1
