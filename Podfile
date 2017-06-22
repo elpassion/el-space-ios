@@ -17,7 +17,7 @@ def helpers
 end
 
 def elPods
-     pod 'ElDebate', '~> 1.0'
+     pod 'ELDebate', '~> 1.0'
 end
 
 target 'ELSpace' do
