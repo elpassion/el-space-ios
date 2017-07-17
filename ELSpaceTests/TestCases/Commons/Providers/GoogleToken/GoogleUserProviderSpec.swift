@@ -47,7 +47,7 @@ class GoogleUserProviderSpec: QuickSpec {
 
                 beforeEach {
                     let viewController = UIViewController()
-                    let _ = sut.signIn(on: viewController)
+                    _ = sut.signIn(on: viewController)
                 }
 
                 it("should call signIn method on googleSignIn dependency") {
@@ -62,7 +62,7 @@ class GoogleUserProviderSpec: QuickSpec {
 
                 beforeEach {
                     viewController = UIViewController()
-                    let _ = sut.signIn(on: viewController)
+                    _ = sut.signIn(on: viewController)
                 }
 
                 it("should set proper uiDelegate") {
