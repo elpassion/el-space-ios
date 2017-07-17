@@ -7,7 +7,7 @@ def helpers
     pod 'Pastel', '~> 0.3.0'
     pod 'R.swift', '~> 3.3.0'
     pod 'Reveal-SDK', :configurations => ['Debug']
-    pod 'SwiftLint', '~> 0.18'
+    pod 'SwiftLint', '~> 0.20'
     pod 'Google/SignIn'
     pod 'RxSwift'
     pod 'RxCocoa'
