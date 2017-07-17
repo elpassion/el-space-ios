@@ -46,7 +46,7 @@ PODS:
   - RxCocoa (3.5.0):
     - RxSwift (~> 3.4)
   - RxSwift (3.5.0)
-  - SwiftLint (0.19.0)
+  - SwiftLint (0.20.1)
 
 DEPENDENCIES:
   - Anchorage (~> 4.0)
@@ -59,7 +59,7 @@ DEPENDENCIES:
   - Reveal-SDK
   - RxCocoa
   - RxSwift
-  - SwiftLint (~> 0.18)
+  - SwiftLint (~> 0.20)
 
 SPEC CHECKSUMS:
   Anchorage: fe50dca4e20846b8cb15c859d26fec5132b41577
@@ -80,8 +80,8 @@ SPEC CHECKSUMS:
   Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
   RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
   RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
-  SwiftLint: 3537a05b34060e78e7510f04fb7537d738247803
+  SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
 
-PODFILE CHECKSUM: a9a64361f560df71d81fd98cf1d5067ee319b11b
+PODFILE CHECKSUM: 960b63ef54928b6eb771dc29e7097bcececad197
 
 COCOAPODS: 1.2.1
