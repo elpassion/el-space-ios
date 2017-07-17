@@ -35,7 +35,7 @@ extension AppCoordinator {
         loginViewController.loginButtonTap
         .flatMapFirst { [unowned self] _ in
                 return self.googleUserManager.signIn(on: loginViewController)
-        }.subscribe(onNext: { [weak self] user in
+        }.subscribe(onNext: { [weak self] _ in
                 guard let selectionViewController = self?.screenFactory.selectionViewController() else { return }
                 loginViewController.present(selectionViewController, animated: true, completion: nil)
         }, onError: { [weak self] error in
