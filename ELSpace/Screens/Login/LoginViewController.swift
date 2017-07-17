@@ -6,16 +6,9 @@
 import UIKit
 import HexColors
 import Anchorage
-
-protocol LoginViewControllerDelegate: class {
-    
-    func loginAction(in viewController: LoginViewController)
-    
-}
+import RxSwift
 
 class LoginViewController: UIViewController {
-
-    weak var delegate: LoginViewControllerDelegate?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -29,19 +22,9 @@ class LoginViewController: UIViewController {
         guard let loginView = view as? LoginView else { fatalError("Expected LoginView but got \(type(of: view))") }
         return loginView
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureSubviews()
-    }
-
-    private func configureSubviews() {
-        loginView.loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
-    }
     
-    func didTapLoginButton() {
-        delegate?.loginAction(in: self)
+    var loginButtonTap: Observable<Void> {
+        return loginView.loginButton.rx.tap.asObservable()
     }
     
 }

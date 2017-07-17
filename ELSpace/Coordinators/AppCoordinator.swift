@@ -10,26 +10,18 @@ class AppCoordinator {
     
     fileprivate let window: UIWindow
     
-    fileprivate let loginViewController: LoginViewController
+    fileprivate let screenFactory: ScreenFactoring
     
-    fileprivate let selectionViewController: SelectionViewController
+    fileprivate let googleUserManager: GoogleUserManaging
     
-    fileprivate let googleUserProvider: GoogleUserProviding
-    
-    
-    init(window: UIWindow, screenFactory: ScreenFactoring = ScreenFactory(), googleUserProvider: GoogleUserProviding = GoogleUserProvider()) {
+    init(window: UIWindow, screenFactory: ScreenFactoring = ScreenFactory(), googleUserManager: GoogleUserManaging = GoogleUserManager()) {
         self.window = window
-        self.loginViewController = screenFactory.loginViewController()
-        self.selectionViewController = screenFactory.selectionViewController()
-        
-        self.googleUserProvider = googleUserProvider
-        self.googleUserProvider.configure()
-        
-        self.loginViewController.delegate = self
+        self.screenFactory = screenFactory
+        self.googleUserManager = googleUserManager
     }
     
     func present() {
-        window.rootViewController = loginViewController
+        window.rootViewController = configuredLoginViewController()
         window.makeKeyAndVisible()
     }
     
@@ -37,16 +29,23 @@ class AppCoordinator {
     
 }
 
-extension AppCoordinator: LoginViewControllerDelegate {
+extension AppCoordinator {
     
-    func loginAction(in viewController: LoginViewController) {
-        googleUserProvider.signIn(on: viewController)
-        .subscribe(onNext: { [weak self] user in
-            print("logged in as \(user.profile.email)")
-            guard let selectionView = self?.selectionViewController else { return }
-            viewController.present(selectionView, animated: true, completion: nil)
-        }, onError: { error in
-            print(error)
-        }).addDisposableTo(disposeBag)
+    func configuredLoginViewController() -> LoginViewController {
+        let loginViewController = screenFactory.loginViewController()
+        
+        loginViewController.loginButtonTap
+        .flatMapFirst { [unowned self] _ in
+                return self.googleUserManager.signIn(on: loginViewController)
+        }.subscribe(onNext: { [weak self] user in
+                guard let selectionViewController = self?.screenFactory.selectionViewController() else { return }
+                loginViewController.present(selectionViewController, animated: true, completion: nil)
+        }, onError: { [weak self] error in
+                guard let alertController = self?.screenFactory.messageAlertController(message: error.localizedDescription) else { return }
+                loginViewController.present(alertController, animated: true, completion: nil)
+        }).disposed(by: disposeBag)
+        
+        return loginViewController
     }
+    
 }

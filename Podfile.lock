@@ -41,13 +41,14 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMOAuth2 (1.1.4):
     - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.10):
-    - GTMSessionFetcher/Full (= 1.1.10)
-  - GTMSessionFetcher/Core (1.1.10)
-  - GTMSessionFetcher/Full (1.1.10):
-    - GTMSessionFetcher/Core (= 1.1.10)
+  - GTMSessionFetcher (1.1.11):
+    - GTMSessionFetcher/Full (= 1.1.11)
+  - GTMSessionFetcher/Core (1.1.11)
+  - GTMSessionFetcher/Full (1.1.11):
+    - GTMSessionFetcher/Core (= 1.1.11)
   - HexColors (5.0.1)
   - KeychainAccess (3.0.2)
+  - Nimble (7.0.1)
   - Pastel (0.3.0)
   - PromiseKit (4.2.2):
     - PromiseKit/Foundation (= 4.2.2)
@@ -60,15 +61,16 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.2.2):
     - PromiseKit/CorePromise
+  - Quick (1.1.0)
   - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
-  - Reveal-SDK (8)
+  - Reveal-SDK (9)
   - RxCocoa (3.5.0):
     - RxSwift (~> 3.4)
   - RxSwift (3.5.0)
   - Sourcery (0.7.2)
-  - SwiftLint (0.20.0)
+  - SwiftLint (0.20.1)
   - Swinject (2.1.0)
   - SwinjectAutoregistration (2.1.0):
     - Swinject (~> 2.1)
@@ -79,7 +81,9 @@ DEPENDENCIES:
   - ELDebate (~> 1.0)
   - Google/SignIn
   - HexColors (~> 5.0.1)
+  - Nimble (~> 7.0.0)
   - Pastel (~> 0.3.0)
+  - Quick (~> 1.1.0)
   - R.swift (~> 3.3.0)
   - Reveal-SDK
   - RxCocoa
@@ -97,22 +101,24 @@ SPEC CHECKSUMS:
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
-  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
+  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
-  Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
+  Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
   RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
   RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
   Sourcery: abd498f5fd7dd74a85af911013bd521c1dfbb6ff
-  SwiftLint: 3f7543509c931d1291395335f34e245d3919b7f2
+  SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
   Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: dd3515e53358a2db97535d77af2a2b4b02a1e2ec
+PODFILE CHECKSUM: e6982c416384642fe3b93843ba590fbf3e9c2378
 
 COCOAPODS: 1.2.1

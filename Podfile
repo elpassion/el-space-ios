@@ -20,6 +20,11 @@ def elPods
      pod 'ELDebate', '~> 1.0'
 end
 
+def test_helpers
+    pod 'Nimble', '~> 7.0.0'
+    pod 'Quick', '~> 1.1.0'
+end
+
 target 'ELSpace' do
     helpers
     elPods
@@ -27,7 +32,6 @@ target 'ELSpace' do
     
     target 'ELSpaceTests' do
         inherit! :search_paths
-        
+        test_helpers
     end
-    
 end
