@@ -42,7 +42,7 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
     }
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error == nil) {
+        if error == nil {
             userSubject.onNext(user)
         } else {
             userSubject.onError(error)
