@@ -5,6 +5,7 @@
 
 protocol ScreenFactoring {
     
+    func navigationController(withRoot viewController: UIViewController) -> UINavigationController
     func loginViewController() -> LoginViewController
     func selectionViewController() -> SelectionViewController
     
@@ -12,6 +13,10 @@ protocol ScreenFactoring {
 }
 
 class ScreenFactory: ScreenFactoring {
+    
+    func navigationController(withRoot viewController: UIViewController) -> UINavigationController {
+        return UINavigationController(rootViewController: viewController)
+    }
     
     func loginViewController() -> LoginViewController {
         return LoginViewController()
