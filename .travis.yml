@@ -10,7 +10,7 @@ before_install:
 - pod repo update
 - pod install
 script:
-- set -o pipefail && xcodebuild test -workspace ELSpace.xcworkspace -scheme ELSpace -enableCodeCoverage YES -sdk iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3.1' ONLY_ACTIVE_ARCH=YES | xcpretty -f `xcpretty-travis-formatter`
+- set -o pipefail && xcodebuild test -workspace ELSpace.xcworkspace -scheme ELSpaceTests -enableCodeCoverage YES -sdk iphonesimulator10.3 -destination 'name=iPhone SE,OS=10.3.1' ONLY_ACTIVE_ARCH=YES | xcpretty -f `xcpretty-travis-formatter`
 notifications:
   slack:
     rooms:
