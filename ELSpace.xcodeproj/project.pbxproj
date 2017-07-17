@@ -597,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ELSpace; ${PODS_ROOT}/SwiftLint/swiftlint";
+			shellScript = "if [ \"$CI\" = \"true\" ]; then\n    echo \"Skipping SwiftLint on CI\"\n    exit 0\nfi\ncd ELSpace; ${PODS_ROOT}/SwiftLint/swiftlint";
 		};
 		AF63760A1F1CC3C0007C1A77 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -611,7 +611,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ELSpaceTests; ${PODS_ROOT}/SwiftLint/swiftlint";
+			shellScript = "if [ \"$CI\" = \"true\" ]; then\n    echo \"Skipping SwiftLint on CI\"\n    exit 0\nfi\ncd ELSpaceTests; ${PODS_ROOT}/SwiftLint/swiftlint";
 		};
 		DB9B6134B471CE550212AD33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
