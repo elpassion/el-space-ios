@@ -8,29 +8,28 @@ import RxSwift
 import RxCocoa
 
 protocol GoogleUserProviding: class {
-    
+
     func configure(with hostedDomain: String)
     func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser>
-    
+
 }
 
 class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
-    
+
     private let googleSignIn: GoogleSignInProtocol
-    
     private var userSubject: PublishSubject<GIDGoogleUser> = PublishSubject<GIDGoogleUser>()
-    
+
     init(googleSignIn: GoogleSignInProtocol = GIDSignIn.sharedInstance()) {
         self.googleSignIn = googleSignIn
     }
-    
+
     func configure(with hostedDomain: String) {
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         if configureError != nil {
             userSubject.onError(NSError.googleConfiguration(description: String(describing: configureError)))
         }
-        
+
         googleSignIn.delegate = self
         googleSignIn.hostedDomain = hostedDomain
     }
@@ -38,10 +37,10 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
     func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser> {
         googleSignIn.uiDelegate = viewController
         googleSignIn.signIn()
-        
+
         return userSubject.asObservable()
     }
-    
+
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
             userSubject.onNext(user)
@@ -49,5 +48,5 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
             userSubject.onError(error)
         }
     }
-    
+
 }
