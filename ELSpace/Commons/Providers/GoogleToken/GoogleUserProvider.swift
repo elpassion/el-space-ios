@@ -17,10 +17,13 @@ protocol GoogleUserProviding: class {
 class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
 
     private let googleSignIn: GoogleSignInProtocol
-    private var userSubject: PublishSubject<GIDGoogleUser> = PublishSubject<GIDGoogleUser>()
+    private let userSubject = PublishSubject<GIDGoogleUser>()
 
-    init(googleSignIn: GoogleSignInProtocol = GIDSignIn.sharedInstance()) {
+    init(googleSignIn: GoogleSignInProtocol = GIDSignIn.sharedInstance(),
+         hostedDomain: String = "elpassion.com") {
         self.googleSignIn = googleSignIn
+        super.init()
+        configure(with: hostedDomain)
     }
 
     func configure(with hostedDomain: String) {
@@ -29,7 +32,6 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
         if configureError != nil {
             userSubject.onError(NSError.googleConfiguration(description: String(describing: configureError)))
         }
-
         googleSignIn.delegate = self
         googleSignIn.hostedDomain = hostedDomain
     }
