@@ -20,7 +20,6 @@ class AppCoordinator {
         self.screenFactory = screenFactory
         self.debateRunner = debateRunner
         self.googleUserProvider = googleUserProvider
-        self.googleUserProvider.configure(with: "elpassion.pl")
         setupBindings()
     }
 
