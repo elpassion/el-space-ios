@@ -11,7 +11,7 @@ class AppCoordinator {
 
     init(window: UIWindow,
          screenFactory: ScreenFactoring = ScreenFactory(),
-         googleUserProvider: GoogleUserProviding = GoogleUserProvider(),
+         googleUserManager: GoogleUserManaging = GoogleUserManager(),
          debateRunner: DebateRunning = DebateRunner()) {
         self.window = window
         self.loginViewController = screenFactory.loginViewController()
@@ -19,7 +19,7 @@ class AppCoordinator {
         self.selectionViewController = screenFactory.selectionViewController()
         self.screenFactory = screenFactory
         self.debateRunner = debateRunner
-        self.googleUserProvider = googleUserProvider
+        self.googleUserManager = googleUserManager
         setupBindings()
     }
 
@@ -34,7 +34,7 @@ class AppCoordinator {
     fileprivate let navigationController: UINavigationController
     fileprivate let loginViewController: LoginViewController
     fileprivate let selectionViewController: SelectionViewController
-    fileprivate let googleUserProvider: GoogleUserProviding
+    fileprivate let googleUserManager: GoogleUserManaging
     fileprivate let debateRunner: DebateRunning
     fileprivate let screenFactory: ScreenFactoring
 
@@ -55,7 +55,7 @@ extension AppCoordinator {
         loginViewController.loginButtonTap
             .flatMapFirst { [weak self] _ -> Observable<GIDGoogleUser> in
                 guard let `self` = self else { return Observable.empty() }
-                return self.googleUserProvider.signIn(on: self.loginViewController)
+                return self.googleUserManager.signIn(on: self.loginViewController)
             }.subscribe(onNext: { [weak self] _ in
                 self?.presentSelectionController()
             }, onError: { [weak self] error in
@@ -69,7 +69,7 @@ extension AppCoordinator {
 
     private func presentError(message: String) {
         let alert = screenFactory.messageAlertController(message: message)
-        loginViewController.navigationController?.pushViewController(alert, animated: true)
+        loginViewController.present(alert, animated: true)
     }
 
 }
