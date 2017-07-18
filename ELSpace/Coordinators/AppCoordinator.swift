@@ -1,51 +1,64 @@
 //
 //  Created by Michał Czerniakowski on 07.06.2017.
-//Copyright © 2017 El Passion. All rights reserved.
+//  Copyright © 2017 El Passion. All rights reserved.
 //
 
 import UIKit
 import RxSwift
+import ELDebate
 
 class AppCoordinator {
     
     fileprivate let window: UIWindow
+    fileprivate let navigationController: UINavigationController
+    fileprivate let loginViewController: LoginViewController
+    fileprivate let selectionViewController: SelectionViewController
+    fileprivate let googleUserProvider: GoogleUserProviding
+    fileprivate let debateRunner: DebateRunning
     
-    fileprivate let screenFactory: ScreenFactoring
-    
-    fileprivate let googleUserManager: GoogleUserManaging
-    
-    init(window: UIWindow, screenFactory: ScreenFactoring = ScreenFactory(), googleUserManager: GoogleUserManaging = GoogleUserManager()) {
+    init(window: UIWindow,
+         screenFactory: ScreenFactoring = ScreenFactory(),
+         googleUserProvider: GoogleUserProviding = GoogleUserProvider(),
+         debateRunner: DebateRunning = DebateRunner()) {
         self.window = window
-        self.screenFactory = screenFactory
-        self.googleUserManager = googleUserManager
+        self.loginViewController = screenFactory.loginViewController()
+        self.navigationController = screenFactory.navigationController(withRoot: loginViewController)
+        self.selectionViewController = screenFactory.selectionViewController()
+        self.debateRunner = debateRunner
+        self.googleUserProvider = googleUserProvider
+        self.googleUserProvider.configure(with: "elpassion.pl")
+        setupLoginObservable()
     }
     
     func present() {
-        window.rootViewController = configuredLoginViewController()
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
     
     fileprivate let disposeBag = DisposeBag()
+
+    private func setupLoginObservable() {
+        loginViewController.loginButtonTap
+            .flatMapFirst { [weak self] _ -> Observable<GIDGoogleUser> in
+                guard let `self` = self else { return Observable.empty() }
+                return self.googleUserProvider.signIn(on: self.loginViewController)
+            }.subscribe(onNext: { [weak self] user in
+                print("logged in as \(user.profile.email)")
+                guard let selectionView = self?.selectionViewController else { return }
+                selectionView.delegate = self
+                self?.loginViewController.navigationController?.pushViewController(selectionView, animated: true)
+            }, onError: { error in
+                print(error)
+            }).disposed(by: disposeBag)
+    }
     
 }
 
-extension AppCoordinator {
+extension AppCoordinator: SelectionViewControllerDelegate {
     
-    func configuredLoginViewController() -> LoginViewController {
-        let loginViewController = screenFactory.loginViewController()
-        
-        loginViewController.loginButtonTap
-        .flatMapFirst { [unowned self] _ in
-                return self.googleUserManager.signIn(on: loginViewController)
-        }.subscribe(onNext: { [weak self] user in
-                guard let selectionViewController = self?.screenFactory.selectionViewController() else { return }
-                loginViewController.present(selectionViewController, animated: true, completion: nil)
-        }, onError: { [weak self] error in
-                guard let alertController = self?.screenFactory.messageAlertController(message: error.localizedDescription) else { return }
-                loginViewController.present(alertController, animated: true, completion: nil)
-        }).disposed(by: disposeBag)
-        
-        return loginViewController
+    func debateAction(vc: SelectionViewController) {
+        debateRunner.start(in: navigationController, applyingDebateStyle: true)
+        navigationController.setNavigationBarHidden(false, animated: true)
     }
     
 }

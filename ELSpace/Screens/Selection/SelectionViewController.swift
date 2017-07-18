@@ -5,8 +5,16 @@
 
 import UIKit
 
+protocol SelectionViewControllerDelegate: class {
+    
+    func debateAction(vc: SelectionViewController)
+    
+}
+
 class SelectionViewController: UIViewController {
 
+    weak var delegate: SelectionViewControllerDelegate?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -35,5 +43,7 @@ class SelectionViewController: UIViewController {
     }
     
     func didTapDebateButton(){
+        delegate?.debateAction(vc: self)
     }
+
 }
