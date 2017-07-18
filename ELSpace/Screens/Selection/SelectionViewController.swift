@@ -30,16 +30,11 @@ class SelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureSubviews()
     }
     
     private func configureSubviews() {
-        selectionView.hubButton.addTarget(self, action: #selector(didTapHubButton), for: .touchUpInside)
         selectionView.debateButton.addTarget(self, action: #selector(didTapDebateButton), for: .touchUpInside)
-    }
-    
-    func didTapHubButton() {
     }
     
     func didTapDebateButton(){
