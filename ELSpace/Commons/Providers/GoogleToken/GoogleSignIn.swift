@@ -6,12 +6,12 @@
 import GoogleSignIn
 
 protocol GoogleSignInProtocol: class {
-    
+
     weak var delegate: GIDSignInDelegate! { get set }
     weak var uiDelegate: GIDSignInUIDelegate! { get set }
     func signIn()
     var hostedDomain: String! { get set }
-    
+
 }
 
 extension GIDSignIn: GoogleSignInProtocol {}

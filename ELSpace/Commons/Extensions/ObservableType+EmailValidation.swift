@@ -7,7 +7,7 @@ import GoogleSignIn
 import RxSwift
 
 extension ObservableType where E == GIDGoogleUser {
-    
+
     func validate(with validator: EmailValidating, expectedDomain: String) -> Observable<E> {
         return filter { user in
             try validator.validate(email: user.profile.email)
@@ -15,5 +15,5 @@ extension ObservableType where E == GIDGoogleUser {
             return true
         }
     }
-    
+
 }

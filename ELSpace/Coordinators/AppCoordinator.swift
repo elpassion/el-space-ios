@@ -8,14 +8,14 @@ import RxSwift
 import ELDebate
 
 class AppCoordinator {
-    
+
     fileprivate let window: UIWindow
     fileprivate let navigationController: UINavigationController
     fileprivate let loginViewController: LoginViewController
     fileprivate let selectionViewController: SelectionViewController
     fileprivate let googleUserProvider: GoogleUserProviding
     fileprivate let debateRunner: DebateRunning
-    
+
     init(window: UIWindow,
          screenFactory: ScreenFactoring = ScreenFactory(),
          googleUserProvider: GoogleUserProviding = GoogleUserProvider(),
@@ -30,12 +30,12 @@ class AppCoordinator {
         setupLoginObservable()
         setupSelectionViewControllerBindings()
     }
-    
+
     func present() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
-    
+
     fileprivate let disposeBag = DisposeBag()
 
     private func setupLoginObservable() {
@@ -51,7 +51,7 @@ class AppCoordinator {
                 print(error)
             }).disposed(by: disposeBag)
     }
-    
+
 }
 
 extension AppCoordinator {
@@ -64,5 +64,5 @@ extension AppCoordinator {
                 self.navigationController.setNavigationBarHidden(false, animated: true)
             }).disposed(by: disposeBag)
     }
-    
+
 }

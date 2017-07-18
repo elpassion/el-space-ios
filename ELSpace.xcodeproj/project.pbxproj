@@ -384,6 +384,7 @@
 			buildPhases = (
 				DB9B6134B471CE550212AD33 /* [CP] Check Pods Manifest.lock */,
 				50104C331EE6DF9D008543D9 /* [R.Swift] Script Phase */,
+				AF6376091F1CBBC7007C1A77 /* Swiftlint */,
 				5048F23C1EDEE7A2001A487E /* Sources */,
 				5048F23D1EDEE7A2001A487E /* Frameworks */,
 				5048F23E1EDEE7A2001A487E /* Resources */,
@@ -404,6 +405,7 @@
 			buildConfigurationList = 5048F2601EDEE7A2001A487E /* Build configuration list for PBXNativeTarget "ELSpaceTests" */;
 			buildPhases = (
 				8C82A79EE7C85310CE913EE7 /* [CP] Check Pods Manifest.lock */,
+				AF63760A1F1CC3C0007C1A77 /* Swiftlint */,
 				5048F2501EDEE7A2001A487E /* Sources */,
 				5048F2511EDEE7A2001A487E /* Frameworks */,
 				5048F2521EDEE7A2001A487E /* Resources */,
@@ -582,6 +584,34 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AF6376091F1CBBC7007C1A77 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CI\" = \"true\" ]; then\n    echo \"Skipping SwiftLint on CI\"\n    exit 0\nfi\ncd ELSpace; ${PODS_ROOT}/SwiftLint/swiftlint";
+		};
+		AF63760A1F1CC3C0007C1A77 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CI\" = \"true\" ]; then\n    echo \"Skipping SwiftLint on CI\"\n    exit 0\nfi\ncd ELSpaceTests; ${PODS_ROOT}/SwiftLint/swiftlint";
 		};
 		DB9B6134B471CE550212AD33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

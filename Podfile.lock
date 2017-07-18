@@ -88,7 +88,7 @@ DEPENDENCIES:
   - Reveal-SDK
   - RxCocoa
   - RxSwift
-  - SwiftLint (~> 0.18)
+  - SwiftLint (~> 0.20)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -119,6 +119,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: e6982c416384642fe3b93843ba590fbf3e9c2378
+PODFILE CHECKSUM: 4936d84847c2c4e7bcc9aca3d4cc259fcda24072
 
 COCOAPODS: 1.2.1

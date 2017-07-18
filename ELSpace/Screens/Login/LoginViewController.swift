@@ -18,20 +18,20 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     override func loadView() {
         view = LoginView()
     }
 
     // MARK: Private
-    
+
     private var loginView: LoginView {
         guard let loginView = view as? LoginView else { fatalError("Expected LoginView but got \(type(of: view))") }
         return loginView
     }
-    
+
 }

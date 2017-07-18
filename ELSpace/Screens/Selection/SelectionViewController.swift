@@ -20,13 +20,13 @@ class SelectionViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     override func loadView() {
         view = SelectionView()
     }
 
     // MARK: Private
-    
+
     private var selectionView: SelectionView {
         guard let selectionView = view as? SelectionView else { fatalError("Expected SelectionView but got \(type(of: view))") }
         return selectionView

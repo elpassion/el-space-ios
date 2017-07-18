@@ -12,19 +12,19 @@ import ELSpace
 class EmailValidatorSpec: QuickSpec {
     override func spec() {
         context("EmailValidator") {
-            
+
             var sut: EmailValidator!
-            
+
             beforeEach {
                 sut = EmailValidator()
             }
-            
+
             afterEach {
                 sut = nil
             }
-            
+
             describe("validate email format") {
-                
+
                 it("should approve email format") {
                     do {
                         try sut.validate(email: "abc@gmail.com")
@@ -33,7 +33,7 @@ class EmailValidatorSpec: QuickSpec {
                         XCTFail("improper email validation")
                     }
                 }
-                
+
                 it("should throw email format error") {
                     do {
                         try sut.validate(email: "abcgmail.com")
@@ -43,9 +43,9 @@ class EmailValidatorSpec: QuickSpec {
                     }
                 }
             }
-            
+
             describe("validate email domain") {
-                
+
                 it("should approve email domain") {
                     do {
                         try sut.validate(email: "abc@elpassion.pl", with: "elpassion.pl")
@@ -54,7 +54,7 @@ class EmailValidatorSpec: QuickSpec {
                         XCTFail("improper email domain validation")
                     }
                 }
-                
+
                 it("should throw email domain error") {
                     do {
                         try sut.validate(email: "abc@elpassion.pl", with: "elpassion.eu")
@@ -64,7 +64,7 @@ class EmailValidatorSpec: QuickSpec {
                     }
                 }
             }
-            
+
         }
     }
 }

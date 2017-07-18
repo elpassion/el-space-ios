@@ -7,17 +7,17 @@
 import ELSpace
 
 class GoogleSignInMock: GoogleSignInProtocol {
-    
+
     weak var delegate: GIDSignInDelegate!
-    
+
     weak var uiDelegate: GIDSignInUIDelegate!
-    
+
     var signInCalled = false
-    
+
     func signIn() {
         signInCalled = true
     }
-    
+
     var hostedDomain: String!
-    
+
 }
