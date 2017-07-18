@@ -28,6 +28,7 @@ class AppCoordinator {
         self.googleUserProvider = googleUserProvider
         self.googleUserProvider.configure(with: "elpassion.pl")
         setupLoginObservable()
+        setupSelectionViewControllerBindings()
     }
     
     func present() {
@@ -45,7 +46,6 @@ class AppCoordinator {
             }.subscribe(onNext: { [weak self] user in
                 print("logged in as \(user.profile.email)")
                 guard let selectionView = self?.selectionViewController else { return }
-                selectionView.delegate = self
                 self?.loginViewController.navigationController?.pushViewController(selectionView, animated: true)
             }, onError: { error in
                 print(error)
@@ -54,11 +54,15 @@ class AppCoordinator {
     
 }
 
-extension AppCoordinator: SelectionViewControllerDelegate {
-    
-    func debateAction(vc: SelectionViewController) {
-        debateRunner.start(in: navigationController, applyingDebateStyle: true)
-        navigationController.setNavigationBarHidden(false, animated: true)
+extension AppCoordinator {
+
+    func setupSelectionViewControllerBindings() {
+        selectionViewController.debateButtonTapObservable
+            .subscribe(onNext: { [weak self] in
+                guard let `self` = self else { return }
+                self.debateRunner.start(in: self.navigationController, applyingDebateStyle: true)
+                self.navigationController.setNavigationBarHidden(false, animated: true)
+            }).disposed(by: disposeBag)
     }
     
 }

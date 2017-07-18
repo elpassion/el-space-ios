@@ -4,17 +4,14 @@
 //
 
 import UIKit
-
-protocol SelectionViewControllerDelegate: class {
-    
-    func debateAction(vc: SelectionViewController)
-    
-}
+import RxSwift
 
 class SelectionViewController: UIViewController {
 
-    weak var delegate: SelectionViewControllerDelegate?
-    
+    var debateButtonTapObservable: Observable<Void> {
+        return selectionView.debateButton.rx.tap.asObservable()
+    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -26,19 +23,6 @@ class SelectionViewController: UIViewController {
     private var selectionView: SelectionView {
         guard let selectionView = view as? SelectionView else { fatalError("Expected SelectionView but got \(type(of: view))") }
         return selectionView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureSubviews()
-    }
-    
-    private func configureSubviews() {
-        selectionView.debateButton.addTarget(self, action: #selector(didTapDebateButton), for: .touchUpInside)
-    }
-    
-    func didTapDebateButton(){
-        delegate?.debateAction(vc: self)
     }
 
 }
