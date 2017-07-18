@@ -80,10 +80,13 @@ extension AppCoordinator {
     fileprivate func setupSelectionViewControllerBindings() {
         selectionViewController.debateButtonTapObservable
             .subscribe(onNext: { [weak self] in
-                guard let `self` = self else { return }
-                self.debateRunner.start(in: self.navigationController, applyingDebateStyle: true)
-                self.navigationController.setNavigationBarHidden(false, animated: true)
+                self?.runDebate()
             }).disposed(by: disposeBag)
+    }
+
+    private func runDebate() {
+        debateRunner.start(in: navigationController, applyingDebateStyle: true)
+        navigationController.setNavigationBarHidden(false, animated: true)
     }
 
 }
