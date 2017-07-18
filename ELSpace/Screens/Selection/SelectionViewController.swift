@@ -8,6 +8,11 @@ import RxSwift
 
 class SelectionViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
     var debateButtonTapObservable: Observable<Void> {
         return selectionView.debateButton.rx.tap.asObservable()
     }
