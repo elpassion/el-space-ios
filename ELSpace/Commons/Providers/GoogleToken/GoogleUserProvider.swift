@@ -11,6 +11,7 @@ protocol GoogleUserProviding: class {
 
     func configure(with hostedDomain: String)
     func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser>
+    func disconnect()
 
 }
 
@@ -49,6 +50,10 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
         } else {
             userSubject.onError(error)
         }
+    }
+
+    func disconnect() {
+        googleSignIn.disconnect()
     }
 
 }
