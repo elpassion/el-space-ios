@@ -16,10 +16,11 @@ protocol GoogleUserManaging {
 class GoogleUserManager: GoogleUserManaging {
 
     init(googleUserProvider: GoogleUserProviding = GoogleUserProvider(),
-         emailValidator: EmailValidating = EmailValidator()) {
+         emailValidator: EmailValidating = EmailValidator(),
+         hostedDomain: String = "elpassion.pl") {
         self.googleUserProvider = googleUserProvider
         self.emailValidator = emailValidator
-        self.googleUserProvider.configure(with: hostedDomain)
+        self.hostedDomain = hostedDomain
     }
 
     var error: Observable<Error> {
@@ -48,7 +49,7 @@ class GoogleUserManager: GoogleUserManaging {
     private let signInSuccessSubject = PublishSubject<GIDGoogleUser>()
     private let googleUserProvider: GoogleUserProviding
     private let emailValidator: EmailValidating
-    private let hostedDomain = "elpassion.pl"
+    private let hostedDomain: String
     private let disposeBag = DisposeBag()
 
 }
