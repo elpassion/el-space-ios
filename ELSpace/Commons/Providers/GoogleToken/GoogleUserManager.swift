@@ -7,7 +7,9 @@ import RxSwift
 
 protocol GoogleUserManaging {
 
-    func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser>
+    func signIn(on viewController: UIViewController)
+    var error: Observable<Error> { get }
+    var signInSuccess: Observable<GIDGoogleUser> { get }
 
 }
 
@@ -20,14 +22,33 @@ class GoogleUserManager: GoogleUserManaging {
         self.googleUserProvider.configure(with: hostedDomain)
     }
 
-    func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser> {
-        return googleUserProvider.signIn(on: viewController).validate(with: emailValidator, expectedDomain: hostedDomain)
+    var error: Observable<Error> {
+        return errorSubject.asObservable()
+    }
+
+    var signInSuccess: Observable<GIDGoogleUser> {
+        return signInSuccessSubject.asObservable()
+    }
+
+    func signIn(on viewController: UIViewController) {
+        googleUserProvider
+            .signIn(on: viewController)
+            .validate(with: emailValidator, expectedDomain: hostedDomain)
+            .subscribe(onNext: { user in
+                self.signInSuccessSubject.onNext(user)
+            }, onError: { [weak self] error in
+                self?.errorSubject.onNext(error)
+                self?.googleUserProvider.disconnect()
+            }).disposed(by: disposeBag)
     }
 
     // MARK: Private
 
+    private let errorSubject = PublishSubject<Error>()
+    private let signInSuccessSubject = PublishSubject<GIDGoogleUser>()
     private let googleUserProvider: GoogleUserProviding
     private let emailValidator: EmailValidating
     private let hostedDomain = "elpassion.pl"
+    private let disposeBag = DisposeBag()
 
 }
