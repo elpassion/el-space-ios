@@ -63,13 +63,12 @@ extension AppCoordinator {
                 self?.googleUserManager.signIn(on: viewController)
             }).disposed(by: disposeBag)
 
-        googleUserManager.error.debug()
+        googleUserManager.error
             .subscribe(onNext: { [weak self] error in
-                self?.isSigningIn.value = false
-                self?.presentError(error: error)
+                self?.handleError(error: error)
             }).disposed(by: disposeBag)
 
-        googleUserManager.signInSuccess.debug()
+        googleUserManager.signInSuccess
             .subscribe(onNext: { [weak self] _ in
                 self?.isSigningIn.value = false
                 self?.presentSelectionController()
@@ -83,6 +82,12 @@ extension AppCoordinator {
     private func presentError(error: Error) {
         let alert = screenFactory.messageAlertController(message: error.localizedDescription)
         loginViewController.present(alert, animated: true)
+    }
+
+    private func handleError(error: Error) {
+        isSigningIn.value = false
+        guard let signInError = error as? GIDSignInErrorCode, signInError != .canceled else { return }
+        presentError(error: error)
     }
 
 }
