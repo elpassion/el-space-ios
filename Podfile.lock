@@ -66,9 +66,11 @@ PODS:
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
   - Reveal-SDK (9)
-  - RxCocoa (3.5.0):
-    - RxSwift (~> 3.4)
-  - RxSwift (3.5.0)
+  - RxBlocking (3.6.0):
+    - RxSwift (~> 3.6)
+  - RxCocoa (3.6.0):
+    - RxSwift (~> 3.6)
+  - RxSwift (3.6.0)
   - RxSwiftExt (2.5.1):
     - RxSwiftExt/Core (= 2.5.1)
   - RxSwiftExt/Core (2.5.1):
@@ -90,8 +92,9 @@ DEPENDENCIES:
   - Quick (~> 1.1.0)
   - R.swift (~> 3.3.0)
   - Reveal-SDK
-  - RxCocoa
-  - RxSwift
+  - RxBlocking (~> 3.6)
+  - RxCocoa (~> 3.6)
+  - RxSwift (~> 3.6)
   - RxSwiftExt (~> 2.5)
   - SwiftLint (~> 0.20)
 
@@ -116,8 +119,9 @@ SPEC CHECKSUMS:
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
-  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
-  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  RxBlocking: 4c3893acc11d26965f7532fff1e35626a4db6f6c
+  RxCocoa: cb865569239ebf1b1434056e5c8859d99dff103a
+  RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
   RxSwiftExt: ec25c6df68d15ad6fe326792d60452b52e83d606
   Sourcery: abd498f5fd7dd74a85af911013bd521c1dfbb6ff
   SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
@@ -125,6 +129,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: fbf9701b9fe4bb04cd0380aa0059e8e36b2e5398
+PODFILE CHECKSUM: f9ad10745fbea6e063d857bbf5a5af412061702b
 
 COCOAPODS: 1.2.1

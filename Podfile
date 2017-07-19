@@ -12,9 +12,10 @@ def helpers
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SwiftLint', '~> 0.20'
     pod 'Google/SignIn'
-    pod 'RxSwift'
-    pod 'RxCocoa'
+    pod 'RxSwift', '~> 3.6'
+    pod 'RxCocoa', '~> 3.6'
     pod 'RxSwiftExt', '~> 2.5'
+    pod 'RxBlocking', '~> 3.6'
 end
 
 def elPods
