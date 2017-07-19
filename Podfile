@@ -14,6 +14,7 @@ def helpers
     pod 'Google/SignIn'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxSwiftExt', '~> 2.5'
 end
 
 def elPods
