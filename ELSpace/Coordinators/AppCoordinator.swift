@@ -5,6 +5,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RxSwiftExt
 import ELDebate
 
 class AppCoordinator {
@@ -37,6 +39,7 @@ class AppCoordinator {
     fileprivate let googleUserManager: GoogleUserManaging
     fileprivate let debateRunner: DebateRunning
     fileprivate let screenFactory: ScreenFactoring
+    fileprivate let isSigningIn = Variable<Bool>(false)
 
     // MARK: Bindings
 
@@ -53,13 +56,23 @@ extension AppCoordinator {
 
     fileprivate func setupLoginViewControllerBindings() {
         loginViewController.loginButtonTap
-            .flatMapFirst { [weak self] _ -> Observable<GIDGoogleUser> in
-                guard let `self` = self else { return Observable.empty() }
-                return self.googleUserManager.signIn(on: self.loginViewController)
-            }.subscribe(onNext: { [weak self] _ in
+            .ignoreWhen { [weak self] in self?.isSigningIn.value == true }
+            .subscribe(onNext: { [weak self] in
+                guard let viewController = self?.loginViewController else { return }
+                self?.isSigningIn.value = true
+                self?.googleUserManager.signIn(on: viewController)
+            }).disposed(by: disposeBag)
+
+        googleUserManager.error.debug()
+            .subscribe(onNext: { [weak self] error in
+                self?.isSigningIn.value = false
+                self?.presentError(error: error)
+            }).disposed(by: disposeBag)
+
+        googleUserManager.signInSuccess.debug()
+            .subscribe(onNext: { [weak self] _ in
+                self?.isSigningIn.value = false
                 self?.presentSelectionController()
-            }, onError: { [weak self] error in
-                self?.presentError(message: error.localizedDescription)
             }).disposed(by: disposeBag)
     }
 
@@ -67,8 +80,8 @@ extension AppCoordinator {
         loginViewController.navigationController?.pushViewController(selectionViewController, animated: true)
     }
 
-    private func presentError(message: String) {
-        let alert = screenFactory.messageAlertController(message: message)
+    private func presentError(error: Error) {
+        let alert = screenFactory.messageAlertController(message: error.localizedDescription)
         loginViewController.present(alert, animated: true)
     }
 
