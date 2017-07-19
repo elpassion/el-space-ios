@@ -7,9 +7,8 @@ import GoogleSignIn
 import RxSwift
 import RxCocoa
 
-protocol GoogleUserProviding: class {
+protocol GoogleUserProviding {
 
-    func configure(with hostedDomain: String)
     func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser>
     func disconnect()
 
@@ -21,7 +20,7 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
     private let userSubject = PublishSubject<GIDGoogleUser>()
 
     init(googleSignIn: GoogleSignInProtocol = GIDSignIn.sharedInstance(),
-         hostedDomain: String = "elpassion.com") {
+         hostedDomain: String = "elpassion.pl") {
         self.googleSignIn = googleSignIn
         super.init()
         configure(with: hostedDomain)
