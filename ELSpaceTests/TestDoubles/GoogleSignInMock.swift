@@ -13,9 +13,14 @@ class GoogleSignInMock: GoogleSignInProtocol {
     weak var uiDelegate: GIDSignInUIDelegate!
 
     var signInCalled = false
+    var disconnectCalled = false
 
     func signIn() {
         signInCalled = true
+    }
+
+    func disconnect() {
+        disconnectCalled = true
     }
 
     var hostedDomain: String!
