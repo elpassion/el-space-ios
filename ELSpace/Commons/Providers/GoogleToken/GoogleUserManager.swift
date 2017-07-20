@@ -32,14 +32,12 @@ class GoogleUserManager: GoogleUserManaging {
     }
 
     func signIn(on viewController: UIViewController) {
-        googleUserProvider
-            .signIn(on: viewController)
+        googleUserProvider.signIn(on: viewController)
             .validate(with: emailValidator, expectedDomain: hostedDomain)
-            .subscribe(onNext: { user in
-                self.signInSuccessSubject.onNext(user)
+            .subscribe(onNext: { [weak self] user in
+                self?.validationSuccessSubject.onNext(user)
             }, onError: { [weak self] error in
-                self?.errorSubject.onNext(error)
-                self?.googleUserProvider.disconnect()
+                self?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
 
@@ -51,5 +49,11 @@ class GoogleUserManager: GoogleUserManaging {
     private let emailValidator: EmailValidating
     private let hostedDomain: String
     private let disposeBag = DisposeBag()
+
+    private func handleError(error: Error) {
+        errorSubject.onNext(error)
+        guard error is EmailValidator.EmailValidationError else { return }
+        googleUserProvider.disconnect()
+    }
 
 }
