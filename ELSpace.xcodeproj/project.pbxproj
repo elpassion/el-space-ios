@@ -93,7 +93,7 @@
 		AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		AF4AD7D71F20DC63005B5524 /* EmailValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpec.swift; sourceTree = "<group>"; };
 		AF4AD7D91F20E325005B5524 /* GoogleUserValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserValidator.swift; sourceTree = "<group>"; };
-		AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleUserValidatorSpy.swift; path = ../Stubs/GoogleUserValidatorSpy.swift; sourceTree = "<group>"; };
+		AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleUserValidatorSpy.swift; path = GoogleUserValidatorSpy.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -380,7 +380,6 @@
 			children = (
 				86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */,
 			);
-			name = Mocks;
 			path = Mocks;
 			sourceTree = "<group>";
 		};
@@ -390,7 +389,6 @@
 				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
 				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */,
 			);
-			name = Spies;
 			path = Spies;
 			sourceTree = "<group>";
 		};
