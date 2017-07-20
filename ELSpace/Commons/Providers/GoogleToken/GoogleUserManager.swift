@@ -16,11 +16,11 @@ protocol GoogleUserManaging {
 class GoogleUserManager: GoogleUserManaging {
 
     init(googleUserProvider: GoogleUserProviding = GoogleUserProvider(),
-         emailValidator: EmailValidation = EmailValidator(),
+         googleUserValidator: GoogleUserValidation = GoogleUserValidator(),
          hostedDomain: String = "elpassion.pl") {
         self.googleUserProvider = googleUserProvider
         self.hostedDomain = hostedDomain
-        self.emailValidator = emailValidator
+        self.googleUserValidator = googleUserValidator
         setupBindings()
     }
 
@@ -41,7 +41,7 @@ class GoogleUserManager: GoogleUserManaging {
     private let errorSubject = PublishSubject<Error>()
     private let validationSuccessSubject = PublishSubject<GIDGoogleUser>()
     private let googleUserProvider: GoogleUserProviding
-    private let emailValidator: EmailValidation
+    private let googleUserValidator: GoogleUserValidation
     private let hostedDomain: String
 
     private func disconnectIfNeeded(error: Error) {
@@ -61,7 +61,7 @@ class GoogleUserManager: GoogleUserManaging {
 
         Observable.of(
             googleUserProvider.error,
-            emailValidator.error
+            googleUserValidator.error
         ).merge()
             .bind(to: errorSubject)
             .disposed(by: disposeBag)
@@ -75,17 +75,8 @@ class GoogleUserManager: GoogleUserManaging {
     // MARK: Email validation
 
     private func validateEmail(user: GIDGoogleUser) {
-        guard let email = user.profile.email else { return }
-        guard emailValidator.validateEmail(email: email, hostedDomain: hostedDomain) else { return }
+        guard googleUserValidator.validate(user: user, hostedDomain: hostedDomain) else { return }
         validationSuccessSubject.onNext(user)
-    }
-
-    private func isValidEmail(email: String) -> Bool {
-        return email.isValidEmail()
-    }
-
-    private func isValidDomain(email: String) -> Bool {
-        return email.emailDomain() == hostedDomain
     }
 
 }
