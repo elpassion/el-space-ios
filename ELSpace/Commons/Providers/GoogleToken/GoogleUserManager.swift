@@ -24,6 +24,8 @@ class GoogleUserManager: GoogleUserManaging {
         setupBindings()
     }
 
+    // MARK: GoogleUserManaging
+
     var error: Observable<Error> {
         return errorSubject.asObservable()
     }
