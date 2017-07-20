@@ -4,8 +4,18 @@
 //
 
 import UIKit
+import RxSwift
 
 class SelectionViewController: UIViewController {
+
+    var debateButtonTapObservable: Observable<Void> {
+        return selectionView.debateButton.rx.tap.asObservable()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -15,24 +25,11 @@ class SelectionViewController: UIViewController {
         view = SelectionView()
     }
 
+    // MARK: Private
+
     private var selectionView: SelectionView {
         guard let selectionView = view as? SelectionView else { fatalError("Expected SelectionView but got \(type(of: view))") }
         return selectionView
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        configureSubviews()
-    }
-
-    private func configureSubviews() {
-        selectionView.hubButton.addTarget(self, action: #selector(didTapHubButton), for: .touchUpInside)
-        selectionView.debateButton.addTarget(self, action: #selector(didTapDebateButton), for: .touchUpInside)
-    }
-
-    func didTapHubButton() { }
-
-    func didTapDebateButton() { }
 
 }

@@ -8,7 +8,7 @@ opt_in_rules:
 disabled_rules:
   - large_tuple
 excluded:
-  - Supporting FIles/R.generated.swift
+  - Supporting Files/R.generated.swift
 line_length: 200
 type_body_length:
   - 300 # warning

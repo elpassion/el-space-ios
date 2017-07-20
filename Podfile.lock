@@ -1,5 +1,16 @@
 PODS:
+  - Alamofire (4.5.0)
   - Anchorage (4.0.0)
+  - ELDebate (1.0.1):
+    - Alamofire (~> 4.4)
+    - Anchorage (~> 4.0)
+    - KeychainAccess (~> 3.0)
+    - PromiseKit (~> 4.0)
+    - Sourcery (~> 0.6)
+    - SwiftLint (~> 0.18)
+    - Swinject (~> 2.0)
+    - SwinjectAutoregistration (~> 2.0)
+    - UIColor_Hex_Swift (~> 3.0.2)
   - FirebaseAnalytics (3.9.0):
     - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
@@ -30,26 +41,52 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMOAuth2 (1.1.4):
     - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.10):
-    - GTMSessionFetcher/Full (= 1.1.10)
-  - GTMSessionFetcher/Core (1.1.10)
-  - GTMSessionFetcher/Full (1.1.10):
-    - GTMSessionFetcher/Core (= 1.1.10)
+  - GTMSessionFetcher (1.1.11):
+    - GTMSessionFetcher/Full (= 1.1.11)
+  - GTMSessionFetcher/Core (1.1.11)
+  - GTMSessionFetcher/Full (1.1.11):
+    - GTMSessionFetcher/Core (= 1.1.11)
   - HexColors (5.0.1)
+  - KeychainAccess (3.0.2)
   - Nimble (7.0.1)
   - Pastel (0.3.0)
+  - PromiseKit (4.2.2):
+    - PromiseKit/Foundation (= 4.2.2)
+    - PromiseKit/QuartzCore (= 4.2.2)
+    - PromiseKit/UIKit (= 4.2.2)
+  - PromiseKit/CorePromise (4.2.2)
+  - PromiseKit/Foundation (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.2.2):
+    - PromiseKit/CorePromise
   - Quick (1.1.0)
   - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
-  - Reveal-SDK (8)
-  - RxCocoa (3.5.0):
+  - Reveal-SDK (9)
+  - RxBlocking (3.6.0):
+    - RxSwift (~> 3.6)
+  - RxCocoa (3.6.0):
+    - RxSwift (~> 3.6)
+  - RxSwift (3.6.0)
+  - RxSwiftExt (2.5.1):
+    - RxSwiftExt/Core (= 2.5.1)
+  - RxSwiftExt/Core (2.5.1):
     - RxSwift (~> 3.4)
-  - RxSwift (3.5.0)
+  - RxTest (3.6.0):
+    - RxSwift (~> 3.6)
+  - Sourcery (0.7.2)
   - SwiftLint (0.20.1)
+  - Swinject (2.1.0)
+  - SwinjectAutoregistration (2.1.0):
+    - Swinject (~> 2.1)
+  - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
   - Anchorage (~> 4.0)
+  - ELDebate (~> 1.0)
   - Google/SignIn
   - HexColors (~> 5.0.1)
   - Nimble (~> 7.0.0)
@@ -57,12 +94,17 @@ DEPENDENCIES:
   - Quick (~> 1.1.0)
   - R.swift (~> 3.3.0)
   - Reveal-SDK
-  - RxCocoa
-  - RxSwift
+  - RxBlocking (~> 3.6)
+  - RxCocoa (~> 3.6)
+  - RxSwift (~> 3.6)
+  - RxSwiftExt (~> 2.5)
+  - RxTest (~> 3.6)
   - SwiftLint (~> 0.20)
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Anchorage: fe50dca4e20846b8cb15c859d26fec5132b41577
+  ELDebate: 152363c4758855b5967e112297b6b4ad2c2e5848
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
@@ -70,18 +112,27 @@ SPEC CHECKSUMS:
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
-  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
+  KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
+  PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
-  Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
-  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
-  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
+  RxBlocking: 4c3893acc11d26965f7532fff1e35626a4db6f6c
+  RxCocoa: cb865569239ebf1b1434056e5c8859d99dff103a
+  RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
+  RxSwiftExt: ec25c6df68d15ad6fe326792d60452b52e83d606
+  RxTest: 9cf69fa8f33e43cfcb154ad9b78f54afeb877423
+  Sourcery: abd498f5fd7dd74a85af911013bd521c1dfbb6ff
   SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
+  Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
+  SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 960b63ef54928b6eb771dc29e7097bcececad197
+PODFILE CHECKSUM: 0edaab0afb2e48d3496b864af2b9d60a872936db
 
 COCOAPODS: 1.2.1

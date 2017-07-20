@@ -1,23 +1,46 @@
-//
-//  Created by Bartlomiej Guminiak on 12/06/2017.
-//  Copyright © 2017 El Passion. All rights reserved.
-//
+import RxSwift
 
-protocol EmailValidating {
+protocol EmailValidation {
 
-    func validate(email: String) throws
-    func validate(email: String, with expectedDomain: String) throws
+    var error: Observable<Error> { get }
+    func validateEmail(email: String, hostedDomain: String) -> Bool
 
 }
 
-class EmailValidator: EmailValidating {
+class EmailValidator: EmailValidation {
 
-    func validate(email: String) throws {
-        guard email.isValidEmail() else { throw NSError.emailFormat() }
+    enum EmailValidationError: String, Error {
+        case emailFormat = "Incorrect email format"
+        case incorrectDomain = "Incorrect domain"
     }
 
-    func validate(email: String, with expectedDomain: String) throws {
-        guard email.emailDomain() == expectedDomain else { throw NSError.incorrectDomain() }
+    // MARK: EmailValidation
+
+    var error: Observable<Error> {
+        return errorSubject.asObservable()
     }
+
+    func validateEmail(email: String, hostedDomain: String) -> Bool {
+        if isValidEmail(email: email) == false {
+            errorSubject.onNext(EmailValidator.EmailValidationError.emailFormat)
+        } else if isValidDomain(email: email, hostedDomain: hostedDomain) == false {
+            errorSubject.onNext(EmailValidator.EmailValidationError.incorrectDomain)
+        } else {
+            return true
+        }
+        return false
+    }
+
+    // MARK: Private
+
+    private func isValidEmail(email: String) -> Bool {
+        return email.isValidEmail()
+    }
+
+    private func isValidDomain(email: String, hostedDomain: String) -> Bool {
+        return email.emailDomain() == hostedDomain
+    }
+
+    private let errorSubject = PublishSubject<Error>()
 
 }

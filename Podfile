@@ -1,3 +1,6 @@
+source 'git@github.com:elpassion/podspecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '10.0'
 inhibit_all_warnings!
 
@@ -9,22 +12,29 @@ def helpers
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SwiftLint', '~> 0.20'
     pod 'Google/SignIn'
-    pod 'RxSwift'
-    pod 'RxCocoa'
+    pod 'RxSwift', '~> 3.6'
+    pod 'RxCocoa', '~> 3.6'
+    pod 'RxSwiftExt', '~> 2.5'
+end
+
+def elPods
+     pod 'ELDebate', '~> 1.0'
 end
 
 def test_helpers
     pod 'Nimble', '~> 7.0.0'
     pod 'Quick', '~> 1.1.0'
+    pod 'RxBlocking', '~> 3.6'
+    pod 'RxTest', '~> 3.6'
 end
 
 target 'ELSpace' do
     helpers
+    elPods
     use_frameworks!
     
     target 'ELSpaceTests' do
         inherit! :search_paths
-	test_helpers
+        test_helpers
     end
-    
 end

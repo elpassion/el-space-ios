@@ -74,3 +74,6 @@ vendor
 
 ## AppCode
 .idea/
+
+## Autodeployment script
+.autodeployment.sh

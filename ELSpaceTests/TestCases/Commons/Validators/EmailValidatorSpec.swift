@@ -1,70 +1,102 @@
-//
-//  Created by Bartlomiej Guminiak on 12/06/2017.
-//  Copyright © 2017 El Passion. All rights reserved.
-//
-
 import Quick
 import Nimble
+import RxSwift
+import RxTest
 
-@testable
-import ELSpace
+@testable import ELSpace
 
 class EmailValidatorSpec: QuickSpec {
-    override func spec() {
-        context("EmailValidator") {
 
+    override func spec() {
+        describe("EmailValidator") {
             var sut: EmailValidator!
+            var scheduler: TestScheduler!
+            var observer: TestableObserver<Error>!
 
             beforeEach {
                 sut = EmailValidator()
+                scheduler = TestScheduler(initialClock: 0)
+                observer = scheduler.createObserver(Error.self)
             }
 
             afterEach {
                 sut = nil
+                scheduler = nil
+                observer = nil
             }
 
-            describe("validate email format") {
+            context("when validate good email") {
+                var result: Bool!
 
-                it("should approve email format") {
-                    do {
-                        try sut.validate(email: "abc@gmail.com")
-                        XCTAssert(true)
-                    } catch {
-                        XCTFail("improper email validation")
-                    }
+                beforeEach {
+                    result = sut.validateEmail(email: "abc@elpassion.pl", hostedDomain: "elpassion.pl")
                 }
 
-                it("should throw email format error") {
-                    do {
-                        try sut.validate(email: "abcgmail.com")
-                        XCTFail("improper email validation")
-                    } catch {
-                        XCTAssert(true)
-                    }
+                it("should validation be true") {
+                    expect(result).to(beTrue())
                 }
             }
 
-            describe("validate email domain") {
+            context("when validate email with incorrect format") {
+                var result: Bool!
 
-                it("should approve email domain") {
-                    do {
-                        try sut.validate(email: "abc@elpassion.pl", with: "elpassion.pl")
-                        XCTAssert(true)
-                    } catch {
-                        XCTFail("improper email domain validation")
-                    }
+                beforeEach {
+                    _ = sut.error.subscribe(observer)
+                    result = sut.validateEmail(email: "aaaaaa", hostedDomain: "gmail.com")
                 }
 
-                it("should throw email domain error") {
-                    do {
-                        try sut.validate(email: "abc@elpassion.pl", with: "elpassion.eu")
-                        XCTFail("improper email domain validation")
-                    } catch {
-                        XCTAssert(true)
+                it("should validation NOT be true") {
+                    expect(result).to(beFalse())
+                }
+
+                describe("error") {
+                    var emailValidationError: EmailValidator.EmailValidationError!
+
+                    beforeEach {
+                        let error = observer.events.first!.value.element!
+                        emailValidationError = error as! EmailValidator.EmailValidationError
+                    }
+
+                    it("should emit one event") {
+                        expect(observer.events).to(haveCount(1))
+                    }
+
+                    it("should be 'emailFormat' error") {
+                        expect(emailValidationError == .emailFormat).to(beTrue())
                     }
                 }
             }
 
+            context("when validate email with incorrect domain") {
+                var result: Bool!
+
+                beforeEach {
+                    _ = sut.error.subscribe(observer)
+                    result = sut.validateEmail(email: "aaaaaa@wp.pl", hostedDomain: "gmail.com")
+                }
+
+                it("should validation NOT be true") {
+                    expect(result).to(beFalse())
+                }
+
+                describe("error") {
+                    var emailValidationError: EmailValidator.EmailValidationError!
+
+                    beforeEach {
+                        let error = observer.events.first!.value.element!
+                        emailValidationError = error as! EmailValidator.EmailValidationError
+                    }
+
+                    it("should emit one event") {
+                        expect(observer.events).to(haveCount(1))
+                    }
+
+                    it("should be 'emailFormat' error") {
+                        expect(emailValidationError == .incorrectDomain).to(beTrue())
+                    }
+                }
+            }
         }
     }
+
 }

@@ -18,8 +18,8 @@ class GoogleUserProviderSpec: QuickSpec {
 
             beforeEach {
                 googleSignInMock = GoogleSignInMock()
-                sut = GoogleUserProvider(googleSignIn: googleSignInMock)
-                sut.configure(with: "abc@gmail.com")
+                sut = GoogleUserProvider(googleSignIn: googleSignInMock,
+                                         hostedDomain: "abc@gmail.com")
             }
 
             afterEach {
@@ -27,48 +27,29 @@ class GoogleUserProviderSpec: QuickSpec {
                 sut = nil
             }
 
-            describe("proper hostedDomain") {
-
-                it("should be elpassion.pl") {
-                    expect(googleSignInMock.hostedDomain) == "abc@gmail.com"
-                }
-
+            it("should configure GoogleSignIn with correct domain") {
+                expect(googleSignInMock.hostedDomain).to(equal("abc@gmail.com"))
             }
 
-            describe("proper delegate") {
-
-                it("should be sut object") {
-                    expect(sut) === googleSignInMock.delegate
-                }
-
+            it("should be GoogleSignIn delegate") {
+                expect(googleSignInMock.delegate === sut).to(beTrue())
             }
 
-            describe("signIn method call") {
+            context("when call signIn") {
+                var fakeViewController: UIViewController!
 
                 beforeEach {
-                    let viewController = UIViewController()
-                    _ = sut.signIn(on: viewController)
+                    fakeViewController = UIViewController()
+                    sut.signIn(on: fakeViewController)
                 }
 
-                it("should call signIn method on googleSignIn dependency") {
-                    expect(googleSignInMock.signInCalled) == true
+                it("should fakeViewController be uiDelegate") {
+                    expect(googleSignInMock.uiDelegate === fakeViewController).to(beTrue())
                 }
 
-            }
-
-            describe("proper uiDelegate") {
-
-                var viewController: UIViewController!
-
-                beforeEach {
-                    viewController = UIViewController()
-                    _ = sut.signIn(on: viewController)
+                it("should call signIn method") {
+                    expect(googleSignInMock.signInCalled).to(beTrue())
                 }
-
-                it("should set proper uiDelegate") {
-                    expect(viewController) === googleSignInMock.uiDelegate
-                }
-
             }
 
         }

@@ -1,26 +1,51 @@
 //
 //  Created by Michał Czerniakowski on 07.06.2017.
-//Copyright © 2017 El Passion. All rights reserved.
+//  Copyright © 2017 El Passion. All rights reserved.
 //
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RxSwiftExt
+import ELDebate
 
 class AppCoordinator {
 
-    fileprivate let window: UIWindow
-    fileprivate let screenFactory: ScreenFactoring
-    fileprivate let googleUserManager: GoogleUserManaging
-
-    init(window: UIWindow, screenFactory: ScreenFactoring = ScreenFactory(), googleUserManager: GoogleUserManaging = GoogleUserManager()) {
+    init(window: UIWindow,
+         screenFactory: ScreenFactoring = ScreenFactory(),
+         googleUserManager: GoogleUserManaging = GoogleUserManager(),
+         debateRunner: DebateRunning = DebateRunner()) {
         self.window = window
+        self.loginViewController = screenFactory.loginViewController()
+        self.navigationController = screenFactory.navigationController(withRoot: loginViewController)
+        self.selectionViewController = screenFactory.selectionViewController()
         self.screenFactory = screenFactory
+        self.debateRunner = debateRunner
         self.googleUserManager = googleUserManager
+        setupBindings()
     }
 
     func present() {
-        window.rootViewController = configuredLoginViewController()
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+
+    // MARK: Private
+
+    private let window: UIWindow
+    fileprivate let navigationController: UINavigationController
+    fileprivate let loginViewController: LoginViewController
+    fileprivate let selectionViewController: SelectionViewController
+    fileprivate let googleUserManager: GoogleUserManaging
+    fileprivate let debateRunner: DebateRunning
+    fileprivate let screenFactory: ScreenFactoring
+    fileprivate let isSigningIn = Variable<Bool>(false)
+
+    // MARK: Bindings
+
+    private func setupBindings() {
+        setupLoginViewControllerBindings()
+        setupSelectionViewControllerBindings()
     }
 
     fileprivate let disposeBag = DisposeBag()
@@ -29,21 +54,56 @@ class AppCoordinator {
 
 extension AppCoordinator {
 
-    func configuredLoginViewController() -> LoginViewController {
-        let loginViewController = screenFactory.loginViewController()
-
+    fileprivate func setupLoginViewControllerBindings() {
         loginViewController.loginButtonTap
-        .flatMapFirst { [unowned self] _ in
-                return self.googleUserManager.signIn(on: loginViewController)
-        }.subscribe(onNext: { [weak self] _ in
-                guard let selectionViewController = self?.screenFactory.selectionViewController() else { return }
-                loginViewController.present(selectionViewController, animated: true, completion: nil)
-        }, onError: { [weak self] error in
-                guard let alertController = self?.screenFactory.messageAlertController(message: error.localizedDescription) else { return }
-                loginViewController.present(alertController, animated: true, completion: nil)
-        }).disposed(by: disposeBag)
+            .ignoreWhen { [weak self] in self?.isSigningIn.value == true }
+            .subscribe(onNext: { [weak self] in
+                guard let viewController = self?.loginViewController else { return }
+                self?.isSigningIn.value = true
+                self?.googleUserManager.signIn(on: viewController)
+            }).disposed(by: disposeBag)
 
-        return loginViewController
+        googleUserManager.error
+            .subscribe(onNext: { [weak self] error in
+                self?.isSigningIn.value = false
+                self?.handleError(error: error)
+            }).disposed(by: disposeBag)
+
+        googleUserManager.validationSuccess
+            .subscribe(onNext: { [weak self] _ in
+                self?.isSigningIn.value = false
+                self?.presentSelectionController()
+            }).disposed(by: disposeBag)
+    }
+
+    private func presentSelectionController() {
+        loginViewController.navigationController?.pushViewController(selectionViewController, animated: true)
+    }
+
+    private func presentError(error: EmailValidator.EmailValidationError) {
+        let alert = screenFactory.messageAlertController(message: error.rawValue)
+        loginViewController.present(alert, animated: true)
+    }
+
+    private func handleError(error: Error) {
+        guard let error = error as? EmailValidator.EmailValidationError else { return }
+        presentError(error: error)
+    }
+
+}
+
+extension AppCoordinator {
+
+    fileprivate func setupSelectionViewControllerBindings() {
+        selectionViewController.debateButtonTapObservable
+            .subscribe(onNext: { [weak self] in
+                self?.runDebate()
+            }).disposed(by: disposeBag)
+    }
+
+    private func runDebate() {
+        debateRunner.start(in: navigationController, applyingDebateStyle: true)
+        navigationController.setNavigationBarHidden(false, animated: true)
     }
 
 }

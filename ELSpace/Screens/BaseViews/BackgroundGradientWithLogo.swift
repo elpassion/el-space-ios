@@ -32,13 +32,13 @@ class BackgroundGradientWithLogo: UIView {
     }
 
     private var gradientColors: [UIColor] {
-          guard let color0 = UIColor("#17EAD9"),
-                let color1 = UIColor("#622774"),
-                let color2 = UIColor("#7177EA"),
-                let color3 = UIColor("#1BCEDF"),
-                let color4 = UIColor("#3BB2B8"),
-                let color5 = UIColor("#F02FC2"),
-                let color6 = UIColor("#5B247A") else { fatalError("Could not create Colors!") }
+        guard let color0 = UIColor("#17EAD9", alpha: 1.0),
+            let color1 = UIColor("#622774", alpha: 1.0),
+            let color2 = UIColor("#7177EA", alpha: 1.0),
+            let color3 = UIColor("#1BCEDF", alpha: 1.0),
+            let color4 = UIColor("#3BB2B8", alpha: 1.0),
+            let color5 = UIColor("#F02FC2", alpha: 1.0),
+            let color6 = UIColor("#5B247A", alpha: 1.0) else { fatalError("Could not create Colors") }
 
           return [color0, color1, color2, color3, color4, color5, color6]
     }
