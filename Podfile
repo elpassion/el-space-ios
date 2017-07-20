@@ -15,7 +15,6 @@ def helpers
     pod 'RxSwift', '~> 3.6'
     pod 'RxCocoa', '~> 3.6'
     pod 'RxSwiftExt', '~> 2.5'
-    pod 'RxBlocking', '~> 3.6'
 end
 
 def elPods
@@ -25,6 +24,8 @@ end
 def test_helpers
     pod 'Nimble', '~> 7.0.0'
     pod 'Quick', '~> 1.1.0'
+    pod 'RxBlocking', '~> 3.6'
+    pod 'RxTest', '~> 3.6'
 end
 
 target 'ELSpace' do

@@ -75,6 +75,8 @@ PODS:
     - RxSwiftExt/Core (= 2.5.1)
   - RxSwiftExt/Core (2.5.1):
     - RxSwift (~> 3.4)
+  - RxTest (3.6.0):
+    - RxSwift (~> 3.6)
   - Sourcery (0.7.2)
   - SwiftLint (0.20.1)
   - Swinject (2.1.0)
@@ -96,6 +98,7 @@ DEPENDENCIES:
   - RxCocoa (~> 3.6)
   - RxSwift (~> 3.6)
   - RxSwiftExt (~> 2.5)
+  - RxTest (~> 3.6)
   - SwiftLint (~> 0.20)
 
 SPEC CHECKSUMS:
@@ -123,12 +126,13 @@ SPEC CHECKSUMS:
   RxCocoa: cb865569239ebf1b1434056e5c8859d99dff103a
   RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
   RxSwiftExt: ec25c6df68d15ad6fe326792d60452b52e83d606
+  RxTest: 9cf69fa8f33e43cfcb154ad9b78f54afeb877423
   Sourcery: abd498f5fd7dd74a85af911013bd521c1dfbb6ff
   SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
   Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: f9ad10745fbea6e063d857bbf5a5af412061702b
+PODFILE CHECKSUM: 0edaab0afb2e48d3496b864af2b9d60a872936db
 
 COCOAPODS: 1.2.1
