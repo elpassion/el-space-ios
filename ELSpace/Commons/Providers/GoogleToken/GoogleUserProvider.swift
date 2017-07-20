@@ -9,15 +9,14 @@ import RxCocoa
 
 protocol GoogleUserProviding {
 
-    func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser>
+    var user: Observable<GIDGoogleUser> { get }
+    var error: Observable<Error> { get }
+    func signIn(on viewController: UIViewController)
     func disconnect()
 
 }
 
 class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
-
-    private let googleSignIn: GoogleSignInProtocol
-    private let userSubject = PublishSubject<GIDGoogleUser>()
 
     init(googleSignIn: GoogleSignInProtocol = GIDSignIn.sharedInstance(),
          hostedDomain: String = "elpassion.pl") {
@@ -26,33 +25,47 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
         configure(with: hostedDomain)
     }
 
-    func configure(with hostedDomain: String) {
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        if configureError != nil {
-            userSubject.onError(NSError.googleConfiguration(description: String(describing: configureError)))
-        }
-        googleSignIn.delegate = self
-        googleSignIn.hostedDomain = hostedDomain
-    }
-
-    func signIn(on viewController: UIViewController) -> Observable<GIDGoogleUser> {
-        googleSignIn.uiDelegate = viewController
-        googleSignIn.signIn()
-
+    var user: Observable<GIDGoogleUser> {
         return userSubject.asObservable()
     }
+
+    var error: Observable<Error> {
+        return errorSubject.asObservable()
+    }
+
+    func signIn(on viewController: UIViewController) {
+        googleSignIn.uiDelegate = viewController
+        googleSignIn.signIn()
+    }
+
+    func disconnect() {
+        googleSignIn.disconnect()
+    }
+
+    // MARK: GIDSignInDelegate
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             userSubject.onNext(user)
         } else {
-            userSubject.onError(error)
+            errorSubject.onNext(error)
         }
     }
 
-    func disconnect() {
-        googleSignIn.disconnect()
+    // MARK: Private
+
+    private let googleSignIn: GoogleSignInProtocol
+    private let userSubject = PublishSubject<GIDGoogleUser>()
+    private let errorSubject = PublishSubject<Error>()
+
+    private func configure(with hostedDomain: String) {
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        if configureError != nil {
+            errorSubject.onNext(NSError.googleConfiguration(description: String(describing: configureError)))
+        }
+        googleSignIn.delegate = self
+        googleSignIn.hostedDomain = hostedDomain
     }
 
 }
