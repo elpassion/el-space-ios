@@ -11,12 +11,14 @@ class GoogleUserManagerSpec: QuickSpec {
 
             var sut: GoogleUserManager!
             var googleUserProviderSpy: GoogleUserProviderSpy!
+            var googleUserValidatorStub: GoogleUserValidatorSpy!
             var scheduler: TestScheduler!
             var observer: TestableObserver<GIDGoogleUser>!
 
             afterEach {
                 sut = nil
                 googleUserProviderSpy = nil
+                googleUserValidatorStub = nil
                 scheduler = nil
                 observer = nil
             }
@@ -28,8 +30,9 @@ class GoogleUserManagerSpec: QuickSpec {
                     scheduler = TestScheduler(initialClock: 0)
                     observer = scheduler.createObserver(GIDGoogleUser.self)
                     googleUserProviderSpy = GoogleUserProviderSpy()
+                    googleUserValidatorStub = GoogleUserValidatorSpy()
                     sut = GoogleUserManager(googleUserProvider: googleUserProviderSpy,
-                                            googleUserValidator: GoogleUserValidatorStub(),
+                                            googleUserValidator: googleUserValidatorStub,
                                             hostedDomain: "abc@gmail.com")
                 }
 
@@ -66,6 +69,47 @@ class GoogleUserManagerSpec: QuickSpec {
                         it("should emit correct user") {
                             expect(fakeGoogleUser === resultUser).to(beTrue())
                         }
+                    }
+                }
+
+                context("when signIn") {
+                    var fakeViewController: UIViewController!
+
+                    beforeEach {
+                        _ = sut.validationSuccess.subscribe(observer)
+                        fakeViewController = UIViewController()
+                        fakeGoogleUser = GIDGoogleUser()
+                        googleUserProviderSpy.resultUser = fakeGoogleUser
+                        sut.signIn(on: fakeViewController)
+                    }
+
+                    it("should call signIn") {
+                        expect(googleUserProviderSpy.didSignIn).to(beTrue())
+                    }
+
+                    it("should signIn on correct ViewController") {
+                        expect(googleUserProviderSpy.didSignInOnViewController === fakeViewController).to(beTrue())
+                    }
+
+                }
+
+                context("when ValidationError error occurs") {
+                    beforeEach {
+                        googleUserValidatorStub.resultError = EmailValidator.EmailValidationError.emailFormat
+                    }
+
+                    it("should disconnect") {
+                        expect(googleUserProviderSpy.didDisconnect).to(beTrue())
+                    }
+                }
+
+                context("when Error occurs") {
+                    beforeEach {
+                        googleUserValidatorStub.resultError = NSError(domain: "fake_domain", code: 0, userInfo: nil)
+                    }
+
+                    it("should NOT disconnect") {
+                        expect(googleUserProviderSpy.didDisconnect).to(beFalse())
                     }
                 }
             }
