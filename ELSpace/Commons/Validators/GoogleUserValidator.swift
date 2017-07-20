@@ -2,8 +2,8 @@ import RxSwift
 
 protocol GoogleUserValidation {
 
-    func validate(user: GIDGoogleUser, hostedDomain: String) -> Bool
     var error: Observable<Error> { get }
+    func validate(user: GIDGoogleUser, hostedDomain: String) -> Bool
 
 }
 
@@ -13,6 +13,8 @@ class GoogleUserValidator: GoogleUserValidation {
         self.emailValidator = emailValidator
         setupBindings()
     }
+
+    // MARK: GoogleUserValidation
 
     var error: Observable<Error> {
         return errorSubject.asObservable()
