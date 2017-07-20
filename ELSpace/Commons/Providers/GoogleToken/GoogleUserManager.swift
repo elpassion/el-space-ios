@@ -16,9 +16,11 @@ protocol GoogleUserManaging {
 class GoogleUserManager: GoogleUserManaging {
 
     init(googleUserProvider: GoogleUserProviding = GoogleUserProvider(),
+         emailValidator: EmailValidation = EmailValidator(),
          hostedDomain: String = "elpassion.pl") {
         self.googleUserProvider = googleUserProvider
         self.hostedDomain = hostedDomain
+        self.emailValidator = emailValidator
         setupBindings()
     }
 
@@ -39,10 +41,11 @@ class GoogleUserManager: GoogleUserManaging {
     private let errorSubject = PublishSubject<Error>()
     private let validationSuccessSubject = PublishSubject<GIDGoogleUser>()
     private let googleUserProvider: GoogleUserProviding
+    private let emailValidator: EmailValidation
     private let hostedDomain: String
 
     private func disconnectIfNeeded(error: Error) {
-        guard error is EmailValidationError else { return }
+        guard error is EmailValidator.EmailValidationError else { return }
         googleUserProvider.disconnect()
     }
 
@@ -56,7 +59,10 @@ class GoogleUserManager: GoogleUserManaging {
                 self?.validateEmail(user: user)
             }).disposed(by: disposeBag)
 
-        googleUserProvider.error
+        Observable.of(
+            googleUserProvider.error,
+            emailValidator.error
+        ).merge()
             .bind(to: errorSubject)
             .disposed(by: disposeBag)
 
@@ -68,20 +74,10 @@ class GoogleUserManager: GoogleUserManaging {
 
     // MARK: Email validation
 
-    enum EmailValidationError: String, Error {
-        case emailFormat = "Email format"
-        case incorrectDomain = "Incorrect domain"
-    }
-
     private func validateEmail(user: GIDGoogleUser) {
         guard let email = user.profile.email else { return }
-        if isValidEmail(email: email) == false {
-            errorSubject.onNext(EmailValidationError.emailFormat)
-        } else if isValidDomain(email: email) == false {
-            errorSubject.onNext(EmailValidationError.incorrectDomain)
-        } else {
-            validationSuccessSubject.onNext(user)
-        }
+        guard emailValidator.validateEmail(email: email, hostedDomain: hostedDomain) else { return }
+        validationSuccessSubject.onNext(user)
     }
 
     private func isValidEmail(email: String) -> Bool {

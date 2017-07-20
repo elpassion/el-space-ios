@@ -80,13 +80,13 @@ extension AppCoordinator {
         loginViewController.navigationController?.pushViewController(selectionViewController, animated: true)
     }
 
-    private func presentError(error: GoogleUserManager.EmailValidationError) {
+    private func presentError(error: EmailValidator.EmailValidationError) {
         let alert = screenFactory.messageAlertController(message: error.rawValue)
         loginViewController.present(alert, animated: true)
     }
 
     private func handleError(error: Error) {
-        guard let error = error as? GoogleUserManager.EmailValidationError else { return }
+        guard let error = error as? EmailValidator.EmailValidationError else { return }
         presentError(error: error)
     }
 
