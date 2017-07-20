@@ -68,7 +68,7 @@ extension AppCoordinator {
                 self?.handleError(error: error)
             }).disposed(by: disposeBag)
 
-        googleUserManager.signInSuccess
+        googleUserManager.validationSuccess
             .subscribe(onNext: { [weak self] _ in
                 self?.isSigningIn.value = false
                 self?.presentSelectionController()

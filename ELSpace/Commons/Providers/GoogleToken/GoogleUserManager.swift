@@ -9,7 +9,7 @@ protocol GoogleUserManaging {
 
     func signIn(on viewController: UIViewController)
     var error: Observable<Error> { get }
-    var signInSuccess: Observable<GIDGoogleUser> { get }
+    var validationSuccess: Observable<GIDGoogleUser> { get }
 
 }
 
@@ -27,8 +27,8 @@ class GoogleUserManager: GoogleUserManaging {
         return errorSubject.asObservable()
     }
 
-    var signInSuccess: Observable<GIDGoogleUser> {
-        return signInSuccessSubject.asObservable()
+    var validationSuccess: Observable<GIDGoogleUser> {
+        return validationSuccessSubject.asObservable()
     }
 
     func signIn(on viewController: UIViewController) {
@@ -46,7 +46,7 @@ class GoogleUserManager: GoogleUserManaging {
     // MARK: Private
 
     private let errorSubject = PublishSubject<Error>()
-    private let signInSuccessSubject = PublishSubject<GIDGoogleUser>()
+    private let validationSuccessSubject = PublishSubject<GIDGoogleUser>()
     private let googleUserProvider: GoogleUserProviding
     private let emailValidator: EmailValidating
     private let hostedDomain: String
