@@ -12,12 +12,17 @@ protocol EmailValidating {
 
 class EmailValidator: EmailValidating {
 
+    enum EmailValidationError: String, Error {
+        case emailFormat = "Email format"
+        case incorrectDomain = "Incorrect domain"
+    }
+
     func validate(email: String) throws {
-        guard email.isValidEmail() else { throw NSError.emailFormat() }
+        guard email.isValidEmail() else { throw EmailValidationError.emailFormat }
     }
 
     func validate(email: String, with expectedDomain: String) throws {
-        guard email.emailDomain() == expectedDomain else { throw NSError.incorrectDomain() }
+        guard email.emailDomain() == expectedDomain else { throw EmailValidationError.incorrectDomain }
     }
 
 }
