@@ -36,6 +36,7 @@
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
 		86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */; };
 		AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */; };
+		AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7D71F20DC63005B5524 /* EmailValidatorSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInMock.swift; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		AF4AD7D71F20DC63005B5524 /* EmailValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpec.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		86D9F91C1EEEBB1A00788C1D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				AF4AD7D61F20DC54005B5524 /* Validators */,
 				86D9F91D1EEEBB3D00788C1D /* Providers */,
 			);
 			path = Commons;
@@ -349,6 +352,14 @@
 			isa = PBXGroup;
 			children = (
 				AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */,
+			);
+			name = Validators;
+			sourceTree = "<group>";
+		};
+		AF4AD7D61F20DC54005B5524 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				AF4AD7D71F20DC63005B5524 /* EmailValidatorSpec.swift */,
 			);
 			name = Validators;
 			sourceTree = "<group>";
@@ -639,6 +650,7 @@
 			files = (
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
+				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
