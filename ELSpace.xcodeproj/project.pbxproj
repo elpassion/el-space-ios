@@ -132,10 +132,10 @@
 		060F4C8E1EE945F200AA2389 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				AF4AD7D31F20D74D005B5524 /* Validators */,
 				060A93691EEF01B900EA3293 /* Extensions */,
 				060F4C901EE9460600AA2389 /* Factories */,
 				060F4C8F1EE945FB00AA2389 /* Providers */,
+				AF4AD7D31F20D74D005B5524 /* Validators */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -307,9 +307,9 @@
 		8613F3401EEEDE050037A787 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
-				86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */,
-				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
-				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorStub.swift */,
+				AF9B35C01F20F57D0007F453 /* Mocks */,
+				AF9B35C11F20F5920007F453 /* Spies */,
+				AF9B35C21F20F59A0007F453 /* Stubs */,
 			);
 			path = TestDoubles;
 			sourceTree = "<group>";
@@ -325,8 +325,8 @@
 		86D9F91C1EEEBB1A00788C1D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				AF4AD7D61F20DC54005B5524 /* Validators */,
 				86D9F91D1EEEBB3D00788C1D /* Providers */,
+				AF4AD7D61F20DC54005B5524 /* Validators */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -342,8 +342,8 @@
 		86D9F91E1EEEBB4500788C1D /* GoogleToken */ = {
 			isa = PBXGroup;
 			children = (
-				86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */,
 				AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */,
+				86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */,
 			);
 			path = GoogleToken;
 			sourceTree = "<group>";
@@ -365,7 +365,7 @@
 				AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */,
 				AF4AD7D91F20E325005B5524 /* GoogleUserValidator.swift */,
 			);
-			name = Validators;
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		AF4AD7D61F20DC54005B5524 /* Validators */ = {
@@ -373,7 +373,34 @@
 			children = (
 				AF4AD7D71F20DC63005B5524 /* EmailValidatorSpec.swift */,
 			);
-			name = Validators;
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		AF9B35C01F20F57D0007F453 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */,
+			);
+			name = Mocks;
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AF9B35C11F20F5920007F453 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
+			);
+			name = Spies;
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		AF9B35C21F20F59A0007F453 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorStub.swift */,
+			);
+			name = Stubs;
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
