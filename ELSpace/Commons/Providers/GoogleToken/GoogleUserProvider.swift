@@ -25,6 +25,8 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
         configure(with: hostedDomain)
     }
 
+    // MARK: GoogleUserProviding
+
     var user: Observable<GIDGoogleUser> {
         return userSubject.asObservable()
     }
