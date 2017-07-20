@@ -19,6 +19,12 @@ class EmailValidatorSpec: QuickSpec {
                 observer = scheduler.createObserver(Error.self)
             }
 
+            afterEach {
+                sut = nil
+                scheduler = nil
+                observer = nil
+            }
+
             context("when validate good email") {
                 var result: Bool!
 
