@@ -7,20 +7,19 @@ import RxSwift
 
 protocol GoogleUserManaging {
 
-    func signIn(on viewController: UIViewController)
     var error: Observable<Error> { get }
     var validationSuccess: Observable<GIDGoogleUser> { get }
+    func signIn(on viewController: UIViewController)
 
 }
 
 class GoogleUserManager: GoogleUserManaging {
 
     init(googleUserProvider: GoogleUserProviding = GoogleUserProvider(),
-         emailValidator: EmailValidating = EmailValidator(),
          hostedDomain: String = "elpassion.pl") {
         self.googleUserProvider = googleUserProvider
-        self.emailValidator = emailValidator
         self.hostedDomain = hostedDomain
+        setupBindings()
     }
 
     var error: Observable<Error> {
@@ -33,12 +32,6 @@ class GoogleUserManager: GoogleUserManaging {
 
     func signIn(on viewController: UIViewController) {
         googleUserProvider.signIn(on: viewController)
-            .validate(with: emailValidator, expectedDomain: hostedDomain)
-            .subscribe(onNext: { [weak self] user in
-                self?.validationSuccessSubject.onNext(user)
-            }, onError: { [weak self] error in
-                self?.handleError(error: error)
-            }).disposed(by: disposeBag)
     }
 
     // MARK: Private
@@ -46,14 +39,57 @@ class GoogleUserManager: GoogleUserManaging {
     private let errorSubject = PublishSubject<Error>()
     private let validationSuccessSubject = PublishSubject<GIDGoogleUser>()
     private let googleUserProvider: GoogleUserProviding
-    private let emailValidator: EmailValidating
     private let hostedDomain: String
+
+    private func disconnectIfNeeded(error: Error) {
+        guard error is EmailValidationError else { return }
+        googleUserProvider.disconnect()
+    }
+
+    // MARK: Bindings
+
     private let disposeBag = DisposeBag()
 
-    private func handleError(error: Error) {
-        errorSubject.onNext(error)
-        guard error is EmailValidator.EmailValidationError else { return }
-        googleUserProvider.disconnect()
+    private func setupBindings() {
+        googleUserProvider.user
+            .subscribe(onNext: { [weak self] user in
+                self?.validateEmail(user: user)
+            }).disposed(by: disposeBag)
+
+        googleUserProvider.error
+            .bind(to: errorSubject)
+            .disposed(by: disposeBag)
+
+        error
+            .subscribe(onNext: { [weak self] error in
+                self?.disconnectIfNeeded(error: error)
+            }).disposed(by: disposeBag)
+    }
+
+    // MARK: Email validation
+
+    enum EmailValidationError: String, Error {
+        case emailFormat = "Email format"
+        case incorrectDomain = "Incorrect domain"
+    }
+
+    private func validateEmail(user: GIDGoogleUser) {
+        guard let email = user.profile.email else { return }
+        if isValidEmail(email: email) == false {
+            errorSubject.onNext(EmailValidationError.emailFormat)
+        } else if isValidDomain(email: email) == false {
+            errorSubject.onNext(EmailValidationError.incorrectDomain)
+        } else {
+            validationSuccessSubject.onNext(user)
+        }
+    }
+
+    private func isValidEmail(email: String) -> Bool {
+        return email.isValidEmail()
+    }
+
+    private func isValidDomain(email: String) -> Bool {
+        return email.emailDomain() == hostedDomain
     }
 
 }
