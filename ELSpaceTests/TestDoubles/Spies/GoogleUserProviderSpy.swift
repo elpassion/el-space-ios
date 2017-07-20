@@ -29,6 +29,8 @@ class GoogleUserProviderSpy: GoogleUserProviding {
         didDisconnect = true
     }
 
+    // MARK: Private
+
     private let resultUserSubject = PublishSubject<GIDGoogleUser>()
 
 }
