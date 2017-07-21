@@ -3,6 +3,8 @@
 //  Copyright © 2017 El Passion. All rights reserved.
 //
 
+import UIKit
+
 extension UIAlertController {
 
     class func messageAlertViewController(with message: String) -> UIAlertController {

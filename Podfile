@@ -5,7 +5,7 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 
 def pod_core
-    pod 'Google/SignIn'
+    pod 'GoogleSignIn', '~> 4.0'
     pod 'RxSwift', '~> 3.6'
     pod 'RxCocoa', '~> 3.6'
     pod 'RxSwiftExt', '~> 2.5'

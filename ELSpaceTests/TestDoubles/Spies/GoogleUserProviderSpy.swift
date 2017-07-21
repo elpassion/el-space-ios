@@ -2,6 +2,7 @@
 
 import RxSwift
 import RxSwiftExt
+import GoogleSignIn
 
 class GoogleUserProviderSpy: GoogleUserProviding {
 

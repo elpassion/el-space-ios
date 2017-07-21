@@ -1,6 +1,7 @@
 @testable import ELSpace
 
 import RxSwift
+import GoogleSignIn
 
 class GoogleUserValidatorSpy: GoogleUserValidation {
 

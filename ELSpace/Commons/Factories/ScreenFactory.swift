@@ -3,6 +3,8 @@
 //  Copyright © 2017 El Passion. All rights reserved.
 //
 
+import UIKit
+
 protocol ScreenFactoring {
 
     func navigationController(withRoot viewController: UIViewController) -> UINavigationController

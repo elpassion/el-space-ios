@@ -6,6 +6,8 @@
 @testable
 import ELSpace
 
+import GoogleSignIn
+
 class GoogleSignInMock: GoogleSignInProtocol {
 
     weak var delegate: GIDSignInDelegate!

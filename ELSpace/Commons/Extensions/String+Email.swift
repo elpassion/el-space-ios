@@ -3,6 +3,8 @@
 //  Copyright © 2017 El Passion. All rights reserved.
 //
 
+import Foundation
+
 extension String {
 
     func isValidEmail() -> Bool {

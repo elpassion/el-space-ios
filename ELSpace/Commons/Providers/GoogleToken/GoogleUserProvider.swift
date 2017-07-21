@@ -61,13 +61,18 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
     private let errorSubject = PublishSubject<Error>()
 
     private func configure(with hostedDomain: String) {
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        if configureError != nil {
-            errorSubject.onNext(NSError.googleConfiguration(description: String(describing: configureError)))
-        }
+        GIDSignIn.sharedInstance().clientID = getClientIdFromPlist()
         googleSignIn.delegate = self
         googleSignIn.hostedDomain = hostedDomain
+    }
+
+    private func getClientIdFromPlist() -> String {
+        let resource = "GoogleService-Info"
+        let type = "plist"
+        guard let path = Bundle.main.path(forResource: resource, ofType: type) else { fatalError("File doesn't exist") }
+        guard let dict = NSDictionary(contentsOfFile: path) else { fatalError("Cannot create Dictionary") }
+        guard let clientId = dict["CLIENT_ID"] as? String else { fatalError("Plist doesn't contain CLIENT_ID field") }
+        return clientId
     }
 
 }
