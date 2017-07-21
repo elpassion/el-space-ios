@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import RxTest
+import GoogleSignIn
 
 @testable import ELSpace
 
