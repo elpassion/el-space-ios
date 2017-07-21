@@ -1,1 +1,5 @@
 git_url "git@github.com:elpassion/apple-match-elpassion-standard.git"
+
+type "development"
+
+app_identifier ["pl.elpassion.ELSpace"]
