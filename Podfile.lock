@@ -11,19 +11,6 @@ PODS:
     - Swinject (~> 2.0)
     - SwinjectAutoregistration (~> 2.0)
     - UIColor_Hex_Swift (~> 3.0.2)
-  - FirebaseAnalytics (3.9.0):
-    - FirebaseCore (~> 3.6)
-    - FirebaseInstanceID (~> 1.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.6.0):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.10):
-    - FirebaseCore (~> 3.6)
-  - Google/Core (3.1.0):
-    - FirebaseAnalytics (~> 3.2)
-  - Google/SignIn (3.1.0):
-    - Google/Core
-    - GoogleSignIn (~> 4.0)
   - GoogleSignIn (4.0.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -32,8 +19,6 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
     - GoogleToolboxForMac/DebugUtils (= 2.1.1)
     - GoogleToolboxForMac/Defines (= 2.1.1)
@@ -87,7 +72,7 @@ PODS:
 DEPENDENCIES:
   - Anchorage (~> 4.0)
   - ELDebate (~> 1.0)
-  - Google/SignIn
+  - GoogleSignIn (~> 4.0)
   - HexColors (~> 5.0.1)
   - Nimble (~> 7.0.0)
   - Pastel (~> 0.3.0)
@@ -105,10 +90,6 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Anchorage: fe50dca4e20846b8cb15c859d26fec5132b41577
   ELDebate: 152363c4758855b5967e112297b6b4ad2c2e5848
-  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
-  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
-  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
-  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
@@ -133,6 +114,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 682877b0416e393a48c1bf1cda8cbc3f2b79dbd4
+PODFILE CHECKSUM: f055fdef33b1d3da84401cc472b8f4445770d885
 
 COCOAPODS: 1.2.1

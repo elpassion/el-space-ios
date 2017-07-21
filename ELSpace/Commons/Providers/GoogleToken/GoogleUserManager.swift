@@ -3,6 +3,7 @@
 //  Copyright © 2017 El Passion. All rights reserved.
 //
 
+import GoogleSignIn
 import RxSwift
 
 protocol GoogleUserManaging {

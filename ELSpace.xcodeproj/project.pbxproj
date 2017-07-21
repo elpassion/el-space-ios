@@ -60,7 +60,6 @@
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
 		060F4C921EE9463100AA2389 /* ScreenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		06BE2E6E1EE8915C002EED37 /* ELSpace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELSpace-Bridging-Header.h"; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
 		5002D5851EE84D18004C0B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElSpaceLaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,7 +92,7 @@
 		AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		AF4AD7D71F20DC63005B5524 /* EmailValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpec.swift; sourceTree = "<group>"; };
 		AF4AD7D91F20E325005B5524 /* GoogleUserValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserValidator.swift; sourceTree = "<group>"; };
-		AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleUserValidatorSpy.swift; path = GoogleUserValidatorSpy.swift; sourceTree = "<group>"; };
+		AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserValidatorSpy.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +180,6 @@
 				5002D5871EE84D18004C0B10 /* Fonts */,
 				5002D58D1EE84D18004C0B10 /* Translations */,
 				5002D5851EE84D18004C0B10 /* Assets.xcassets */,
-				06BE2E6E1EE8915C002EED37 /* ELSpace-Bridging-Header.h */,
 				5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */,
 				06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */,
 				5002D58B1EE84D18004C0B10 /* Info.plist */,
@@ -818,7 +816,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d4cb3946-1335-49ba-a1a2-445092f0d8e3";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development pl.elpassion.ELSpace";
-				SWIFT_OBJC_BRIDGING_HEADER = "ELSpace/Supporting Files/ELSpace-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -841,7 +839,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d4cb3946-1335-49ba-a1a2-445092f0d8e3";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development pl.elpassion.ELSpace";
-				SWIFT_OBJC_BRIDGING_HEADER = "ELSpace/Supporting Files/ELSpace-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

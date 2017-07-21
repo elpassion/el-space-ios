@@ -61,11 +61,7 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
     private let errorSubject = PublishSubject<Error>()
 
     private func configure(with hostedDomain: String) {
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        if configureError != nil {
-            errorSubject.onNext(NSError.googleConfiguration(description: String(describing: configureError)))
-        }
+        GIDSignIn.sharedInstance().clientID = "51421574584-e5a3la9ctd1oi9r1rqsodeinjhcqkh1r.apps.googleusercontent.com"
         googleSignIn.delegate = self
         googleSignIn.hostedDomain = hostedDomain
     }
