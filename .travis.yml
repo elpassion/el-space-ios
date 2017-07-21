@@ -3,9 +3,9 @@ language: objective-c
 podfile: Podfile
 before_install:
 - openssl aes-256-cbc -K $encrypted_d8f7e519f3ce_key -iv $encrypted_d8f7e519f3ce_iv -in .autodeployment.sh.enc -out .autodeployment.sh -d
+- bundle install
 - chmod +x .autodeployment.sh
 - . ./.autodeployment.sh
-- bundle install
 - pod repo update
 - pod install
 script:
