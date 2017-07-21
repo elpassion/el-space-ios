@@ -10,6 +10,7 @@ before_install:
 - bundle install
 - gem install cocoapods --conservative
 - gem install xcpretty-travis-formatter
+- gem fastlane
 - pod repo update
 - pod install
 script:
