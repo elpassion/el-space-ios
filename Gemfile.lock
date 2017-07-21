@@ -217,6 +217,7 @@ DEPENDENCIES
   cocoapods
   fastlane
   travis
+  xcpretty-travis-formatter
 
 BUNDLED WITH
    1.15.1
