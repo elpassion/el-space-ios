@@ -849,7 +849,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = ELSpaceTests/Info.plist;
@@ -866,7 +866,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = ELSpaceTests/Info.plist;
