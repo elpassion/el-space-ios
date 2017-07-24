@@ -829,15 +829,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ELSpace/ELSpace.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dariusz Rybicki (KB57E8RV46)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: EL Passion Next Sp. z o.o. (H5QFB36W2F)";
 				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d4cb3946-1335-49ba-a1a2-445092f0d8e3";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development pl.elpassion.ELSpace";
+				PROVISIONING_PROFILE = "1e126538-9b6d-47a9-8d38-2af6db266ec8";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore pl.elpassion.ELSpace";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -867,7 +867,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = H5QFB36W2F;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ELSpaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpaceTests;
