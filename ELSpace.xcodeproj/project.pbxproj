@@ -460,7 +460,6 @@
 					};
 					5048F2531EDEE7A2001A487E = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = H5QFB36W2F;
 						ProvisioningStyle = Manual;
 						TestTargetID = 5048F23F1EDEE7A2001A487E;
 					};
@@ -851,7 +850,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = H5QFB36W2F;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ELSpaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpaceTests;
