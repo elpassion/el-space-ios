@@ -35,6 +35,7 @@
 		862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49B01EF151A50033112C /* UIAlertController+Creation.swift */; };
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
 		86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */; };
+		AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48256C1F27513F0081B2CC /* Localizable.swift */; };
 		AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */; };
 		AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */; };
 		AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */; };
@@ -87,6 +88,7 @@
 		86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProviderSpec.swift; sourceTree = "<group>"; };
 		86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInMock.swift; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF48256C1F27513F0081B2CC /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpec.swift; sourceTree = "<group>"; };
 		AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProviderSpy.swift; sourceTree = "<group>"; };
 		AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				5002D58E1EE84D18004C0B10 /* Localizable.strings */,
+				AF48256C1F27513F0081B2CC /* Localizable.swift */,
 			);
 			path = Translations;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
+				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,
 				50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */,
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
