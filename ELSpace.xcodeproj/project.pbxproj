@@ -36,6 +36,7 @@
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
 		86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */; };
 		AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48256C1F27513F0081B2CC /* Localizable.swift */; };
+		AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825761F2758480081B2CC /* RequestWrapper.swift */; };
 		AF48257C1F275C140081B2CC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48257B1F275C140081B2CC /* Response.swift */; };
 		AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */; };
 		AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */; };
@@ -90,6 +91,7 @@
 		86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInMock.swift; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF48256C1F27513F0081B2CC /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		AF4825761F2758480081B2CC /* RequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
 		AF48257B1F275C140081B2CC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpec.swift; sourceTree = "<group>"; };
 		AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProviderSpy.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				AF48257A1F275C060081B2CC /* Models */,
+				AF4825741F27577C0081B2CC /* Network */,
 				509E0D781EDEEB2D00414C1D /* Application */,
 				060F4C8E1EE945F200AA2389 /* Commons */,
 				500BC97A1EE7F6F40060D31B /* Coordinators */,
@@ -360,6 +363,22 @@
 				EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF4825741F27577C0081B2CC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AF4825751F2757900081B2CC /* ApiClient */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		AF4825751F2757900081B2CC /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				AF4825761F2758480081B2CC /* RequestWrapper.swift */,
+			);
+			name = ApiClient;
 			sourceTree = "<group>";
 		};
 		AF48257A1F275C060081B2CC /* Models */ = {
@@ -673,6 +692,7 @@
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
+				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
