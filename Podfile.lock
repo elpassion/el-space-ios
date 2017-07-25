@@ -51,6 +51,11 @@ PODS:
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
   - Reveal-SDK (9)
+  - RxAlamofire (3.0.3):
+    - RxAlamofire/Core (= 3.0.3)
+  - RxAlamofire/Core (3.0.3):
+    - Alamofire (~> 4.0)
+    - RxSwift (~> 3.0)
   - RxBlocking (3.6.0):
     - RxSwift (~> 3.6)
   - RxCocoa (3.6.0):
@@ -70,6 +75,7 @@ PODS:
   - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
   - Anchorage (~> 4.0)
   - ELDebate (~> 1.0)
   - GoogleSignIn (~> 4.0)
@@ -79,6 +85,7 @@ DEPENDENCIES:
   - Quick (~> 1.1.0)
   - R.swift (~> 3.3.0)
   - Reveal-SDK
+  - RxAlamofire (~> 3.0)
   - RxBlocking (~> 3.6)
   - RxCocoa (~> 3.6)
   - RxSwift (~> 3.6)
@@ -103,6 +110,7 @@ SPEC CHECKSUMS:
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
+  RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
   RxBlocking: 4c3893acc11d26965f7532fff1e35626a4db6f6c
   RxCocoa: cb865569239ebf1b1434056e5c8859d99dff103a
   RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
@@ -114,6 +122,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: f055fdef33b1d3da84401cc472b8f4445770d885
+PODFILE CHECKSUM: aee7e939d2c3b63e6d10ea1bc0273d455066e289
 
 COCOAPODS: 1.2.1

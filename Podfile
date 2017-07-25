@@ -11,6 +11,11 @@ def pod_core
     pod 'RxSwiftExt', '~> 2.5'
 end
 
+def pod_networking
+  pod 'Alamofire', '~> 4.0'
+  pod 'RxAlamofire', '~> 3.0'
+end
+
 def pod_infrastructure
     pod 'R.swift', '~> 3.3.0'
     pod 'Reveal-SDK', :configurations => ['Debug']
@@ -40,7 +45,7 @@ target 'ELSpace' do
     pod_infrastructure
     pod_el
     pod_ui
-    
+    pod_networking 
     target 'ELSpaceTests' do
         inherit! :search_paths
         pod_tests
