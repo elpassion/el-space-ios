@@ -42,6 +42,7 @@
 		AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48257D1F275D810081B2CC /* ApiClient.swift */; };
 		AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825801F276C260081B2CC /* RequestPerformerSpec.swift */; };
 		AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */; };
+		AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825841F2778D50081B2CC /* ApiClientSpec.swift */; };
 		AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */; };
 		AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */; };
 		AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */; };
@@ -102,6 +103,7 @@
 		AF48257D1F275D810081B2CC /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		AF4825801F276C260081B2CC /* RequestPerformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPerformerSpec.swift; sourceTree = "<group>"; };
 		AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapperSpy.swift; sourceTree = "<group>"; };
+		AF4825841F2778D50081B2CC /* ApiClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientSpec.swift; sourceTree = "<group>"; };
 		AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPerformerSpy.swift; sourceTree = "<group>"; };
 		AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpec.swift; sourceTree = "<group>"; };
 		AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProviderSpy.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				AF4825801F276C260081B2CC /* RequestPerformerSpec.swift */,
+				AF4825841F2778D50081B2CC /* ApiClientSpec.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
+				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,

@@ -25,7 +25,7 @@ class ApiClient: ApiClientProtocol {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "hub.elpassion.com"
-        urlComponents.path = "/v1/api/\(withPath)"
+        urlComponents.path = "/api/v1/\(withPath)"
         return urlComponents
     }
 
