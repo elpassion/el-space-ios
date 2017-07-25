@@ -9,6 +9,7 @@ def pod_core
     pod 'RxSwift', '~> 3.6'
     pod 'RxCocoa', '~> 3.6'
     pod 'RxSwiftExt', '~> 2.5'
+    pod 'ModelMapper', '~> 6.0'
 end
 
 def pod_networking
