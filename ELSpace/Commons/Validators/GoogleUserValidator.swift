@@ -15,7 +15,7 @@ class GoogleUserValidator: GoogleUserValidation {
         setupBindings()
     }
 
-    // MARK: GoogleUserValidation
+    // MARK: - GoogleUserValidation
 
     var error: Observable<Error> {
         return errorSubject.asObservable()
@@ -25,12 +25,12 @@ class GoogleUserValidator: GoogleUserValidation {
         return emailValidator.validateEmail(email: user.profile.email, hostedDomain: hostedDomain)
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private let emailValidator: EmailValidation
     private let errorSubject = PublishSubject<Error>()
 
-    // MARK: Bindings
+    // MARK: - Bindings
 
     private func setupBindings() {
         emailValidator.error

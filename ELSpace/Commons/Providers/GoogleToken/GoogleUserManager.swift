@@ -25,7 +25,7 @@ class GoogleUserManager: GoogleUserManaging {
         setupBindings()
     }
 
-    // MARK: GoogleUserManaging
+    // MARK: - GoogleUserManaging
 
     var error: Observable<Error> {
         return errorSubject.asObservable()
@@ -39,7 +39,7 @@ class GoogleUserManager: GoogleUserManaging {
         googleUserProvider.signIn(on: viewController)
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private let errorSubject = PublishSubject<Error>()
     private let validationSuccessSubject = PublishSubject<GIDGoogleUser>()
@@ -52,7 +52,7 @@ class GoogleUserManager: GoogleUserManaging {
         googleUserProvider.disconnect()
     }
 
-    // MARK: Bindings
+    // MARK: - Bindings
 
     private let disposeBag = DisposeBag()
 
@@ -75,7 +75,7 @@ class GoogleUserManager: GoogleUserManaging {
             }).disposed(by: disposeBag)
     }
 
-    // MARK: Email validation
+    // MARK: - Email validation
 
     private func validateEmail(user: GIDGoogleUser) {
         guard googleUserValidator.validate(user: user, hostedDomain: hostedDomain) else { return }

@@ -14,7 +14,7 @@ class EmailValidator: EmailValidation {
         case incorrectDomain = "Incorrect domain"
     }
 
-    // MARK: EmailValidation
+    // MARK: - EmailValidation
 
     var error: Observable<Error> {
         return errorSubject.asObservable()
@@ -31,7 +31,7 @@ class EmailValidator: EmailValidation {
         return false
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private func isValidEmail(email: String) -> Bool {
         return email.isValidEmail()

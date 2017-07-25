@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         view = LoginView()
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private var loginView: LoginView {
         guard let loginView = view as? LoginView else { fatalError("Expected LoginView but got \(type(of: view))") }

@@ -30,7 +30,7 @@ class AppCoordinator {
         window.makeKeyAndVisible()
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private let window: UIWindow
     fileprivate let navigationController: UINavigationController
@@ -41,7 +41,7 @@ class AppCoordinator {
     fileprivate let screenFactory: ScreenFactoring
     fileprivate let isSigningIn = Variable<Bool>(false)
 
-    // MARK: Bindings
+    // MARK: - Bindings
 
     private func setupBindings() {
         setupLoginViewControllerBindings()

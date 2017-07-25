@@ -25,7 +25,7 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
         configure(with: hostedDomain)
     }
 
-    // MARK: GoogleUserProviding
+    // MARK: - GoogleUserProviding
 
     var user: Observable<GIDGoogleUser> {
         return userSubject.asObservable()
@@ -44,7 +44,7 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
         googleSignIn.disconnect()
     }
 
-    // MARK: GIDSignInDelegate
+    // MARK: - GIDSignInDelegate
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
@@ -54,7 +54,7 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
         }
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private let googleSignIn: GoogleSignInProtocol
     private let userSubject = PublishSubject<GIDGoogleUser>()

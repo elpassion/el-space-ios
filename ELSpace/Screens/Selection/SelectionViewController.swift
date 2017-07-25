@@ -25,7 +25,7 @@ class SelectionViewController: UIViewController {
         view = SelectionView()
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private var selectionView: SelectionView {
         guard let selectionView = view as? SelectionView else { fatalError("Expected SelectionView but got \(type(of: view))") }
