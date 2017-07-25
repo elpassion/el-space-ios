@@ -11,13 +11,17 @@ class ApiClient: ApiClientProtocol {
         self.requestPerformer = requestPerformer
     }
 
-    private let requestPerformer: Requesting
+    // MARK: - ApiClientProtocol
 
     func request(path: String, method: HTTPMethod, parameters: Parameters?) -> Observable<Response> {
         return requestPerformer.request(urlComponents(withPath: path), method: method, parameters: parameters)
     }
 
-    func urlComponents(withPath: String) -> URLComponents {
+    // MARK: - Private
+
+    private let requestPerformer: Requesting
+
+    private func urlComponents(withPath: String) -> URLComponents {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "hub.elpassion.com"

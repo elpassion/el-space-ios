@@ -11,7 +11,7 @@ class RequestPerformer: Requesting {
         self.sessionManager = sessionManager
     }
 
-    private let sessionManager: RequestWrapper
+    // MARK: - Requesting
 
     func request(_ url: URLConvertible,
                  method: HTTPMethod,
@@ -25,5 +25,9 @@ class RequestPerformer: Requesting {
                 return Response(statusCode: response.statusCode, data: data)
             }
     }
+
+    // MARK: - Private
+
+    private let sessionManager: RequestWrapper
 
 }
