@@ -40,6 +40,7 @@
 		AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825781F275AC50081B2CC /* RequestPerformer.swift */; };
 		AF48257C1F275C140081B2CC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48257B1F275C140081B2CC /* Response.swift */; };
 		AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48257D1F275D810081B2CC /* ApiClient.swift */; };
+		AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */; };
 		AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */; };
 		AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */; };
 		AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */; };
@@ -97,6 +98,7 @@
 		AF4825781F275AC50081B2CC /* RequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPerformer.swift; sourceTree = "<group>"; };
 		AF48257B1F275C140081B2CC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AF48257D1F275D810081B2CC /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapperSpy.swift; sourceTree = "<group>"; };
 		AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpec.swift; sourceTree = "<group>"; };
 		AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProviderSpy.swift; sourceTree = "<group>"; };
 		AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 			children = (
 				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
 				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */,
+				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
