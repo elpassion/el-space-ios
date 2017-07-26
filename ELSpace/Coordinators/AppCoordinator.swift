@@ -10,10 +10,6 @@ import RxSwiftExt
 import ELDebate
 import Alamofire
 
-protocol Coordinator {
-    var initialViewController: UIViewController { get }
-}
-
 class AppCoordinator: Coordinator {
 
     init(appCoordinatorAssembly: AppCoordinatorAssembly) {
