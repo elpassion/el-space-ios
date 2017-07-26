@@ -56,6 +56,7 @@
 		AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */; };
 		AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */; };
 		AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */; };
+		AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B621F28A5EC00E0A922 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenSpec.swift; sourceTree = "<group>"; };
 		AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenServiceSpec.swift; sourceTree = "<group>"; };
 		AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientSpy.swift; sourceTree = "<group>"; };
+		AFB47B621F28A5EC00E0A922 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -398,7 +400,6 @@
 			children = (
 				AF4825711F2754930081B2CC /* HubContainer.swift */,
 			);
-			name = Hub;
 			path = Hub;
 			sourceTree = "<group>";
 		};
@@ -408,7 +409,6 @@
 				AF4825751F2757900081B2CC /* ApiClient */,
 				AF4825881F2780510081B2CC /* Services */,
 			);
-			name = Network;
 			path = Network;
 			sourceTree = "<group>";
 		};
@@ -419,7 +419,6 @@
 				AF4825781F275AC50081B2CC /* RequestPerformer.swift */,
 				AF4825761F2758480081B2CC /* RequestWrapper.swift */,
 			);
-			name = ApiClient;
 			path = ApiClient;
 			sourceTree = "<group>";
 		};
@@ -427,8 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				AF48257B1F275C140081B2CC /* Response.swift */,
+				AFB47B621F28A5EC00E0A922 /* ApiError.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -438,7 +437,6 @@
 				AFB47B611F28A4B300E0A922 /* ApiClient */,
 				AFB47B5A1F28969200E0A922 /* Services */,
 			);
-			name = Network;
 			path = Network;
 			sourceTree = "<group>";
 		};
@@ -447,7 +445,6 @@
 			children = (
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
 			);
-			name = Services;
 			path = Services;
 			sourceTree = "<group>";
 		};
@@ -493,7 +490,6 @@
 			children = (
 				AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -502,7 +498,6 @@
 			children = (
 				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
 			);
-			name = Services;
 			path = Services;
 			sourceTree = "<group>";
 		};
@@ -512,7 +507,6 @@
 				AF4825841F2778D50081B2CC /* ApiClientSpec.swift */,
 				AF4825801F276C260081B2CC /* RequestPerformerSpec.swift */,
 			);
-			name = ApiClient;
 			path = ApiClient;
 			sourceTree = "<group>";
 		};
@@ -798,6 +792,7 @@
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
+				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,
 				AF4825721F2754930081B2CC /* HubContainer.swift in Sources */,
