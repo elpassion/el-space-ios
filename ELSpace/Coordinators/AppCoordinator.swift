@@ -12,14 +12,12 @@ import Alamofire
 
 class AppCoordinator: Coordinator {
 
-    init(appCoordinatorAssembly: AppCoordinatorAssembly) {
-        self.appCoordinatorAssembly = appCoordinatorAssembly
-        let loginViewController = appCoordinatorAssembly.loginViewController
+    init(assembly: AppCoordinatorAssembly) {
+        self.assembly = assembly
+        let loginViewController = assembly.loginViewController
         self.navigationController = UINavigationController(rootViewController: loginViewController)
         self.loginViewController = loginViewController
-        self.selectionViewController = appCoordinatorAssembly.selectionViewController
-        self.googleUserManager = appCoordinatorAssembly.googleUserManager
-        self.debateRunner = appCoordinatorAssembly.debateRunner
+        self.googleUserManager = assembly.googleUserManager
         setupBindings()
     }
 
@@ -30,28 +28,38 @@ class AppCoordinator: Coordinator {
     }
 
     // MARK: - Private
-    fileprivate let appCoordinatorAssembly: AppCoordinatorAssembly
-    fileprivate let navigationController: UINavigationController
-    fileprivate let loginViewController: LoginViewController
-    fileprivate let selectionViewController: SelectionViewController
-    fileprivate let googleUserManager: GoogleUserManaging
-    fileprivate let debateRunner: DebateRunning
-    fileprivate let isSigningIn = Variable<Bool>(false)
+
+    private let assembly: AppCoordinatorAssembly
+    private let navigationController: UINavigationController
+    private let loginViewController: LoginViewController
+    private let googleUserManager: GoogleUserManaging
+    private let isSigningIn = Variable<Bool>(false)
+
+    // MARK: - Presenting
+
+    private var presentedCoordinator: Coordinator?
+
+    private func presentSelectionController() {
+        let coordinator = assembly.selectionCoordinator
+        self.presentedCoordinator = coordinator
+        initialViewController.navigationController?.pushViewController(coordinator.initialViewController, animated: true)
+    }
+
+    private func presentError(error: EmailValidator.EmailValidationError) {
+        let alert = assembly.messageAlertController(message: error.rawValue)
+        loginViewController.present(alert, animated: true)
+    }
+
+    // MARK: - Error handling
+
+    private func handleError(error: Error) {
+        guard let error = error as? EmailValidator.EmailValidationError else { return }
+        presentError(error: error)
+    }
 
     // MARK: - Bindings
 
     private func setupBindings() {
-        setupLoginViewControllerBindings()
-        setupSelectionViewControllerBindings()
-    }
-
-    fileprivate let disposeBag = DisposeBag()
-
-}
-
-extension AppCoordinator {
-
-    fileprivate func setupLoginViewControllerBindings() {
         loginViewController.loginButtonTap
             .ignoreWhen { [weak self] in self?.isSigningIn.value == true }
             .subscribe(onNext: { [weak self] in
@@ -73,34 +81,6 @@ extension AppCoordinator {
             }).disposed(by: disposeBag)
     }
 
-    private func presentSelectionController() {
-        loginViewController.navigationController?.pushViewController(selectionViewController, animated: true)
-    }
-
-    private func presentError(error: EmailValidator.EmailValidationError) {
-        let alert = appCoordinatorAssembly.messageAlertController(message: error.rawValue)
-        loginViewController.present(alert, animated: true)
-    }
-
-    private func handleError(error: Error) {
-        guard let error = error as? EmailValidator.EmailValidationError else { return }
-        presentError(error: error)
-    }
-
-}
-
-extension AppCoordinator {
-
-    fileprivate func setupSelectionViewControllerBindings() {
-        selectionViewController.debateButtonTapObservable
-            .subscribe(onNext: { [weak self] in
-                self?.runDebate()
-            }).disposed(by: disposeBag)
-    }
-
-    private func runDebate() {
-        debateRunner.start(in: navigationController, applyingDebateStyle: true)
-        navigationController.setNavigationBarHidden(false, animated: true)
-    }
+    private let disposeBag = DisposeBag()
 
 }

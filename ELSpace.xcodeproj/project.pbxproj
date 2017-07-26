@@ -61,6 +61,9 @@
 		AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */; };
 		AFB47B721F28B95F00E0A922 /* AppCoordinator_Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */; };
 		AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B731F28BACE00E0A922 /* Coordinator.swift */; };
+		AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */; };
+		AFB47B781F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */; };
+		AFB47B7A1F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +136,9 @@
 		AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ServiceFactoring.swift; sourceTree = "<group>"; };
 		AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator_Assembly.swift; sourceTree = "<group>"; };
 		AFB47B731F28BACE00E0A922 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinator.swift; sourceTree = "<group>"; };
+		AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCoordinator_Assembly.swift; sourceTree = "<group>"; };
+		AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorFactoring.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +268,8 @@
 			children = (
 				5034DA0A1EE99E150095D477 /* SelectionView.swift */,
 				5034DA0B1EE99E150095D477 /* SelectionViewController.swift */,
+				AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */,
+				AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -526,6 +534,7 @@
 				AFB47B681F28A6A800E0A922 /* AppContainer.swift */,
 				AFB47B6B1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift */,
 				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
+				AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */,
 			);
 			name = AppContainer;
 			sourceTree = "<group>";
@@ -808,6 +817,7 @@
 				AFB47B721F28B95F00E0A922 /* AppCoordinator_Assembly.swift in Sources */,
 				060A936D1EEF031D00EA3293 /* NSError+Creation.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
+				AFB47B7A1F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
@@ -824,11 +834,13 @@
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
+				AFB47B781F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,
+				AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,9 +3,8 @@ import ELDebate
 
 protocol AppCoordinatorAssembly {
     var loginViewController: LoginViewController { get }
-    var selectionViewController: SelectionViewController { get }
     var googleUserManager: GoogleUserManaging { get }
-    var debateRunner: DebateRunning { get }
+    var selectionCoordinator: Coordinator { get }
     func messageAlertController(message: String) -> UIAlertController
 }
 
@@ -19,16 +18,12 @@ extension AppContainer {
                 return container.loginViewController
             }
 
-            var selectionViewController: SelectionViewController {
-                return container.selectionViewController
-            }
-
             var googleUserManager: GoogleUserManaging {
                 return container.googleUserManager
             }
 
-            var debateRunner: DebateRunning {
-                return container.debateRunner
+            var selectionCoordinator: Coordinator {
+                return container.selectionCoordinator
             }
 
             func messageAlertController(message: String) -> UIAlertController {

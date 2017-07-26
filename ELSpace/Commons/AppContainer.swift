@@ -15,7 +15,7 @@ class AppContainer: AppPresenting {
     // MARK: - AppPresenting
 
     func presentApp() {
-        appCoordinator = AppCoordinator(appCoordinatorAssembly: appCoordinatorAssembly)
+        appCoordinator = AppCoordinator(assembly: appCoordinatorAssembly)
         window = UIWindow(frame: mainScreen.bounds)
         window?.rootViewController = appCoordinator?.initialViewController
         window?.makeKeyAndVisible()
