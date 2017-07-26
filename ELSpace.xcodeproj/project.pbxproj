@@ -65,6 +65,8 @@
 		AFB47B7A1F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */; };
 		AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */; };
 		AFB47B7E1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B7D1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift */; };
+		AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */; };
+		AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,8 @@
 		AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorFactoring.swift; sourceTree = "<group>"; };
 		AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
 		AFB47B7D1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ControllerFactoring.swift; sourceTree = "<group>"; };
+		AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionControllerSpec.swift; sourceTree = "<group>"; };
+		AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenServiceSpy.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -362,6 +366,7 @@
 		8613F3411EEEDE2C0037A787 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				AFB47B7F1F28D35C00E0A922 /* Controllers */,
 				86D9F91C1EEEBB1A00788C1D /* Commons */,
 				AF48257F1F276C110081B2CC /* Network */,
 			);
@@ -484,6 +489,7 @@
 				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */,
 				AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */,
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
+				AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -540,6 +546,14 @@
 				AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */,
 			);
 			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		AFB47B7F1F28D35C00E0A922 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -845,9 +859,11 @@
 			files = (
 				AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
+				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
 				AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
+				AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
