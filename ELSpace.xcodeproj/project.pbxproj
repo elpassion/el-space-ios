@@ -57,6 +57,10 @@
 		AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */; };
 		AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */; };
 		AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B621F28A5EC00E0A922 /* ApiError.swift */; };
+		AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B681F28A6A800E0A922 /* AppContainer.swift */; };
+		AFB47B6C1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B6B1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift */; };
+		AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */; };
+		AFB47B721F28B95F00E0A922 /* AppCoordinator_Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +129,10 @@
 		AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenServiceSpec.swift; sourceTree = "<group>"; };
 		AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientSpy.swift; sourceTree = "<group>"; };
 		AFB47B621F28A5EC00E0A922 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		AFB47B681F28A6A800E0A922 /* AppContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		AFB47B6B1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ScreenFactoring.swift; sourceTree = "<group>"; };
+		AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ServiceFactoring.swift; sourceTree = "<group>"; };
+		AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator_Assembly.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -243,7 +251,7 @@
 		500BC97A1EE7F6F40060D31B /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				500BC97B1EE7F7380060D31B /* AppCoordinator.swift */,
+				AFB47B701F28B94B00E0A922 /* AppCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 		5048F2421EDEE7A2001A487E /* ELSpace */ = {
 			isa = PBXGroup;
 			children = (
+				AFB47B671F28A69C00E0A922 /* Containers */,
 				509E0D781EDEEB2D00414C1D /* Application */,
 				060F4C8E1EE945F200AA2389 /* Commons */,
 				500BC97A1EE7F6F40060D31B /* Coordinators */,
@@ -508,6 +517,34 @@
 				AF4825801F276C260081B2CC /* RequestPerformerSpec.swift */,
 			);
 			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		AFB47B671F28A69C00E0A922 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				AFB47B6F1F28B93B00E0A922 /* AppContainer */,
+			);
+			name = Containers;
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		AFB47B6F1F28B93B00E0A922 /* AppContainer */ = {
+			isa = PBXGroup;
+			children = (
+				AFB47B681F28A6A800E0A922 /* AppContainer.swift */,
+				AFB47B6B1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift */,
+				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
+			);
+			name = AppContainer;
+			sourceTree = "<group>";
+		};
+		AFB47B701F28B94B00E0A922 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				500BC97B1EE7F7380060D31B /* AppCoordinator.swift */,
+				AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */,
+			);
+			name = AppCoordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -776,12 +813,14 @@
 				060F4C931EE9463100AA2389 /* ScreenFactory.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
 				060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */,
+				AFB47B721F28B95F00E0A922 /* AppCoordinator_Assembly.swift in Sources */,
 				060A936D1EEF031D00EA3293 /* NSError+Creation.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
+				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
 				AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */,
 				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
@@ -789,9 +828,11 @@
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,
 				50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */,
+				AFB47B6C1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift in Sources */,
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
+				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,

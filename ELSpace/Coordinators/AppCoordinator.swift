@@ -8,37 +8,38 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 import ELDebate
+import Alamofire
 
-class AppCoordinator {
+protocol Coordinator {
+    var initialViewController: UIViewController { get }
+}
 
-    init(window: UIWindow,
-         screenFactory: ScreenFactoring = ScreenFactory(),
-         googleUserManager: GoogleUserManaging = GoogleUserManager(),
-         debateRunner: DebateRunning = DebateRunner()) {
-        self.window = window
-        self.loginViewController = screenFactory.loginViewController()
-        self.navigationController = screenFactory.navigationController(withRoot: loginViewController)
-        self.selectionViewController = screenFactory.selectionViewController()
-        self.screenFactory = screenFactory
-        self.debateRunner = debateRunner
-        self.googleUserManager = googleUserManager
+class AppCoordinator: Coordinator {
+
+    init(appCoordinatorAssembly: AppCoordinatorAssembly) {
+        self.appCoordinatorAssembly = appCoordinatorAssembly
+        let loginViewController = appCoordinatorAssembly.loginViewController
+        self.navigationController = UINavigationController(rootViewController: loginViewController)
+        self.loginViewController = loginViewController
+        self.selectionViewController = appCoordinatorAssembly.selectionViewController
+        self.googleUserManager = appCoordinatorAssembly.googleUserManager
+        self.debateRunner = appCoordinatorAssembly.debateRunner
         setupBindings()
     }
 
-    func present() {
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+    // MARK: - Coordinator
+
+    var initialViewController: UIViewController {
+        return navigationController
     }
 
     // MARK: - Private
-
-    private let window: UIWindow
+    fileprivate let appCoordinatorAssembly: AppCoordinatorAssembly
     fileprivate let navigationController: UINavigationController
     fileprivate let loginViewController: LoginViewController
     fileprivate let selectionViewController: SelectionViewController
     fileprivate let googleUserManager: GoogleUserManaging
     fileprivate let debateRunner: DebateRunning
-    fileprivate let screenFactory: ScreenFactoring
     fileprivate let isSigningIn = Variable<Bool>(false)
 
     // MARK: - Bindings
@@ -70,7 +71,7 @@ extension AppCoordinator {
             }).disposed(by: disposeBag)
 
         googleUserManager.validationSuccess
-            .subscribe(onNext: { [weak self] _ in
+            .subscribe(onNext: { [weak self] user in
                 self?.isSigningIn.value = false
                 self?.presentSelectionController()
             }).disposed(by: disposeBag)
@@ -81,7 +82,7 @@ extension AppCoordinator {
     }
 
     private func presentError(error: EmailValidator.EmailValidationError) {
-        let alert = screenFactory.messageAlertController(message: error.rawValue)
+        let alert = appCoordinatorAssembly.messageAlertController(message: error.rawValue)
         loginViewController.present(alert, animated: true)
     }
 

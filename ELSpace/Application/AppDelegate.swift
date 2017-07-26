@@ -9,13 +9,11 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    fileprivate var appCoordinator: AppCoordinator?
+    private var appContainer: AppPresenting?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        appCoordinator = AppCoordinator(window: window)
-        appCoordinator?.present()
-
+        appContainer = AppContainer()
+        appContainer?.presentApp()
         return true
     }
 
