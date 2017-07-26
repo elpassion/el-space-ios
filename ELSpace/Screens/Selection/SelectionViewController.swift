@@ -8,11 +8,11 @@ import RxSwift
 
 class SelectionViewController: UIViewController {
 
-    var debateButtonTapObservable: Observable<Void> {
+    var openDebate: Observable<Void> {
         return selectionView.debateButton.rx.tap.asObservable()
     }
 
-    var hubButtonTapObservable: Observable<Void> {
+    var openHub: Observable<Void> {
         return selectionView.hubButton.rx.tap.asObservable()
     }
 

@@ -42,12 +42,12 @@ class SelectionCoordinator: Coordinator {
     // MARK: - Bindings
 
     private func setupBindings() {
-        selectionViewController.debateButtonTapObservable
+        selectionViewController.openDebate
             .subscribe(onNext: { [weak self] in
                 self?.runDebate()
             }).disposed(by: disposeBag)
 
-        selectionViewController.hubButtonTapObservable
+        selectionViewController.openHub
             .subscribe(onNext: { [weak self] in
                 self?.signInToHub()
             }).disposed(by: disposeBag)
@@ -55,7 +55,7 @@ class SelectionCoordinator: Coordinator {
 
     private func signInToHub() {
         selectionController.signInToHub(success: { hubToken in
-            print("HUB TOKEN \(hubToken)")
+            print("HUB TOKEN: \(hubToken)")
         }) { [weak self] error in
             self?.presentError(error: error)
         }
