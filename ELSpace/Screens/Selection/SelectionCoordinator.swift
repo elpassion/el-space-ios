@@ -10,6 +10,7 @@ class SelectionCoordinator: Coordinator {
         self.selectionViewController = assembly.selectionViewController
         self.debateRunner = assembly.debateRunner
         self.selectionController = assembly.selectionController(googleIdToken: googleIdToken)
+        setupBindings()
     }
 
     // MARK: - Coordinator
@@ -45,6 +46,19 @@ class SelectionCoordinator: Coordinator {
             .subscribe(onNext: { [weak self] in
                 self?.runDebate()
             }).disposed(by: disposeBag)
+
+        selectionViewController.hubButtonTapObservable
+            .subscribe(onNext: { [weak self] in
+                self?.signInToHub()
+            }).disposed(by: disposeBag)
+    }
+
+    private func signInToHub() {
+        selectionController.signInToHub(success: { hubToken in
+            print("HUB TOKEN \(hubToken)")
+        }) { [weak self] error in
+            self?.presentError(error: error)
+        }
     }
 
     private let disposeBag = DisposeBag()
