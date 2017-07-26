@@ -12,6 +12,10 @@ class SelectionViewController: UIViewController {
         return selectionView.debateButton.rx.tap.asObservable()
     }
 
+    var hubButtonTapObservable: Observable<Void> {
+        return selectionView.hubButton.rx.tap.asObservable()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
