@@ -260,10 +260,10 @@
 			isa = PBXGroup;
 			children = (
 				AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */,
+				AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */,
 				AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */,
 				5034DA0A1EE99E150095D477 /* SelectionView.swift */,
 				5034DA0B1EE99E150095D477 /* SelectionViewController.swift */,
-				AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -525,10 +525,10 @@
 			isa = PBXGroup;
 			children = (
 				AFB47B681F28A6A800E0A922 /* AppContainer.swift */,
+				AFB47B7D1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift */,
 				AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */,
 				AFB47B6B1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift */,
 				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
-				AFB47B7D1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift */,
 			);
 			path = AppContainer;
 			sourceTree = "<group>";
