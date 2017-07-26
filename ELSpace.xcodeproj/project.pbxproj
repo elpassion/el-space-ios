@@ -11,7 +11,6 @@
 		060A936D1EEF031D00EA3293 /* NSError+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936C1EEF031D00EA3293 /* NSError+Creation.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
 		060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */; };
-		060F4C931EE9463100AA2389 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C921EE9463100AA2389 /* ScreenFactory.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		06BE2E6D1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
@@ -81,7 +80,6 @@
 		060A936C1EEF031D00EA3293 /* NSError+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Creation.swift"; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
-		060F4C921EE9463100AA2389 /* ScreenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
 		5002D5851EE84D18004C0B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				060A93691EEF01B900EA3293 /* Extensions */,
-				060F4C901EE9460600AA2389 /* Factories */,
 				060F4C8F1EE945FB00AA2389 /* Providers */,
 				AF4AD7D31F20D74D005B5524 /* Validators */,
 			);
@@ -192,14 +189,6 @@
 				060F4C911EE9461000AA2389 /* GoogleToken */,
 			);
 			path = Providers;
-			sourceTree = "<group>";
-		};
-		060F4C901EE9460600AA2389 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				060F4C921EE9463100AA2389 /* ScreenFactory.swift */,
-			);
-			path = Factories;
 			sourceTree = "<group>";
 		};
 		060F4C911EE9461000AA2389 /* GoogleToken */ = {
@@ -524,7 +513,6 @@
 			children = (
 				AFB47B6F1F28B93B00E0A922 /* AppContainer */,
 			);
-			name = Containers;
 			path = Containers;
 			sourceTree = "<group>";
 		};
@@ -536,7 +524,6 @@
 				AFB47B6B1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift */,
 				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
 			);
-			name = AppContainer;
 			path = AppContainer;
 			sourceTree = "<group>";
 		};
@@ -546,7 +533,6 @@
 				500BC97B1EE7F7380060D31B /* AppCoordinator.swift */,
 				AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */,
 			);
-			name = AppCoordinator;
 			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
@@ -813,7 +799,6 @@
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
-				060F4C931EE9463100AA2389 /* ScreenFactory.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
 				060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */,
 				AFB47B721F28B95F00E0A922 /* AppCoordinator_Assembly.swift in Sources */,
