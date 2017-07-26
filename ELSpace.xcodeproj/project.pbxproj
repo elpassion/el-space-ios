@@ -36,6 +36,7 @@
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
 		86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */; };
 		AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48256C1F27513F0081B2CC /* Localizable.swift */; };
+		AF4825721F2754930081B2CC /* HubContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825711F2754930081B2CC /* HubContainer.swift */; };
 		AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825761F2758480081B2CC /* RequestWrapper.swift */; };
 		AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825781F275AC50081B2CC /* RequestPerformer.swift */; };
 		AF48257C1F275C140081B2CC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48257B1F275C140081B2CC /* Response.swift */; };
@@ -44,6 +45,7 @@
 		AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */; };
 		AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825841F2778D50081B2CC /* ApiClientSpec.swift */; };
 		AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */; };
+		AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825891F27813C0081B2CC /* HubTokenService.swift */; };
 		AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */; };
 		AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */; };
 		AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */; };
@@ -52,6 +54,8 @@
 		AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */; };
 		AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B551F288DF400E0A922 /* Data_HubToken.swift */; };
 		AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */; };
+		AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */; };
+		AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,7 @@
 		86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInMock.swift; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF48256C1F27513F0081B2CC /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		AF4825711F2754930081B2CC /* HubContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubContainer.swift; sourceTree = "<group>"; };
 		AF4825761F2758480081B2CC /* RequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
 		AF4825781F275AC50081B2CC /* RequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPerformer.swift; sourceTree = "<group>"; };
 		AF48257B1F275C140081B2CC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapperSpy.swift; sourceTree = "<group>"; };
 		AF4825841F2778D50081B2CC /* ApiClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientSpec.swift; sourceTree = "<group>"; };
 		AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPerformerSpy.swift; sourceTree = "<group>"; };
+		AF4825891F27813C0081B2CC /* HubTokenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenService.swift; sourceTree = "<group>"; };
 		AF4AD7C71F20B918005B5524 /* GoogleUserManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpec.swift; sourceTree = "<group>"; };
 		AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProviderSpy.swift; sourceTree = "<group>"; };
 		AF4AD7D41F20D75C005B5524 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 		AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserValidatorSpy.swift; sourceTree = "<group>"; };
 		AFB47B551F288DF400E0A922 /* Data_HubToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_HubToken.swift; sourceTree = "<group>"; };
 		AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenSpec.swift; sourceTree = "<group>"; };
+		AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenServiceSpec.swift; sourceTree = "<group>"; };
+		AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientSpy.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -304,6 +312,7 @@
 		509E0D761EDEE9CE00414C1D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AF4825701F2754800081B2CC /* Hub */,
 				50902FCA1EE5AD7300D43254 /* BaseViews */,
 				509E0D771EDEEA0600414C1D /* Login */,
 				5034DA091EE99E150095D477 /* Selection */,
@@ -384,9 +393,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AF4825701F2754800081B2CC /* Hub */ = {
+			isa = PBXGroup;
+			children = (
+				AF4825711F2754930081B2CC /* HubContainer.swift */,
+			);
+			name = Hub;
+			sourceTree = "<group>";
+		};
 		AF4825741F27577C0081B2CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AF4825881F2780510081B2CC /* Services */,
 				AF4825751F2757900081B2CC /* ApiClient */,
 			);
 			name = Network;
@@ -413,10 +431,19 @@
 		AF48257F1F276C110081B2CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AFB47B5A1F28969200E0A922 /* Services */,
 				AF4825801F276C260081B2CC /* RequestPerformerSpec.swift */,
 				AF4825841F2778D50081B2CC /* ApiClientSpec.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		AF4825881F2780510081B2CC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		AF4AD7D31F20D74D005B5524 /* Validators */ = {
@@ -451,6 +478,7 @@
 				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */,
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */,
+				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -461,6 +489,14 @@
 				AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		AFB47B5A1F28969200E0A922 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,6 +760,7 @@
 			files = (
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
+				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				060F4C931EE9463100AA2389 /* ScreenFactory.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
@@ -746,6 +783,7 @@
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,
+				AF4825721F2754930081B2CC /* HubContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,9 +799,11 @@
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
+				AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */,
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
+				AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
