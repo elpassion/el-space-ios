@@ -8,7 +8,7 @@ protocol SelectionControllerSignIn {
 
 class SelectionController: SelectionControllerSignIn {
 
-    init(hubTokenService: HubTokenService, googleIdToken: String) {
+    init(hubTokenService: HubTokenServiceProtocol, googleIdToken: String) {
         self.hubTokenService = hubTokenService
     }
 
@@ -27,6 +27,6 @@ class SelectionController: SelectionControllerSignIn {
 
     // MARK: - Private
 
-    private let hubTokenService: HubTokenService
+    private let hubTokenService: HubTokenServiceProtocol
 
 }

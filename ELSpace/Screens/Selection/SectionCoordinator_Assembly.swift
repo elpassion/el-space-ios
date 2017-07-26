@@ -4,6 +4,7 @@ import ELDebate
 protocol SelectionCoordinatorAssembly {
     var selectionViewController: SelectionViewController { get }
     var debateRunner: DebateRunning { get }
+    func selectionController(googleIdToken: String) -> SelectionControllerSignIn
     func messageAlertController(message: String) -> UIAlertController
 }
 
@@ -19,6 +20,10 @@ extension AppContainer {
 
             var debateRunner: DebateRunning {
                 return container.debateRunner
+            }
+
+            func selectionController(googleIdToken: String) -> SelectionControllerSignIn {
+                return container.selectionController(googleIdToken: googleIdToken)
             }
 
             func messageAlertController(message: String) -> UIAlertController {

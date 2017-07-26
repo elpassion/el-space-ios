@@ -1,11 +1,11 @@
 protocol CoordinatorFactoring {
-    var selectionCoordinator: Coordinator { get }
+    func selectionCoordinator(googleIdToken: String) -> Coordinator
 }
 
 extension AppContainer: CoordinatorFactoring {
 
-    var selectionCoordinator: Coordinator {
-        return SelectionCoordinator(assembly: selectionCoordinatorAssembly)
+    func selectionCoordinator(googleIdToken: String) -> Coordinator {
+        return SelectionCoordinator(assembly: selectionCoordinatorAssembly, googleIdToken: googleIdToken)
     }
 
 }

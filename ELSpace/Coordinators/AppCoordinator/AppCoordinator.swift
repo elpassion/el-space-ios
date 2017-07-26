@@ -39,8 +39,8 @@ class AppCoordinator: Coordinator {
 
     private var presentedCoordinator: Coordinator?
 
-    private func presentSelectionController() {
-        let coordinator = assembly.selectionCoordinator
+    private func presentSelectionController(googleTokenId: String) {
+        let coordinator = assembly.selectionCoordinator(googleIdToken: googleTokenId)
         self.presentedCoordinator = coordinator
         initialViewController.navigationController?.pushViewController(coordinator.initialViewController, animated: true)
     }
@@ -77,7 +77,7 @@ class AppCoordinator: Coordinator {
         googleUserManager.validationSuccess
             .subscribe(onNext: { [weak self] user in
                 self?.isSigningIn.value = false
-                self?.presentSelectionController()
+                self?.presentSelectionController(googleTokenId: user.authentication.idToken)
             }).disposed(by: disposeBag)
     }
 

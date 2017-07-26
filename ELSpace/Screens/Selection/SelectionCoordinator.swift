@@ -4,10 +4,12 @@ import RxSwift
 
 class SelectionCoordinator: Coordinator {
 
-    init(assembly: SelectionCoordinatorAssembly) {
+    init(assembly: SelectionCoordinatorAssembly,
+         googleIdToken: String) {
         self.assembly = assembly
         self.selectionViewController = assembly.selectionViewController
         self.debateRunner = assembly.debateRunner
+        self.selectionController = assembly.selectionController(googleIdToken: googleIdToken)
     }
 
     // MARK: - Coordinator
@@ -21,6 +23,7 @@ class SelectionCoordinator: Coordinator {
     private let assembly: SelectionCoordinatorAssembly
     private let selectionViewController: SelectionViewController
     private let debateRunner: DebateRunning
+    private let selectionController: SelectionControllerSignIn
 
     // MARK: Presenting
 

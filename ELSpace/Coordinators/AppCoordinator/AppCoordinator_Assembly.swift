@@ -4,7 +4,7 @@ import ELDebate
 protocol AppCoordinatorAssembly {
     var loginViewController: LoginViewController { get }
     var googleUserManager: GoogleUserManaging { get }
-    var selectionCoordinator: Coordinator { get }
+    func selectionCoordinator(googleIdToken: String) -> Coordinator
     func messageAlertController(message: String) -> UIAlertController
 }
 
@@ -22,8 +22,8 @@ extension AppContainer {
                 return container.googleUserManager
             }
 
-            var selectionCoordinator: Coordinator {
-                return container.selectionCoordinator
+            func selectionCoordinator(googleIdToken: String) -> Coordinator {
+                return container.selectionCoordinator(googleIdToken: googleIdToken)
             }
 
             func messageAlertController(message: String) -> UIAlertController {
