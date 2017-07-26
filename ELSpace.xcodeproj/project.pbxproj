@@ -266,10 +266,10 @@
 		5034DA091EE99E150095D477 /* Selection */ = {
 			isa = PBXGroup;
 			children = (
+				AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */,
+				AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */,
 				5034DA0A1EE99E150095D477 /* SelectionView.swift */,
 				5034DA0B1EE99E150095D477 /* SelectionViewController.swift */,
-				AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */,
-				AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -297,9 +297,9 @@
 		5048F2421EDEE7A2001A487E /* ELSpace */ = {
 			isa = PBXGroup;
 			children = (
-				AFB47B671F28A69C00E0A922 /* Containers */,
 				509E0D781EDEEB2D00414C1D /* Application */,
 				060F4C8E1EE945F200AA2389 /* Commons */,
+				AFB47B671F28A69C00E0A922 /* Containers */,
 				500BC97A1EE7F6F40060D31B /* Coordinators */,
 				AF48257A1F275C060081B2CC /* Models */,
 				AF4825741F27577C0081B2CC /* Network */,
@@ -434,8 +434,8 @@
 		AF48257A1F275C060081B2CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AF48257B1F275C140081B2CC /* Response.swift */,
 				AFB47B621F28A5EC00E0A922 /* ApiError.swift */,
+				AF48257B1F275C140081B2CC /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -525,18 +525,19 @@
 				AFB47B6F1F28B93B00E0A922 /* AppContainer */,
 			);
 			name = Containers;
-			path = Commons;
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		AFB47B6F1F28B93B00E0A922 /* AppContainer */ = {
 			isa = PBXGroup;
 			children = (
 				AFB47B681F28A6A800E0A922 /* AppContainer.swift */,
+				AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */,
 				AFB47B6B1F28B8CC00E0A922 /* AppContainer_ScreenFactoring.swift */,
 				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
-				AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */,
 			);
 			name = AppContainer;
+			path = AppContainer;
 			sourceTree = "<group>";
 		};
 		AFB47B701F28B94B00E0A922 /* AppCoordinator */ = {
@@ -546,6 +547,7 @@
 				AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */,
 			);
 			name = AppCoordinator;
+			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
