@@ -10,7 +10,11 @@ import RxSwiftExt
 import ELDebate
 import Alamofire
 
-class AppCoordinator: Coordinator {
+protocol RootCoordinator {
+    var rootViewController: UIViewController { get }
+}
+
+class AppCoordinator: Coordinator, RootCoordinator {
 
     init(assembly: AppCoordinatorAssembly) {
         self.assembly = assembly
@@ -23,8 +27,12 @@ class AppCoordinator: Coordinator {
 
     // MARK: - Coordinator
 
-    var initialViewController: UIViewController {
+    var rootViewController: UIViewController {
         return navigationController
+    }
+
+    var initialViewController: UIViewController {
+        return loginViewController
     }
 
     // MARK: - Private
