@@ -33,6 +33,11 @@ class SelectionCoordinator: Coordinator {
         navigationController.setNavigationBarHidden(false, animated: true)
     }
 
+    private func presentError(error: Error) {
+        let alertController = assembly.messageAlertController(message: error.localizedDescription)
+        initialViewController.present(alertController, animated: true, completion: nil)
+    }
+
     // MARK: - Bindings
 
     private func setupBindings() {
