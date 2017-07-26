@@ -60,7 +60,7 @@
 		AFB47B721F28B95F00E0A922 /* AppCoordinator_Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */; };
 		AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B731F28BACE00E0A922 /* Coordinator.swift */; };
 		AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */; };
-		AFB47B781F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */; };
+		AFB47B781F28BB9B00E0A922 /* SelectionCoordinator_Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B771F28BB9B00E0A922 /* SelectionCoordinator_Assembly.swift */; };
 		AFB47B7A1F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */; };
 		AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */; };
 		AFB47B7E1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B7D1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift */; };
@@ -138,7 +138,7 @@
 		AFB47B711F28B95F00E0A922 /* AppCoordinator_Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator_Assembly.swift; sourceTree = "<group>"; };
 		AFB47B731F28BACE00E0A922 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinator.swift; sourceTree = "<group>"; };
-		AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCoordinator_Assembly.swift; sourceTree = "<group>"; };
+		AFB47B771F28BB9B00E0A922 /* SelectionCoordinator_Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinator_Assembly.swift; sourceTree = "<group>"; };
 		AFB47B791F28BD2500E0A922 /* AppContainer_CoordinatorFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorFactoring.swift; sourceTree = "<group>"; };
 		AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
 		AFB47B7D1F28C76500E0A922 /* AppContainer_ControllerFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ControllerFactoring.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 		5034DA091EE99E150095D477 /* Selection */ = {
 			isa = PBXGroup;
 			children = (
-				AFB47B771F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift */,
+				AFB47B771F28BB9B00E0A922 /* SelectionCoordinator_Assembly.swift */,
 				AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */,
 				AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */,
 				5034DA0A1EE99E150095D477 /* SelectionView.swift */,
@@ -842,7 +842,7 @@
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
-				AFB47B781F28BB9B00E0A922 /* SectionCoordinator_Assembly.swift in Sources */,
+				AFB47B781F28BB9B00E0A922 /* SelectionCoordinator_Assembly.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
