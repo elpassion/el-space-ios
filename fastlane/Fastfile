@@ -69,7 +69,7 @@ platform :ios do
       gym(scheme: "ELSpace", clean: true)
 
       # upload to TestFlight
-      pilot
+      pilot(skip_waiting_for_build_processing: true)
     end
   end  
 

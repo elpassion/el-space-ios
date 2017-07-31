@@ -9,6 +9,12 @@ def pod_core
     pod 'RxSwift', '~> 3.6'
     pod 'RxCocoa', '~> 3.6'
     pod 'RxSwiftExt', '~> 2.5'
+    pod 'ModelMapper', '~> 6.0'
+end
+
+def pod_networking
+  pod 'Alamofire', '~> 4.0'
+  pod 'RxAlamofire', '~> 3.0'
 end
 
 def pod_infrastructure
@@ -40,7 +46,7 @@ target 'ELSpace' do
     pod_infrastructure
     pod_el
     pod_ui
-    
+    pod_networking 
     target 'ELSpaceTests' do
         inherit! :search_paths
         pod_tests

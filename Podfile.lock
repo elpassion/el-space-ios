@@ -33,6 +33,7 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.11)
   - HexColors (5.0.1)
   - KeychainAccess (3.0.2)
+  - ModelMapper (6.0.0)
   - Nimble (7.0.1)
   - Pastel (0.3.0)
   - PromiseKit (4.2.2):
@@ -51,6 +52,11 @@ PODS:
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
   - Reveal-SDK (9)
+  - RxAlamofire (3.0.3):
+    - RxAlamofire/Core (= 3.0.3)
+  - RxAlamofire/Core (3.0.3):
+    - Alamofire (~> 4.0)
+    - RxSwift (~> 3.0)
   - RxBlocking (3.6.0):
     - RxSwift (~> 3.6)
   - RxCocoa (3.6.0):
@@ -70,15 +76,18 @@ PODS:
   - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
   - Anchorage (~> 4.0)
   - ELDebate (~> 1.0)
   - GoogleSignIn (~> 4.0)
   - HexColors (~> 5.0.1)
+  - ModelMapper (~> 6.0)
   - Nimble (~> 7.0.0)
   - Pastel (~> 0.3.0)
   - Quick (~> 1.1.0)
   - R.swift (~> 3.3.0)
   - Reveal-SDK
+  - RxAlamofire (~> 3.0)
   - RxBlocking (~> 3.6)
   - RxCocoa (~> 3.6)
   - RxSwift (~> 3.6)
@@ -96,6 +105,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
+  ModelMapper: 3596a82f26c43491f6a8d3a00bcdba6ba0e62a93
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
@@ -103,6 +113,7 @@ SPEC CHECKSUMS:
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
+  RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
   RxBlocking: 4c3893acc11d26965f7532fff1e35626a4db6f6c
   RxCocoa: cb865569239ebf1b1434056e5c8859d99dff103a
   RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
@@ -114,6 +125,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: f055fdef33b1d3da84401cc472b8f4445770d885
+PODFILE CHECKSUM: e9b88e251f443d1653bba76f4d9edcc8a61a43ee
 
 COCOAPODS: 1.2.1

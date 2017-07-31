@@ -12,6 +12,8 @@ class GoogleUserProviderSpy: GoogleUserProviding {
 
     var resultUser: GIDGoogleUser?
 
+    // MARK: - GoogleUserProviding
+
     var error: Observable<Error> {
         return Observable.empty()
     }

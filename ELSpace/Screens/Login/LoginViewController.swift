@@ -1,17 +1,30 @@
-//
-//  Created by Michał Czerniakowski on 31.05.2017.
-//  Copyright © 2017 El Passion. All rights reserved.
-//
-
 import UIKit
-import HexColors
-import Anchorage
 import RxSwift
+import RxSwiftExt
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+protocol LoginViewControlling {
+    var googleTooken: ((String) -> Void)? { get set }
+}
 
-    var loginButtonTap: Observable<Void> {
-        return loginView.loginButton.rx.tap.asObservable()
+class LoginViewController: UIViewController, LoginViewControlling {
+
+    var googleTooken: ((String) -> Void)?
+
+    init(googleUserManager: GoogleUserManaging,
+         alertFactory: AlertCreation,
+         viewControllerPresenter: ViewControllerPresenting,
+         googleUserMapper: GoogleUserMapping) {
+        self.googleUserManager = googleUserManager
+        self.alertFactory = alertFactory
+        self.viewControllerPresenter = viewControllerPresenter
+        self.googleUserMapper = googleUserMapper
+        super.init(nibName: nil, bundle: nil)
+        setupBindings()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,11 +40,65 @@ class LoginViewController: UIViewController {
         view = LoginView()
     }
 
-    // MARK: Private
-
-    private var loginView: LoginView {
+    var loginView: LoginView {
         guard let loginView = view as? LoginView else { fatalError("Expected LoginView but got \(type(of: view))") }
         return loginView
+    }
+
+    // MARK: - Private
+
+    private let googleUserManager: GoogleUserManaging
+    private let alertFactory: AlertCreation
+    private let viewControllerPresenter: ViewControllerPresenting
+    private let googleUserMapper: GoogleUserMapping
+    private let isSigningIn = Variable<Bool>(false)
+
+    // MARK: - Bindings
+
+    private func setupBindings() {
+        loginView.loginButton.rx.tap
+            .ignoreWhen { [weak self] in self?.isSigningIn.value == true }
+            .subscribe(onNext: { [weak self] in
+                self?.isSigningIn.value = true
+                self?.signIn()
+            }).disposed(by: disposeBag)
+
+        googleUserManager.error
+            .subscribe(onNext: { [weak self] error in
+                self?.isSigningIn.value = false
+                self?.handleError(error: error)
+            }).disposed(by: disposeBag)
+
+        googleUserManager.validationSuccess
+            .subscribe(onNext: { [weak self] user in
+                self?.isSigningIn.value = false
+                self?.unwrapToken(user: user)
+            }).disposed(by: disposeBag)
+    }
+
+    private let disposeBag = DisposeBag()
+
+    // MARK: - Error handling
+
+    private func handleError(error: Error) {
+        guard let error = error as? EmailValidator.EmailValidationError else { return }
+        present(error: error, on: self)
+    }
+
+    private func present(error: EmailValidator.EmailValidationError, on viewController: UIViewController) {
+        let alert = alertFactory.messageAlertController(with: "Error", message: error.rawValue)
+        viewControllerPresenter.present(viewController: alert, on: self)
+    }
+
+    // MARK: - Helpers
+
+    private func unwrapToken(user: GIDGoogleUser) {
+        let tokenId = googleUserMapper.getIdToken(user: user)
+        googleTooken?(tokenId)
+    }
+
+    private func signIn() {
+        googleUserManager.signIn(on: self)
     }
 
 }
