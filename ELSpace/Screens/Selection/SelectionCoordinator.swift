@@ -40,6 +40,11 @@ class SelectionCoordinator: Coordinator {
             .subscribe(onNext: { token in
                 print(token)
             }).disposed(by: disposeBag)
+
+        selectionViewController.openDebate
+            .subscribe(onNext: { [weak self] in
+                self?.runDebate()
+            }).disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
