@@ -12,10 +12,14 @@ class UIAlertControllerCreationSpec: QuickSpec {
 
             context("when create alert controller") {
                 beforeEach {
-                    sut = UIAlertController.messageAlertViewController(with: "fake_message")
+                    sut = UIAlertController.simpleAlertViewController(with: "fake_title", message: "fake_message")
                 }
 
                 describe("alert controller") {
+                    it("should have correct title") {
+                        expect(sut.title).to(equal("fake_title"))
+                    }
+
                     it("should have correct message") {
                         expect(sut.message).to(equal("fake_message"))
                     }
