@@ -8,6 +8,7 @@ import RxSwift
 
 protocol SelectionViewControlling {
     var openHubWithToken: Observable<String> { get }
+    var openDebate: Observable<Void> { get }
 }
 
 class SelectionViewController: UIViewController, SelectionViewControlling {
@@ -48,6 +49,10 @@ class SelectionViewController: UIViewController, SelectionViewControlling {
 
     var openHubWithToken: Observable<String> {
         return openHubWithTokenSubject.asObservable()
+    }
+
+    var openDebate: Observable<Void> {
+        return selectionView.debateButton.rx.tap.asObservable()
     }
 
     // MARK: - Private
