@@ -19,7 +19,7 @@
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
 		47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */; };
 		47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */; };
-		47CA94A01F2A2AA300D5A9B7 /* AlertPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* AlertPresenterSpy.swift */; };
+		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
@@ -100,7 +100,7 @@
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSpec.swift; sourceTree = "<group>"; };
 		47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryFake.swift; sourceTree = "<group>"; };
-		47CA949F1F2A2AA300D5A9B7 /* AlertPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenterSpy.swift; sourceTree = "<group>"; };
+		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
@@ -552,7 +552,7 @@
 		AF9B35C11F20F5920007F453 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
-				47CA949F1F2A2AA300D5A9B7 /* AlertPresenterSpy.swift */,
+				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
 				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
 				47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */,
 				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
@@ -940,7 +940,7 @@
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
-				47CA94A01F2A2AA300D5A9B7 /* AlertPresenterSpy.swift in Sources */,
+				47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */,
 				47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
 				47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */,
