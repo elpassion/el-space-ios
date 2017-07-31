@@ -22,25 +22,29 @@ class HubTokenSpec: QuickSpec {
             }
 
             context("when data is NOT a json") {
+                var testFunc: (() throws -> Void)!
+
                 beforeEach {
                     jsonData = Data()
+                    testFunc = { _ = jsonData.hubToken }
                 }
 
                 it("should throw fatalError") {
-                    let errorFunc: () throws -> Void = { _ = jsonData.hubToken }
-                    expect { try? errorFunc() }.to(throwAssertion())
+                    expect { try? testFunc() }.to(throwAssertion())
                 }
             }
 
             context("when dict key is wrong") {
+                var testFunc: (() throws -> Void)!
+
                 beforeEach {
                     let dict = ["wrong key": "fake_token"]
                     jsonData = try! JSONSerialization.data(withJSONObject: dict, options: [])
+                    testFunc = { _ = jsonData.hubToken }
                 }
 
                 it("should throw fatalError") {
-                    let errorFunc: () throws -> Void = { _ = jsonData.hubToken }
-                    expect { try? errorFunc() }.to(throwAssertion())
+                    expect { try? testFunc() }.to(throwAssertion())
                 }
             }
         }

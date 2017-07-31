@@ -22,9 +22,14 @@ class LoginViewControllerSpec: QuickSpec {
             }
 
             context("when try to initialize with init coder") {
+                var testFunc: (() throws -> Void)!
+
+                beforeEach {
+                    testFunc = { sut = LoginViewController(coder: NSCoder()) }
+                }
+
                 it("should throw fatalError") {
-                    let errorFunc: () throws -> Void = { sut = LoginViewController(coder: NSCoder()) }
-                    expect(try? errorFunc() ).to(throwAssertion())
+                    expect(try? testFunc() ).to(throwAssertion())
                 }
             }
 
