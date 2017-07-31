@@ -10,12 +10,13 @@ import GoogleSignIn
 
 class GoogleSignInMock: GoogleSignInProtocol {
 
-    weak var delegate: GIDSignInDelegate!
-
-    weak var uiDelegate: GIDSignInUIDelegate!
-
     var signInCalled = false
     var disconnectCalled = false
+
+    // MARK: - GoogleSignInProtocol
+
+    weak var delegate: GIDSignInDelegate!
+    weak var uiDelegate: GIDSignInUIDelegate!
 
     func signIn() {
         signInCalled = true

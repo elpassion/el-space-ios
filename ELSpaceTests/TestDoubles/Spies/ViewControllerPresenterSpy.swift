@@ -8,6 +8,8 @@ class ViewControllerPresenterSpy: ViewControllerPresenting {
     private(set) var presentedViewController: UIViewController?
     private(set) var pushedViewController: UIViewController?
 
+    // MARK: - ViewControllerPresenting
+
     func present(viewController: UIViewController, on currentViewController: UIViewController) {
         self.presentedViewController = viewController
         self.presenter = currentViewController

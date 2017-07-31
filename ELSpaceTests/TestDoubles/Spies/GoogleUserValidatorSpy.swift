@@ -13,6 +13,8 @@ class GoogleUserValidatorSpy: GoogleUserValidation {
 
     var validateResult: Bool?
 
+    // MARK: - GoogleUserValidation
+
     var error: Observable<Error> {
         return errorSubject.asObservable().unwrap()
     }
@@ -21,7 +23,7 @@ class GoogleUserValidatorSpy: GoogleUserValidation {
         return validateResult ?? true
     }
 
-    // MARK: Private
+    // MARK: - Private
 
     private let errorSubject = PublishSubject<Error?>()
 
