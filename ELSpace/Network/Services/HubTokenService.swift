@@ -1,9 +1,7 @@
 import RxSwift
 
 protocol HubTokenServiceProtocol {
-
     func getHubToken(googleTokenId: String) -> Observable<String>
-
 }
 
 class HubTokenService: HubTokenServiceProtocol {
