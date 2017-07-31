@@ -552,7 +552,6 @@
 		AF9B35C11F20F5920007F453 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
-				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
 				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
 				47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */,
 				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
@@ -561,6 +560,7 @@
 				AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */,
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
+				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
