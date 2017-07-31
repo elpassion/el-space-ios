@@ -1,13 +1,6 @@
 import Alamofire
 
-protocol ServiceFactoring {
-
-    var hubTokenService: HubTokenServiceProtocol { get }
-    var googleUserManager: GoogleUserManaging { get }
-
-}
-
-extension AppContainer: ServiceFactoring {
+extension AppContainer {
 
     var sessionManager: RequestWrapper {
         return SessionManager.default
