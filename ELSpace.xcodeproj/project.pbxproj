@@ -21,6 +21,8 @@
 		47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */; };
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
+		47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */; };
+		47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
@@ -102,6 +104,8 @@
 		47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryFake.swift; sourceTree = "<group>"; };
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
+		47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Hex.swift; sourceTree = "<group>"; };
+		47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Color.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 		060A93691EEF01B900EA3293 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				47F1DCAC1F30A7160039B34E /* UIColor */,
 				AFB47B551F288DF400E0A922 /* Data_HubToken.swift */,
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
@@ -273,6 +278,15 @@
 				47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */,
 			);
 			path = Fakes;
+			sourceTree = "<group>";
+		};
+		47F1DCAC1F30A7160039B34E /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */,
+				47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */,
+			);
+			name = UIColor;
 			sourceTree = "<group>";
 		};
 		47F8622F1F2F256100E7C518 /* Coordinators */ = {
@@ -892,6 +906,7 @@
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
 				060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */,
+				47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
@@ -916,6 +931,7 @@
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
+				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,
 				AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */,
 			);
