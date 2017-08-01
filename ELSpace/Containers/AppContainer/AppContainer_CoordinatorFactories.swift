@@ -8,7 +8,8 @@ extension AppContainer: SelectionCoordinatorCreation,
         return SelectionCoordinator(debateRunner: debateRunner,
                                     viewController: viewController,
                                     selectionViewController: viewController,
-                                    activityCoordinatorFactory: self)
+                                    activityCoordinatorFactory: self,
+                                    viewControllerPresenter: viewControllerPresenter)
     }
 
     // MARK: - ActivityCoordinatorCreation

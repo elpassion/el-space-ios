@@ -7,11 +7,13 @@ class SelectionCoordinator: Coordinator {
     init(debateRunner: DebateRunning,
          viewController: UIViewController,
          selectionViewController: SelectionViewControlling,
-         activityCoordinatorFactory: ActivityCoordinatorCreation) {
+         activityCoordinatorFactory: ActivityCoordinatorCreation,
+         viewControllerPresenter: ViewControllerPresenting) {
         self.debateRunner = debateRunner
         self.viewController = viewController
         self.selectionViewController = selectionViewController
         self.activityCoordinatorFactory = activityCoordinatorFactory
+        self.viewControllerPresenter = viewControllerPresenter
         setupBindings()
     }
 
@@ -27,6 +29,7 @@ class SelectionCoordinator: Coordinator {
     private let viewController: UIViewController
     private let selectionViewController: SelectionViewControlling
     private let activityCoordinatorFactory: ActivityCoordinatorCreation
+    private let viewControllerPresenter: ViewControllerPresenting
 
     // MARK: - Presenting
 
@@ -40,7 +43,7 @@ class SelectionCoordinator: Coordinator {
     private func presentHub() {
         let coordinator = activityCoordinatorFactory.activityCoordinator()
         let navigationController = initialViewController.navigationController
-        navigationController?.pushViewController(coordinator.initialViewController, animated: true)
+        viewControllerPresenter.push(viewController: coordinator.initialViewController, on: initialViewController)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 

@@ -26,6 +26,10 @@
 		47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */; };
 		47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */; };
 		47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */; };
+		47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */; };
+		47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */; };
+		47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */; };
+		47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
@@ -112,6 +116,10 @@
 		47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Hex.swift; sourceTree = "<group>"; };
 		47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Color.swift; sourceTree = "<group>"; };
 		47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerStub.swift; sourceTree = "<group>"; };
+		47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebateRunnerSpy.swift; sourceTree = "<group>"; };
+		47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinatorSpec.swift; sourceTree = "<group>"; };
+		47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryMock.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -313,10 +321,19 @@
 			name = UIColor;
 			sourceTree = "<group>";
 		};
+		47F1DCB41F30DAB70039B34E /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
 		47F8622F1F2F256100E7C518 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */,
+				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -460,6 +477,7 @@
 		8613F3401EEEDE050037A787 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				47F1DCB41F30DAB70039B34E /* Stubs */,
 				47CA949C1F2A2A2900D5A9B7 /* Fakes */,
 				AF9B35C01F20F57D0007F453 /* Mocks */,
 				AF9B35C11F20F5920007F453 /* Spies */,
@@ -584,6 +602,7 @@
 			children = (
 				86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */,
 				47F8623C1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift */,
+				47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -600,6 +619,7 @@
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
 				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
+				47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -977,17 +997,21 @@
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
 				47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */,
 				47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */,
+				47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */,
 				AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
 				47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */,
 				AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */,
+				47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
+				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
 				47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */,
 				47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
 				47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */,
+				47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */,
 				47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */,
 				AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */,
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,
