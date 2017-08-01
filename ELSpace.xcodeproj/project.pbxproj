@@ -21,9 +21,11 @@
 		47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */; };
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
+		47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */; };
 		47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */; };
 		47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */; };
 		47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */; };
+		47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
@@ -105,9 +107,11 @@
 		47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryFake.swift; sourceTree = "<group>"; };
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
+		47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
 		47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController_HubStyling.swift; sourceTree = "<group>"; };
 		47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Hex.swift; sourceTree = "<group>"; };
 		47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Color.swift; sourceTree = "<group>"; };
+		47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -283,6 +287,23 @@
 			path = Fakes;
 			sourceTree = "<group>";
 		};
+		47F1DCA61F309ECC0039B34E /* Hub */ = {
+			isa = PBXGroup;
+			children = (
+				47F1DCA71F309ECF0039B34E /* Activity */,
+			);
+			name = Hub;
+			sourceTree = "<group>";
+		};
+		47F1DCA71F309ECF0039B34E /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
+				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
+			);
+			name = Activity;
+			sourceTree = "<group>";
+		};
 		47F1DCAC1F30A7160039B34E /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +432,7 @@
 		509E0D761EDEE9CE00414C1D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				47F1DCA61F309ECC0039B34E /* Hub */,
 				50902FCA1EE5AD7300D43254 /* BaseViews */,
 				509E0D771EDEEA0600414C1D /* Login */,
 				5034DA091EE99E150095D477 /* Selection */,
@@ -905,6 +927,7 @@
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
+				47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
@@ -936,6 +959,7 @@
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
+				47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,
 				AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */,
 			);
