@@ -3,7 +3,8 @@ import UIKit
 extension AppContainer: LoginViewControllerCreation,
                         NavigationControllerCreation,
                         SelectionViewControllerCreation,
-                        AlertCreation {
+                        AlertCreation,
+                        ActivityViewControllerCreation {
 
     // MARK: - LoginViewControllerCreation
 
@@ -34,6 +35,12 @@ extension AppContainer: LoginViewControllerCreation,
         return UIAlertController.simpleAlertViewController(with: title, message: message)
     }
 
+    // MARK: - ActivityViewControllerCreation
+
+    func activityViewController() -> ActivityViewController {
+        return ActivityViewController()
+    }
+
 }
 
 protocol LoginViewControllerCreation {
@@ -46,6 +53,10 @@ protocol NavigationControllerCreation {
 
 protocol SelectionViewControllerCreation {
     func selectionViewController(googleIdToken: String) -> SelectionViewController
+}
+
+protocol ActivityViewControllerCreation {
+    func activityViewController() -> ActivityViewController
 }
 
 protocol AlertCreation {
