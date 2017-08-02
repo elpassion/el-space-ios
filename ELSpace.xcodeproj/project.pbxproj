@@ -87,6 +87,7 @@
 		AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */; };
 		AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */; };
 		AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */; };
+		AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916D61F31FCC800C4D27A /* HubSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,7 @@
 		AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenServiceSpy.swift; sourceTree = "<group>"; };
 		AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerCreation.swift; sourceTree = "<group>"; };
 		AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		AFE916D61F31FCC800C4D27A /* HubSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubSession.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 			children = (
 				AFB47B621F28A5EC00E0A922 /* ApiError.swift */,
 				AF48257B1F275C140081B2CC /* Response.swift */,
+				AFE916D61F31FCC800C4D27A /* HubSession.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -974,6 +977,7 @@
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
 				AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */,
 				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
+				AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */,
 				AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */,
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
