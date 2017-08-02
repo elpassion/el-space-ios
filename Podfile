@@ -18,7 +18,7 @@ def pod_networking
 end
 
 def pod_infrastructure
-    pod 'R.swift', '~> 3.3.0'
+    pod 'R.swift', '~> 3.3'
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SwiftLint', '~> 0.20'
 end
@@ -29,13 +29,14 @@ end
 
 def pod_ui
     pod 'Anchorage', '~> 4.0'
-    pod 'HexColors', '~> 5.0.1'
-    pod 'Pastel', '~> 0.3.0'
+    pod 'HexColors', '~> 5.0'
+    pod 'Pastel', '~> 0.3'
+    pod 'MBProgressHUD', '~> 1.0'
 end
 
 def pod_tests
-    pod 'Nimble', '~> 7.0.0'
-    pod 'Quick', '~> 1.1.0'
+    pod 'Nimble', '~> 7.0'
+    pod 'Quick', '~> 1.1'
     pod 'RxBlocking', '~> 3.6'
     pod 'RxTest', '~> 3.6'
 end
