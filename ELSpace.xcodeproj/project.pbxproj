@@ -225,8 +225,8 @@
 		060F4C8E1EE945F200AA2389 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				AFE916D11F31E35300C4D27A /* Loading */,
 				060A93691EEF01B900EA3293 /* Extensions */,
+				AFE916D11F31E35300C4D27A /* Loading */,
 				477161F71F2B2CF30051EDE3 /* Mapper */,
 				477161FD1F2B5B970051EDE3 /* Presenters */,
 				060F4C8F1EE945FB00AA2389 /* Providers */,
@@ -694,6 +694,7 @@
 				AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */,
 			);
 			name = Loading;
+			path = Loading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
