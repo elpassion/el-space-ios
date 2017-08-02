@@ -33,6 +33,7 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.11)
   - HexColors (5.0.1)
   - KeychainAccess (3.0.2)
+  - MBProgressHUD (1.0.0)
   - ModelMapper (6.0.0)
   - Nimble (7.0.1)
   - Pastel (0.3.0)
@@ -80,12 +81,13 @@ DEPENDENCIES:
   - Anchorage (~> 4.0)
   - ELDebate (~> 1.0)
   - GoogleSignIn (~> 4.0)
-  - HexColors (~> 5.0.1)
+  - HexColors (~> 5.0)
+  - MBProgressHUD (~> 1.0)
   - ModelMapper (~> 6.0)
-  - Nimble (~> 7.0.0)
-  - Pastel (~> 0.3.0)
-  - Quick (~> 1.1.0)
-  - R.swift (~> 3.3.0)
+  - Nimble (~> 7.0)
+  - Pastel (~> 0.3)
+  - Quick (~> 1.1)
+  - R.swift (~> 3.3)
   - Reveal-SDK
   - RxAlamofire (~> 3.0)
   - RxBlocking (~> 3.6)
@@ -105,6 +107,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ModelMapper: 3596a82f26c43491f6a8d3a00bcdba6ba0e62a93
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
@@ -125,6 +128,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: e9b88e251f443d1653bba76f4d9edcc8a61a43ee
+PODFILE CHECKSUM: b236664046354c76c1fd3c4493033bb97b3b6f09
 
 COCOAPODS: 1.2.1

@@ -1,8 +1,3 @@
-//
-//  Created by Michał Czerniakowski on 08.06.2017.
-//  Copyright © 2017 El Passion. All rights reserved.
-//
-
 import UIKit
 import RxSwift
 
@@ -76,13 +71,32 @@ class SelectionViewController: UIViewController, SelectionViewControlling {
         selectionView.hubButton.rx.tap.asObservable()
             .subscribe(onNext: { [weak self] in
                 self?.selectionController.signInToHub(success: { token in
+                    self?.isLoading.value = false
                     self?.openHubWithTokenSubject.onNext(token)
                 }, failure: { error in
+                    self?.isLoading.value = false
                     self?.presentError(error: error)
                 })
             }).disposed(by: disposeBag)
+
+        selectionView.hubButton.rx.tap.asObservable()
+            .map { true }
+            .bind(to: isLoading)
+            .disposed(by: disposeBag)
+
+        isLoading.asObservable()
+            .bind(to: loadingIndicator.rx.isLoading)
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
+
+    // MARK: - Loading
+
+    private let isLoading = Variable<Bool>(false)
+
+    private(set) lazy var loadingIndicator: LoadingIndicator = {
+        return LoadingIndicator(superView: self.view)
+    }()
 
 }

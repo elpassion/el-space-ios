@@ -86,6 +86,7 @@
 		AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */; };
 		AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */; };
 		AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */; };
+		AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionControllerSpec.swift; sourceTree = "<group>"; };
 		AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenServiceSpy.swift; sourceTree = "<group>"; };
 		AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerCreation.swift; sourceTree = "<group>"; };
+		AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		060F4C8E1EE945F200AA2389 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				AFE916D11F31E35300C4D27A /* Loading */,
 				060A93691EEF01B900EA3293 /* Extensions */,
 				477161F71F2B2CF30051EDE3 /* Mapper */,
 				477161FD1F2B5B970051EDE3 /* Presenters */,
@@ -300,7 +303,6 @@
 			children = (
 				47F1DCA71F309ECF0039B34E /* Activity */,
 			);
-			name = Hub;
 			path = Hub;
 			sourceTree = "<group>";
 		};
@@ -310,7 +312,6 @@
 				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
 				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
 			);
-			name = Activity;
 			path = Activity;
 			sourceTree = "<group>";
 		};
@@ -320,7 +321,6 @@
 				47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */,
 				47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */,
 			);
-			name = UIColor;
 			path = UIColor;
 			sourceTree = "<group>";
 		};
@@ -329,7 +329,6 @@
 			children = (
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
 			);
-			name = Stubs;
 			path = Stubs;
 			sourceTree = "<group>";
 		};
@@ -689,6 +688,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		AFE916D11F31E35300C4D27A /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */,
+			);
+			name = Loading;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -966,6 +973,7 @@
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
 				AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */,
 				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
+				AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */,
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
