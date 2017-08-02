@@ -87,9 +87,11 @@
 		AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */; };
 		AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */; };
 		AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */; };
+		AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */; };
 		AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916D61F31FCC800C4D27A /* HubSession.swift */; };
 		AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916D81F32048300C4D27A /* Dictionary_Add.swift */; };
 		AFE916DB1F3204F100C4D27A /* DictionaryAddSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916DA1F3204F100C4D27A /* DictionaryAddSpec.swift */; };
+		AFE916DD1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE916DC1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,9 +190,11 @@
 		AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubTokenServiceSpy.swift; sourceTree = "<group>"; };
 		AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerCreation.swift; sourceTree = "<group>"; };
 		AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientHubDecorator.swift; sourceTree = "<group>"; };
 		AFE916D61F31FCC800C4D27A /* HubSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubSession.swift; sourceTree = "<group>"; };
 		AFE916D81F32048300C4D27A /* Dictionary_Add.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary_Add.swift; sourceTree = "<group>"; };
 		AFE916DA1F3204F100C4D27A /* DictionaryAddSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAddSpec.swift; sourceTree = "<group>"; };
+		AFE916DC1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientHubDecoratorSpec.swift; sourceTree = "<group>"; };
 		E72147DECCA8EAEE7B4DBA7C /* Pods-ELSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		EF02DB0596F1250A4BD0553C /* Pods-ELSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F516EAA31CF2B127307DF495 /* Pods-ELSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -587,6 +591,7 @@
 			isa = PBXGroup;
 			children = (
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
+				AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 			isa = PBXGroup;
 			children = (
 				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
+				AFE916DC1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -702,7 +708,6 @@
 			children = (
 				AFE916D21F31E36200C4D27A /* LoadingIndicator.swift */,
 			);
-			name = Loading;
 			path = Loading;
 			sourceTree = "<group>";
 		};
@@ -966,6 +971,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
+				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */,
@@ -1042,6 +1048,7 @@
 				477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */,
 				47F8623D1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift in Sources */,
 				AFE916DB1F3204F100C4D27A /* DictionaryAddSpec.swift in Sources */,
+				AFE916DD1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift in Sources */,
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
 				AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */,
