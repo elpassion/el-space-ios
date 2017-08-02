@@ -40,7 +40,13 @@ class ApiClientHubDecoratorSpec: QuickSpec {
                 }
 
                 it("should have correct header") {
-                    expect(apiClientSpy.headers).to(beNil())
+                    expect(apiClientSpy.headers).to(equal([:]))
+                }
+
+                describe("Response") {
+                    it("should have correct status code") {
+                        expect(response.statusCode).to(equal(999))
+                    }
                 }
             }
 
@@ -73,6 +79,12 @@ class ApiClientHubDecoratorSpec: QuickSpec {
 
                 it("should have correct header") {
                     expect(apiClientSpy.headers!["X-Access-Token"]).to(equal("fake_token"))
+                }
+
+                describe("Response") {
+                    it("should have correct status code") {
+                        expect(response.statusCode).to(equal(999))
+                    }
                 }
             }
         }
