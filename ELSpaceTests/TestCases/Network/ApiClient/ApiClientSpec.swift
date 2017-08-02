@@ -25,7 +25,8 @@ class ApiClientSpec: QuickSpec {
                     requestPerformerSpy.response = fakeResponse
                     receivedResponse = try! sut.request(path: "fake_path",
                                                         method: .get,
-                                                        parameters: ["fake_param": "fake_value"]).toBlocking().first()!
+                                                        parameters: ["fake_param": "fake_value"],
+                                                        headers: ["fake_header": "fake_value"]).toBlocking().first()!
                 }
 
                 it("should have correct url") {
@@ -38,6 +39,10 @@ class ApiClientSpec: QuickSpec {
 
                 it("should have correct param") {
                     expect((requestPerformerSpy.parameters!["fake_param"] as! String)).to(equal("fake_value"))
+                }
+
+                it("should have correct header") {
+                    expect(requestPerformerSpy.headers!["fake_header"]).to(equal("fake_value"))
                 }
 
                 describe("reponse") {
