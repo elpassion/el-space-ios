@@ -2,7 +2,7 @@ import RxSwift
 import Alamofire
 
 protocol ApiClientProtocol {
-    func request(path: String, method: HTTPMethod, parameters: Parameters?) -> Observable<Response>
+    func request(path: String, method: HTTPMethod, parameters: Parameters?, headers: HTTPHeaders?) -> Observable<Response>
 }
 
 class ApiClient: ApiClientProtocol {
@@ -13,8 +13,8 @@ class ApiClient: ApiClientProtocol {
 
     // MARK: - ApiClientProtocol
 
-    func request(path: String, method: HTTPMethod, parameters: Parameters?) -> Observable<Response> {
-        return requestPerformer.request(urlComponents(withPath: path), method: method, parameters: parameters)
+    func request(path: String, method: HTTPMethod, parameters: Parameters?, headers: HTTPHeaders?) -> Observable<Response> {
+        return requestPerformer.request(urlComponents(withPath: path), method: method, parameters: parameters, headers: headers)
     }
 
     // MARK: - Private
