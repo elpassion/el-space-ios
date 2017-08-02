@@ -74,6 +74,10 @@ class LoginViewController: UIViewController, LoginViewControlling {
                 self?.isSigningIn.value = false
                 self?.unwrapToken(user: user)
             }).disposed(by: disposeBag)
+
+        isSigningIn.asObservable()
+            .bind(to: loadingIndicator.rx.isLoading)
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
@@ -100,5 +104,11 @@ class LoginViewController: UIViewController, LoginViewControlling {
     private func signIn() {
         googleUserManager.signIn(on: self)
     }
+
+    // MARK: - Loading
+
+    private(set) lazy var loadingIndicator: LoadingIndicator = {
+        return LoadingIndicator(superView: self.view)
+    }()
 
 }
