@@ -407,9 +407,9 @@
 			children = (
 				AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */,
 				AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */,
+				473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */,
 				5034DA0A1EE99E150095D477 /* SelectionView.swift */,
 				5034DA0B1EE99E150095D477 /* SelectionViewController.swift */,
-				473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -691,10 +691,10 @@
 			isa = PBXGroup;
 			children = (
 				AFB47B681F28A6A800E0A922 /* AppContainer.swift */,
+				473CBF901F33191600B80FA4 /* AppContainer_Common.swift */,
 				47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */,
 				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
 				47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */,
-				473CBF901F33191600B80FA4 /* AppContainer_Common.swift */,
 			);
 			path = AppContainer;
 			sourceTree = "<group>";
