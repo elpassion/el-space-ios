@@ -19,7 +19,7 @@ class ReportsService: ReportsServiceProtocol {
         ]
         return apiClient.request(path: "activities", method: .get, parameters: params, headers: nil)
             .map { response -> [ReportDTO] in
-                let jsonArray = response.data.array
+                let jsonArray = response.data.jsonArray
                 return try jsonArray.map { try ReportDTO(map: Mapper(JSON: $0 as NSDictionary)) }
             }
     }
