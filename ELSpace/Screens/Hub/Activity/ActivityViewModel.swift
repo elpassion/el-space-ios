@@ -1,6 +1,10 @@
 import RxSwift
 
-class ActivityViewModel {
+protocol ActivityViewModelProtocol {
+    func getReports()
+}
+
+class ActivityViewModel: ActivityViewModelProtocol {
 
     init(activityController: ActivityControlling) {
         self.activityController = activityController
