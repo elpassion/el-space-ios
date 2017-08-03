@@ -12,6 +12,8 @@ class ReportsService: ReportsServiceProtocol {
         self.apiClient = apiClient
     }
 
+    // MARK: - ReportsServiceProtocol
+
     func getReports(startDate: String?, endDate: String?) -> Observable<[ReportDTO]> {
         let params: [String: String] = [
             "start_date": startDate ?? "",
