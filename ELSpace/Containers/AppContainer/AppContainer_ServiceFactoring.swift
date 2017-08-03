@@ -26,4 +26,8 @@ extension AppContainer {
         return ApiClientHubDecorator(apiClient: apiClient, hubSession: hubSession)
     }
 
+    var reportsService: ReportsServiceProtocol {
+        return ReportsService(apiClient: apiClientHubDecorator)
+    }
+
 }
