@@ -5,9 +5,9 @@ extension AppContainer: SelectionCoordinatorCreation,
 
     func selectionCoordinator(googleIdToken: String) -> Coordinator {
         let viewController = selectionViewController(googleIdToken: googleIdToken)
-        return SelectionCoordinator(debateRunner: debateRunner,
-                                    viewController: viewController,
+        return SelectionCoordinator(viewController: viewController,
                                     selectionViewController: viewController,
+                                    debateRunner: debateRunner,
                                     activityCoordinatorFactory: self,
                                     viewControllerPresenter: viewControllerPresenter)
     }

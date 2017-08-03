@@ -4,14 +4,14 @@ import RxSwift
 
 class SelectionCoordinator: Coordinator {
 
-    init(debateRunner: DebateRunning,
-         viewController: UIViewController,
+    init(viewController: UIViewController,
          selectionViewController: SelectionViewControlling,
+         debateRunner: DebateRunning,
          activityCoordinatorFactory: ActivityCoordinatorCreation,
          viewControllerPresenter: ViewControllerPresenting) {
-        self.debateRunner = debateRunner
         self.viewController = viewController
         self.selectionViewController = selectionViewController
+        self.debateRunner = debateRunner
         self.activityCoordinatorFactory = activityCoordinatorFactory
         self.viewControllerPresenter = viewControllerPresenter
         setupBindings()
