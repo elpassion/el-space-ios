@@ -11,14 +11,18 @@ class ApiClientHubDecoratorSpec: QuickSpec {
 
             var sut: ApiClientHubDecorator!
             var apiClientSpy: ApiClientSpy!
+            var hubSession: HubSession!
 
-            context("when initialize with empty hub session") {
+            beforeEach {
+                apiClientSpy = ApiClientSpy()
+                hubSession = HubSession()
+                sut = ApiClientHubDecorator(apiClient: apiClientSpy, hubSession: hubSession)
+            }
+
+            context("when access token is nil") {
                 var response: Response!
 
                 beforeEach {
-                    apiClientSpy = ApiClientSpy()
-                    sut = ApiClientHubDecorator(apiClient: apiClientSpy,
-                                                hubSession: nil)
                     let fakeResponse = Response(statusCode: 999, data: Data())
                     apiClientSpy.response = fakeResponse
                     response = try! sut.request(path: "fake_path",
@@ -50,15 +54,11 @@ class ApiClientHubDecoratorSpec: QuickSpec {
                 }
             }
 
-            context("when initialize with hub session") {
+            context("when access tokem is NOT nil") {
                 var response: Response!
 
                 beforeEach {
-                    apiClientSpy = ApiClientSpy()
-                    let hubSession = HubSession()
                     hubSession.accessToken = "fake_token"
-                    sut = ApiClientHubDecorator(apiClient: apiClientSpy,
-                                                hubSession: hubSession)
                     let fakeResponse = Response(statusCode: 999, data: Data())
                     apiClientSpy.response = fakeResponse
                     response = try! sut.request(path: "fake_path",
