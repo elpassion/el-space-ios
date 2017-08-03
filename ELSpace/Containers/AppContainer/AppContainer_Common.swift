@@ -1,0 +1,37 @@
+import UIKit
+
+extension AppContainer: SelectionScreenPresenterCreation {
+
+    // MARK: - Controllers
+
+    func selectionController(googleIdToken: String) -> SelectionControllerSignIn {
+        return SelectionController(hubTokenService: hubTokenService,
+                                   googleIdToken: googleIdToken)
+    }
+
+    // MARK: - Presenters
+
+    var viewControllerPresenter: ViewControllerPresenting {
+        return ViewControllerPresenter()
+    }
+
+    // MARK: - Mappers
+
+    var googleUserMapper: GoogleUserMapping {
+        return GoogleUserMapper()
+    }
+
+    // MARK: - SelectionScreenPresenterCreation
+
+    func selectionScreenPresenter(presenterViewController: UIViewController) -> SelectionScreenPresenting {
+        return SelectionScreenPresenter(debateRunner: debateRunner,
+                                        activityCoordinatorFactory: self,
+                                        viewControllerPresenter: viewControllerPresenter,
+                                        presenterViewController: presenterViewController)
+    }
+
+}
+
+protocol SelectionScreenPresenterCreation {
+    func selectionScreenPresenter(presenterViewController: UIViewController) -> SelectionScreenPresenting
+}

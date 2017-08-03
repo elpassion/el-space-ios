@@ -35,23 +35,4 @@ class AppContainer: AppPresenting {
         return UIScreen.main
     }
 
-    // MARK: - Controllers
-
-    func selectionController(googleIdToken: String) -> SelectionControllerSignIn {
-        return SelectionController(hubTokenService: hubTokenService,
-                                   googleIdToken: googleIdToken)
-    }
-
-    // MARK: - Presenters
-
-    var viewControllerPresenter: ViewControllerPresenting {
-        return ViewControllerPresenter()
-    }
-
-    // MARK: - Mappers
-
-    var googleUserMapper: GoogleUserMapping {
-        return GoogleUserMapper()
-    }
-
 }
