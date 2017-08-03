@@ -6,7 +6,7 @@ protocol ReportsServiceProtocol {
     func getReports(startDate: String?, endDate: String?) -> Observable<[ReportDTO]>
 }
 
-class ReportsService {
+class ReportsService: ReportsServiceProtocol {
 
     init(apiClient: ApiClientProtocol) {
         self.apiClient = apiClient
