@@ -29,6 +29,7 @@
 		47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */; };
 		47C1C4F41F336772009946BE /* Date_MonthDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F31F336772009946BE /* Date_MonthDates.swift */; };
 		47C1C4F61F336AB3009946BE /* UIViewController_RxViewDidAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */; };
+		47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */; };
 		47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */; };
 		47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */; };
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
@@ -137,6 +138,7 @@
 		47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter_Formatters.swift; sourceTree = "<group>"; };
 		47C1C4F31F336772009946BE /* Date_MonthDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date_MonthDates.swift; sourceTree = "<group>"; };
 		47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_RxViewDidAppear.swift; sourceTree = "<group>"; };
+		47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewModels.swift; sourceTree = "<group>"; };
 		47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSpec.swift; sourceTree = "<group>"; };
 		47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryFake.swift; sourceTree = "<group>"; };
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 				47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */,
 				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
 				47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */,
+				47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */,
 			);
 			path = AppContainer;
 			sourceTree = "<group>";
@@ -1064,6 +1067,7 @@
 				47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
 				47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */,
+				47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */,
 				473CBF9A1F33414100B80FA4 /* ReportDTO.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,
 				AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */,

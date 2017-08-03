@@ -14,6 +14,10 @@ extension AppContainer: SelectionScreenPresenterCreation {
                                    googleIdToken: googleIdToken)
     }
 
+    var activityController: ActivityControlling {
+        return ActivityController(reportsService: reportsService)
+    }
+
     // MARK: - Presenters
 
     var viewControllerPresenter: ViewControllerPresenting {
