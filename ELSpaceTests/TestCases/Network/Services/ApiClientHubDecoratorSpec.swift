@@ -55,8 +55,10 @@ class ApiClientHubDecoratorSpec: QuickSpec {
 
                 beforeEach {
                     apiClientSpy = ApiClientSpy()
+                    let hubSession = HubSession()
+                    hubSession.accessToken = "fake_token"
                     sut = ApiClientHubDecorator(apiClient: apiClientSpy,
-                                                hubSession: HubSession(accessToken: "fake_token"))
+                                                hubSession: hubSession)
                     let fakeResponse = Response(statusCode: 999, data: Data())
                     apiClientSpy.response = fakeResponse
                     response = try! sut.request(path: "fake_path",
