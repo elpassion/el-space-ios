@@ -7,5 +7,5 @@ extension DateFormatter {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
     }
-    
+
 }
