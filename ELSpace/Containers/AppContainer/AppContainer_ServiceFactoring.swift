@@ -22,4 +22,12 @@ extension AppContainer {
         return GoogleUserManager()
     }
 
+    var apiClientHubDecorator: ApiClientProtocol {
+        return ApiClientHubDecorator(apiClient: apiClient, hubSession: hubSession)
+    }
+
+    var reportsService: ReportsServiceProtocol {
+        return ReportsService(apiClient: apiClientHubDecorator)
+    }
+
 }

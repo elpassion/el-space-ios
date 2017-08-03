@@ -5,17 +5,18 @@ extension AppContainer: SelectionCoordinatorCreation,
 
     func selectionCoordinator(googleIdToken: String) -> Coordinator {
         let viewController = selectionViewController(googleIdToken: googleIdToken)
-        return SelectionCoordinator(debateRunner: debateRunner,
-                                    viewController: viewController,
+        let selectionScreenPresenter = self.selectionScreenPresenter(presenterViewController: viewController)
+        return SelectionCoordinator(viewController: viewController,
                                     selectionViewController: viewController,
-                                    activityCoordinatorFactory: self,
-                                    viewControllerPresenter: viewControllerPresenter)
+                                    selectionScreenPresenter: selectionScreenPresenter,
+                                    hubSession: hubSession)
     }
 
     // MARK: - ActivityCoordinatorCreation
 
     func activityCoordinator() -> Coordinator {
-        return ActivityCoordinator(viewController: activityViewController())
+        return ActivityCoordinator(viewController: activityViewController(),
+                                   viewModel: activityViewModel)
     }
 
 }

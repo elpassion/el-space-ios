@@ -9,66 +9,55 @@ class SelectionCoordinatorSpec: QuickSpec {
         describe("SelectionCoordinator") {
 
             var sut: SelectionCoordinator!
-            var viewControllerFake: UIViewController!
-            var navigationControllerFake: UIViewController!
-            var debateRunnerSpy: DebateRunnerSpy!
             var selectionViewControllerStub: SelectionViewControllerStub!
-            var activityCoordinatorFactoryMock: ActivityCoordinatorFactoryMock!
-            var viewControllerPresenterSpy: ViewControllerPresenterSpy!
+            var selectionScreenPresenterMock: SelectionScreenPresenterMock!
+            var viewControllerFake: UIViewController!
+            var hubSession: HubSession!
 
             beforeEach {
-                viewControllerFake = UIViewController()
-                navigationControllerFake = UINavigationController(rootViewController: viewControllerFake)
-                debateRunnerSpy = DebateRunnerSpy()
+                hubSession = HubSession()
                 selectionViewControllerStub = SelectionViewControllerStub()
-                activityCoordinatorFactoryMock = ActivityCoordinatorFactoryMock()
-                viewControllerPresenterSpy = ViewControllerPresenterSpy()
-                sut = SelectionCoordinator(debateRunner: debateRunnerSpy,
-                                           viewController: viewControllerFake,
+                selectionScreenPresenterMock = SelectionScreenPresenterMock()
+                viewControllerFake = UIViewController()
+                sut = SelectionCoordinator(viewController: viewControllerFake,
                                            selectionViewController: selectionViewControllerStub,
-                                           activityCoordinatorFactory: activityCoordinatorFactoryMock,
-                                           viewControllerPresenter: viewControllerPresenterSpy)
+                                           selectionScreenPresenter: selectionScreenPresenterMock,
+                                           hubSession: hubSession)
             }
 
-            afterEach {
-                sut = nil
-                viewControllerFake = nil
-                navigationControllerFake = nil
-                debateRunnerSpy = nil
-                selectionViewControllerStub = nil
-                activityCoordinatorFactoryMock = nil
-                viewControllerPresenterSpy = nil
-            }
-
-            it("should have correct initial view controller") {
+            it("should have correrct initial view controller") {
                 expect(sut.initialViewController).to(equal(viewControllerFake))
             }
 
-            context("when receive open debate event") {
+            afterEach {
+                selectionViewControllerStub = nil
+                selectionScreenPresenterMock = nil
+                hubSession = nil
+                viewControllerFake = nil
+                sut = nil
+            }
+
+            context("when selection view controller emit openDebate next event") {
                 beforeEach {
                     selectionViewControllerStub.openDebateSubject.onNext()
                 }
 
-                it("should open debate on correct navigation controller") {
-                    expect(debateRunnerSpy.navigationController).to(equal(navigationControllerFake))
-                }
-
-                it("should apply debate style") {
-                    expect(debateRunnerSpy.applyingDebateStyle).to(beTrue())
+                it("should call presentDebate") {
+                    expect(selectionScreenPresenterMock.didCallPresentDebate).to(beTrue())
                 }
             }
 
-            context("when receive open hub event") {
+            context("when selection view controller emit openHubWithToken next event") {
                 beforeEach {
                     selectionViewControllerStub.openHubWithTokenSubject.onNext("fake_token")
                 }
 
-                it("should push correct view controller") {
-                    expect(viewControllerPresenterSpy.pushedViewController).to(equal(activityCoordinatorFactoryMock.fakeCoordinator.initialViewController))
+                it("should call presentHub") {
+                    expect(selectionScreenPresenterMock.didCallPresentHub).to(beTrue())
                 }
 
-                it("should push on correct view controller") {
-                    expect(viewControllerPresenterSpy.presenter).to(equal(viewControllerFake))
+                it("should hubSession have correct token") {
+                    expect(hubSession.accessToken).to(equal("fake_token"))
                 }
             }
         }

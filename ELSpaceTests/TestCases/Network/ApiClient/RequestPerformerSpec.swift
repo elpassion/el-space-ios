@@ -31,7 +31,8 @@ class RequestPerformerSpec: QuickSpec {
                     requestWrapperSpy.response = fakeResponse
                     receivedResponse = try! sut.request(URL(string: "www.fake_url.com")!,
                                                         method: .post,
-                                                        parameters: ["fake_param": "fake_value"]).toBlocking().first()!
+                                                        parameters: ["fake_param": "fake_value"],
+                                                        headers: ["fake_header": "fake_value"]).toBlocking().first()!
                 }
 
                 it("should set correct url") {
@@ -51,7 +52,7 @@ class RequestPerformerSpec: QuickSpec {
                 }
 
                 it("should set correct headers") {
-                    expect(requestWrapperSpy.headers).to(beNil())
+                    expect(requestWrapperSpy.headers!["fake_header"]).to(equal("fake_value"))
                 }
 
                 describe("response") {

@@ -4,16 +4,14 @@ import RxSwift
 
 class SelectionCoordinator: Coordinator {
 
-    init(debateRunner: DebateRunning,
-         viewController: UIViewController,
+    init(viewController: UIViewController,
          selectionViewController: SelectionViewControlling,
-         activityCoordinatorFactory: ActivityCoordinatorCreation,
-         viewControllerPresenter: ViewControllerPresenting) {
-        self.debateRunner = debateRunner
+         selectionScreenPresenter: SelectionScreenPresenting,
+         hubSession: HubSession) {
         self.viewController = viewController
         self.selectionViewController = selectionViewController
-        self.activityCoordinatorFactory = activityCoordinatorFactory
-        self.viewControllerPresenter = viewControllerPresenter
+        self.selectionScreenPresenter = selectionScreenPresenter
+        self.hubSession = hubSession
         setupBindings()
     }
 
@@ -25,40 +23,23 @@ class SelectionCoordinator: Coordinator {
 
     // MARK: - Private
 
-    private let debateRunner: DebateRunning
     private let viewController: UIViewController
     private let selectionViewController: SelectionViewControlling
-    private let activityCoordinatorFactory: ActivityCoordinatorCreation
-    private let viewControllerPresenter: ViewControllerPresenting
-
-    // MARK: - Presenting
-
-    private func runDebate() {
-        guard let navigationController = initialViewController.navigationController else { return }
-        debateRunner.start(in: navigationController, applyingDebateStyle: true)
-        navigationController.setNavigationBarHidden(false, animated: true)
-        navigationController.navigationBar.setBackgroundImage(nil, for: .default)
-    }
-
-    private func presentHub() {
-        let coordinator = activityCoordinatorFactory.activityCoordinator()
-        let navigationController = initialViewController.navigationController
-        viewControllerPresenter.push(viewController: coordinator.initialViewController, on: initialViewController)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+    private let selectionScreenPresenter: SelectionScreenPresenting
+    private let hubSession: HubSession
 
     // MARK: - Bindings
 
     private func setupBindings() {
         selectionViewController.openHubWithToken
             .subscribe(onNext: { [weak self] token in
-                self?.presentHub()
-                print(token)
+                self?.hubSession.accessToken = token
+                self?.selectionScreenPresenter.presentHub()
             }).disposed(by: disposeBag)
 
         selectionViewController.openDebate
             .subscribe(onNext: { [weak self] in
-                self?.runDebate()
+                self?.selectionScreenPresenter.presentDebate()
             }).disposed(by: disposeBag)
     }
 

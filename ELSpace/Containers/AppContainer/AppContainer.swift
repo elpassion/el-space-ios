@@ -1,6 +1,4 @@
 import UIKit
-import Alamofire
-import ELDebate
 
 protocol AppPresenting {
     func presentApp()
@@ -8,9 +6,7 @@ protocol AppPresenting {
 
 class AppContainer: AppPresenting {
 
-    var debateRunner: DebateRunning {
-        return DebateRunner()
-    }
+    var hubSession: HubSession = HubSession()
 
     // MARK: - AppPresenting
 
@@ -33,25 +29,6 @@ class AppContainer: AppPresenting {
 
     private var mainScreen: UIScreen {
         return UIScreen.main
-    }
-
-    // MARK: - Controllers
-
-    func selectionController(googleIdToken: String) -> SelectionControllerSignIn {
-        return SelectionController(hubTokenService: hubTokenService,
-                                   googleIdToken: googleIdToken)
-    }
-
-    // MARK: - Presenters
-
-    var viewControllerPresenter: ViewControllerPresenting {
-        return ViewControllerPresenter()
-    }
-
-    // MARK: - Mappers
-
-    var googleUserMapper: GoogleUserMapping {
-        return GoogleUserMapper()
     }
 
 }
