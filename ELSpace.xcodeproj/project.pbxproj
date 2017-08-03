@@ -24,6 +24,7 @@
 		477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */; };
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
 		47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */; };
+		47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivityController.swift */; };
 		47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */; };
 		47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */; };
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
@@ -127,6 +128,7 @@
 		477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapperFake.swift; sourceTree = "<group>"; };
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_JsonArray.swift; path = Data_JsonArray.swift; sourceTree = "<group>"; };
+		47C1C4EA1F335BDB009946BE /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSpec.swift; sourceTree = "<group>"; };
 		47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryFake.swift; sourceTree = "<group>"; };
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			children = (
 				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
 				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
+				47C1C4EA1F335BDB009946BE /* ActivityController.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -1004,6 +1007,7 @@
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
+				47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */,
 				47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
