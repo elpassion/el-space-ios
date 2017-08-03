@@ -1,6 +1,11 @@
 import UIKit
+import ELDebate
 
 extension AppContainer: SelectionScreenPresenterCreation {
+
+    var debateRunner: DebateRunning {
+        return DebateRunner()
+    }
 
     // MARK: - Controllers
 

@@ -1,6 +1,4 @@
 import UIKit
-import Alamofire
-import ELDebate
 
 protocol AppPresenting {
     func presentApp()
@@ -8,9 +6,7 @@ protocol AppPresenting {
 
 class AppContainer: AppPresenting {
 
-    var debateRunner: DebateRunning {
-        return DebateRunner()
-    }
+    var hubSession: HubSession = HubSession()
 
     // MARK: - AppPresenting
 
