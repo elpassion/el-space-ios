@@ -25,6 +25,7 @@
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
 		47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */; };
 		47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivityController.swift */; };
+		47C1C4EF1F335E20009946BE /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */; };
 		47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */; };
 		47C1C4F41F336772009946BE /* Date_MonthDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F31F336772009946BE /* Date_MonthDates.swift */; };
 		47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */; };
@@ -131,6 +132,7 @@
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_JsonArray.swift; path = Data_JsonArray.swift; sourceTree = "<group>"; };
 		47C1C4EA1F335BDB009946BE /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
+		47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter_Formatters.swift; sourceTree = "<group>"; };
 		47C1C4F31F336772009946BE /* Date_MonthDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date_MonthDates.swift; sourceTree = "<group>"; };
 		47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
 				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
 				47C1C4EA1F335BDB009946BE /* ActivityController.swift */,
+				47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -1039,6 +1042,7 @@
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,
 				AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */,
+				47C1C4EF1F335E20009946BE /* ActivityViewModel.swift in Sources */,
 				AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */,
 				50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */,
 				477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */,
