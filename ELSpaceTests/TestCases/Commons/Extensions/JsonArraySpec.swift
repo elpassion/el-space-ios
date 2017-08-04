@@ -101,16 +101,3 @@ class JsonArraySpec: QuickSpec {
     }
 
 }
-
-//context("when data is NOT a json") {
-//    var testFunc: (() throws -> Void)!
-//
-//    beforeEach {
-//        jsonData = Data()
-//        testFunc = { _ = jsonData.hubToken }
-//    }
-//
-//    it("should throw fatalError") {
-//        expect { try? testFunc() }.to(throwAssertion())
-//    }
-//}
