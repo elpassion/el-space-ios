@@ -53,6 +53,7 @@
 		47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */; };
 		47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */; };
 		47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */; };
+		47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976E1F347A31009EEE1C /* ProjectsService.swift */; };
 		47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97701F347DF1009EEE1C /* ProjectDTO.swift */; };
 		5002D5901EE84D18004C0B10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5851EE84D18004C0B10 /* Assets.xcassets */; };
 		5002D5911EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */; };
@@ -165,6 +166,7 @@
 		47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllerFactories.swift; sourceTree = "<group>"; };
 		47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionControllerSpy.swift; sourceTree = "<group>"; };
+		47FE976E1F347A31009EEE1C /* ProjectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
 		47FE97701F347DF1009EEE1C /* ProjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDTO.swift; sourceTree = "<group>"; };
 		5002D5851EE84D18004C0B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElSpaceLaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 				AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */,
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
 				473CBF961F33404600B80FA4 /* ReportsService.swift */,
+				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1029,6 +1032,7 @@
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
+				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */,
 				47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */,
