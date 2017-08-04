@@ -30,4 +30,8 @@ extension AppContainer {
         return ReportsService(apiClient: apiClientHubDecorator)
     }
 
+    var projectsService: ProjectsServiceProtocol {
+        return ProjectsService(apiClient: apiClientHubDecorator)
+    }
+
 }
