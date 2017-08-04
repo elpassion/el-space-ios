@@ -53,6 +53,9 @@
 		47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */; };
 		47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */; };
 		47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */; };
+		47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976E1F347A31009EEE1C /* ProjectsService.swift */; };
+		47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97701F347DF1009EEE1C /* ProjectDTO.swift */; };
+		47FE97731F348078009EEE1C /* ProjectsServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */; };
 		5002D5901EE84D18004C0B10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5851EE84D18004C0B10 /* Assets.xcassets */; };
 		5002D5911EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */; };
 		5002D5921EE84D18004C0B10 /* SourceCodePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */; };
@@ -164,6 +167,9 @@
 		47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllerFactories.swift; sourceTree = "<group>"; };
 		47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionControllerSpy.swift; sourceTree = "<group>"; };
+		47FE976E1F347A31009EEE1C /* ProjectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
+		47FE97701F347DF1009EEE1C /* ProjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDTO.swift; sourceTree = "<group>"; };
+		47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsServiceSpec.swift; sourceTree = "<group>"; };
 		5002D5851EE84D18004C0B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElSpaceLaunchScreen.storyboard; sourceTree = "<group>"; };
 		5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Bold.ttf"; sourceTree = "<group>"; };
@@ -311,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
+				47FE97701F347DF1009EEE1C /* ProjectDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -640,6 +647,7 @@
 				AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */,
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
 				473CBF961F33404600B80FA4 /* ReportsService.swift */,
+				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -706,6 +714,7 @@
 				AFE916DC1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift */,
 				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
 				47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */,
+				47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1026,9 +1035,11 @@
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
+				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */,
 				47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */,
+				47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
 				473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */,
@@ -1109,6 +1120,7 @@
 				47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */,
 				47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */,
 				473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */,
+				47FE97731F348078009EEE1C /* ProjectsServiceSpec.swift in Sources */,
 				47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */,
 				AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */,
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,
