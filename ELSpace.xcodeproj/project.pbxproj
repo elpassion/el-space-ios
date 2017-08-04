@@ -316,8 +316,8 @@
 		473CBF981F33412800B80FA4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
 				47FE97701F347DF1009EEE1C /* ProjectDTO.swift */,
+				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -646,8 +646,8 @@
 			children = (
 				AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */,
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
-				473CBF961F33404600B80FA4 /* ReportsService.swift */,
 				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
+				473CBF961F33404600B80FA4 /* ReportsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -713,8 +713,8 @@
 			children = (
 				AFE916DC1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift */,
 				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
-				47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */,
 				47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */,
+				47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
