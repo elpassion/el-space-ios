@@ -4,6 +4,7 @@ protocol ActivityControlling {
     var reports: Observable<[ReportDTO]> { get }
     var projects: Observable<[ProjectDTO]> { get }
     var isLoading: Observable<Bool> { get }
+    var didFinishFetch: Observable<Void> { get }
     func getReports(from: String, to: String)
     func getProjects()
 }
@@ -31,6 +32,10 @@ class ActivityController: ActivityControlling {
         return isLoadingVar.asObservable()
     }
 
+    var didFinishFetch: Observable<Void> {
+        return didFinishFetchSubject.asObservable()
+    }
+
     func getReports(from: String, to: String) {
         isLoadingReports.value = true
         _ = reportsService.getReports(startDate: from, endDate: to)
@@ -38,6 +43,7 @@ class ActivityController: ActivityControlling {
                 self?.reportsSubject.onNext(reports)
             }, onDisposed: { [weak self] in
                 self?.isLoadingReports.value = false
+                self?.didFinishReportFetch.value = true
             })
     }
 
@@ -48,6 +54,7 @@ class ActivityController: ActivityControlling {
                 self?.projectsSubject.onNext(projects)
             }, onDisposed: { [weak self] in
                 self?.isLoadingProjects.value = false
+                self?.didFinishProjectFetch.value = true
             })
     }
 
@@ -57,6 +64,10 @@ class ActivityController: ActivityControlling {
     private let projectsService: ProjectsServiceProtocol
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
+
+    private let didFinishReportFetch = Variable<Bool>(false)
+    private let didFinishProjectFetch = Variable<Bool>(false)
+    private let didFinishFetchSubject = PublishSubject<Void>()
 
     // MARK: - Loading
 
@@ -72,6 +83,17 @@ class ActivityController: ActivityControlling {
             isLoadingProjects.asObservable()
         ).merge()
             .bind(to: isLoadingVar)
+            .disposed(by: disposeBag)
+
+        Observable.of(
+            didFinishReportFetch.asObservable(),
+            didFinishProjectFetch.asObservable()
+        ).merge()
+            .map { [weak self] _ in
+                return self?.didFinishProjectFetch.value == true && self?.didFinishReportFetch.value == true
+            }.ignore(false)
+            .map { _ in () }
+            .bind(to: didFinishFetchSubject)
             .disposed(by: disposeBag)
     }
 
