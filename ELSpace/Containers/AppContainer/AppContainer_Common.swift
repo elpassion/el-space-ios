@@ -10,12 +10,11 @@ extension AppContainer: SelectionScreenPresenterCreation {
     // MARK: - Controllers
 
     func selectionController(googleIdToken: String) -> SelectionControllerSignIn {
-        return SelectionController(hubTokenService: hubTokenService,
-                                   googleIdToken: googleIdToken)
+        return SelectionController(hubTokenService: hubTokenService, googleIdToken: googleIdToken)
     }
 
     var activityController: ActivityControlling {
-        return ActivityController(reportsService: reportsService)
+        return ActivityController(reportsService: reportsService, projectsService: projectsService)
     }
 
     // MARK: - Presenters
