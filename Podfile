@@ -32,6 +32,7 @@ def pod_ui
     pod 'HexColors', '~> 5.0'
     pod 'Pastel', '~> 0.3'
     pod 'MBProgressHUD', '~> 1.0'
+    pod 'SnapKit', '~> 3.2'
 end
 
 def pod_tests
