@@ -71,6 +71,7 @@ PODS:
     - RxSwift (~> 3.6)
   - SnapKit (3.2.0)
   - Sourcery (0.7.2)
+  - SwiftDate (4.1.7)
   - SwiftLint (0.20.1)
   - Swinject (2.1.0)
   - SwinjectAutoregistration (2.1.0):
@@ -97,6 +98,7 @@ DEPENDENCIES:
   - RxSwiftExt (~> 2.5)
   - RxTest (~> 3.6)
   - SnapKit (~> 3.2)
+  - SwiftDate (~> 4.1)
   - SwiftLint (~> 0.20)
 
 SPEC CHECKSUMS:
@@ -126,11 +128,12 @@ SPEC CHECKSUMS:
   RxTest: 9cf69fa8f33e43cfcb154ad9b78f54afeb877423
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Sourcery: abd498f5fd7dd74a85af911013bd521c1dfbb6ff
+  SwiftDate: '029be76691ee89176da3a46c7df3415b6734bc5b'
   SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
   Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
   SwinjectAutoregistration: 7d8ac2c23718c78286adf7590c6d0671b4ccc834
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 72013b3d23da2be3c7523e6e904609a81336f8ce
+PODFILE CHECKSUM: 5bffa2ee46cd819d17a190d04a53bb646137d592
 
 COCOAPODS: 1.2.1
