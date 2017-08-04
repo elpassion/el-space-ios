@@ -21,12 +21,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
     private let shortDateFormatter = DateFormatter.shortDateFormatter()
 
     private var startOfCurrentMonth: String {
-        let date = Date().startOfMonth()
+        let date = Date().startOf(component: .month)
         return shortDateFormatter.string(from: date)
     }
 
     private var endOfCurrentMonth: String {
-        let date = Date().endOfMonth()
+        let date = Date().endOf(component: .month)
         return shortDateFormatter.string(from: date)
     }
 
