@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 class ReportDetailsViewModel {
 
@@ -20,5 +20,5 @@ class ReportDetailsViewModel {
 
     private let report: ReportViewModel
     private let project: ProjectDTO?
-    
+
 }
