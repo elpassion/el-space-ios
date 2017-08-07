@@ -20,9 +20,10 @@ class ReportDetailsViewModel {
         self.project = project
     }
 
+    let report: ReportViewModel
+
     // MARK: - Private
 
-    private let report: ReportViewModel
     private let project: ProjectDTO?
 
 }
