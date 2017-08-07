@@ -11,6 +11,10 @@ class ReportDetailsViewModel {
         return report.comment
     }
 
+    var type: ReportType? {
+        return ReportType(rawValue: report.type)
+    }
+
     init(report: ReportViewModel, project: ProjectDTO?) {
         self.report = report
         self.project = project
@@ -21,4 +25,11 @@ class ReportDetailsViewModel {
     private let report: ReportViewModel
     private let project: ProjectDTO?
 
+}
+
+enum ReportType: Int {
+    case normal
+    case paidVacations
+    case unpaidDayOff
+    case sickLeave
 }
