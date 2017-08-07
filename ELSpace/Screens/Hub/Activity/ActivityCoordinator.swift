@@ -26,7 +26,7 @@ class ActivityCoordinator: Coordinator {
     private func setupBindings() {
         viewController.rx.viewDidAppear
             .subscribe(onNext: { [weak self] in
-                self?.viewModel.getReports()
+                self?.viewModel.getData()
             }).disposed(by: disposeBag)
     }
 
