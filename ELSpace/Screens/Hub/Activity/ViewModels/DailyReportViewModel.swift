@@ -15,6 +15,22 @@ class DailyReportViewModel {
         return dayFormatter.string(from: date)
     }
 
+    var dayType: DayType {
+        if viewModelsContains(type: .normal) {
+            return DayType.normal
+        } else if date.isInWeekend {
+            return DayType.weekend
+        } else if date.isAfter(date: Date(), granularity: .day) && reportsViewModel.isEmpty {
+            return DayType.missing
+        } else {
+            return DayType.comming
+        }
+    }
+
+    func viewModelsContains(type: ReportType) -> Bool {
+        return reportsViewModel.contains { viewModel -> Bool in viewModel.type == type }
+    }
+
     let reportsViewModel: [ReportDetailsViewModel]
 
     // MARK: - Private
@@ -22,4 +38,11 @@ class DailyReportViewModel {
     private let dayFormatter = DateFormatter.dayFormatter()
     private let date: Date
 
+}
+
+enum DayType {
+    case normal
+    case weekend
+    case missing
+    case comming
 }
