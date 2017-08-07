@@ -11,6 +11,15 @@ class DailyReportViewModel {
         }
     }
 
+    var title: String? {
+        switch dayType {
+        case .missing: return "Missing"
+        case .comming: return nil
+        case .normal: return "Total: \(dayValue) hours"
+        case .weekend: return "Weekend!"
+        }
+    }
+
     var day: String {
         return dayFormatter.string(from: date)
     }
@@ -20,7 +29,7 @@ class DailyReportViewModel {
             return DayType.normal
         } else if date.isInWeekend {
             return DayType.weekend
-        } else if date.isAfter(date: Date(), granularity: .day) && reportsViewModel.isEmpty {
+        } else if date.isBefore(date: Date(), granularity: .day) && reportsViewModel.isEmpty {
             return DayType.missing
         } else {
             return DayType.comming
@@ -34,6 +43,10 @@ class DailyReportViewModel {
     let reportsViewModel: [ReportDetailsViewModel]
 
     // MARK: - Private
+
+    private var dayValue: Double {
+        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.report.value + result }
+    }
 
     private let dayFormatter = DateFormatter.dayFormatter()
     private let date: Date
