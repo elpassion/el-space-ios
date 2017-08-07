@@ -6,8 +6,8 @@ class ReportViewModel {
         self.report = report
     }
 
-    var id: Int {
-        return report.id
+    var projectId: Int? {
+        return report.projectId
     }
 
     var date: Date {
@@ -15,13 +15,17 @@ class ReportViewModel {
         return date
     }
 
-    var value: Int {
-        guard let value = Int(report.value) else { return 0 }
+    var value: Double {
+        guard let value = Double(report.value) else { return 0.0 }
         return value
     }
 
     var comment: String? {
         return report.comment
+    }
+
+    var type: Int {
+        return report.reportType
     }
 
     // MARK: - Private
