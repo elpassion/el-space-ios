@@ -5,7 +5,7 @@ class DailyReportViewModel {
     init(date: Date, reports: [ReportViewModel], projects: [ProjectDTO]) {
         self.date = date
         reportsViewModel = reports.map { report in
-            let project = projects.first(where: { $0.id == report.id })
+            let project = projects.first(where: { $0.id == report.projectId })
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
             return reportDetailsViewModel
         }
@@ -15,10 +15,11 @@ class DailyReportViewModel {
         return dayFormatter.string(from: date)
     }
 
+    let reportsViewModel: [ReportDetailsViewModel]
+
     // MARK: - Private
 
-    private let reportsViewModel: [ReportDetailsViewModel]
     private let dayFormatter = DateFormatter.dayFormatter()
     private let date: Date
-    
+
 }
