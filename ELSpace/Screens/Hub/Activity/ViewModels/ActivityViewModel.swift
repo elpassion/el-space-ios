@@ -2,6 +2,7 @@ import RxSwift
 import SwiftDate
 
 protocol ActivityViewModelProtocol {
+    var dataSource: Observable<[DailyReportViewModel]> { get }
     func getData()
 }
 
@@ -15,6 +16,10 @@ class ActivityViewModel: ActivityViewModelProtocol {
     func getData() {
         activityController.getReports(from: startOfCurrentMonth, to: endOfCurrentMonth)
         activityController.getProjects()
+    }
+
+    var dataSource: Observable<[DailyReportViewModel]> {
+        return viewModels.asObservable()
     }
 
     // MARK: - Private
