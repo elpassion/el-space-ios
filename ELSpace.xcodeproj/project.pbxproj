@@ -372,13 +372,10 @@
 		47F1DCA71F309ECF0039B34E /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				47F8647B1F387501000C0FE9 /* ViewModels */,
 				47C1C4EA1F335BDB009946BE /* ActivityController.swift */,
 				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
 				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
-				47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */,
-				47F378541F370E1F005F78E5 /* ReportViewModel.swift */,
-				47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */,
-				47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -407,6 +404,18 @@
 				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		47F8647B1F387501000C0FE9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */,
+				47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */,
+				47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */,
+				47F378541F370E1F005F78E5 /* ReportViewModel.swift */,
+			);
+			name = ViewModels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5002D5841EE84D18004C0B10 /* Supporting Files */ = {
