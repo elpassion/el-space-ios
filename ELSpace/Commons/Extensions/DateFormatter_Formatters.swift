@@ -2,13 +2,13 @@ import Foundation
 
 extension DateFormatter {
 
-    static func shortDateFormatter() -> DateFormatter {
+    static var shortDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter.warsawTimeZoneFormatter
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
     }
 
-    static func dayFormatter() -> DateFormatter {
+    static var dayFormatter: DateFormatter {
         let dateFormatter = DateFormatter.warsawTimeZoneFormatter
         dateFormatter.dateFormat = "d E"
         return dateFormatter

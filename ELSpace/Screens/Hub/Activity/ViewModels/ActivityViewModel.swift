@@ -30,7 +30,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     // MARK: - Private
 
     private let activityController: ActivityControlling
-    private let shortDateFormatter = DateFormatter.shortDateFormatter()
+    private let shortDateFormatter = DateFormatter.shortDateFormatter
 
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportViewModel]>([])

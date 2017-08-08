@@ -51,7 +51,7 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
         return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.value + result }
     }
 
-    private let dayFormatter = DateFormatter.dayFormatter()
+    private let dayFormatter = DateFormatter.dayFormatter
     private let date: Date
 
     // MARK: Helpers

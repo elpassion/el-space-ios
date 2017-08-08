@@ -31,6 +31,6 @@ class ReportViewModel {
     // MARK: - Private
 
     private let report: ReportDTO
-    private let shortDateFormatter = DateFormatter.shortDateFormatter()
+    private let shortDateFormatter = DateFormatter.shortDateFormatter
 
 }
