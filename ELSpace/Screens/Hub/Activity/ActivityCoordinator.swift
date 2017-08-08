@@ -31,7 +31,7 @@ class ActivityCoordinator: Coordinator {
 
         viewModel.dataSource
             .subscribe(onNext: { [weak self] viewModels in
-                self?.viewController.reportsTableViewController.viewModels = viewModels
+                self?.viewController.viewModels = viewModels
             }).disposed(by: disposeBag)
 
         viewModel.isLoading

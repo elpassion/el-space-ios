@@ -1,26 +1,91 @@
 import UIKit
 import SnapKit
 
-class ActivityViewController: UIViewController {
+class ActivityViewController: UITableViewController {
 
-    init(reportsTableViewController: ReportsTableViewController) {
-        self.reportsTableViewController = reportsTableViewController
-        super.init(nibName: nil, bundle: nil)
-        addChildViewController(reportsTableViewController)
-        view.addSubview(reportsTableViewController.tableView)
-        reportsTableViewController.tableView.snp.makeConstraints { $0.edges.equalTo(0) }
+    init() {
+        super.init(style: .plain)
+        tableView.register(ReportCell.self, forCellReuseIdentifier: ReportCell.reuseIdentifier)
+        tableView.tableFooterView = UIView(frame: .zero)
     }
-
-    let reportsTableViewController: ReportsTableViewController
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.applayHubStyle()
+        navigationItem.titleView = navigationItemTitleLabel
+    }
+
+    var viewModels: [DailyReportViewModelProtocol] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
+    var navigationItemTitle: String? {
+        didSet {
+            navigationItemTitleLabel.text = navigationItemTitle
+            navigationItemTitleLabel.sizeToFit()
+        }
+    }
+
+    // MARK: - UITableViewDataSource
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = viewModels[indexPath.row]
+        return reportCell(tableView, indexPath: indexPath, viewModel: viewModel)
+    }
+
+    // MARK: - UITableViewDelegate
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+    // MARK: - Private
+
+    func reportCell(_ tableView: UITableView, indexPath: IndexPath, viewModel: DailyReportViewModelProtocol) -> ReportCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReportCell.reuseIdentifier, for: indexPath) as? ReportCell else { fatalError() }
+        viewModel.bind(to: cell).disposed(by: cell.reusabilityDisposeBag)
+        return cell
+    }
+
+    // MARK: - Subviews
+
+    private let navigationItemTitleLabel = NavigationItemSubviews.label
 
     // MARK: - Loading
 
     private(set) lazy var loadingIndicator: LoadingIndicator = {
         return LoadingIndicator(superView: self.view)
     }()
+
+}
+
+private extension ActivityViewController {
+
+    struct NavigationItemSubviews {
+        static var label: UILabel {
+            let label = UILabel(frame: .zero)
+            label.font = UIFont(name: "Helvetica", size: 17)
+            label.textColor = .white
+            return label
+        }
+    }
 
 }

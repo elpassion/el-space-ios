@@ -58,7 +58,6 @@
 		47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647D1F38BC93000C0FE9 /* Reusable.swift */; };
 		47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647F1F38BCF0000C0FE9 /* Disposable.swift */; };
 		47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864811F38BD35000C0FE9 /* RxReusable.swift */; };
-		47F864841F38C0BF000C0FE9 /* ReportsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864831F38C0BF000C0FE9 /* ReportsTableViewController.swift */; };
 		47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */; };
 		47FE97671F346967009EEE1C /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97661F346967009EEE1C /* ReportCell.swift */; };
 		47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97681F3469F6009EEE1C /* ReportView.swift */; };
@@ -182,7 +181,6 @@
 		47F8647D1F38BC93000C0FE9 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		47F8647F1F38BCF0000C0FE9 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		47F864811F38BD35000C0FE9 /* RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusable.swift; sourceTree = "<group>"; };
-		47F864831F38C0BF000C0FE9 /* ReportsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsTableViewController.swift; sourceTree = "<group>"; };
 		47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportCell.swift; sourceTree = "<group>"; };
 		47FE97661F346967009EEE1C /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
 		47FE97681F3469F6009EEE1C /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 				47C1C4EA1F335BDB009946BE /* ActivityController.swift */,
 				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
 				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
-				47F864831F38C0BF000C0FE9 /* ReportsTableViewController.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -1128,7 +1125,6 @@
 				AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */,
 				AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */,
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
-				47F864841F38C0BF000C0FE9 /* ReportsTableViewController.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,

@@ -6,10 +6,6 @@ extension AppContainer: LoginViewControllerCreation,
                         AlertCreation,
                         ActivityViewControllerCreation {
 
-    var reportsTableViewController: ReportsTableViewController {
-        return ReportsTableViewController()
-    }
-
     // MARK: - LoginViewControllerCreation
 
     func loginViewController() -> LoginViewController {
@@ -42,7 +38,7 @@ extension AppContainer: LoginViewControllerCreation,
     // MARK: - ActivityViewControllerCreation
 
     func activityViewController() -> ActivityViewController {
-        return ActivityViewController(reportsTableViewController: reportsTableViewController)
+        return ActivityViewController()
     }
 
 }
