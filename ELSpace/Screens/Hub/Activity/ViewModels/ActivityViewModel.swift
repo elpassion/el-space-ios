@@ -27,10 +27,15 @@ class ActivityViewModel: ActivityViewModelProtocol {
         return activityController.isLoading
     }
 
+    var month: String {
+        return monthFormatter.string(from: Date())
+    }
+
     // MARK: - Private
 
     private let activityController: ActivityControlling
     private let shortDateFormatter = DateFormatter.shortDateFormatter
+    private let monthFormatter = DateFormatter.monthFormatter
 
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportViewModel]>([])
@@ -60,7 +65,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
         }
     }
 
-    // MARK: Bindings
+    // MARK: - Bindings
 
     private func setupBindings() {
         activityController.reports
