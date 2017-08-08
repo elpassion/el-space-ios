@@ -4,6 +4,7 @@ import SwiftDate
 protocol ActivityViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
+    var month: String { get }
     func getData()
 }
 
@@ -84,5 +85,13 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
     private let disposeBag = DisposeBag()
+
+}
+
+extension ActivityViewModelProtocol {
+
+    var monthObservable: Observable<String> {
+        return Observable.just(month)
+    }
 
 }
