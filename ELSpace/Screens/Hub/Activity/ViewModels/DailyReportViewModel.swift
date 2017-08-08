@@ -20,9 +20,9 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
 
     var title: String? {
         switch dayType {
+        case .weekday: return weekdayTitle
         case .missing: return "Missing"
         case .comming: return nil
-        case .normal: return "Total: \(dayValue) hours"
         case .weekend: return "Weekend!"
         }
     }
@@ -32,14 +32,14 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
     }
 
     var dayType: DayType {
-        if viewModelsContains(type: .normal) {
-            return DayType.normal
+        if areAnyReports {
+            return .weekday
         } else if date.isInWeekend {
-            return DayType.weekend
+            return .weekend
         } else if date.isBefore(date: Date(), granularity: .day) && reportsViewModel.isEmpty {
-            return DayType.missing
+            return .missing
         } else {
-            return DayType.comming
+            return .comming
         }
     }
 
@@ -48,20 +48,40 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
     // MARK: - Private
 
     private var dayValue: Double {
-        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.report.value + result }
+        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.value + result }
     }
 
     private let dayFormatter = DateFormatter.dayFormatter()
     private let date: Date
 
-    private func viewModelsContains(type: ReportType) -> Bool {
-        return reportsViewModel.contains { viewModel -> Bool in viewModel.type == type }
+    // MARK: Helpers
+
+    private var areAnyReports: Bool {
+        return reportsViewModel.isEmpty == false
+    }
+
+    private var viewModelsContainsUnpaidVacations: Bool {
+        return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .unpaidDayOff })
+    }
+
+    private var viewModelsContainsSickLeave: Bool {
+        return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .sickLeave })
+    }
+
+    private var weekdayTitle: String {
+        if viewModelsContainsUnpaidVacations {
+            return "Unpaid vacations"
+        } else if viewModelsContainsSickLeave {
+            return "Sick leave"
+        } else {
+            return "Total: \(dayValue) hours"
+        }
     }
 
 }
 
 enum DayType {
-    case normal
+    case weekday
     case weekend
     case missing
     case comming

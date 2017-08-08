@@ -1,10 +1,16 @@
-import Foundation
+import RxSwift
+
+protocol ReportDetailsViewModelProtocol {
+    var title: String? { get }
+    var subtitle: String? { get }
+    var type: ReportType? { get }
+    var value: Double { get }
+}
 
 class ReportDetailsViewModel {
 
     var title: String? {
-        guard let projectName = project?.name else { return nil }
-        return "\(projectName) - \(report.value)"
+        return typeTitle
     }
 
     var subtitle: String? {
@@ -15,16 +21,36 @@ class ReportDetailsViewModel {
         return ReportType(rawValue: report.type)
     }
 
+    var value: Double {
+        switch type {
+        case .some(.normal): return report.value
+        case .some(.paidVacations): return weekdaysHoursOfWork
+        case .some(.unpaidDayOff): return weekdaysHoursOfWork
+        case .some(.sickLeave): return weekdaysHoursOfWork
+        default: return 0.0
+        }
+    }
+
     init(report: ReportViewModel, project: ProjectDTO?) {
         self.report = report
         self.project = project
     }
 
-    let report: ReportViewModel
-
     // MARK: - Private
 
     private let project: ProjectDTO?
+    private let report: ReportViewModel
+    private let weekdaysHoursOfWork: Double = 8.0
+
+    private var typeTitle: String? {
+        switch type {
+        case .some(.normal):
+            guard let projectName = project?.name else { return nil }
+            return "\(projectName) - \(report.value)"
+        case .some(.paidVacations): return "Vacations"
+        default: return nil
+        }
+    }
 
 }
 
