@@ -70,31 +70,25 @@ class JsonArraySpec: QuickSpec {
             }
 
             context("when json data is incorrect") {
-                var errorFunc: (() throws -> Void)!
-
                 beforeEach {
                     jsonData = Data()
-                    errorFunc = { _ = jsonData.jsonArray }
                 }
 
                 it("should throw fatalError") {
-                    expect { try? errorFunc() }.to(throwAssertion())
+                    expect { _ = jsonData.jsonArray }.to(throwAssertion())
                 }
             }
 
             context("when json NOT contain array") {
-                var errorFunc: (() throws -> Void)!
-
                 beforeEach {
                     let array = [
                         "fake_key1": "fake_value"
                     ]
                     jsonData = try! JSONSerialization.data(withJSONObject: array, options: [])
-                    errorFunc = { _ = jsonData.jsonArray }
                 }
 
                 it("should throw fatalError") {
-                    expect { try? errorFunc() }.to(throwAssertion())
+                    expect { _ = jsonData.jsonArray }.to(throwAssertion())
                 }
             }
         }

@@ -17,19 +17,14 @@ class LoginViewControllerSpec: QuickSpec {
 
             afterEach {
                 sut = nil
+                navigationController = nil
                 viewControllerPresenterSpy = nil
                 googleUserManagerSpy = nil
             }
 
             context("when try to initialize with init coder") {
-                var testFunc: (() throws -> Void)!
-
-                beforeEach {
-                    testFunc = { sut = LoginViewController(coder: NSCoder()) }
-                }
-
                 it("should throw fatalError") {
-                    expect(try? testFunc() ).to(throwAssertion())
+                    expect { sut = LoginViewController(coder: NSCoder()) }.to(throwAssertion())
                 }
             }
 

@@ -10,6 +10,10 @@ class ReportViewModelSpec: QuickSpec {
 
             var sut: ReportViewModel!
 
+            afterEach {
+                sut = nil
+            }
+
             describe("date") {
                 context("when initialize with correct performedAt date") {
                     var formatter: DateFormatter!
