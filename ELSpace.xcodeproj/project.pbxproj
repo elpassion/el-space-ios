@@ -339,6 +339,7 @@
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
 			);
 			name = ViewModels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		473CBF981F33412800B80FA4 /* DTO */ = {
@@ -398,8 +399,8 @@
 			isa = PBXGroup;
 			children = (
 				47F864851F38C153000C0FE9 /* Bindings */,
-				47F8647B1F387501000C0FE9 /* ViewModels */,
 				47FE97651F34654E009EEE1C /* View */,
+				47F8647B1F387501000C0FE9 /* ViewModels */,
 				47C1C4EA1F335BDB009946BE /* ActivityController.swift */,
 				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
 				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
@@ -447,11 +448,12 @@
 		47F8647C1F38BC81000C0FE9 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
-				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F8647F1F38BCF0000C0FE9 /* Disposable.swift */,
+				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
 			);
 			name = Rx;
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		47F864851F38C153000C0FE9 /* Bindings */ = {
@@ -460,16 +462,18 @@
 				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */,
 			);
 			name = Bindings;
+			path = Bindings;
 			sourceTree = "<group>";
 		};
 		47FE97651F34654E009EEE1C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				47FE97661F346967009EEE1C /* ReportCell.swift */,
-				47FE97681F3469F6009EEE1C /* ReportView.swift */,
 				47FE976A1F347285009EEE1C /* ReportDetailsView.swift */,
+				47FE97681F3469F6009EEE1C /* ReportView.swift */,
 			);
 			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		5002D5841EE84D18004C0B10 /* Supporting Files */ = {
@@ -623,12 +627,12 @@
 		8613F3411EEEDE2C0037A787 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
-				470991CE1F39F0690088E6BF /* ViewModels */,
 				86D9F91C1EEEBB1A00788C1D /* Commons */,
 				AFB47B7F1F28D35C00E0A922 /* Controllers */,
 				47F8622F1F2F256100E7C518 /* Coordinators */,
 				AF48257F1F276C110081B2CC /* Network */,
 				47CA94941F2A1EBE00D5A9B7 /* ViewControllers */,
+				470991CE1F39F0690088E6BF /* ViewModels */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
