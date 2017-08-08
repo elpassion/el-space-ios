@@ -7,7 +7,7 @@ class ActivityCoordinator: Coordinator {
          viewModel: ActivityViewModelProtocol) {
         self.viewController = viewController
         self.viewModel = viewModel
-        setupBindings()
+        bind(viewModel: viewModel, to: viewController)
     }
 
     // MARK: - Coordinator
@@ -23,7 +23,7 @@ class ActivityCoordinator: Coordinator {
 
     // MARK: - Bindings
 
-    private func setupBindings() {
+    func bind(viewModel: ActivityViewModelProtocol, to viewController: ActivityViewController) {
         viewController.rx.viewDidAppear
             .subscribe(onNext: { [weak self] in
                 self?.viewModel.getData()
