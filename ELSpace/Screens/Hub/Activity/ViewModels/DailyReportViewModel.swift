@@ -1,6 +1,13 @@
-import Foundation
+import RxSwift
 
-class DailyReportViewModel {
+protocol DailyReportViewModelProtocol {
+    var title: String? { get }
+    var day: String { get }
+    var dayType: DayType { get }
+    var reportsViewModel: [ReportDetailsViewModel] { get }
+}
+
+class DailyReportViewModel: DailyReportViewModelProtocol {
 
     init(date: Date, reports: [ReportViewModel], projects: [ProjectDTO]) {
         self.date = date
@@ -36,10 +43,6 @@ class DailyReportViewModel {
         }
     }
 
-    func viewModelsContains(type: ReportType) -> Bool {
-        return reportsViewModel.contains { viewModel -> Bool in viewModel.type == type }
-    }
-
     let reportsViewModel: [ReportDetailsViewModel]
 
     // MARK: - Private
@@ -51,6 +54,10 @@ class DailyReportViewModel {
     private let dayFormatter = DateFormatter.dayFormatter()
     private let date: Date
 
+    private func viewModelsContains(type: ReportType) -> Bool {
+        return reportsViewModel.contains { viewModel -> Bool in viewModel.type == type }
+    }
+
 }
 
 enum DayType {
@@ -58,4 +65,24 @@ enum DayType {
     case weekend
     case missing
     case comming
+}
+
+extension DailyReportViewModelProtocol {
+
+    var titleObservable: Observable<String?> {
+        return Observable.just(title)
+    }
+
+    var dayObservable: Observable<String> {
+        return Observable.just(day)
+    }
+
+    var dayTypeObservable: Observable<DayType> {
+        return Observable.just(dayType)
+    }
+
+    var reportsViewModelObservable: Observable<[ReportDetailsViewModel]> {
+        return Observable.just(reportsViewModel)
+    }
+
 }

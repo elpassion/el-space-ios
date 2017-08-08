@@ -1,14 +1,14 @@
 import RxSwift
 
-extension DailyReportViewModel {
+extension DailyReportViewModelProtocol {
 
     func bind(to cell: ReportCell) -> CompositeDisposable {
         let disposeBag = CompositeDisposable()
 
-        Observable.just(day).bind(to: cell.view.dateLabel.rx.text).disposed(by: disposeBag)
-        Observable.just(title).bind(to: cell.view.titleLabel.rx.text).disposed(by: disposeBag)
+        titleObservable.bind(to: cell.view.titleLabel.rx.text).disposed(by: disposeBag)
+        dayObservable.bind(to: cell.view.dateLabel.rx.text).disposed(by: disposeBag)
 
-        Observable.just(reportsViewModel).subscribe(onNext: { viewModels in
+        reportsViewModelObservable.subscribe(onNext: { viewModels in
             cell.view.reportDetailsViews = viewModels.map({ (viewModel) -> ReportDetailsView in
                 ReportDetailsView(title: viewModel.title, subtitle: viewModel.subtitle)
             })

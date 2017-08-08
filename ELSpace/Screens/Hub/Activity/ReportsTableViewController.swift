@@ -2,7 +2,7 @@ import UIKit
 
 class ReportsTableViewController: UITableViewController {
 
-    var viewModels: [DailyReportViewModel] = [] {
+    var viewModels: [DailyReportViewModelProtocol] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -50,7 +50,7 @@ class ReportsTableViewController: UITableViewController {
 
     // MARK: - Private
 
-    func reportCell(_ tableView: UITableView, indexPath: IndexPath, viewModel: DailyReportViewModel) -> ReportCell {
+    func reportCell(_ tableView: UITableView, indexPath: IndexPath, viewModel: DailyReportViewModelProtocol) -> ReportCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReportCell.reuseIdentifier, for: indexPath) as? ReportCell else { fatalError() }
         viewModel.bind(to: cell).disposed(by: cell.reusabilityDisposeBag)
         return cell

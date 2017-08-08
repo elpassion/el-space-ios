@@ -2,7 +2,7 @@ import RxSwift
 import SwiftDate
 
 protocol ActivityViewModelProtocol {
-    var dataSource: Observable<[DailyReportViewModel]> { get }
+    var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     func getData()
 }
@@ -19,7 +19,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
         activityController.getProjects()
     }
 
-    var dataSource: Observable<[DailyReportViewModel]> {
+    var dataSource: Observable<[DailyReportViewModelProtocol]> {
         return viewModels.asObservable()
     }
 
@@ -34,7 +34,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportViewModel]>([])
-    private let viewModels = Variable<[DailyReportViewModel]>([])
+    private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
 
     private var days: [Date] {
         return Date.dates(between: Date().startOf(component: .month),

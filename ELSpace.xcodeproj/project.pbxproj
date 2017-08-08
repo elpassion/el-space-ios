@@ -59,7 +59,7 @@
 		47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647F1F38BCF0000C0FE9 /* Disposable.swift */; };
 		47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864811F38BD35000C0FE9 /* RxReusable.swift */; };
 		47F864841F38C0BF000C0FE9 /* ReportsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864831F38C0BF000C0FE9 /* ReportsTableViewController.swift */; };
-		47F864871F38C163000C0FE9 /* DailyReportViewModel_ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModel_ReportCell.swift */; };
+		47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */; };
 		47FE97671F346967009EEE1C /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97661F346967009EEE1C /* ReportCell.swift */; };
 		47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97681F3469F6009EEE1C /* ReportView.swift */; };
 		47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976A1F347285009EEE1C /* ReportDetailsView.swift */; };
@@ -183,7 +183,7 @@
 		47F8647F1F38BCF0000C0FE9 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		47F864811F38BD35000C0FE9 /* RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusable.swift; sourceTree = "<group>"; };
 		47F864831F38C0BF000C0FE9 /* ReportsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsTableViewController.swift; sourceTree = "<group>"; };
-		47F864861F38C163000C0FE9 /* DailyReportViewModel_ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModel_ReportCell.swift; sourceTree = "<group>"; };
+		47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportCell.swift; sourceTree = "<group>"; };
 		47FE97661F346967009EEE1C /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
 		47FE97681F3469F6009EEE1C /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		47FE976A1F347285009EEE1C /* ReportDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
@@ -434,7 +434,6 @@
 				47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */,
 				47F378541F370E1F005F78E5 /* ReportViewModel.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -451,7 +450,7 @@
 		47F864851F38C153000C0FE9 /* Bindings */ = {
 			isa = PBXGroup;
 			children = (
-				47F864861F38C163000C0FE9 /* DailyReportViewModel_ReportCell.swift */,
+				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */,
 			);
 			name = Bindings;
 			sourceTree = "<group>";
@@ -1149,7 +1148,7 @@
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
-				47F864871F38C163000C0FE9 /* DailyReportViewModel_ReportCell.swift in Sources */,
+				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				47C1C4F61F336AB3009946BE /* UIViewController_RxViewDidAppear.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
