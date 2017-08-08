@@ -46,7 +46,7 @@ class ReportView: UIView {
         dateLabel.snp.makeConstraints {
             $0.top.bottom.equalTo(0)
             $0.left.equalTo(20)
-            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(5) 
+            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(5)
         }
         titleLabel.snp.makeConstraints {
             $0.right.lessThanOrEqualTo(0)

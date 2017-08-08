@@ -3,6 +3,7 @@ import SwiftDate
 
 protocol ActivityViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModel]> { get }
+    var isLoading: Observable<Bool> { get }
     func getData()
 }
 
@@ -20,6 +21,10 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var dataSource: Observable<[DailyReportViewModel]> {
         return viewModels.asObservable()
+    }
+
+    var isLoading: Observable<Bool> {
+        return activityController.isLoading
     }
 
     // MARK: - Private
