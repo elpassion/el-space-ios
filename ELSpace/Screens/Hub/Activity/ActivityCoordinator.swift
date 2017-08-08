@@ -28,6 +28,15 @@ class ActivityCoordinator: Coordinator {
             .subscribe(onNext: { [weak self] in
                 self?.viewModel.getData()
             }).disposed(by: disposeBag)
+
+        viewModel.dataSource
+            .subscribe(onNext: { [weak self] viewModels in
+                self?.viewController.reportsTableViewController.viewModels = viewModels
+            }).disposed(by: disposeBag)
+
+        viewModel.isLoading
+            .bind(to: viewController.loadingIndicator.rx.isLoading)
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
