@@ -14,6 +14,13 @@ extension DateFormatter {
         return dateFormatter
     }
 
+    static var monthFormatter: DateFormatter {
+        let dateFormatter = DateFormatter.warsawTimeZoneFormatter
+        dateFormatter.locale = Locale(identifier: "pl")
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter
+    }
+
     // MARK: - Private
 
     private static var warsawTimeZoneFormatter: DateFormatter {
