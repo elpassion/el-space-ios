@@ -32,7 +32,7 @@ class LoadingIndicator {
     }
 
     private func updateHud() {
-        if operationsCount > 0 {
+        if operationsCount > 0 && hud == nil {
             hud = MBProgressHUD.showAdded(to: superView, animated: true)
         } else if operationsCount <= 0 {
             hud?.hide(animated: true)
