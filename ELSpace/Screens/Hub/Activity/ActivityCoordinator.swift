@@ -37,6 +37,11 @@ class ActivityCoordinator: Coordinator {
         viewModel.isLoading
             .bind(to: viewController.loadingIndicator.rx.isLoading)
             .disposed(by: disposeBag)
+
+        viewModel.monthObservable
+            .subscribe(onNext: { [weak self] month in
+                self?.viewController.navigationItemTitle = month
+            }).disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
