@@ -31,7 +31,7 @@ extension UINavigationController {
     func applayHubStyle() {
         navigationBar.barTintColor = UIColor.black
         navigationBar.barStyle = .black
-        navigationBar.isTranslucent = true
+        navigationBar.isTranslucent = false
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName: UIColor.white
