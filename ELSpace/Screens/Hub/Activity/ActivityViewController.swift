@@ -1,7 +1,16 @@
 import UIKit
 import SnapKit
 
-class ActivityViewController: UITableViewController {
+import RxSwift
+
+protocol ActivityViewControlling: class {
+    var viewModels: [DailyReportViewModelProtocol] { get set }
+    var navigationItemTitle: String? { get set }
+    var viewDidAppear: Observable<Void> { get }
+    var isLoading: AnyObserver<Bool> { get }
+}
+
+class ActivityViewController: UITableViewController, ActivityViewControlling {
 
     init() {
         super.init(style: .plain)
@@ -32,6 +41,17 @@ class ActivityViewController: UITableViewController {
         }
     }
 
+    var viewDidAppear: Observable<Void> {
+        return viewDidAppearSubject.asObservable()
+    }
+
+    var isLoading: AnyObserver<Bool> {
+        return AnyObserver(eventHandler: { [weak self] event in
+            guard let element = event.element else { return }
+            self?.loadingIndicator.loading(element)
+        })
+    }
+
     // MARK: - UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,6 +78,8 @@ class ActivityViewController: UITableViewController {
     }
 
     // MARK: - Private
+
+    private let viewDidAppearSubject = PublishSubject<Void>()
 
     func reportCell(_ tableView: UITableView, indexPath: IndexPath, viewModel: DailyReportViewModelProtocol) -> ReportCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReportCell.reuseIdentifier, for: indexPath) as? ReportCell else { fatalError() }
