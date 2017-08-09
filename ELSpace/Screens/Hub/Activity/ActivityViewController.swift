@@ -32,6 +32,8 @@ class ActivityViewController: UITableViewController, ActivityViewControlling {
         viewDidAppearSubject.onNext()
     }
 
+    // MARK: - ActivityViewControlling
+
     var viewModels: [DailyReportViewModelProtocol] = [] {
         didSet {
             tableView.reloadData()
