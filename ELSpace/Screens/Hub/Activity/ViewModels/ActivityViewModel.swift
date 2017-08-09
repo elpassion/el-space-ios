@@ -21,7 +21,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
     var dataSource: Observable<[DailyReportViewModelProtocol]> {
-        return viewModels.asObservable()
+        return viewModels.asObservable().ignoreWhen { $0.isEmpty }
     }
 
     var isLoading: Observable<Bool> {
