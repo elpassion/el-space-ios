@@ -54,6 +54,7 @@
 		47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */; };
 		47F819E21F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */; };
 		47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */; };
+		47F819E61F3B4810003C1BD5 /* ActivityViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
@@ -186,6 +187,7 @@
 		47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsServiceStub.swift; sourceTree = "<group>"; };
 		47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModelSpec.swift; sourceTree = "<group>"; };
 		47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityControllerSpy.swift; sourceTree = "<group>"; };
+		47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -357,7 +359,6 @@
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
 			);
-			name = ViewModels;
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
@@ -391,6 +392,7 @@
 			children = (
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
+				47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -474,7 +476,6 @@
 				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
 			);
-			name = Rx;
 			path = Rx;
 			sourceTree = "<group>";
 		};
@@ -483,7 +484,6 @@
 			children = (
 				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */,
 			);
-			name = Bindings;
 			path = Bindings;
 			sourceTree = "<group>";
 		};
@@ -494,7 +494,6 @@
 				47FE976A1F347285009EEE1C /* ReportDetailsView.swift */,
 				47FE97681F3469F6009EEE1C /* ReportView.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1221,6 +1220,7 @@
 				AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */,
 				47F819DE1F3B1EC5003C1BD5 /* ReportsServiceStub.swift in Sources */,
 				470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */,
+				47F819E61F3B4810003C1BD5 /* ActivityViewControllerSpec.swift in Sources */,
 				47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
 				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
