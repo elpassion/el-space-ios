@@ -7,7 +7,7 @@ protocol ReportDetailsViewModelProtocol {
     var value: Double { get }
 }
 
-class ReportDetailsViewModel {
+class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
 
     var title: String? {
         return typeTitle

@@ -4,7 +4,7 @@ protocol DailyReportViewModelProtocol {
     var title: String? { get }
     var day: String { get }
     var dayType: DayType { get }
-    var reportsViewModel: [ReportDetailsViewModel] { get }
+    var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
 }
 
 class DailyReportViewModel: DailyReportViewModelProtocol {
@@ -17,6 +17,8 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
             return reportDetailsViewModel
         }
     }
+
+    // MARK: - DailReportViewModelProtocol
 
     var title: String? {
         switch dayType {
@@ -43,7 +45,7 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
         }
     }
 
-    let reportsViewModel: [ReportDetailsViewModel]
+    let reportsViewModel: [ReportDetailsViewModelProtocol]
 
     // MARK: - Private
 
@@ -101,7 +103,7 @@ extension DailyReportViewModelProtocol {
         return Observable.just(dayType)
     }
 
-    var reportsViewModelObservable: Observable<[ReportDetailsViewModel]> {
+    var reportsViewModelObservable: Observable<[ReportDetailsViewModelProtocol]> {
         return Observable.just(reportsViewModel)
     }
 

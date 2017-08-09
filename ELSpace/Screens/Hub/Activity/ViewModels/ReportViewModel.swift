@@ -14,6 +14,8 @@ class ReportViewModel: ReportViewModelProtocol {
         self.report = report
     }
 
+    // MARK: - ReportViewModelProtocol
+
     var projectId: Int? {
         return report.projectId
     }
