@@ -1,6 +1,5 @@
 import UIKit
 import SnapKit
-
 import RxSwift
 
 protocol ActivityViewControlling: class {
