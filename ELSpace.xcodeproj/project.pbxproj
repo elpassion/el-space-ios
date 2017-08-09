@@ -348,9 +348,9 @@
 		470991CE1F39F0690088E6BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
-				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 			);
 			name = ViewModels;
 			path = ViewModels;
@@ -435,9 +435,9 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
+				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
+				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -851,8 +851,8 @@
 		AFB47B7F1F28D35C00E0A922 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
 				47F819DB1F3B1A24003C1BD5 /* ActivityControllerSpec.swift */,
+				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
