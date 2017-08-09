@@ -340,8 +340,8 @@
 		470991CE1F39F0690088E6BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
+				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
 			);
 			name = ViewModels;
 			path = ViewModels;
