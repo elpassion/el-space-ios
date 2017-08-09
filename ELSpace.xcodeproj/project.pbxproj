@@ -29,7 +29,6 @@
 		47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivityController.swift */; };
 		47C1C4EF1F335E20009946BE /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */; };
 		47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */; };
-		47C1C4F61F336AB3009946BE /* UIViewController_RxViewDidAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */; };
 		47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */; };
 		47C1C4FA1F336F04009946BE /* ReportsServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */; };
 		47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4FB1F337674009946BE /* JsonArraySpec.swift */; };
@@ -165,7 +164,6 @@
 		47C1C4EA1F335BDB009946BE /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter_Formatters.swift; sourceTree = "<group>"; };
-		47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_RxViewDidAppear.swift; sourceTree = "<group>"; };
 		47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewModels.swift; sourceTree = "<group>"; };
 		47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsServiceSpec.swift; sourceTree = "<group>"; };
 		47C1C4FB1F337674009946BE /* JsonArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonArraySpec.swift; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
 				47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */,
-				47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1193,7 +1190,6 @@
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
-				47C1C4F61F336AB3009946BE /* UIViewController_RxViewDidAppear.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
