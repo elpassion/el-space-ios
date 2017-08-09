@@ -24,6 +24,7 @@ extension DateFormatter {
 
     private static var warsawTimeZoneFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en")
         dateFormatter.timeZone = TimeZone(identifier: "Europe/Warsaw")
         return dateFormatter
     }
