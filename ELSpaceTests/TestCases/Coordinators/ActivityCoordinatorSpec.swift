@@ -13,6 +13,13 @@ class ActivityCoordinatorSpec: QuickSpec {
             var activityViewControllerStub: ActivityViewControllerStub!
             var activityViewModelSpy: ActivityViewModelSpy!
 
+            afterEach {
+                sut = nil
+                viewControllerFake = nil
+                activityViewControllerStub = nil
+                activityViewModelSpy = nil
+            }
+
             beforeEach {
                 viewControllerFake = UIViewController()
                 activityViewControllerStub = ActivityViewControllerStub()
