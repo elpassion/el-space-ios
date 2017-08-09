@@ -14,6 +14,13 @@ class ActivityViewModelSpec: QuickSpec {
             var scheduler: TestScheduler!
             var dataSourceObserver: TestableObserver<[DailyReportViewModelProtocol]>!
 
+            afterEach {
+                sut = nil
+                activityControllerSpy = nil
+                scheduler = nil
+                dataSourceObserver = nil
+            }
+
             beforeEach {
                 activityControllerSpy = ActivityControllerSpy()
                 sut = ActivityViewModel(activityController: activityControllerSpy)
