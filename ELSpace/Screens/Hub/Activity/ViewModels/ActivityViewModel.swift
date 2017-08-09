@@ -15,6 +15,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
         setupBindings()
     }
 
+    // MARK: - ActivityViewModelProtocol
+
     func getData() {
         activityController.getReports(from: startOfCurrentMonth, to: endOfCurrentMonth)
         activityController.getProjects()
