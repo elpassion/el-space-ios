@@ -396,9 +396,9 @@
 		47CA94941F2A1EBE00D5A9B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
-				47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -458,9 +458,9 @@
 		47F8622F1F2F256100E7C518 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */,
 				47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */,
 				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
-				47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -786,6 +786,8 @@
 			isa = PBXGroup;
 			children = (
 				47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */,
+				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
+				47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */,
 				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
 				47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */,
 				47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */,
@@ -796,8 +798,6 @@
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
 				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
-				47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */,
-				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
