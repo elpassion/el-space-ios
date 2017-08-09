@@ -9,11 +9,16 @@ class ActivityControllerSpy: ActivityControlling {
     private(set) var getReportsFromCaptured: String?
     private(set) var getReportsToCaptured: String?
 
+    let reportsSubject = PublishSubject<[ReportDTO]>()
+    let projectsSubject = PublishSubject<[ProjectDTO]>()
+    let didFinishFetchSubject = PublishSubject<Void>()
+
     var reports: Observable<[ReportDTO]> {
-        return Observable.empty()
+        return reportsSubject.asObservable()
     }
+
     var projects: Observable<[ProjectDTO]> {
-        return Observable.empty()
+        return projectsSubject.asObservable()
     }
 
     var isLoading: Observable<Bool> {
@@ -21,7 +26,7 @@ class ActivityControllerSpy: ActivityControlling {
     }
 
     var didFinishFetch: Observable<Void> {
-        return Observable.empty()
+        return didFinishFetchSubject.asObservable()
     }
 
     func getProjects() {
