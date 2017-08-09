@@ -10,6 +10,10 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             var sut: ReportDetailsViewModel!
 
+            afterEach {
+                sut = nil
+            }
+
             context("when initialize with type 0 and nil project") {
                 beforeEach {
                     let fakeReportViewModel = ReportViewModelFake(projectId: 10,
