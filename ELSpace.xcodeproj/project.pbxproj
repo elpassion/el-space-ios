@@ -352,10 +352,10 @@
 		470991CE1F39F0690088E6BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
-				47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */,
 			);
 			name = ViewModels;
 			path = ViewModels;
@@ -779,6 +779,7 @@
 		AF9B35C11F20F5920007F453 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
+				47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */,
 				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
 				47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */,
 				47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */,
@@ -789,7 +790,6 @@
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
 				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
-				47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
