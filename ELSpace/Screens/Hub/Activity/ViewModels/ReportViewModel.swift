@@ -1,6 +1,14 @@
 import UIKit
 
-class ReportViewModel {
+protocol ReportViewModelProtocol {
+    var projectId: Int? { get }
+    var date: Date { get }
+    var value: Double { get }
+    var comment: String? { get }
+    var type: Int { get }
+}
+
+class ReportViewModel: ReportViewModelProtocol {
 
     init(report: ReportDTO) {
         self.report = report

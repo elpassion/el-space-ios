@@ -31,7 +31,7 @@ class ReportDetailsViewModel {
         }
     }
 
-    init(report: ReportViewModel, project: ProjectDTO?) {
+    init(report: ReportViewModelProtocol, project: ProjectDTO?) {
         self.report = report
         self.project = project
     }
@@ -39,7 +39,7 @@ class ReportDetailsViewModel {
     // MARK: - Private
 
     private let project: ProjectDTO?
-    private let report: ReportViewModel
+    private let report: ReportViewModelProtocol
     private let weekdaysHoursOfWork: Double = 8.0
 
     private var typeTitle: String? {

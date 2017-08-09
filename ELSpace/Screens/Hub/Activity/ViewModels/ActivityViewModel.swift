@@ -39,7 +39,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     private let monthFormatter = DateFormatter.monthFormatter
 
     private let projects = Variable<[ProjectDTO]>([])
-    private let reports = Variable<[ReportViewModel]>([])
+    private let reports = Variable<[ReportViewModelProtocol]>([])
     private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
 
     private var days: [Date] {

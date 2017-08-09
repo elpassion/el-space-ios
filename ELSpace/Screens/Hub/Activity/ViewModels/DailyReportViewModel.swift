@@ -9,7 +9,7 @@ protocol DailyReportViewModelProtocol {
 
 class DailyReportViewModel: DailyReportViewModelProtocol {
 
-    init(date: Date, reports: [ReportViewModel], projects: [ProjectDTO]) {
+    init(date: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
         self.date = date
         reportsViewModel = reports.map { report in
             let project = projects.first(where: { $0.id == report.projectId })
