@@ -14,6 +14,8 @@
 		06BE2E6D1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
+		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
+		470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */; };
 		473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */; };
 		473CBF911F33191600B80FA4 /* AppContainer_Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF901F33191600B80FA4 /* AppContainer_Common.swift */; };
 		473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */; };
@@ -27,8 +29,6 @@
 		47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivityController.swift */; };
 		47C1C4EF1F335E20009946BE /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */; };
 		47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */; };
-		47C1C4F41F336772009946BE /* Date_MonthDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F31F336772009946BE /* Date_MonthDates.swift */; };
-		47C1C4F61F336AB3009946BE /* UIViewController_RxViewDidAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */; };
 		47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */; };
 		47C1C4FA1F336F04009946BE /* ReportsServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */; };
 		47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4FB1F337674009946BE /* JsonArraySpec.swift */; };
@@ -45,6 +45,18 @@
 		47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */; };
 		47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */; };
 		47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */; };
+		47F378551F370E1F005F78E5 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F378541F370E1F005F78E5 /* ReportViewModel.swift */; };
+		47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */; };
+		47F819D81F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */; };
+		47F819DC1F3B1A24003C1BD5 /* ActivityControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DB1F3B1A24003C1BD5 /* ActivityControllerSpec.swift */; };
+		47F819DE1F3B1EC5003C1BD5 /* ReportsServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */; };
+		47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */; };
+		47F819E21F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */; };
+		47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */; };
+		47F819E61F3B4810003C1BD5 /* ActivityViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */; };
+		47F819E81F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */; };
+		47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */; };
+		47F819EC1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
@@ -53,6 +65,15 @@
 		47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */; };
 		47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */; };
 		47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */; };
+		47F864781F387361000C0FE9 /* ReportDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */; };
+		47F8647A1F3873E4000C0FE9 /* DailyReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */; };
+		47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647D1F38BC93000C0FE9 /* Reusable.swift */; };
+		47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647F1F38BCF0000C0FE9 /* Disposable.swift */; };
+		47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864811F38BD35000C0FE9 /* RxReusable.swift */; };
+		47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */; };
+		47FE97671F346967009EEE1C /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97661F346967009EEE1C /* ReportCell.swift */; };
+		47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97681F3469F6009EEE1C /* ReportView.swift */; };
+		47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976A1F347285009EEE1C /* ReportDetailsView.swift */; };
 		47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976E1F347A31009EEE1C /* ProjectsService.swift */; };
 		47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97701F347DF1009EEE1C /* ProjectDTO.swift */; };
 		47FE97731F348078009EEE1C /* ProjectsServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */; };
@@ -128,6 +149,8 @@
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
+		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
+		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
 		473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenter.swift; sourceTree = "<group>"; };
 		473CBF901F33191600B80FA4 /* AppContainer_Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_Common.swift; sourceTree = "<group>"; };
 		473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenterSpec.swift; sourceTree = "<group>"; };
@@ -141,8 +164,6 @@
 		47C1C4EA1F335BDB009946BE /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter_Formatters.swift; sourceTree = "<group>"; };
-		47C1C4F31F336772009946BE /* Date_MonthDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date_MonthDates.swift; sourceTree = "<group>"; };
-		47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_RxViewDidAppear.swift; sourceTree = "<group>"; };
 		47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewModels.swift; sourceTree = "<group>"; };
 		47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsServiceSpec.swift; sourceTree = "<group>"; };
 		47C1C4FB1F337674009946BE /* JsonArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonArraySpec.swift; sourceTree = "<group>"; };
@@ -159,6 +180,18 @@
 		47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebateRunnerSpy.swift; sourceTree = "<group>"; };
 		47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryMock.swift; sourceTree = "<group>"; };
+		47F378541F370E1F005F78E5 /* ReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelFake.swift; sourceTree = "<group>"; };
+		47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelSpec.swift; sourceTree = "<group>"; };
+		47F819DB1F3B1A24003C1BD5 /* ActivityControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityControllerSpec.swift; sourceTree = "<group>"; };
+		47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsServiceStub.swift; sourceTree = "<group>"; };
+		47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsServiceStub.swift; sourceTree = "<group>"; };
+		47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModelSpec.swift; sourceTree = "<group>"; };
+		47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityControllerSpy.swift; sourceTree = "<group>"; };
+		47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerSpec.swift; sourceTree = "<group>"; };
+		47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorSpec.swift; sourceTree = "<group>"; };
+		47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModelSpy.swift; sourceTree = "<group>"; };
+		47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewControllerStub.swift; path = ActivityViewControllerStub.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -167,6 +200,15 @@
 		47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllerFactories.swift; sourceTree = "<group>"; };
 		47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionControllerSpy.swift; sourceTree = "<group>"; };
+		47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModel.swift; sourceTree = "<group>"; };
+		47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModel.swift; sourceTree = "<group>"; };
+		47F8647D1F38BC93000C0FE9 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		47F8647F1F38BCF0000C0FE9 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		47F864811F38BD35000C0FE9 /* RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusable.swift; sourceTree = "<group>"; };
+		47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportCell.swift; sourceTree = "<group>"; };
+		47FE97661F346967009EEE1C /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		47FE97681F3469F6009EEE1C /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		47FE976A1F347285009EEE1C /* ReportDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
 		47FE976E1F347A31009EEE1C /* ProjectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
 		47FE97701F347DF1009EEE1C /* ProjectDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDTO.swift; sourceTree = "<group>"; };
 		47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsServiceSpec.swift; sourceTree = "<group>"; };
@@ -259,16 +301,15 @@
 		060A93691EEF01B900EA3293 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				47F8647C1F38BC81000C0FE9 /* Rx */,
 				47F1DCAC1F30A7160039B34E /* UIColor */,
 				AFB47B551F288DF400E0A922 /* Data_HubToken.swift */,
 				47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */,
 				47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */,
-				47C1C4F31F336772009946BE /* Date_MonthDates.swift */,
 				AFE916D81F32048300C4D27A /* Dictionary_Add.swift */,
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
 				47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */,
-				47C1C4F51F336AB3009946BE /* UIViewController_RxViewDidAppear.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,11 +354,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		470991CE1F39F0690088E6BF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */,
+				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
+				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
+				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		473CBF981F33412800B80FA4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
 				47FE97701F347DF1009EEE1C /* ProjectDTO.swift */,
+				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -341,6 +393,7 @@
 		47CA94941F2A1EBE00D5A9B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
 			);
@@ -354,6 +407,7 @@
 				47F862361F2F324500E7C518 /* CoordinatorFake.swift */,
 				477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */,
 				47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */,
+				47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -369,10 +423,12 @@
 		47F1DCA71F309ECF0039B34E /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				47F864851F38C153000C0FE9 /* Bindings */,
+				47FE97651F34654E009EEE1C /* View */,
+				47F8647B1F387501000C0FE9 /* ViewModels */,
 				47C1C4EA1F335BDB009946BE /* ActivityController.swift */,
 				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
 				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
-				47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -389,6 +445,9 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
+				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
+				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
 			);
 			path = Stubs;
@@ -397,10 +456,50 @@
 		47F8622F1F2F256100E7C518 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */,
 				47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */,
 				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		47F8647B1F387501000C0FE9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */,
+				47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */,
+				47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */,
+				47F378541F370E1F005F78E5 /* ReportViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		47F8647C1F38BC81000C0FE9 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				47F8647F1F38BCF0000C0FE9 /* Disposable.swift */,
+				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
+				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		47F864851F38C153000C0FE9 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */,
+			);
+			path = Bindings;
+			sourceTree = "<group>";
+		};
+		47FE97651F34654E009EEE1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47FE97661F346967009EEE1C /* ReportCell.swift */,
+				47FE976A1F347285009EEE1C /* ReportDetailsView.swift */,
+				47FE97681F3469F6009EEE1C /* ReportView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5002D5841EE84D18004C0B10 /* Supporting Files */ = {
@@ -559,6 +658,7 @@
 				47F8622F1F2F256100E7C518 /* Coordinators */,
 				AF48257F1F276C110081B2CC /* Network */,
 				47CA94941F2A1EBE00D5A9B7 /* ViewControllers */,
+				470991CE1F39F0690088E6BF /* ViewModels */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -646,8 +746,8 @@
 			children = (
 				AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */,
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
-				473CBF961F33404600B80FA4 /* ReportsService.swift */,
 				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
+				473CBF961F33404600B80FA4 /* ReportsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -683,6 +783,8 @@
 		AF9B35C11F20F5920007F453 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
+				47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */,
+				47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */,
 				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
 				47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */,
 				47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */,
@@ -713,8 +815,8 @@
 			children = (
 				AFE916DC1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift */,
 				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
-				47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */,
 				47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */,
+				47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -760,6 +862,7 @@
 		AFB47B7F1F28D35C00E0A922 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47F819DB1F3B1A24003C1BD5 /* ActivityControllerSpec.swift */,
 				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
 			);
 			path = Controllers;
@@ -1033,24 +1136,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
+				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
+				47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */,
 				47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */,
 				47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
+				47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */,
 				473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
 				060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */,
 				47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
+				47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */,
+				47F378551F370E1F005F78E5 /* ReportViewModel.swift in Sources */,
 				47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */,
+				47FE97671F346967009EEE1C /* ReportCell.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
@@ -1066,19 +1175,21 @@
 				AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */,
 				47C1C4EF1F335E20009946BE /* ActivityViewModel.swift in Sources */,
 				AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */,
+				47F864781F387361000C0FE9 /* ReportDetailsViewModel.swift in Sources */,
 				50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */,
 				477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */,
+				47F8647A1F3873E4000C0FE9 /* DailyReportViewModel.swift in Sources */,
 				477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */,
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
-				47C1C4F41F336772009946BE /* Date_MonthDates.swift in Sources */,
+				47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */,
 				AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
+				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
-				47C1C4F61F336AB3009946BE /* UIViewController_RxViewDidAppear.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
@@ -1097,7 +1208,10 @@
 				47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */,
 				AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */,
 				47C1C4FA1F336F04009946BE /* ReportsServiceSpec.swift in Sources */,
+				47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */,
+				47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
+				47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
 				47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */,
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
@@ -1105,22 +1219,32 @@
 				47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */,
 				47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */,
 				47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */,
+				470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */,
 				AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
 				47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */,
 				AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */,
+				47F819DE1F3B1EC5003C1BD5 /* ReportsServiceStub.swift in Sources */,
+				470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */,
+				47F819E61F3B4810003C1BD5 /* ActivityViewControllerSpec.swift in Sources */,
 				47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
 				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
+				47F819D81F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift in Sources */,
 				47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */,
 				47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
+				47F819E21F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift in Sources */,
 				47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */,
+				47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */,
 				47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */,
+				47F819DC1F3B1A24003C1BD5 /* ActivityControllerSpec.swift in Sources */,
+				47F819E81F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift in Sources */,
 				473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */,
 				47FE97731F348078009EEE1C /* ProjectsServiceSpec.swift in Sources */,
+				47F819EC1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift in Sources */,
 				47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */,
 				AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */,
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,

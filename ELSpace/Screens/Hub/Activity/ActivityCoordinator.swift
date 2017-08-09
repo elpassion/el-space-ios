@@ -3,11 +3,13 @@ import RxSwift
 
 class ActivityCoordinator: Coordinator {
 
-    init(viewController: ActivityViewController,
+    init(viewController: UIViewController,
+         activityViewController: ActivityViewControlling,
          viewModel: ActivityViewModelProtocol) {
         self.viewController = viewController
+        self.activityViewController = activityViewController
         self.viewModel = viewModel
-        setupBindings()
+        bind(viewModel: viewModel, to: activityViewController)
     }
 
     // MARK: - Coordinator
@@ -18,15 +20,30 @@ class ActivityCoordinator: Coordinator {
 
     // MARK: - Private
 
-    private let viewController: ActivityViewController
+    private let viewController: UIViewController
+    private let activityViewController: ActivityViewControlling
     private let viewModel: ActivityViewModelProtocol
 
     // MARK: - Bindings
 
-    private func setupBindings() {
-        viewController.rx.viewDidAppear
+    func bind(viewModel: ActivityViewModelProtocol, to viewController: ActivityViewControlling) {
+        viewController.viewDidAppear
             .subscribe(onNext: { [weak self] in
-                self?.viewModel.getReports()
+                self?.viewModel.getData()
+            }).disposed(by: disposeBag)
+
+        viewModel.dataSource
+            .subscribe(onNext: { [weak viewController] viewModels in
+                viewController?.viewModels = viewModels
+            }).disposed(by: disposeBag)
+
+        viewModel.isLoading
+            .bind(to: viewController.isLoading)
+            .disposed(by: disposeBag)
+
+        viewModel.monthObservable
+            .subscribe(onNext: { [weak viewController] month in
+                viewController?.navigationItemTitle = month
             }).disposed(by: disposeBag)
     }
 

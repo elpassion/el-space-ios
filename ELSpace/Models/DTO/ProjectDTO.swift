@@ -13,3 +13,11 @@ extension ProjectDTO: Mappable {
     }
 
 }
+
+extension ProjectDTO {
+
+    static func fakeProjectDto(name: String = "Slack time", id: Int = 0) -> ProjectDTO {
+        return ProjectDTO(name: name, id: id)
+    }
+
+}

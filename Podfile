@@ -10,6 +10,7 @@ def pod_core
     pod 'RxCocoa', '~> 3.6'
     pod 'RxSwiftExt', '~> 2.5'
     pod 'ModelMapper', '~> 6.0'
+    pod 'SwiftDate', '~> 4.1'
 end
 
 def pod_networking
@@ -32,6 +33,7 @@ def pod_ui
     pod 'HexColors', '~> 5.0'
     pod 'Pastel', '~> 0.3'
     pod 'MBProgressHUD', '~> 1.0'
+    pod 'SnapKit', '~> 3.2'
 end
 
 def pod_tests
