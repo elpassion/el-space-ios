@@ -45,7 +45,7 @@ class ReportDetailsViewModel {
     private var typeTitle: String? {
         switch type {
         case .some(.normal):
-            guard let projectName = project?.name else { return nil }
+            guard let projectName = project?.name else { return "\(report.value)" }
             return "\(projectName) - \(report.value)"
         case .some(.paidVacations): return "Vacations"
         default: return nil

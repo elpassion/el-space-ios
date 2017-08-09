@@ -15,6 +15,7 @@
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
 		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
+		470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */; };
 		473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */; };
 		473CBF911F33191600B80FA4 /* AppContainer_Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF901F33191600B80FA4 /* AppContainer_Common.swift */; };
 		473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */; };
@@ -140,6 +141,7 @@
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
 		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
+		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
 		473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenter.swift; sourceTree = "<group>"; };
 		473CBF901F33191600B80FA4 /* AppContainer_Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_Common.swift; sourceTree = "<group>"; };
 		473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenterSpec.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
+				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 			);
 			name = ViewModels;
 			path = ViewModels;
@@ -1197,6 +1200,7 @@
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
 				47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */,
 				AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */,
+				470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */,
 				47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
 				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
