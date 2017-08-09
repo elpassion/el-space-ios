@@ -9,6 +9,13 @@ protocol ReportDetailsViewModelProtocol {
 
 class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
 
+    init(report: ReportViewModelProtocol, project: ProjectDTO?) {
+        self.report = report
+        self.project = project
+    }
+
+    // MARK: - ReportDetailsViewModelProtocol
+
     var title: String? {
         return typeTitle
     }
@@ -29,11 +36,6 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         case .some(.sickLeave): return weekdaysHoursOfWork
         default: return 0.0
         }
-    }
-
-    init(report: ReportViewModelProtocol, project: ProjectDTO?) {
-        self.report = report
-        self.project = project
     }
 
     // MARK: - Private
