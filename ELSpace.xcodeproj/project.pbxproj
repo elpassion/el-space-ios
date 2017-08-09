@@ -191,7 +191,7 @@
 		47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModelSpy.swift; sourceTree = "<group>"; };
-		47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerStub.swift; sourceTree = "<group>"; };
+		47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewControllerStub.swift; path = ActivityViewControllerStub.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -445,6 +445,7 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
@@ -783,7 +784,6 @@
 			isa = PBXGroup;
 			children = (
 				47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */,
-				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
 				47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */,
 				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
 				47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */,
