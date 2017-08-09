@@ -13,6 +13,8 @@ class ActivityControllerSpy: ActivityControlling {
     let projectsSubject = PublishSubject<[ProjectDTO]>()
     let didFinishFetchSubject = PublishSubject<Void>()
 
+    // MARK: - ActivityControlling
+
     var reports: Observable<[ReportDTO]> {
         return reportsSubject.asObservable()
     }
