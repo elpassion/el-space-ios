@@ -52,6 +52,7 @@
 		47F819DC1F3B1A24003C1BD5 /* ActivityControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DB1F3B1A24003C1BD5 /* ActivityControllerSpec.swift */; };
 		47F819DE1F3B1EC5003C1BD5 /* ReportsServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */; };
 		47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */; };
+		47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
@@ -182,6 +183,7 @@
 		47F819DB1F3B1A24003C1BD5 /* ActivityControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityControllerSpec.swift; sourceTree = "<group>"; };
 		47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsServiceStub.swift; sourceTree = "<group>"; };
 		47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsServiceStub.swift; sourceTree = "<group>"; };
+		47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityControllerSpy.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -784,6 +786,7 @@
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
 				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
+				47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -1198,6 +1201,7 @@
 				47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */,
 				AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */,
 				47C1C4FA1F336F04009946BE /* ReportsServiceSpec.swift in Sources */,
+				47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
