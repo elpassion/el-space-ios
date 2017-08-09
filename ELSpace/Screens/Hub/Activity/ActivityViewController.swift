@@ -27,6 +27,11 @@ class ActivityViewController: UITableViewController, ActivityViewControlling {
         navigationItem.titleView = navigationItemTitleLabel
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewDidAppearSubject.onNext()
+    }
+
     var viewModels: [DailyReportViewModelProtocol] = [] {
         didSet {
             tableView.reloadData()

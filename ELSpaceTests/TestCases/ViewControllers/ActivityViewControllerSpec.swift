@@ -1,5 +1,6 @@
 import Quick
 import Nimble
+import RxTest
 
 @testable import ELSpace
 
@@ -9,9 +10,19 @@ class ActivityViewControllerSpec: QuickSpec {
         describe("ActivityViewController") {
 
             var sut: ActivityViewController!
+            var scheduler: TestScheduler!
+            var viewDidAppearObserver: TestableObserver<Void>!
 
             beforeEach {
+                scheduler = TestScheduler(initialClock: 0)
+                viewDidAppearObserver = scheduler.createObserver(Void.self)
                 sut = ActivityViewController()
+            }
+
+            afterEach {
+                sut = nil
+                scheduler = nil
+                viewDidAppearObserver = nil
             }
 
             it("should throw fatalError when initailize with coder") {
@@ -35,6 +46,17 @@ class ActivityViewControllerSpec: QuickSpec {
 
                 it("should return correct cell") {
                     expect(sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ReportCell).toNot(beNil())
+                }
+            }
+
+            context("when viewDidAppear") {
+                beforeEach {
+                    _ = sut.viewDidAppear.subscribe(viewDidAppearObserver)
+                    sut.viewDidAppear(true)
+                }
+
+                it("should emit next event") {
+                    expect(viewDidAppearObserver.events).to(haveCount(1))
                 }
             }
         }
