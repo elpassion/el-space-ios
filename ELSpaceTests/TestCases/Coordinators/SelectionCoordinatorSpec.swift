@@ -39,7 +39,7 @@ class SelectionCoordinatorSpec: QuickSpec {
 
             context("when selection view controller emit openDebate next event") {
                 beforeEach {
-                    selectionViewControllerStub.openDebateSubject.onNext()
+                    selectionViewControllerStub.openDebateSubject.onNext(())
                 }
 
                 it("should call presentDebate") {

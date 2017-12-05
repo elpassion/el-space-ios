@@ -29,7 +29,7 @@ class ActivityViewController: UITableViewController, ActivityViewControlling {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewDidAppearSubject.onNext()
+        viewDidAppearSubject.onNext(())
     }
 
     // MARK: - ActivityViewControlling
