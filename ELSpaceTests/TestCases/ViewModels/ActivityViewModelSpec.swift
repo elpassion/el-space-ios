@@ -54,7 +54,7 @@ class ActivityViewModelSpec: QuickSpec {
 
                 context("when receive didFinishFetch event") {
                     beforeEach {
-                        activityControllerSpy.didFinishFetchSubject.onNext()
+                        activityControllerSpy.didFinishFetchSubject.onNext(())
                     }
 
                     it("should dataSource emit one event") {

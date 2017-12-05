@@ -35,7 +35,7 @@ class ActivityCoordinatorSpec: QuickSpec {
 
             context("when viewDidAppear") {
                 beforeEach {
-                    activityViewControllerStub.viewDidAppearSubject.onNext()
+                    activityViewControllerStub.viewDidAppearSubject.onNext(())
                 }
 
                 it("should view model call 'getData'") {
