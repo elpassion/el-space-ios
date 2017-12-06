@@ -13,7 +13,8 @@ class ViewControllerPresenter: ViewControllerPresenting {
     }
 
     func push(viewController: UIViewController, on presentViewController: UIViewController) {
-        presentViewController.navigationController?.pushViewController(viewController, animated: true)
+        guard let navigationController = presentViewController.navigationController else { return }
+        push(viewController: viewController, on: navigationController)
     }
 
     func push(viewController: UIViewController, on navigationController: UINavigationController) {

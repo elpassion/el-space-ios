@@ -10,6 +10,7 @@
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
 		060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */; };
+		0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */; };
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
@@ -149,6 +150,7 @@
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
+		0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -347,6 +349,14 @@
 				060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */,
 			);
 			path = GoogleToken;
+			sourceTree = "<group>";
+		};
+		0666C2401FD8523B006D1883 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		38AB83246424EEB9310A02D4 /* Frameworks */ = {
@@ -670,6 +680,7 @@
 		86D9F91C1EEEBB1A00788C1D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				0666C2401FD8523B006D1883 /* Presenters */,
 				AFB47B571F288E5B00E0A922 /* Extensions */,
 				86D9F91D1EEEBB3D00788C1D /* Providers */,
 				AF4AD7D61F20DC54005B5524 /* Validators */,
@@ -1261,6 +1272,7 @@
 				AFE916DB1F3204F100C4D27A /* DictionaryAddSpec.swift in Sources */,
 				AFE916DD1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift in Sources */,
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,
+				0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
 				AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */,
 				473CBF951F331D5000B80FA4 /* SelectionScreenPresenterMock.swift in Sources */,
