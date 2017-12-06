@@ -40,7 +40,9 @@ platform :ios do
   lane :autodeploy do  
     if merges_pull_request
       # increment build number
-      build_number = latest_testflight_build_number + 1
+      version = get_version_number
+      latestBuildNumber = latest_testflight_build_number(version: version)
+      build_number = latestBuildNumber + 1
       increment_build_number(build_number: "#{build_number}")
       # create a new keychain
       password = SecureRandom.base64
