@@ -43,7 +43,6 @@ class ActivityController: ActivityControlling {
                 self?.reportsSubject.onNext(reports)
             }, onDisposed: { [weak self] in
                 self?.isLoadingReports.value = false
-                self?.didFinishReportFetch.value = true
             })
     }
 
@@ -54,7 +53,6 @@ class ActivityController: ActivityControlling {
                 self?.projectsSubject.onNext(projects)
             }, onDisposed: { [weak self] in
                 self?.isLoadingProjects.value = false
-                self?.didFinishProjectFetch.value = true
             })
     }
 
@@ -62,11 +60,9 @@ class ActivityController: ActivityControlling {
 
     private let reportsService: ReportsServiceProtocol
     private let projectsService: ProjectsServiceProtocol
+
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
-
-    private let didFinishReportFetch = Variable<Bool>(false)
-    private let didFinishProjectFetch = Variable<Bool>(false)
     private let didFinishFetchSubject = PublishSubject<Void>()
 
     // MARK: - Loading
@@ -85,16 +81,10 @@ class ActivityController: ActivityControlling {
             .bind(to: isLoadingVar)
             .disposed(by: disposeBag)
 
-        Observable.of(
-            didFinishReportFetch.asObservable(),
-            didFinishProjectFetch.asObservable()
-        ).merge()
-            .map { [weak self] _ in
-                return self?.didFinishProjectFetch.value == true && self?.didFinishReportFetch.value == true
-            }.ignore(false)
-            .map { _ in () }
-            .bind(to: didFinishFetchSubject)
-            .disposed(by: disposeBag)
+        Observable.combineLatest(reportsSubject.asObservable().map { _ in () },
+                                 projectsSubject.asObservable().map { _ in () }) { (_, _) -> Void in }
+        .bind(to: didFinishFetchSubject)
+        .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
