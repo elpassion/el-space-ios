@@ -1,25 +1,25 @@
 import RxSwift
 import SwiftDate
 
-protocol ActivityViewModelProtocol {
+protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     var month: String { get }
     func getData()
 }
 
-class ActivityViewModel: ActivityViewModelProtocol {
+class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
-    init(activityController: ActivityControlling) {
-        self.activityController = activityController
+    init(activitiesController: ActivitiesControlling) {
+        self.activitiesController = activitiesController
         setupBindings()
     }
 
-    // MARK: - ActivityViewModelProtocol
+    // MARK: - ActivitiesViewModelProtocol
 
     func getData() {
-        activityController.getReports(from: startOfCurrentMonth, to: endOfCurrentMonth)
-        activityController.getProjects()
+        activitiesController.getReports(from: startOfCurrentMonth, to: endOfCurrentMonth)
+        activitiesController.getProjects()
     }
 
     var dataSource: Observable<[DailyReportViewModelProtocol]> {
@@ -27,7 +27,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
     var isLoading: Observable<Bool> {
-        return activityController.isLoading
+        return activitiesController.isLoading
     }
 
     var month: String {
@@ -36,7 +36,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     // MARK: - Private
 
-    private let activityController: ActivityControlling
+    private let activitiesController: ActivitiesControlling
     private let shortDateFormatter = DateFormatter.shortDateFormatter
     private let monthFormatter = DateFormatter.monthFormatter
 
@@ -71,16 +71,16 @@ class ActivityViewModel: ActivityViewModelProtocol {
     // MARK: - Bindings
 
     private func setupBindings() {
-        activityController.reports
+        activitiesController.reports
             .map { $0.map { ReportViewModel(report: $0) } }
             .bind(to: reports)
             .disposed(by: disposeBag)
 
-        activityController.projects
+        activitiesController.projects
             .bind(to: projects)
             .disposed(by: disposeBag)
 
-        activityController.didFinishFetch
+        activitiesController.didFinishFetch
             .subscribe(onNext: { [weak self] in
                 self?.createViewModels()
             }).disposed(by: disposeBag)
@@ -90,7 +90,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
 }
 
-extension ActivityViewModelProtocol {
+extension ActivitiesViewModelProtocol {
 
     var monthObservable: Observable<String> {
         return Observable.just(month)

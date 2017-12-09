@@ -1,6 +1,6 @@
 import RxSwift
 
-protocol ActivityControlling {
+protocol ActivitiesControlling {
     var reports: Observable<[ReportDTO]> { get }
     var projects: Observable<[ProjectDTO]> { get }
     var isLoading: Observable<Bool> { get }
@@ -9,7 +9,7 @@ protocol ActivityControlling {
     func getProjects()
 }
 
-class ActivityController: ActivityControlling {
+class ActivitiesController: ActivitiesControlling {
 
     init(reportsService: ReportsServiceProtocol,
          projectsService: ProjectsServiceProtocol) {
@@ -18,7 +18,7 @@ class ActivityController: ActivityControlling {
         setupBindings()
     }
 
-    // MARK: - ActivityControlling
+    // MARK: - ActivitiesControlling
 
     var reports: Observable<[ReportDTO]> {
         return reportsSubject.asObservable()

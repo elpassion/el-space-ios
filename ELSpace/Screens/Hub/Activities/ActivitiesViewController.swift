@@ -2,14 +2,14 @@ import UIKit
 import SnapKit
 import RxSwift
 
-protocol ActivityViewControlling: class {
+protocol ActivitiesViewControlling: class {
     var viewModels: [DailyReportViewModelProtocol] { get set }
     var navigationItemTitle: String? { get set }
     var viewDidAppear: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
 }
 
-class ActivityViewController: UITableViewController, ActivityViewControlling {
+class ActivitiesViewController: UITableViewController, ActivitiesViewControlling {
 
     init() {
         super.init(style: .plain)
@@ -32,7 +32,7 @@ class ActivityViewController: UITableViewController, ActivityViewControlling {
         viewDidAppearSubject.onNext(())
     }
 
-    // MARK: - ActivityViewControlling
+    // MARK: - ActivitiesViewControlling
 
     var viewModels: [DailyReportViewModelProtocol] = [] {
         didSet {
@@ -105,7 +105,7 @@ class ActivityViewController: UITableViewController, ActivityViewControlling {
 
 }
 
-private extension ActivityViewController {
+private extension ActivitiesViewController {
 
     struct NavigationItemSubviews {
         static var label: UILabel {

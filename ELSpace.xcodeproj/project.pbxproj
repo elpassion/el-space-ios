@@ -26,8 +26,8 @@
 		477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */; };
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
 		47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */; };
-		47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivityController.swift */; };
-		47C1C4EF1F335E20009946BE /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */; };
+		47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */; };
+		47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */; };
 		47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */; };
 		47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */; };
 		47C1C4FA1F336F04009946BE /* ReportsServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */; };
@@ -36,11 +36,11 @@
 		47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */; };
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
-		47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */; };
+		47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */; };
 		47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */; };
 		47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */; };
 		47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */; };
-		47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */; };
+		47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB11F30AC2C0039B34E /* ActivitiesViewController.swift */; };
 		47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */; };
 		47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */; };
 		47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */; };
@@ -161,8 +161,8 @@
 		477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapperFake.swift; sourceTree = "<group>"; };
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_JsonArray.swift; sourceTree = "<group>"; };
-		47C1C4EA1F335BDB009946BE /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
-		47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
+		47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
 		47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter_Formatters.swift; sourceTree = "<group>"; };
 		47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewModels.swift; sourceTree = "<group>"; };
 		47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsServiceSpec.swift; sourceTree = "<group>"; };
@@ -171,11 +171,11 @@
 		47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryFake.swift; sourceTree = "<group>"; };
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
-		47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
+		47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCoordinator.swift; sourceTree = "<group>"; };
 		47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController_HubStyling.swift; sourceTree = "<group>"; };
 		47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Hex.swift; sourceTree = "<group>"; };
 		47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Color.swift; sourceTree = "<group>"; };
-		47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		47F1DCB11F30AC2C0039B34E /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerStub.swift; sourceTree = "<group>"; };
 		47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebateRunnerSpy.swift; sourceTree = "<group>"; };
 		47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinatorSpec.swift; sourceTree = "<group>"; };
@@ -415,22 +415,22 @@
 		47F1DCA61F309ECC0039B34E /* Hub */ = {
 			isa = PBXGroup;
 			children = (
-				47F1DCA71F309ECF0039B34E /* Activity */,
+				47F1DCA71F309ECF0039B34E /* Activities */,
 			);
 			path = Hub;
 			sourceTree = "<group>";
 		};
-		47F1DCA71F309ECF0039B34E /* Activity */ = {
+		47F1DCA71F309ECF0039B34E /* Activities */ = {
 			isa = PBXGroup;
 			children = (
 				47F864851F38C153000C0FE9 /* Bindings */,
 				47FE97651F34654E009EEE1C /* View */,
 				47F8647B1F387501000C0FE9 /* ViewModels */,
-				47C1C4EA1F335BDB009946BE /* ActivityController.swift */,
-				47F1DCA81F309F320039B34E /* ActivityCoordinator.swift */,
-				47F1DCB11F30AC2C0039B34E /* ActivityViewController.swift */,
+				47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */,
+				47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */,
+				47F1DCB11F30AC2C0039B34E /* ActivitiesViewController.swift */,
 			);
-			path = Activity;
+			path = Activities;
 			sourceTree = "<group>";
 		};
 		47F1DCAC1F30A7160039B34E /* UIColor */ = {
@@ -466,7 +466,7 @@
 		47F8647B1F387501000C0FE9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				47C1C4EE1F335E20009946BE /* ActivityViewModel.swift */,
+				47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */,
 				47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */,
 				47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */,
 				47F378541F370E1F005F78E5 /* ReportViewModel.swift */,
@@ -1142,8 +1142,8 @@
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
 				47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
-				47C1C4EB1F335BDB009946BE /* ActivityController.swift in Sources */,
-				47F1DCA91F309F320039B34E /* ActivityCoordinator.swift in Sources */,
+				47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */,
+				47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */,
 				47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
@@ -1173,7 +1173,7 @@
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,
 				AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */,
-				47C1C4EF1F335E20009946BE /* ActivityViewModel.swift in Sources */,
+				47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */,
 				AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */,
 				47F864781F387361000C0FE9 /* ReportDetailsViewModel.swift in Sources */,
 				50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */,
@@ -1191,7 +1191,7 @@
 				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
-				47F1DCB21F30AC2C0039B34E /* ActivityViewController.swift in Sources */,
+				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
 				47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */,
 				47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */,

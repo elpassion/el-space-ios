@@ -4,7 +4,7 @@ extension AppContainer: LoginViewControllerCreation,
                         NavigationControllerCreation,
                         SelectionViewControllerCreation,
                         AlertCreation,
-                        ActivityViewControllerCreation {
+                        ActivitiesViewControllerCreation {
 
     // MARK: - LoginViewControllerCreation
 
@@ -37,8 +37,8 @@ extension AppContainer: LoginViewControllerCreation,
 
     // MARK: - ActivityViewControllerCreation
 
-    func activityViewController() -> ActivityViewController {
-        return ActivityViewController()
+    func activitiesViewController() -> ActivitiesViewController {
+        return ActivitiesViewController()
     }
 
 }
@@ -55,8 +55,8 @@ protocol SelectionViewControllerCreation {
     func selectionViewController(googleIdToken: String) -> SelectionViewController
 }
 
-protocol ActivityViewControllerCreation {
-    func activityViewController() -> ActivityViewController
+protocol ActivitiesViewControllerCreation {
+    func activitiesViewController() -> ActivitiesViewController
 }
 
 protocol AlertCreation {

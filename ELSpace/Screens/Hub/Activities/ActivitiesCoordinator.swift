@@ -1,15 +1,15 @@
 import UIKit
 import RxSwift
 
-class ActivityCoordinator: Coordinator {
+class ActivitiesCoordinator: Coordinator {
 
     init(viewController: UIViewController,
-         activityViewController: ActivityViewControlling,
-         viewModel: ActivityViewModelProtocol) {
+         activitiesViewController: ActivitiesViewControlling,
+         viewModel: ActivitiesViewModelProtocol) {
         self.viewController = viewController
-        self.activityViewController = activityViewController
+        self.activitiesViewController = activitiesViewController
         self.viewModel = viewModel
-        bind(viewModel: viewModel, to: activityViewController)
+        bind(viewModel: viewModel, to: activitiesViewController)
     }
 
     // MARK: - Coordinator
@@ -21,12 +21,12 @@ class ActivityCoordinator: Coordinator {
     // MARK: - Private
 
     private let viewController: UIViewController
-    private let activityViewController: ActivityViewControlling
-    private let viewModel: ActivityViewModelProtocol
+    private let activitiesViewController: ActivitiesViewControlling
+    private let viewModel: ActivitiesViewModelProtocol
 
     // MARK: - Bindings
 
-    func bind(viewModel: ActivityViewModelProtocol, to viewController: ActivityViewControlling) {
+    func bind(viewModel: ActivitiesViewModelProtocol, to viewController: ActivitiesViewControlling) {
         viewController.viewDidAppear
             .subscribe(onNext: { [weak self] in
                 self?.viewModel.getData()
