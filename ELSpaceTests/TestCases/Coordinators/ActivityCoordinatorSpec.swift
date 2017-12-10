@@ -8,25 +8,25 @@ class ActivityCoordinatorSpec: QuickSpec {
     override func spec() {
         describe("ActivityCoordinator") {
 
-            var sut: ActivityCoordinator!
+            var sut: ActivitiesCoordinator!
             var viewControllerFake: UIViewController!
-            var activityViewControllerStub: ActivityViewControllerStub!
-            var activityViewModelSpy: ActivityViewModelSpy!
+            var activitiesViewControllerStub: ActivitiesViewControllerStub!
+            var activitiesViewModelSpy: ActivitiesViewModelSpy!
 
             afterEach {
                 sut = nil
                 viewControllerFake = nil
-                activityViewControllerStub = nil
-                activityViewModelSpy = nil
+                activitiesViewControllerStub = nil
+                activitiesViewModelSpy = nil
             }
 
             beforeEach {
                 viewControllerFake = UIViewController()
-                activityViewControllerStub = ActivityViewControllerStub()
-                activityViewModelSpy = ActivityViewModelSpy()
-                sut = ActivityCoordinator(viewController: viewControllerFake,
-                                          activityViewController: activityViewControllerStub,
-                                          viewModel: activityViewModelSpy)
+                activitiesViewControllerStub = ActivitiesViewControllerStub()
+                activitiesViewModelSpy = ActivitiesViewModelSpy()
+                sut = ActivitiesCoordinator(viewController: viewControllerFake,
+                                            activitiesViewController: activitiesViewControllerStub,
+                                            viewModel: activitiesViewModelSpy)
             }
 
             it("should have correct initial view controller") {
@@ -35,11 +35,11 @@ class ActivityCoordinatorSpec: QuickSpec {
 
             context("when viewDidAppear") {
                 beforeEach {
-                    activityViewControllerStub.viewDidAppearSubject.onNext(())
+                    activitiesViewControllerStub.viewDidAppearSubject.onNext(())
                 }
 
                 it("should view model call 'getData'") {
-                    expect(activityViewModelSpy.didCallGetData).to(beTrue())
+                    expect(activitiesViewModelSpy.didCallGetData).to(beTrue())
                 }
             }
 
@@ -48,12 +48,12 @@ class ActivityCoordinatorSpec: QuickSpec {
 
                 beforeEach {
                     fakeDataSource = [DailyReportViewModel(date: Date(), reports: [], projects: [])]
-                    activityViewModelSpy.dataSourceSubject.onNext(fakeDataSource)
+                    activitiesViewModelSpy.dataSourceSubject.onNext(fakeDataSource)
                 }
 
                 describe("dataSource") {
                     it("should have correct number of elements") {
-                        expect(activityViewControllerStub.viewModels).to(haveCount(1))
+                        expect(activitiesViewControllerStub.viewModels).to(haveCount(1))
                     }
                 }
             }

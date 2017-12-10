@@ -2,7 +2,7 @@
 
 import RxSwift
 
-class ActivityViewModelSpy: ActivityViewModelProtocol {
+class ActivitiesViewModelSpy: ActivitiesViewModelProtocol {
 
     private(set) var didCallGetData = false
 

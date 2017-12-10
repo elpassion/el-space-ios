@@ -9,14 +9,14 @@ class ActivityViewControllerSpec: QuickSpec {
     override func spec() {
         describe("ActivityViewController") {
 
-            var sut: ActivityViewController!
+            var sut: ActivitiesViewController!
             var scheduler: TestScheduler!
             var viewDidAppearObserver: TestableObserver<Void>!
 
             beforeEach {
                 scheduler = TestScheduler(initialClock: 0)
                 viewDidAppearObserver = scheduler.createObserver(Void.self)
-                sut = ActivityViewController()
+                sut = ActivitiesViewController()
             }
 
             afterEach {
@@ -26,7 +26,7 @@ class ActivityViewControllerSpec: QuickSpec {
             }
 
             it("should throw fatalError when initailize with coder") {
-                expect { sut = ActivityViewController(coder: NSCoder()) }.to(throwAssertion())
+                expect { sut = ActivitiesViewController(coder: NSCoder()) }.to(throwAssertion())
             }
 
             context("when set dataSource") {

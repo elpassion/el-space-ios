@@ -2,7 +2,7 @@
 
 import RxSwift
 
-class ActivityViewControllerStub: ActivityViewControlling {
+class ActivitiesViewControllerStub: ActivitiesViewControlling {
 
     let viewDidAppearSubject = PublishSubject<Void>()
 

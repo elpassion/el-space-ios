@@ -10,26 +10,26 @@ class SelectionScreenPresenterSpec: QuickSpec {
 
             var sut: SelectionScreenPresenter!
             var debateRunnerSpy: DebateRunnerSpy!
-            var activityCoordinatorFactoryMock: ActivityCoordinatorFactoryMock!
+            var activitiesCoordinatorFactoryMock: ActivitiesCoordinatorFactoryMock!
             var viewControllerPresenterSpy: ViewControllerPresenterSpy!
             var viewControllerFake: UIViewController!
             var navigationControllerFake: UINavigationController!
 
             beforeEach {
                 debateRunnerSpy = DebateRunnerSpy()
-                activityCoordinatorFactoryMock = ActivityCoordinatorFactoryMock()
+                activitiesCoordinatorFactoryMock = ActivitiesCoordinatorFactoryMock()
                 viewControllerPresenterSpy = ViewControllerPresenterSpy()
                 viewControllerFake = UIViewController()
                 navigationControllerFake = UINavigationController(rootViewController: viewControllerFake)
                 sut = SelectionScreenPresenter(debateRunner: debateRunnerSpy,
-                                               activityCoordinatorFactory: activityCoordinatorFactoryMock,
+                                               activitiesCoordinatorFactory: activitiesCoordinatorFactoryMock,
                                                viewControllerPresenter: viewControllerPresenterSpy,
                                                presenterViewController: viewControllerFake)
             }
 
             afterEach {
                 debateRunnerSpy = nil
-                activityCoordinatorFactoryMock = nil
+                activitiesCoordinatorFactoryMock = nil
                 viewControllerPresenterSpy = nil
                 viewControllerFake = nil
                 navigationControllerFake = nil
@@ -57,7 +57,7 @@ class SelectionScreenPresenterSpec: QuickSpec {
 
                 it("should present correct view controller") {
                     expect(viewControllerPresenterSpy.pushedViewController)
-                        .to(equal(activityCoordinatorFactoryMock.fakeCoordinator.initialViewController))
+                        .to(equal(activitiesCoordinatorFactoryMock.fakeCoordinator.initialViewController))
                 }
             }
         }

@@ -2,7 +2,7 @@
 
 import RxSwift
 
-class ActivityControllerSpy: ActivityControlling {
+class ActivitiesControllerSpy: ActivitiesControlling {
 
     private(set) var didCallGetProjects = false
     private(set) var didCallGetReports = false

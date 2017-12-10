@@ -9,26 +9,26 @@ class ActivityViewModelSpec: QuickSpec {
     override func spec() {
         describe("ActivityViewModel") {
 
-            var sut: ActivityViewModel!
-            var activityControllerSpy: ActivityControllerSpy!
+            var sut: ActivitiesViewModel!
+            var activitiesControllerSpy: ActivitiesControllerSpy!
             var scheduler: TestScheduler!
             var dataSourceObserver: TestableObserver<[DailyReportViewModelProtocol]>!
 
             afterEach {
                 sut = nil
-                activityControllerSpy = nil
+                activitiesControllerSpy = nil
                 scheduler = nil
                 dataSourceObserver = nil
             }
 
             beforeEach {
-                activityControllerSpy = ActivityControllerSpy()
-                sut = ActivityViewModel(activityController: activityControllerSpy)
+                activitiesControllerSpy = ActivitiesControllerSpy()
+                sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy)
                 scheduler = TestScheduler(initialClock: 0)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
                 _ = sut.dataSource.subscribe(dataSourceObserver)
-                activityControllerSpy.projectsSubject.onNext([ProjectDTO.fakeProjectDto()])
-                activityControllerSpy.reportsSubject.onNext([ReportDTO.fakeReportDto()])
+                activitiesControllerSpy.projectsSubject.onNext([ProjectDTO.fakeProjectDto()])
+                activitiesControllerSpy.reportsSubject.onNext([ReportDTO.fakeReportDto()])
             }
 
             it("should have correct month") {
@@ -41,11 +41,11 @@ class ActivityViewModelSpec: QuickSpec {
                 }
 
                 it("should call 'getReports'") {
-                    expect(activityControllerSpy.didCallGetReports).to(beTrue())
+                    expect(activitiesControllerSpy.didCallGetReports).to(beTrue())
                 }
 
                 it("should call 'getProjects'") {
-                    expect(activityControllerSpy.didCallGetProjects).to(beTrue())
+                    expect(activitiesControllerSpy.didCallGetProjects).to(beTrue())
                 }
 
                 it("should dataSource NOT emit any envets") {
@@ -54,7 +54,7 @@ class ActivityViewModelSpec: QuickSpec {
 
                 context("when receive didFinishFetch event") {
                     beforeEach {
-                        activityControllerSpy.didFinishFetchSubject.onNext(())
+                        activitiesControllerSpy.didFinishFetchSubject.onNext(())
                     }
 
                     it("should dataSource emit one event") {
