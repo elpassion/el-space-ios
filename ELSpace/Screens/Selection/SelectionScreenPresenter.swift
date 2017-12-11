@@ -8,11 +8,11 @@ protocol SelectionScreenPresenting {
 class SelectionScreenPresenter: SelectionScreenPresenting {
 
     init(debateRunner: DebateRunning,
-         activityCoordinatorFactory: ActivityCoordinatorCreation,
+         activitiesCoordinatorFactory: ActivitiesCoordinatorCreation,
          viewControllerPresenter: ViewControllerPresenting,
          presenterViewController: UIViewController) {
         self.debateRunner = debateRunner
-        self.activityCoordinatorFactory = activityCoordinatorFactory
+        self.activitiesCoordinatorFactory = activitiesCoordinatorFactory
         self.viewControllerPresenter = viewControllerPresenter
         self.presenterViewController = presenterViewController
     }
@@ -25,7 +25,7 @@ class SelectionScreenPresenter: SelectionScreenPresenting {
     }
 
     func presentHub() {
-        let coordinator = activityCoordinatorFactory.activityCoordinator()
+        let coordinator = activitiesCoordinatorFactory.activitiesCoordinator()
         self.coordinator = coordinator
         let navigationController = presenterViewController.navigationController
         viewControllerPresenter.push(viewController: coordinator.initialViewController, on: presenterViewController)
@@ -35,7 +35,7 @@ class SelectionScreenPresenter: SelectionScreenPresenting {
     // MARK: Private
 
     private let debateRunner: DebateRunning
-    private let activityCoordinatorFactory: ActivityCoordinatorCreation
+    private let activitiesCoordinatorFactory: ActivitiesCoordinatorCreation
     private let viewControllerPresenter: ViewControllerPresenting
     private let presenterViewController: UIViewController
     private var coordinator: Coordinator?

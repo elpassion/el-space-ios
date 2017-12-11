@@ -1,6 +1,6 @@
 import RxSwift
 
-protocol ActivityControlling {
+protocol ActivitiesControlling {
     var reports: Observable<[ReportDTO]> { get }
     var projects: Observable<[ProjectDTO]> { get }
     var isLoading: Observable<Bool> { get }
@@ -9,7 +9,7 @@ protocol ActivityControlling {
     func getProjects()
 }
 
-class ActivityController: ActivityControlling {
+class ActivitiesController: ActivitiesControlling {
 
     init(reportsService: ReportsServiceProtocol,
          projectsService: ProjectsServiceProtocol) {
@@ -18,7 +18,7 @@ class ActivityController: ActivityControlling {
         setupBindings()
     }
 
-    // MARK: - ActivityControlling
+    // MARK: - ActivitiesControlling
 
     var reports: Observable<[ReportDTO]> {
         return reportsSubject.asObservable()
@@ -38,17 +38,19 @@ class ActivityController: ActivityControlling {
 
     func getReports(from: String, to: String) {
         isLoadingReports.value = true
+        didFinishReportFetch.value = false
         _ = reportsService.getReports(startDate: from, endDate: to)
             .subscribe(onNext: { [weak self] reports in
                 self?.reportsSubject.onNext(reports)
             }, onDisposed: { [weak self] in
-                self?.isLoadingReports.value = false
                 self?.didFinishReportFetch.value = true
+                self?.isLoadingReports.value = false
             })
     }
 
     func getProjects() {
         isLoadingProjects.value = true
+        didFinishProjectFetch.value = false
         _ = projectsService.getProjects()
             .subscribe(onNext: { [weak self] projects in
                 self?.projectsSubject.onNext(projects)
@@ -62,6 +64,7 @@ class ActivityController: ActivityControlling {
 
     private let reportsService: ReportsServiceProtocol
     private let projectsService: ProjectsServiceProtocol
+
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
 

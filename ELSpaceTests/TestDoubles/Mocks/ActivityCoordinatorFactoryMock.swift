@@ -1,6 +1,6 @@
 @testable import ELSpace
 
-class ActivityCoordinatorFactoryMock: ActivityCoordinatorCreation {
+class ActivitiesCoordinatorFactoryMock: ActivitiesCoordinatorCreation {
 
     var fakeCoordinator: Coordinator = CoordinatorFake()
 
@@ -9,7 +9,7 @@ class ActivityCoordinatorFactoryMock: ActivityCoordinatorCreation {
 
     // MARK: - ActivityCoordinatorCreation
 
-    func activityCoordinator() -> Coordinator {
+    func activitiesCoordinator() -> Coordinator {
         activityCoordinatorCount += 1
         didCallActivityCoordinator = true
         return fakeCoordinator

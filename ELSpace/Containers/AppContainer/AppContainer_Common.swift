@@ -13,8 +13,8 @@ extension AppContainer: SelectionScreenPresenterCreation {
         return SelectionController(hubTokenService: hubTokenService, googleIdToken: googleIdToken)
     }
 
-    var activityController: ActivityControlling {
-        return ActivityController(reportsService: reportsService, projectsService: projectsService)
+    var activitiesController: ActivitiesControlling {
+        return ActivitiesController(reportsService: reportsService, projectsService: projectsService)
     }
 
     // MARK: - Presenters
@@ -33,7 +33,7 @@ extension AppContainer: SelectionScreenPresenterCreation {
 
     func selectionScreenPresenter(presenterViewController: UIViewController) -> SelectionScreenPresenting {
         return SelectionScreenPresenter(debateRunner: debateRunner,
-                                        activityCoordinatorFactory: self,
+                                        activitiesCoordinatorFactory: self,
                                         viewControllerPresenter: viewControllerPresenter,
                                         presenterViewController: presenterViewController)
     }

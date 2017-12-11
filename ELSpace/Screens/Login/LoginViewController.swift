@@ -40,9 +40,8 @@ class LoginViewController: UIViewController, LoginViewControlling {
         view = LoginView()
     }
 
-    var loginView: LoginView {
-        guard let loginView = view as? LoginView else { fatalError("Expected LoginView but got \(type(of: view))") }
-        return loginView
+    var loginView: LoginView! {
+        return view as? LoginView
     }
 
     // MARK: - Private

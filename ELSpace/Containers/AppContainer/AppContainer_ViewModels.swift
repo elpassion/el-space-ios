@@ -2,8 +2,8 @@ import Foundation
 
 extension AppContainer {
 
-    var activityViewModel: ActivityViewModelProtocol {
-        return ActivityViewModel(activityController: activityController)
+    var activitiesViewModel: ActivitiesViewModelProtocol {
+        return ActivitiesViewModel(activitiesController: activitiesController)
     }
 
 }

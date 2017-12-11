@@ -4,12 +4,12 @@ import RxTest
 
 @testable import ELSpace
 
-class ActivityControllerSpec: QuickSpec {
+class ActivitiesControllerSpec: QuickSpec {
 
     override func spec() {
-        describe("ActivityController") {
+        describe("ActivitiesController") {
 
-            var sut: ActivityController!
+            var sut: ActivitiesController!
             var reportsServiceStub: ReportsServiceStub!
             var projectsServiceStub: ProjectsServiceStub!
             var reportsResultFake: [ReportDTO]!
@@ -32,8 +32,8 @@ class ActivityControllerSpec: QuickSpec {
                 reportsServiceStub.result = reportsResultFake
                 projectsServiceStub = ProjectsServiceStub()
                 projectsServiceStub.result = projectsResultFake
-                sut = ActivityController(reportsService: reportsServiceStub,
-                                         projectsService: projectsServiceStub)
+                sut = ActivitiesController(reportsService: reportsServiceStub,
+                                           projectsService: projectsServiceStub)
                 _ = sut.reports.subscribe(reportObserver)
                 _ = sut.projects.subscribe(projectObserver)
                 _ = sut.didFinishFetch.subscribe(didFinishFetchObserver)
