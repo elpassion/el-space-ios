@@ -10,10 +10,6 @@ class ActivityViewControllerSpec: QuickSpec {
 
             var sut: ActivityViewController!
 
-            beforeEach {
-                sut = ActivityViewController()
-            }
-
             it("should throw fatalError when initailize with coder") {
                 expect { sut = ActivityViewController(coder: NSCoder()) }.to(throwAssertion())
             }
