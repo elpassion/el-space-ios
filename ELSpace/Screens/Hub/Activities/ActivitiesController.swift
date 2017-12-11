@@ -38,21 +38,25 @@ class ActivitiesController: ActivitiesControlling {
 
     func getReports(from: String, to: String) {
         isLoadingReports.value = true
+        didFinishReportFetch.value = false
         _ = reportsService.getReports(startDate: from, endDate: to)
             .subscribe(onNext: { [weak self] reports in
                 self?.reportsSubject.onNext(reports)
             }, onDisposed: { [weak self] in
+                self?.didFinishReportFetch.value = true
                 self?.isLoadingReports.value = false
             })
     }
 
     func getProjects() {
         isLoadingProjects.value = true
+        didFinishProjectFetch.value = false
         _ = projectsService.getProjects()
             .subscribe(onNext: { [weak self] projects in
                 self?.projectsSubject.onNext(projects)
             }, onDisposed: { [weak self] in
                 self?.isLoadingProjects.value = false
+                self?.didFinishProjectFetch.value = true
             })
     }
 
@@ -63,6 +67,9 @@ class ActivitiesController: ActivitiesControlling {
 
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
+
+    private let didFinishReportFetch = Variable<Bool>(false)
+    private let didFinishProjectFetch = Variable<Bool>(false)
     private let didFinishFetchSubject = PublishSubject<Void>()
 
     // MARK: - Loading
@@ -81,10 +88,16 @@ class ActivitiesController: ActivitiesControlling {
             .bind(to: isLoadingVar)
             .disposed(by: disposeBag)
 
-        Observable.combineLatest(reportsSubject.asObservable().map { _ in () },
-                                 projectsSubject.asObservable().map { _ in () }) { (_, _) -> Void in }
-        .bind(to: didFinishFetchSubject)
-        .disposed(by: disposeBag)
+        Observable.of(
+            didFinishReportFetch.asObservable(),
+            didFinishProjectFetch.asObservable()
+        ).merge()
+            .map { [weak self] _ in
+                return self?.didFinishProjectFetch.value == true && self?.didFinishReportFetch.value == true
+            }.ignore(false)
+            .map { _ in () }.debug()
+            .bind(to: didFinishFetchSubject)
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
