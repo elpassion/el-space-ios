@@ -4,10 +4,10 @@ import RxTest
 
 @testable import ELSpace
 
-class ActivityViewModelSpec: QuickSpec {
+class ActivitiesViewModelSpec: QuickSpec {
 
     override func spec() {
-        describe("ActivityViewModel") {
+        describe("ActivitiesViewModel") {
 
             var sut: ActivitiesViewModel!
             var activitiesControllerSpy: ActivitiesControllerSpy!

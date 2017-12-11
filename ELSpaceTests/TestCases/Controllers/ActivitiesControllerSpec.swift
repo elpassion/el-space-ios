@@ -4,10 +4,10 @@ import RxTest
 
 @testable import ELSpace
 
-class ActivityControllerSpec: QuickSpec {
+class ActivitiesControllerSpec: QuickSpec {
 
     override func spec() {
-        describe("ActivityController") {
+        describe("ActivitiesController") {
 
             var sut: ActivitiesController!
             var reportsServiceStub: ReportsServiceStub!

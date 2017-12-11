@@ -3,10 +3,10 @@ import Nimble
 
 @testable import ELSpace
 
-class ActivityCoordinatorSpec: QuickSpec {
+class ActivitiesCoordinatorSpec: QuickSpec {
 
     override func spec() {
-        describe("ActivityCoordinator") {
+        describe("ActivitiesCoordinator") {
 
             var sut: ActivitiesCoordinator!
             var viewControllerFake: UIViewController!
