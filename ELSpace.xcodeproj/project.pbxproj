@@ -37,6 +37,7 @@
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
 		47DFB1621FDBEE55007293E3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */; };
+		47EBA4411FDE9FC200AA773C /* ActivityViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EBA4401FDE9FC100AA773C /* ActivityViewControllerSpec.swift */; };
 		47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */; };
 		47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */; };
 		47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */; };
@@ -54,7 +55,7 @@
 		47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */; };
 		47F819E21F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */; };
 		47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */; };
-		47F819E61F3B4810003C1BD5 /* ActivityViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */; };
+		47F819E61F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */; };
 		47F819E81F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */; };
 		47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */; };
 		47F819EC1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */; };
@@ -173,6 +174,7 @@
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
 		47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		47EBA4401FDE9FC100AA773C /* ActivityViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCoordinator.swift; sourceTree = "<group>"; };
 		47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController_HubStyling.swift; sourceTree = "<group>"; };
 		47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Hex.swift; sourceTree = "<group>"; };
@@ -190,7 +192,7 @@
 		47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsServiceStub.swift; sourceTree = "<group>"; };
 		47F819E11F3B3DE4003C1BD5 /* ActivityViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModelSpec.swift; sourceTree = "<group>"; };
 		47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityControllerSpy.swift; sourceTree = "<group>"; };
-		47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerSpec.swift; sourceTree = "<group>"; };
+		47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F819E71F3B4B02003C1BD5 /* ActivityCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModelSpy.swift; sourceTree = "<group>"; };
 		47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerStub.swift; sourceTree = "<group>"; };
@@ -395,9 +397,10 @@
 		47CA94941F2A1EBE00D5A9B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				47F819E51F3B4810003C1BD5 /* ActivityViewControllerSpec.swift */,
+				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
+				47EBA4401FDE9FC100AA773C /* ActivityViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1238,9 +1241,10 @@
 				AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */,
 				47F819DE1F3B1EC5003C1BD5 /* ReportsServiceStub.swift in Sources */,
 				470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */,
-				47F819E61F3B4810003C1BD5 /* ActivityViewControllerSpec.swift in Sources */,
+				47F819E61F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift in Sources */,
 				47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
+				47EBA4411FDE9FC200AA773C /* ActivityViewControllerSpec.swift in Sources */,
 				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
