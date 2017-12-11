@@ -5,6 +5,7 @@ protocol DailyReportViewModelProtocol {
     var day: String { get }
     var dayType: DayType { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
+    var disposeBag: DisposeBag { get }
 }
 
 class DailyReportViewModel: DailyReportViewModelProtocol {
@@ -46,6 +47,7 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
     }
 
     let reportsViewModel: [ReportDetailsViewModelProtocol]
+    let disposeBag = DisposeBag()
 
     // MARK: - Private
 

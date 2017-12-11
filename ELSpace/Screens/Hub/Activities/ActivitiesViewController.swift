@@ -9,12 +9,10 @@ protocol ActivitiesViewControlling: class {
     var isLoading: AnyObserver<Bool> { get }
 }
 
-class ActivitiesViewController: UITableViewController, ActivitiesViewControlling {
+class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
 
     init() {
-        super.init(style: .plain)
-        tableView.register(ReportCell.self, forCellReuseIdentifier: ReportCell.reuseIdentifier)
-        tableView.tableFooterView = UIView(frame: .zero)
+        super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -32,11 +30,19 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
         viewDidAppearSubject.onNext(())
     }
 
+    var activitiesView: ActivitiesView! {
+        return view as? ActivitiesView
+    }
+
+    override func loadView() {
+        view = ActivitiesView()
+    }
+
     // MARK: - ActivitiesViewControlling
 
     var viewModels: [DailyReportViewModelProtocol] = [] {
         didSet {
-            tableView.reloadData()
+            setDailyReports()
         }
     }
 
@@ -58,35 +64,19 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
         })
     }
 
-    // MARK: - UITableViewDataSource
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = viewModels[indexPath.row]
-        return reportCell(tableView, indexPath: indexPath, viewModel: viewModel)
-    }
-
-    // MARK: - UITableViewDelegate
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
     // MARK: - Private
 
     private let viewDidAppearSubject = PublishSubject<Void>()
 
-    func reportCell(_ tableView: UITableView, indexPath: IndexPath, viewModel: DailyReportViewModelProtocol) -> ReportCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReportCell.reuseIdentifier, for: indexPath) as? ReportCell else { fatalError() }
-        viewModel.bind(to: cell).disposed(by: cell.reusabilityDisposeBag)
-        return cell
+    private func setDailyReports() {
+        activitiesView.stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        let views = viewModels.map { viewModel -> ReportView in
+            let view = ReportView()
+            viewModel.bind(to: view).disposed(by: viewModel.disposeBag)
+            return view
+        }
+        views.forEach { activitiesView.stackView.addArrangedSubview($0) }
+//        viewModel.bind(to: cell).disposed(by: cell.reusabilityDisposeBag)
     }
 
     // MARK: - Subviews

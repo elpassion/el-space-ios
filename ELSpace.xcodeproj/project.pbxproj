@@ -72,8 +72,7 @@
 		47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647D1F38BC93000C0FE9 /* Reusable.swift */; };
 		47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647F1F38BCF0000C0FE9 /* Disposable.swift */; };
 		47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864811F38BD35000C0FE9 /* RxReusable.swift */; };
-		47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */; };
-		47FE97671F346967009EEE1C /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97661F346967009EEE1C /* ReportCell.swift */; };
+		47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift */; };
 		47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97681F3469F6009EEE1C /* ReportView.swift */; };
 		47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976A1F347285009EEE1C /* ReportDetailsView.swift */; };
 		47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976E1F347A31009EEE1C /* ProjectsService.swift */; };
@@ -209,8 +208,7 @@
 		47F8647D1F38BC93000C0FE9 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		47F8647F1F38BCF0000C0FE9 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		47F864811F38BD35000C0FE9 /* RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusable.swift; sourceTree = "<group>"; };
-		47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportCell.swift; sourceTree = "<group>"; };
-		47FE97661F346967009EEE1C /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportView.swift; sourceTree = "<group>"; };
 		47FE97681F3469F6009EEE1C /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		47FE976A1F347285009EEE1C /* ReportDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
 		47FE976E1F347A31009EEE1C /* ProjectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
@@ -500,7 +498,7 @@
 		47F864851F38C153000C0FE9 /* Bindings */ = {
 			isa = PBXGroup;
 			children = (
-				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */,
+				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift */,
 			);
 			path = Bindings;
 			sourceTree = "<group>";
@@ -508,7 +506,6 @@
 		47FE97651F34654E009EEE1C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				47FE97661F346967009EEE1C /* ReportCell.swift */,
 				47FE976A1F347285009EEE1C /* ReportDetailsView.swift */,
 				47FE97681F3469F6009EEE1C /* ReportView.swift */,
 				4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */,
@@ -1175,7 +1172,6 @@
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */,
-				47FE97671F346967009EEE1C /* ReportCell.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
@@ -1204,7 +1200,7 @@
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
-				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
+				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
