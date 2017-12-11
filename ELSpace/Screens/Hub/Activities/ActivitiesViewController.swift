@@ -99,7 +99,7 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
 
     // MARK: - Loading
 
-    private(set) lazy var loadingIndicator: LoadingIndicator = {
+    private lazy var loadingIndicator: LoadingIndicator = {
         return LoadingIndicator(superView: self.view)
     }()
 
