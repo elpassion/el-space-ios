@@ -95,7 +95,7 @@ class ActivitiesController: ActivitiesControlling {
             .map { [weak self] _ in
                 return self?.didFinishProjectFetch.value == true && self?.didFinishReportFetch.value == true
             }.ignore(false)
-            .map { _ in () }.debug()
+            .map { _ in () }
             .bind(to: didFinishFetchSubject)
             .disposed(by: disposeBag)
     }
