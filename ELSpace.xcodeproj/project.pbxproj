@@ -37,7 +37,6 @@
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
 		47DFB1621FDBEE55007293E3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */; };
-		47EBA4411FDE9FC200AA773C /* ActivityViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EBA4401FDE9FC100AA773C /* ActivityViewControllerSpec.swift */; };
 		47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */; };
 		47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */; };
 		47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */; };
@@ -174,7 +173,6 @@
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
 		47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
-		47EBA4401FDE9FC100AA773C /* ActivityViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCoordinator.swift; sourceTree = "<group>"; };
 		47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController_HubStyling.swift; sourceTree = "<group>"; };
 		47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Hex.swift; sourceTree = "<group>"; };
@@ -400,7 +398,6 @@
 				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
-				47EBA4401FDE9FC100AA773C /* ActivityViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1244,7 +1241,6 @@
 				47F819E61F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift in Sources */,
 				47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
-				47EBA4411FDE9FC200AA773C /* ActivityViewControllerSpec.swift in Sources */,
 				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
