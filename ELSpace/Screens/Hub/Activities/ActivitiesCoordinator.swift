@@ -48,6 +48,13 @@ class ActivitiesCoordinator: Coordinator {
             .subscribe(onNext: { [weak viewController] month in
                 viewController?.navigationItemTitle = month
             }).disposed(by: disposeBag)
+
+        viewController.addActivity
+            .subscribe(onNext: { [weak self] in
+                guard let activityViewController = self?.activityViewController, let activitiesViewController = self?.activitiesViewController else { return }
+                self?.presenter.push(viewController: activityViewController, on: activitiesViewController)
+            }).disposed(by: disposeBag)
+
     }
 
     private let disposeBag = DisposeBag()

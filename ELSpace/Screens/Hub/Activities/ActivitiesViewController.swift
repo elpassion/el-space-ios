@@ -7,6 +7,7 @@ protocol ActivitiesViewControlling: class {
     var navigationItemTitle: String? { get set }
     var viewDidAppear: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
+    var addActivity: Observable<Void> { get }
 }
 
 class ActivitiesViewController: UITableViewController, ActivitiesViewControlling {
@@ -58,6 +59,10 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
         })
     }
 
+    var addActivity: Observable<Void> {
+        return addActivitySubject.asObservable()
+    }
+
     // MARK: - UITableViewDataSource
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,9 +84,14 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
         return 100
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        addActivitySubject.onNext(())
+    }
+
     // MARK: - Private
 
     private let viewDidAppearSubject = PublishSubject<Void>()
+    private let addActivitySubject = PublishSubject<Void>()
 
     func reportCell(_ tableView: UITableView, indexPath: IndexPath, viewModel: DailyReportViewModelProtocol) -> ReportCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReportCell.reuseIdentifier, for: indexPath) as? ReportCell else { fatalError() }
