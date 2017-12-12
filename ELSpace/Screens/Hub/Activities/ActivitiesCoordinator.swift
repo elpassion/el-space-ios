@@ -3,33 +3,36 @@ import RxSwift
 
 class ActivitiesCoordinator: Coordinator {
 
-    init(viewController: UIViewController,
-         activitiesViewController: ActivitiesViewControlling,
-         viewModel: ActivitiesViewModelProtocol) {
-        self.viewController = viewController
+    init(activityViewController: UIViewController,
+         activitiesViewController: UIViewController & ActivitiesViewControlling,
+         activitiesViewModel: ActivitiesViewModelProtocol,
+         presenter: ViewControllerPresenting) {
+        self.activityViewController = activityViewController
         self.activitiesViewController = activitiesViewController
-        self.viewModel = viewModel
-        bind(viewModel: viewModel, to: activitiesViewController)
+        self.activitiesViewModel = activitiesViewModel
+        self.presenter = presenter
+        bind(viewModel: self.activitiesViewModel, to: self.activitiesViewController)
     }
 
     // MARK: - Coordinator
 
     var initialViewController: UIViewController {
-        return viewController
+        return activitiesViewController
     }
 
     // MARK: - Private
 
-    private let viewController: UIViewController
-    private let activitiesViewController: ActivitiesViewControlling
-    private let viewModel: ActivitiesViewModelProtocol
+    private let activityViewController: UIViewController
+    private let activitiesViewController: UIViewController & ActivitiesViewControlling
+    private let activitiesViewModel: ActivitiesViewModelProtocol
+    private let presenter: ViewControllerPresenting
 
     // MARK: - Bindings
 
-    func bind(viewModel: ActivitiesViewModelProtocol, to viewController: ActivitiesViewControlling) {
+    func bind(viewModel: ActivitiesViewModelProtocol, to viewController: UIViewController & ActivitiesViewControlling) {
         viewController.viewDidAppear
             .subscribe(onNext: { [weak self] in
-                self?.viewModel.getData()
+                self?.activitiesViewModel.getData()
             }).disposed(by: disposeBag)
 
         viewModel.dataSource
