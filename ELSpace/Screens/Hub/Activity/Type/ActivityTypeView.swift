@@ -5,6 +5,8 @@ class ActivityTypeView: UIView {
 
     init() {
         super.init(frame: .zero)
+        addSubviews()
+        setupLayout()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -22,7 +24,14 @@ class ActivityTypeView: UIView {
     }
 
     private func setupLayout() {
+        imageView.topAnchor == topAnchor
+        imageView.leadingAnchor == leadingAnchor
+        imageView.trailingAnchor == trailingAnchor
 
+        titleLabel.topAnchor == imageView.bottomAnchor
+        titleLabel.leadingAnchor == leadingAnchor
+        titleLabel.trailingAnchor == trailingAnchor
+        titleLabel.bottomAnchor == bottomAnchor
     }
 
 }
