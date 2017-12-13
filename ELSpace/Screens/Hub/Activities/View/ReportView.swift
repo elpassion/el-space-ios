@@ -7,8 +7,6 @@ class ReportView: UIView {
         addSubviews()
         setupLayout()
         backgroundColor = .clear
-        rightStripeView.backgroundColor = .red
-        contentContainer.backgroundColor = .white
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -27,6 +25,8 @@ class ReportView: UIView {
 
     let dateLabel = SubviewsFactory.label
     let titleLabel = SubviewsFactory.label
+    let rightStripeView = UIView(frame: .zero)
+    let contentContainer = UIView(frame: .zero)
 
     private func addSubviews() {
         addSubview(contentContainer)
@@ -37,8 +37,6 @@ class ReportView: UIView {
     }
 
     private let reportDetailsContainer = UIView(frame: .zero)
-    private let contentContainer = UIView(frame: .zero)
-    private let rightStripeView = UIView(frame: .zero)
 
     // MARK: Layout
 
@@ -52,11 +50,13 @@ class ReportView: UIView {
             $0.left.equalTo(rightStripeView.snp.right).offset(76)
             $0.top.equalTo(17)
             $0.right.lessThanOrEqualTo(-10)
+            $0.bottom.lessThanOrEqualTo(-17)
         }
         dateLabel.snp.makeConstraints {
             $0.left.equalTo(rightStripeView.snp.right).offset(17)
-            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(-5)
+            $0.right.lessThanOrEqualTo(titleLabel.snp.left)
             $0.top.equalTo(17)
+            $0.bottom.lessThanOrEqualTo(-17)
         }
         reportDetailsContainer.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(15)
