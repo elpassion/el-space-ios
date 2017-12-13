@@ -36,6 +36,7 @@ class ReportView: UIView {
     let rightStripeView = UIView(frame: .zero)
     let contentContainer = UIView(frame: .zero)
     let addIconView = UIImageView(image: UIImage(named: "add_icon"))
+    let separatorView = SubviewsFactory.separatorView
 
     private func addSubviews() {
         addSubview(contentContainer)
@@ -44,6 +45,7 @@ class ReportView: UIView {
         contentContainer.addSubview(dateLabel)
         contentContainer.addSubview(titleLabel)
         contentContainer.addSubview(reportDetailsContainer)
+        contentContainer.addSubview(separatorView)
     }
 
     private let reportDetailsContainer = UIView(frame: .zero)
@@ -66,7 +68,7 @@ class ReportView: UIView {
             $0.left.equalTo(rightStripeView.snp.right).offset(17)
             $0.right.lessThanOrEqualTo(titleLabel.snp.left)
             $0.top.equalTo(17)
-            $0.bottom.lessThanOrEqualTo(-17)
+            $0.bottom.lessThanOrEqualTo(separatorView.snp.top).offset(-17)
         }
         reportDetailsContainer.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(15)
@@ -82,6 +84,12 @@ class ReportView: UIView {
             $0.height.width.equalTo(19)
             $0.right.equalTo(-20)
             $0.top.equalTo(17)
+        }
+        separatorView.snp.makeConstraints {
+            $0.height.equalTo(0.5)
+            $0.left.equalTo(20)
+            $0.right.equalTo(-20)
+            $0.bottom.equalTo(0)
         }
     }
 
@@ -133,6 +141,12 @@ private extension ReportView {
             label.font = UIFont.systemFont(ofSize: 16)
             label.textColor = UIColor(color: .black5F5A6A)
             return label
+        }
+
+        static var separatorView: UIView {
+            let view = UIView(frame: .zero)
+            view.backgroundColor = UIColor(color: .grayEAEAF5)
+            return view
         }
     }
 
