@@ -18,6 +18,9 @@
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		06BE2E6D1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
+		06FBBB501FE12A5B0077F692 /* ActivityTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB4F1FE12A5B0077F692 /* ActivityTypeViewModel.swift */; };
+		06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */; };
+		06FBBB551FE12CF90077F692 /* ActivityTypesViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB541FE12CF90077F692 /* ActivityTypesViewControlling.swift */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
 		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
@@ -161,6 +164,9 @@
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06FBBB4F1FE12A5B0077F692 /* ActivityTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModel.swift; sourceTree = "<group>"; };
+		06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModeling.swift; sourceTree = "<group>"; };
+		06FBBB541FE12CF90077F692 /* ActivityTypesViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypesViewControlling.swift; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
 		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
 		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
@@ -366,6 +372,7 @@
 				062CCFC41FE0468A00B04ACE /* ActivityTypesViewController.swift */,
 				062CCFC61FE04A3000B04ACE /* ActivityTypesView.swift */,
 				062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */,
+				06FBBB4F1FE12A5B0077F692 /* ActivityTypeViewModel.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -381,6 +388,7 @@
 		06FBBB511FE12A950077F692 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */,
 				06FBBB541FE12CF90077F692 /* ActivityTypesViewControlling.swift */,
 			);
 			path = Interfaces;
@@ -1260,6 +1268,7 @@
 				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				47DFB1621FDBEE55007293E3 /* ActivityViewController.swift in Sources */,
+				06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
 				47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */,
@@ -1273,6 +1282,7 @@
 				47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */,
 				473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
+				06FBBB501FE12A5B0077F692 /* ActivityTypeViewModel.swift in Sources */,
 				060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */,
 				47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
