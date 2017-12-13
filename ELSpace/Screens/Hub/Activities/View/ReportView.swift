@@ -35,9 +35,11 @@ class ReportView: UIView {
     let titleLabel = SubviewsFactory.label
     let rightStripeView = UIView(frame: .zero)
     let contentContainer = UIView(frame: .zero)
+    let addIconView = UIImageView(image: UIImage(named: "add_icon"))
 
     private func addSubviews() {
         addSubview(contentContainer)
+        contentContainer.addSubview(addIconView)
         contentContainer.addSubview(rightStripeView)
         contentContainer.addSubview(dateLabel)
         contentContainer.addSubview(titleLabel)
@@ -57,7 +59,7 @@ class ReportView: UIView {
         titleLabel.snp.makeConstraints {
             $0.left.equalTo(rightStripeView.snp.right).offset(76)
             $0.top.equalTo(17)
-            $0.right.lessThanOrEqualTo(-10)
+            $0.right.lessThanOrEqualTo(addIconView.snp.left).offset(-10)
             $0.bottom.lessThanOrEqualTo(-17)
         }
         dateLabel.snp.makeConstraints {
@@ -75,6 +77,11 @@ class ReportView: UIView {
         rightStripeView.snp.makeConstraints {
             $0.width.equalTo(3)
             $0.top.left.bottom.equalTo(0)
+        }
+        addIconView.snp.makeConstraints {
+            $0.height.width.equalTo(19)
+            $0.right.equalTo(-20)
+            $0.top.equalTo(17)
         }
     }
 
