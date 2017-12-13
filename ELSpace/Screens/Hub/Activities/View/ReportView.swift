@@ -13,6 +13,14 @@ class ReportView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        roundCorners()
+    }
+
+    var areTopCornersRounded = false
+    var areBottomCornersRounded = false
+
     var reportDetailsViews: [ReportDetailsView] = [] {
         didSet {
             oldValue.forEach { $0.removeFromSuperview() }
@@ -21,7 +29,7 @@ class ReportView: UIView {
         }
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
 
     let dateLabel = SubviewsFactory.label
     let titleLabel = SubviewsFactory.label
@@ -38,7 +46,7 @@ class ReportView: UIView {
 
     private let reportDetailsContainer = UIView(frame: .zero)
 
-    // MARK: Layout
+    // MARK: - Layout
 
     private func setupLayout() {
         contentContainer.snp.makeConstraints {
@@ -85,6 +93,27 @@ class ReportView: UIView {
                 if isLast { $0.bottom.equalTo(-19) }
             }
         }
+    }
+
+    // MARK: - Corners rounding
+
+    private var roundedCorners: UIRectCorner {
+        switch (areTopCornersRounded, areBottomCornersRounded) {
+        case (true, true): return .allCorners
+        case (true, false): return [.topRight, .topLeft]
+        case (false, true): return [.bottomRight, .bottomLeft]
+        case (false, false): return []
+        }
+    }
+
+    private func roundCorners() {
+        let path = UIBezierPath(roundedRect: contentContainer.bounds,
+                                byRoundingCorners: roundedCorners,
+                                cornerRadii: CGSize(width: 5, height: 5)).cgPath
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = contentContainer.bounds
+        maskLayer.path = path
+        contentContainer.layer.mask = maskLayer
     }
 
 }
