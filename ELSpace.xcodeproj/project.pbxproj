@@ -11,6 +11,7 @@
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
 		060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */; };
 		062CCFC51FE0468A00B04ACE /* ActivityTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC41FE0468A00B04ACE /* ActivityTypesViewController.swift */; };
+		062CCFC71FE04A3000B04ACE /* ActivityTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC61FE04A3000B04ACE /* ActivityTypesView.swift */; };
 		0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */; };
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
@@ -153,6 +154,7 @@
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
 		062CCFC41FE0468A00B04ACE /* ActivityTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypesViewController.swift; sourceTree = "<group>"; };
+		062CCFC61FE04A3000B04ACE /* ActivityTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypesView.swift; sourceTree = "<group>"; };
 		0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			children = (
 				06FBBB511FE12A950077F692 /* Interfaces */,
 				062CCFC41FE0468A00B04ACE /* ActivityTypesViewController.swift */,
+				062CCFC61FE04A3000B04ACE /* ActivityTypesView.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -1286,6 +1289,7 @@
 				AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */,
 				AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */,
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
+				062CCFC71FE04A3000B04ACE /* ActivityTypesView.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,
