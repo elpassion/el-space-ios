@@ -10,6 +10,7 @@
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
 		060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */; };
+		062CCFC51FE0468A00B04ACE /* ActivityTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC41FE0468A00B04ACE /* ActivityTypesViewController.swift */; };
 		0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */; };
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
@@ -151,6 +152,7 @@
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
+		062CCFC41FE0468A00B04ACE /* ActivityTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypesViewController.swift; sourceTree = "<group>"; };
 		0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
@@ -353,12 +355,29 @@
 			path = GoogleToken;
 			sourceTree = "<group>";
 		};
+		062CCFC31FE0467600B04ACE /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				06FBBB511FE12A950077F692 /* Interfaces */,
+				062CCFC41FE0468A00B04ACE /* ActivityTypesViewController.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
 		0666C2401FD8523B006D1883 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
 				0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		06FBBB511FE12A950077F692 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				06FBBB541FE12CF90077F692 /* ActivityTypesViewControlling.swift */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		38AB83246424EEB9310A02D4 /* Frameworks */ = {
@@ -431,6 +450,7 @@
 		47DFB1601FDBEE33007293E3 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				062CCFC31FE0467600B04ACE /* Type */,
 				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
 			);
 			path = Activity;
@@ -1252,6 +1272,7 @@
 				47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */,
 				47F378551F370E1F005F78E5 /* ReportViewModel.swift in Sources */,
 				47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */,
+				06FBBB551FE12CF90077F692 /* ActivityTypesViewControlling.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */,
@@ -1287,6 +1308,7 @@
 				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
+				062CCFC51FE0468A00B04ACE /* ActivityTypesViewController.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
 				47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */,
