@@ -6,6 +6,9 @@ class ReportView: UIView {
         super.init(frame: .zero)
         addSubviews()
         setupLayout()
+        backgroundColor = .clear
+        rightStripeView.backgroundColor = .red
+        contentContainer.backgroundColor = .white
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,37 +29,44 @@ class ReportView: UIView {
     let titleLabel = SubviewsFactory.label
 
     private func addSubviews() {
-        addSubview(containerView)
-        containerView.addSubview(dateLabel)
-        containerView.addSubview(titleLabel)
-        addSubview(reportDetailsContainer)
+        addSubview(contentContainer)
+        contentContainer.addSubview(rightStripeView)
+        contentContainer.addSubview(dateLabel)
+        contentContainer.addSubview(titleLabel)
+        contentContainer.addSubview(reportDetailsContainer)
     }
 
     private let reportDetailsContainer = UIView(frame: .zero)
-    private let containerView = UIView(frame: .zero)
+    private let contentContainer = UIView(frame: .zero)
+    private let rightStripeView = UIView(frame: .zero)
 
     // MARK: Layout
 
     private func setupLayout() {
-        containerView.snp.makeConstraints {
-            $0.top.equalTo(19)
-            $0.left.right.equalTo(0)
-            $0.bottom.equalTo(reportDetailsContainer.snp.top).offset(-15)
-        }
-        dateLabel.snp.makeConstraints {
+        contentContainer.snp.makeConstraints {
             $0.top.bottom.equalTo(0)
+            $0.right.equalTo(-20)
             $0.left.equalTo(20)
-            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(5)
         }
         titleLabel.snp.makeConstraints {
-            $0.right.lessThanOrEqualTo(0)
-            $0.left.equalTo(80)
-            $0.bottom.top.equalTo(0)
+            $0.left.equalTo(rightStripeView.snp.right).offset(76)
+            $0.top.equalTo(17)
+            $0.right.lessThanOrEqualTo(-10)
+        }
+        dateLabel.snp.makeConstraints {
+            $0.left.equalTo(rightStripeView.snp.right).offset(17)
+            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(-5)
+            $0.top.equalTo(17)
         }
         reportDetailsContainer.snp.makeConstraints {
-            $0.left.equalTo(80)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(15)
+            $0.left.equalTo(titleLabel.snp.left)
             $0.right.equalTo(0)
-            $0.bottom.equalTo(0).priority(.high)
+            $0.bottom.equalTo(0)
+        }
+        rightStripeView.snp.makeConstraints {
+            $0.width.equalTo(3)
+            $0.top.left.bottom.equalTo(0)
         }
     }
 
@@ -84,8 +94,8 @@ private extension ReportView {
     struct SubviewsFactory {
         static var label: UILabel {
             let label = UILabel(frame: .zero)
-            label.font = UIFont(name: "Helvetica", size: 16)
-            label.textColor = UIColor(color: .grayB3B3B8)
+            label.font = UIFont.systemFont(ofSize: 16)
+            label.textColor = UIColor(color: .black5F5A6A)
             return label
         }
     }

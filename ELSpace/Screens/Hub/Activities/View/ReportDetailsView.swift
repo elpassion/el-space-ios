@@ -29,12 +29,13 @@ class ReportDetailsView: UIView {
 
     private func setupLayout() {
         titleLabel.snp.makeConstraints {
-            $0.top.left.right.equalTo(0)
-            $0.right.equalTo(0)
+            $0.top.left.equalTo(0)
+            $0.right.lessThanOrEqualTo(-10)
             $0.bottom.equalTo(subtitleLabel.snp.top).offset(-5)
         }
         subtitleLabel.snp.makeConstraints {
-            $0.left.bottom.right.equalTo(0)
+            $0.left.bottom.equalTo(0)
+            $0.right.lessThanOrEqualTo(-10)
         }
     }
 

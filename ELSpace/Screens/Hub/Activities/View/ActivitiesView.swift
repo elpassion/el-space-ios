@@ -4,7 +4,7 @@ class ActivitiesView: UIView {
 
     init() {
         super.init(frame: .zero)
-        backgroundColor = .white
+        backgroundColor = UIColor(color: .grayF8F8FA)
         addSubviews()
         setupLayout()
     }
@@ -32,8 +32,9 @@ class ActivitiesView: UIView {
         }
         stackView.snp.makeConstraints {
             $0.width.equalTo(scrollView.snp.width)
-            $0.top.left.right.equalTo(0)
-            $0.bottom.lessThanOrEqualTo(0)
+            $0.top.equalTo(20)
+            $0.bottom.equalTo(-20)
+            $0.left.right.equalTo(0)
         }
     }
 
