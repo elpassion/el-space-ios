@@ -67,11 +67,11 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
     }
 
     var topCornersRounded: Bool {
-        return date.weekday == 2
+        return date.weekday == 2 || date.day == 1
     }
 
     var bottomCornersRounded: Bool {
-        return date.weekday == 6
+        return date.weekday == 6 || date.day == date.monthDays
     }
 
     let reportsViewModel: [ReportDetailsViewModelProtocol]
