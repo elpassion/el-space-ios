@@ -4,6 +4,8 @@ protocol DailyReportViewModelProtocol {
     var title: String? { get }
     var day: String { get }
     var dayType: DayType { get }
+    var stripeColor: UIColor { get }
+    var backgroundColor: UIColor { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var disposeBag: DisposeBag { get }
 }
@@ -43,6 +45,22 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
             return .missing
         } else {
             return .comming
+        }
+    }
+
+    var stripeColor: UIColor {
+        switch dayType {
+        case .weekday: return UIColor(color: .green92ECB4)
+        case .missing: return UIColor(color: .brownBA6767)
+        case .comming: return UIColor(color: .grayE4E4E4)
+        case .weekend: return .clear
+        }
+    }
+
+    var backgroundColor: UIColor {
+        switch dayType {
+        case .weekend: return .clear
+        case .missing, .comming, .weekday: return .white
         }
     }
 
@@ -107,6 +125,14 @@ extension DailyReportViewModelProtocol {
 
     var reportsViewModelObservable: Observable<[ReportDetailsViewModelProtocol]> {
         return Observable.just(reportsViewModel)
+    }
+
+    var stripeColorObservable: Observable<UIColor> {
+        return Observable.just(stripeColor)
+    }
+
+    var backgroundColorObservable: Observable<UIColor> {
+        return Observable.just(backgroundColor)
     }
 
 }

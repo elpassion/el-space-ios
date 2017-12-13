@@ -15,6 +15,9 @@ extension DailyReportViewModelProtocol {
             }.flatMap { $0 }
         }).disposed(by: disposeBag)
 
+        stripeColorObservable.bind(to: view.rightStripeView.rx.backgroundColor).disposed(by: disposeBag)
+        backgroundColorObservable.bind(to: view.contentContainer.rx.backgroundColor).disposed(by: disposeBag)
+
         return disposeBag
     }
 
