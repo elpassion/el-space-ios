@@ -1,1 +1,3 @@
+protocol ChooserActivityTypesViewModeling {
 
+}

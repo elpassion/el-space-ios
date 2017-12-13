@@ -3,7 +3,8 @@ import RxSwift
 
 class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypesViewControlling {
 
-    init() {
+    init(viewModel: ChooserActivityTypesViewModeling) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -12,15 +13,16 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     }
 
     override func loadView() {
-        view = ActivityTypesView()
+        view = ChooserActivityTypesView()
     }
+
     // MARK: ActivityTypeViewControlling
 
-    var selected: Observable<ActivityTypesViewController.Type> {
+    var selected: Observable<ActivityType> {
         return Observable.never()
     }
 
-    var select: AnyObserver<ActivityTypesViewController.Type> {
+    var select: AnyObserver<ActivityType> {
         return AnyObserver(eventHandler: { [weak self] in
             print($0)
         })
@@ -28,12 +30,14 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
 
     // MARK: Privates
 
-    private var activityTypesView: ActivityTypesView! {
-        return view as? ActivityTypesView
+    private let viewModel: ChooserActivityTypesViewModeling
+
+    private var activityTypesView: ChooserActivityTypesView! {
+        return view as? ChooserActivityTypesView
     }
 
-    private func activityTypeView() -> ActivityTypeView {
-        return ActivityTypeView()
+    private func activityTypeView() -> ChooserActivityTypesView {
+        return ChooserActivityTypesView()
     }
 
 }

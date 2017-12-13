@@ -20,10 +20,10 @@ class ChooserActivityTypesView: UIView {
             }
         }
     }
-    
+
 }
 
-private extension ActivityTypesView {
+private extension ChooserActivityTypesView {
     struct Factory {
 
         static func stackView() -> UIStackView {

@@ -1,3 +1,3 @@
-class ChooserActivityTypesViewModel {
+class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
 }
