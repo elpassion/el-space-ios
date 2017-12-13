@@ -1,7 +1,7 @@
 import UIKit
 import RxSwift
 
-class ActivityTypesViewController: UIViewController, ActivityTypesViewControlling {
+class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypesViewControlling {
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -15,10 +15,6 @@ class ActivityTypesViewController: UIViewController, ActivityTypesViewControllin
         view = ActivityTypesView()
     }
     // MARK: ActivityTypeViewControlling
-
-    enum `Type` {
-        case timeReport, vacation, dayOff, sickLeave, conference
-    }
 
     var selected: Observable<ActivityTypesViewController.Type> {
         return Observable.never()

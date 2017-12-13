@@ -1,6 +1,6 @@
 import UIKit
 
-class ActivityTypesView: UIView {
+class ChooserActivityTypesView: UIView {
 
     init() {
         super.init(frame: .zero)
