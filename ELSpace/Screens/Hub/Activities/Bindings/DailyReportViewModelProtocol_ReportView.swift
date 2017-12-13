@@ -18,6 +18,16 @@ extension DailyReportViewModelProtocol {
         stripeColorObservable.bind(to: view.rightStripeView.rx.backgroundColor).disposed(by: disposeBag)
         backgroundColorObservable.bind(to: view.contentContainer.rx.backgroundColor).disposed(by: disposeBag)
 
+        Observable.just(topCornersRounded)
+            .subscribe(onNext: { [weak view] in
+                view?.areTopCornersRounded = $0
+        }).disposed(by: disposeBag)
+
+        Observable.just(bottomCornersRounded)
+            .subscribe(onNext: { [weak view] in
+                view?.areBottomCornersRounded = $0
+            }).disposed(by: disposeBag)
+
         return disposeBag
     }
 

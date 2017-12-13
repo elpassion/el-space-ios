@@ -6,6 +6,8 @@ protocol DailyReportViewModelProtocol {
     var dayType: DayType { get }
     var stripeColor: UIColor { get }
     var backgroundColor: UIColor { get }
+    var topCornersRounded: Bool { get }
+    var bottomCornersRounded: Bool { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var disposeBag: DisposeBag { get }
 }
@@ -64,17 +66,26 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
         }
     }
 
+    var topCornersRounded: Bool {
+        return date.weekday == 2
+    }
+
+    var bottomCornersRounded: Bool {
+        return date.weekday == 6
+    }
+
     let reportsViewModel: [ReportDetailsViewModelProtocol]
     let disposeBag = DisposeBag()
 
     // MARK: - Private
+
+    private let date: Date
 
     private var dayValue: Double {
         return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.value + result }
     }
 
     private let dayFormatter = DateFormatter.dayFormatter
-    private let date: Date
 
     // MARK: Helpers
 
