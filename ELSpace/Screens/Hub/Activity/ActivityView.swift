@@ -15,6 +15,7 @@ class ActivityView: UIView {
 
     var activityTypeView: UIView? {
         didSet {
+            activityTypeContainer.subviews.forEach { $0.removeFromSuperview() }
             if let view = activityTypeView {
                 activityTypeContainer.addSubview(view)
                 view.edgeAnchors == activityTypeContainer.edgeAnchors
