@@ -28,6 +28,11 @@ extension DailyReportViewModelProtocol {
                 view?.areBottomCornersRounded = $0
             }).disposed(by: disposeBag)
 
+        Observable.just(isSeparatorHidden)
+            .subscribe(onNext: { [weak view] in
+                view?.separatorView.isHidden = $0
+            }).disposed(by: disposeBag)
+
         return disposeBag
     }
 
