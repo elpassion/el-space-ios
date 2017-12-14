@@ -214,7 +214,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         date = date - 1.day // swiftlint:disable:this shorthand_operator
                     }
                     dateFake = date
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: Date(), reports: [], projects: [])
                 }
 
                 it("should have correct title") {
