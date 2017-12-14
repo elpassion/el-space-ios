@@ -16,6 +16,7 @@ class ActivityTypeView: UIView {
 
     let imageView = Factory.imageView()
     let titleLabel = Factory.titleLabel()
+    let button = UIButton()
 
     // MARK: - Privates
 
@@ -38,6 +39,7 @@ class ActivityTypeView: UIView {
     private func addSubviews() {
         addSubview(imageView)
         addSubview(titleLabel)
+        addSubview(button)
     }
 
     private func setupLayout() {
@@ -49,6 +51,8 @@ class ActivityTypeView: UIView {
         titleLabel.leadingAnchor == leadingAnchor
         titleLabel.trailingAnchor == trailingAnchor
         titleLabel.bottomAnchor == bottomAnchor
+
+        button.edgeAnchors == edgeAnchors
     }
 
 }
@@ -65,6 +69,7 @@ private extension ActivityTypeView {
         static func titleLabel() -> UILabel {
             let label = UILabel(frame: .zero)
             label.textAlignment = .center
+            label.font = UIFont(name: "Helvetica", size: 8)
             return label
         }
 
