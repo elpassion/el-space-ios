@@ -50,7 +50,7 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
     private func verifyView() {
         FBSnapshotVerifyView(sut.view)
         expectation(description: "Should display correct view").fulfill()
-        waitForExpectations(timeout: 1.0)
+        waitForExpectations(timeout: 3.0)
     }
 
     private lazy var dateFormatter: DateFormatter = {
