@@ -17,6 +17,7 @@ enum Color: String {
     case purple622774 = "622774"
     case purple5B247A = "5B247A"
     case pinkF02FC2 = "F02FC2"
+    case redEF5350 = "EF5350"
 }
 
 extension UIColor {

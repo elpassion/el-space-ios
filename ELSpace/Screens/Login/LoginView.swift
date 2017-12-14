@@ -5,7 +5,6 @@
 
 import UIKit
 import Anchorage
-import HexColors
 
 class LoginView: UIView {
 
@@ -26,7 +25,7 @@ class LoginView: UIView {
         let buttonTitle = R.string.localizable.google_login_button()
 
         loginButton.setTitle(buttonTitle, for: .normal)
-        loginButton.backgroundColor = UIColor("EF5350")
+        loginButton.backgroundColor = UIColor(color: Color.redEF5350)
     }
 
     private func configureSubviews() {
