@@ -3,12 +3,47 @@ import RxSwift
 
 class ActivityTypeViewModel: ActivityTypeViewModeling {
 
-    var imageSelected: UIImage = UIImage()
-    var imageUnselected: UIImage = UIImage()
-    var title: String = ""
-    var isSelected: Observable<Bool> = PublishSubject<Bool>().asObservable()
-    var select: AnyObserver<Void> {
-        return AnyObserver(eventHandler: { _ in })
+    init(type: ActivityType) {
+        self.type = type
+        switch type {
+        case .timeReport:
+            imageUnselected = UIImage(named: "airplane")
+            imageSelected = UIImage(named: "money_selected")
+            title = "TIME REPORT"
+        case .vacation:
+            imageUnselected = UIImage(named: "airplane")
+            imageSelected = UIImage(named: "money_selected")
+            title = "VACATION"
+        case .dayOff:
+            imageUnselected = UIImage(named: "airplane")
+            imageSelected = UIImage(named: "money_selected")
+            title = "DAY OFF"
+        case .sickLeave:
+            imageUnselected = UIImage(named: "airplane")
+            imageSelected = UIImage(named: "money_selected")
+            title = "SICK LEAVE"
+        case .conference:
+            imageUnselected = UIImage(named: "airplane")
+            imageSelected = UIImage(named: "money_selected")
+            title = "CONFERENCE"
+        }
     }
+
+    let type: ActivityType
+    let imageSelected: UIImage?
+    let imageUnselected: UIImage?
+    let title: String
+
+    var isSelected: Observable<Bool> {
+        return isSelectedPublishSubject.asObservable()
+    }
+
+    var select: AnyObserver<Bool> {
+        return isSelectedPublishSubject.asObserver()
+    }
+
+    // MARK: Private
+
+    private let isSelectedPublishSubject = PublishSubject<Bool>()
 
 }
