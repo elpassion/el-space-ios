@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		060795151FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */; };
 		060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */; };
+		060795191FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */; };
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
 		060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */; };
@@ -163,6 +164,7 @@
 /* Begin PBXFileReference section */
 		060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModelSpec.swift; sourceTree = "<group>"; };
 		060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModelSpec.swift; sourceTree = "<group>"; };
+		060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControllerSpec.swift; sourceTree = "<group>"; };
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
+				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1400,6 +1403,7 @@
 				060795151FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift in Sources */,
 				47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */,
 				060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */,
+				060795191FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift in Sources */,
 				470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */,
 				AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
