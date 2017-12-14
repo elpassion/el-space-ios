@@ -64,7 +64,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
                 .disposed(by: disposeBag)
             view.button.rx.tap
                 .map { true }
-                .bind(to: viewModel.select)
+                .bind(to: viewModel.isSelected)
                 .disposed(by: disposeBag)
 
             return view

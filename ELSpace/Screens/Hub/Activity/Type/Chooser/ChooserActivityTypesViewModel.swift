@@ -8,7 +8,7 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
             viewModel.isSelected.asObservable()
                 .subscribe(onNext: { [weak self] _ in
                     if self?.lastSelectedViewModel !== viewModel {
-                        self?.lastSelectedViewModel?.select.onNext(false)
+                        self?.lastSelectedViewModel?.isSelected.onNext(false)
                         self?.lastSelectedViewModel = viewModel
                     }
                 })

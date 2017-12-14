@@ -20,22 +20,6 @@ class ActivityTypeView: UIView {
 
     // MARK: - Privates
 
-//    private let viewModel: ActivityTypeViewModeling
-//    private let disposeBag = DisposeBag()
-
-    private func configureSubviews() {
-//        titleLabel.text = viewModel.title
-//        viewModel.isSelected
-//            .subscribe(onNext: { [weak self] in
-//                guard let imageSelected = self?.viewModel.imageSelected, let imageUnselected = self?.viewModel.imageUnselected else {
-//                    return
-//                }
-//                self?.imageView.image = $0 ? imageSelected : imageUnselected
-//                self?.titleLabel.textColor = $0 ? .red : .green
-//            })
-//            .disposed(by: disposeBag)
-    }
-
     private func addSubviews() {
         addSubview(imageView)
         addSubview(titleLabel)

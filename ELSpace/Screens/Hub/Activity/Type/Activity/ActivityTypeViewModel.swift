@@ -34,16 +34,6 @@ class ActivityTypeViewModel: ActivityTypeViewModeling {
     let imageUnselected: UIImage?
     let title: String
 
-    var isSelected: Observable<Bool> {
-        return isSelectedPublishSubject.asObservable()
-    }
-
-    var select: AnyObserver<Bool> {
-        return isSelectedPublishSubject.asObserver()
-    }
-
-    // MARK: Private
-
-    private let isSelectedPublishSubject = PublishSubject<Bool>()
+    var isSelected = PublishSubject<Bool>()
 
 }
