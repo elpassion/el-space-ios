@@ -24,18 +24,21 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     // MARK: ActivityTypeViewControlling
 
     var selected: Observable<ActivityType> {
-        return Observable.never()
+        return selectedTypeSubject.asObservable()
     }
 
     var select: AnyObserver<ActivityType> {
-        return AnyObserver(eventHandler: { [weak self] in
-            print($0)
+        return AnyObserver(eventHandler: { [weak self] event in
+            guard let type = event.element else { return }
+            let reportTypeViewModel = self?.viewModel.activityTypeViewModels.filter { $0.type == type }.first
+            reportTypeViewModel?.isSelected.onNext(true)
         })
     }
 
     // MARK: Privates
 
     private let viewModel: ChooserActivityTypesViewModeling
+    private let selectedTypeSubject = PublishSubject<ActivityType>()
     private let disposeBag = DisposeBag()
 
     private var activityTypesView: ChooserActivityTypesView! {
@@ -60,6 +63,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
                     }
                     view?.imageView.image = isSelected ? imageSelected : imageUnselected
                     view?.titleLabel.textColor = self?.titleColorForSelected(isSelected)
+                    self?.selectedTypeSubject.onNext(viewModel.type)
                 })
                 .disposed(by: disposeBag)
             view.button.rx.tap
