@@ -23,6 +23,7 @@
 		473CBF951F331D5000B80FA4 /* SelectionScreenPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF941F331D5000B80FA4 /* SelectionScreenPresenterMock.swift */; };
 		473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF961F33404600B80FA4 /* ReportsService.swift */; };
 		473CBF9A1F33414100B80FA4 /* ReportDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF991F33414100B80FA4 /* ReportDTO.swift */; };
+		476D48741FE2CF79005BD9CC /* ActivitiesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D48731FE2CF79005BD9CC /* ActivitiesViewControllerTests.swift */; };
 		477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */; };
 		477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */; };
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
@@ -161,6 +162,7 @@
 		473CBF941F331D5000B80FA4 /* SelectionScreenPresenterMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenterMock.swift; sourceTree = "<group>"; };
 		473CBF961F33404600B80FA4 /* ReportsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsService.swift; sourceTree = "<group>"; };
 		473CBF991F33414100B80FA4 /* ReportDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDTO.swift; sourceTree = "<group>"; };
+		476D48731FE2CF79005BD9CC /* ActivitiesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewControllerTests.swift; sourceTree = "<group>"; };
 		477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapper.swift; sourceTree = "<group>"; };
 		477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapperFake.swift; sourceTree = "<group>"; };
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
@@ -378,6 +380,14 @@
 				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		476D48721FE2CEC2005BD9CC /* TestSnapshot */ = {
+			isa = PBXGroup;
+			children = (
+				476D48731FE2CF79005BD9CC /* ActivitiesViewControllerTests.swift */,
+			);
+			path = TestSnapshot;
 			sourceTree = "<group>";
 		};
 		477161F71F2B2CF30051EDE3 /* Mapper */ = {
@@ -612,6 +622,7 @@
 		5048F2571EDEE7A2001A487E /* ELSpaceTests */ = {
 			isa = PBXGroup;
 			children = (
+				476D48721FE2CEC2005BD9CC /* TestSnapshot */,
 				8613F3411EEEDE2C0037A787 /* TestCases */,
 				8613F3401EEEDE050037A787 /* TestDoubles */,
 				5048F25A1EDEE7A2001A487E /* Info.plist */,
@@ -1226,6 +1237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */,
+				476D48741FE2CF79005BD9CC /* ActivitiesViewControllerTests.swift in Sources */,
 				AF4825831F276C6A0081B2CC /* RequestWrapperSpy.swift in Sources */,
 				47C1C4FA1F336F04009946BE /* ReportsServiceSpec.swift in Sources */,
 				47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */,
