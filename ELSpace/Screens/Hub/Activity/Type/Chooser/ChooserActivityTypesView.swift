@@ -31,6 +31,7 @@ private extension ChooserActivityTypesView {
         static func stackView() -> UIStackView {
             let view = UIStackView(arrangedSubviews: [])
             view.axis = .horizontal
+            view.distribution = .fillEqually
             view.spacing = 6
             return view
         }
