@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */; };
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
 		060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */; };
@@ -159,6 +160,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModelSpec.swift; sourceTree = "<group>"; };
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		060F4C8B1EE945D000AA2389 /* GoogleUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProvider.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
+				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1392,6 +1395,7 @@
 				47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */,
 				47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */,
 				47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */,
+				060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */,
 				470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */,
 				AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
