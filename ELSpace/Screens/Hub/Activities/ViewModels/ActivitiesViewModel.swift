@@ -65,7 +65,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private func createViewModels() {
         let viewModels = days.map { date -> DailyReportViewModel in
             let reports = self.reports.value.filter { date.isInSameDayOf(date: $0.date) }
-            let viewModel = DailyReportViewModel(date: date, reports: reports, projects: projects.value)
+            let viewModel = DailyReportViewModel(date: date,
+                                                 todayDate: todayDate,
+                                                 reports: reports,
+                                                 projects: projects.value)
             return viewModel
         }
         setupSeparators(viewModels: viewModels)

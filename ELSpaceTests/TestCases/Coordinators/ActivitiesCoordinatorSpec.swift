@@ -47,7 +47,7 @@ class ActivitiesCoordinatorSpec: QuickSpec {
                 var fakeDataSource: [DailyReportViewModelProtocol]!
 
                 beforeEach {
-                    fakeDataSource = [DailyReportViewModel(date: Date(), reports: [], projects: [])]
+                    fakeDataSource = [DailyReportViewModel(date: Date(), todayDate: Date(), reports: [], projects: [])]
                     activitiesViewModelSpy.dataSourceSubject.onNext(fakeDataSource)
                 }
 

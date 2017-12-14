@@ -15,8 +15,9 @@ protocol DailyReportViewModelProtocol {
 
 class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
-    init(date: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
+    init(date: Date, todayDate: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
         self.date = date
+        self.todayDate = todayDate
         reportsViewModel = reports.map { report in
             let project = projects.first(where: { $0.id == report.projectId })
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
@@ -44,7 +45,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
             return .weekday
         } else if date.isInWeekend {
             return .weekend
-        } else if date.isBefore(date: Date(), granularity: .day) && reportsViewModel.isEmpty {
+        } else if date.isBefore(date: todayDate, granularity: .day) && reportsViewModel.isEmpty {
             return .missing
         } else {
             return .comming
@@ -77,6 +78,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     // MARK: - Private
 
     private let date: Date
+    private let todayDate: Date
 
     private var dayValue: Double {
         return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.value + result }
