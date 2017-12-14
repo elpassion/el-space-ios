@@ -29,7 +29,7 @@ class SelectionView: UIView {
         debateButton.setTitle(debateButtonTitle, for: .normal)
 
         hubButton.backgroundColor = UIColor(color: .purpleAB9BFF)
-        debateButton.backgroundColor = UIColor(color: Color.)//UIColor("4CC359")
+        debateButton.backgroundColor = UIColor(color: .green4CC359)
     }
 
     private func configureSubviews() {
