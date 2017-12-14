@@ -10,8 +10,9 @@ protocol ActivitiesViewModelProtocol {
 
 class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
-    init(activitiesController: ActivitiesControlling) {
+    init(activitiesController: ActivitiesControlling, todayDate: Date) {
         self.activitiesController = activitiesController
+        self.todayDate = todayDate
         setupBindings()
     }
 
@@ -37,6 +38,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     // MARK: - Private
 
     private let activitiesController: ActivitiesControlling
+    private let todayDate: Date
     private let shortDateFormatter = DateFormatter.shortDateFormatter
     private let monthFormatter = DateFormatter.monthFormatter
 
@@ -45,18 +47,18 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
 
     private var days: [Date] {
-        return Date.dates(between: Date().startOf(component: .month),
-                          and: Date().endOf(component: .month),
+        return Date.dates(between: todayDate.startOf(component: .month),
+                          and: todayDate.endOf(component: .month),
                           increment: 1.day)
     }
 
     private var startOfCurrentMonth: String {
-        let date = Date().startOf(component: .month)
+        let date = todayDate.startOf(component: .month)
         return shortDateFormatter.string(from: date)
     }
 
     private var endOfCurrentMonth: String {
-        let date = Date().endOf(component: .month)
+        let date = todayDate.endOf(component: .month)
         return shortDateFormatter.string(from: date)
     }
 

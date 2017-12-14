@@ -23,7 +23,8 @@ class ActivitiesViewModelSpec: QuickSpec {
 
             beforeEach {
                 activitiesControllerSpy = ActivitiesControllerSpy()
-                sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy)
+                sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy,
+                                          todayDate: DateFormatter.shortDateFormatter.date(from: "2017-12-05")!)
                 scheduler = TestScheduler(initialClock: 0)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
                 _ = sut.dataSource.subscribe(dataSourceObserver)
