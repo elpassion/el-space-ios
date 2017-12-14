@@ -5,7 +5,6 @@
 
 import UIKit
 import Anchorage
-import HexColors
 
 class SelectionView: UIView {
 
@@ -29,8 +28,8 @@ class SelectionView: UIView {
         hubButton.setTitle(hubButtonTitle, for: .normal)
         debateButton.setTitle(debateButtonTitle, for: .normal)
 
-        hubButton.backgroundColor = UIColor("AB9BFF")
-        debateButton.backgroundColor = UIColor("4CC359")
+        hubButton.backgroundColor = UIColor(color: .purpleAB9BFF)
+        debateButton.backgroundColor = UIColor(color: Color.)//UIColor("4CC359")
     }
 
     private func configureSubviews() {
