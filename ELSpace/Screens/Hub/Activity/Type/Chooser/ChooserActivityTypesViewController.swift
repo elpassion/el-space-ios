@@ -36,6 +36,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     // MARK: Privates
 
     private let viewModel: ChooserActivityTypesViewModeling
+    private let disposeBag = DisposeBag()
 
     private var activityTypesView: ChooserActivityTypesView! {
         return view as? ChooserActivityTypesView
@@ -47,14 +48,31 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
 
     private func createActivityTypeViews() -> [ActivityTypeView] {
         return viewModel.activityTypeViewModels.map {
+            let viewModel = $0
             let view = ActivityTypeView()
             view.titleLabel.text = $0.title
+            view.titleLabel.textColor = self.titleColorForSelected(false)
+            view.imageView.image = viewModel.imageUnselected
+            viewModel.isSelected
+                .subscribe(onNext: { [weak view, weak self] isSelected in
+                    guard let imageSelected = viewModel.imageSelected, let imageUnselected = viewModel.imageUnselected else {
+                        return
+                    }
+                    view?.imageView.image = isSelected ? imageSelected : imageUnselected
+                    view?.titleLabel.textColor = self?.titleColorForSelected(isSelected)
+                })
+                .disposed(by: disposeBag)
+            view.button.rx.tap
+                .map { true }
+                .bind(to: viewModel.select)
+                .disposed(by: disposeBag)
+
             return view
         }
     }
 
-//    private func activityTypeView() -> ChooserActivityTypesView {
-//        return ChooserActivityTypesView()
-//    }
+    private func titleColorForSelected(_ isSelected: Bool) -> UIColor? {
+        return isSelected ? UIColor("BCAEF8") : UIColor("B3B3B8")
+    }
 
 }
