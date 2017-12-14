@@ -31,7 +31,7 @@ class ActivityTypeView: UIView {
         imageView.leadingAnchor == leadingAnchor
         imageView.trailingAnchor == trailingAnchor
 
-        titleLabel.topAnchor == imageView.bottomAnchor
+        titleLabel.topAnchor == imageView.bottomAnchor + 6
         titleLabel.leadingAnchor == leadingAnchor
         titleLabel.trailingAnchor == trailingAnchor
         titleLabel.bottomAnchor == bottomAnchor
