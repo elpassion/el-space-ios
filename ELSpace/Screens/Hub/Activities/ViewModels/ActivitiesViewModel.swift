@@ -67,30 +67,48 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             return viewModel
         }
         setupSeparators(viewModels: viewModels)
-        // TODO: - Setup corners
+        setupCornersRounding(viewModels: viewModels)
         self.viewModels.value = viewModels
     }
 
     private func setupSeparators(viewModels: [DailyReportViewModel]) {
-        viewModels.forEach {
-            if $0.dayType == .weekend {
-                $0.isSeparatorHidden = true
-            }
-            let isLast = viewModels.last == $0
-            if isLast == true {
-                $0.isSeparatorHidden = true
-            }
-            if let nextIndex = viewModels.index(of: $0), isLast == false {
-                let nextElement = viewModels[nextIndex + 1]
-                if nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
-                    $0.isSeparatorHidden = true
+        viewModels.enumerated().forEach { index, viewModel in
+            let isLast = viewModels.last == viewModel
+            if isLast {
+                viewModel.isSeparatorHidden = true
+            } else {
+                let nextElement = viewModels[viewModels.index(after: index)]
+                if viewModel.dayType != .weekend && nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
+                    viewModel.isSeparatorHidden = true
+                }
+                if viewModel.dayType == .weekend && nextElement.dayType != .weekend {
+                    viewModel.isSeparatorHidden = true
                 }
             }
         }
     }
 
-    private func setupCornersRounding() {
-
+    private func setupCornersRounding(viewModels: [DailyReportViewModel]) {
+        viewModels.enumerated().forEach { index, viewModel in
+            let isFirst = viewModels.first == viewModel
+            let isLast = viewModels.last == viewModel
+            if isFirst == false {
+                let previousElement = viewModels[viewModels.index(before: index)]
+                if previousElement.dayType == .weekend && previousElement.reportsViewModel.isEmpty {
+                    viewModel.topCornersRounded = true
+                }
+            } else {
+                viewModel.topCornersRounded = true
+            }
+            if isLast == false {
+                let nextElement = viewModels[viewModels.index(after: index)]
+                if nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
+                    viewModel.bottomCornersRounded = true
+                }
+            } else {
+                viewModel.bottomCornersRounded = true
+            }
+        }
     }
 
     // MARK: - Bindings
