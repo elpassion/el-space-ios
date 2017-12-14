@@ -16,6 +16,11 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
         view = ChooserActivityTypesView()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addActivityTypes()
+    }
+
     // MARK: ActivityTypeViewControlling
 
     var selected: Observable<ActivityType> {
@@ -36,8 +41,20 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
         return view as? ChooserActivityTypesView
     }
 
-    private func activityTypeView() -> ChooserActivityTypesView {
-        return ChooserActivityTypesView()
+    private func addActivityTypes() {
+        activityTypesView.typeViews = createActivityTypeViews()
     }
+
+    private func createActivityTypeViews() -> [ActivityTypeView] {
+        return viewModel.activityTypeViewModels.map {
+            let view = ActivityTypeView()
+            view.titleLabel.text = $0.title
+            return view
+        }
+    }
+
+//    private func activityTypeView() -> ChooserActivityTypesView {
+//        return ChooserActivityTypesView()
+//    }
 
 }

@@ -1,4 +1,5 @@
 import UIKit
+import Anchorage
 
 class ChooserActivityTypesView: UIView {
 
@@ -16,6 +17,7 @@ class ChooserActivityTypesView: UIView {
             if let typeViews = typeViews {
                 let stackView = Factory.stackView()
                 addSubview(stackView)
+                stackView.edgeAnchors == edgeAnchors
                 typeViews.forEach { stackView.addArrangedSubview($0) }
             }
         }
