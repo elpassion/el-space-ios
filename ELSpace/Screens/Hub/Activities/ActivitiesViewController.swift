@@ -76,7 +76,6 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
             return view
         }
         views.forEach { activitiesView.stackView.addArrangedSubview($0) }
-//        viewModel.bind(to: cell).disposed(by: cell.reusabilityDisposeBag)
     }
 
     // MARK: - Subviews
