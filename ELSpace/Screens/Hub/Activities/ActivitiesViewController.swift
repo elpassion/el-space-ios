@@ -95,7 +95,7 @@ private extension ActivitiesViewController {
     struct NavigationItemSubviews {
         static var label: UILabel {
             let label = UILabel(frame: .zero)
-            label.font = UIFont(name: "Helvetica", size: 17)
+            label.font = UIFont.systemFont(ofSize: 17)
             label.textColor = .white
             return label
         }
