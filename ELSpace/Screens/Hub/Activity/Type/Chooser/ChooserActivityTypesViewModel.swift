@@ -4,20 +4,14 @@ import RxSwift
 class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     init() {
-        activityTypeViewModels.forEach { viewModel in
-            viewModel.isSelected.asObservable()
-                .subscribe(onNext: { [weak self] _ in
-                    if self?.lastSelectedViewModel !== viewModel {
-                        self?.lastSelectedViewModel?.isSelected.onNext(false)
-                        self?.lastSelectedViewModel = viewModel
-                    }
-                })
-                .disposed(by: disposeBag)
-
-        }
+        configureViewModels()
     }
 
-    lazy var activityTypeViewModels: [ActivityTypeViewModeling] = [timeReportViewModel, vacationViewModel, dayOffViewModel, sickLeaveViewModel, conferenceViewModel]
+    lazy var activityTypeViewModels: [ActivityTypeViewModeling] = [timeReportViewModel,
+                                                                   vacationViewModel,
+                                                                   dayOffViewModel,
+                                                                   sickLeaveViewModel,
+                                                                   conferenceViewModel]
 
     // MARK: - Private
 
@@ -29,5 +23,18 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     private let disposeBag = DisposeBag()
     private weak var lastSelectedViewModel: ActivityTypeViewModeling?
+
+    private func configureViewModels() {
+        activityTypeViewModels.forEach { viewModel in
+            viewModel.isSelected.asObservable()
+                .subscribe(onNext: { [weak self] _ in
+                    if self?.lastSelectedViewModel !== viewModel {
+                        self?.lastSelectedViewModel?.isSelected.onNext(false)
+                        self?.lastSelectedViewModel = viewModel
+                    }
+                })
+                .disposed(by: disposeBag)
+        }
+    }
 
 }
