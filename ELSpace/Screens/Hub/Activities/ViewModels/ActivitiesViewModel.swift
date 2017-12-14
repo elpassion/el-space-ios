@@ -61,11 +61,36 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func createViewModels() {
-        viewModels.value = days.map { date -> DailyReportViewModel in
+        let viewModels = days.map { date -> DailyReportViewModel in
             let reports = self.reports.value.filter { date.isInSameDayOf(date: $0.date) }
             let viewModel = DailyReportViewModel(date: date, reports: reports, projects: projects.value)
             return viewModel
         }
+        setupSeparators(viewModels: viewModels)
+        // TODO: - Setup corners
+        self.viewModels.value = viewModels
+    }
+
+    private func setupSeparators(viewModels: [DailyReportViewModel]) {
+        viewModels.forEach {
+            if $0.dayType == .weekend {
+                $0.isSeparatorHidden = true
+            }
+            let isLast = viewModels.last == $0
+            if isLast == true {
+                $0.isSeparatorHidden = true
+            }
+            if let nextIndex = viewModels.index(of: $0), isLast == false {
+                let nextElement = viewModels[nextIndex + 1]
+                if nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
+                    $0.isSeparatorHidden = true
+                }
+            }
+        }
+    }
+
+    private func setupCornersRounding() {
+
     }
 
     // MARK: - Bindings
