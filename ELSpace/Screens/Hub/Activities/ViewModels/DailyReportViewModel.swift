@@ -8,11 +8,12 @@ protocol DailyReportViewModelProtocol {
     var backgroundColor: UIColor { get }
     var topCornersRounded: Bool { get }
     var bottomCornersRounded: Bool { get }
+    var isSeparatorHidden: Bool { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var disposeBag: DisposeBag { get }
 }
 
-class DailyReportViewModel: DailyReportViewModelProtocol {
+class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     init(date: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
         self.date = date
@@ -66,13 +67,9 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
         }
     }
 
-    var topCornersRounded: Bool {
-        return date.weekday == 2 || date.day == 1
-    }
-
-    var bottomCornersRounded: Bool {
-        return date.weekday == 6 || date.day == date.monthDays
-    }
+    var topCornersRounded = false
+    var bottomCornersRounded = false
+    var isSeparatorHidden = false
 
     let reportsViewModel: [ReportDetailsViewModelProtocol]
     let disposeBag = DisposeBag()
