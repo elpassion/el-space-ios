@@ -13,6 +13,7 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
         recordMode = false
+        isDeviceAgnostic = true
         activitiesControllingStub = ActivitiesControllingStub()
         viewModel = ActivitiesViewModel(activitiesController: activitiesControllingStub,
                                         todayDate: dateFormatter.date(from: "2017-12-05")!)
@@ -20,7 +21,6 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
         coordinator = ActivitiesCoordinator(viewController: sut,
                                             activitiesViewController: sut,
                                             viewModel: viewModel)
-        isDeviceAgnostic = true
         sut.view.frame = UIScreen.main.bounds
     }
 
@@ -32,7 +32,7 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
         activitiesControllingStub = nil
     }
 
-    func testNormalReport() {
+    func testFilledList() {
         activitiesControllingStub.projectsSubject.onNext(projects)
         activitiesControllingStub.reportsSubject.onNext([
             firstNormalReport,
@@ -50,7 +50,7 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
     private func verifyView() {
         FBSnapshotVerifyView(sut.view)
         expectation(description: "Should display correct view").fulfill()
-        waitForExpectations(timeout: 3.0)
+        waitForExpectations(timeout: 1.0)
     }
 
     private lazy var dateFormatter: DateFormatter = {
