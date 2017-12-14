@@ -21,7 +21,6 @@ class ActivityViewController: UIViewController {
         navigationItem.rightBarButtonItem = addBarButton
 
         let activityTypeViewController = ChooserActivityTypeAssembly().viewController()
-        activityTypeViewController.view.backgroundColor = .red
         addChildViewController(activityTypeViewController)
         activityTypeViewController.didMove(toParentViewController: self)
         activityView.activityTypeView = activityTypeViewController.view
