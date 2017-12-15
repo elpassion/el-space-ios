@@ -37,7 +37,8 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     }
 
     var day: String {
-        return dayFormatter.string(from: date)
+        return ""
+//        return dayFormatter.string(from: date)
     }
 
     var dayType: DayType {
