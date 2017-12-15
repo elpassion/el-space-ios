@@ -55,6 +55,8 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
 
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en")
+        formatter.timeZone = TimeZone(identifier: "Europe/Warsaw")
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
