@@ -12,7 +12,7 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
 
     override func setUp() {
         super.setUp()
-        recordMode = false
+        recordMode = true
         isDeviceAgnostic = true
         activitiesControllingStub = ActivitiesControllingStub()
         viewModel = ActivitiesViewModel(activitiesController: activitiesControllingStub,
@@ -33,15 +33,16 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
     }
 
     func testFilledList() {
-        activitiesControllingStub.projectsSubject.onNext(projects)
-        activitiesControllingStub.reportsSubject.onNext([
-            firstNormalReport,
-            secondNormalReport,
-            paidVacationReport,
-            unpaidVacationReport,
-            sickLeaveReport,
-            thirdNormalReport])
-        activitiesControllingStub.didFinishFetchSubject.onNext(())
+//        activitiesControllingStub.projectsSubject.onNext(projects)
+//        activitiesControllingStub.reportsSubject.onNext([
+//            firstNormalReport,
+//            secondNormalReport,
+//            paidVacationReport,
+//            unpaidVacationReport,
+//            sickLeaveReport,
+//            thirdNormalReport])
+//        activitiesControllingStub.didFinishFetchSubject.onNext(())
+        sut.view.backgroundColor = .red
         verifyView()
     }
 

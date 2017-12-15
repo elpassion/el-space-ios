@@ -43,7 +43,7 @@ class DailyReportViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(""))//DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
@@ -148,7 +148,7 @@ class DailyReportViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(""))//DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
@@ -185,7 +185,7 @@ class DailyReportViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(""))//DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
@@ -222,7 +222,7 @@ class DailyReportViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(""))//DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
