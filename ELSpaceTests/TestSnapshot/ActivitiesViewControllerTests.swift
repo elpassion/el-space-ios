@@ -33,16 +33,15 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
     }
 
     func testFilledList() {
-//        activitiesControllingStub.projectsSubject.onNext(projects)
-//        activitiesControllingStub.reportsSubject.onNext([
-//            firstNormalReport,
-//            secondNormalReport,
-//            paidVacationReport,
-//            unpaidVacationReport,
-//            sickLeaveReport,
-//            thirdNormalReport])
-//        activitiesControllingStub.didFinishFetchSubject.onNext(())
-        sut.view.backgroundColor = .red
+        activitiesControllingStub.projectsSubject.onNext(projects)
+        activitiesControllingStub.reportsSubject.onNext([
+            firstNormalReport,
+            secondNormalReport,
+            paidVacationReport,
+            unpaidVacationReport,
+            sickLeaveReport,
+            thirdNormalReport])
+        activitiesControllingStub.didFinishFetchSubject.onNext(())
         verifyView()
     }
 
