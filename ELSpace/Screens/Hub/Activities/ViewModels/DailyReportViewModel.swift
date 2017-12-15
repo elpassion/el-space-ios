@@ -41,7 +41,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     }
 
     var dayType: DayType {
-        if areAnyReports {
+        if hasReports {
             return .weekday
         } else if date.isInWeekend {
             return .weekend
@@ -72,6 +72,10 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var bottomCornersRounded = false
     var isSeparatorHidden = false
 
+    var hasReports: Bool {
+        return reportsViewModel.isEmpty == false
+    }
+
     let reportsViewModel: [ReportDetailsViewModelProtocol]
     let disposeBag = DisposeBag()
 
@@ -87,10 +91,6 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     private let dayFormatter = DateFormatter.dayFormatter
 
     // MARK: Helpers
-
-    private var areAnyReports: Bool {
-        return reportsViewModel.isEmpty == false
-    }
 
     private var viewModelsContainsUnpaidVacations: Bool {
         return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .unpaidDayOff })
