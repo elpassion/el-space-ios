@@ -1,8 +1,13 @@
 import UIKit
 
+protocol ActivityViewControllerAssembly {
+    var chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling { get }
+}
+
 class ActivityViewController: UIViewController {
 
-    init() {
+    init(assembly: ActivityViewControllerAssembly) {
+        self.chooserActivityTypeViewController = assembly.chooserActivityTypeViewController
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
     }
@@ -24,6 +29,8 @@ class ActivityViewController: UIViewController {
 
     // MARK: - Private
 
+    private let chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling
+
     private var activityView: ActivityView! {
         return view as? ActivityView
     }
@@ -31,10 +38,9 @@ class ActivityViewController: UIViewController {
     private let addBarButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
 
     private func configureChooserType() {
-        let activityTypeViewController = ChooserActivityTypeAssembly().viewController()
-        addChildViewController(activityTypeViewController)
-        activityTypeViewController.didMove(toParentViewController: self)
-        activityView.activityTypeView = activityTypeViewController.view
+        addChildViewController(chooserActivityTypeViewController)
+        chooserActivityTypeViewController.didMove(toParentViewController: self)
+        activityView.activityTypeView = chooserActivityTypeViewController.view
     }
 
 }

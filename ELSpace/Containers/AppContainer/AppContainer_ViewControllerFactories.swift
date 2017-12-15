@@ -41,8 +41,8 @@ extension AppContainer: LoginViewControllerCreation,
         return ActivitiesViewController()
     }
 
-    func activityViewController() -> ActivityViewController {
-        return ActivityViewController()
+    func activityViewController() -> UIViewController {
+        return ActivityAssembly().viewController()
     }
 
 }
