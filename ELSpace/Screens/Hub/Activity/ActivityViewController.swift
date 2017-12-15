@@ -19,11 +19,7 @@ class ActivityViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "New activity"
         navigationItem.rightBarButtonItem = addBarButton
-
-        let activityTypeViewController = ChooserActivityTypeAssembly().viewController()
-        addChildViewController(activityTypeViewController)
-        activityTypeViewController.didMove(toParentViewController: self)
-        activityView.activityTypeView = activityTypeViewController.view
+        configureChooserType()
     }
 
     // MARK: - Private
@@ -33,5 +29,12 @@ class ActivityViewController: UIViewController {
     }
 
     private let addBarButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
+
+    private func configureChooserType() {
+        let activityTypeViewController = ChooserActivityTypeAssembly().viewController()
+        addChildViewController(activityTypeViewController)
+        activityTypeViewController.didMove(toParentViewController: self)
+        activityView.activityTypeView = activityTypeViewController.view
+    }
 
 }
