@@ -12,7 +12,7 @@ class ActivitiesViewControllerTests: FBSnapshotTestCase {
 
     override func setUp() {
         super.setUp()
-        recordMode = true
+        recordMode = false
         isDeviceAgnostic = true
         activitiesControllingStub = ActivitiesControllingStub()
         viewModel = ActivitiesViewModel(activitiesController: activitiesControllingStub,
