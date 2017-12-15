@@ -50,10 +50,9 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     }
 
     private func createActivityTypeViews() -> [ActivityTypeView] {
-        return viewModel.activityTypeViewModels.map {
-            let viewModel = $0
+        return viewModel.activityTypeViewModels.map { viewModel in
             let view = ActivityTypeView()
-            view.titleLabel.text = $0.title
+            view.titleLabel.text = viewModel.title
             view.titleLabel.textColor = self.titleColorForSelected(false)
             view.imageView.image = viewModel.imageUnselected
             viewModel.isSelected
@@ -70,7 +69,6 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
                 .map { true }
                 .bind(to: viewModel.isSelected)
                 .disposed(by: disposeBag)
-
             return view
         }
     }
