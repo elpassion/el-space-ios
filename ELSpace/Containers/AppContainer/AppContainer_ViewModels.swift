@@ -1,9 +1,13 @@
 import Foundation
 
-extension AppContainer {
+extension AppContainer: ActivitiesViewModelCreation {
 
-    var activitiesViewModel: ActivitiesViewModelProtocol {
+    func activitiesViewModel() -> ActivitiesViewModelProtocol {
         return ActivitiesViewModel(activitiesController: activitiesController)
     }
 
+}
+
+protocol ActivitiesViewModelCreation {
+    func activitiesViewModel() -> ActivitiesViewModelProtocol
 }

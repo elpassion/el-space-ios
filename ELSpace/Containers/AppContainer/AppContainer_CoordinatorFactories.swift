@@ -15,11 +15,9 @@ extension AppContainer: SelectionCoordinatorCreation,
     // MARK: - ActivityCoordinatorCreation
 
     func activitiesCoordinator() -> Coordinator {
-        let activityViewController = self.activityViewController()
-        let activitiesViewController = self.activitiesViewController()
-        return ActivitiesCoordinator(activityViewController: activityViewController,
-                                     activitiesViewController: activitiesViewController,
-                                     activitiesViewModel: activitiesViewModel,
+        return ActivitiesCoordinator(activityCreator: ActivityCreator(),
+                                     activitiesViewController: self.activitiesViewController(),
+                                     activitiesViewModel: activitiesViewModel(),
                                      presenter: ViewControllerPresenter())
     }
 

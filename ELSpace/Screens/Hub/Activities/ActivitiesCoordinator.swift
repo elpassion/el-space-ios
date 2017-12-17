@@ -3,11 +3,11 @@ import RxSwift
 
 class ActivitiesCoordinator: Coordinator {
 
-    init(activityViewController: UIViewController,
+    init(activityCreator: ActivityCreating,
          activitiesViewController: UIViewController & ActivitiesViewControlling,
          activitiesViewModel: ActivitiesViewModelProtocol,
          presenter: ViewControllerPresenting) {
-        self.activityViewController = activityViewController
+        self.activityCreator = activityCreator
         self.activitiesViewController = activitiesViewController
         self.activitiesViewModel = activitiesViewModel
         self.presenter = presenter
@@ -22,7 +22,7 @@ class ActivitiesCoordinator: Coordinator {
 
     // MARK: - Private
 
-    private let activityViewController: UIViewController
+    private let activityCreator: ActivityCreating
     private let activitiesViewController: UIViewController & ActivitiesViewControlling
     private let activitiesViewModel: ActivitiesViewModelProtocol
     private let presenter: ViewControllerPresenting
@@ -51,7 +51,7 @@ class ActivitiesCoordinator: Coordinator {
 
         viewController.addActivity
             .subscribe(onNext: { [weak self] in
-                guard let activityViewController = self?.activityViewController, let activitiesViewController = self?.activitiesViewController else { return }
+                guard let activityViewController = self?.activityCreator.activityViewController(), let activitiesViewController = self?.activitiesViewController else { return }
                 self?.presenter.push(viewController: activityViewController, on: activitiesViewController)
             }).disposed(by: disposeBag)
 
