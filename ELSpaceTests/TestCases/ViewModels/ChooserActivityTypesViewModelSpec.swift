@@ -72,11 +72,23 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
                         sut.activityTypeViewModels[0].isSelected.onNext(true)
                     }
 
-                    it("should properly update state") {
+                    it("should properly update time report state") {
                         expect(isTimeReportSelectedObserver.events.last?.value.element).to(beTrue())
+                    }
+
+                    it("should properly update vacation state") {
                         expect(isVacationSelectedObserver.events.last).to(beNil())
+                    }
+
+                    it("should properly update day off state") {
                         expect(isDayOffSelectedObserver.events.last).to(beNil())
+                    }
+
+                    it("should properly update sick leave state") {
                         expect(isSickLeaveSelectedObserver.events.last).to(beNil())
+                    }
+
+                    it("should properly update conference state") {
                         expect(isConferenceSelectedObserver.events.last).to(beNil())
                     }
 
@@ -85,11 +97,23 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
                             sut.activityTypeViewModels[1].isSelected.onNext(true)
                         }
 
-                        it("should properly update state") {
+                        it("should properly update time report state") {
                             expect(isTimeReportSelectedObserver.events.last?.value.element).to(beFalse())
+                        }
+
+                        it("should properly update vacation state") {
                             expect(isVacationSelectedObserver.events.last?.value.element).to(beTrue())
+                        }
+
+                        it("should properly update day off state") {
                             expect(isDayOffSelectedObserver.events.last).to(beNil())
+                        }
+
+                        it("should properly update sick leave state") {
                             expect(isSickLeaveSelectedObserver.events.last).to(beNil())
+                        }
+
+                        it("should properly update conference state") {
                             expect(isConferenceSelectedObserver.events.last).to(beNil())
                         }
                     }
