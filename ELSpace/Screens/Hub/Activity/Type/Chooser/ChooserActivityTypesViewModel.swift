@@ -4,14 +4,15 @@ import RxSwift
 class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     init() {
+        activityTypeViewModels = [timeReportViewModel,
+                                  vacationViewModel,
+                                  dayOffViewModel,
+                                  sickLeaveViewModel,
+                                  conferenceViewModel]
         configureViewModels()
     }
 
-    lazy var activityTypeViewModels: [ActivityTypeViewModeling] = [timeReportViewModel,
-                                                                   vacationViewModel,
-                                                                   dayOffViewModel,
-                                                                   sickLeaveViewModel,
-                                                                   conferenceViewModel]
+    let activityTypeViewModels: [ActivityTypeViewModeling]
 
     // MARK: - Private
 
