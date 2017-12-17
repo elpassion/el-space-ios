@@ -29,7 +29,7 @@ class ActivitiesCoordinator: Coordinator {
 
     // MARK: - Bindings
 
-    func bind(viewModel: ActivitiesViewModelProtocol, to viewController: UIViewController & ActivitiesViewControlling) {
+    private func bind(viewModel: ActivitiesViewModelProtocol, to viewController: UIViewController & ActivitiesViewControlling) {
         viewController.viewDidAppear
             .subscribe(onNext: { [weak self] in
                 self?.activitiesViewModel.getData()
@@ -51,12 +51,16 @@ class ActivitiesCoordinator: Coordinator {
 
         viewController.addActivity
             .subscribe(onNext: { [weak self] in
-                guard let activityViewController = self?.activityCreator.activityViewController(), let activitiesViewController = self?.activitiesViewController else { return }
-                self?.presenter.push(viewController: activityViewController, on: activitiesViewController)
+                self?.showActivity()
             }).disposed(by: disposeBag)
 
     }
 
     private let disposeBag = DisposeBag()
+
+    private func showActivity() {
+        let activityViewController = activityCreator.activityViewController()
+        presenter.push(viewController: activityViewController, on: activitiesViewController)
+    }
 
 }

@@ -53,15 +53,12 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
         return viewModel.activityTypeViewModels.map { viewModel in
             let view = ActivityTypeView()
             view.titleLabel.text = viewModel.title
-            view.titleLabel.textColor = self.titleColorForSelected(false)
+            view.titleLabel.textColor = self.titleColorForState(false)
             view.imageView.image = viewModel.imageUnselected
             viewModel.isSelected
                 .subscribe(onNext: { [weak view, weak self] isSelected in
-                    guard let imageSelected = viewModel.imageSelected, let imageUnselected = viewModel.imageUnselected else {
-                        return
-                    }
-                    view?.imageView.image = isSelected ? imageSelected : imageUnselected
-                    view?.titleLabel.textColor = self?.titleColorForSelected(isSelected)
+                    view?.imageView.image = isSelected ? viewModel.imageSelected : viewModel.imageUnselected
+                    view?.titleLabel.textColor = self?.titleColorForState(isSelected)
                     self?.selectedTypeSubject.onNext(viewModel.type)
                 })
                 .disposed(by: disposeBag)
@@ -73,7 +70,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
         }
     }
 
-    private func titleColorForSelected(_ isSelected: Bool) -> UIColor? {
+    private func titleColorForState(_ isSelected: Bool) -> UIColor? {
         return isSelected ? UIColor("BCAEF8") : UIColor("B3B3B8")
     }
 
