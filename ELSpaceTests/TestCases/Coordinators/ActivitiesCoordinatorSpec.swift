@@ -9,25 +9,25 @@ class ActivitiesCoordinatorSpec: QuickSpec {
         describe("ActivitiesCoordinator") {
 
             var sut: ActivitiesCoordinator!
-            var activityViewControllerStub: UIViewController!
+            var activityCreatorStub: ActivityCreatorStub!
             var activitiesViewControllerStub: ActivitiesViewControllerStub!
             var activitiesViewModelSpy: ActivitiesViewModelSpy!
             var presenterSpy: ViewControllerPresenterSpy!
 
             afterEach {
                 sut = nil
-                activityViewControllerStub = nil
+                activityCreatorStub = nil
                 activitiesViewControllerStub = nil
                 activitiesViewModelSpy = nil
                 presenterSpy = nil
             }
 
             beforeEach {
-                activityViewControllerStub = UIViewController()
+                activityCreatorStub = ActivityCreatorStub()
                 activitiesViewControllerStub = ActivitiesViewControllerStub()
                 activitiesViewModelSpy = ActivitiesViewModelSpy()
                 presenterSpy = ViewControllerPresenterSpy()
-                sut = ActivitiesCoordinator(activityViewController: activityViewControllerStub,
+                sut = ActivitiesCoordinator(activityCreator: activityCreatorStub,
                                             activitiesViewController: activitiesViewControllerStub,
                                             activitiesViewModel: activitiesViewModelSpy,
                                             presenter: presenterSpy)
@@ -68,7 +68,7 @@ class ActivitiesCoordinatorSpec: QuickSpec {
                 }
 
                 it("should push activity screen") {
-                    expect(presenterSpy.pushedViewController).to(be(activityViewControllerStub))
+                    expect(presenterSpy.pushedViewController).to(be(activityCreatorStub.viewController))
                 }
             }
         }
