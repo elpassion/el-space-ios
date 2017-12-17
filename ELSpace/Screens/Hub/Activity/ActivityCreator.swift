@@ -1,8 +1,8 @@
 import UIKit
 
-struct ActivityAssembly {
+struct ActivityCreator: ActivityCreating {
 
-    func viewController() -> UIViewController {
+    func activityViewController() -> UIViewController {
         return ActivityViewController(assembly: Assembly())
     }
 
@@ -13,4 +13,8 @@ struct ActivityAssembly {
         }
 
     }
+}
+
+protocol ActivityCreating {
+    func activityViewController() -> UIViewController
 }
