@@ -32,7 +32,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     var month: String {
-        return monthFormatter.string(from: Date())
+        return monthFormatter.string(from: todayDate)
     }
 
     // MARK: - Private
