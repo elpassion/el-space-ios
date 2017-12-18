@@ -11,11 +11,6 @@ PODS:
     - Swinject (~> 2.0)
     - SwinjectAutoregistration (~> 2.0)
     - UIColor_Hex_Swift (~> 3.0.2)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - GoogleSignIn (4.1.1):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -86,7 +81,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Anchorage (~> 4.0)
   - ELDebate (from `https://github.com/elpassion/el-debate-ios.git`, commit `649c08f`)
-  - FBSnapshotTestCase (~> 2.1)
   - GoogleSignIn (~> 4.0)
   - MBProgressHUD (~> 1.0)
   - ModelMapper (~> 7.0)
@@ -119,7 +113,6 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Anchorage: f5811d7655c607ef24b475d0ceab2115efd35407
   ELDebate: c767a48d918af16e3fe9b6bd0528f9ea92998137
-  FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
   GoogleSignIn: 3fdaa34a2ba04dbd7a25d7db39aecb0da98d5bdc
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
@@ -148,6 +141,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 9111ff4f0571ca80b06a92a9c4b43af546e6dba3
+PODFILE CHECKSUM: 6cffb672828222bbfe9d15910dc489f26606c3a6
 
 COCOAPODS: 1.2.1
