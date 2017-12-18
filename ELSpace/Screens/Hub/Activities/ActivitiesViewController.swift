@@ -58,9 +58,8 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
     }
 
     var isLoading: AnyObserver<Bool> {
-        return AnyObserver(eventHandler: { [weak self] event in
-            guard let element = event.element else { return }
-            self?.loadingIndicator.loading(element)
+        return AnyObserver(onNext: { [weak self] in
+            self?.loadingIndicator.loading($0)
         })
     }
 
