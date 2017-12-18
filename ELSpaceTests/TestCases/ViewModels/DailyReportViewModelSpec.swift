@@ -50,6 +50,14 @@ class DailyReportViewModelSpec: QuickSpec {
                     expect(sut.dayType).to(equal(DayType.weekday))
                 }
 
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor(color: .green92ECB4)))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.white))
+                }
+
                 describe("ReportsViewModel") {
                     var reportsViewModel: [ReportDetailsViewModelProtocol]!
 
@@ -155,6 +163,14 @@ class DailyReportViewModelSpec: QuickSpec {
                     expect(sut.dayType).to(equal(DayType.weekend))
                 }
 
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor.clear))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.clear))
+                }
+
                 describe("ReportsViewModel") {
                     var reportsViewModel: [ReportDetailsViewModelProtocol]!
 
@@ -162,7 +178,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         reportsViewModel = sut.reportsViewModel
                     }
 
-                    it("should have 2 elements") {
+                    it("should have 0 elements") {
                         expect(reportsViewModel).to(haveCount(0))
                     }
                 }
@@ -192,6 +208,14 @@ class DailyReportViewModelSpec: QuickSpec {
                     expect(sut.dayType).to(equal(DayType.comming))
                 }
 
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor(color: .grayE4E4E4)))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.white))
+                }
+
                 describe("ReportsViewModel") {
                     var reportsViewModel: [ReportDetailsViewModelProtocol]!
 
@@ -199,7 +223,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         reportsViewModel = sut.reportsViewModel
                     }
 
-                    it("should have 2 elements") {
+                    it("should have 0 elements") {
                         expect(reportsViewModel).to(haveCount(0))
                     }
                 }
@@ -229,6 +253,14 @@ class DailyReportViewModelSpec: QuickSpec {
                     expect(sut.dayType).to(equal(DayType.missing))
                 }
 
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor(color: .brownBA6767)))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.white))
+                }
+
                 describe("ReportsViewModel") {
                     var reportsViewModel: [ReportDetailsViewModelProtocol]!
 
@@ -236,7 +268,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         reportsViewModel = sut.reportsViewModel
                     }
 
-                    it("should have 2 elements") {
+                    it("should have 0 elements") {
                         expect(reportsViewModel).to(haveCount(0))
                     }
                 }
