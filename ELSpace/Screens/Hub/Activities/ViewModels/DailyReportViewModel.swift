@@ -118,31 +118,3 @@ enum DayType {
     case missing
     case comming
 }
-
-extension DailyReportViewModelProtocol {
-
-    var titleObservable: Observable<String?> {
-        return Observable.just(title)
-    }
-
-    var dayObservable: Observable<String> {
-        return Observable.just(day)
-    }
-
-    var dayTypeObservable: Observable<DayType> {
-        return Observable.just(dayType)
-    }
-
-    var reportsViewModelObservable: Observable<[ReportDetailsViewModelProtocol]> {
-        return Observable.just(reportsViewModel)
-    }
-
-    var stripeColorObservable: Observable<UIColor> {
-        return Observable.just(stripeColor)
-    }
-
-    var backgroundColorObservable: Observable<UIColor> {
-        return Observable.just(backgroundColor)
-    }
-
-}
