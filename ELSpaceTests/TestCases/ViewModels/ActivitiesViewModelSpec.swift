@@ -13,12 +13,14 @@ class ActivitiesViewModelSpec: QuickSpec {
             var activitiesControllerSpy: ActivitiesControllerSpy!
             var scheduler: TestScheduler!
             var dataSourceObserver: TestableObserver<[DailyReportViewModelProtocol]>!
+            var isLoadingObserver: TestableObserver<Bool>!
 
             afterEach {
                 sut = nil
                 activitiesControllerSpy = nil
                 scheduler = nil
                 dataSourceObserver = nil
+                isLoadingObserver = nil
             }
 
             beforeEach {
@@ -27,7 +29,9 @@ class ActivitiesViewModelSpec: QuickSpec {
                                           todayDate: DateFormatter.shortDateFormatter.date(from: "2017-12-05")!)
                 scheduler = TestScheduler(initialClock: 0)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
+                isLoadingObserver = scheduler.createObserver(Bool.self)
                 _ = sut.dataSource.subscribe(dataSourceObserver)
+                _ = sut.isLoading.subscribe(isLoadingObserver)
                 activitiesControllerSpy.projectsSubject.onNext([ProjectDTO.fakeProjectDto()])
                 activitiesControllerSpy.reportsSubject.onNext([ReportDTO.fakeReportDto()])
             }
@@ -60,6 +64,18 @@ class ActivitiesViewModelSpec: QuickSpec {
 
                     it("should dataSource emit one event") {
                         expect(dataSourceObserver.events).to(haveCount(1))
+                    }
+                }
+            }
+
+            context("when ActivitiesController emit isLoading event") {
+                beforeEach {
+                    activitiesControllerSpy.isLoadingSubject.onNext(true)
+                }
+
+                describe("isLoading") {
+                    it("should emit correct event") {
+                        expect(isLoadingObserver.events.first?.value.element).to(beTrue())
                     }
                 }
             }
