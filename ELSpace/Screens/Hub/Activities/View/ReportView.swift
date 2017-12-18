@@ -85,7 +85,7 @@ private extension ReportView {
         static var label: UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "Helvetica", size: 16)
-            label.textColor = UIColor(color: .grayB3B3B8)
+            label.textColor = UIColor(color: .purpleB3B3B8)
             return label
         }
     }

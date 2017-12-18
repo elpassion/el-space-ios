@@ -2,9 +2,18 @@
 
 import RxSwift
 
-class ActivitiesViewControllerStub: ActivitiesViewControlling {
+class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling {
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        return nil
+    }
 
     let viewDidAppearSubject = PublishSubject<Void>()
+    let addActivitySubject = PublishSubject<Void>()
 
     // MARK: - ActivityViewControlling
 
@@ -17,6 +26,10 @@ class ActivitiesViewControllerStub: ActivitiesViewControlling {
 
     var isLoading: AnyObserver<Bool> {
         return AnyObserver(eventHandler: { _ in })
+    }
+
+    var addActivity: Observable<Void> {
+        return addActivitySubject.asObservable()
     }
 
 }

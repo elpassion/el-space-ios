@@ -3,33 +3,36 @@ import RxSwift
 
 class ActivitiesCoordinator: Coordinator {
 
-    init(viewController: UIViewController,
-         activitiesViewController: ActivitiesViewControlling,
-         viewModel: ActivitiesViewModelProtocol) {
-        self.viewController = viewController
+    init(activityCreator: ActivityCreating,
+         activitiesViewController: UIViewController & ActivitiesViewControlling,
+         activitiesViewModel: ActivitiesViewModelProtocol,
+         presenter: ViewControllerPresenting) {
+        self.activityCreator = activityCreator
         self.activitiesViewController = activitiesViewController
-        self.viewModel = viewModel
-        bind(viewModel: viewModel, to: activitiesViewController)
+        self.activitiesViewModel = activitiesViewModel
+        self.presenter = presenter
+        bind(viewModel: self.activitiesViewModel, to: self.activitiesViewController)
     }
 
     // MARK: - Coordinator
 
     var initialViewController: UIViewController {
-        return viewController
+        return activitiesViewController
     }
 
     // MARK: - Private
 
-    private let viewController: UIViewController
-    private let activitiesViewController: ActivitiesViewControlling
-    private let viewModel: ActivitiesViewModelProtocol
+    private let activityCreator: ActivityCreating
+    private let activitiesViewController: UIViewController & ActivitiesViewControlling
+    private let activitiesViewModel: ActivitiesViewModelProtocol
+    private let presenter: ViewControllerPresenting
 
     // MARK: - Bindings
 
-    func bind(viewModel: ActivitiesViewModelProtocol, to viewController: ActivitiesViewControlling) {
+    private func bind(viewModel: ActivitiesViewModelProtocol, to viewController: UIViewController & ActivitiesViewControlling) {
         viewController.viewDidAppear
             .subscribe(onNext: { [weak self] in
-                self?.viewModel.getData()
+                self?.activitiesViewModel.getData()
             }).disposed(by: disposeBag)
 
         viewModel.dataSource
@@ -45,8 +48,19 @@ class ActivitiesCoordinator: Coordinator {
             .subscribe(onNext: { [weak viewController] month in
                 viewController?.navigationItemTitle = month
             }).disposed(by: disposeBag)
+
+        viewController.addActivity
+            .subscribe(onNext: { [weak self] in
+                self?.showActivity()
+            }).disposed(by: disposeBag)
+
     }
 
     private let disposeBag = DisposeBag()
+
+    private func showActivity() {
+        let activityViewController = activityCreator.activityViewController()
+        presenter.push(viewController: activityViewController, on: activitiesViewController)
+    }
 
 }
