@@ -4,15 +4,14 @@ import RxSwift
 class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     init() {
-        activityTypeViewModels = [timeReportViewModel,
-                                  vacationViewModel,
-                                  dayOffViewModel,
-                                  sickLeaveViewModel,
-                                  conferenceViewModel]
         configureViewModels()
     }
 
-    let activityTypeViewModels: [ActivityTypeViewModeling]
+    lazy var activityTypeViewModels: [ActivityTypeViewModeling] = [timeReportViewModel,
+                                                                   vacationViewModel,
+                                                                   dayOffViewModel,
+                                                                   sickLeaveViewModel,
+                                                                   conferenceViewModel]
 
     // MARK: - Private
 
@@ -23,7 +22,8 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
     private let conferenceViewModel = ActivityTypeViewModel(type: .conference)
 
     private let disposeBag = DisposeBag()
-    private weak var lastSelectedViewModel: ActivityTypeViewModeling?
+
+    private var lastSelectedViewModel: ActivityTypeViewModeling?
 
     private func configureViewModels() {
         activityTypeViewModels.forEach { viewModel in
