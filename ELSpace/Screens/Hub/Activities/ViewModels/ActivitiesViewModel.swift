@@ -5,6 +5,7 @@ protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     var month: String { get }
+    var openActivity: Observable<DailyReportViewModel> { get }
     func getData()
 }
 
@@ -35,6 +36,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return monthFormatter.string(from: todayDate)
     }
 
+    var openActivity: Observable<DailyReportViewModel> {
+        return openActivitySubject.asObservable()
+    }
+
     // MARK: - Private
 
     private let activitiesController: ActivitiesControlling
@@ -45,6 +50,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportViewModelProtocol]>([])
     private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
+    private let openActivitySubject = PublishSubject<DailyReportViewModel>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -69,11 +75,20 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                                                  todayDate: todayDate,
                                                  reports: reports,
                                                  projects: projects.value)
+            setupBindings(viewModel: viewModel)
             return viewModel
         }
         setupSeparators(viewModels: viewModels)
         setupCornersRounding(viewModels: viewModels)
         self.viewModels.value = viewModels
+    }
+
+    private func setupBindings(viewModel: DailyReportViewModel) {
+        viewModel.didTapOnReport
+            .map { [weak viewModel] in viewModel }
+            .unwrap()
+            .bind(to: openActivitySubject)
+            .disposed(by: disposeBag)
     }
 
     private func setupSeparators(viewModels: [DailyReportViewModel]) {

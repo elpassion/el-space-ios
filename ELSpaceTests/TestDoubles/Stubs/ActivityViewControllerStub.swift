@@ -2,7 +2,15 @@
 
 import RxSwift
 
-class ActivitiesViewControllerStub: ActivitiesViewControlling {
+class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling {
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        return nil
+    }
 
     let viewDidAppearSubject = PublishSubject<Void>()
 

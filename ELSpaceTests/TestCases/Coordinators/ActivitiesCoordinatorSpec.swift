@@ -9,28 +9,32 @@ class ActivitiesCoordinatorSpec: QuickSpec {
         describe("ActivitiesCoordinator") {
 
             var sut: ActivitiesCoordinator!
-            var viewControllerFake: UIViewController!
+            var activityCreatorStub: ActivityCreatorStub!
             var activitiesViewControllerStub: ActivitiesViewControllerStub!
             var activitiesViewModelSpy: ActivitiesViewModelSpy!
+            var presenterSpy: ViewControllerPresenterSpy!
 
             afterEach {
                 sut = nil
-                viewControllerFake = nil
+                activityCreatorStub = nil
                 activitiesViewControllerStub = nil
                 activitiesViewModelSpy = nil
+                presenterSpy = nil
             }
 
             beforeEach {
-                viewControllerFake = UIViewController()
+                activityCreatorStub = ActivityCreatorStub()
                 activitiesViewControllerStub = ActivitiesViewControllerStub()
                 activitiesViewModelSpy = ActivitiesViewModelSpy()
-                sut = ActivitiesCoordinator(viewController: viewControllerFake,
+                presenterSpy = ViewControllerPresenterSpy()
+                sut = ActivitiesCoordinator(activityCreator: activityCreatorStub,
                                             activitiesViewController: activitiesViewControllerStub,
-                                            viewModel: activitiesViewModelSpy)
+                                            activitiesViewModel: activitiesViewModelSpy,
+                                            presenter: presenterSpy)
             }
 
             it("should have correct initial view controller") {
-                expect(sut.initialViewController).to(equal(viewControllerFake))
+                expect(sut.initialViewController).to(equal(activitiesViewControllerStub))
             }
 
             context("when viewDidAppear") {
@@ -55,6 +59,20 @@ class ActivitiesCoordinatorSpec: QuickSpec {
                     it("should have correct number of elements") {
                         expect(activitiesViewControllerStub.viewModels).to(haveCount(1))
                     }
+                }
+            }
+
+            context("when presenting activity screen") {
+                beforeEach {
+                    let dailyReportViewModel = DailyReportViewModel(date: Date(),
+                                                                    todayDate: Date(),
+                                                                    reports: [],
+                                                                    projects: [])
+                    activitiesViewModelSpy.openActivitySubject.onNext(dailyReportViewModel)
+                }
+
+                it("should push activity screen") {
+                    expect(presenterSpy.pushedViewController).to(be(activityCreatorStub.viewController))
                 }
             }
         }

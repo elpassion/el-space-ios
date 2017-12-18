@@ -9,6 +9,7 @@ protocol DailyReportViewModelProtocol {
     var topCornersRounded: Bool { get }
     var bottomCornersRounded: Bool { get }
     var isSeparatorHidden: Bool { get }
+    var didTapOnReport: PublishSubject<Void> { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var disposeBag: DisposeBag { get }
 }
@@ -76,6 +77,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         return reportsViewModel.isEmpty == false
     }
 
+    let didTapOnReport = PublishSubject<Void>()
     let reportsViewModel: [ReportDetailsViewModelProtocol]
     let disposeBag = DisposeBag()
 

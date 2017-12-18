@@ -66,6 +66,7 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
     // MARK: - Private
 
     private let viewDidAppearSubject = PublishSubject<Void>()
+    private let addActivitySubject = PublishSubject<Void>()
 
     private func setDailyReports() {
         activitiesView.stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }

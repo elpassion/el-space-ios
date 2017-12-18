@@ -37,7 +37,7 @@ extension AppContainer: LoginViewControllerCreation,
 
     // MARK: - ActivityViewControllerCreation
 
-    func activitiesViewController() -> ActivitiesViewController {
+    func activitiesViewController() -> UIViewController & ActivitiesViewControlling {
         return ActivitiesViewController()
     }
 
@@ -56,9 +56,13 @@ protocol SelectionViewControllerCreation {
 }
 
 protocol ActivitiesViewControllerCreation {
-    func activitiesViewController() -> ActivitiesViewController
+    func activitiesViewController() -> UIViewController & ActivitiesViewControlling
 }
 
 protocol AlertCreation {
     func messageAlertController(with title: String?, message: String?) -> UIAlertController
+}
+
+protocol ActivityViewControllerCreation {
+    func activityViewController() -> UIViewController
 }

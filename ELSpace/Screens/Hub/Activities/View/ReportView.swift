@@ -34,7 +34,7 @@ class ReportView: UIView {
     let dateLabel = SubviewsFactory.label
     let titleLabel = SubviewsFactory.label
     let rightStripeView = UIView(frame: .zero)
-    let contentContainer = UIView(frame: .zero)
+    let contentContainer = UIControl(frame: .zero)
     let addIconView = UIImageView(image: UIImage(named: "add_icon"))
     let separatorView = SubviewsFactory.separatorView
 

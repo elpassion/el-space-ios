@@ -41,6 +41,10 @@ extension DailyReportViewModelProtocol {
             .subscribe(onNext: { [weak view] in view?.separatorView.isHidden = $0 })
             .disposed(by: disposeBag)
 
+        view.contentContainer.rx.controlEvent(.touchUpInside)
+            .bind(to: didTapOnReport)
+            .disposed(by: disposeBag)
+
         return disposeBag
     }
 
