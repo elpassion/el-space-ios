@@ -9,7 +9,7 @@ class ReportViewTests: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
         sut = ActivitiesView()
-        recordMode = true
+        recordMode = false
         isDeviceAgnostic = true
         sut.frame = UIScreen.main.bounds
     }
