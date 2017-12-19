@@ -40,6 +40,11 @@ PODS:
   - MBProgressHUD (1.1.0)
   - ModelMapper (7.3.0)
   - Nimble (7.0.3)
+  - Nimble-Snapshots (6.3.0):
+    - Nimble-Snapshots/Core (= 6.3.0)
+  - Nimble-Snapshots/Core (6.3.0):
+    - FBSnapshotTestCase (~> 2.0)
+    - Nimble (~> 7.0)
   - Pastel (0.3.0)
   - PromiseKit (4.5.0):
     - PromiseKit/Foundation (= 4.5.0)
@@ -91,6 +96,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0)
   - ModelMapper (~> 7.0)
   - Nimble (~> 7.0)
+  - Nimble-Snapshots (~> 6.2)
   - Pastel (~> 0.3)
   - Quick (~> 1.1)
   - R.swift (~> 4.0)
@@ -128,6 +134,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   ModelMapper: b70d373f224fc8cfc4da67b483db163a6cd05fe6
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
   PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
@@ -148,6 +155,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 9111ff4f0571ca80b06a92a9c4b43af546e6dba3
+PODFILE CHECKSUM: 6a068b3886b3e8b13d870c1c6c5a3ac34ded7f69
 
 COCOAPODS: 1.2.1

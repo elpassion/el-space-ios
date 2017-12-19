@@ -41,6 +41,7 @@ def pod_tests
     pod 'RxBlocking', '~> 4.0'
     pod 'RxTest', '~> 4.0'
     pod 'FBSnapshotTestCase', '~> 2.1'
+    pod 'Nimble-Snapshots', '~> 6.2'
 end
 
 target 'ELSpace' do
