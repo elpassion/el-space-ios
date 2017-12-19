@@ -46,7 +46,7 @@ private extension ReportDetailsView {
         static func label(size: CGFloat) -> UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "Helvetica", size: size)
-            label.textColor = UIColor(color: .purpleB3B3B8)
+            label.textColor = UIColor(color: .greyB3B3B8)
             return label
         }
     }
