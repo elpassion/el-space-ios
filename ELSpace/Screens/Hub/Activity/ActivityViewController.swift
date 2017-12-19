@@ -28,11 +28,15 @@ class ActivityViewController: UIViewController {
         navigationItem.title = "New activity"
         navigationItem.rightBarButtonItem = addBarButton
         configureChooserType()
+        configureForm()
+        setupBindings()
     }
 
     // MARK: - Private
 
     private let chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling
+    private let activityFormViewController: UIViewController & ActivityFormViewControlling
+    private let disposeBag = DisposeBag()
 
     private var activityView: ActivityView! {
         return view as? ActivityView
@@ -44,6 +48,18 @@ class ActivityViewController: UIViewController {
         addChildViewController(chooserActivityTypeViewController)
         chooserActivityTypeViewController.didMove(toParentViewController: self)
         activityView.activityTypeView = chooserActivityTypeViewController.view
+    }
+
+    private func configureForm() {
+        addChildViewController(activityFormViewController)
+        activityFormViewController.didMove(toParentViewController: self)
+        activityView.activityFormView = activityFormViewController.view
+    }
+
+    private func setupBindings() {
+        chooserActivityTypeViewController.selected
+            .bind(to: activityFormViewController.type)
+            .disposed(by: disposeBag)
     }
 
 }
