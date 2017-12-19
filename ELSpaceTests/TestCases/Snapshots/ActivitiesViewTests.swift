@@ -1,38 +1,44 @@
+import Quick
+import Nimble
+import Nimble_Snapshots
 import FBSnapshotTestCase
 
 @testable import ELSpace
 
-class ReportViewTests: FBSnapshotTestCase {
+class ActivitiesViewTests: QuickSpec {
 
-    var sut: ActivitiesView!
+    override func spec() {
+        describe("ActivitiesViewTests") {
 
-    override func setUp() {
-        super.setUp()
-        sut = ActivitiesView()
-        recordMode = false
-        isDeviceAgnostic = true
-        sut.frame = UIScreen.main.bounds
-    }
+            var sut: ActivitiesView!
 
-    override func tearDown() {
-        super.tearDown()
-        sut = nil
-    }
+            beforeEach {
+                sut = ActivitiesView()
+                sut.frame = UIScreen.main.bounds
+            }
 
-    func testReportViewCorrectDisplay() {
-        sut.stackView.addArrangedSubview(fakeReportView)
-        sut.stackView.addArrangedSubview(fakeReportViewAllCornersRounded)
-        sut.stackView.addArrangedSubview(fakeReportViewTopCornersRounded)
-        sut.stackView.addArrangedSubview(fakeReportViewBottomCornersRounded)
-        sut.stackView.addArrangedSubview(fakeReportViewWithDetails)
-        sut.stackView.addArrangedSubview(fakeReportViewWithSeparator)
-        verifyView()
-    }
+            context("when initalize with coder") {
+                it("should throw fatal error") {
+                    expect { _ = ReportView(coder: NSCoder()) }.to(throwAssertion())
+                }
+            }
 
-    private func verifyView() {
-        FBSnapshotVerifyView(sut)
-        expectation(description: "Should display correct view").fulfill()
-        waitForExpectations(timeout: 1.0)
+            describe("6 different ReportView") {
+                beforeEach {
+                    sut.stackView.addArrangedSubview(self.fakeReportView)
+                    sut.stackView.addArrangedSubview(self.fakeReportViewAllCornersRounded)
+                    sut.stackView.addArrangedSubview(self.fakeReportViewTopCornersRounded)
+                    sut.stackView.addArrangedSubview(self.fakeReportViewBottomCornersRounded)
+                    sut.stackView.addArrangedSubview(self.fakeReportViewWithDetails)
+                    sut.stackView.addArrangedSubview(self.fakeReportViewWithSeparator)
+                }
+
+                it("should have valid snapshot") {
+                    expect(sut).to(haveValidDeviceAgnosticSnapshot())
+                }
+            }
+
+        }
     }
 
     // MARK: - ReportView fakes
