@@ -23,12 +23,24 @@ class ActivityView: UIView {
         }
     }
 
+    var activityFormView: UIView? {
+        didSet {
+            activityFormContainer.subviews.forEach { $0.removeFromSuperview() }
+            if let view = activityFormView {
+                activityFormContainer.addSubview(view)
+                view.edgeAnchors == activityFormContainer.edgeAnchors + 8
+            }
+        }
+    }
+
     // MARK: Private
 
-    private let activityTypeContainer = Factory.activityTypeContainer()
+    private let activityTypeContainer = Factory.container()
+    private let activityFormContainer = Factory.container()
 
     private func addSubviews() {
         addSubview(activityTypeContainer)
+        addSubview(activityFormContainer)
     }
 
     private func setupLayout() {
@@ -36,6 +48,10 @@ class ActivityView: UIView {
         activityTypeContainer.leadingAnchor == leadingAnchor + 16
         activityTypeContainer.trailingAnchor == trailingAnchor - 16
         activityTypeContainer.heightAnchor == 80
+
+        activityFormContainer.topAnchor == activityTypeContainer.bottomAnchor + 16
+        activityFormContainer.leadingAnchor == leadingAnchor + 16
+        activityFormContainer.trailingAnchor == trailingAnchor - 16
     }
 
 }
@@ -43,7 +59,7 @@ class ActivityView: UIView {
 private extension ActivityView {
     struct Factory {
 
-        static func activityTypeContainer() -> UIView {
+        static func container() -> UIView {
             let view = UIView(frame: .zero)
             view.backgroundColor = .white
             view.layer.shadowColor = UIColor.black.withAlphaComponent(0.1).cgColor
