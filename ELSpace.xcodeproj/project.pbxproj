@@ -23,6 +23,7 @@
 		066F65531FE95ACA005FE66C /* ActivityFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */; };
 		066F65551FE95CD1005FE66C /* ActivityFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65541FE95CD1005FE66C /* ActivityFormView.swift */; };
 		066F65571FE95D2D005FE66C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65561FE95D2D005FE66C /* TextView.swift */; };
+		066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */; };
 		066F655B1FE96AED005FE66C /* ActivityFormViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */; };
 		066F655D1FE9794D005FE66C /* ActivityFormViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */; };
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
@@ -186,6 +187,7 @@
 		066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewController.swift; sourceTree = "<group>"; };
 		066F65541FE95CD1005FE66C /* ActivityFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormView.swift; sourceTree = "<group>"; };
 		066F65561FE95D2D005FE66C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModel.swift; sourceTree = "<group>"; };
 		066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModeling.swift; sourceTree = "<group>"; };
 		066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewControlling.swift; sourceTree = "<group>"; };
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
 				066F65541FE95CD1005FE66C /* ActivityFormView.swift */,
 				066F65561FE95D2D005FE66C /* TextView.swift */,
+				066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */,
 				066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */,
 				066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */,
 				066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */,
@@ -1406,6 +1409,7 @@
 				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
 				066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
+				066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
