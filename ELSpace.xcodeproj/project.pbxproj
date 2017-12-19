@@ -20,6 +20,7 @@
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
 		066C7F001FE6D8FF00D2AFBD /* ActivityCreatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */; };
+		066F65531FE95ACA005FE66C /* ActivityFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */; };
 		0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */; };
 		06B127B51FE3C53D00E5426C /* ActivityCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B127B41FE3C53D00E5426C /* ActivityCreator.swift */; };
 		06BA11AA1FE18A070021E159 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11A91FE18A070021E159 /* ActivityType.swift */; };
@@ -177,6 +178,7 @@
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
 		066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCreatorStub.swift; sourceTree = "<group>"; };
+		066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewController.swift; sourceTree = "<group>"; };
 		0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		06B127B41FE3C53D00E5426C /* ActivityCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCreator.swift; sourceTree = "<group>"; };
 		06BA11A91FE18A070021E159 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 		066F65511FE95A44005FE66C /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -1372,6 +1375,7 @@
 				06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */,
 				477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */,
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
+				066F65531FE95ACA005FE66C /* ActivityFormViewController.swift in Sources */,
 				47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */,
 				AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
