@@ -21,6 +21,7 @@
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
 		066C7F001FE6D8FF00D2AFBD /* ActivityCreatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */; };
 		066F65531FE95ACA005FE66C /* ActivityFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */; };
+		066F65571FE95D2D005FE66C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65561FE95D2D005FE66C /* TextView.swift */; };
 		066F655B1FE96AED005FE66C /* ActivityFormViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */; };
 		066F655D1FE9794D005FE66C /* ActivityFormViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */; };
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
@@ -182,6 +183,7 @@
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
 		066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCreatorStub.swift; sourceTree = "<group>"; };
 		066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewController.swift; sourceTree = "<group>"; };
+		066F65561FE95D2D005FE66C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModeling.swift; sourceTree = "<group>"; };
 		066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewControlling.swift; sourceTree = "<group>"; };
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
+				066F65561FE95D2D005FE66C /* TextView.swift */,
 				066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */,
 				066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */,
 				066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */,
@@ -1351,6 +1354,7 @@
 				06FBBB501FE12A5B0077F692 /* ActivityTypeViewModel.swift in Sources */,
 				060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */,
 				47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */,
+				066F65571FE95D2D005FE66C /* TextView.swift in Sources */,
 				06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
 				47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */,
