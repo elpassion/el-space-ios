@@ -13,6 +13,6 @@ protocol ActivityFormViewInputModeling {
 }
 
 protocol ActivityFormViewOutputModeling {
-    var type: Observable<ActivityType> { get }
+    var type: AnyObserver<ActivityType> { get }
     var projectIndexPicked: AnyObserver<Int> { get }
 }
