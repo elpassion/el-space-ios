@@ -12,6 +12,10 @@ struct ActivityCreator: ActivityCreating {
             return ChooserActivityTypeAssembly().viewController()
         }
 
+        var activityFormViewController: UIViewController & ActivityFormViewControlling {
+            return ActivityFormAssembly().viewController()
+        }
+
     }
 }
 

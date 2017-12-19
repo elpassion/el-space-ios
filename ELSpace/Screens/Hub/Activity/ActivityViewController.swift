@@ -1,13 +1,16 @@
 import UIKit
+import RxSwift
 
 protocol ActivityViewControllerAssembly {
     var chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling { get }
+    var activityFormViewController: UIViewController & ActivityFormViewControlling { get }
 }
 
 class ActivityViewController: UIViewController {
 
     init(assembly: ActivityViewControllerAssembly) {
         self.chooserActivityTypeViewController = assembly.chooserActivityTypeViewController
+        self.activityFormViewController = assembly.activityFormViewController
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
     }
