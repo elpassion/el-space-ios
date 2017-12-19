@@ -21,6 +21,7 @@
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
 		066C7F001FE6D8FF00D2AFBD /* ActivityCreatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */; };
 		066F65531FE95ACA005FE66C /* ActivityFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */; };
+		066F65551FE95CD1005FE66C /* ActivityFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65541FE95CD1005FE66C /* ActivityFormView.swift */; };
 		066F65571FE95D2D005FE66C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65561FE95D2D005FE66C /* TextView.swift */; };
 		066F655B1FE96AED005FE66C /* ActivityFormViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */; };
 		066F655D1FE9794D005FE66C /* ActivityFormViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */; };
@@ -183,6 +184,7 @@
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
 		066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCreatorStub.swift; sourceTree = "<group>"; };
 		066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewController.swift; sourceTree = "<group>"; };
+		066F65541FE95CD1005FE66C /* ActivityFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormView.swift; sourceTree = "<group>"; };
 		066F65561FE95D2D005FE66C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModeling.swift; sourceTree = "<group>"; };
 		066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewControlling.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
+				066F65541FE95CD1005FE66C /* ActivityFormView.swift */,
 				066F65561FE95D2D005FE66C /* TextView.swift */,
 				066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */,
 				066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */,
@@ -1348,6 +1351,7 @@
 				47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
+				066F65551FE95CD1005FE66C /* ActivityFormView.swift in Sources */,
 				47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */,
 				473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */,
 				AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */,
