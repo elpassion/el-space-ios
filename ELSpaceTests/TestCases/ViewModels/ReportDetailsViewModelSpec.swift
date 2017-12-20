@@ -149,6 +149,25 @@ class ReportDetailsViewModelSpec: QuickSpec {
                     expect(sut.value).to(equal(8.0))
                 }
             }
+
+            context("when initialize with uknown type") {
+                beforeEach {
+                    let fakeReportViewModel = ReportViewModelFake(projectId: nil,
+                                                                  date: Date(),
+                                                                  value: 8.0,
+                                                                  comment: nil,
+                                                                  type: 999)
+                    sut = ReportDetailsViewModel(report: fakeReportViewModel, project: nil)
+                }
+
+                it("should have correct type") {
+                    expect(sut.type).to(beNil())
+                }
+
+                it("should have correct value") {
+                    expect(sut.value).to(equal(0.0))
+                }
+            }
         }
     }
 
