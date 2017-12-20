@@ -398,9 +398,9 @@
 		062CCFC31FE0467600B04ACE /* Type */ = {
 			isa = PBXGroup;
 			children = (
+				06BA11B01FE18C260021E159 /* Activity */,
 				06BA11B41FE18CB00021E159 /* Assembly */,
 				06BA11B11FE18C330021E159 /* Chooser */,
-				06BA11B01FE18C260021E159 /* Activity */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -428,10 +428,10 @@
 			isa = PBXGroup;
 			children = (
 				062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */,
-				06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */,
-				06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */,
 				062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */,
 				06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */,
+				06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */,
+				06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */,
 			);
 			path = Chooser;
 			sourceTree = "<group>";
@@ -457,11 +457,11 @@
 			isa = PBXGroup;
 			children = (
 				47F819E11F3B3DE4003C1BD5 /* ActivitiesViewModelSpec.swift */,
+				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
+				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
-				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
-				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -511,9 +511,9 @@
 			isa = PBXGroup;
 			children = (
 				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
+				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
-				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -534,9 +534,9 @@
 			isa = PBXGroup;
 			children = (
 				062CCFC31FE0467600B04ACE /* Type */,
-				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
-				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
 				06B127B41FE3C53D00E5426C /* ActivityCreator.swift */,
+				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
+				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -544,8 +544,8 @@
 		47F1DCA61F309ECC0039B34E /* Hub */ = {
 			isa = PBXGroup;
 			children = (
-				47DFB1601FDBEE33007293E3 /* Activity */,
 				47F1DCA71F309ECF0039B34E /* Activities */,
+				47DFB1601FDBEE33007293E3 /* Activity */,
 			);
 			path = Hub;
 			sourceTree = "<group>";
@@ -575,12 +575,12 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */,
+				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
 				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */,
-				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -609,11 +609,11 @@
 		47F8647C1F38BC81000C0FE9 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				47DF82E81FE1395D009BF96A /* AnyObserver_Factory.swift */,
 				47F8647F1F38BCF0000C0FE9 /* Disposable.swift */,
 				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
 				47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */,
-				47DF82E81FE1395D009BF96A /* AnyObserver_Factory.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -629,9 +629,9 @@
 		47FE97651F34654E009EEE1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */,
 				47FE976A1F347285009EEE1C /* ReportDetailsView.swift */,
 				47FE97681F3469F6009EEE1C /* ReportView.swift */,
-				4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -787,12 +787,12 @@
 		8613F3411EEEDE2C0037A787 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
-				47AC68001FE95EA0002ECDF7 /* Extensions */,
-				47AC67FB1FE958C1002ECDF7 /* Snapshots */,
 				86D9F91C1EEEBB1A00788C1D /* Commons */,
 				AFB47B7F1F28D35C00E0A922 /* Controllers */,
 				47F8622F1F2F256100E7C518 /* Coordinators */,
+				47AC68001FE95EA0002ECDF7 /* Extensions */,
 				AF48257F1F276C110081B2CC /* Network */,
+				47AC67FB1FE958C1002ECDF7 /* Snapshots */,
 				47CA94941F2A1EBE00D5A9B7 /* ViewControllers */,
 				470991CE1F39F0690088E6BF /* ViewModels */,
 			);
@@ -802,8 +802,8 @@
 		86D9F91C1EEEBB1A00788C1D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				0666C2401FD8523B006D1883 /* Presenters */,
 				AFB47B571F288E5B00E0A922 /* Extensions */,
+				0666C2401FD8523B006D1883 /* Presenters */,
 				86D9F91D1EEEBB3D00788C1D /* Providers */,
 				AF4AD7D61F20DC54005B5524 /* Validators */,
 				473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */,
@@ -931,9 +931,9 @@
 				AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */,
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
-				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
-				0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */,
 				0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */,
+				0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */,
+				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
