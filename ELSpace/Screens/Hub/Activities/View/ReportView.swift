@@ -48,7 +48,7 @@ class ReportView: UIView {
         contentContainer.addSubview(separatorView)
     }
 
-    private let reportDetailsContainer = UIView(frame: .zero)
+    private let reportDetailsContainer = SubviewsFactory.reportDetailsContainer
 
     // MARK: - Layout
 
@@ -146,6 +146,12 @@ private extension ReportView {
         static var separatorView: UIView {
             let view = UIView(frame: .zero)
             view.backgroundColor = UIColor(color: .grayEAEAF5)
+            return view
+        }
+
+        static var reportDetailsContainer: UIView {
+            let view = UIView(frame: .zero)
+            view.isUserInteractionEnabled = false
             return view
         }
     }
