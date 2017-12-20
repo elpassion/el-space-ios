@@ -2,15 +2,15 @@ import UIKit
 import RxSwift
 
 protocol ActivityViewControllerAssembly {
-    var chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling { get }
-    var activityFormViewController: UIViewController & ActivityFormViewControlling { get }
+    var typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling { get }
+    var formViewController: UIViewController & ActivityFormViewControlling { get }
 }
 
 class ActivityViewController: UIViewController {
 
     init(assembly: ActivityViewControllerAssembly) {
-        self.chooserActivityTypeViewController = assembly.chooserActivityTypeViewController
-        self.activityFormViewController = assembly.activityFormViewController
+        self.typeChooserViewController = assembly.typeChooserViewController
+        self.formViewController = assembly.formViewController
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
     }
@@ -25,17 +25,15 @@ class ActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "New activity"
-        navigationItem.rightBarButtonItem = addBarButton
-        configureChooserType()
-        configureForm()
+        configureNavigationBar()
+        configureSubviews()
         setupBindings()
     }
 
     // MARK: - Private
 
-    private let chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling
-    private let activityFormViewController: UIViewController & ActivityFormViewControlling
+    private let typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling
+    private let formViewController: UIViewController & ActivityFormViewControlling
     private let disposeBag = DisposeBag()
 
     private var activityView: ActivityView! {
@@ -44,21 +42,24 @@ class ActivityViewController: UIViewController {
 
     private let addBarButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
 
-    private func configureChooserType() {
-        addChildViewController(chooserActivityTypeViewController)
-        chooserActivityTypeViewController.didMove(toParentViewController: self)
-        activityView.activityTypeView = chooserActivityTypeViewController.view
+    private func configureNavigationBar() {
+        navigationItem.title = "New activity"
+        navigationItem.rightBarButtonItem = addBarButton
     }
 
-    private func configureForm() {
-        addChildViewController(activityFormViewController)
-        activityFormViewController.didMove(toParentViewController: self)
-        activityView.activityFormView = activityFormViewController.view
+    private func configureSubviews() {
+        addChildViewController(typeChooserViewController)
+        typeChooserViewController.didMove(toParentViewController: self)
+        activityView.addView(typeChooserViewController.view)
+
+        addChildViewController(formViewController)
+        formViewController.didMove(toParentViewController: self)
+        activityView.addView(formViewController.view)
     }
 
     private func setupBindings() {
-        chooserActivityTypeViewController.selected
-            .bind(to: activityFormViewController.type)
+        typeChooserViewController.selected
+            .bind(to: formViewController.type)
             .disposed(by: disposeBag)
     }
 

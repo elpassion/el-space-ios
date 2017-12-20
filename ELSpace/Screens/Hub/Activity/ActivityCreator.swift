@@ -8,11 +8,11 @@ struct ActivityCreator: ActivityCreating {
 
     private struct Assembly: ActivityViewControllerAssembly {
 
-        var chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling {
+        var typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling {
             return ChooserActivityTypeAssembly().viewController()
         }
 
-        var activityFormViewController: UIViewController & ActivityFormViewControlling {
+        var formViewController: UIViewController & ActivityFormViewControlling {
             return ActivityFormAssembly().viewController()
         }
 
