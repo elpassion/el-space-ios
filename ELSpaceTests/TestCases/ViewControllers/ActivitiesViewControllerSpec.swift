@@ -39,6 +39,19 @@ class ActivitiesViewControllerSpec: QuickSpec {
                     expect(viewDidAppearObserver.events).to(haveCount(1))
                 }
             }
+
+            context("when set 1 viewModel") {
+                beforeEach {
+                    sut.viewModels = [DailyReportViewModel(date: Date(),
+                                                           todayDate: Date(),
+                                                           reports: [],
+                                                           projects: [])]
+                }
+
+                it("should create 1 view") {
+                    expect(sut.activitiesView.stackView.arrangedSubviews).to(haveCount(1))
+                }
+            }
         }
     }
 
