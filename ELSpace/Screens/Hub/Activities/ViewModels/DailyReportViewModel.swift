@@ -26,6 +26,10 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         }
     }
 
+    var hasReports: Bool {
+        return reportsViewModel.isEmpty == false
+    }
+
     // MARK: - DailReportViewModelProtocol
 
     var title: String? {
@@ -72,10 +76,6 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var topCornersRounded = false
     var bottomCornersRounded = false
     var isSeparatorHidden = false
-
-    var hasReports: Bool {
-        return reportsViewModel.isEmpty == false
-    }
 
     let didTapOnReport = PublishSubject<Void>()
     let reportsViewModel: [ReportDetailsViewModelProtocol]
