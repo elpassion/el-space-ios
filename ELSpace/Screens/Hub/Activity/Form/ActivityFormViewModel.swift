@@ -45,9 +45,9 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     var type: AnyObserver<ActivityType> {
         return AnyObserver(eventHandler: { [weak self]  in
             let isProjectInputHidden = $0.element != .timeReport
-            let isHoursInputHidden = $0.element != .timeReport
+            let isHoursInputHidden = !($0.element == .timeReport || $0.element == .vacation)
             let isCommentInputHidden = $0.element != .timeReport
-            print("is hour input \(isHoursInputHidden)")
+
             self?.projectInputHiddenSubject.onNext(isProjectInputHidden)
             self?.hoursInputHiddenSubject.onNext(isHoursInputHidden)
             self?.commentInputHiddenSubject.onNext(isCommentInputHidden)

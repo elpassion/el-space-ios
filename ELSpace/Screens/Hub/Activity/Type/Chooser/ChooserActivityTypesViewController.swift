@@ -59,7 +59,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
                 .subscribe(onNext: { [weak view, weak self] isSelected in
                     view?.imageView.image = isSelected ? viewModel.imageSelected : viewModel.imageUnselected
                     view?.titleLabel.textColor = self?.titleColorForState(isSelected)
-                    self?.selectedTypeSubject.onNext(viewModel.type)
+                    if isSelected { self?.selectedTypeSubject.onNext(viewModel.type) }
                 })
                 .disposed(by: disposeBag)
             view.button.rx.tap
