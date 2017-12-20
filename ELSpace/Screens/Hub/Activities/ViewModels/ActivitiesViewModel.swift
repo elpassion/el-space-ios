@@ -114,19 +114,19 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             let isLast = viewModels.last == viewModel
             if isFirst == false {
                 let previousElement = viewModels[viewModels.index(before: index)]
-                if viewModel.dayType != .weekend && previousElement.dayType == .weekend && previousElement.reportsViewModel.isEmpty {
-                    viewModel.topCornersRounded = true
-                }
+                viewModel.topCornersRounded = viewModel.dayType != .weekend &&
+                    previousElement.dayType == .weekend &&
+                    previousElement.hasReports == false
             } else {
-                viewModel.topCornersRounded = true
+                viewModel.topCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
             }
             if isLast == false {
                 let nextElement = viewModels[viewModels.index(after: index)]
-                if viewModel.dayType != .weekend && nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
-                    viewModel.bottomCornersRounded = true
-                }
+                viewModel.bottomCornersRounded = viewModel.dayType != .weekend &&
+                    nextElement.dayType == .weekend &&
+                    nextElement.hasReports == false
             } else {
-                viewModel.bottomCornersRounded = true
+                viewModel.bottomCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
             }
         }
     }
