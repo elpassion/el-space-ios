@@ -114,7 +114,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             let isLast = viewModels.last == viewModel
             if isFirst == false {
                 let previousElement = viewModels[viewModels.index(before: index)]
-                if previousElement.dayType == .weekend && previousElement.reportsViewModel.isEmpty {
+                if viewModel.dayType != .weekend && previousElement.dayType == .weekend && previousElement.reportsViewModel.isEmpty {
                     viewModel.topCornersRounded = true
                 }
             } else {
@@ -122,7 +122,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             }
             if isLast == false {
                 let nextElement = viewModels[viewModels.index(after: index)]
-                if nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
+                if viewModel.dayType != .weekend && nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
                     viewModel.bottomCornersRounded = true
                 }
             } else {
