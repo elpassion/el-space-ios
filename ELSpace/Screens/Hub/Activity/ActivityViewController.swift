@@ -22,8 +22,8 @@ class ActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "New activity"
-        navigationItem.rightBarButtonItem = addBarButton
+        navigationItem.titleView = NavigationItemSubviews.label
+        navigationItem.rightBarButtonItem = NavigationItemSubviews.addBarButton
         configureChooserType()
     }
 
@@ -35,12 +35,35 @@ class ActivityViewController: UIViewController {
         return view as? ActivityView
     }
 
-    private let addBarButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
-
     private func configureChooserType() {
         addChildViewController(chooserActivityTypeViewController)
         chooserActivityTypeViewController.didMove(toParentViewController: self)
         activityView.activityTypeView = chooserActivityTypeViewController.view
+    }
+
+}
+
+private extension ActivityViewController {
+
+    struct NavigationItemSubviews {
+        static var label: UILabel {
+            let label = UILabel(frame: .zero)
+            label.font = UIFont(name: "Gotham-Book", size: 17)
+            label.textColor = .white
+            label.text = "New activity"
+            return label
+        }
+
+        static var addBarButton: UIBarButtonItem {
+            let barButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
+            barButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) ?? UIFont.systemFont(ofSize: 17)
+            ], for: .normal)
+            barButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) ?? UIFont.systemFont(ofSize: 17)
+            ], for: .highlighted)
+            return barButton
+        }
     }
 
 }
