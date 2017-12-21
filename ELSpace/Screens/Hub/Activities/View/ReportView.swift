@@ -22,8 +22,8 @@ class ReportView: UIView {
 
     // MARK: Subviews
 
-    let dateLabel = SubviewsFactory.label
-    let titleLabel = SubviewsFactory.label
+    let dateLabel = SubviewsFactory.dateLabel
+    let titleLabel = SubviewsFactory.titleLabel
 
     private func addSubviews() {
         addSubview(containerView)
@@ -82,9 +82,16 @@ class ReportView: UIView {
 private extension ReportView {
 
     struct SubviewsFactory {
-        static var label: UILabel {
+        static var dateLabel: UILabel {
             let label = UILabel(frame: .zero)
-            label.font = UIFont(name: "Helvetica", size: 16)
+            label.font = UIFont(name: "Gotham-Medium", size: 16)
+            label.textColor = UIColor(color: .purpleB3B3B8)
+            return label
+        }
+
+        static var titleLabel: UILabel {
+            let label = UILabel(frame: .zero)
+            label.font = UIFont(name: "Gotham-Book", size: 16)
             label.textColor = UIColor(color: .purpleB3B3B8)
             return label
         }
