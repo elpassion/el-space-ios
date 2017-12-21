@@ -150,7 +150,7 @@ class ReportDetailsViewModelSpec: QuickSpec {
                 }
             }
 
-            context("when initialize with uknown type") {
+            context("when initialize with unknown type") {
                 beforeEach {
                     let fakeReportViewModel = ReportViewModelFake(projectId: nil,
                                                                   date: Date(),
