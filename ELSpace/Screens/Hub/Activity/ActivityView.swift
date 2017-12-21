@@ -7,6 +7,7 @@ class ActivityView: UIView {
         super.init(frame: .zero)
         addSubviews()
         setupLayout()
+        backgroundColor = .white
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -18,18 +19,22 @@ class ActivityView: UIView {
         stackView.addArrangedSubview(arrangedView)
     }
 
+    let scrollView = Factory.scrollView()
+
     // MARK: - Private
 
     private let stackView = Factory.stackView()
 
     private func addSubviews() {
-        addSubview(stackView)
+        addSubview(scrollView)
+        scrollView.addSubview(stackView)
     }
 
     private func setupLayout() {
-        stackView.topAnchor == topAnchor + 16
-        stackView.leadingAnchor == leadingAnchor + 16
-        stackView.trailingAnchor == trailingAnchor - 16
+        scrollView.edgeAnchors == edgeAnchors
+
+        stackView.edgeAnchors == scrollView.edgeAnchors + 16
+        stackView.widthAnchor == scrollView.widthAnchor - 32
     }
 
 }
@@ -48,6 +53,13 @@ private extension ActivityView {
             view.layer.shadowRadius = 7
             view.layer.cornerRadius = 6
             return view
+        }
+
+        static func scrollView() -> UIScrollView {
+            let scrollView = UIScrollView(frame: .zero)
+            scrollView.keyboardDismissMode = .interactive
+            scrollView.showsVerticalScrollIndicator = false
+            return scrollView
         }
 
         static func stackView() -> UIStackView {
