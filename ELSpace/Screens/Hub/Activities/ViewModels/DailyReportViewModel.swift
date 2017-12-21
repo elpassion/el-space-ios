@@ -27,7 +27,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     }
 
     var hasReports: Bool {
-        return reportsViewModel.isEmpty == false
+        return !reportsViewModel.isEmpty
     }
 
     // MARK: - DailReportViewModelProtocol
