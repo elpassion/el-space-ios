@@ -30,6 +30,10 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         return !reportsViewModel.isEmpty
     }
 
+    var isWeekendWithoutReports: Bool {
+        return reportsViewModel.isEmpty && dayType == .weekend
+    }
+
     // MARK: - DailReportViewModelProtocol
 
     var title: String? {

@@ -98,12 +98,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 viewModel.isSeparatorHidden = true
             } else {
                 let nextElement = viewModels[viewModels.index(after: index)]
-                if viewModel.dayType != .weekend && nextElement.dayType == .weekend && nextElement.reportsViewModel.isEmpty {
-                    viewModel.isSeparatorHidden = true
-                }
-                if viewModel.dayType == .weekend && nextElement.dayType != .weekend {
-                    viewModel.isSeparatorHidden = true
-                }
+                viewModel.isSeparatorHidden = (viewModel.dayType != .weekend && nextElement.isWeekendWithoutReports) ||
+                    (viewModel.isWeekendWithoutReports && nextElement.dayType != .weekend)
             }
         }
     }
