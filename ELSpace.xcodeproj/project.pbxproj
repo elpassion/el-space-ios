@@ -44,6 +44,10 @@
 		477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */; };
 		477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */; };
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
+		477D8FA81FEBB170005FADF6 /* Gotham-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA51FEBAE67005FADF6 /* Gotham-Bold.ttf */; };
+		477D8FA91FEBB173005FADF6 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */; };
+		477D8FAA1FEBB175005FADF6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA41FEBAE66005FADF6 /* Gotham-Light.otf */; };
+		477D8FAB1FEBB176005FADF6 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */; };
 		47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */; };
 		47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */; };
 		47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */; };
@@ -199,6 +203,10 @@
 		477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapper.swift; sourceTree = "<group>"; };
 		477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapperFake.swift; sourceTree = "<group>"; };
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		477D8FA41FEBAE66005FADF6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		477D8FA51FEBAE67005FADF6 /* Gotham-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.ttf"; sourceTree = "<group>"; };
+		477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_JsonArray.swift; sourceTree = "<group>"; };
 		47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
 		47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
@@ -624,6 +632,10 @@
 		5002D5871EE84D18004C0B10 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				477D8FA51FEBAE67005FADF6 /* Gotham-Bold.ttf */,
+				477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */,
+				477D8FA41FEBAE66005FADF6 /* Gotham-Light.otf */,
+				477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */,
 				5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */,
 				5002D5891EE84D18004C0B10 /* SourceCodePro-Regular.ttf */,
 				5002D58A1EE84D18004C0B10 /* SourceCodePro-Semibold.ttf */,
@@ -1084,10 +1096,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5002D5941EE84D18004C0B10 /* SourceCodePro-Semibold.ttf in Resources */,
+				477D8FA81FEBB170005FADF6 /* Gotham-Bold.ttf in Resources */,
+				477D8FAB1FEBB176005FADF6 /* Gotham-Medium.otf in Resources */,
 				5002D5921EE84D18004C0B10 /* SourceCodePro-Bold.ttf in Resources */,
 				5002D5971EE84D18004C0B10 /* Localizable.strings in Resources */,
+				477D8FAA1FEBB175005FADF6 /* Gotham-Light.otf in Resources */,
 				5002D5931EE84D18004C0B10 /* SourceCodePro-Regular.ttf in Resources */,
 				5002D5901EE84D18004C0B10 /* Assets.xcassets in Resources */,
+				477D8FA91FEBB173005FADF6 /* Gotham-Book.otf in Resources */,
 				5002D5911EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard in Resources */,
 				06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1228,7 +1244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		906E81B70CAD04FD955689A3 /* [CP] Embed Pods Frameworks */ = {
@@ -1300,7 +1316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
