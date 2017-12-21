@@ -13,7 +13,6 @@ class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling 
     }
 
     let viewDidAppearSubject = PublishSubject<Void>()
-    let addActivitySubject = PublishSubject<Void>()
 
     // MARK: - ActivityViewControlling
 
@@ -26,10 +25,6 @@ class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling 
 
     var isLoading: AnyObserver<Bool> {
         return AnyObserver(eventHandler: { _ in })
-    }
-
-    var addActivity: Observable<Void> {
-        return addActivitySubject.asObservable()
     }
 
 }

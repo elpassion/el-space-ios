@@ -35,15 +35,19 @@
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
 		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
 		470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */; };
+		4723B2221FDED3B6000FE3A6 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */; };
 		473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */; };
 		473CBF911F33191600B80FA4 /* AppContainer_Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF901F33191600B80FA4 /* AppContainer_Common.swift */; };
 		473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */; };
 		473CBF951F331D5000B80FA4 /* SelectionScreenPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF941F331D5000B80FA4 /* SelectionScreenPresenterMock.swift */; };
 		473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF961F33404600B80FA4 /* ReportsService.swift */; };
 		473CBF9A1F33414100B80FA4 /* ReportDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF991F33414100B80FA4 /* ReportDTO.swift */; };
+		476D48761FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */; };
 		477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */; };
 		477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */; };
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
+		47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */; };
+		47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */; };
 		47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */; };
 		47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */; };
 		47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */; };
@@ -55,6 +59,8 @@
 		47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */; };
 		47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */; };
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
+		47DF82E71FE13913009BF96A /* UIView_backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */; };
+		47DF82E91FE1395D009BF96A /* AnyObserver_Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF82E81FE1395D009BF96A /* AnyObserver_Factory.swift */; };
 		47DFB1621FDBEE55007293E3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */; };
 		47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */; };
 		47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */; };
@@ -90,8 +96,7 @@
 		47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647D1F38BC93000C0FE9 /* Reusable.swift */; };
 		47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8647F1F38BCF0000C0FE9 /* Disposable.swift */; };
 		47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864811F38BD35000C0FE9 /* RxReusable.swift */; };
-		47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */; };
-		47FE97671F346967009EEE1C /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97661F346967009EEE1C /* ReportCell.swift */; };
+		47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift */; };
 		47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE97681F3469F6009EEE1C /* ReportView.swift */; };
 		47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976A1F347285009EEE1C /* ReportDetailsView.swift */; };
 		47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE976E1F347A31009EEE1C /* ProjectsService.swift */; };
@@ -190,15 +195,19 @@
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
 		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
 		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
+		4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenter.swift; sourceTree = "<group>"; };
 		473CBF901F33191600B80FA4 /* AppContainer_Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_Common.swift; sourceTree = "<group>"; };
 		473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenterSpec.swift; sourceTree = "<group>"; };
 		473CBF941F331D5000B80FA4 /* SelectionScreenPresenterMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenterMock.swift; sourceTree = "<group>"; };
 		473CBF961F33404600B80FA4 /* ReportsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsService.swift; sourceTree = "<group>"; };
 		473CBF991F33414100B80FA4 /* ReportDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDTO.swift; sourceTree = "<group>"; };
+		476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModelStub.swift; sourceTree = "<group>"; };
 		477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapper.swift; sourceTree = "<group>"; };
 		477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapperFake.swift; sourceTree = "<group>"; };
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewTests.swift; sourceTree = "<group>"; };
+		47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_fakeImage.swift; sourceTree = "<group>"; };
 		47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_JsonArray.swift; sourceTree = "<group>"; };
 		47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
 		47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
@@ -210,6 +219,8 @@
 		47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryFake.swift; sourceTree = "<group>"; };
 		47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
+		47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_backgroundColor.swift; sourceTree = "<group>"; };
+		47DF82E81FE1395D009BF96A /* AnyObserver_Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyObserver_Factory.swift; sourceTree = "<group>"; };
 		47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCoordinator.swift; sourceTree = "<group>"; };
 		47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController_HubStyling.swift; sourceTree = "<group>"; };
@@ -245,8 +256,7 @@
 		47F8647D1F38BC93000C0FE9 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		47F8647F1F38BCF0000C0FE9 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		47F864811F38BD35000C0FE9 /* RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusable.swift; sourceTree = "<group>"; };
-		47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportCell.swift; sourceTree = "<group>"; };
-		47FE97661F346967009EEE1C /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportView.swift; sourceTree = "<group>"; };
 		47FE97681F3469F6009EEE1C /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		47FE976A1F347285009EEE1C /* ReportDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
 		47FE976E1F347A31009EEE1C /* ProjectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
@@ -388,9 +398,9 @@
 		062CCFC31FE0467600B04ACE /* Type */ = {
 			isa = PBXGroup;
 			children = (
+				06BA11B01FE18C260021E159 /* Activity */,
 				06BA11B41FE18CB00021E159 /* Assembly */,
 				06BA11B11FE18C330021E159 /* Chooser */,
-				06BA11B01FE18C260021E159 /* Activity */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -418,10 +428,10 @@
 			isa = PBXGroup;
 			children = (
 				062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */,
-				06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */,
-				06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */,
 				062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */,
 				06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */,
+				06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */,
+				06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */,
 			);
 			path = Chooser;
 			sourceTree = "<group>";
@@ -447,11 +457,11 @@
 			isa = PBXGroup;
 			children = (
 				47F819E11F3B3DE4003C1BD5 /* ActivitiesViewModelSpec.swift */,
+				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
+				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
-				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
-				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -481,13 +491,21 @@
 			path = Presenters;
 			sourceTree = "<group>";
 		};
+		47AC67FB1FE958C1002ECDF7 /* Snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */,
+			);
+			path = Snapshots;
+			sourceTree = "<group>";
+		};
 		47CA94941F2A1EBE00D5A9B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
+				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
-				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -500,6 +518,7 @@
 				477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */,
 				47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */,
 				47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */,
+				47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -508,9 +527,9 @@
 			isa = PBXGroup;
 			children = (
 				062CCFC31FE0467600B04ACE /* Type */,
-				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
-				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
 				06B127B41FE3C53D00E5426C /* ActivityCreator.swift */,
+				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
+				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -518,8 +537,8 @@
 		47F1DCA61F309ECC0039B34E /* Hub */ = {
 			isa = PBXGroup;
 			children = (
-				47DFB1601FDBEE33007293E3 /* Activity */,
 				47F1DCA71F309ECF0039B34E /* Activities */,
+				47DFB1601FDBEE33007293E3 /* Activity */,
 			);
 			path = Hub;
 			sourceTree = "<group>";
@@ -549,11 +568,12 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */,
+				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
 				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -582,9 +602,11 @@
 		47F8647C1F38BC81000C0FE9 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				47DF82E81FE1395D009BF96A /* AnyObserver_Factory.swift */,
 				47F8647F1F38BCF0000C0FE9 /* Disposable.swift */,
 				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
+				47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -592,7 +614,7 @@
 		47F864851F38C153000C0FE9 /* Bindings */ = {
 			isa = PBXGroup;
 			children = (
-				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift */,
+				47F864861F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift */,
 			);
 			path = Bindings;
 			sourceTree = "<group>";
@@ -600,7 +622,7 @@
 		47FE97651F34654E009EEE1C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				47FE97661F346967009EEE1C /* ReportCell.swift */,
+				4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */,
 				47FE976A1F347285009EEE1C /* ReportDetailsView.swift */,
 				47FE97681F3469F6009EEE1C /* ReportView.swift */,
 			);
@@ -762,6 +784,7 @@
 				AFB47B7F1F28D35C00E0A922 /* Controllers */,
 				47F8622F1F2F256100E7C518 /* Coordinators */,
 				AF48257F1F276C110081B2CC /* Network */,
+				47AC67FB1FE958C1002ECDF7 /* Snapshots */,
 				47CA94941F2A1EBE00D5A9B7 /* ViewControllers */,
 				470991CE1F39F0690088E6BF /* ViewModels */,
 			);
@@ -771,8 +794,8 @@
 		86D9F91C1EEEBB1A00788C1D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				0666C2401FD8523B006D1883 /* Presenters */,
 				AFB47B571F288E5B00E0A922 /* Extensions */,
+				0666C2401FD8523B006D1883 /* Presenters */,
 				86D9F91D1EEEBB3D00788C1D /* Providers */,
 				AF4AD7D61F20DC54005B5524 /* Validators */,
 				473CBF921F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift */,
@@ -900,9 +923,9 @@
 				AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */,
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
-				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
-				0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */,
 				0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */,
+				0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */,
+				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -1135,14 +1158,13 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-12/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -1161,7 +1183,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
@@ -1239,7 +1260,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ELSpaceTests/Pods-ELSpaceTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
@@ -1247,7 +1270,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
@@ -1323,6 +1348,7 @@
 				47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */,
 				47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */,
 				47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */,
+				47DF82E71FE13913009BF96A /* UIView_backgroundColor.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
 				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
 				47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */,
@@ -1333,6 +1359,7 @@
 				47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */,
 				06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
+				4723B2221FDED3B6000FE3A6 /* ActivitiesView.swift in Sources */,
 				47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */,
 				47F378551F370E1F005F78E5 /* ReportViewModel.swift in Sources */,
 				47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */,
@@ -1340,7 +1367,6 @@
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
 				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */,
-				47FE97671F346967009EEE1C /* ReportCell.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
@@ -1363,6 +1389,7 @@
 				47F8647A1F3873E4000C0FE9 /* DailyReportViewModel.swift in Sources */,
 				06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */,
 				477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */,
+				47DF82E91FE1395D009BF96A /* AnyObserver_Factory.swift in Sources */,
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */,
 				AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */,
@@ -1371,8 +1398,8 @@
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
+				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift in Sources */,
 				06BA11AF1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift in Sources */,
-				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportCell.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
@@ -1402,6 +1429,7 @@
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
+				476D48761FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift in Sources */,
 				47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */,
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
@@ -1433,6 +1461,7 @@
 				47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */,
 				47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */,
 				47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */,
+				47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */,
 				47F819DC1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift in Sources */,
 				47F819E81F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift in Sources */,
 				473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */,
@@ -1444,6 +1473,7 @@
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,
 				477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */,
 				47F8623D1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift in Sources */,
+				47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */,
 				AFE916DB1F3204F100C4D27A /* DictionaryAddSpec.swift in Sources */,
 				AFE916DD1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift in Sources */,
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,
