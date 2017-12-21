@@ -118,7 +118,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 let previousElement = viewModels[viewModels.index(before: index)]
                 viewModel.topCornersRounded = viewModel.dayType != .weekend &&
                     previousElement.dayType == .weekend &&
-                    previousElement.hasReports == false
+                    !previousElement.hasReports
             }
             if isLast {
                 viewModel.bottomCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
@@ -126,7 +126,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 let nextElement = viewModels[viewModels.index(after: index)]
                 viewModel.bottomCornersRounded = viewModel.dayType != .weekend &&
                     nextElement.dayType == .weekend &&
-                    nextElement.hasReports == false
+                    !nextElement.hasReports
             }
         }
     }
