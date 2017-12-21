@@ -12,7 +12,6 @@ class ActivityViewController: UIViewController {
         self.typeChooserViewController = assembly.typeChooserViewController
         self.formViewController = assembly.formViewController
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -34,6 +33,7 @@ class ActivityViewController: UIViewController {
 
     private let typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling
     private let formViewController: UIViewController & ActivityFormViewControlling
+    private let notificationCenter = NotificationCenter.default
     private let disposeBag = DisposeBag()
 
     private var activityView: ActivityView! {
@@ -61,6 +61,24 @@ class ActivityViewController: UIViewController {
         typeChooserViewController.selected
             .bind(to: formViewController.type)
             .disposed(by: disposeBag)
+
+        Observable.of(notificationCenter.rx.notification(Notification.Name.UIKeyboardWillHide),
+                      notificationCenter.rx.notification(Notification.Name.UIKeyboardWillChangeFrame))
+            .merge()
+            .subscribe(onNext: { [weak self] in self?.adjustForKeyboard(notification: $0) })
+            .disposed(by: disposeBag)
+    }
+
+    private func adjustForKeyboard(notification: Notification) {
+        if let userInfo = notification.userInfo, let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardViewEndFrame = view.convert(endFrame, from: view.window)
+
+            if notification.name == Notification.Name.UIKeyboardWillHide {
+                activityView.scrollView.contentInset = UIEdgeInsets.zero
+            } else {
+                activityView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+            }
+        }
     }
 
 }
