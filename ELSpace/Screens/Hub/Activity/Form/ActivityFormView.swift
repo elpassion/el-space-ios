@@ -16,6 +16,7 @@ class ActivityFormView: UIView {
 
     let dateTextView = TextView(title: "PERFORMED AT")
     let projectTextView = TextView(title: "PROJECT")
+    let pickerView = UIPickerView()
     let hoursTextView = TextView(title: "HOURS")
     let commentTextView = TextView(title: "COMMENT")
 
@@ -23,6 +24,7 @@ class ActivityFormView: UIView {
 
     private lazy var stackView = Factory.stackView(views: [self.dateTextView,
                                                    self.projectTextView,
+                                                   self.pickerView,
                                                    self.hoursTextView,
                                                    self.commentTextView,
                                                    UIView(frame: .zero)])

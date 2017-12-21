@@ -2,6 +2,7 @@ import RxSwift
 
 protocol ActivityFormViewInputModeling {
     var performedAt: Observable<String> { get }
+    var projectNames: Observable<[String]> { get }
     var projectSelected: Observable<String> { get }
     var projectInputHidden: Observable<Bool> { get }
     var hours: Observable<String> { get }
@@ -14,5 +15,5 @@ protocol ActivityFormViewInputModeling {
 
 protocol ActivityFormViewOutputModeling {
     var type: AnyObserver<ActivityType> { get }
-    var projectIndexPicked: AnyObserver<Int> { get }
+    var projectPicked: AnyObserver<String> { get }
 }

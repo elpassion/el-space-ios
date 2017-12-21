@@ -52,8 +52,11 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     private func configureSubviews() {
         activityFormView.dateTextView.textField.isEnabled = false
         activityFormView.projectTextView.textField.delegate = self
+        activityFormView.pickerView.showsSelectionIndicator = true
+        activityFormView.pickerView.isHidden = true
         activityFormView.hoursTextView.textField.autocorrectionType = .no
         activityFormView.hoursTextView.textField.keyboardType = .decimalPad
+        activityFormView.hoursTextView.textField.delegate = self
         activityFormView.commentTextView.textField.autocorrectionType = .no
         activityFormView.commentTextView.textField.returnKeyType = .done
         activityFormView.commentTextView.textField.delegate = self
@@ -90,6 +93,17 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] in self?.setHidden($0, view: self?.activityFormView.commentTextView) })
             .disposed(by: disposeBag)
+
+        viewModel.projectNames
+            .bind(to: activityFormView.pickerView.rx.itemTitles) { _, item in return item }
+            .disposed(by: disposeBag)
+
+        activityFormView.pickerView.rx.modelSelected(String.self)
+            .map { $0.first }
+            .unwrap()
+            .bind(to: viewModel.projectPicked)
+            .disposed(by: disposeBag)
+        
     }
 
     private func setHidden(_ isHidden: Bool, view: UIView?) {
@@ -111,6 +125,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             presentProjectPicker()
             return false
         } else {
+            dismissProjectPicker()
             return true
         }
     }
@@ -123,7 +138,11 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     // MARK: - Helpers
 
     private func presentProjectPicker() {
-        print("presentProjectPicker")
+        setHidden(false, view: activityFormView.pickerView)
+    }
+
+    private func dismissProjectPicker() {
+        setHidden(true, view: activityFormView.pickerView)
     }
 
 }

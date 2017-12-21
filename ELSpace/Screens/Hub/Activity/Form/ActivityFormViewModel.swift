@@ -8,8 +8,12 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         return Observable.of("Mon, 5th Sep 2016")
     }
 
+    var projectNames: Observable<[String]> {
+        return Observable.of(["Project 1", "Project 2"])
+    }
+
     var projectSelected: Observable<String> {
-        return Observable.of("Slack Time")
+        return projectSelectedSubject.asObservable()
     }
 
     var projectInputHidden: Observable<Bool> {
@@ -54,8 +58,8 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         })
     }
 
-    var projectIndexPicked: AnyObserver<Int> {
-        return AnyObserver(eventHandler: { [weak self] _ in print() })
+    var projectPicked: AnyObserver<String> {
+        return projectSelectedSubject.asObserver()
     }
 
     // MARK: - Privates
@@ -63,5 +67,6 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     private let projectInputHiddenSubject = PublishSubject<Bool>()
     private let hoursInputHiddenSubject = PublishSubject<Bool>()
     private let commentInputHiddenSubject = PublishSubject<Bool>()
+    private let projectSelectedSubject = BehaviorSubject<String>(value: "")
 
 }
