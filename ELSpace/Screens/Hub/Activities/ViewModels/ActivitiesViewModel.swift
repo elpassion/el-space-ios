@@ -112,21 +112,21 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         viewModels.enumerated().forEach { index, viewModel in
             let isFirst = viewModels.first == viewModel
             let isLast = viewModels.last == viewModel
-            if isFirst == false {
+            if isFirst {
+                viewModel.topCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
+            } else {
                 let previousElement = viewModels[viewModels.index(before: index)]
                 viewModel.topCornersRounded = viewModel.dayType != .weekend &&
                     previousElement.dayType == .weekend &&
                     previousElement.hasReports == false
-            } else {
-                viewModel.topCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
             }
-            if isLast == false {
+            if isLast {
+                viewModel.bottomCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
+            } else {
                 let nextElement = viewModels[viewModels.index(after: index)]
                 viewModel.bottomCornersRounded = viewModel.dayType != .weekend &&
                     nextElement.dayType == .weekend &&
                     nextElement.hasReports == false
-            } else {
-                viewModel.bottomCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
             }
         }
     }
