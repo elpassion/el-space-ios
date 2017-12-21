@@ -36,6 +36,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         didSet {
             if let inactiveTextView = oldValue?.superview as? TextView {
                 inactiveTextView.separatorLine.backgroundColor = titleColorForState(false)
+                inactiveTextView.endEditing(true)
             }
             if let activeTextView = editingTextField?.superview as? TextView {
                 activeTextView.separatorLine.backgroundColor = titleColorForState(true)
@@ -73,7 +74,10 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
         viewModel.projectInputHidden
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] in self?.setHidden($0, view: self?.activityFormView.projectTextView) })
+            .subscribe(onNext: { [weak self] in
+                self?.setHidden($0, view: self?.activityFormView.projectTextView)
+                self?.setProjectPickerHidden(true)
+            })
             .disposed(by: disposeBag)
 
         viewModel.hours
@@ -120,29 +124,32 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     // MARK: - UITextFieldDelegate
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        editingTextField = textField
+        setProjectPickerHidden(textField != activityFormView.projectTextView.textField)
         if textField == activityFormView.projectTextView.textField {
-            presentProjectPicker()
-            return false
-        } else {
-            dismissProjectPicker()
-            return true
+            editingTextField = nil
         }
+        return textField != activityFormView.projectTextView.textField
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        editingTextField = textField
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        editingTextField = nil
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        editingTextField = nil
         return true
     }
 
     // MARK: - Helpers
 
-    private func presentProjectPicker() {
-        setHidden(false, view: activityFormView.pickerView)
-    }
-
-    private func dismissProjectPicker() {
-        setHidden(true, view: activityFormView.pickerView)
+    private func setProjectPickerHidden(_ isHidden: Bool) {
+        if activityFormView.pickerView.isHidden != isHidden {
+            setHidden(isHidden, view: activityFormView.pickerView)
+        }
     }
 
 }
