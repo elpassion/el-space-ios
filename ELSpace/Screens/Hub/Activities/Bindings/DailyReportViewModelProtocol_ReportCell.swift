@@ -5,7 +5,7 @@ extension DailyReportViewModelProtocol {
     func bind(to cell: ReportCell) -> CompositeDisposable {
         let disposeBag = CompositeDisposable()
 
-        titleObservable.bind(to: cell.view.titleLabel.rx.text).disposed(by: disposeBag)
+        titleObservable.bind(to: cell.view.titleLabel.rx.attributedText).disposed(by: disposeBag)
         dayObservable.bind(to: cell.view.dateLabel.rx.text).disposed(by: disposeBag)
 
         reportsViewModelObservable.subscribe(onNext: { viewModels in
