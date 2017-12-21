@@ -22,6 +22,8 @@ class ActivityFormView: UIView {
 
     // MARK: - Privates
 
+    private let textViewHeight: CGFloat = 60
+
     private lazy var stackView = Factory.stackView(views: [self.dateTextView,
                                                    self.projectTextView,
                                                    self.pickerView,
@@ -35,6 +37,10 @@ class ActivityFormView: UIView {
 
     private func setupLayout() {
         stackView.edgeAnchors == edgeAnchors + 16
+        dateTextView.heightAnchor == textViewHeight
+        projectTextView.heightAnchor == textViewHeight
+        hoursTextView.heightAnchor == textViewHeight
+        commentTextView.heightAnchor == textViewHeight
     }
 
 }
