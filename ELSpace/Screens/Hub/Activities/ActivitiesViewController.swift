@@ -7,15 +7,12 @@ protocol ActivitiesViewControlling: class {
     var navigationItemTitle: String? { get set }
     var viewDidAppear: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
-    var addActivity: Observable<Void> { get }
 }
 
-class ActivitiesViewController: UITableViewController, ActivitiesViewControlling {
+class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
 
     init() {
-        super.init(style: .plain)
-        tableView.register(ReportCell.self, forCellReuseIdentifier: ReportCell.reuseIdentifier)
-        tableView.tableFooterView = UIView(frame: .zero)
+        super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,11 +30,19 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
         viewDidAppearSubject.onNext(())
     }
 
+    var activitiesView: ActivitiesView! {
+        return view as? ActivitiesView
+    }
+
+    override func loadView() {
+        view = ActivitiesView()
+    }
+
     // MARK: - ActivitiesViewControlling
 
     var viewModels: [DailyReportViewModelProtocol] = [] {
         didSet {
-            tableView.reloadData()
+            setDailyReports()
         }
     }
 
@@ -53,39 +58,9 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
     }
 
     var isLoading: AnyObserver<Bool> {
-        return AnyObserver(eventHandler: { [weak self] event in
-            guard let element = event.element else { return }
-            self?.loadingIndicator.loading(element)
+        return AnyObserver(onNext: { [weak self] in
+            self?.loadingIndicator.loading($0)
         })
-    }
-
-    var addActivity: Observable<Void> {
-        return addActivitySubject.asObservable()
-    }
-
-    // MARK: - UITableViewDataSource
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = viewModels[indexPath.row]
-        return reportCell(tableView, indexPath: indexPath, viewModel: viewModel)
-    }
-
-    // MARK: - UITableViewDelegate
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        addActivitySubject.onNext(())
     }
 
     // MARK: - Private
@@ -93,10 +68,14 @@ class ActivitiesViewController: UITableViewController, ActivitiesViewControlling
     private let viewDidAppearSubject = PublishSubject<Void>()
     private let addActivitySubject = PublishSubject<Void>()
 
-    func reportCell(_ tableView: UITableView, indexPath: IndexPath, viewModel: DailyReportViewModelProtocol) -> ReportCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReportCell.reuseIdentifier, for: indexPath) as? ReportCell else { fatalError() }
-        viewModel.bind(to: cell).disposed(by: cell.reusabilityDisposeBag)
-        return cell
+    private func setDailyReports() {
+        activitiesView.stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        let views = viewModels.map { viewModel -> ReportView in
+            let view = ReportView()
+            viewModel.bind(to: view).disposed(by: viewModel.disposeBag)
+            return view
+        }
+        views.forEach { activitiesView.stackView.addArrangedSubview($0) }
     }
 
     // MARK: - Subviews

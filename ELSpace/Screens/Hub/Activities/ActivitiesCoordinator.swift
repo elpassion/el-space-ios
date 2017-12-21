@@ -49,11 +49,10 @@ class ActivitiesCoordinator: Coordinator {
                 viewController?.navigationItemTitle = month
             }).disposed(by: disposeBag)
 
-        viewController.addActivity
-            .subscribe(onNext: { [weak self] in
+        viewModel.openActivity
+            .subscribe(onNext: { [weak self] _ in
                 self?.showActivity()
             }).disposed(by: disposeBag)
-
     }
 
     private let disposeBag = DisposeBag()

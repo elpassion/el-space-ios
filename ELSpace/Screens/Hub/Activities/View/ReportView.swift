@@ -6,11 +6,20 @@ class ReportView: UIView {
         super.init(frame: .zero)
         addSubviews()
         setupLayout()
+        backgroundColor = .clear
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        roundCorners()
+    }
+
+    var areTopCornersRounded = false
+    var areBottomCornersRounded = false
 
     var reportDetailsViews: [ReportDetailsView] = [] {
         didSet {
@@ -20,43 +29,67 @@ class ReportView: UIView {
         }
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
 
     let dateLabel = SubviewsFactory.dateLabel
     let titleLabel = SubviewsFactory.titleLabel
+    let rightStripeView = UIView(frame: .zero)
+    let contentContainer = UIControl(frame: .zero)
+    let addIconView = UIImageView(image: UIImage(named: "add_icon"))
+    let separatorView = SubviewsFactory.separatorView
 
     private func addSubviews() {
-        addSubview(containerView)
-        containerView.addSubview(dateLabel)
-        containerView.addSubview(titleLabel)
-        addSubview(reportDetailsContainer)
+        addSubview(contentContainer)
+        contentContainer.addSubview(addIconView)
+        contentContainer.addSubview(rightStripeView)
+        contentContainer.addSubview(dateLabel)
+        contentContainer.addSubview(titleLabel)
+        contentContainer.addSubview(reportDetailsContainer)
+        contentContainer.addSubview(separatorView)
     }
 
-    private let reportDetailsContainer = UIView(frame: .zero)
-    private let containerView = UIView(frame: .zero)
+    private let reportDetailsContainer = SubviewsFactory.reportDetailsContainer
 
-    // MARK: Layout
+    // MARK: - Layout
 
     private func setupLayout() {
-        containerView.snp.makeConstraints {
-            $0.top.equalTo(19)
-            $0.left.right.equalTo(0)
-            $0.bottom.equalTo(reportDetailsContainer.snp.top).offset(-15)
-        }
-        dateLabel.snp.makeConstraints {
+        contentContainer.snp.makeConstraints {
             $0.top.bottom.equalTo(0)
+            $0.right.equalTo(-20)
             $0.left.equalTo(20)
-            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(5)
         }
         titleLabel.snp.makeConstraints {
-            $0.right.lessThanOrEqualTo(0)
-            $0.left.equalTo(80)
-            $0.bottom.top.equalTo(0)
+            $0.left.equalTo(rightStripeView.snp.right).offset(80)
+            $0.top.equalTo(17)
+            $0.right.lessThanOrEqualTo(addIconView.snp.left).offset(-10)
+            $0.bottom.lessThanOrEqualTo(-17)
+        }
+        dateLabel.snp.makeConstraints {
+            $0.left.equalTo(rightStripeView.snp.right).offset(17)
+            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(-3)
+            $0.top.equalTo(17)
+            $0.bottom.lessThanOrEqualTo(separatorView.snp.top).offset(-17)
         }
         reportDetailsContainer.snp.makeConstraints {
-            $0.left.equalTo(80)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(15)
+            $0.left.equalTo(titleLabel.snp.left)
             $0.right.equalTo(0)
-            $0.bottom.equalTo(0).priority(.high)
+            $0.bottom.equalTo(0)
+        }
+        rightStripeView.snp.makeConstraints {
+            $0.width.equalTo(3)
+            $0.top.left.bottom.equalTo(0)
+        }
+        addIconView.snp.makeConstraints {
+            $0.height.width.equalTo(19)
+            $0.right.equalTo(-20)
+            $0.top.equalTo(17)
+        }
+        separatorView.snp.makeConstraints {
+            $0.height.equalTo(0.5)
+            $0.left.equalTo(20)
+            $0.right.equalTo(-20)
+            $0.bottom.equalTo(0)
         }
     }
 
@@ -77,6 +110,27 @@ class ReportView: UIView {
         }
     }
 
+    // MARK: - Corners rounding
+
+    private var roundedCorners: UIRectCorner {
+        switch (areTopCornersRounded, areBottomCornersRounded) {
+        case (true, true): return .allCorners
+        case (true, false): return [.topRight, .topLeft]
+        case (false, true): return [.bottomRight, .bottomLeft]
+        case (false, false): return []
+        }
+    }
+
+    private func roundCorners() {
+        let path = UIBezierPath(roundedRect: contentContainer.bounds,
+                                byRoundingCorners: roundedCorners,
+                                cornerRadii: CGSize(width: 5, height: 5)).cgPath
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = contentContainer.bounds
+        maskLayer.path = path
+        contentContainer.layer.mask = maskLayer
+    }
+
 }
 
 private extension ReportView {
@@ -85,15 +139,27 @@ private extension ReportView {
         static var dateLabel: UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "Gotham-Medium", size: 16)
-            label.textColor = UIColor(color: .purpleB3B3B8)
+            label.textColor = UIColor(color: .grayB3B3B8)
             return label
         }
 
         static var titleLabel: UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "Gotham-Book", size: 16)
-            label.textColor = UIColor(color: .purpleB3B3B8)
+            label.textColor = UIColor(color: .grayB3B3B8)
             return label
+        }
+
+        static var separatorView: UIView {
+            let view = UIView(frame: .zero)
+            view.backgroundColor = UIColor(color: .grayEAEAF5)
+            return view
+        }
+
+        static var reportDetailsContainer: UIView {
+            let view = UIView(frame: .zero)
+            view.isUserInteractionEnabled = false
+            return view
         }
     }
 
