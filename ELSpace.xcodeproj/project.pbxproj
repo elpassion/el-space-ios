@@ -513,12 +513,12 @@
 		47CA949C1F2A2A2900D5A9B7 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
-				47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */,
 				47CA949D1F2A2A4100D5A9B7 /* AlertFactoryFake.swift */,
 				47F862361F2F324500E7C518 /* CoordinatorFake.swift */,
 				477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */,
 				47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */,
 				47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */,
+				47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
