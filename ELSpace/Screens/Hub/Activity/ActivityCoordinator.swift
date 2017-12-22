@@ -28,7 +28,14 @@ class ActivityCoordinator: Coordinator {
     private func bind(viewModel: ActivityViewModelProtocol,
                       to viewController: UIViewController & ActivityViewControlling) {
         viewController.addAction.bind(to: viewModel.addAction).disposed(by: disposeBag)
+
         viewModel.isLoading.bind(to: viewController.isLoading).disposed(by: disposeBag)
+
+        viewModel.dismiss
+            .subscribe(onNext: { [weak viewController] in
+                viewController?.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 
 }

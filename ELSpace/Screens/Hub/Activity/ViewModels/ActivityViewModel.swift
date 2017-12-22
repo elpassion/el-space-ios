@@ -3,6 +3,7 @@ import RxSwift
 protocol ActivityViewModelProtocol {
     var addAction: AnyObserver<Void> { get }
     var isLoading: Observable<Bool> { get }
+    var dismiss: Observable<Void> { get }
 }
 
 class ActivityViewModel: ActivityViewModelProtocol {
@@ -21,10 +22,15 @@ class ActivityViewModel: ActivityViewModelProtocol {
         return isLoadingSubject.asObservable()
     }
 
+    var dismiss: Observable<Void> {
+        return dismissSubject.asObservable()
+    }
+
     // MARK: Private
 
     private let service: ActivitiesServiceProtocol
     private let isLoadingSubject = PublishSubject<Bool>()
+    private let dismissSubject = PublishSubject<Void>()
     private var addActivityDisposeBag: DisposeBag?
 
     private func addActivity() {
@@ -40,7 +46,10 @@ class ActivityViewModel: ActivityViewModelProtocol {
         )
         isLoadingSubject.onNext(true)
         service.addActivity(activity)
-            .subscribe(onDisposed: { [weak self] in self?.isLoadingSubject.onNext(false) })
+            .subscribe(onDisposed: { [weak self] in
+                self?.isLoadingSubject.onNext(false)
+                self?.dismissSubject.onNext(())
+            })
             .disposed(by: disposeBag)
     }
 
