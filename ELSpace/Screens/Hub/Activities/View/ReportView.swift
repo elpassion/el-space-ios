@@ -59,14 +59,14 @@ class ReportView: UIView {
             $0.left.equalTo(20)
         }
         titleLabel.snp.makeConstraints {
-            $0.left.equalTo(rightStripeView.snp.right).offset(80)
+            $0.left.equalTo(rightStripeView.snp.right).offset(83)
             $0.top.equalTo(17)
             $0.right.lessThanOrEqualTo(addIconView.snp.left).offset(-10)
             $0.bottom.lessThanOrEqualTo(-17)
         }
         dateLabel.snp.makeConstraints {
             $0.left.equalTo(rightStripeView.snp.right).offset(17)
-            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(-3)
+            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(-1)
             $0.top.equalTo(17)
             $0.bottom.lessThanOrEqualTo(separatorView.snp.top).offset(-17)
         }
