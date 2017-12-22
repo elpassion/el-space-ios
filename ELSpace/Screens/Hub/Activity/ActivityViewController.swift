@@ -67,6 +67,12 @@ class ActivityViewController: UIViewController {
             .merge()
             .subscribe(onNext: { [weak self] in self?.adjustForKeyboard(notification: $0) })
             .disposed(by: disposeBag)
+
+        formViewController.date.onNext(Date())
+
+        formViewController.form
+            .subscribe(onNext: { print("project: \($0.project), hours: \($0.hours), comment: \($0.comment)") })
+            .disposed(by: disposeBag)
     }
 
     private func adjustForKeyboard(notification: Notification) {

@@ -21,6 +21,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         configureSubviews()
         setInitialState()
         setupInputBindings()
+        setupOutputBindings()
     }
 
     // MARK: - ActivityFormViewControlling
@@ -31,6 +32,10 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
     var date: AnyObserver<Date> {
         return viewModel.date
+    }
+
+    var form: Observable<ActivityForm> {
+        return viewModel.form
     }
 
     // MARK: - Privates
@@ -124,6 +129,18 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             .map { $0.first }
             .unwrap()
             .bind(to: viewModel.projectPicked)
+            .disposed(by: disposeBag)
+    }
+
+    private func setupOutputBindings() {
+        activityFormView.hoursTextView.textField.rx.text
+            .unwrap()
+            .bind(to: viewModel.hours)
+            .disposed(by: disposeBag)
+
+        activityFormView.commentTextView.textField.rx.text
+            .unwrap()
+            .bind(to: viewModel.comment)
             .disposed(by: disposeBag)
     }
 

@@ -2,15 +2,21 @@ import RxSwift
 
 class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutputModeling {
 
+    init() {
+        let projects = ["Project 1", "Project 2"]
+        projectNames = Observable.of(projects)
+        projectSelectedSubject = BehaviorSubject<String>(value: projects.first!)
+        hoursSubject = BehaviorSubject<String>(value: "8")
+        commentSubject = BehaviorSubject<String>(value: "ElSpace report form implementation")
+    }
+
     // MARK: - ActivityFormViewInputModeling
 
     var performedAt: Observable<String> {
-        return Observable.of("Mon, 5th Sep 2016")
+        return performedAtSubject.asObservable().map { $0.description }
     }
 
-    var projectNames: Observable<[String]> {
-        return Observable.of(["", "Project 1", "Project 2"])
-    }
+    let projectNames: Observable<[String]>
 
     var projectSelected: Observable<String> {
         return projectSelectedSubject.asObservable()
@@ -21,7 +27,7 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     }
 
     var initialHours: Observable<String> {
-        return Observable.of("8")
+        return hoursSubject.asObservable()
     }
 
     var hoursInputHidden: Observable<Bool> {
@@ -29,11 +35,16 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     }
 
     var initialComment: Observable<String> {
-        return Observable.of("ElSpace report form implementation")
+        return commentSubject.asObservable()
     }
 
     var commentInputHidden: Observable<Bool> {
         return commentInputHiddenSubject.asObservable()
+    }
+
+    var form: Observable<ActivityForm> {
+        return Observable.combineLatest(projectSelected, hoursSubject, commentSubject)
+            .map { ActivityForm(project: $0.0, hours: Double(from: $0.1), comment: $0.2) }
     }
 
     // MARK: - ActivityFormViewOutputModeling
@@ -50,15 +61,30 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         })
     }
 
+    var date: AnyObserver<Date> {
+        return performedAtSubject.asObserver()
+    }
+
     var projectPicked: AnyObserver<String> {
         return projectSelectedSubject.asObserver()
     }
 
+    var hours: AnyObserver<String> {
+        return hoursSubject.asObserver()
+    }
+
+    var comment: AnyObserver<String> {
+        return commentSubject.asObserver()
+    }
+
     // MARK: - Privates
 
+    private let performedAtSubject = PublishSubject<Date>()
     private let projectInputHiddenSubject = PublishSubject<Bool>()
     private let hoursInputHiddenSubject = PublishSubject<Bool>()
     private let commentInputHiddenSubject = PublishSubject<Bool>()
-    private let projectSelectedSubject = PublishSubject<String>()
+    private let projectSelectedSubject: BehaviorSubject<String>
+    private let hoursSubject: BehaviorSubject<String>
+    private let commentSubject: BehaviorSubject<String>
 
 }
