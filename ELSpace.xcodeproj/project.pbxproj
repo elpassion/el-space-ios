@@ -30,6 +30,7 @@
 		06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */; };
 		06FBBB551FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
+		310E803E1FED2ACB0001E4A5 /* NewActivityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */; };
 		31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */; };
 		31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */; };
 		31DEF84D1FED2554006DF14E /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */; };
@@ -192,6 +193,7 @@
 		06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModeling.swift; sourceTree = "<group>"; };
 		06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControlling.swift; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
+		310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDTO.swift; sourceTree = "<group>"; };
 		31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
 		31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryStub.swift; sourceTree = "<group>"; };
 		31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			children = (
 				47FE97701F347DF1009EEE1C /* ProjectDTO.swift */,
 				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
+				310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -1430,6 +1433,7 @@
 				47F864871F38C163000C0FE9 /* DailyReportViewModelProtocol_ReportView.swift in Sources */,
 				06BA11AF1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
+				310E803E1FED2ACB0001E4A5 /* NewActivityDTO.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
