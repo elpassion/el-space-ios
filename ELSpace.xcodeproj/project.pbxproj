@@ -29,6 +29,7 @@
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
 		066F65611FE9800B005FE66C /* UIView_Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65601FE9800B005FE66C /* UIView_Embed.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
+		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */; };
 		06B127B51FE3C53D00E5426C /* ActivityCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B127B41FE3C53D00E5426C /* ActivityCreator.swift */; };
 		06BA11AA1FE18A070021E159 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11A91FE18A070021E159 /* ActivityType.swift */; };
@@ -195,6 +196,7 @@
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
 		066F65601FE9800B005FE66C /* UIView_Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Embed.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
+		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		06B127B41FE3C53D00E5426C /* ActivityCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCreator.swift; sourceTree = "<group>"; };
 		06BA11A91FE18A070021E159 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
 				47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */,
 				066F65601FE9800B005FE66C /* UIView_Embed.swift */,
+				0680CEA11FED4C95004CDA73 /* Double_FromString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1424,6 +1427,7 @@
 				06BA11AA1FE18A070021E159 /* ActivityType.swift in Sources */,
 				0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
+				0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */,
 				06B127B51FE3C53D00E5426C /* ActivityCreator.swift in Sources */,
 				47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */,
 				47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */,
