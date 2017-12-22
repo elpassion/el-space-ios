@@ -19,6 +19,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubviews()
+        setInitialState()
         setupInputBindings()
     }
 
@@ -63,6 +64,13 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         activityFormView.commentTextView.textField.delegate = self
     }
 
+    private func setInitialState() {
+        activityFormView.dateTextView.separatorLine.backgroundColor = titleColorForState(false)
+        activityFormView.projectTextView.separatorLine.backgroundColor = titleColorForState(false)
+        activityFormView.hoursTextView.separatorLine.backgroundColor = titleColorForState(false)
+        activityFormView.commentTextView.separatorLine.backgroundColor = titleColorForState(false)
+    }
+
     private func setupInputBindings() {
         viewModel.performedAt
             .subscribe(onNext: { [weak self] in self?.activityFormView.dateTextView.textField.text = $0 })
@@ -86,7 +94,10 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
         viewModel.hoursInputHidden
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] in self?.setHidden($0, view: self?.activityFormView.hoursTextView) })
+            .subscribe(onNext: { [weak self] in
+                self?.setHidden($0, view: self?.activityFormView.hoursTextView)
+                if $0 { self?.editingTextField = nil }
+            })
             .disposed(by: disposeBag)
 
         viewModel.comment
@@ -95,7 +106,10 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
         viewModel.commentInputHidden
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] in self?.setHidden($0, view: self?.activityFormView.commentTextView) })
+            .subscribe(onNext: { [weak self] in
+                self?.setHidden($0, view: self?.activityFormView.commentTextView)
+                if $0 { self?.editingTextField = nil }
+            })
             .disposed(by: disposeBag)
 
         viewModel.projectNames
@@ -107,28 +121,15 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             .unwrap()
             .bind(to: viewModel.projectPicked)
             .disposed(by: disposeBag)
-        
-    }
-
-    private func setHidden(_ isHidden: Bool, view: UIView?) {
-        UIView.animate(withDuration: 0.25) {
-            view?.isHidden = isHidden
-            view?.alpha = isHidden ? 0 : 1
-        }
-    }
-
-    private func titleColorForState(_ isSelected: Bool) -> UIColor? {
-        return isSelected ? UIColor(color: .purpleBCAEF8) : UIColor(color: .greyB3B3B8)
     }
 
     // MARK: - UITextFieldDelegate
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        setProjectPickerHidden(textField != activityFormView.projectTextView.textField)
-        if textField == activityFormView.projectTextView.textField {
-            editingTextField = nil
-        }
-        return textField != activityFormView.projectTextView.textField
+        let isProjectField = textField == activityFormView.projectTextView.textField
+        setProjectPickerHidden(!isProjectField)
+        if isProjectField { editingTextField = nil }
+        return !isProjectField
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -149,7 +150,19 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     private func setProjectPickerHidden(_ isHidden: Bool) {
         if activityFormView.pickerView.isHidden != isHidden {
             setHidden(isHidden, view: activityFormView.pickerView)
+            activityFormView.projectTextView.separatorLine.backgroundColor = titleColorForState(!isHidden)
         }
+    }
+
+    private func setHidden(_ isHidden: Bool, view: UIView?) {
+        UIView.animate(withDuration: 0.25) {
+            view?.isHidden = isHidden
+            view?.alpha = isHidden ? 0 : 1
+        }
+    }
+
+    private func titleColorForState(_ isSelected: Bool) -> UIColor? {
+        return isSelected ? UIColor(color: .purpleBCAEF8) : UIColor(color: .greyB3B3B8)
     }
 
 }
