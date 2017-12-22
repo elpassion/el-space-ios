@@ -31,8 +31,8 @@ class ReportView: UIView {
 
     // MARK: - Subviews
 
-    let dateLabel = SubviewsFactory.dateLabel
-    let titleLabel = SubviewsFactory.titleLabel
+    let dateLabel = UILabel(frame: .zero)
+    let titleLabel = UILabel(frame: .zero)
     let rightStripeView = UIView(frame: .zero)
     let contentContainer = UIControl(frame: .zero)
     let addIconView = UIImageView(image: UIImage(named: "add_icon"))
@@ -136,20 +136,6 @@ class ReportView: UIView {
 private extension ReportView {
 
     struct SubviewsFactory {
-        static var dateLabel: UILabel {
-            let label = UILabel(frame: .zero)
-            label.font = UIFont(name: "Gotham-Medium", size: 16)
-            label.textColor = UIColor(color: .grayB3B3B8)
-            return label
-        }
-
-        static var titleLabel: UILabel {
-            let label = UILabel(frame: .zero)
-            label.font = UIFont(name: "Gotham-Book", size: 16)
-            label.textColor = UIColor(color: .grayB3B3B8)
-            return label
-        }
-
         static var separatorView: UIView {
             let view = UIView(frame: .zero)
             view.backgroundColor = UIColor(color: .grayEAEAF5)
