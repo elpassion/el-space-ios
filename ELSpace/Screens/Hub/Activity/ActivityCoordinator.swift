@@ -2,7 +2,7 @@ import UIKit
 
 class ActivityCoordinator: Coordinator {
 
-    init(viewController: UIViewController) {
+    init(viewController: UIViewController & ActivityViewControlling) {
         self.viewController = viewController
     }
 
@@ -14,6 +14,6 @@ class ActivityCoordinator: Coordinator {
 
     // MARK: Private
 
-    private let viewController: UIViewController
+    private let viewController: UIViewController & ActivityViewControlling
 
 }

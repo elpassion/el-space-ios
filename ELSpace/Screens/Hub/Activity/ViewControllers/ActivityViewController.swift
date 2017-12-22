@@ -1,6 +1,10 @@
 import UIKit
 
-class ActivityViewController: UIViewController {
+protocol ActivityViewControlling {
+
+}
+
+class ActivityViewController: UIViewController, ActivityViewControlling {
 
     init(chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling) {
         self.chooserActivityTypeViewController = chooserActivityTypeViewController
@@ -22,6 +26,8 @@ class ActivityViewController: UIViewController {
         navigationItem.rightBarButtonItem = addBarButton
         configureChooserType()
     }
+
+    // MARK: - ActivityViewControlling
 
     // MARK: - Private
 
