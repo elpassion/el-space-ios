@@ -32,6 +32,7 @@
 		06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */; };
 		06FBBB551FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
+		31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */; };
 		31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
 		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
@@ -194,6 +195,7 @@
 		06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModeling.swift; sourceTree = "<group>"; };
 		06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControlling.swift; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
+		31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
 		31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryStub.swift; sourceTree = "<group>"; };
 		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
 		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				062CCFC31FE0467600B04ACE /* Type */,
 				31DEF8401FED1944006DF14E /* ViewControllers */,
 				31DEF8411FED1962006DF14E /* Views */,
+				31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -1414,6 +1417,7 @@
 				AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
+				31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */,
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
