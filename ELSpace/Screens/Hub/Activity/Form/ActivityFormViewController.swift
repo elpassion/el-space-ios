@@ -29,6 +29,10 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         return viewModel.type
     }
 
+    var date: AnyObserver<Date> {
+        return viewModel.date
+    }
+
     // MARK: - Privates
 
     private let viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling
@@ -88,7 +92,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             })
             .disposed(by: disposeBag)
 
-        viewModel.hours
+        viewModel.initialHours
             .subscribe(onNext: { [weak self] in self?.activityFormView.hoursTextView.textField.text = $0 })
             .disposed(by: disposeBag)
 
@@ -100,7 +104,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             })
             .disposed(by: disposeBag)
 
-        viewModel.comment
+        viewModel.initialComment
             .subscribe(onNext: { [weak self] in self?.activityFormView.commentTextView.textField.text = $0 })
             .disposed(by: disposeBag)
 

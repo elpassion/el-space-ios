@@ -20,7 +20,7 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         return projectInputHiddenSubject.asObservable()
     }
 
-    var hours: Observable<String> {
+    var initialHours: Observable<String> {
         return Observable.of("8")
     }
 
@@ -28,20 +28,12 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         return hoursInputHiddenSubject.asObservable()
     }
 
-    var comment: Observable<String> {
+    var initialComment: Observable<String> {
         return Observable.of("ElSpace report form implementation")
     }
 
     var commentInputHidden: Observable<Bool> {
         return commentInputHiddenSubject.asObservable()
-    }
-
-    var showProjectPicker: Observable<[String]> {
-        return Observable.of([])
-    }
-
-    var closeProjectPicker: Observable<Void> {
-        return Observable.never()
     }
 
     // MARK: - ActivityFormViewOutputModeling
