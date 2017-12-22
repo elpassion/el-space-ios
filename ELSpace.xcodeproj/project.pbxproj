@@ -444,6 +444,22 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		31DEF8401FED1944006DF14E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		31DEF8411FED1962006DF14E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		38AB83246424EEB9310A02D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,10 +542,10 @@
 		47DFB1601FDBEE33007293E3 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				062CCFC31FE0467600B04ACE /* Type */,
 				06B127B41FE3C53D00E5426C /* ActivityCreator.swift */,
-				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
-				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
+				062CCFC31FE0467600B04ACE /* Type */,
+				31DEF8401FED1944006DF14E /* ViewControllers */,
+				31DEF8411FED1962006DF14E /* Views */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
