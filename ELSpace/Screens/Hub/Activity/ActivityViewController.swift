@@ -74,7 +74,7 @@ class ActivityViewController: UIViewController {
             let keyboardViewEndFrame = view.convert(endFrame, from: view.window)
 
             if notification.name == Notification.Name.UIKeyboardWillHide {
-                activityView.scrollView.contentInset = UIEdgeInsets.zero
+                activityView.scrollView.contentInset = .zero
             } else {
                 activityView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
             }

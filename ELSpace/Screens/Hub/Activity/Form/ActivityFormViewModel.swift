@@ -9,7 +9,7 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     }
 
     var projectNames: Observable<[String]> {
-        return Observable.of(["Project 1", "Project 2"])
+        return Observable.of(["", "Project 1", "Project 2"])
     }
 
     var projectSelected: Observable<String> {
@@ -67,6 +67,6 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     private let projectInputHiddenSubject = PublishSubject<Bool>()
     private let hoursInputHiddenSubject = PublishSubject<Bool>()
     private let commentInputHiddenSubject = PublishSubject<Bool>()
-    private let projectSelectedSubject = BehaviorSubject<String>(value: "")
+    private let projectSelectedSubject = PublishSubject<String>()
 
 }
