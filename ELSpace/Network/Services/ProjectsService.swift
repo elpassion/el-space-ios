@@ -12,7 +12,7 @@ class ProjectsService: ProjectsServiceProtocol {
     }
 
     func getProjects() -> Observable<[ProjectDTO]> {
-        return apiClient.request(path: "projects", method: .get, parameters: nil, headers: nil)
+        return apiClient.request(path: "projects", method: .get, parameters: nil, encoding: nil, headers: nil)
             .map {
             if let error = ApiError(response: $0) { throw error }
             let jsonArray = $0.data.jsonArray

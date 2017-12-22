@@ -19,7 +19,7 @@ class ReportsService: ReportsServiceProtocol {
             "start_date": startDate,
             "end_date": endDate
         ]
-        return apiClient.request(path: "activities", method: .get, parameters: params, headers: nil)
+        return apiClient.request(path: "activities", method: .get, parameters: params, encoding: nil, headers: nil)
             .map {
                 if let error = ApiError(response: $0) { throw error }
                 let jsonArray = $0.data.jsonArray

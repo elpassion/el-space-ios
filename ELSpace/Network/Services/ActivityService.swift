@@ -22,7 +22,11 @@ class ActivitiesService: ActivitiesServiceProtocol {
             "comment": activity.comment,
             "report_type": activity.reportType
         ]
-        return apiClient.request(path: "activities", method: .post, parameters: params, headers: nil)
+        return apiClient.request(path: "activities",
+                                 method: .post,
+                                 parameters: params,
+                                 encoding: JSONEncoding.default,
+                                 headers: nil)
             .map {
                 if let error = ApiError(response: $0) { throw error }
                 return Void()
