@@ -12,7 +12,7 @@ extension AppContainer: ActivitiesViewModelCreation,
     // MARK: ActivityViewModelCreation
 
     func activityViewModel() -> ActivityViewModelProtocol {
-        return ActivityViewModel()
+        return ActivityViewModel(service: activitiesService)
     }
 
 }
