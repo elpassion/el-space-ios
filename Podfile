@@ -19,7 +19,6 @@ def pod_networking
 end
 
 def pod_infrastructure
-    pod 'R.swift', '~> 4.0'
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SwiftLint', '~> 0.20'
 end
