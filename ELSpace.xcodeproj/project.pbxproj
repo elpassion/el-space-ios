@@ -32,6 +32,7 @@
 		06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */; };
 		06FBBB551FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
+		31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
 		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
 		470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */; };
@@ -193,6 +194,7 @@
 		06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModeling.swift; sourceTree = "<group>"; };
 		06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControlling.swift; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
+		31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryStub.swift; sourceTree = "<group>"; };
 		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
 		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
 		4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
+				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -1495,6 +1498,7 @@
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,
 				0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
+				31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */,
 				AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */,
 				473CBF951F331D5000B80FA4 /* SelectionScreenPresenterMock.swift in Sources */,
 			);
