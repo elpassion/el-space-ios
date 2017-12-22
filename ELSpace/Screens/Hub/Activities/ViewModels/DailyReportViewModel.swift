@@ -2,7 +2,7 @@ import RxSwift
 
 protocol DailyReportViewModelProtocol {
     var title: NSAttributedString? { get }
-    var day: String { get }
+    var day: NSAttributedString { get }
     var dayType: DayType { get }
     var stripeColor: UIColor { get }
     var backgroundColor: UIColor { get }
@@ -41,12 +41,16 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         case .weekday: return weekdayTitle
         case .missing: return NSAttributedString(string: "Missing", attributes: missingAttributes)
         case .comming: return nil
-        case .weekend: return NSAttributedString(string: "Weekend!", attributes: bookFontAttributes)
+        case .weekend: return NSAttributedString(string: "Weekend!", attributes: weekendTitleAttributes)
         }
     }
 
-    var day: String {
-        return dayFormatter.string(from: date)
+    var day: NSAttributedString {
+        let date = dayFormatter.string(from: self.date)
+        if dayType == .weekend {
+            return NSAttributedString(string: date, attributes: weekendDayAttributes)
+        }
+        return NSAttributedString(string: date, attributes: regularReportTimeAttributes)
     }
 
     var dayType: DayType {
@@ -141,6 +145,20 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         return [
             NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) ?? UIFont.systemFont(ofSize: 16),
             NSAttributedStringKey.foregroundColor: UIColor(color: .redBA6767)
+        ]
+    }
+
+    private var weekendDayAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16),
+            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
+        ]
+    }
+
+    private var weekendTitleAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) ?? UIFont.systemFont(ofSize: 16),
+            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
         ]
     }
 
