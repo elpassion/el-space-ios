@@ -1,5 +1,6 @@
 extension AppContainer: SelectionCoordinatorCreation,
-                        ActivitiesCoordinatorCreation {
+                        ActivitiesCoordinatorCreation,
+                        ActivityCoordinatorCreation {
 
     // MARK: - SelectionCoordinatorCreation
 
@@ -21,6 +22,12 @@ extension AppContainer: SelectionCoordinatorCreation,
                                      presenter: ViewControllerPresenter())
     }
 
+    // MARK: - ActivityCoordinatorCreation
+
+    func activityCoordinator() -> Coordinator {
+        return ActivityCoordinator(viewController: activityViewController())
+    }
+
 }
 
 protocol SelectionCoordinatorCreation {
@@ -29,4 +36,8 @@ protocol SelectionCoordinatorCreation {
 
 protocol ActivitiesCoordinatorCreation {
     func activitiesCoordinator() -> Coordinator
+}
+
+protocol ActivityCoordinatorCreation {
+    func activityCoordinator() -> Coordinator
 }
