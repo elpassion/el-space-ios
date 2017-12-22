@@ -11,3 +11,7 @@ extension AppContainer: ActivitiesViewModelCreation {
 protocol ActivitiesViewModelCreation {
     func activitiesViewModel() -> ActivitiesViewModelProtocol
 }
+
+protocol ActivityViewModelCreation {
+    func activityViewModel() -> ActivityViewModelProtocol
+}
