@@ -1,7 +1,8 @@
 import UIKit
+import RxSwift
 
 protocol ActivityViewControlling {
-
+    var addAction: Observable<Void> { get }
 }
 
 class ActivityViewController: UIViewController, ActivityViewControlling {
@@ -28,6 +29,10 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     }
 
     // MARK: - ActivityViewControlling
+
+    var addAction: Observable<Void> {
+        return addBarButton.rx.tap.asObservable()
+    }
 
     // MARK: - Private
 
