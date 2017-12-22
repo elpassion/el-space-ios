@@ -1,13 +1,9 @@
 import UIKit
 
-protocol ActivityViewControllerAssembly {
-    var chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling { get }
-}
-
 class ActivityViewController: UIViewController {
 
-    init(assembly: ActivityViewControllerAssembly) {
-        self.chooserActivityTypeViewController = assembly.chooserActivityTypeViewController
+    init(chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling) {
+        self.chooserActivityTypeViewController = chooserActivityTypeViewController
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
     }

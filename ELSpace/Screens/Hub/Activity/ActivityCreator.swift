@@ -3,16 +3,9 @@ import UIKit
 struct ActivityCreator: ActivityCreating {
 
     func activityViewController() -> UIViewController {
-        return ActivityViewController(assembly: Assembly())
+        return ActivityViewController(chooserActivityTypeViewController: ChooserActivityTypeAssembly().viewController())
     }
 
-    private struct Assembly: ActivityViewControllerAssembly {
-
-        var chooserActivityTypeViewController: UIViewController & ChooserActivityTypesViewControlling {
-            return ChooserActivityTypeAssembly().viewController()
-        }
-
-    }
 }
 
 protocol ActivityCreating {
