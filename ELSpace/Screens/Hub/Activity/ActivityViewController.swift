@@ -79,13 +79,12 @@ class ActivityViewController: UIViewController {
 
     private func adjustForKeyboard(notification: Notification) {
         if let userInfo = notification.userInfo, let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            let keyboardViewEndFrame = view.convert(endFrame, from: view.window)
-
-            if notification.name == Notification.Name.UIKeyboardWillHide {
-                activityView.scrollView.contentInset = .zero
-            } else {
-                activityView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
-            }
+            let keyboardView = view.convert(endFrame, from: view.window)
+            let bottomInset = notification.name == Notification.Name.UIKeyboardWillHide ? 0 : keyboardView.height
+            activityView.scrollView.contentInset = UIEdgeInsets(top: 0,
+                                                                left: 0,
+                                                                bottom: bottomInset,
+                                                                right: 0)
         }
     }
 
