@@ -16,6 +16,10 @@ struct ActivityCreator: ActivityCreating {
             return ActivityFormAssembly().viewController()
         }
 
+        var notificationCenter: NotificationCenter {
+            return NotificationCenter.default
+        }
+
     }
 }
 

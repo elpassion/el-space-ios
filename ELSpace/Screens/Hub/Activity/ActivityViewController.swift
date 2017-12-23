@@ -4,6 +4,7 @@ import RxSwift
 protocol ActivityViewControllerAssembly {
     var typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling { get }
     var formViewController: UIViewController & ActivityFormViewControlling { get }
+    var notificationCenter: NotificationCenter { get }
 }
 
 class ActivityViewController: UIViewController {
@@ -11,6 +12,7 @@ class ActivityViewController: UIViewController {
     init(assembly: ActivityViewControllerAssembly) {
         self.typeChooserViewController = assembly.typeChooserViewController
         self.formViewController = assembly.formViewController
+        self.notificationCenter = assembly.notificationCenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -33,7 +35,7 @@ class ActivityViewController: UIViewController {
 
     private let typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling
     private let formViewController: UIViewController & ActivityFormViewControlling
-    private let notificationCenter = NotificationCenter.default
+    private let notificationCenter: NotificationCenter
     private let disposeBag = DisposeBag()
 
     private var activityView: ActivityView! {
