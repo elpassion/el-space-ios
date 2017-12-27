@@ -2,7 +2,7 @@
 
 import UIKit
 
-class ActivityCreatorStub: ActivityCreating {
+class ActivityCreatorStub: ActivityViewControllerCreating {
 
     func activityViewController() -> UIViewController {
         return viewController

@@ -3,7 +3,7 @@ import RxSwift
 
 class ActivitiesCoordinator: Coordinator {
 
-    init(activityCreator: ActivityCreating,
+    init(activityCreator: ActivityViewControllerCreating,
          activitiesViewController: UIViewController & ActivitiesViewControlling,
          activitiesViewModel: ActivitiesViewModelProtocol,
          presenter: ViewControllerPresenting) {
@@ -22,7 +22,7 @@ class ActivitiesCoordinator: Coordinator {
 
     // MARK: - Private
 
-    private let activityCreator: ActivityCreating
+    private let activityCreator: ActivityViewControllerCreating
     private let activitiesViewController: UIViewController & ActivitiesViewControlling
     private let activitiesViewModel: ActivitiesViewModelProtocol
     private let presenter: ViewControllerPresenting

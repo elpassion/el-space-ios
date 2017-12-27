@@ -16,6 +16,8 @@
 		062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */; };
 		062CCFC71FE04A3000B04ACE /* ChooserActivityTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */; };
 		062CCFC91FE04CBA00B04ACE /* ActivityTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */; };
+		066523731FEE858F008C41B3 /* ActivityViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066523721FEE858F008C41B3 /* ActivityViewControlling.swift */; };
+		066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */; };
 		0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */; };
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
@@ -31,7 +33,6 @@
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */; };
-		06B127B51FE3C53D00E5426C /* ActivityCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B127B41FE3C53D00E5426C /* ActivityCreator.swift */; };
 		06BA11AA1FE18A070021E159 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11A91FE18A070021E159 /* ActivityType.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11AF1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */; };
@@ -183,6 +184,8 @@
 		062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewController.swift; sourceTree = "<group>"; };
 		062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesView.swift; sourceTree = "<group>"; };
 		062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeView.swift; sourceTree = "<group>"; };
+		066523721FEE858F008C41B3 /* ActivityViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControlling.swift; sourceTree = "<group>"; };
+		066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerCreator.swift; sourceTree = "<group>"; };
 		0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
 		0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerSpy.swift; sourceTree = "<group>"; };
@@ -198,7 +201,6 @@
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
-		06B127B41FE3C53D00E5426C /* ActivityCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCreator.swift; sourceTree = "<group>"; };
 		06BA11A91FE18A070021E159 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModeling.swift; sourceTree = "<group>"; };
@@ -548,7 +550,8 @@
 				062CCFC31FE0467600B04ACE /* Type */,
 				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
 				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
-				06B127B41FE3C53D00E5426C /* ActivityCreator.swift */,
+				066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */,
+				066523721FEE858F008C41B3 /* ActivityViewControlling.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -1352,6 +1355,7 @@
 				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				47DFB1621FDBEE55007293E3 /* ActivityViewController.swift in Sources */,
+				066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */,
 				06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
@@ -1396,6 +1400,7 @@
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,
 				AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */,
+				066523731FEE858F008C41B3 /* ActivityViewControlling.swift in Sources */,
 				47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */,
 				AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */,
 				066F655B1FE96AED005FE66C /* ActivityFormViewModeling.swift in Sources */,
@@ -1428,7 +1433,6 @@
 				0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
 				0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */,
-				06B127B51FE3C53D00E5426C /* ActivityCreator.swift in Sources */,
 				47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */,
 				47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */,
 				473CBF9A1F33414100B80FA4 /* ReportDTO.swift in Sources */,
