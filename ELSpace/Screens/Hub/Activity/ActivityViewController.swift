@@ -7,7 +7,11 @@ protocol ActivityViewControllerAssembly {
     var notificationCenter: NotificationCenter { get }
 }
 
-class ActivityViewController: UIViewController {
+class ActivityViewController: UIViewController, ActivityViewControlling {
+
+    enum `Type` {
+        case add, update
+    }
 
     init(assembly: ActivityViewControllerAssembly) {
         self.typeChooserViewController = assembly.typeChooserViewController
@@ -29,6 +33,14 @@ class ActivityViewController: UIViewController {
         configureNavigationBar()
         configureSubviews()
         setupBindings()
+    }
+
+    // MARK: - ActivityViewControlling
+
+    var type: `Type` = .add {
+        didSet {
+            addBarButton.title = type == .add ? "Add" : "Update"
+        }
     }
 
     // MARK: - Private
