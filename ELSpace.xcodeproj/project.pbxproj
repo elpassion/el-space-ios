@@ -87,7 +87,7 @@
 		47F819E61F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */; };
 		47F819E81F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E71F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift */; };
 		47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */; };
-		47F819EC1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */; };
+		47F819EC1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819EB1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift */; };
 		47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */; };
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
@@ -253,7 +253,7 @@
 		47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F819E71F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewModelSpy.swift; sourceTree = "<group>"; };
-		47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerStub.swift; sourceTree = "<group>"; };
+		47F819EB1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewControllerStub.swift; sourceTree = "<group>"; };
 		47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
@@ -590,7 +590,7 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				47F819EB1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift */,
+				47F819EB1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
@@ -1490,7 +1490,7 @@
 				473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */,
 				47FE97731F348078009EEE1C /* ProjectsServiceSpec.swift in Sources */,
 				0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */,
-				47F819EC1F3B4F3B003C1BD5 /* ActivityViewControllerStub.swift in Sources */,
+				47F819EC1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift in Sources */,
 				47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */,
 				AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */,
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,
