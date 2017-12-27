@@ -1,5 +1,5 @@
 import UIKit
-import SnapKit
+import Anchorage
 
 class ReportDetailsView: UIView {
 
@@ -28,15 +28,14 @@ class ReportDetailsView: UIView {
     // MARK: - Layout
 
     private func setupLayout() {
-        titleLabel.snp.makeConstraints {
-            $0.top.left.equalTo(0)
-            $0.right.lessThanOrEqualTo(-10)
-            $0.bottom.equalTo(subtitleLabel.snp.top).offset(-5)
-        }
-        subtitleLabel.snp.makeConstraints {
-            $0.left.bottom.equalTo(0)
-            $0.right.lessThanOrEqualTo(-10)
-        }
+        titleLabel.topAnchor == topAnchor
+        titleLabel.leftAnchor == leftAnchor
+        titleLabel.rightAnchor <= rightAnchor - 10
+        titleLabel.bottomAnchor == subtitleLabel.topAnchor - 5
+
+        subtitleLabel.leftAnchor == leftAnchor
+        subtitleLabel.bottomAnchor == bottomAnchor
+        subtitleLabel.rightAnchor <= rightAnchor - 10
     }
 
 }
