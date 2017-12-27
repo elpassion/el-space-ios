@@ -23,7 +23,7 @@ class Button: UIButton {
 
     func configureButtonLayout() {
         setTitleColor(UIColor.white, for: .normal)
-        titleLabel?.font = R.font.sourceCodeProBold(size: 16.0)
+        titleLabel?.font = UIFont(name: "SourceCodePro-Bold", size: 16)
         layer.cornerRadius = 4.0
         clipsToBounds = true
     }

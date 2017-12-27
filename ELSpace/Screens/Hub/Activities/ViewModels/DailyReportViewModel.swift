@@ -1,8 +1,8 @@
 import RxSwift
 
 protocol DailyReportViewModelProtocol {
-    var title: String? { get }
-    var day: String { get }
+    var title: NSAttributedString? { get }
+    var day: NSAttributedString { get }
     var dayType: DayType { get }
     var stripeColor: UIColor { get }
     var backgroundColor: UIColor { get }
@@ -36,17 +36,21 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     // MARK: - DailReportViewModelProtocol
 
-    var title: String? {
+    var title: NSAttributedString? {
         switch dayType {
         case .weekday: return weekdayTitle
-        case .missing: return "Missing"
+        case .missing: return NSAttributedString(string: "Missing", attributes: missingAttributes)
         case .comming: return nil
-        case .weekend: return "Weekend!"
+        case .weekend: return NSAttributedString(string: "Weekend!", attributes: weekendTitleAttributes)
         }
     }
 
-    var day: String {
-        return dayFormatter.string(from: date)
+    var day: NSAttributedString {
+        let date = dayFormatter.string(from: self.date)
+        if dayType == .weekend {
+            return NSAttributedString(string: date, attributes: weekendDayAttributes)
+        }
+        return NSAttributedString(string: date, attributes: regularReportTimeAttributes)
     }
 
     var dayType: DayType {
@@ -64,7 +68,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var stripeColor: UIColor {
         switch dayType {
         case .weekday: return UIColor(color: .green92ECB4)
-        case .missing: return UIColor(color: .brownBA6767)
+        case .missing: return UIColor(color: .redBA6767)
         case .comming: return UIColor(color: .grayE4E4E4)
         case .weekend: return .clear
         }
@@ -106,14 +110,56 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .sickLeave })
     }
 
-    private var weekdayTitle: String {
+    private var weekdayTitle: NSAttributedString {
         if viewModelsContainsUnpaidVacations {
-            return "Unpaid vacations"
+            return NSAttributedString(string: "Unpaid vacations", attributes: bookFontAttributes)
         } else if viewModelsContainsSickLeave {
-            return "Sick leave"
+            return NSAttributedString(string: "Sick leave", attributes: bookFontAttributes)
         } else {
-            return "Total: \(dayValue) hours"
+            return normalReportText()
         }
+    }
+
+    private func normalReportText() -> NSAttributedString {
+        let text = NSMutableAttributedString(string: "Total: ", attributes: bookFontAttributes)
+        let hoursText = NSAttributedString(string: "\(dayValue) hours", attributes: regularReportTimeAttributes)
+        text.append(hoursText)
+        return text
+    }
+
+    private var bookFontAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
+        ]
+    }
+
+    private var regularReportTimeAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
+        ]
+    }
+
+    private var missingAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .redBA6767)
+        ]
+    }
+
+    private var weekendDayAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
+        ]
+    }
+
+    private var weekendTitleAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
+        ]
     }
 
 }

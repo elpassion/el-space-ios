@@ -9,7 +9,6 @@ enum Color: String {
     case grayF8F8FA = "F8F8FA"
     case green92ECB4 = "92ECB4"
     case green4CC359 = "4CC359"
-    case brownBA6767 = "BA6767"
     case grayE4E4E4 = "E4E4E4"
     case grayEAEAF5 = "EAEAF5"
     case blue17EAD9 = "17EAD9"
@@ -20,6 +19,7 @@ enum Color: String {
     case purple5B247A = "5B247A"
     case pinkF02FC2 = "F02FC2"
     case redEF5350 = "EF5350"
+    case redBA6767 = "BA6767"
 }
 
 extension UIColor {

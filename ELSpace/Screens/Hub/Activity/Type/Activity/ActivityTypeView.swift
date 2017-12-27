@@ -53,7 +53,7 @@ private extension ActivityTypeView {
         static func titleLabel() -> UILabel {
             let label = UILabel(frame: .zero)
             label.textAlignment = .center
-            label.font = UIFont(name: "Helvetica", size: 8)
+            label.font = UIFont(name: "Gotham-Medium", size: 8)
             return label
         }
 

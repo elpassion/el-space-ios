@@ -31,8 +31,8 @@ class ReportView: UIView {
 
     // MARK: - Subviews
 
-    let dateLabel = SubviewsFactory.label
-    let titleLabel = SubviewsFactory.label
+    let dateLabel = UILabel(frame: .zero)
+    let titleLabel = UILabel(frame: .zero)
     let rightStripeView = UIView(frame: .zero)
     let contentContainer = UIControl(frame: .zero)
     let addIconView = UIImageView(image: UIImage(named: "add_icon"))
@@ -59,14 +59,14 @@ class ReportView: UIView {
             $0.left.equalTo(20)
         }
         titleLabel.snp.makeConstraints {
-            $0.left.equalTo(rightStripeView.snp.right).offset(80)
+            $0.left.equalTo(rightStripeView.snp.right).offset(83)
             $0.top.equalTo(17)
             $0.right.lessThanOrEqualTo(addIconView.snp.left).offset(-10)
             $0.bottom.lessThanOrEqualTo(-17)
         }
         dateLabel.snp.makeConstraints {
             $0.left.equalTo(rightStripeView.snp.right).offset(17)
-            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(-3)
+            $0.right.lessThanOrEqualTo(titleLabel.snp.left).offset(-1)
             $0.top.equalTo(17)
             $0.bottom.lessThanOrEqualTo(separatorView.snp.top).offset(-17)
         }
@@ -136,13 +136,6 @@ class ReportView: UIView {
 private extension ReportView {
 
     struct SubviewsFactory {
-        static var label: UILabel {
-            let label = UILabel(frame: .zero)
-            label.font = UIFont.systemFont(ofSize: 16)
-            label.textColor = UIColor(color: .black5F5A6A)
-            return label
-        }
-
         static var separatorView: UIView {
             let view = UIView(frame: .zero)
             view.backgroundColor = UIColor(color: .grayEAEAF5)
