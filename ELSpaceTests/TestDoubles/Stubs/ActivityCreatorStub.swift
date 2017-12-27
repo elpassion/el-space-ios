@@ -4,12 +4,12 @@ import UIKit
 
 class ActivityCreatorStub: ActivityViewControllerCreating {
 
-    func activityViewController() -> UIViewController {
+    func activityViewController() -> UIViewController & ActivityViewControlling {
         return viewController
     }
 
     // MARK: - Stub
 
-    var viewController = UIViewController(nibName: nil, bundle: nil)
+    var viewController = ActivityViewControllerStub()
 
 }
