@@ -32,8 +32,8 @@ class ReportView: UIView {
 
     // MARK: - Subviews
 
-    let dateLabel = SubviewsFactory.label
-    let titleLabel = SubviewsFactory.label
+    let dateLabel = UILabel(frame: .zero)
+    let titleLabel = UILabel(frame: .zero)
     let rightStripeView = UIView(frame: .zero)
     let contentContainer = UIControl(frame: .zero)
     let addIconView = UIImageView(image: UIImage(named: "add_icon"))
@@ -59,13 +59,13 @@ class ReportView: UIView {
         contentContainer.rightAnchor == rightAnchor - 20
         contentContainer.leftAnchor == leftAnchor + 20
 
-        titleLabel.leftAnchor == rightStripeView.rightAnchor + 80
+        titleLabel.leftAnchor == rightStripeView.rightAnchor + 83
         titleLabel.topAnchor == contentContainer.topAnchor + 17
         titleLabel.rightAnchor <= addIconView.leftAnchor - 10
         titleLabel.bottomAnchor <= contentContainer.bottomAnchor - 17
 
         dateLabel.leftAnchor == rightStripeView.rightAnchor + 17
-        dateLabel.rightAnchor <= titleLabel.leftAnchor - 3
+        dateLabel.rightAnchor <= titleLabel.leftAnchor - 1
         dateLabel.topAnchor == contentContainer.topAnchor + 17
         dateLabel.bottomAnchor <= separatorView.topAnchor - 17
 
@@ -134,13 +134,6 @@ class ReportView: UIView {
 private extension ReportView {
 
     struct SubviewsFactory {
-        static var label: UILabel {
-            let label = UILabel(frame: .zero)
-            label.font = UIFont.systemFont(ofSize: 16)
-            label.textColor = UIColor(color: .black5F5A6A)
-            return label
-        }
-
         static var separatorView: UIView {
             let view = UIView(frame: .zero)
             view.backgroundColor = UIColor(color: .grayEAEAF5)

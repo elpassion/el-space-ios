@@ -22,8 +22,8 @@ class SelectionView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     private func configureButtons() {
-        let hubButtonTitle = Localizable.hub_button_title()
-        let debateButtonTitle = Localizable.debate_button_title()
+        let hubButtonTitle = "EL Hub"
+        let debateButtonTitle = "EL Debate"
 
         hubButton.setTitle(hubButtonTitle, for: .normal)
         debateButton.setTitle(debateButtonTitle, for: .normal)
@@ -52,4 +52,5 @@ class SelectionView: UIView {
         hubButton.bottomAnchor == debateButton.topAnchor - buttonSpacing
         hubButton.horizontalAnchors == self.horizontalAnchors + buttonSpacing
     }
+
 }

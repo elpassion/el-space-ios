@@ -46,6 +46,10 @@
 		477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */; };
 		477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */; };
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
+		477D8FA81FEBB170005FADF6 /* Gotham-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA51FEBAE67005FADF6 /* Gotham-Bold.ttf */; };
+		477D8FA91FEBB173005FADF6 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */; };
+		477D8FAA1FEBB175005FADF6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA41FEBAE66005FADF6 /* Gotham-Light.otf */; };
+		477D8FAB1FEBB176005FADF6 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */; };
 		47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */; };
 		47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */; };
 		47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */; };
@@ -107,8 +111,6 @@
 		5002D5921EE84D18004C0B10 /* SourceCodePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */; };
 		5002D5931EE84D18004C0B10 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5002D5891EE84D18004C0B10 /* SourceCodePro-Regular.ttf */; };
 		5002D5941EE84D18004C0B10 /* SourceCodePro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5002D58A1EE84D18004C0B10 /* SourceCodePro-Semibold.ttf */; };
-		5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002D58C1EE84D18004C0B10 /* R.generated.swift */; };
-		5002D5971EE84D18004C0B10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5002D58E1EE84D18004C0B10 /* Localizable.strings */; };
 		500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BC9761EE7EF920060D31B /* BackgroundGradientWithLogo.swift */; };
 		500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BC97B1EE7F7380060D31B /* AppCoordinator.swift */; };
 		5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5034DA0A1EE99E150095D477 /* SelectionView.swift */; };
@@ -121,7 +123,6 @@
 		862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49B01EF151A50033112C /* UIAlertController+Creation.swift */; };
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
 		86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */; };
-		AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48256C1F27513F0081B2CC /* Localizable.swift */; };
 		AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825761F2758480081B2CC /* RequestWrapper.swift */; };
 		AF4825791F275AC50081B2CC /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4825781F275AC50081B2CC /* RequestPerformer.swift */; };
 		AF48257C1F275C140081B2CC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48257B1F275C140081B2CC /* Response.swift */; };
@@ -206,6 +207,10 @@
 		477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapper.swift; sourceTree = "<group>"; };
 		477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapperFake.swift; sourceTree = "<group>"; };
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		477D8FA41FEBAE66005FADF6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		477D8FA51FEBAE67005FADF6 /* Gotham-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.ttf"; sourceTree = "<group>"; };
+		477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewTests.swift; sourceTree = "<group>"; };
 		47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_fakeImage.swift; sourceTree = "<group>"; };
 		47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_JsonArray.swift; sourceTree = "<group>"; };
@@ -268,8 +273,6 @@
 		5002D5891EE84D18004C0B10 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		5002D58A1EE84D18004C0B10 /* SourceCodePro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Semibold.ttf"; sourceTree = "<group>"; };
 		5002D58B1EE84D18004C0B10 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5002D58C1EE84D18004C0B10 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		5002D58F1EE84D18004C0B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		500BC9761EE7EF920060D31B /* BackgroundGradientWithLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientWithLogo.swift; sourceTree = "<group>"; };
 		500BC97B1EE7F7380060D31B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5034DA0A1EE99E150095D477 /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
@@ -288,7 +291,6 @@
 		86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserProviderSpec.swift; sourceTree = "<group>"; };
 		86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInMock.swift; sourceTree = "<group>"; };
 		A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF48256C1F27513F0081B2CC /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		AF4825761F2758480081B2CC /* RequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
 		AF4825781F275AC50081B2CC /* RequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPerformer.swift; sourceTree = "<group>"; };
 		AF48257B1F275C140081B2CC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -633,12 +635,10 @@
 			isa = PBXGroup;
 			children = (
 				5002D5871EE84D18004C0B10 /* Fonts */,
-				5002D58D1EE84D18004C0B10 /* Translations */,
 				5002D5851EE84D18004C0B10 /* Assets.xcassets */,
 				5002D5861EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard */,
 				06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */,
 				5002D58B1EE84D18004C0B10 /* Info.plist */,
-				5002D58C1EE84D18004C0B10 /* R.generated.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -646,20 +646,15 @@
 		5002D5871EE84D18004C0B10 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				477D8FA51FEBAE67005FADF6 /* Gotham-Bold.ttf */,
+				477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */,
+				477D8FA41FEBAE66005FADF6 /* Gotham-Light.otf */,
+				477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */,
 				5002D5881EE84D18004C0B10 /* SourceCodePro-Bold.ttf */,
 				5002D5891EE84D18004C0B10 /* SourceCodePro-Regular.ttf */,
 				5002D58A1EE84D18004C0B10 /* SourceCodePro-Semibold.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		5002D58D1EE84D18004C0B10 /* Translations */ = {
-			isa = PBXGroup;
-			children = (
-				5002D58E1EE84D18004C0B10 /* Localizable.strings */,
-				AF48256C1F27513F0081B2CC /* Localizable.swift */,
-			);
-			path = Translations;
 			sourceTree = "<group>";
 		};
 		500BC97A1EE7F6F40060D31B /* Coordinators */ = {
@@ -1015,7 +1010,6 @@
 			buildConfigurationList = 5048F25D1EDEE7A2001A487E /* Build configuration list for PBXNativeTarget "ELSpace" */;
 			buildPhases = (
 				DB9B6134B471CE550212AD33 /* [CP] Check Pods Manifest.lock */,
-				50104C331EE6DF9D008543D9 /* [R.Swift] Script Phase */,
 				AF6376091F1CBBC7007C1A77 /* Swiftlint */,
 				5048F23C1EDEE7A2001A487E /* Sources */,
 				5048F23D1EDEE7A2001A487E /* Frameworks */,
@@ -1107,10 +1101,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5002D5941EE84D18004C0B10 /* SourceCodePro-Semibold.ttf in Resources */,
+				477D8FA81FEBB170005FADF6 /* Gotham-Bold.ttf in Resources */,
+				477D8FAB1FEBB176005FADF6 /* Gotham-Medium.otf in Resources */,
 				5002D5921EE84D18004C0B10 /* SourceCodePro-Bold.ttf in Resources */,
-				5002D5971EE84D18004C0B10 /* Localizable.strings in Resources */,
+				477D8FAA1FEBB175005FADF6 /* Gotham-Light.otf in Resources */,
 				5002D5931EE84D18004C0B10 /* SourceCodePro-Regular.ttf in Resources */,
 				5002D5901EE84D18004C0B10 /* Assets.xcassets in Resources */,
+				477D8FA91FEBB173005FADF6 /* Gotham-Book.otf in Resources */,
 				5002D5911EE84D18004C0B10 /* ElSpaceLaunchScreen.storyboard in Resources */,
 				06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1163,7 +1160,6 @@
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -1187,7 +1183,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -1202,20 +1197,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		50104C331EE6DF9D008543D9 /* [R.Swift] Script Phase */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[R.Swift] Script Phase";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ELSpace/Supporting Files\"";
 		};
 		623D007B81D699FC01052653 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1363,7 +1344,6 @@
 				47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */,
 				06FBBB551FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
-				5002D5961EE84D18004C0B10 /* R.generated.swift in Sources */,
 				473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
@@ -1377,7 +1357,6 @@
 				062CCFC71FE04A3000B04ACE /* ChooserActivityTypesView.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
-				AF48256D1F27513F0081B2CC /* Localizable.swift in Sources */,
 				AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */,
 				47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */,
 				AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */,
@@ -1491,18 +1470,6 @@
 			targetProxy = 5048F2551EDEE7A2001A487E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5002D58E1EE84D18004C0B10 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5002D58F1EE84D18004C0B10 /* Base */,
-			);
-			name = Localizable.strings;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5048F25B1EDEE7A2001A487E /* Debug */ = {

@@ -22,8 +22,8 @@ class ReportDetailsView: UIView {
         addSubview(subtitleLabel)
     }
 
-    private let titleLabel = SubviewsFactory.label(size: 13)
-    private let subtitleLabel = SubviewsFactory.label(size: 12)
+    private let titleLabel = SubviewsFactory.titleLabel
+    private let subtitleLabel = SubviewsFactory.subtitleLabel
 
     // MARK: - Layout
 
@@ -43,9 +43,16 @@ class ReportDetailsView: UIView {
 private extension ReportDetailsView {
 
     struct SubviewsFactory {
-        static func label(size: CGFloat) -> UILabel {
+        static var titleLabel: UILabel {
             let label = UILabel(frame: .zero)
-            label.font = UIFont(name: "Helvetica", size: size)
+            label.font = UIFont(name: "Gotham-Medium", size: 13)
+            label.textColor = UIColor(color: .grayB3B3B8)
+            return label
+        }
+
+        static var subtitleLabel: UILabel {
+            let label = UILabel(frame: .zero)
+            label.font = UIFont(name: "Gotham-Book", size: 12)
             label.textColor = UIColor(color: .grayB3B3B8)
             return label
         }
