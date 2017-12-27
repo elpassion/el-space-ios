@@ -33,8 +33,7 @@ class ActivitiesView: UIView {
         stackView.widthAnchor == scrollView.widthAnchor
         stackView.topAnchor == scrollView.topAnchor + 20
         stackView.bottomAnchor == scrollView.bottomAnchor - 20
-        stackView.leftAnchor == scrollView.leftAnchor
-        stackView.rightAnchor == scrollView.rightAnchor
+        stackView.horizontalAnchors == scrollView.horizontalAnchors
     }
 
 }
