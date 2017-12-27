@@ -129,35 +129,35 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     private var bookFontAttributes: [NSAttributedStringKey: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) ?? UIFont.systemFont(ofSize: 16),
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
             NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
         ]
     }
 
     private var regularReportTimeAttributes: [NSAttributedStringKey: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16),
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
             NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
         ]
     }
 
     private var missingAttributes: [NSAttributedStringKey: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) ?? UIFont.systemFont(ofSize: 16),
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
             NSAttributedStringKey.foregroundColor: UIColor(color: .redBA6767)
         ]
     }
 
     private var weekendDayAttributes: [NSAttributedStringKey: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16),
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
             NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
         ]
     }
 
     private var weekendTitleAttributes: [NSAttributedStringKey: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) ?? UIFont.systemFont(ofSize: 16),
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
             NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
         ]
     }

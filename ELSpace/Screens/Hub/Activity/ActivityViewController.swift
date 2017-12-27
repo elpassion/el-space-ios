@@ -57,10 +57,10 @@ private extension ActivityViewController {
         static var addBarButton: UIBarButtonItem {
             let barButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) ?? UIFont.systemFont(ofSize: 17)
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
             ], for: .normal)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) ?? UIFont.systemFont(ofSize: 17)
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
             ], for: .highlighted)
             return barButton
         }
