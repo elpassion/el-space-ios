@@ -12,9 +12,11 @@ protocol ActivitiesControlling {
 class ActivitiesController: ActivitiesControlling {
 
     init(reportsService: ReportsServiceProtocol,
-         projectsService: ProjectsServiceProtocol) {
+         projectsService: ProjectsServiceProtocol,
+         holidaysService: HolidaysServiceProtocol) {
         self.reportsService = reportsService
         self.projectsService = projectsService
+        self.holidaysService = holidaysService
         setupBindings()
     }
 
@@ -64,6 +66,7 @@ class ActivitiesController: ActivitiesControlling {
 
     private let reportsService: ReportsServiceProtocol
     private let projectsService: ProjectsServiceProtocol
+    private let holidaysService: HolidaysServiceProtocol
 
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()

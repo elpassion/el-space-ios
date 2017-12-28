@@ -76,4 +76,3 @@ private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
     private let disposable: Cancelable
 
 }
-
