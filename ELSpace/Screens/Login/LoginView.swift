@@ -5,7 +5,6 @@
 
 import UIKit
 import Anchorage
-import HexColors
 
 class LoginView: UIView {
 
@@ -23,10 +22,9 @@ class LoginView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     private func configureLoginButton() {
-        let buttonTitle = R.string.localizable.google_login_button()
-
+        let buttonTitle = "Login With Google Account"
         loginButton.setTitle(buttonTitle, for: .normal)
-        loginButton.backgroundColor = UIColor("EF5350")
+        loginButton.backgroundColor = UIColor(color: Color.redEF5350)
     }
 
     private func configureSubviews() {

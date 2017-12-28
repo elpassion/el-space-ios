@@ -35,19 +35,27 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
                 }
 
                 it("should have correct title") {
-                    expect(sut.title).to(equal("Total: 8.0 hours"))
+                    expect(sut.title?.string).to(equal("Total: 8.0 hours"))
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day.string).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.weekday))
+                }
+
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor(color: .green92ECB4)))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.white))
                 }
 
                 describe("ReportsViewModel") {
@@ -75,11 +83,11 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
                 }
 
                 it("should have correct title") {
-                    expect(sut.title).to(equal("Total: 8.0 hours"))
+                    expect(sut.title?.string).to(equal("Total: 8.0 hours"))
                 }
 
                 it("should have correct dayType") {
@@ -99,11 +107,11 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
                 }
 
                 it("should have correct title") {
-                    expect(sut.title).to(equal("Unpaid vacations"))
+                    expect(sut.title?.string).to(equal("Unpaid vacations"))
                 }
 
                 it("should have correct dayType") {
@@ -123,11 +131,11 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
                 }
 
                 it("should have correct title") {
-                    expect(sut.title).to(equal("Sick leave"))
+                    expect(sut.title?.string).to(equal("Sick leave"))
                 }
 
                 it("should have correct dayType") {
@@ -140,19 +148,27 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/12 22:31")
-                    sut = DailyReportViewModel(date: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [])
                 }
 
                 it("should have correct title") {
-                    expect(sut.title).to(equal("Weekend!"))
+                    expect(sut.title?.string).to(equal("Weekend!"))
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day.string).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.weekend))
+                }
+
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor.clear))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.clear))
                 }
 
                 describe("ReportsViewModel") {
@@ -162,7 +178,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         reportsViewModel = sut.reportsViewModel
                     }
 
-                    it("should have 2 elements") {
+                    it("should have 0 elements") {
                         expect(reportsViewModel).to(haveCount(0))
                     }
                 }
@@ -177,7 +193,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         date = date + 1.day // swiftlint:disable:this shorthand_operator
                     }
                     dateFake = date
-                    sut = DailyReportViewModel(date: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [])
                 }
 
                 it("should have correct title") {
@@ -185,11 +201,19 @@ class DailyReportViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day.string).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.comming))
+                }
+
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor(color: .grayE4E4E4)))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.white))
                 }
 
                 describe("ReportsViewModel") {
@@ -199,7 +223,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         reportsViewModel = sut.reportsViewModel
                     }
 
-                    it("should have 2 elements") {
+                    it("should have 0 elements") {
                         expect(reportsViewModel).to(haveCount(0))
                     }
                 }
@@ -214,19 +238,27 @@ class DailyReportViewModelSpec: QuickSpec {
                         date = date - 1.day // swiftlint:disable:this shorthand_operator
                     }
                     dateFake = date
-                    sut = DailyReportViewModel(date: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: Date(), reports: [], projects: [])
                 }
 
                 it("should have correct title") {
-                    expect(sut.title).to(equal("Missing"))
+                    expect(sut.title?.string).to(equal("Missing"))
                 }
 
                 it("should have correct day") {
-                    expect(sut.day).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
+                    expect(sut.day.string).to(equal(DateFormatter.dayFormatter.string(from: dateFake)))
                 }
 
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.missing))
+                }
+
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor(color: .redBA6767)))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.white))
                 }
 
                 describe("ReportsViewModel") {
@@ -236,7 +268,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         reportsViewModel = sut.reportsViewModel
                     }
 
-                    it("should have 2 elements") {
+                    it("should have 0 elements") {
                         expect(reportsViewModel).to(haveCount(0))
                     }
                 }

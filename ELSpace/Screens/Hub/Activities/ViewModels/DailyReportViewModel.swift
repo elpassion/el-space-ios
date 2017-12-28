@@ -1,16 +1,24 @@
 import RxSwift
 
 protocol DailyReportViewModelProtocol {
-    var title: String? { get }
-    var day: String { get }
+    var title: NSAttributedString? { get }
+    var day: NSAttributedString { get }
     var dayType: DayType { get }
+    var stripeColor: UIColor { get }
+    var backgroundColor: UIColor { get }
+    var topCornersRounded: Bool { get }
+    var bottomCornersRounded: Bool { get }
+    var isSeparatorHidden: Bool { get }
+    var didTapOnReport: PublishSubject<Void> { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
+    var disposeBag: DisposeBag { get }
 }
 
-class DailyReportViewModel: DailyReportViewModelProtocol {
+class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
-    init(date: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
+    init(date: Date, todayDate: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
         self.date = date
+        self.todayDate = todayDate
         reportsViewModel = reports.map { report in
             let project = projects.first(where: { $0.id == report.projectId })
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
@@ -18,49 +26,81 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
         }
     }
 
+    var hasReports: Bool {
+        return !reportsViewModel.isEmpty
+    }
+
+    var isWeekendWithoutReports: Bool {
+        return reportsViewModel.isEmpty && dayType == .weekend
+    }
+
     // MARK: - DailReportViewModelProtocol
 
-    var title: String? {
+    var title: NSAttributedString? {
         switch dayType {
         case .weekday: return weekdayTitle
-        case .missing: return "Missing"
+        case .missing: return NSAttributedString(string: "Missing", attributes: missingAttributes)
         case .comming: return nil
-        case .weekend: return "Weekend!"
+        case .weekend: return NSAttributedString(string: "Weekend!", attributes: weekendTitleAttributes)
         }
     }
 
-    var day: String {
-        return dayFormatter.string(from: date)
+    var day: NSAttributedString {
+        let date = dayFormatter.string(from: self.date)
+        if dayType == .weekend {
+            return NSAttributedString(string: date, attributes: weekendDayAttributes)
+        }
+        return NSAttributedString(string: date, attributes: regularReportTimeAttributes)
     }
 
     var dayType: DayType {
-        if areAnyReports {
+        if hasReports {
             return .weekday
         } else if date.isInWeekend {
             return .weekend
-        } else if date.isBefore(date: Date(), granularity: .day) && reportsViewModel.isEmpty {
+        } else if date.isBefore(date: todayDate, granularity: .day) && reportsViewModel.isEmpty {
             return .missing
         } else {
             return .comming
         }
     }
 
+    var stripeColor: UIColor {
+        switch dayType {
+        case .weekday: return UIColor(color: .green92ECB4)
+        case .missing: return UIColor(color: .redBA6767)
+        case .comming: return UIColor(color: .grayE4E4E4)
+        case .weekend: return .clear
+        }
+    }
+
+    var backgroundColor: UIColor {
+        switch dayType {
+        case .weekend: return .clear
+        case .missing, .comming, .weekday: return .white
+        }
+    }
+
+    var topCornersRounded = false
+    var bottomCornersRounded = false
+    var isSeparatorHidden = false
+
+    let didTapOnReport = PublishSubject<Void>()
     let reportsViewModel: [ReportDetailsViewModelProtocol]
+    let disposeBag = DisposeBag()
 
     // MARK: - Private
+
+    private let date: Date
+    private let todayDate: Date
 
     private var dayValue: Double {
         return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.value + result }
     }
 
     private let dayFormatter = DateFormatter.dayFormatter
-    private let date: Date
 
     // MARK: Helpers
-
-    private var areAnyReports: Bool {
-        return reportsViewModel.isEmpty == false
-    }
 
     private var viewModelsContainsUnpaidVacations: Bool {
         return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .unpaidDayOff })
@@ -70,14 +110,56 @@ class DailyReportViewModel: DailyReportViewModelProtocol {
         return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .sickLeave })
     }
 
-    private var weekdayTitle: String {
+    private var weekdayTitle: NSAttributedString {
         if viewModelsContainsUnpaidVacations {
-            return "Unpaid vacations"
+            return NSAttributedString(string: "Unpaid vacations", attributes: bookFontAttributes)
         } else if viewModelsContainsSickLeave {
-            return "Sick leave"
+            return NSAttributedString(string: "Sick leave", attributes: bookFontAttributes)
         } else {
-            return "Total: \(dayValue) hours"
+            return normalReportText()
         }
+    }
+
+    private func normalReportText() -> NSAttributedString {
+        let text = NSMutableAttributedString(string: "Total: ", attributes: bookFontAttributes)
+        let hoursText = NSAttributedString(string: "\(dayValue) hours", attributes: regularReportTimeAttributes)
+        text.append(hoursText)
+        return text
+    }
+
+    private var bookFontAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
+        ]
+    }
+
+    private var regularReportTimeAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
+        ]
+    }
+
+    private var missingAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .redBA6767)
+        ]
+    }
+
+    private var weekendDayAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
+        ]
+    }
+
+    private var weekendTitleAttributes: [NSAttributedStringKey: Any] {
+        return [
+            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
+        ]
     }
 
 }
@@ -87,24 +169,4 @@ enum DayType {
     case weekend
     case missing
     case comming
-}
-
-extension DailyReportViewModelProtocol {
-
-    var titleObservable: Observable<String?> {
-        return Observable.just(title)
-    }
-
-    var dayObservable: Observable<String> {
-        return Observable.just(day)
-    }
-
-    var dayTypeObservable: Observable<DayType> {
-        return Observable.just(dayType)
-    }
-
-    var reportsViewModelObservable: Observable<[ReportDetailsViewModelProtocol]> {
-        return Observable.just(reportsViewModel)
-    }
-
 }

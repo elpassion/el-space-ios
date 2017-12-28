@@ -101,3 +101,28 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     }
 
 }
+
+private extension ActivityViewController {
+
+    struct NavigationItemSubviews {
+        static var label: UILabel {
+            let label = UILabel(frame: .zero)
+            label.font = UIFont(name: "Gotham-Book", size: 17)
+            label.textColor = .white
+            label.text = "New activity"
+            return label
+        }
+
+        static var addBarButton: UIBarButtonItem {
+            let barButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
+            barButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
+            ], for: .normal)
+            barButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
+            ], for: .highlighted)
+            return barButton
+        }
+    }
+
+}

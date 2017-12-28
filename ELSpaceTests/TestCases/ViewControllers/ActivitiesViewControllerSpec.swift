@@ -29,26 +29,6 @@ class ActivitiesViewControllerSpec: QuickSpec {
                 expect { sut = ActivitiesViewController(coder: NSCoder()) }.to(throwAssertion())
             }
 
-            context("when set dataSource") {
-                beforeEach {
-                    sut.viewModels = [
-                        DailyReportViewModel(date: Date(), reports: [], projects: [])
-                    ]
-                }
-
-                it("should have correct numer of sections") {
-                    expect(sut.numberOfSections(in: sut.tableView)).to(equal(1))
-                }
-
-                it("should have correct number of rows in 0 section") {
-                    expect(sut.tableView(sut.tableView, numberOfRowsInSection: 0)).to(equal(1))
-                }
-
-                it("should return correct cell") {
-                    expect(sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ReportCell).toNot(beNil())
-                }
-            }
-
             context("when viewDidAppear") {
                 beforeEach {
                     _ = sut.viewDidAppear.subscribe(viewDidAppearObserver)
@@ -57,6 +37,19 @@ class ActivitiesViewControllerSpec: QuickSpec {
 
                 it("should emit next event") {
                     expect(viewDidAppearObserver.events).to(haveCount(1))
+                }
+            }
+
+            context("when set 1 viewModel") {
+                beforeEach {
+                    sut.viewModels = [DailyReportViewModel(date: Date(),
+                                                           todayDate: Date(),
+                                                           reports: [],
+                                                           projects: [])]
+                }
+
+                it("should create 1 view") {
+                    expect(sut.activitiesView.stackView.arrangedSubviews).to(haveCount(1))
                 }
             }
         }

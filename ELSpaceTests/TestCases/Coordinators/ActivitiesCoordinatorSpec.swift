@@ -51,7 +51,7 @@ class ActivitiesCoordinatorSpec: QuickSpec {
                 var fakeDataSource: [DailyReportViewModelProtocol]!
 
                 beforeEach {
-                    fakeDataSource = [DailyReportViewModel(date: Date(), reports: [], projects: [])]
+                    fakeDataSource = [DailyReportViewModel(date: Date(), todayDate: Date(), reports: [], projects: [])]
                     activitiesViewModelSpy.dataSourceSubject.onNext(fakeDataSource)
                 }
 
@@ -64,7 +64,11 @@ class ActivitiesCoordinatorSpec: QuickSpec {
 
             context("when presenting activity screen") {
                 beforeEach {
-                    activitiesViewControllerStub.addActivitySubject.onNext(())
+                    let dailyReportViewModel = DailyReportViewModel(date: Date(),
+                                                                    todayDate: Date(),
+                                                                    reports: [],
+                                                                    projects: [])
+                    activitiesViewModelSpy.openActivitySubject.onNext(dailyReportViewModel)
                 }
 
                 it("should push activity screen") {

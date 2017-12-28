@@ -19,7 +19,6 @@ def pod_networking
 end
 
 def pod_infrastructure
-    pod 'R.swift', '~> 4.0'
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SwiftLint', '~> 0.20'
 end
@@ -30,10 +29,8 @@ end
 
 def pod_ui
     pod 'Anchorage', '~> 4.0'
-    pod 'HexColors', '~> 6.0'
     pod 'Pastel', '~> 0.3'
     pod 'MBProgressHUD', '~> 1.0'
-    pod 'SnapKit', '~> 4.0'
 end
 
 def pod_tests
@@ -41,6 +38,8 @@ def pod_tests
     pod 'Quick', '~> 1.1'
     pod 'RxBlocking', '~> 4.0'
     pod 'RxTest', '~> 4.0'
+    pod 'FBSnapshotTestCase', '~> 2.1'
+    pod 'Nimble-Snapshots', '~> 6.2'
 end
 
 target 'ELSpace' do

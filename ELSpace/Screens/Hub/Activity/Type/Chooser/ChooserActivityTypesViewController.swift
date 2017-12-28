@@ -71,7 +71,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     }
 
     private func titleColorForState(_ isSelected: Bool) -> UIColor? {
-        return isSelected ? UIColor(color: .purpleBCAEF8) : UIColor(color: .greyB3B3B8)
+        return isSelected ? UIColor(color: .purpleBCAEF8) : UIColor(color: .grayB3B3B8)
     }
 
 }

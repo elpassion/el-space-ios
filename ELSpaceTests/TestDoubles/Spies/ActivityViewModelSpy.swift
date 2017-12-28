@@ -7,8 +7,13 @@ class ActivitiesViewModelSpy: ActivitiesViewModelProtocol {
     private(set) var didCallGetData = false
 
     var dataSourceSubject = PublishSubject<[DailyReportViewModelProtocol]>()
+    var openActivitySubject = PublishSubject<DailyReportViewModel>()
 
     // MARK: - ActivityViewModelProtocol
+
+    var openActivity: Observable<DailyReportViewModel> {
+        return openActivitySubject.asObservable()
+    }
 
     var dataSource: Observable<[DailyReportViewModelProtocol]> {
         return dataSourceSubject.asObservable()
