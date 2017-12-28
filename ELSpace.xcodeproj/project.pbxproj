@@ -50,6 +50,7 @@
 		477D8FA91FEBB173005FADF6 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */; };
 		477D8FAA1FEBB175005FADF6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA41FEBAE66005FADF6 /* Gotham-Light.otf */; };
 		477D8FAB1FEBB176005FADF6 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */; };
+		47846FC21FF4008D00CA89D0 /* HolidaysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47846FC11FF4008D00CA89D0 /* HolidaysService.swift */; };
 		478B23E01FF4B82C0009C801 /* HolidaysDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B23DF1FF4B82C0009C801 /* HolidaysDTO.swift */; };
 		47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */; };
 		47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */; };
@@ -212,6 +213,7 @@
 		477D8FA51FEBAE67005FADF6 /* Gotham-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.ttf"; sourceTree = "<group>"; };
 		477D8FA61FEBAE67005FADF6 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		47846FC11FF4008D00CA89D0 /* HolidaysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysService.swift; sourceTree = "<group>"; };
 		478B23DF1FF4B82C0009C801 /* HolidaysDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysDTO.swift; sourceTree = "<group>"; };
 		47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewTests.swift; sourceTree = "<group>"; };
 		47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_fakeImage.swift; sourceTree = "<group>"; };
@@ -875,6 +877,7 @@
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
 				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
 				473CBF961F33404600B80FA4 /* ReportsService.swift */,
+				47846FC11FF4008D00CA89D0 /* HolidaysService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1360,6 +1363,7 @@
 				062CCFC71FE04A3000B04ACE /* ChooserActivityTypesView.swift in Sources */,
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
+				47846FC21FF4008D00CA89D0 /* HolidaysService.swift in Sources */,
 				AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */,
 				47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */,
 				AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */,
