@@ -8,4 +8,10 @@ extension Data {
         return array
     }
 
+    var json: [String: AnyObject] {
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: self, options: []) else { fatalError("Data not a json") }
+        guard let json = jsonObject as? [String: AnyObject] else { fatalError("Json not a dict") }
+        return json
+    }
+
 }

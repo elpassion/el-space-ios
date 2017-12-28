@@ -53,7 +53,7 @@
 		478B23E01FF4B82C0009C801 /* HolidaysDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B23DF1FF4B82C0009C801 /* HolidaysDTO.swift */; };
 		47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */; };
 		47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */; };
-		47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */; };
+		47C1C4E91F3353BE009946BE /* Data_Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_Json.swift */; };
 		47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */; };
 		47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */; };
 		47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */; };
@@ -215,7 +215,7 @@
 		478B23DF1FF4B82C0009C801 /* HolidaysDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysDTO.swift; sourceTree = "<group>"; };
 		47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewTests.swift; sourceTree = "<group>"; };
 		47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_fakeImage.swift; sourceTree = "<group>"; };
-		47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_JsonArray.swift; sourceTree = "<group>"; };
+		47C1C4E81F3353BE009946BE /* Data_Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_Json.swift; sourceTree = "<group>"; };
 		47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
 		47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
 		47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter_Formatters.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 				47F8647C1F38BC81000C0FE9 /* Rx */,
 				47F1DCAC1F30A7160039B34E /* UIColor */,
 				AFB47B551F288DF400E0A922 /* Data_HubToken.swift */,
-				47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */,
+				47C1C4E81F3353BE009946BE /* Data_Json.swift */,
 				47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */,
 				AFE916D81F32048300C4D27A /* Dictionary_Add.swift */,
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
@@ -1389,7 +1389,7 @@
 				0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
 				06B127B51FE3C53D00E5426C /* ActivityCreator.swift in Sources */,
-				47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */,
+				47C1C4E91F3353BE009946BE /* Data_Json.swift in Sources */,
 				47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */,
 				473CBF9A1F33414100B80FA4 /* ReportDTO.swift in Sources */,
 				5034DA0C1EE99E150095D477 /* SelectionView.swift in Sources */,
