@@ -63,7 +63,7 @@ private extension ActivityView {
         }
 
         static func stackView() -> UIStackView {
-            let view = UIStackView(arrangedSubviews: [])
+            let view = UIStackView(frame: .zero)
             view.axis = .vertical
             view.distribution = .fill
             view.spacing = 16

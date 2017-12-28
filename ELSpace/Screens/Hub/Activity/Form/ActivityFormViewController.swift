@@ -61,21 +61,15 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     }
 
     private func configureSubviews() {
-        activityFormView.dateTextView.textField.isEnabled = false
         activityFormView.projectTextView.textField.delegate = self
-        activityFormView.pickerView.showsSelectionIndicator = true
-        activityFormView.pickerView.isHidden = true
-        activityFormView.hoursTextView.textField.autocorrectionType = .no
-        activityFormView.hoursTextView.textField.keyboardType = .decimalPad
         activityFormView.hoursTextView.textField.delegate = self
-        activityFormView.commentTextView.textField.autocorrectionType = .no
-        activityFormView.commentTextView.textField.returnKeyType = .done
         activityFormView.commentTextView.textField.delegate = self
     }
 
     private func setInitialState() {
         activityFormView.dateTextView.separatorLine.backgroundColor = titleColorForState(false)
         activityFormView.projectTextView.separatorLine.backgroundColor = titleColorForState(false)
+        activityFormView.pickerView.isHidden = true
         activityFormView.hoursTextView.separatorLine.backgroundColor = titleColorForState(false)
         activityFormView.commentTextView.separatorLine.backgroundColor = titleColorForState(false)
     }

@@ -5,6 +5,7 @@ class ActivityFormView: UIView {
 
     init() {
         super.init(frame: .zero)
+        configureSubviews()
         addSubviews()
         setupLayout()
         backgroundColor = .white
@@ -16,11 +17,19 @@ class ActivityFormView: UIView {
 
     let dateTextView = TextView(title: "PERFORMED AT")
     let projectTextView = TextView(title: "PROJECT")
-    let pickerView = UIPickerView()
+    let pickerView = Factory.pickerView()
     let hoursTextView = TextView(title: "HOURS")
     let commentTextView = TextView(title: "COMMENT")
 
     // MARK: - Privates
+
+    private func configureSubviews() {
+        dateTextView.textField.isEnabled = false
+        hoursTextView.textField.autocorrectionType = .no
+        hoursTextView.textField.keyboardType = .decimalPad
+        commentTextView.textField.autocorrectionType = .no
+        commentTextView.textField.returnKeyType = .done
+    }
 
     private let textViewHeight: CGFloat = 60
 
@@ -54,6 +63,12 @@ private extension ActivityFormView {
             view.distribution = .fill
             view.spacing = 6
             return view
+        }
+
+        static func pickerView() -> UIPickerView {
+            let pickerView = UIPickerView(frame: .zero)
+            pickerView.showsSelectionIndicator = true
+            return pickerView
         }
 
     }
