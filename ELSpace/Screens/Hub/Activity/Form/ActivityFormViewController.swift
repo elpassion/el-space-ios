@@ -97,7 +97,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             })
             .disposed(by: disposeBag)
 
-        viewModel.initialHours
+        viewModel.hours
             .subscribe(onNext: { [weak self] in self?.activityFormView.hoursTextView.textField.text = $0 })
             .disposed(by: disposeBag)
 
@@ -109,7 +109,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             })
             .disposed(by: disposeBag)
 
-        viewModel.initialComment
+        viewModel.comment
             .subscribe(onNext: { [weak self] in self?.activityFormView.commentTextView.textField.text = $0 })
             .disposed(by: disposeBag)
 
@@ -128,19 +128,19 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         activityFormView.pickerView.rx.modelSelected(String.self)
             .map { $0.first }
             .unwrap()
-            .bind(to: viewModel.projectPicked)
+            .bind(to: viewModel.selectProject)
             .disposed(by: disposeBag)
     }
 
     private func setupOutputBindings() {
         activityFormView.hoursTextView.textField.rx.text
             .unwrap()
-            .bind(to: viewModel.hours)
+            .bind(to: viewModel.updateHours)
             .disposed(by: disposeBag)
 
         activityFormView.commentTextView.textField.rx.text
             .unwrap()
-            .bind(to: viewModel.comment)
+            .bind(to: viewModel.updateComment)
             .disposed(by: disposeBag)
     }
 
