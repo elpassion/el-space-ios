@@ -1,4 +1,5 @@
 import UIKit
+import Anchorage
 
 class ActivitiesView: UIView {
 
@@ -27,15 +28,12 @@ class ActivitiesView: UIView {
     // MARK: - Layout
 
     private func setupLayout() {
-        scrollView.snp.makeConstraints {
-            $0.edges.equalTo(0)
-        }
-        stackView.snp.makeConstraints {
-            $0.width.equalTo(scrollView.snp.width)
-            $0.top.equalTo(20)
-            $0.bottom.equalTo(-20)
-            $0.left.right.equalTo(0)
-        }
+        scrollView.edgeAnchors == edgeAnchors
+
+        stackView.widthAnchor == scrollView.widthAnchor
+        stackView.topAnchor == scrollView.topAnchor + 20
+        stackView.bottomAnchor == scrollView.bottomAnchor - 20
+        stackView.horizontalAnchors == scrollView.horizontalAnchors
     }
 
 }

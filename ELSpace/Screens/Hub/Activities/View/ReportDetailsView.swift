@@ -1,5 +1,5 @@
 import UIKit
-import SnapKit
+import Anchorage
 
 class ReportDetailsView: UIView {
 
@@ -22,21 +22,20 @@ class ReportDetailsView: UIView {
         addSubview(subtitleLabel)
     }
 
-    private let titleLabel = SubviewsFactory.label(size: 13)
-    private let subtitleLabel = SubviewsFactory.label(size: 12)
+    private let titleLabel = SubviewsFactory.titleLabel
+    private let subtitleLabel = SubviewsFactory.subtitleLabel
 
     // MARK: - Layout
 
     private func setupLayout() {
-        titleLabel.snp.makeConstraints {
-            $0.top.left.equalTo(0)
-            $0.right.lessThanOrEqualTo(-10)
-            $0.bottom.equalTo(subtitleLabel.snp.top).offset(-5)
-        }
-        subtitleLabel.snp.makeConstraints {
-            $0.left.bottom.equalTo(0)
-            $0.right.lessThanOrEqualTo(-10)
-        }
+        titleLabel.topAnchor == topAnchor
+        titleLabel.leftAnchor == leftAnchor
+        titleLabel.rightAnchor <= rightAnchor - 10
+        titleLabel.bottomAnchor == subtitleLabel.topAnchor - 5
+
+        subtitleLabel.leftAnchor == leftAnchor
+        subtitleLabel.bottomAnchor == bottomAnchor
+        subtitleLabel.rightAnchor <= rightAnchor - 10
     }
 
 }
@@ -44,9 +43,16 @@ class ReportDetailsView: UIView {
 private extension ReportDetailsView {
 
     struct SubviewsFactory {
-        static func label(size: CGFloat) -> UILabel {
+        static var titleLabel: UILabel {
             let label = UILabel(frame: .zero)
-            label.font = UIFont(name: "Helvetica", size: size)
+            label.font = UIFont(name: "Gotham-Medium", size: 13)
+            label.textColor = UIColor(color: .grayB3B3B8)
+            return label
+        }
+
+        static var subtitleLabel: UILabel {
+            let label = UILabel(frame: .zero)
+            label.font = UIFont(name: "Gotham-Book", size: 12)
             label.textColor = UIColor(color: .grayB3B3B8)
             return label
         }

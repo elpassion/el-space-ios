@@ -6,11 +6,11 @@ extension DailyReportViewModelProtocol {
         let disposeBag = CompositeDisposable()
 
         Observable.just(title)
-            .bind(to: view.titleLabel.rx.text)
+            .bind(to: view.titleLabel.rx.attributedText)
             .disposed(by: disposeBag)
 
         Observable.just(day)
-            .bind(to: view.dateLabel.rx.text)
+            .bind(to: view.dateLabel.rx.attributedText)
             .disposed(by: disposeBag)
 
         Observable.just(reportsViewModel)

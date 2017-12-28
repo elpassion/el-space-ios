@@ -1,11 +1,11 @@
 import RxSwift
 import Alamofire
 
-protocol ActivitiesServiceProtocol {
+protocol ActivityServiceProtocol {
     func addActivity(_ activity: NewActivityDTO) -> Observable<Void>
 }
 
-class ActivitiesService: ActivitiesServiceProtocol {
+class ActivityService: ActivityServiceProtocol {
 
     init(apiClient: ApiClientProtocol) {
         self.apiClient = apiClient

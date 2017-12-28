@@ -30,7 +30,7 @@ class UIAlertControllerCreationSpec: QuickSpec {
 
                     describe("action") {
                         it("should have correct title") {
-                            expect(sut.actions[0].title).to(equal(Localizable.ok_label()))
+                            expect(sut.actions[0].title).to(equal("Ok"))
                         }
                     }
                 }

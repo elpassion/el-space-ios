@@ -1,5 +1,4 @@
 import UIKit
-import SnapKit
 import RxSwift
 
 protocol ActivitiesViewControlling: class {
@@ -95,7 +94,7 @@ private extension ActivitiesViewController {
     struct NavigationItemSubviews {
         static var label: UILabel {
             let label = UILabel(frame: .zero)
-            label.font = UIFont.systemFont(ofSize: 17)
+            label.font = UIFont(name: "Gotham-Medium", size: 17)
             label.textColor = .white
             return label
         }

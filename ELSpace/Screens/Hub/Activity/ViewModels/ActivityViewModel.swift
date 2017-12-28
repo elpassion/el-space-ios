@@ -8,7 +8,7 @@ protocol ActivityViewModelProtocol {
 
 class ActivityViewModel: ActivityViewModelProtocol {
 
-    init(service: ActivitiesServiceProtocol) {
+    init(service: ActivityServiceProtocol) {
         self.service = service
     }
 
@@ -28,7 +28,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     // MARK: Private
 
-    private let service: ActivitiesServiceProtocol
+    private let service: ActivityServiceProtocol
     private let isLoadingSubject = PublishSubject<Bool>()
     private let dismissSubject = PublishSubject<Void>()
     private var addActivityDisposeBag: DisposeBag?
