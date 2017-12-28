@@ -30,7 +30,6 @@
 		066F655B1FE96AED005FE66C /* ActivityFormViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */; };
 		066F655D1FE9794D005FE66C /* ActivityFormViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */; };
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
-		066F65611FE9800B005FE66C /* UIView_Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65601FE9800B005FE66C /* UIView_Embed.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */; };
@@ -206,7 +205,6 @@
 		066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModeling.swift; sourceTree = "<group>"; };
 		066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewControlling.swift; sourceTree = "<group>"; };
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
-		066F65601FE9800B005FE66C /* UIView_Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Embed.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -388,7 +386,6 @@
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
 				47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */,
-				066F65601FE9800B005FE66C /* UIView_Embed.swift */,
 				0680CEA11FED4C95004CDA73 /* Double_FromString.swift */,
 			);
 			path = Extensions;
@@ -1397,7 +1394,6 @@
 				473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */,
 				06F3BFA51FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
-				066F65611FE9800B005FE66C /* UIView_Embed.swift in Sources */,
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
 				AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */,
