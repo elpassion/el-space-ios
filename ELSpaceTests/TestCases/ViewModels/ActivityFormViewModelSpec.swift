@@ -7,7 +7,7 @@ import RxTest
 class ActivityFormViewModelSpec: QuickSpec {
 
     override func spec() {
-        fdescribe("ActivityFormViewModel") {
+        describe("ActivityFormViewModel") {
             var sut: ActivityFormViewModel!
             var scheduler: TestScheduler!
             var performedAtObserver: TestableObserver<String>!
