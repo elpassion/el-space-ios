@@ -52,6 +52,7 @@
 		477D8FAB1FEBB176005FADF6 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */; };
 		47846FC21FF4008D00CA89D0 /* HolidaysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47846FC11FF4008D00CA89D0 /* HolidaysService.swift */; };
 		478B23E01FF4B82C0009C801 /* HolidaysDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B23DF1FF4B82C0009C801 /* HolidaysDTO.swift */; };
+		478B23E21FF4BB4D0009C801 /* HolidaysServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B23E11FF4BB4D0009C801 /* HolidaysServiceSpec.swift */; };
 		47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */; };
 		47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */; };
 		47C1C4E91F3353BE009946BE /* Data_Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1C4E81F3353BE009946BE /* Data_Json.swift */; };
@@ -215,6 +216,7 @@
 		477D8FA71FEBAE67005FADF6 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		47846FC11FF4008D00CA89D0 /* HolidaysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysService.swift; sourceTree = "<group>"; };
 		478B23DF1FF4B82C0009C801 /* HolidaysDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysDTO.swift; sourceTree = "<group>"; };
+		478B23E11FF4BB4D0009C801 /* HolidaysServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysServiceSpec.swift; sourceTree = "<group>"; };
 		47AC67FC1FE959E6002ECDF7 /* ActivitiesViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewTests.swift; sourceTree = "<group>"; };
 		47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_fakeImage.swift; sourceTree = "<group>"; };
 		47C1C4E81F3353BE009946BE /* Data_Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_Json.swift; sourceTree = "<group>"; };
@@ -949,6 +951,7 @@
 				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
 				47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */,
 				47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */,
+				478B23E11FF4BB4D0009C801 /* HolidaysServiceSpec.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1412,6 +1415,7 @@
 				0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */,
 				47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
+				478B23E21FF4BB4D0009C801 /* HolidaysServiceSpec.swift in Sources */,
 				47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
 				476D48761FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift in Sources */,
