@@ -28,6 +28,7 @@ class ApiClientHubDecoratorSpec: QuickSpec {
                     response = try! sut.request(path: "fake_path",
                                                 method: .get,
                                                 parameters: ["fake_param_key": "fake_value"],
+                                                encoding: nil,
                                                 headers: nil).toBlocking().first()!
                 }
 
@@ -64,6 +65,7 @@ class ApiClientHubDecoratorSpec: QuickSpec {
                     response = try! sut.request(path: "fake_path",
                                                 method: .get,
                                                 parameters: ["fake_param_key": "fake_value"],
+                                                encoding: nil,
                                                 headers: nil).toBlocking().first()!
                 }
 
