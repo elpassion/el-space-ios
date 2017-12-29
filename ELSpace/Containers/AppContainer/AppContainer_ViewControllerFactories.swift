@@ -45,9 +45,7 @@ extension AppContainer: LoginViewControllerCreation,
     // MARK: - ActivityViewControllerCreation
 
     func activityViewController() -> UIViewController & ActivityViewControlling {
-        return ActivityViewController(
-            chooserActivityTypeViewController: ChooserActivityTypeAssembly().viewController()
-        )
+        return ActivityViewControllerCreator().activityViewController()
     }
 
 }

@@ -2,9 +2,7 @@
 
 import RxSwift
 
-class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
-
-    var type: ActivityViewController.`Type` = .add
+class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling {
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -15,6 +13,7 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
     }
 
     let viewDidAppearSubject = PublishSubject<Void>()
+    let addActivitySubject = PublishSubject<Void>()
 
     // MARK: - ActivityViewControlling
 
@@ -29,8 +28,8 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
         return AnyObserver(eventHandler: { _ in })
     }
 
-    var addAction: Observable<Void> {
-        return Observable.empty()
+    var addActivity: Observable<Void> {
+        return addActivitySubject.asObservable()
     }
 
 }

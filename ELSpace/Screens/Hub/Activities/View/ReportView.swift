@@ -136,7 +136,7 @@ private extension ReportView {
     struct SubviewsFactory {
         static var separatorView: UIView {
             let view = UIView(frame: .zero)
-            view.backgroundColor = UIColor(color: .grayEAEAF5)
+            view.backgroundColor = UIColor(color: .purpleEAEAF5)
             return view
         }
 
