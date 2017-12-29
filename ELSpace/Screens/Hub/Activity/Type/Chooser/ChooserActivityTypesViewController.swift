@@ -59,7 +59,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
                 .subscribe(onNext: { [weak view, weak self] isSelected in
                     view?.imageView.image = isSelected ? viewModel.imageSelected : viewModel.imageUnselected
                     view?.titleLabel.textColor = self?.titleColorForState(isSelected)
-                    self?.selectedTypeSubject.onNext(viewModel.type)
+                    if isSelected { self?.selectedTypeSubject.onNext(viewModel.type) }
                 })
                 .disposed(by: disposeBag)
             view.button.rx.tap
@@ -71,7 +71,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     }
 
     private func titleColorForState(_ isSelected: Bool) -> UIColor? {
-        return isSelected ? UIColor(color: .greyBCAEF8) : UIColor(color: .grayB3B3B8)
+        return isSelected ? UIColor(color: .purpleBCAEF8) : UIColor(color: .grayB3B3B8)
     }
 
 }

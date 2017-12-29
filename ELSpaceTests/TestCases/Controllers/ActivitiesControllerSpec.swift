@@ -12,6 +12,7 @@ class ActivitiesControllerSpec: QuickSpec {
             var sut: ActivitiesController!
             var reportsServiceStub: ReportsServiceStub!
             var projectsServiceStub: ProjectsServiceStub!
+            var holidaysServiceStub: HolidaysServiceStub!
             var reportsResultFake: [ReportDTO]!
             var projectsResultFake: [ProjectDTO]!
             var reportObserver: TestableObserver<[ReportDTO]>!
@@ -29,11 +30,13 @@ class ActivitiesControllerSpec: QuickSpec {
                 reportsResultFake = [ ReportDTO.fakeReportDto() ]
                 projectsResultFake = [ ProjectDTO.fakeProjectDto() ]
                 reportsServiceStub = ReportsServiceStub()
+                holidaysServiceStub = HolidaysServiceStub()
                 reportsServiceStub.result = reportsResultFake
                 projectsServiceStub = ProjectsServiceStub()
                 projectsServiceStub.result = projectsResultFake
                 sut = ActivitiesController(reportsService: reportsServiceStub,
-                                           projectsService: projectsServiceStub)
+                                           projectsService: projectsServiceStub,
+                                           holidaysService: holidaysServiceStub)
                 _ = sut.reports.subscribe(reportObserver)
                 _ = sut.projects.subscribe(projectObserver)
                 _ = sut.didFinishFetch.subscribe(didFinishFetchObserver)

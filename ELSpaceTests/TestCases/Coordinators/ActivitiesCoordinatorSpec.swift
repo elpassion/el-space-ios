@@ -9,28 +9,28 @@ class ActivitiesCoordinatorSpec: QuickSpec {
         describe("ActivitiesCoordinator") {
 
             var sut: ActivitiesCoordinator!
-            var activityCreatorStub: ActivityCreatorStub!
             var activitiesViewControllerStub: ActivitiesViewControllerStub!
             var activitiesViewModelSpy: ActivitiesViewModelSpy!
             var presenterSpy: ViewControllerPresenterSpy!
+            var activityCoordinatorCreationStub: ActivityCoordinatorCreationStub!
 
             afterEach {
                 sut = nil
-                activityCreatorStub = nil
                 activitiesViewControllerStub = nil
                 activitiesViewModelSpy = nil
                 presenterSpy = nil
+                activityCoordinatorCreationStub = nil
             }
 
             beforeEach {
-                activityCreatorStub = ActivityCreatorStub()
                 activitiesViewControllerStub = ActivitiesViewControllerStub()
                 activitiesViewModelSpy = ActivitiesViewModelSpy()
                 presenterSpy = ViewControllerPresenterSpy()
-                sut = ActivitiesCoordinator(activityCreator: activityCreatorStub,
-                                            activitiesViewController: activitiesViewControllerStub,
+                activityCoordinatorCreationStub = ActivityCoordinatorCreationStub()
+                sut = ActivitiesCoordinator(activitiesViewController: activitiesViewControllerStub,
                                             activitiesViewModel: activitiesViewModelSpy,
-                                            presenter: presenterSpy)
+                                            presenter: presenterSpy,
+                                            activityCoordinatorFactory: activityCoordinatorCreationStub)
             }
 
             it("should have correct initial view controller") {
@@ -72,7 +72,8 @@ class ActivitiesCoordinatorSpec: QuickSpec {
                 }
 
                 it("should push activity screen") {
-                    expect(presenterSpy.pushedViewController).to(be(activityCreatorStub.viewController))
+                    expect(presenterSpy.pushedViewController)
+                        .to(be(activityCoordinatorCreationStub.coordinatorStub.initialViewController))
                 }
             }
         }

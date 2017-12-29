@@ -20,6 +20,12 @@ extension DateFormatter {
         return dateFormatter
     }
 
+    static var activityFormatter: DateFormatter {
+        let dateFormatter = DateFormatter.warsawTimeZoneFormatter
+        dateFormatter.dateFormat = "E, d MMM yyyy"
+        return dateFormatter
+    }
+
     // MARK: - Private
 
     private static var warsawTimeZoneFormatter: DateFormatter {

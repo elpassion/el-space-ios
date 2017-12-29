@@ -4,7 +4,8 @@ extension AppContainer: LoginViewControllerCreation,
                         NavigationControllerCreation,
                         SelectionViewControllerCreation,
                         AlertCreation,
-                        ActivitiesViewControllerCreation {
+                        ActivitiesViewControllerCreation,
+                        ActivityViewControllerCreation {
 
     // MARK: - LoginViewControllerCreation
 
@@ -35,10 +36,16 @@ extension AppContainer: LoginViewControllerCreation,
         return UIAlertController.simpleAlertViewController(with: title, message: message)
     }
 
-    // MARK: - ActivityViewControllerCreation
+    // MARK: - ActivitiesViewControllerCreation
 
     func activitiesViewController() -> UIViewController & ActivitiesViewControlling {
         return ActivitiesViewController()
+    }
+
+    // MARK: - ActivityViewControllerCreation
+
+    func activityViewController() -> UIViewController & ActivityViewControlling {
+        return ActivityViewControllerCreator().activityViewController()
     }
 
 }
@@ -64,5 +71,5 @@ protocol AlertCreation {
 }
 
 protocol ActivityViewControllerCreation {
-    func activityViewController() -> UIViewController
+    func activityViewController() -> UIViewController & ActivityViewControlling
 }

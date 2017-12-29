@@ -64,16 +64,16 @@ PODS:
   - RxAlamofire/Core (4.0.0):
     - Alamofire (~> 4.5)
     - RxSwift (~> 4.0)
-  - RxBlocking (4.0.0):
+  - RxBlocking (4.1.0):
     - RxSwift (~> 4.0)
-  - RxCocoa (4.0.0):
+  - RxCocoa (4.1.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.0.0)
+  - RxSwift (4.1.0)
   - RxSwiftExt (3.1.0):
     - RxSwiftExt/Core (= 3.1.0)
   - RxSwiftExt/Core (3.1.0):
     - RxSwift (~> 4.0)
-  - RxTest (4.0.0):
+  - RxTest (4.1.0):
     - RxSwift (~> 4.0)
   - Sourcery (0.10.1)
   - SwiftDate (4.5.1)
@@ -134,11 +134,11 @@ SPEC CHECKSUMS:
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
   RxAlamofire: 6ea579ac53bf14cb4bc7049a3866e5a769989b1d
-  RxBlocking: 923c2c8106d80d7c2d6b276afd66ce3b10824836
-  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  RxBlocking: 193d33fad26f00a4e60831481938486deaaaa200
+  RxCocoa: cc1fec49cdc8fabe645964de7c51c099a36c2aa8
+  RxSwift: 4219941c1244c88002901bd87a69d3aea9ae71f0
   RxSwiftExt: a9b9c8e94be009146707f9fcb16eaf3cc1f3910c
-  RxTest: 0041e792cede35e53e4749f378d21482af0e9d12
+  RxTest: cc62dd7e02049f21dfc910d0c4ca8fee1ecd4f74
   Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba

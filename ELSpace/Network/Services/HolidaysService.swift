@@ -14,7 +14,7 @@ class HolidaysService: HolidaysServiceProtocol {
     // MARK: - HolidaysServiceProtocol
 
     func getHolidays() -> Observable<HolidaysDTO> {
-        return apiClient.request(path: "holidays", method: .get, parameters: nil, headers: nil)
+        return apiClient.request(path: "holidays", method: .get, parameters: nil, encoding: nil, headers: nil)
             .map { reponse -> HolidaysDTO in
                 if let error = ApiError(response: reponse) { throw error }
                 let json = reponse.data.json
