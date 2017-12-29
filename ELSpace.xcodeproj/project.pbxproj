@@ -390,10 +390,10 @@
 				47C1C4E81F3353BE009946BE /* Data_JsonArray.swift */,
 				47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */,
 				AFE916D81F32048300C4D27A /* Dictionary_Add.swift */,
+				0680CEA11FED4C95004CDA73 /* Double_FromString.swift */,
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
 				47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */,
-				0680CEA11FED4C95004CDA73 /* Double_FromString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,14 +450,14 @@
 		066F65511FE95A44005FE66C /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
+				0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */,
+				066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */,
 				066F65541FE95CD1005FE66C /* ActivityFormView.swift */,
-				066F65561FE95D2D005FE66C /* TextView.swift */,
+				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
+				066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */,
 				066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */,
 				066F655A1FE96AED005FE66C /* ActivityFormViewModeling.swift */,
-				066F655C1FE9794D005FE66C /* ActivityFormViewControlling.swift */,
-				066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */,
-				0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */,
+				066F65561FE95D2D005FE66C /* TextView.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -538,12 +538,12 @@
 			isa = PBXGroup;
 			children = (
 				47F819E11F3B3DE4003C1BD5 /* ActivitiesViewModelSpec.swift */,
+				060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */,
+				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
+				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
-				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
-				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
-				060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -551,9 +551,9 @@
 		473CBF981F33412800B80FA4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */,
 				47FE97701F347DF1009EEE1C /* ProjectDTO.swift */,
 				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
-				310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -610,12 +610,12 @@
 			isa = PBXGroup;
 			children = (
 				066F65511FE95A44005FE66C /* Form */,
-				31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */,
 				062CCFC31FE0467600B04ACE /* Type */,
-				066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */,
 				31DEF8401FED1944006DF14E /* ViewControllers */,
 				31DEF84B1FED2542006DF14E /* ViewModels */,
 				31DEF8411FED1962006DF14E /* Views */,
+				31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */,
+				066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -654,14 +654,14 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
-				476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */,
-				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
 				47F819EB1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift */,
+				476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */,
+				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
+				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
+				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -946,11 +946,11 @@
 		AF4825881F2780510081B2CC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				310E803B1FED29000001E4A5 /* ActivityService.swift */,
 				AFE916D41F31FAF000C4D27A /* ApiClientHubDecorator.swift */,
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
 				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
 				473CBF961F33404600B80FA4 /* ReportsService.swift */,
-				310E803B1FED29000001E4A5 /* ActivityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
