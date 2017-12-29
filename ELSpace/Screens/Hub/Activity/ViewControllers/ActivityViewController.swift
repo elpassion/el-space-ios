@@ -46,8 +46,10 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
 
     // MARK: - ActivityViewControlling
 
+    // TODO
     var addAction: Observable<Void> {
-        return addBarButton.rx.tap.asObservable()
+        return Observable.empty()
+//        return addBarButton.rx.tap.asObservable()
     }
 
     var isLoading: AnyObserver<Bool> {
