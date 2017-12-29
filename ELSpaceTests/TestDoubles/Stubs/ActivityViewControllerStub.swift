@@ -29,4 +29,8 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
         return AnyObserver(eventHandler: { _ in })
     }
 
+    var addAction: Observable<Void> {
+        return Observable.empty()
+    }
+
 }

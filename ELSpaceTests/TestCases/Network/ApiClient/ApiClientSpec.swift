@@ -26,6 +26,7 @@ class ApiClientSpec: QuickSpec {
                     receivedResponse = try! sut.request(path: "fake_path",
                                                         method: .get,
                                                         parameters: ["fake_param": "fake_value"],
+                                                        encoding: nil,
                                                         headers: ["fake_header": "fake_value"]).toBlocking().first()!
                 }
 

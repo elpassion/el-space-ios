@@ -3,14 +3,14 @@ import RxSwift
 
 class ActivitiesCoordinator: Coordinator {
 
-    init(activityCreator: ActivityViewControllerCreating,
-         activitiesViewController: UIViewController & ActivitiesViewControlling,
+    init(activitiesViewController: UIViewController & ActivitiesViewControlling,
          activitiesViewModel: ActivitiesViewModelProtocol,
-         presenter: ViewControllerPresenting) {
-        self.activityCreator = activityCreator
+         presenter: ViewControllerPresenting,
+         activityCoordinatorFactory: ActivityCoordinatorCreation) {
         self.activitiesViewController = activitiesViewController
         self.activitiesViewModel = activitiesViewModel
         self.presenter = presenter
+        self.activityCoordinatorFactory = activityCoordinatorFactory
         bind(viewModel: self.activitiesViewModel, to: self.activitiesViewController)
     }
 
@@ -22,10 +22,11 @@ class ActivitiesCoordinator: Coordinator {
 
     // MARK: - Private
 
-    private let activityCreator: ActivityViewControllerCreating
+    private let activityCoordinatorFactory: ActivityCoordinatorCreation
     private let activitiesViewController: UIViewController & ActivitiesViewControlling
     private let activitiesViewModel: ActivitiesViewModelProtocol
     private let presenter: ViewControllerPresenting
+    private var presentedCoordinator: Coordinator?
 
     // MARK: - Bindings
 
@@ -58,8 +59,9 @@ class ActivitiesCoordinator: Coordinator {
     private let disposeBag = DisposeBag()
 
     private func showActivity() {
-        let activityViewController = activityCreator.activityViewController()
-        presenter.push(viewController: activityViewController, on: activitiesViewController)
+        let coordinator = activityCoordinatorFactory.activityCoordinator()
+        presentedCoordinator = coordinator
+        presenter.push(viewController: coordinator.initialViewController, on: activitiesViewController)
     }
 
 }

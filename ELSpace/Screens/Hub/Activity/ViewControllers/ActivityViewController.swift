@@ -7,6 +7,12 @@ protocol ActivityViewControllerAssembly {
     var notificationCenter: NotificationCenter { get }
 }
 
+protocol ActivityViewControlling {
+    var addAction: Observable<Void> { get }
+    var isLoading: AnyObserver<Bool> { get }
+    var type: ActivityViewController.`Type` { get set }
+}
+
 class ActivityViewController: UIViewController, ActivityViewControlling {
 
     enum `Type` {
@@ -24,8 +30,11 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: View
+
     override func loadView() {
         view = ActivityView()
+        loadingIndicator = LoadingIndicator(superView: view)
     }
 
     override func viewDidLoad() {
@@ -36,6 +45,14 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     }
 
     // MARK: - ActivityViewControlling
+
+    var addAction: Observable<Void> {
+        return addBarButton.rx.tap.asObservable()
+    }
+
+    var isLoading: AnyObserver<Bool> {
+        return AnyObserver(onNext: { [weak self] in self?.loadingIndicator?.loading($0) })
+    }
 
     var type: `Type` = .add {
         didSet {
@@ -50,14 +67,15 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     private let notificationCenter: NotificationCenter
     private let disposeBag = DisposeBag()
 
+    private let addBarButton = NavigationItemSubviews.addBarButton
+    private var loadingIndicator: LoadingIndicator?
+
     private var activityView: ActivityView! {
         return view as? ActivityView
     }
 
-    private let addBarButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
-
     private func configureNavigationBar() {
-        navigationItem.title = "New activity"
+        navigationItem.titleView = NavigationItemSubviews.label
         navigationItem.rightBarButtonItem = addBarButton
     }
 

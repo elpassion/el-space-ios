@@ -17,12 +17,10 @@
 		062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */; };
 		062CCFC71FE04A3000B04ACE /* ChooserActivityTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */; };
 		062CCFC91FE04CBA00B04ACE /* ActivityTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */; };
-		066523731FEE858F008C41B3 /* ActivityViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066523721FEE858F008C41B3 /* ActivityViewControlling.swift */; };
 		066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */; };
 		0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */; };
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
 		0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */; };
-		066C7F001FE6D8FF00D2AFBD /* ActivityCreatorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */; };
 		066F65531FE95ACA005FE66C /* ActivityFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */; };
 		066F65551FE95CD1005FE66C /* ActivityFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65541FE95CD1005FE66C /* ActivityFormView.swift */; };
 		066F65571FE95D2D005FE66C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65561FE95D2D005FE66C /* TextView.swift */; };
@@ -32,7 +30,6 @@
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
-		0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */; };
 		06BA11AA1FE18A070021E159 /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11A91FE18A070021E159 /* ActivityType.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11AF1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */; };
@@ -45,6 +42,11 @@
 		06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */; };
 		06FBBB551FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */; };
 		27BE1933A63FE09C3C00D679 /* Pods_ELSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */; };
+		310E803C1FED29000001E4A5 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310E803B1FED29000001E4A5 /* ActivityService.swift */; };
+		310E803E1FED2ACB0001E4A5 /* NewActivityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */; };
+		31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */; };
+		31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */; };
+		31DEF84D1FED2554006DF14E /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
 		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
 		470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */; };
@@ -78,7 +80,8 @@
 		47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */; };
 		47DF82E71FE13913009BF96A /* UIView_backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */; };
 		47DF82E91FE1395D009BF96A /* AnyObserver_Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF82E81FE1395D009BF96A /* AnyObserver_Factory.swift */; };
-		47DFB1621FDBEE55007293E3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */; };
+		47F0AAA91FF6567B0031D2E6 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0AAA81FF6567B0031D2E6 /* ActivityViewController.swift */; };
+		47F0AAAD1FF656940031D2E6 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F0AAAC1FF656940031D2E6 /* ActivityView.swift */; };
 		47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */; };
 		47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */; };
 		47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */; };
@@ -192,7 +195,6 @@
 		062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewController.swift; sourceTree = "<group>"; };
 		062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesView.swift; sourceTree = "<group>"; };
 		062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeView.swift; sourceTree = "<group>"; };
-		066523721FEE858F008C41B3 /* ActivityViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewControlling.swift; sourceTree = "<group>"; };
 		066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerCreator.swift; sourceTree = "<group>"; };
 		0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
@@ -207,7 +209,6 @@
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
-		0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		06BA11A91FE18A070021E159 /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11AE1FE18C190021E159 /* ChooserActivityTypesViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModeling.swift; sourceTree = "<group>"; };
@@ -219,6 +220,11 @@
 		06FBBB521FE12AB80077F692 /* ActivityTypeViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModeling.swift; sourceTree = "<group>"; };
 		06FBBB541FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControlling.swift; sourceTree = "<group>"; };
 		1E21319772B1B80346FB867E /* Pods-ELSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELSpace/Pods-ELSpace.release.xcconfig"; sourceTree = "<group>"; };
+		310E803B1FED29000001E4A5 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDTO.swift; sourceTree = "<group>"; };
+		31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
+		31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryStub.swift; sourceTree = "<group>"; };
+		31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
 		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
 		4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
@@ -251,7 +257,8 @@
 		47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManagerSpy.swift; sourceTree = "<group>"; };
 		47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_backgroundColor.swift; sourceTree = "<group>"; };
 		47DF82E81FE1395D009BF96A /* AnyObserver_Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyObserver_Factory.swift; sourceTree = "<group>"; };
-		47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		47F0AAA81FF6567B0031D2E6 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		47F0AAAC1FF656940031D2E6 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCoordinator.swift; sourceTree = "<group>"; };
 		47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController_HubStyling.swift; sourceTree = "<group>"; };
 		47F1DCAD1F30A7330039B34E /* UIColor_Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Hex.swift; sourceTree = "<group>"; };
@@ -494,6 +501,30 @@
 			path = Bindings;
 			sourceTree = "<group>";
 		};
+		31DEF8401FED1944006DF14E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				47F0AAA81FF6567B0031D2E6 /* ActivityViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		31DEF8411FED1962006DF14E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47F0AAAC1FF656940031D2E6 /* ActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		31DEF84B1FED2542006DF14E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		38AB83246424EEB9310A02D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +553,7 @@
 			children = (
 				47FE97701F347DF1009EEE1C /* ProjectDTO.swift */,
 				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
+				310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -578,11 +610,12 @@
 			isa = PBXGroup;
 			children = (
 				066F65511FE95A44005FE66C /* Form */,
+				31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */,
 				062CCFC31FE0467600B04ACE /* Type */,
-				47DFB1611FDBEE55007293E3 /* ActivityViewController.swift */,
-				0699419E1FE1DD5D00EF09B8 /* ActivityView.swift */,
 				066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */,
-				066523721FEE858F008C41B3 /* ActivityViewControlling.swift */,
+				31DEF8401FED1944006DF14E /* ViewControllers */,
+				31DEF84B1FED2542006DF14E /* ViewModels */,
+				31DEF8411FED1962006DF14E /* Views */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -628,6 +661,7 @@
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
+				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -916,6 +950,7 @@
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
 				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
 				473CBF961F33404600B80FA4 /* ReportsService.swift */,
+				310E803B1FED29000001E4A5 /* ActivityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1361,7 +1396,6 @@
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
 				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
-				47DFB1621FDBEE55007293E3 /* ActivityViewController.swift in Sources */,
 				066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */,
 				06FBBB531FE12AB80077F692 /* ActivityTypeViewModeling.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
@@ -1382,6 +1416,7 @@
 				06FBBB501FE12A5B0077F692 /* ActivityTypeViewModel.swift in Sources */,
 				060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */,
 				47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */,
+				47F0AAAD1FF656940031D2E6 /* ActivityView.swift in Sources */,
 				066F65571FE95D2D005FE66C /* TextView.swift in Sources */,
 				06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
@@ -1391,6 +1426,8 @@
 				47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */,
 				06FBBB551FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
+				310E803C1FED29000001E4A5 /* ActivityService.swift in Sources */,
+				47F0AAA91FF6567B0031D2E6 /* ActivityViewController.swift in Sources */,
 				473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */,
 				06F3BFA51FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift in Sources */,
 				862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */,
@@ -1406,8 +1443,8 @@
 				AF4AD7D51F20D75C005B5524 /* EmailValidator.swift in Sources */,
 				5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */,
 				AFE916D91F32048300C4D27A /* Dictionary_Add.swift in Sources */,
-				066523731FEE858F008C41B3 /* ActivityViewControlling.swift in Sources */,
 				47C1C4EF1F335E20009946BE /* ActivitiesViewModel.swift in Sources */,
+				31DEF84D1FED2554006DF14E /* ActivityViewModel.swift in Sources */,
 				AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */,
 				066F655B1FE96AED005FE66C /* ActivityFormViewModeling.swift in Sources */,
 				47F864781F387361000C0FE9 /* ReportDetailsViewModel.swift in Sources */,
@@ -1425,6 +1462,7 @@
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
 				066F655D1FE9794D005FE66C /* ActivityFormViewControlling.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
+				31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */,
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
@@ -1432,11 +1470,11 @@
 				066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */,
+				310E803E1FED2ACB0001E4A5 /* NewActivityDTO.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
 				06BA11AA1FE18A070021E159 /* ActivityType.swift in Sources */,
-				0699419F1FE1DD5D00EF09B8 /* ActivityView.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
 				0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */,
 				47C1C4E91F3353BE009946BE /* Data_JsonArray.swift in Sources */,
@@ -1486,7 +1524,6 @@
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
 				47F819D81F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift in Sources */,
 				47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */,
-				066C7F001FE6D8FF00D2AFBD /* ActivityCreatorStub.swift in Sources */,
 				47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
 				06F3BF9F1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift in Sources */,
@@ -1512,6 +1549,7 @@
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,
 				0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
+				31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */,
 				AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */,
 				473CBF951F331D5000B80FA4 /* SelectionScreenPresenterMock.swift in Sources */,
 			);

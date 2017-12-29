@@ -32,6 +32,7 @@ class RequestPerformerSpec: QuickSpec {
                     receivedResponse = try! sut.request(URL(string: "www.fake_url.com")!,
                                                         method: .post,
                                                         parameters: ["fake_param": "fake_value"],
+                                                        encoding: nil,
                                                         headers: ["fake_header": "fake_value"]).toBlocking().first()!
                 }
 

@@ -14,7 +14,7 @@ class HubTokenService: HubTokenServiceProtocol {
 
     func getHubToken(googleTokenId: String) -> Observable<String> {
         let param = ["id_token": googleTokenId]
-        return apiClient.request(path: "api_keys", method: .post, parameters: param, headers: nil)
+        return apiClient.request(path: "api_keys", method: .post, parameters: param, encoding: nil, headers: nil)
             .map {
                 if let error = ApiError(response: $0) { throw error }
                 return $0.data.hubToken

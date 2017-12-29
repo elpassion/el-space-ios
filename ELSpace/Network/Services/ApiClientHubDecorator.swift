@@ -9,12 +9,12 @@ class ApiClientHubDecorator: ApiClientProtocol {
         self.hubSession = hubSession
     }
 
-    func request(path: String, method: HTTPMethod, parameters: Parameters?, headers: HTTPHeaders?) -> Observable<Response> {
+    func request(path: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding?, headers: HTTPHeaders?) -> Observable<Response> {
         var header: [String: String]? = headers ?? [:]
         if let token = hubSession.accessToken {
             header?.add(dict: ["X-Access-Token": token])
         }
-        return apiClient.request(path: path, method: method, parameters: parameters, headers: header)
+        return apiClient.request(path: path, method: method, parameters: parameters, encoding: encoding, headers: header)
     }
 
     // MARK: - Private
