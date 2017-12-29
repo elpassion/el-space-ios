@@ -51,8 +51,10 @@ class ActivitiesCoordinator: Coordinator {
             }).disposed(by: disposeBag)
 
         viewModel.openActivity
-            .subscribe(onNext: { [weak self] _ in
-                self?.showActivity()
+            .subscribe(onNext: { [weak self] viewModel in
+                print(viewModel.title)
+                print(viewModel.subtitle)
+//                self?.showActivity()
             }).disposed(by: disposeBag)
     }
 

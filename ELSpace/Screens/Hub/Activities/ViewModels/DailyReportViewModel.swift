@@ -9,7 +9,7 @@ protocol DailyReportViewModelProtocol {
     var topCornersRounded: Bool { get }
     var bottomCornersRounded: Bool { get }
     var isSeparatorHidden: Bool { get }
-    var didTapOnReport: PublishSubject<Void> { get }
+    var didTapOnReport: PublishSubject<ReportDetailsViewModel> { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var disposeBag: DisposeBag { get }
 }
@@ -19,9 +19,11 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     init(date: Date, todayDate: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
         self.date = date
         self.todayDate = todayDate
+        super.init()
         reportsViewModel = reports.map { report in
             let project = projects.first(where: { $0.id == report.projectId })
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
+            setupBindings(reportDetailsViewModel)
             return reportDetailsViewModel
         }
     }
@@ -85,8 +87,8 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var bottomCornersRounded = false
     var isSeparatorHidden = false
 
-    let didTapOnReport = PublishSubject<Void>()
-    let reportsViewModel: [ReportDetailsViewModelProtocol]
+    let didTapOnReport = PublishSubject<ReportDetailsViewModel>()
+    var reportsViewModel: [ReportDetailsViewModelProtocol] = []
     let disposeBag = DisposeBag()
 
     // MARK: - Private
@@ -99,6 +101,14 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     }
 
     private let dayFormatter = DateFormatter.dayFormatter
+
+    private func setupBindings(_ viewModel: ReportDetailsViewModel) {
+        viewModel.didTapOnReportObservable
+            .map { [weak viewModel] in viewModel }
+            .unwrap()
+            .bind(to: didTapOnReport)
+            .disposed(by: viewModel.disposeBag)
+    }
 
     // MARK: Helpers
 

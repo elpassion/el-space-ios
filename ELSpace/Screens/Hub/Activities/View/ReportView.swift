@@ -35,7 +35,7 @@ class ReportView: UIView {
     let dateLabel = UILabel(frame: .zero)
     let titleLabel = UILabel(frame: .zero)
     let rightStripeView = UIView(frame: .zero)
-    let contentContainer = UIControl(frame: .zero)
+    let contentContainer = UIView(frame: .zero)
     let addIconView = UIImageView(image: UIImage(named: "add_icon"))
     let separatorView = SubviewsFactory.separatorView
 
@@ -49,7 +49,7 @@ class ReportView: UIView {
         contentContainer.addSubview(separatorView)
     }
 
-    private let reportDetailsContainer = SubviewsFactory.reportDetailsContainer
+    private let reportDetailsContainer = UIView(frame: .zero)
 
     // MARK: - Layout
 
@@ -137,12 +137,6 @@ private extension ReportView {
         static var separatorView: UIView {
             let view = UIView(frame: .zero)
             view.backgroundColor = UIColor(color: .purpleEAEAF5)
-            return view
-        }
-
-        static var reportDetailsContainer: UIView {
-            let view = UIView(frame: .zero)
-            view.isUserInteractionEnabled = false
             return view
         }
     }

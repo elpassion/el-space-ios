@@ -5,6 +5,8 @@ protocol ReportDetailsViewModelProtocol {
     var subtitle: String? { get }
     var type: ReportType? { get }
     var value: Double { get }
+    var tapOnReportDetails: AnyObserver<Void> { get }
+    var disposeBag: DisposeBag { get }
 }
 
 class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
@@ -12,6 +14,10 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
     init(report: ReportViewModelProtocol, project: ProjectDTO?) {
         self.report = report
         self.project = project
+    }
+
+    var didTapOnReportObservable: Observable<Void> {
+        return didTapOnReportSubject.asObservable()
     }
 
     // MARK: - ReportDetailsViewModelProtocol
@@ -38,7 +44,15 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         }
     }
 
+    var tapOnReportDetails: AnyObserver<Void> {
+        return didTapOnReportSubject.asObserver()
+    }
+
+    let disposeBag = DisposeBag()
+
     // MARK: - Private
+
+    private let didTapOnReportSubject = PublishSubject<Void>()
 
     private let project: ProjectDTO?
     private let report: ReportViewModelProtocol
