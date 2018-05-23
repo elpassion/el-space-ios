@@ -17,18 +17,18 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - GoogleSignIn (4.1.2):
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
-    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
     - GTMOAuth2 (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4):
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
     - GoogleToolboxForMac/DebugUtils (= 2.1.4)
     - GoogleToolboxForMac/Defines (= 2.1.4)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
   - GTMOAuth2 (1.1.6):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.1.15):
@@ -110,6 +110,38 @@ DEPENDENCIES:
   - SwiftDate (~> 4.0)
   - SwiftLint (~> 0.20)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Anchorage
+    - FBSnapshotTestCase
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMOAuth2
+    - GTMSessionFetcher
+    - iOSSnapshotTestCase
+    - KeychainAccess
+    - MBProgressHUD
+    - ModelMapper
+    - Nimble
+    - Nimble-Snapshots
+    - Pastel
+    - PromiseKit
+    - Quick
+    - Reveal-SDK
+    - RxAlamofire
+    - RxBlocking
+    - RxCocoa
+    - RxSwift
+    - RxSwiftExt
+    - RxTest
+    - Sourcery
+    - SwiftDate
+    - SwiftLint
+    - Swinject
+    - SwinjectAutoregistration
+    - UIColor_Hex_Swift
+
 EXTERNAL SOURCES:
   ELDebate:
     :commit: 649c08f
@@ -154,4 +186,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9c25cc8f8a7b15eb661aac002320d83ae9f5d313
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.2
