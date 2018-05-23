@@ -37,7 +37,6 @@ class ActivitiesViewTests: QuickSpec {
                     expect(sut).to(haveValidDeviceAgnosticSnapshot())
                 }
             }
-
         }
     }
 

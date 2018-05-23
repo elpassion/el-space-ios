@@ -22,7 +22,7 @@ extension DailyReportViewModelProtocol {
                         .bind(to: viewModel.tapOnReportDetails)
                         .disposed(by: viewModel.disposeBag)
                     return view
-                }.flatMap { $0 }
+                }.compactMap { $0 }
         }).disposed(by: disposeBag)
 
         Observable.just(stripeColor)

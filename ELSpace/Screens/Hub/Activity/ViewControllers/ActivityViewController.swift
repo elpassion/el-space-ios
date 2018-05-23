@@ -104,9 +104,10 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
 
         formViewController.date.onNext(Date())
 
-//        formViewController.form
-//            .subscribe(onNext: { print("project: \($0.project), hours: \($0.hours), comment: \($0.comment)") })
-//            .disposed(by: disposeBag)
+        formViewController.form
+            .subscribe(onNext: {
+                print("project: \($0.project ?? ""), hours: \($0.hours ?? 0), comment: \($0.comment ?? "")")
+            }).disposed(by: disposeBag)
     }
 
     private func adjustForKeyboard(notification: Notification) {
