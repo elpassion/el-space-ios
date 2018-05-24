@@ -31,7 +31,7 @@ class ActivitiesController: ActivitiesControlling {
     }
 
     var isLoading: Observable<Bool> {
-        return isLoadingVar.asObservable()
+        return activityIndicator.asSharedSequence().asObservable()
     }
 
     var didFinishFetch: Observable<Void> {
@@ -39,27 +39,25 @@ class ActivitiesController: ActivitiesControlling {
     }
 
     func getReports(from: String, to: String) {
-        isLoadingReports.value = true
         didFinishReportFetch.value = false
-        _ = reportsService.getReports(startDate: from, endDate: to)
+        reportsService.getReports(startDate: from, endDate: to)
+            .trackActivity(activityIndicator)
             .subscribe(onNext: { [weak self] reports in
                 self?.reportsSubject.onNext(reports)
             }, onDisposed: { [weak self] in
                 self?.didFinishReportFetch.value = true
-                self?.isLoadingReports.value = false
-            })
+            }).disposed(by: disposeBag)
     }
 
     func getProjects() {
-        isLoadingProjects.value = true
         didFinishProjectFetch.value = false
-        _ = projectsService.getProjects()
+        projectsService.getProjects()
+            .trackActivity(activityIndicator)
             .subscribe(onNext: { [weak self] projects in
                 self?.projectsSubject.onNext(projects)
             }, onDisposed: { [weak self] in
-                self?.isLoadingProjects.value = false
                 self?.didFinishProjectFetch.value = true
-            })
+            }).disposed(by: disposeBag)
     }
 
     // MARK: - Private
@@ -68,6 +66,8 @@ class ActivitiesController: ActivitiesControlling {
     private let projectsService: ProjectsServiceProtocol
     private let holidaysService: HolidaysServiceProtocol
 
+    private let disposeBag = DisposeBag()
+    private let activityIndicator = ActivityIndicator()
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
 
@@ -75,22 +75,10 @@ class ActivitiesController: ActivitiesControlling {
     private let didFinishProjectFetch = Variable<Bool>(false)
     private let didFinishFetchSubject = PublishSubject<Void>()
 
-    // MARK: - Loading
-
-    private let isLoadingReports = Variable<Bool>(false)
-    private let isLoadingProjects = Variable<Bool>(false)
-    private let isLoadingVar = Variable<Bool>(false)
 
     // MARK: - Bindings
 
     private func setupBindings() {
-        Observable.of(
-            isLoadingReports.asObservable(),
-            isLoadingProjects.asObservable()
-        ).merge()
-            .bind(to: isLoadingVar)
-            .disposed(by: disposeBag)
-
         Observable.of(
             didFinishReportFetch.asObservable(),
             didFinishProjectFetch.asObservable()
@@ -102,7 +90,5 @@ class ActivitiesController: ActivitiesControlling {
             .bind(to: didFinishFetchSubject)
             .disposed(by: disposeBag)
     }
-
-    private let disposeBag = DisposeBag()
 
 }
