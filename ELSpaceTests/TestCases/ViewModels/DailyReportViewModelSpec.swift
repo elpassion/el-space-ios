@@ -35,7 +35,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -83,7 +83,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -107,7 +107,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -131,7 +131,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -148,7 +148,7 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/12 22:31")
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [], isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -193,7 +193,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         date = date + 1.day // swiftlint:disable:this shorthand_operator
                     }
                     dateFake = date
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [], isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -238,7 +238,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         date = date - 1.day // swiftlint:disable:this shorthand_operator
                     }
                     dateFake = date
-                    sut = DailyReportViewModel(date: dateFake, todayDate: Date(), reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: Date(), reports: [], projects: [], isHoliday: false)
                 }
 
                 it("should have correct title") {

@@ -17,20 +17,23 @@ class ActivitiesControllerSpec: QuickSpec {
             var projectsResultFake: [ProjectDTO]!
             var reportObserver: TestableObserver<[ReportDTO]>!
             var projectObserver: TestableObserver<[ProjectDTO]>!
+            var holidaysObserver: TestableObserver<[Int]>!
             var didFinishFetchObserver: TestableObserver<Void>!
             var isLoadingObserver: TestableObserver<Bool>!
             var scheduler: TestScheduler!
 
             beforeEach {
                 scheduler = TestScheduler(initialClock: 0)
-                reportObserver = scheduler.createObserver(Array<ReportDTO>.self)
-                projectObserver = scheduler.createObserver(Array<ProjectDTO>.self)
+                reportObserver = scheduler.createObserver([ReportDTO].self)
+                projectObserver = scheduler.createObserver([ProjectDTO].self)
+                holidaysObserver = scheduler.createObserver([Int].self)
                 didFinishFetchObserver = scheduler.createObserver(Void.self)
                 isLoadingObserver = scheduler.createObserver(Bool.self)
                 reportsResultFake = [ ReportDTO.fakeReportDto() ]
                 projectsResultFake = [ ProjectDTO.fakeProjectDto() ]
                 reportsServiceStub = ReportsServiceStub()
                 holidaysServiceStub = HolidaysServiceStub()
+                holidaysServiceStub.result = HolidaysDTO(days: [1, 2])
                 reportsServiceStub.result = reportsResultFake
                 projectsServiceStub = ProjectsServiceStub()
                 projectsServiceStub.result = projectsResultFake
@@ -41,11 +44,12 @@ class ActivitiesControllerSpec: QuickSpec {
                 _ = sut.projects.subscribe(projectObserver)
                 _ = sut.didFinishFetch.subscribe(didFinishFetchObserver)
                 _ = sut.isLoading.subscribe(isLoadingObserver)
+                _ = sut.holidays.subscribe(holidaysObserver)
             }
 
             context("when fetch data") {
                 beforeEach {
-                    sut.fetchData(from: "fake_from", to: "fake_to")
+                    sut.fetchData(for: Date())
                 }
 
                 it("should 'reports' emit one next event") {
@@ -54,6 +58,10 @@ class ActivitiesControllerSpec: QuickSpec {
 
                 it("should 'projects' emit one next event") {
                     expect(reportObserver.events).to(haveCount(1))
+                }
+
+                it("should 'holidays' emit one next event") {
+                    expect(holidaysObserver.events).to(haveCount(2))
                 }
 
                 it("should 'didFinishFetch' emit one next event") {

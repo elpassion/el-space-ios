@@ -45,7 +45,8 @@ class ActivitiesViewControllerSpec: QuickSpec {
                     sut.viewModels = [DailyReportViewModel(date: Date(),
                                                            todayDate: Date(),
                                                            reports: [],
-                                                           projects: [])]
+                                                           projects: [],
+                                                           isHoliday: false)]
                 }
 
                 it("should create 1 view") {

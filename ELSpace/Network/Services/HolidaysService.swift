@@ -2,7 +2,7 @@ import RxSwift
 import Mapper
 
 protocol HolidaysServiceProtocol {
-    func getHolidays() -> Observable<HolidaysDTO>
+    func getHolidays(month: Int, year: Int) -> Observable<HolidaysDTO>
 }
 
 class HolidaysService: HolidaysServiceProtocol {
@@ -13,8 +13,12 @@ class HolidaysService: HolidaysServiceProtocol {
 
     // MARK: - HolidaysServiceProtocol
 
-    func getHolidays() -> Observable<HolidaysDTO> {
-        return apiClient.request(path: "holidays", method: .get, parameters: nil, encoding: nil, headers: nil)
+    func getHolidays(month: Int, year: Int) -> Observable<HolidaysDTO> {
+        let params: [String: Int] = [
+            "month": month,
+            "year": year
+        ]
+        return apiClient.request(path: "holidays", method: .get, parameters: params, encoding: nil, headers: nil)
             .map { reponse -> HolidaysDTO in
                 if let error = ApiError(response: reponse) { throw error }
                 let json = reponse.data.json

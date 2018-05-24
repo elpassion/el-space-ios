@@ -1,11 +1,13 @@
 import RxSwift
+import RxCocoa
 
 protocol ActivitiesControlling {
     var reports: Observable<[ReportDTO]> { get }
     var projects: Observable<[ProjectDTO]> { get }
+    var holidays: Observable<[Int]> { get }
     var isLoading: Observable<Bool> { get }
     var didFinishFetch: Observable<Void> { get }
-    func fetchData(from: String, to: String)
+    func fetchData(for date: Date)
 }
 
 class ActivitiesController: ActivitiesControlling {
@@ -28,6 +30,10 @@ class ActivitiesController: ActivitiesControlling {
         return projectsSubject.asObservable()
     }
 
+    var holidays: Observable<[Int]> {
+        return holidaysRelay.asObservable()
+    }
+
     var isLoading: Observable<Bool> {
         return activityIndicator.asSharedSequence().asObservable()
     }
@@ -36,12 +42,27 @@ class ActivitiesController: ActivitiesControlling {
         return didFinishFetchSubject.asObservable()
     }
 
-    func fetchData(from: String, to: String) {
-        Observable.combineLatest(reportsService.getReports(startDate: from, endDate: to), projectsService.getProjects()) { (reports: $0, projects: $1) }
+    func startOfMonth(date: Date) -> String {
+        let startDay = date.startOf(component: .month)
+        return shortDateFormatter.string(from: startDay)
+    }
+
+    func endOfMonth(date: Date) -> String {
+        let endDay = date.endOf(component: .month)
+        return shortDateFormatter.string(from: endDay)
+    }
+
+    func fetchData(for date: Date) {
+        Observable.combineLatest(
+            reportsService.getReports(startDate: startOfMonth(date: date), endDate: endOfMonth(date: date)),
+            projectsService.getProjects(),
+            holidaysService.getHolidays(month: date.month, year: date.year)
+        ) { (reports: $0, projects: $1, holidays: $2) }
             .trackActivity(activityIndicator)
-            .subscribe(onNext: { [weak self] (reports, projects) in
+            .subscribe(onNext: { [weak self] (reports, projects, holidays) in
                 self?.reportsSubject.onNext(reports)
                 self?.projectsSubject.onNext(projects)
+                self?.holidaysRelay.accept(holidays.days)
             }, onDisposed: { [weak self] in
                 self?.didFinishFetchSubject.onNext(())
             }).disposed(by: disposeBag)
@@ -57,9 +78,9 @@ class ActivitiesController: ActivitiesControlling {
     private let activityIndicator = ActivityIndicator()
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
+    private let holidaysRelay = BehaviorRelay<[Int]>(value: [])
 
-    private let didFinishReportFetch = Variable<Bool>(false)
-    private let didFinishProjectFetch = Variable<Bool>(false)
     private let didFinishFetchSubject = PublishSubject<Void>()
+    private let shortDateFormatter = DateFormatter.shortDateFormatter
 
 }

@@ -26,7 +26,8 @@ class HolidaysServiceSpec: QuickSpec {
                     let fakeJson = try! JSONSerialization.data(withJSONObject: fakeHolidaysDTO, options: [])
                     let fakeResponse = Response(statusCode: 200, data: fakeJson)
                     apiClientSpy.response = fakeResponse
-                    response = try! sut.getHolidays().toBlocking().first()!
+                    response = try! sut.getHolidays(month: 1, year: 2018).toBlocking().first()!
+                    print(apiClientSpy.parameters)
                 }
 
                 it("should have correct path") {
@@ -37,8 +38,14 @@ class HolidaysServiceSpec: QuickSpec {
                     expect(apiClientSpy.method).to(equal(.get))
                 }
 
-                it("should have correct params") {
-                    expect(apiClientSpy.parameters).to(beNil())
+                describe("params") {
+                    it("should have correct year value") {
+                        expect(apiClientSpy.parameters?["year"] as? Int).to(equal(2018))
+                    }
+
+                    it("should have correct month value") {
+                        expect(apiClientSpy.parameters?["month"] as? Int).to(equal(1))
+                    }
                 }
 
                 it("should have correct headers") {
@@ -84,7 +91,7 @@ class HolidaysServiceSpec: QuickSpec {
                 }
 
                 it("should throw APIError") {
-                    expect { try sut.getHolidays().toBlocking().first() }.to(throwError(errorType: ApiError.self))
+                    expect { try sut.getHolidays(month: 1, year: 2018).toBlocking().first() }.to(throwError(errorType: ApiError.self))
                 }
             }
         }
