@@ -1,4 +1,5 @@
 import RxSwift
+import RxCocoa
 import SwiftDate
 
 protocol ActivitiesViewModelProtocol {
@@ -47,9 +48,9 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let shortDateFormatter = DateFormatter.shortDateFormatter
     private let monthFormatter = DateFormatter.monthFormatter
 
-    private let projects = Variable<[ProjectDTO]>([])
-    private let reports = Variable<[ReportViewModelProtocol]>([])
-    private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
+    private let projects = BehaviorRelay<[ProjectDTO]>(value: [])
+    private let reports = BehaviorRelay<[ReportViewModelProtocol]>(value: [])
+    private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
     private let openActivitySubject = PublishSubject<DailyReportViewModel>()
 
     private var days: [Date] {
@@ -80,7 +81,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         }
         setupSeparators(viewModels: viewModels)
         setupCornersRounding(viewModels: viewModels)
-        self.viewModels.value = viewModels
+        self.viewModels.accept(viewModels)
     }
 
     private func setupBindings(viewModel: DailyReportViewModel) {
