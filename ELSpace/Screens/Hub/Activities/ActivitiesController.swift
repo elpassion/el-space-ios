@@ -1,4 +1,5 @@
 import RxSwift
+import RxCocoa
 
 protocol ActivitiesControlling {
     var reports: Observable<[ReportDTO]> { get }
@@ -37,26 +38,26 @@ class ActivitiesController: ActivitiesControlling {
     }
 
     func getReports(from: String, to: String) {
-        isLoadingReports.value = true
-        didFinishReportFetch.value = false
+        isLoadingReports.accept(true)
+        didFinishReportFetch.accept(false)
         _ = reportsService.getReports(startDate: from, endDate: to)
             .subscribe(onNext: { [weak self] reports in
                 self?.reportsSubject.onNext(reports)
             }, onDisposed: { [weak self] in
-                self?.didFinishReportFetch.value = true
-                self?.isLoadingReports.value = false
+                self?.didFinishReportFetch.accept(true)
+                self?.isLoadingReports.accept(false)
             })
     }
 
     func getProjects() {
-        isLoadingProjects.value = true
-        didFinishProjectFetch.value = false
+        isLoadingProjects.accept(true)
+        didFinishProjectFetch.accept(false)
         _ = projectsService.getProjects()
             .subscribe(onNext: { [weak self] projects in
                 self?.projectsSubject.onNext(projects)
             }, onDisposed: { [weak self] in
-                self?.isLoadingProjects.value = false
-                self?.didFinishProjectFetch.value = true
+                self?.isLoadingProjects.accept(false)
+                self?.didFinishProjectFetch.accept(true)
             })
     }
 
@@ -68,15 +69,15 @@ class ActivitiesController: ActivitiesControlling {
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
 
-    private let didFinishReportFetch = Variable<Bool>(false)
-    private let didFinishProjectFetch = Variable<Bool>(false)
+    private let didFinishReportFetch = BehaviorRelay(value: false)
+    private let didFinishProjectFetch = BehaviorRelay(value: false)
     private let didFinishFetchSubject = PublishSubject<Void>()
 
     // MARK: - Loading
 
-    private let isLoadingReports = Variable<Bool>(false)
-    private let isLoadingProjects = Variable<Bool>(false)
-    private let isLoadingVar = Variable<Bool>(false)
+    private let isLoadingReports = BehaviorRelay(value: false)
+    private let isLoadingProjects = BehaviorRelay(value: false)
+    private let isLoadingVar = BehaviorRelay(value: false)
 
     // MARK: - Bindings
 
