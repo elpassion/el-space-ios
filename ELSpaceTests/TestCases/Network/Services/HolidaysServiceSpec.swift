@@ -27,7 +27,6 @@ class HolidaysServiceSpec: QuickSpec {
                     let fakeResponse = Response(statusCode: 200, data: fakeJson)
                     apiClientSpy.response = fakeResponse
                     response = try! sut.getHolidays(month: 1, year: 2018).toBlocking().first()!
-                    print(apiClientSpy.parameters)
                 }
 
                 it("should have correct path") {

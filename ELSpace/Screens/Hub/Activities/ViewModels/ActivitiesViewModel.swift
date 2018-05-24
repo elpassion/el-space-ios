@@ -60,7 +60,6 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
     private func createViewModels() {
         let viewModels = days.map { date -> DailyReportViewModel in
-            print(date.day)
             let reports = self.reports.value.filter { date.isInSameDayOf(date: $0.date) }
             let viewModel = DailyReportViewModel(date: date,
                                                  todayDate: todayDate,
