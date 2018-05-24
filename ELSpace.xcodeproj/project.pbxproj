@@ -58,7 +58,6 @@
 		473CBF971F33404600B80FA4 /* ReportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF961F33404600B80FA4 /* ReportsService.swift */; };
 		473CBF9A1F33414100B80FA4 /* ReportDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF991F33414100B80FA4 /* ReportDTO.swift */; };
 		4750BB8C1FF4F2D9000FE203 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4750BB8B1FF4F2D9000FE203 /* ActivityIndicator.swift */; };
-		476D48761FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */; };
 		477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */; };
 		477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */; };
 		477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */; };
@@ -240,7 +239,6 @@
 		473CBF961F33404600B80FA4 /* ReportsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsService.swift; sourceTree = "<group>"; };
 		473CBF991F33414100B80FA4 /* ReportDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDTO.swift; sourceTree = "<group>"; };
 		4750BB8B1FF4F2D9000FE203 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModelStub.swift; sourceTree = "<group>"; };
 		477161F81F2B2CFD0051EDE3 /* GoogleUserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapper.swift; sourceTree = "<group>"; };
 		477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserMapperFake.swift; sourceTree = "<group>"; };
 		477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
@@ -667,7 +665,6 @@
 			isa = PBXGroup;
 			children = (
 				47F819EB1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift */,
-				476D48751FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift */,
 				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
 				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
 				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
@@ -1502,7 +1499,6 @@
 				478B23E21FF4BB4D0009C801 /* HolidaysServiceSpec.swift in Sources */,
 				47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
-				476D48761FE2E8BE005BD9CC /* ActivitiesViewModelStub.swift in Sources */,
 				47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */,
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,

@@ -47,12 +47,8 @@ class ActivitiesViewModelSpec: QuickSpec {
                     sut.getData()
                 }
 
-                it("should call 'getReports'") {
-                    expect(activitiesControllerSpy.didCallGetReports).to(beTrue())
-                }
-
-                it("should call 'getProjects'") {
-                    expect(activitiesControllerSpy.didCallGetProjects).to(beTrue())
+                it("should call 'getData'") {
+                    expect(activitiesControllerSpy.didCallFetchData).to(beTrue())
                 }
 
                 it("should dataSource NOT emit any envets") {

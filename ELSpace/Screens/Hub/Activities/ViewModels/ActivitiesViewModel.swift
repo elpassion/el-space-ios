@@ -20,8 +20,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     // MARK: - ActivitiesViewModelProtocol
 
     func getData() {
-        activitiesController.getReports(from: startOfCurrentMonth, to: endOfCurrentMonth)
-        activitiesController.getProjects()
+        activitiesController.fetchData(from: startOfCurrentMonth, to: endOfCurrentMonth)
     }
 
     var dataSource: Observable<[DailyReportViewModelProtocol]> {
