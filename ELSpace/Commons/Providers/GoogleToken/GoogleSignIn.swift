@@ -7,8 +7,8 @@ import GoogleSignIn
 
 protocol GoogleSignInProtocol: class {
 
-    weak var delegate: GIDSignInDelegate! { get set }
-    weak var uiDelegate: GIDSignInUIDelegate! { get set }
+    var delegate: GIDSignInDelegate! { get set }
+    var uiDelegate: GIDSignInUIDelegate! { get set }
     func signIn()
     func disconnect()
     var hostedDomain: String! { get set }

@@ -18,7 +18,7 @@ extension DailyReportViewModelProtocol {
                 view.reportDetailsViews = viewModels.map { viewModel -> ReportDetailsView? in
                     guard viewModel.type == .normal || viewModel.type == .paidVacations else { return nil }
                     return ReportDetailsView(title: viewModel.title, subtitle: viewModel.subtitle)
-                }.flatMap { $0 }
+                }.compactMap { $0 }
         }).disposed(by: disposeBag)
 
         Observable.just(stripeColor)
