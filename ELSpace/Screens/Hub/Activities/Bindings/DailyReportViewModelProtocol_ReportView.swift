@@ -17,7 +17,11 @@ extension DailyReportViewModelProtocol {
             .subscribe(onNext: { viewModels in
                 view.reportDetailsViews = viewModels.map { viewModel -> ReportDetailsView? in
                     guard viewModel.type == .normal || viewModel.type == .paidVacations else { return nil }
-                    return ReportDetailsView(title: viewModel.title, subtitle: viewModel.subtitle)
+                    let control = ReportDetailsView(title: viewModel.title, subtitle: viewModel.subtitle)
+                    control.rx.controlEvent(.touchUpInside).debug()
+                        .bind(to: viewModel.action)
+                        .disposed(by: disposeBag)
+                    return control
                 }.compactMap { $0 }
         }).disposed(by: disposeBag)
 
@@ -39,10 +43,6 @@ extension DailyReportViewModelProtocol {
 
         Observable.just(isSeparatorHidden)
             .subscribe(onNext: { [weak view] in view?.separatorView.isHidden = $0 })
-            .disposed(by: disposeBag)
-
-        view.contentContainer.rx.controlEvent(.touchUpInside)
-            .bind(to: didTapOnReport)
             .disposed(by: disposeBag)
 
         return disposeBag
