@@ -39,6 +39,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     var title: NSAttributedString? {
         switch dayType {
+        case .holiday: return NSAttributedString(string: "Holiday", attributes: weekendTitleAttributes)
         case .weekday: return weekdayTitle
         case .missing: return NSAttributedString(string: "Missing", attributes: missingAttributes)
         case .comming: return nil
@@ -57,8 +58,10 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var dayType: DayType {
         if hasReports {
             return .weekday
-        } else if date.isInWeekend || isHoliday {
+        } else if date.isInWeekend {
             return .weekend
+        } else if isHoliday {
+            return .holiday
         } else if date.isBefore(date: todayDate, granularity: .day) && reportsViewModel.isEmpty {
             return .missing
         } else {
@@ -68,7 +71,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     var stripeColor: UIColor {
         switch dayType {
-        case .weekday: return UIColor(color: .green92ECB4)
+        case .weekday, .holiday: return UIColor(color: .green92ECB4)
         case .missing: return UIColor(color: .redBA6767)
         case .comming: return UIColor(color: .grayE4E4E4)
         case .weekend: return .clear
@@ -78,7 +81,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var backgroundColor: UIColor {
         switch dayType {
         case .weekend: return .clear
-        case .missing, .comming, .weekday: return .white
+        case .missing, .comming, .weekday, .holiday: return .white
         }
     }
 
@@ -171,4 +174,5 @@ enum DayType {
     case weekend
     case missing
     case comming
+    case holiday
 }

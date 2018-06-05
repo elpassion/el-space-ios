@@ -273,6 +273,28 @@ class DailyReportViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            context("when day isHoliday") {
+                beforeEach {
+                    sut = DailyReportViewModel(date: Date(), todayDate: Date(), reports: [], projects: [], isHoliday: true)
+                }
+
+                it("should have correct title") {
+                    expect(sut.title?.string).to(equal("Holiday"))
+                }
+
+                it("should have correct dayType") {
+                    expect(sut.dayType).to(equal(DayType.holiday))
+                }
+
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor(color: .green92ECB4)))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.white))
+                }
+            }
         }
     }
 
