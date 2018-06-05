@@ -89,8 +89,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 viewModel.isSeparatorHidden = true
             } else {
                 let nextElement = viewModels[viewModels.index(after: index)]
-                viewModel.isSeparatorHidden = (viewModel.dayType != .weekend && nextElement.isWeekendWithoutReports) ||
-                    (viewModel.isWeekendWithoutReports && nextElement.dayType != .weekend)
+                viewModel.isSeparatorHidden = viewModel.isWorkDayOrHaveReports && !nextElement.isWorkDayOrHaveReports ||
+                    !viewModel.isWorkDayOrHaveReports && nextElement.isWorkDayOrHaveReports
             }
         }
     }
@@ -100,20 +100,16 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             let isFirst = viewModels.first == viewModel
             let isLast = viewModels.last == viewModel
             if isFirst {
-                viewModel.topCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
+                viewModel.topCornersRounded = viewModel.isWorkDayOrHaveReports
             } else {
                 let previousElement = viewModels[viewModels.index(before: index)]
-                viewModel.topCornersRounded = viewModel.dayType != .weekend &&
-                    previousElement.dayType == .weekend &&
-                    !previousElement.hasReports
+                viewModel.topCornersRounded = viewModel.isWorkDayOrHaveReports && !previousElement.isWorkDayOrHaveReports
             }
             if isLast {
-                viewModel.bottomCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
+                viewModel.bottomCornersRounded = viewModel.isWorkDayOrHaveReports
             } else {
                 let nextElement = viewModels[viewModels.index(after: index)]
-                viewModel.bottomCornersRounded = viewModel.dayType != .weekend &&
-                    nextElement.dayType == .weekend &&
-                    !nextElement.hasReports
+                viewModel.bottomCornersRounded = viewModel.isWorkDayOrHaveReports && !nextElement.isWorkDayOrHaveReports
             }
         }
     }

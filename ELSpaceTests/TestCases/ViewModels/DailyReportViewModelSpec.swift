@@ -288,11 +288,11 @@ class DailyReportViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct stripeColor") {
-                    expect(sut.stripeColor).to(equal(UIColor(color: .green92ECB4)))
+                    expect(sut.stripeColor).to(equal(UIColor.clear))
                 }
 
                 it("should have correct backgroundColor") {
-                    expect(sut.backgroundColor).to(equal(UIColor.white))
+                    expect(sut.backgroundColor).to(equal(UIColor.clear))
                 }
             }
         }

@@ -27,12 +27,8 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         }
     }
 
-    var hasReports: Bool {
-        return !reportsViewModel.isEmpty
-    }
-
-    var isWeekendWithoutReports: Bool {
-        return reportsViewModel.isEmpty && dayType == .weekend
+    var isWorkDayOrHaveReports: Bool {
+        return isWorkDay || hasReports
     }
 
     // MARK: - DailReportViewModelProtocol
@@ -71,17 +67,17 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     var stripeColor: UIColor {
         switch dayType {
-        case .weekday, .holiday: return UIColor(color: .green92ECB4)
+        case .weekday: return UIColor(color: .green92ECB4)
         case .missing: return UIColor(color: .redBA6767)
         case .comming: return UIColor(color: .grayE4E4E4)
-        case .weekend: return .clear
+        case .weekend, .holiday: return .clear
         }
     }
 
     var backgroundColor: UIColor {
         switch dayType {
-        case .weekend: return .clear
-        case .missing, .comming, .weekday, .holiday: return .white
+        case .weekend, .holiday: return .clear
+        case .missing, .comming, .weekday: return .white
         }
     }
 
@@ -106,6 +102,14 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     private let dayFormatter = DateFormatter.dayFormatter
 
     // MARK: Helpers
+
+    private var hasReports: Bool {
+        return !reportsViewModel.isEmpty
+    }
+
+    private var isWorkDay: Bool {
+        return dayType != .holiday && dayType != .weekend
+    }
 
     private var viewModelsContainsUnpaidVacations: Bool {
         return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .unpaidDayOff })
