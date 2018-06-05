@@ -668,10 +668,10 @@
 				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
 				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
 				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
+				47F0AAB01FF69F0D0031D2E6 /* HolidaysServiceStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				47F0AAB01FF69F0D0031D2E6 /* HolidaysServiceStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
