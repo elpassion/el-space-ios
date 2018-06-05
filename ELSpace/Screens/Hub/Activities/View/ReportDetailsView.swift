@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-class ReportDetailsView: UIView {
+class ReportDetailsView: UIControl {
 
     init(title: String?, subtitle: String?) {
         self.titleLabel.text = title
