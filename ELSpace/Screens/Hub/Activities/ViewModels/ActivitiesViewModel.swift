@@ -5,7 +5,7 @@ protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     var month: String { get }
-    var openActivity: Observable<DailyReportViewModel> { get }
+    var openActivity: Observable<String> { get }
     func getData()
 }
 
@@ -36,7 +36,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return monthFormatter.string(from: todayDate)
     }
 
-    var openActivity: Observable<DailyReportViewModel> {
+    var openActivity: Observable<String> {
         return openActivitySubject.asObservable()
     }
 
@@ -50,7 +50,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportViewModelProtocol]>([])
     private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
-    private let openActivitySubject = PublishSubject<DailyReportViewModel>()
+    private let openActivitySubject = PublishSubject<String>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -84,11 +84,12 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func setupBindings(viewModel: DailyReportViewModel) {
-        viewModel.didTapOnReport
-            .map { [weak viewModel] in viewModel }
-            .unwrap()
-            .bind(to: openActivitySubject)
-            .disposed(by: disposeBag)
+        viewModel.reportsViewModel.forEach { viewModel in
+            viewModel.action.asObservable()
+                .map { viewModel.report.comment! }
+                .bind(to: self.openActivitySubject)
+                .disposed(by: self.disposeBag)
+        }
     }
 
     private func setupSeparators(viewModels: [DailyReportViewModel]) {

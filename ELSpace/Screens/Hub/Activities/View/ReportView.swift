@@ -35,7 +35,7 @@ class ReportView: UIView {
     let dateLabel = UILabel(frame: .zero)
     let titleLabel = UILabel(frame: .zero)
     let rightStripeView = UIView(frame: .zero)
-    let contentContainer = UIControl(frame: .zero)
+    let contentContainer = UIView(frame: .zero)
     let addIconView = UIImageView(image: UIImage(named: "add_icon"))
     let separatorView = SubviewsFactory.separatorView
 
@@ -142,7 +142,7 @@ private extension ReportView {
 
         static var reportDetailsContainer: UIView {
             let view = UIView(frame: .zero)
-            view.isUserInteractionEnabled = false
+            view.isUserInteractionEnabled = true
             return view
         }
     }
