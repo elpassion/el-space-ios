@@ -32,8 +32,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
                     expect(sut.type).to(equal(.normal))
                 }
 
-                it("should have correct value") {
-                    expect(sut.value).to(equal(8.0))
+                it("should have correct hours value") {
+                    expect(sut.hours).to(equal(8.0))
                 }
             }
 
@@ -56,8 +56,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
                     expect(sut.type).to(equal(.normal))
                 }
 
-                it("should have correct value") {
-                    expect(sut.value).to(equal(8.0))
+                it("should have correct hours value") {
+                    expect(sut.hours).to(equal(8.0))
                 }
             }
 
@@ -79,8 +79,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
                     expect(sut.type).to(equal(.paidVacations))
                 }
 
-                it("should have correct value") {
-                    expect(sut.value).to(equal(8.0))
+                it("should have correct hours value") {
+                    expect(sut.hours).to(equal(8.0))
                 }
             }
 
@@ -102,8 +102,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
                     expect(sut.type).to(equal(.unpaidDayOff))
                 }
 
-                it("should have correct value") {
-                    expect(sut.value).to(equal(8.0))
+                it("should have correct hours value") {
+                    expect(sut.hours).to(equal(8.0))
                 }
             }
 
@@ -125,8 +125,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
                     expect(sut.type).to(equal(.sickLeave))
                 }
 
-                it("should have correct value") {
-                    expect(sut.value).to(equal(8.0))
+                it("should have correct hours value") {
+                    expect(sut.hours).to(equal(8.0))
                 }
             }
 
@@ -140,8 +140,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
                     expect(sut.type).to(beNil())
                 }
 
-                it("should have correct value") {
-                    expect(sut.value).to(equal(0.0))
+                it("should have correct hours value") {
+                    expect(sut.hours).to(equal(0.0))
                 }
             }
         }

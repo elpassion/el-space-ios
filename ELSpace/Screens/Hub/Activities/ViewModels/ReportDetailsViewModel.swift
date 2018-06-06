@@ -4,7 +4,7 @@ protocol ReportDetailsViewModelProtocol {
     var title: String? { get }
     var subtitle: String? { get }
     var type: ReportType? { get }
-    var value: Double { get }
+    var hours: Double { get }
 }
 
 class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
@@ -28,9 +28,9 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         return ReportType(rawValue: report.reportType)
     }
 
-    var value: Double {
+    var hours: Double {
         switch type {
-        case .some(.normal): return doubleValue
+        case .some(.normal): return doubleHours
         case .some(.paidVacations): return weekdaysHoursOfWork
         case .some(.unpaidDayOff): return weekdaysHoursOfWork
         case .some(.sickLeave): return weekdaysHoursOfWork
@@ -54,7 +54,7 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         }
     }
 
-    private var doubleValue: Double {
+    private var doubleHours: Double {
         guard let value = Double(report.value) else { return 0.0 }
         return value
     }
