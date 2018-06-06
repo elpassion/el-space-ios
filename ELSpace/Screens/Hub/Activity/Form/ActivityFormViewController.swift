@@ -30,10 +30,6 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         return viewModel.type
     }
 
-    var date: AnyObserver<Date> {
-        return viewModel.date
-    }
-
     var form: Observable<ActivityForm> {
         return viewModel.form
     }

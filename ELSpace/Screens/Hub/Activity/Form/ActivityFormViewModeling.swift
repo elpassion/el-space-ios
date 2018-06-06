@@ -14,7 +14,6 @@ protocol ActivityFormViewInputModeling {
 
 protocol ActivityFormViewOutputModeling {
     var type: AnyObserver<ActivityType> { get }
-    var date: AnyObserver<Date> { get }
     var selectProject: AnyObserver<String> { get }
     var updateHours: AnyObserver<String> { get }
     var updateComment: AnyObserver<String> { get }

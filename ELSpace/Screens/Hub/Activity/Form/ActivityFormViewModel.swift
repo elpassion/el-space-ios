@@ -15,11 +15,7 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     // MARK: - ActivityFormViewInputModeling
 
     var performedAt: Observable<String> {
-        return performedAtSubject.asObservable()
-            .map { date -> String in
-                let dateFormatter = DateFormatter.activityFormatter
-                return dateFormatter.string(from: date)
-            }
+        return Observable.of(report.performedAt)
     }
 
     var projectNames: Observable<[String]> {
@@ -69,10 +65,6 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         })
     }
 
-    var date: AnyObserver<Date> {
-        return performedAtSubject.asObserver()
-    }
-
     var selectProject: AnyObserver<String> {
         return projectSelectedSubject.asObserver()
     }
@@ -89,7 +81,6 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     private let report: ReportDTO
     private let projectScope: [ProjectDTO]
-    private let performedAtSubject = PublishSubject<Date>()
     private let projectNamesSubject: BehaviorSubject<[String]>
     private let projectInputHiddenSubject = PublishSubject<Bool>()
     private let projectSelectedSubject: BehaviorSubject<String>
