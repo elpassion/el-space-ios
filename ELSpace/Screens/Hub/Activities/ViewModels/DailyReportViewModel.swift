@@ -16,9 +16,10 @@ protocol DailyReportViewModelProtocol {
 
 class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
-    init(date: Date, todayDate: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO]) {
+    init(date: Date, todayDate: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO], isHoliday: Bool) {
         self.date = date
         self.todayDate = todayDate
+        self.isHoliday = isHoliday
         reportsViewModel = reports.map { report in
             let project = projects.first(where: { $0.id == report.projectId })
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
@@ -26,18 +27,15 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         }
     }
 
-    var hasReports: Bool {
-        return !reportsViewModel.isEmpty
-    }
-
-    var isWeekendWithoutReports: Bool {
-        return reportsViewModel.isEmpty && dayType == .weekend
+    var isWorkDayOrHaveReports: Bool {
+        return isWorkDay || hasReports
     }
 
     // MARK: - DailReportViewModelProtocol
 
     var title: NSAttributedString? {
         switch dayType {
+        case .holiday: return NSAttributedString(string: "Holiday", attributes: weekendTitleAttributes)
         case .weekday: return weekdayTitle
         case .missing: return NSAttributedString(string: "Missing", attributes: missingAttributes)
         case .comming: return nil
@@ -58,6 +56,8 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
             return .weekday
         } else if date.isInWeekend {
             return .weekend
+        } else if isHoliday {
+            return .holiday
         } else if date.isBefore(date: todayDate, granularity: .day) && reportsViewModel.isEmpty {
             return .missing
         } else {
@@ -70,13 +70,13 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         case .weekday: return UIColor(color: .green92ECB4)
         case .missing: return UIColor(color: .redBA6767)
         case .comming: return UIColor(color: .grayE4E4E4)
-        case .weekend: return .clear
+        case .weekend, .holiday: return .clear
         }
     }
 
     var backgroundColor: UIColor {
         switch dayType {
-        case .weekend: return .clear
+        case .weekend, .holiday: return .clear
         case .missing, .comming, .weekday: return .white
         }
     }
@@ -93,6 +93,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     private let date: Date
     private let todayDate: Date
+    private let isHoliday: Bool
 
     private var dayValue: Double {
         return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.value + result }
@@ -101,6 +102,14 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     private let dayFormatter = DateFormatter.dayFormatter
 
     // MARK: Helpers
+
+    private var hasReports: Bool {
+        return !reportsViewModel.isEmpty
+    }
+
+    private var isWorkDay: Bool {
+        return dayType != .holiday && dayType != .weekend
+    }
 
     private var viewModelsContainsUnpaidVacations: Bool {
         return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .unpaidDayOff })
@@ -169,4 +178,5 @@ enum DayType {
     case weekend
     case missing
     case comming
+    case holiday
 }

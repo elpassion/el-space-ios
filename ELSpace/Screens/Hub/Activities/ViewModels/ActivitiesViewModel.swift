@@ -1,4 +1,5 @@
 import RxSwift
+import RxCocoa
 import SwiftDate
 
 protocol ActivitiesViewModelProtocol {
@@ -20,8 +21,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     // MARK: - ActivitiesViewModelProtocol
 
     func getData() {
-        activitiesController.getReports(from: startOfCurrentMonth, to: endOfCurrentMonth)
-        activitiesController.getProjects()
+        activitiesController.fetchData(for: todayDate)
     }
 
     var dataSource: Observable<[DailyReportViewModelProtocol]> {
@@ -44,11 +44,11 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
     private let activitiesController: ActivitiesControlling
     private let todayDate: Date
-    private let shortDateFormatter = DateFormatter.shortDateFormatter
     private let monthFormatter = DateFormatter.monthFormatter
 
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportViewModelProtocol]>([])
+    private let holidays = BehaviorRelay<[Int]>(value: [])
     private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
     private let openActivitySubject = PublishSubject<DailyReportViewModel>()
 
@@ -58,23 +58,14 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                           increment: 1.day)
     }
 
-    private var startOfCurrentMonth: String {
-        let date = todayDate.startOf(component: .month)
-        return shortDateFormatter.string(from: date)
-    }
-
-    private var endOfCurrentMonth: String {
-        let date = todayDate.endOf(component: .month)
-        return shortDateFormatter.string(from: date)
-    }
-
     private func createViewModels() {
         let viewModels = days.map { date -> DailyReportViewModel in
             let reports = self.reports.value.filter { date.isInSameDayOf(date: $0.date) }
             let viewModel = DailyReportViewModel(date: date,
                                                  todayDate: todayDate,
                                                  reports: reports,
-                                                 projects: projects.value)
+                                                 projects: projects.value,
+                                                 isHoliday: holidays.value.contains(date.day))
             setupBindings(viewModel: viewModel)
             return viewModel
         }
@@ -98,8 +89,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 viewModel.isSeparatorHidden = true
             } else {
                 let nextElement = viewModels[viewModels.index(after: index)]
-                viewModel.isSeparatorHidden = (viewModel.dayType != .weekend && nextElement.isWeekendWithoutReports) ||
-                    (viewModel.isWeekendWithoutReports && nextElement.dayType != .weekend)
+                viewModel.isSeparatorHidden = viewModel.isWorkDayOrHaveReports && !nextElement.isWorkDayOrHaveReports ||
+                    !viewModel.isWorkDayOrHaveReports && nextElement.isWorkDayOrHaveReports
             }
         }
     }
@@ -109,20 +100,16 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             let isFirst = viewModels.first == viewModel
             let isLast = viewModels.last == viewModel
             if isFirst {
-                viewModel.topCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
+                viewModel.topCornersRounded = viewModel.isWorkDayOrHaveReports
             } else {
                 let previousElement = viewModels[viewModels.index(before: index)]
-                viewModel.topCornersRounded = viewModel.dayType != .weekend &&
-                    previousElement.dayType == .weekend &&
-                    !previousElement.hasReports
+                viewModel.topCornersRounded = viewModel.isWorkDayOrHaveReports && !previousElement.isWorkDayOrHaveReports
             }
             if isLast {
-                viewModel.bottomCornersRounded = viewModel.dayType != .weekend || viewModel.hasReports
+                viewModel.bottomCornersRounded = viewModel.isWorkDayOrHaveReports
             } else {
                 let nextElement = viewModels[viewModels.index(after: index)]
-                viewModel.bottomCornersRounded = viewModel.dayType != .weekend &&
-                    nextElement.dayType == .weekend &&
-                    !nextElement.hasReports
+                viewModel.bottomCornersRounded = viewModel.isWorkDayOrHaveReports && !nextElement.isWorkDayOrHaveReports
             }
         }
     }
@@ -137,6 +124,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
         activitiesController.projects
             .bind(to: projects)
+            .disposed(by: disposeBag)
+
+        activitiesController.holidays
+            .bind(to: holidays)
             .disposed(by: disposeBag)
 
         activitiesController.didFinishFetch
