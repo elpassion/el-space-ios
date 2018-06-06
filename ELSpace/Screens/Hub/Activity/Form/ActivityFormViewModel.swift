@@ -3,12 +3,13 @@ import RxSwift
 
 class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutputModeling {
 
-    init() {
-        let projects = ["Project 1", "Project 2"]
-        projectNamesSubject = BehaviorSubject<[String]>(value: projects)
-        projectSelectedSubject = BehaviorSubject<String>(value: projects.first!)
-        updateHoursSubject = BehaviorSubject<String>(value: "8")
-        updateCommentSubject = BehaviorSubject<String>(value: "ElSpace report form implementation")
+    init(report: ReportDTO, projectScope: [ProjectDTO]) {
+        self.report = report
+        self.projectScope = projectScope
+        projectNamesSubject = BehaviorSubject<[String]>(value: projectScope.map { $0.name })
+        projectSelectedSubject = BehaviorSubject<String>(value: "Avenue")
+        updateHoursSubject = BehaviorSubject<String>(value: "\(report.value)")
+        updateCommentSubject = BehaviorSubject<String>(value: report.comment!)
     }
 
     // MARK: - ActivityFormViewInputModeling
@@ -86,6 +87,8 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     // MARK: - Privates
 
+    private let report: ReportDTO
+    private let projectScope: [ProjectDTO]
     private let performedAtSubject = PublishSubject<Date>()
     private let projectNamesSubject: BehaviorSubject<[String]>
     private let projectInputHiddenSubject = PublishSubject<Bool>()

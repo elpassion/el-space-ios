@@ -60,7 +60,9 @@ class ActivitiesCoordinator: Coordinator {
     private let disposeBag = DisposeBag()
 
     private func showActivity() {
-        let coordinator = activityCoordinatorFactory.activityCoordinator()
+        let report = ReportDTO(id: 1, userId: 1, projectId: 1, value: "test 124", performedAt: "aa", comment: "test comm", createdAt: "dasd", updatedAt: "sa", billable: true, reportType: 1)
+        let project = ProjectDTO(name: "tesr name", id: 1)
+        let coordinator = activityCoordinatorFactory.activityCoordinator(report: report, projectScope: [project])
         presentedCoordinator = coordinator
         presenter.push(viewController: coordinator.initialViewController, on: activitiesViewController)
     }

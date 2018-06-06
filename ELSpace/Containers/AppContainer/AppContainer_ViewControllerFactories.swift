@@ -44,8 +44,8 @@ extension AppContainer: LoginViewControllerCreation,
 
     // MARK: - ActivityViewControllerCreation
 
-    func activityViewController() -> UIViewController & ActivityViewControlling {
-        return ActivityViewControllerCreator().activityViewController()
+    func activityViewController(report: ReportDTO, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling {
+        return ActivityViewControllerCreator().activityViewController(report: report, projectScope: projectScope)
     }
 
 }
@@ -71,5 +71,5 @@ protocol AlertCreation {
 }
 
 protocol ActivityViewControllerCreation {
-    func activityViewController() -> UIViewController & ActivityViewControlling
+    func activityViewController(report: ReportDTO, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling
 }
