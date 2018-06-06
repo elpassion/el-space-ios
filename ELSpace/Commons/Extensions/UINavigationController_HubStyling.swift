@@ -4,8 +4,6 @@ extension UINavigationController {
 
     private var gradientLayer: CAGradientLayer {
         let gradientLayer = CAGradientLayer()
-        let bounds = navigationBar.bounds
-        gradientLayer.frame = bounds
         gradientLayer.colors = [
             UIColor(color: .purpleCEC1FF).cgColor,
             UIColor(color: .purpleAB9BFF).cgColor
@@ -15,11 +13,9 @@ extension UINavigationController {
         return gradientLayer
     }
 
-    private var backgroundImage: UIImage? {
+    private func backgroundImage(for size: CGSize) -> UIImage? {
         let layer = gradientLayer
-        var updatedFrame = navigationBar.bounds
-        updatedFrame.size.height += 20
-        layer.frame = updatedFrame
+        layer.frame = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContext(layer.bounds.size)
         guard let currentContext = UIGraphicsGetCurrentContext() else { return nil }
         layer.render(in: currentContext)
@@ -27,8 +23,20 @@ extension UINavigationController {
         UIGraphicsEndImageContext()
         return image
     }
+    
+    private var systemTopBarsSize: CGSize {
+        var size = CGSize.zero
+        
+        if #available(iOS 11.0, *) {
+            size.height = topViewController?.view.safeAreaInsets.top ?? navigationBar.frame.height
+        } else {
+            size.height = navigationBar.frame.height
+        }
+        size.width = navigationBar.frame.width
+        return size
+    }
 
-    func applayHubStyle() {
+    func applyHubStyle() {
         navigationBar.barTintColor = UIColor.black
         navigationBar.barStyle = .black
         navigationBar.isTranslucent = false
@@ -36,7 +44,7 @@ extension UINavigationController {
         navigationBar.titleTextAttributes = [
             NSAttributedStringKey.foregroundColor: UIColor.white
         ]
-        navigationBar.setBackgroundImage(backgroundImage, for: .default)
+        navigationBar.setBackgroundImage(backgroundImage(for: systemTopBarsSize), for: .default)
     }
 
 }

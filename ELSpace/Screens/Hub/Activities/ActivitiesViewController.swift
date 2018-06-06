@@ -20,12 +20,13 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.applayHubStyle()
         navigationItem.titleView = navigationItemTitleLabel
+        extendedLayoutIncludesOpaqueBars = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.applyHubStyle()
         viewDidAppearSubject.onNext(())
     }
 
