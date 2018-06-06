@@ -28,7 +28,7 @@ extension UINavigationController {
         return image
     }
 
-    func applayHubStyle() {
+    func applyHubStyle() {
         navigationBar.barTintColor = UIColor.black
         navigationBar.barStyle = .black
         navigationBar.isTranslucent = false
