@@ -45,9 +45,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let activitiesController: ActivitiesControlling
     private let todayDate: Date
     private let monthFormatter = DateFormatter.monthFormatter
+    private let shortDateFormatter = DateFormatter.shortDateFormatter
 
     private let projects = Variable<[ProjectDTO]>([])
-    private let reports = Variable<[ReportViewModelProtocol]>([])
+    private let reports = Variable<[ReportDTO]>([])
     private let holidays = BehaviorRelay<[Int]>(value: [])
     private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
     private let openActivitySubject = PublishSubject<DailyReportViewModel>()
@@ -60,7 +61,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
     private func createViewModels() {
         let viewModels = days.map { date -> DailyReportViewModel in
-            let reports = self.reports.value.filter { date.isInSameDayOf(date: $0.date) }
+            let reports = self.reports.value.filter {
+                let reportDate = getDate(stringDate: $0.performedAt)
+                return date.isInSameDayOf(date: reportDate)
+            }
             let viewModel = DailyReportViewModel(date: date,
                                                  todayDate: todayDate,
                                                  reports: reports,
@@ -114,11 +118,15 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         }
     }
 
+    private func getDate(stringDate: String) -> Date {
+        guard let date = shortDateFormatter.date(from: stringDate) else { fatalError("Wrong date format") }
+        return date
+    }
+
     // MARK: - Bindings
 
     private func setupBindings() {
         activitiesController.reports
-            .map { $0.map { ReportViewModel(report: $0) } }
             .bind(to: reports)
             .disposed(by: disposeBag)
 

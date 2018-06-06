@@ -16,7 +16,7 @@ protocol DailyReportViewModelProtocol {
 
 class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
-    init(date: Date, todayDate: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO], isHoliday: Bool) {
+    init(date: Date, todayDate: Date, reports: [ReportDTO], projects: [ProjectDTO], isHoliday: Bool) {
         self.date = date
         self.todayDate = todayDate
         self.isHoliday = isHoliday

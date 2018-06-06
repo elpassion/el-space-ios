@@ -16,12 +16,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             context("when initialize with type 0 and nil project") {
                 beforeEach {
-                    let fakeReportViewModel = ReportViewModelFake(projectId: 10,
-                                                                  date: Date(),
-                                                                  value: 8.0,
-                                                                  comment: "fake_comment",
-                                                                  type: 0)
-                    sut = ReportDetailsViewModel(report: fakeReportViewModel, project: nil)
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: 10, value: "8.0", comment: "fake_comment", reportType: 0)
+                    sut = ReportDetailsViewModel(report: fakeReport, project: nil)
                 }
 
                 it("should have correct title") {
@@ -43,13 +39,9 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             context("when initialize with type 0") {
                 beforeEach {
-                    let fakeReportViewModel = ReportViewModelFake(projectId: 10,
-                                                                  date: Date(),
-                                                                  value: 8.0,
-                                                                  comment: "fake_comment",
-                                                                  type: 0)
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: 10, value: "8.0", comment: "fake_comment", reportType: 0)
                     let fakeProjectDto = ProjectDTO.fakeProjectDto(name: "fake_name", id: 10)
-                    sut = ReportDetailsViewModel(report: fakeReportViewModel, project: fakeProjectDto)
+                    sut = ReportDetailsViewModel(report: fakeReport, project: fakeProjectDto)
                 }
 
                 it("should have correct title") {
@@ -71,12 +63,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             context("when initialize with type 1") {
                 beforeEach {
-                    let fakeReportViewModel = ReportViewModelFake(projectId: nil,
-                                                                  date: Date(),
-                                                                  value: 8.0,
-                                                                  comment: nil,
-                                                                  type: 1)
-                    sut = ReportDetailsViewModel(report: fakeReportViewModel, project: nil)
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "8.0", comment: nil, reportType: 1)
+                    sut = ReportDetailsViewModel(report: fakeReport, project: nil)
                 }
 
                 it("should have correct title") {
@@ -98,12 +86,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             context("when initialize with type 2") {
                 beforeEach {
-                    let fakeReportViewModel = ReportViewModelFake(projectId: nil,
-                                                                  date: Date(),
-                                                                  value: 8.0,
-                                                                  comment: nil,
-                                                                  type: 2)
-                    sut = ReportDetailsViewModel(report: fakeReportViewModel, project: nil)
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "8.0", comment: nil, reportType: 2)
+                    sut = ReportDetailsViewModel(report: fakeReport, project: nil)
                 }
 
                 it("should have correct title") {
@@ -125,12 +109,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             context("when initialize with type 3") {
                 beforeEach {
-                    let fakeReportViewModel = ReportViewModelFake(projectId: nil,
-                                                                  date: Date(),
-                                                                  value: 8.0,
-                                                                  comment: nil,
-                                                                  type: 3)
-                    sut = ReportDetailsViewModel(report: fakeReportViewModel, project: nil)
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "8.0", comment: nil, reportType: 3)
+                    sut = ReportDetailsViewModel(report: fakeReport, project: nil)
                 }
 
                 it("should have correct title") {
@@ -152,12 +132,8 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             context("when initialize with unknown type") {
                 beforeEach {
-                    let fakeReportViewModel = ReportViewModelFake(projectId: nil,
-                                                                  date: Date(),
-                                                                  value: 8.0,
-                                                                  comment: nil,
-                                                                  type: 999)
-                    sut = ReportDetailsViewModel(report: fakeReportViewModel, project: nil)
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "8.0", comment: nil, reportType: 999)
+                    sut = ReportDetailsViewModel(report: fakeReport, project: nil)
                 }
 
                 it("should have correct type") {
