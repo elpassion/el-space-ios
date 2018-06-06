@@ -16,7 +16,7 @@ protocol DailyReportViewModelProtocol {
 
 class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
-    init(date: Date, todayDate: Date, reports: [ReportViewModelProtocol], projects: [ProjectDTO], isHoliday: Bool) {
+    init(date: Date, todayDate: Date, reports: [ReportDTO], projects: [ProjectDTO], isHoliday: Bool) {
         self.date = date
         self.todayDate = todayDate
         self.isHoliday = isHoliday
@@ -95,8 +95,8 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     private let todayDate: Date
     private let isHoliday: Bool
 
-    private var dayValue: Double {
-        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.value + result }
+    private var dayHours: Double {
+        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.hours + result }
     }
 
     private let dayFormatter = DateFormatter.dayFormatter
@@ -131,7 +131,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     private func normalReportText() -> NSAttributedString {
         let text = NSMutableAttributedString(string: "Total: ", attributes: bookFontAttributes)
-        let hoursText = NSAttributedString(string: "\(dayValue) hours", attributes: regularReportTimeAttributes)
+        let hoursText = NSAttributedString(string: "\(dayHours) hours", attributes: regularReportTimeAttributes)
         text.append(hoursText)
         return text
     }

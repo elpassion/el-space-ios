@@ -27,9 +27,9 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: 10, date: dateFake, value: 3.0, comment: "fake_comment1", type: 0),
-                        ReportViewModelFake(projectId: 11, date: dateFake, value: 5.0, comment: "fake_comment2", type: 0)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: 10, value: "3.0", performedAt: "2017/08/09 22:31", comment: "fake_comment1", reportType: 0),
+                        ReportDTO.fakeReportDto(projectId: 11, value: "5.0", performedAt: "2017/08/09 22:31", comment: "fake_comment2", reportType: 0)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
@@ -76,8 +76,8 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: nil, date: dateFake, value: 8.0, comment: nil, type: 1)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: nil, value: "8.0", performedAt: "2017/08/09 22:31", comment: nil, reportType: 1)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
@@ -100,8 +100,8 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: nil, date: dateFake, value: 8.0, comment: nil, type: 2)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: nil, value: "8.0", performedAt: "2017/08/09 22:31", comment: nil, reportType: 2)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
@@ -124,8 +124,8 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: nil, date: dateFake, value: 8.0, comment: nil, type: 3)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: nil, value: "8.0", performedAt: "2017/08/09 22:31", comment: nil, reportType: 3)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),

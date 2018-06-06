@@ -48,7 +48,6 @@
 		31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */; };
 		31DEF84D1FED2554006DF14E /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
-		470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */; };
 		470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */; };
 		4723B2221FDED3B6000FE3A6 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */; };
 		473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */; };
@@ -95,8 +94,6 @@
 		47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */; };
 		47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */; };
 		47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */; };
-		47F378551F370E1F005F78E5 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F378541F370E1F005F78E5 /* ReportViewModel.swift */; };
-		47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */; };
 		47F819D81F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */; };
 		47F819DC1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DB1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift */; };
 		47F819DE1F3B1EC5003C1BD5 /* ReportsServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */; };
@@ -229,7 +226,6 @@
 		31DEF8441FED1CC6006DF14E /* ActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
 		31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryStub.swift; sourceTree = "<group>"; };
 		31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
-		470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelSpec.swift; sourceTree = "<group>"; };
 		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
 		4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenter.swift; sourceTree = "<group>"; };
@@ -276,8 +272,6 @@
 		47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebateRunnerSpy.swift; sourceTree = "<group>"; };
 		47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryMock.swift; sourceTree = "<group>"; };
-		47F378541F370E1F005F78E5 /* ReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
-		47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelFake.swift; sourceTree = "<group>"; };
 		47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelSpec.swift; sourceTree = "<group>"; };
 		47F819DB1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesControllerSpec.swift; sourceTree = "<group>"; };
 		47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsServiceStub.swift; sourceTree = "<group>"; };
@@ -552,7 +546,6 @@
 				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
-				470991CF1F39F0900088E6BF /* ReportViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -610,7 +603,6 @@
 				47F862361F2F324500E7C518 /* CoordinatorFake.swift */,
 				477161FB1F2B35220051EDE3 /* GoogleUserMapperFake.swift */,
 				47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */,
-				47F819D51F3B0391003C1BD5 /* ReportViewModelFake.swift */,
 				47AC68011FE95EAD002ECDF7 /* UIImage_fakeImage.swift */,
 			);
 			path = Fakes;
@@ -692,7 +684,6 @@
 				47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */,
 				47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */,
 				47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */,
-				47F378541F370E1F005F78E5 /* ReportViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1419,7 +1410,6 @@
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
 				4723B2221FDED3B6000FE3A6 /* ActivitiesView.swift in Sources */,
 				47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */,
-				47F378551F370E1F005F78E5 /* ReportViewModel.swift in Sources */,
 				47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */,
 				06FBBB551FE12CF90077F692 /* ChooserActivityTypesViewControlling.swift in Sources */,
 				AFB47B561F288DF400E0A922 /* Data_HubToken.swift in Sources */,
@@ -1497,7 +1487,6 @@
 				47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				478B23E21FF4BB4D0009C801 /* HolidaysServiceSpec.swift in Sources */,
-				47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
 				47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */,
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
@@ -1508,7 +1497,6 @@
 				47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */,
 				060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */,
 				060795191FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift in Sources */,
-				470991D01F39F0900088E6BF /* ReportViewModelSpec.swift in Sources */,
 				AFB47B591F288E7000E0A922 /* HubTokenSpec.swift in Sources */,
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
 				47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */,
