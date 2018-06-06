@@ -4,8 +4,6 @@ extension UINavigationController {
 
     private var gradientLayer: CAGradientLayer {
         let gradientLayer = CAGradientLayer()
-        let bounds = navigationBar.bounds
-        gradientLayer.frame = bounds
         gradientLayer.colors = [
             UIColor(color: .purpleCEC1FF).cgColor,
             UIColor(color: .purpleAB9BFF).cgColor
@@ -18,7 +16,7 @@ extension UINavigationController {
     private var backgroundImage: UIImage? {
         let layer = gradientLayer
         var updatedFrame = navigationBar.bounds
-        updatedFrame.size.height += 20
+        updatedFrame.size.height += UIApplication.shared.statusBarFrame.height
         layer.frame = updatedFrame
         UIGraphicsBeginImageContext(layer.bounds.size)
         guard let currentContext = UIGraphicsGetCurrentContext() else { return nil }
