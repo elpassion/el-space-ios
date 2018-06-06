@@ -20,7 +20,7 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.applayHubStyle()
+        navigationController?.applyHubStyle()
         navigationItem.titleView = navigationItemTitleLabel
     }
 
