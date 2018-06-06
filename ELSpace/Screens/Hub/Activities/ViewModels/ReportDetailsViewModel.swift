@@ -42,7 +42,7 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
 
     private let project: ProjectDTO?
     private let report: ReportDTO
-    private let weekdaysHoursOfWork: Double = 8.0
+    private let weekdaysHoursOfWork = 8.0
 
     private var typeTitle: String? {
         switch type {
