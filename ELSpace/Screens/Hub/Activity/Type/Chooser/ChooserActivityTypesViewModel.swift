@@ -1,6 +1,10 @@
 import UIKit
 import RxSwift
 
+protocol ChooserActivityTypesViewModeling {
+    var activityTypeViewModels: [ActivityTypeViewModeling] { get }
+}
+
 class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     init() {

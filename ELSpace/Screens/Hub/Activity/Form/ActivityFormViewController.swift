@@ -1,6 +1,11 @@
 import UIKit
 import RxSwift
 
+protocol ActivityFormViewControlling {
+    var type: AnyObserver<ActivityType> { get }
+    var form: Observable<ActivityForm> { get }
+}
+
 class ActivityFormViewController: UIViewController, ActivityFormViewControlling, UITextFieldDelegate {
 
     init(viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling) {
