@@ -143,6 +143,26 @@ class DailyReportViewModelSpec: QuickSpec {
                 }
             }
 
+            context("when initialize with weekday report with type 3") {
+                var dateFake: Date!
+
+                beforeEach {
+                    dateFake = formatter.date(from: "2017/08/09 22:31")
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: nil, value: "8.0", performedAt: "2017/08/09 22:31", comment: nil, reportType: 4)
+                    ]
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: [], isHoliday: false)
+                }
+
+                it("should have correct title") {
+                    expect(sut.title?.string).to(equal("Conference"))
+                }
+
+                it("should have correct dayType") {
+                    expect(sut.dayType).to(equal(DayType.weekday))
+                }
+            }
+
             context("when initialize with weekend date") {
                 var dateFake: Date!
 
