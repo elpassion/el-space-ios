@@ -119,11 +119,17 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         return reportsViewModel.contains(where: { viewModel -> Bool in viewModel.type == .sickLeave })
     }
 
+    private var viewModelsContainsConference: Bool {
+        return reportsViewModel.contains(where: { $0.type == .conference })
+    }
+
     private var weekdayTitle: NSAttributedString {
         if viewModelsContainsUnpaidVacations {
             return NSAttributedString(string: "Unpaid vacations", attributes: bookFontAttributes)
         } else if viewModelsContainsSickLeave {
             return NSAttributedString(string: "Sick leave", attributes: bookFontAttributes)
+        } else if viewModelsContainsConference  {
+            return NSAttributedString(string: "Conference", attributes: bookFontAttributes)
         } else {
             return normalReportText()
         }
