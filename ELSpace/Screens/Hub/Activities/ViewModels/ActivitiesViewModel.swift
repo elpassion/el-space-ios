@@ -6,7 +6,8 @@ protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     var month: String { get }
-    var openActivity: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
+    var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
+    var openActivity: Observable<[ReportDTO]> { get }
     func getData()
 }
 
@@ -36,7 +37,11 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return monthFormatter.string(from: todayDate)
     }
 
-    var openActivity: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
+    var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
+        return openReportSubject.asObservable()
+    }
+
+    var openActivity: Observable<[ReportDTO]> {
         return openActivitySubject.asObservable()
     }
 
@@ -50,8 +55,9 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportDTO]>([])
     private let holidays = BehaviorRelay<[Int]>(value: [])
-    private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
-    private let openActivitySubject = PublishSubject<(report: ReportDTO, projects: [ProjectDTO])>()
+    private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
+    private let openReportSubject = PublishSubject<(report: ReportDTO, projects: [ProjectDTO])>()
+    private let openActivitySubject = PublishSubject<[ReportDTO]>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -70,21 +76,11 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                                                  reports: reports,
                                                  projects: projects.value,
                                                  isHoliday: holidays.value.contains(date.day))
-            setupBindings(viewModel: viewModel)
             return viewModel
         }
         setupSeparators(viewModels: viewModels)
         setupCornersRounding(viewModels: viewModels)
-        self.viewModels.value = viewModels
-    }
-
-    private func setupBindings(viewModel: DailyReportViewModel) {
-        viewModel.reportsViewModel.forEach { viewModel in
-            viewModel.action.asObservable()
-                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
-                .bind(to: self.openActivitySubject)
-                .disposed(by: self.disposeBag)
-        }
+        self.viewModels.accept(viewModels)
     }
 
     private func setupSeparators(viewModels: [DailyReportViewModel]) {
@@ -140,9 +136,25 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             .disposed(by: disposeBag)
 
         activitiesController.didFinishFetch
-            .subscribe(onNext: { [weak self] in
-                self?.createViewModels()
-            }).disposed(by: disposeBag)
+            .subscribe(onNext: { [weak self] in self?.createViewModels()})
+            .disposed(by: disposeBag)
+
+        viewModels.asObservable()
+            .subscribe(onNext: { [weak self] in $0.forEach { self?.setupBindings(viewModel: $0) } })
+            .disposed(by: disposeBag)
+    }
+
+    private func setupBindings(viewModel: DailyReportViewModelProtocol) {
+        viewModel.reportsViewModel.forEach { viewModel in
+            viewModel.action.asObservable()
+                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
+                .bind(to: self.openReportSubject)
+                .disposed(by: self.disposeBag)
+        }
+//        viewModel.action.asObservable().debug()
+//            .map { viewModel.reports }
+//            .bind(to: openActivitySubject)
+//            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()

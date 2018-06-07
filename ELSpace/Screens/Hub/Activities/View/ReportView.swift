@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-class ReportView: UIView {
+class ReportView: UIControl {
 
     init() {
         super.init(frame: .zero)

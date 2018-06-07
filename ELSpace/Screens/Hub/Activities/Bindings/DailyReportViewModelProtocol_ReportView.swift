@@ -13,6 +13,10 @@ extension DailyReportViewModelProtocol {
             .bind(to: view.dateLabel.rx.attributedText)
             .disposed(by: disposeBag)
 
+        view.rx.controlEvent(.touchUpInside)
+            .bind(to: action)
+            .disposed(by: disposeBag)
+
         Observable.just(reportsViewModel)
             .subscribe(onNext: { viewModels in
                 view.reportDetailsViews = viewModels.map { viewModel -> ReportDetailsView? in

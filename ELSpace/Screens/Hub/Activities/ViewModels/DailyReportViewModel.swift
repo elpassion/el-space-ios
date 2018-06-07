@@ -11,6 +11,8 @@ protocol DailyReportViewModelProtocol {
     var isSeparatorHidden: Bool { get }
     var didTapOnReport: PublishSubject<Void> { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
+    var action: PublishSubject<Void> { get }
+    var reports: [ReportDTO] { get }
     var disposeBag: DisposeBag { get }
 }
 
@@ -20,11 +22,17 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         self.date = date
         self.todayDate = todayDate
         self.isHoliday = isHoliday
+        self.reports = reports
         reportsViewModel = reports.map { report in
             let project = projects.first(where: { $0.id == report.projectId })
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
             return reportDetailsViewModel
         }
+        print("init parent")
+    }
+
+    deinit {
+        print("deinit parent")
     }
 
     var isWorkDayOrHaveReports: Bool {
@@ -87,6 +95,10 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
 
     let didTapOnReport = PublishSubject<Void>()
     let reportsViewModel: [ReportDetailsViewModelProtocol]
+
+    let action = PublishSubject<Void>()
+    let reports: [ReportDTO]
+
     let disposeBag = DisposeBag()
 
     // MARK: - Private
