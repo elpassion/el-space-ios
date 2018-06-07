@@ -4,9 +4,9 @@ protocol ReportDetailsViewModelProtocol {
     var title: String? { get }
     var subtitle: String? { get }
     var type: ReportType? { get }
-    var report: ReportViewModelProtocol { get }
-    var action: PublishSubject<Void> { get }
     var hours: Double { get }
+    var report: ReportDTO { get }
+    var action: PublishSubject<Void> { get }
 }
 
 class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
@@ -40,14 +40,13 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         }
     }
 
-    let report: ReportViewModelProtocol
+    let report: ReportDTO
 
     let action = PublishSubject<Void>()
 
     // MARK: - Private
 
     private let project: ProjectDTO?
-    private let report: ReportDTO
     private let weekdaysHoursOfWork = 8.0
 
     private var typeTitle: String? {

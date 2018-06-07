@@ -6,7 +6,7 @@ protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     var month: String { get }
-    var openActivity: Observable<String> { get }
+    var openActivity: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
     func getData()
 }
 
@@ -36,7 +36,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return monthFormatter.string(from: todayDate)
     }
 
-    var openActivity: Observable<String> {
+    var openActivity: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
         return openActivitySubject.asObservable()
     }
 
@@ -51,7 +51,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let reports = Variable<[ReportDTO]>([])
     private let holidays = BehaviorRelay<[Int]>(value: [])
     private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
-    private let openActivitySubject = PublishSubject<String>()
+    private let openActivitySubject = PublishSubject<(report: ReportDTO, projects: [ProjectDTO])>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -81,7 +81,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private func setupBindings(viewModel: DailyReportViewModel) {
         viewModel.reportsViewModel.forEach { viewModel in
             viewModel.action.asObservable()
-                .map { viewModel.report.comment! }
+                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
                 .bind(to: self.openActivitySubject)
                 .disposed(by: self.disposeBag)
         }
