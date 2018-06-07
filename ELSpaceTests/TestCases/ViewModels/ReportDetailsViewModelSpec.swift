@@ -130,6 +130,29 @@ class ReportDetailsViewModelSpec: QuickSpec {
                 }
             }
 
+            context("when initialize with type 4") {
+                beforeEach {
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "8.0", comment: nil, reportType: 4)
+                    sut = ReportDetailsViewModel(report: fakeReport, project: nil)
+                }
+
+                it("should have correct title") {
+                    expect(sut.title).to(beNil())
+                }
+
+                it("should have correct subtitle") {
+                    expect(sut.subtitle).to(beNil())
+                }
+
+                it("should have correct type") {
+                    expect(sut.type).to(equal(.conference))
+                }
+
+                it("should have correct hours value") {
+                    expect(sut.hours).to(equal(8.0))
+                }
+            }
+
             context("when initialize with unknown type") {
                 beforeEach {
                     let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "8.0", comment: nil, reportType: 999)
