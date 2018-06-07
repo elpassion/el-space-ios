@@ -27,15 +27,15 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: 10, date: dateFake, value: 3.0, comment: "fake_comment1", type: 0),
-                        ReportViewModelFake(projectId: 11, date: dateFake, value: 5.0, comment: "fake_comment2", type: 0)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: 10, value: "3.0", performedAt: "2017/08/09 22:31", comment: "fake_comment1", reportType: 0),
+                        ReportDTO.fakeReportDto(projectId: 11, value: "5.0", performedAt: "2017/08/09 22:31", comment: "fake_comment2", reportType: 0)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -76,14 +76,14 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: nil, date: dateFake, value: 8.0, comment: nil, type: 1)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: nil, value: "8.0", performedAt: "2017/08/09 22:31", comment: nil, reportType: 1)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -100,14 +100,14 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: nil, date: dateFake, value: 8.0, comment: nil, type: 2)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: nil, value: "8.0", performedAt: "2017/08/09 22:31", comment: nil, reportType: 2)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -124,14 +124,14 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/09 22:31")
-                    let fakeReports: [ReportViewModelProtocol] = [
-                        ReportViewModelFake(projectId: nil, date: dateFake, value: 8.0, comment: nil, type: 3)
+                    let fakeReports: [ReportDTO] = [
+                        ReportDTO.fakeReportDto(projectId: nil, value: "8.0", performedAt: "2017/08/09 22:31", comment: nil, reportType: 3)
                     ]
                     let fakeProjectsDTO = [
                         ProjectDTO.fakeProjectDto(name: "fake_name1", id: 10),
                         ProjectDTO.fakeProjectDto(name: "fake_name2", id: 11)
                     ]
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO)
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: fakeReports, projects: fakeProjectsDTO, isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -148,7 +148,7 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 beforeEach {
                     dateFake = formatter.date(from: "2017/08/12 22:31")
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [], isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -193,7 +193,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         date = date + 1.day // swiftlint:disable:this shorthand_operator
                     }
                     dateFake = date
-                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: dateFake, reports: [], projects: [], isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -238,7 +238,7 @@ class DailyReportViewModelSpec: QuickSpec {
                         date = date - 1.day // swiftlint:disable:this shorthand_operator
                     }
                     dateFake = date
-                    sut = DailyReportViewModel(date: dateFake, todayDate: Date(), reports: [], projects: [])
+                    sut = DailyReportViewModel(date: dateFake, todayDate: Date(), reports: [], projects: [], isHoliday: false)
                 }
 
                 it("should have correct title") {
@@ -271,6 +271,28 @@ class DailyReportViewModelSpec: QuickSpec {
                     it("should have 0 elements") {
                         expect(reportsViewModel).to(haveCount(0))
                     }
+                }
+            }
+
+            context("when day isHoliday") {
+                beforeEach {
+                    sut = DailyReportViewModel(date: Date(), todayDate: Date(), reports: [], projects: [], isHoliday: true)
+                }
+
+                it("should have correct title") {
+                    expect(sut.title?.string).to(equal("Holiday"))
+                }
+
+                it("should have correct dayType") {
+                    expect(sut.dayType).to(equal(DayType.holiday))
+                }
+
+                it("should have correct stripeColor") {
+                    expect(sut.stripeColor).to(equal(UIColor.clear))
+                }
+
+                it("should have correct backgroundColor") {
+                    expect(sut.backgroundColor).to(equal(UIColor.clear))
                 }
             }
         }

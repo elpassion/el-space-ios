@@ -38,4 +38,8 @@ extension AppContainer {
         return ActivityService(apiClient: apiClientHubDecorator)
     }
 
+    var holidaysService: HolidaysServiceProtocol {
+        return HolidaysService(apiClient: apiClientHubDecorator)
+    }
+
 }

@@ -1,21 +1,23 @@
 import RxSwift
+import RxCocoa
 
 protocol ActivitiesControlling {
     var reports: Observable<[ReportDTO]> { get }
     var projects: Observable<[ProjectDTO]> { get }
+    var holidays: Observable<[Int]> { get }
     var isLoading: Observable<Bool> { get }
     var didFinishFetch: Observable<Void> { get }
-    func getReports(from: String, to: String)
-    func getProjects()
+    func fetchData(for date: Date)
 }
 
 class ActivitiesController: ActivitiesControlling {
 
     init(reportsService: ReportsServiceProtocol,
-         projectsService: ProjectsServiceProtocol) {
+         projectsService: ProjectsServiceProtocol,
+         holidaysService: HolidaysServiceProtocol) {
         self.reportsService = reportsService
         self.projectsService = projectsService
-        setupBindings()
+        self.holidaysService = holidaysService
     }
 
     // MARK: - ActivitiesControlling
@@ -28,78 +30,57 @@ class ActivitiesController: ActivitiesControlling {
         return projectsSubject.asObservable()
     }
 
+    var holidays: Observable<[Int]> {
+        return holidaysRelay.asObservable()
+    }
+
     var isLoading: Observable<Bool> {
-        return isLoadingVar.asObservable()
+        return activityIndicator.asSharedSequence().asObservable()
     }
 
     var didFinishFetch: Observable<Void> {
         return didFinishFetchSubject.asObservable()
     }
 
-    func getReports(from: String, to: String) {
-        isLoadingReports.value = true
-        didFinishReportFetch.value = false
-        _ = reportsService.getReports(startDate: from, endDate: to)
-            .subscribe(onNext: { [weak self] reports in
-                self?.reportsSubject.onNext(reports)
-            }, onDisposed: { [weak self] in
-                self?.didFinishReportFetch.value = true
-                self?.isLoadingReports.value = false
-            })
+    func startOfMonth(date: Date) -> String {
+        let startDay = date.startOf(component: .month)
+        return shortDateFormatter.string(from: startDay)
     }
 
-    func getProjects() {
-        isLoadingProjects.value = true
-        didFinishProjectFetch.value = false
-        _ = projectsService.getProjects()
-            .subscribe(onNext: { [weak self] projects in
+    func endOfMonth(date: Date) -> String {
+        let endDay = date.endOf(component: .month)
+        return shortDateFormatter.string(from: endDay)
+    }
+
+    func fetchData(for date: Date) {
+        Observable.combineLatest(
+            reportsService.getReports(startDate: startOfMonth(date: date), endDate: endOfMonth(date: date)),
+            projectsService.getProjects(),
+            holidaysService.getHolidays(month: date.month, year: date.year)
+        ) { (reports: $0, projects: $1, holidays: $2) }
+            .trackActivity(activityIndicator)
+            .subscribe(onNext: { [weak self] (reports, projects, holidays) in
+                self?.reportsSubject.onNext(reports)
                 self?.projectsSubject.onNext(projects)
+                self?.holidaysRelay.accept(holidays.days)
             }, onDisposed: { [weak self] in
-                self?.isLoadingProjects.value = false
-                self?.didFinishProjectFetch.value = true
-            })
+                self?.didFinishFetchSubject.onNext(())
+            }).disposed(by: disposeBag)
     }
 
     // MARK: - Private
 
     private let reportsService: ReportsServiceProtocol
     private let projectsService: ProjectsServiceProtocol
-
-    private let reportsSubject = PublishSubject<[ReportDTO]>()
-    private let projectsSubject = PublishSubject<[ProjectDTO]>()
-
-    private let didFinishReportFetch = Variable<Bool>(false)
-    private let didFinishProjectFetch = Variable<Bool>(false)
-    private let didFinishFetchSubject = PublishSubject<Void>()
-
-    // MARK: - Loading
-
-    private let isLoadingReports = Variable<Bool>(false)
-    private let isLoadingProjects = Variable<Bool>(false)
-    private let isLoadingVar = Variable<Bool>(false)
-
-    // MARK: - Bindings
-
-    private func setupBindings() {
-        Observable.of(
-            isLoadingReports.asObservable(),
-            isLoadingProjects.asObservable()
-        ).merge()
-            .bind(to: isLoadingVar)
-            .disposed(by: disposeBag)
-
-        Observable.of(
-            didFinishReportFetch.asObservable(),
-            didFinishProjectFetch.asObservable()
-        ).merge()
-            .map { [weak self] _ in
-                return self?.didFinishProjectFetch.value == true && self?.didFinishReportFetch.value == true
-            }.ignore(false)
-            .map { _ in () }
-            .bind(to: didFinishFetchSubject)
-            .disposed(by: disposeBag)
-    }
+    private let holidaysService: HolidaysServiceProtocol
 
     private let disposeBag = DisposeBag()
+    private let activityIndicator = ActivityIndicator()
+    private let reportsSubject = PublishSubject<[ReportDTO]>()
+    private let projectsSubject = PublishSubject<[ProjectDTO]>()
+    private let holidaysRelay = BehaviorRelay<[Int]>(value: [])
+
+    private let didFinishFetchSubject = PublishSubject<Void>()
+    private let shortDateFormatter = DateFormatter.shortDateFormatter
 
 }

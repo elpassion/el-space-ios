@@ -132,4 +132,5 @@ class ActivityFormViewModelSpec: QuickSpec {
             }
         }
     }
+
 }

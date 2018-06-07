@@ -4,14 +4,13 @@ import RxSwift
 
 class ActivitiesControllerSpy: ActivitiesControlling {
 
-    private(set) var didCallGetProjects = false
-    private(set) var didCallGetReports = false
-    private(set) var getReportsFromCaptured: String?
-    private(set) var getReportsToCaptured: String?
+    private(set) var didCallFetchData = false
+    private(set) var dateCaptured: Date?
 
     let isLoadingSubject = PublishSubject<Bool>()
     let reportsSubject = PublishSubject<[ReportDTO]>()
     let projectsSubject = PublishSubject<[ProjectDTO]>()
+    let holidaysSubject = PublishSubject<[Int]>()
     let didFinishFetchSubject = PublishSubject<Void>()
 
     // MARK: - ActivityControlling
@@ -32,14 +31,13 @@ class ActivitiesControllerSpy: ActivitiesControlling {
         return didFinishFetchSubject.asObservable()
     }
 
-    func getProjects() {
-        didCallGetProjects = true
+    var holidays: Observable<[Int]> {
+        return holidaysSubject.asObservable()
     }
 
-    func getReports(from: String, to: String) {
-        didCallGetReports = true
-        getReportsFromCaptured = from
-        getReportsToCaptured = to
+    func fetchData(for date: Date) {
+        didCallFetchData = true
+        dateCaptured = date
     }
 
 }

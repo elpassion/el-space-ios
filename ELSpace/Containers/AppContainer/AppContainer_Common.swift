@@ -14,7 +14,9 @@ extension AppContainer: SelectionScreenPresenterCreation {
     }
 
     var activitiesController: ActivitiesControlling {
-        return ActivitiesController(reportsService: reportsService, projectsService: projectsService)
+        return ActivitiesController(reportsService: reportsService,
+                                    projectsService: projectsService,
+                                    holidaysService: holidaysService)
     }
 
     // MARK: - Presenters
