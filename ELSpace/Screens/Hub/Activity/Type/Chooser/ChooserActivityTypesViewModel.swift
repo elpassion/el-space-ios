@@ -21,9 +21,9 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
     // MARK: - Private
 
     private let report: ReportDTO
-    private let timeReportViewModel = ActivityTypeViewModel(type: .timeReport)
-    private let vacationViewModel = ActivityTypeViewModel(type: .vacation)
-    private let dayOffViewModel = ActivityTypeViewModel(type: .dayOff)
+    private let timeReportViewModel = ActivityTypeViewModel(type: .normal)
+    private let vacationViewModel = ActivityTypeViewModel(type: .paidVacations)
+    private let dayOffViewModel = ActivityTypeViewModel(type: .unpaidDayOff)
     private let sickLeaveViewModel = ActivityTypeViewModel(type: .sickLeave)
     private let conferenceViewModel = ActivityTypeViewModel(type: .conference)
 

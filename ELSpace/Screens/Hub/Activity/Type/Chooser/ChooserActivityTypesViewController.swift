@@ -2,8 +2,8 @@ import UIKit
 import RxSwift
 
 protocol ChooserActivityTypesViewControlling {
-    var selected: Observable<ActivityType> { get }
-    var select: AnyObserver<ActivityType> { get }
+    var selected: Observable<ReportType> { get }
+    var select: AnyObserver<ReportType> { get }
 }
 
 class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypesViewControlling {
@@ -28,11 +28,11 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
 
     // MARK: ActivityTypeViewControlling
 
-    var selected: Observable<ActivityType> {
+    var selected: Observable<ReportType> {
         return selectedTypeSubject.asObservable()
     }
 
-    var select: AnyObserver<ActivityType> {
+    var select: AnyObserver<ReportType> {
         return AnyObserver(eventHandler: { [weak self] event in
             guard let type = event.element else { return }
             let reportTypeViewModel = self?.viewModel.activityTypeViewModels.filter { $0.type == type }.first
@@ -43,7 +43,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     // MARK: Privates
 
     private let viewModel: ChooserActivityTypesViewModeling
-    private let selectedTypeSubject = PublishSubject<ActivityType>()
+    private let selectedTypeSubject = PublishSubject<ReportType>()
     private let disposeBag = DisposeBag()
 
     private var activityTypesView: ChooserActivityTypesView! {

@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 
 protocol ActivityTypeViewModeling: class {
-    var type: ActivityType { get }
+    var type: ReportType { get }
     var imageSelected: UIImage? { get }
     var imageUnselected: UIImage? { get }
     var title: String { get }
@@ -12,18 +12,18 @@ protocol ActivityTypeViewModeling: class {
 
 class ActivityTypeViewModel: ActivityTypeViewModeling {
 
-    init(type: ActivityType) {
+    init(type: ReportType) {
         self.type = type
         switch type {
-        case .timeReport:
+        case .normal:
             imageUnselected = UIImage(named: "time_report_unselected")
             imageSelected = UIImage(named: "time_report_selected")
             title = "TIME REPORT"
-        case .vacation:
+        case .paidVacations:
             imageUnselected = UIImage(named: "vacation_unselected")
             imageSelected = UIImage(named: "vacation_selected")
             title = "VACATION"
-        case .dayOff:
+        case .unpaidDayOff:
             imageUnselected = UIImage(named: "day_off_unselected")
             imageSelected = UIImage(named: "day_off_selected")
             title = "DAY OFF"
@@ -38,7 +38,7 @@ class ActivityTypeViewModel: ActivityTypeViewModeling {
         }
     }
 
-    let type: ActivityType
+    let type: ReportType
     let imageSelected: UIImage?
     let imageUnselected: UIImage?
     let title: String

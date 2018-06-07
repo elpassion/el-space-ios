@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 
 protocol ActivityFormViewControlling {
-    var type: AnyObserver<ActivityType> { get }
+    var type: AnyObserver<ReportType> { get }
     var form: Observable<ActivityForm> { get }
 }
 
@@ -31,7 +31,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
     // MARK: - ActivityFormViewControlling
 
-    var type: AnyObserver<ActivityType> {
+    var type: AnyObserver<ReportType> {
         return viewModel.type
     }
 
