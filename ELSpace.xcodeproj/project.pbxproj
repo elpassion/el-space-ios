@@ -138,6 +138,9 @@
 		5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2451EDEE7A2001A487E /* LoginViewController.swift */; };
 		50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* LoginView.swift */; };
 		50902FD31EE5B06B00D43254 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* Button.swift */; };
+		7935D8EB20C829350024A00E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8EA20C829350024A00E /* UserService.swift */; };
+		7935D8EC20C829350024A00E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8EA20C829350024A00E /* UserService.swift */; };
+		7935D8EE20C82A430024A00E /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8ED20C82A430024A00E /* UserDTO.swift */; };
 		862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */; };
 		862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49B01EF151A50033112C /* UIAlertController+Creation.swift */; };
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
@@ -323,6 +326,8 @@
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50902FC51EE5AAC700D43254 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		50902FD21EE5B06B00D43254 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Button.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		7935D8EA20C829350024A00E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		7935D8ED20C82A430024A00E /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManager.swift; sourceTree = "<group>"; };
 		862F49B01EF151A50033112C /* UIAlertController+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Creation.swift"; sourceTree = "<group>"; };
@@ -564,6 +569,7 @@
 				310E803D1FED2ACB0001E4A5 /* NewActivityDTO.swift */,
 				47FE97701F347DF1009EEE1C /* ProjectDTO.swift */,
 				473CBF991F33414100B80FA4 /* ReportDTO.swift */,
+				7935D8ED20C82A430024A00E /* UserDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -962,6 +968,7 @@
 				AF4825891F27813C0081B2CC /* HubTokenService.swift */,
 				47FE976E1F347A31009EEE1C /* ProjectsService.swift */,
 				473CBF961F33404600B80FA4 /* ReportsService.swift */,
+				7935D8EA20C829350024A00E /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1402,6 +1409,7 @@
 				062CCFC91FE04CBA00B04ACE /* ActivityTypeView.swift in Sources */,
 				47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */,
 				47F1DCA91F309F320039B34E /* ActivitiesCoordinator.swift in Sources */,
+				7935D8EE20C82A430024A00E /* UserDTO.swift in Sources */,
 				47FE97711F347DF1009EEE1C /* ProjectDTO.swift in Sources */,
 				47DF82E71FE13913009BF96A /* UIView_backgroundColor.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
@@ -1434,6 +1442,7 @@
 				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
 				473CBF911F33191600B80FA4 /* AppContainer_Common.swift in Sources */,
 				AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */,
+				7935D8EB20C829350024A00E /* UserService.swift in Sources */,
 				AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */,
 				862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */,
 				062CCFC71FE04A3000B04ACE /* ChooserActivityTypesView.swift in Sources */,
@@ -1495,6 +1504,7 @@
 				47F819E41F3B3E12003C1BD5 /* ActivityControllerSpy.swift in Sources */,
 				0666C2461FD85384006D1883 /* UINavigationControllerSpy.swift in Sources */,
 				47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */,
+				7935D8EC20C829350024A00E /* UserService.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				478B23E21FF4BB4D0009C801 /* HolidaysServiceSpec.swift in Sources */,
 				47F819D61F3B0391003C1BD5 /* ReportViewModelFake.swift in Sources */,
