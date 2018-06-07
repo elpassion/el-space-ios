@@ -138,6 +138,7 @@
 		5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2451EDEE7A2001A487E /* LoginViewController.swift */; };
 		50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* LoginView.swift */; };
 		50902FD31EE5B06B00D43254 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* Button.swift */; };
+		79181EF720C920AD006997DB /* UserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79181EF620C920AD006997DB /* UserServiceSpec.swift */; };
 		7935D8EB20C829350024A00E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8EA20C829350024A00E /* UserService.swift */; };
 		7935D8EE20C82A430024A00E /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8ED20C82A430024A00E /* UserDTO.swift */; };
 		862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */; };
@@ -325,6 +326,7 @@
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50902FC51EE5AAC700D43254 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		50902FD21EE5B06B00D43254 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Button.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		79181EF620C920AD006997DB /* UserServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceSpec.swift; sourceTree = "<group>"; };
 		7935D8EA20C829350024A00E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7935D8ED20C82A430024A00E /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1040,6 +1042,7 @@
 				AFB47B5B1F28969F00E0A922 /* HubTokenServiceSpec.swift */,
 				47FE97721F348078009EEE1C /* ProjectsServiceSpec.swift */,
 				47C1C4F91F336F04009946BE /* ReportsServiceSpec.swift */,
+				79181EF620C920AD006997DB /* UserServiceSpec.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1538,6 +1541,7 @@
 				47F819E21F3B3DE4003C1BD5 /* ActivitiesViewModelSpec.swift in Sources */,
 				47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */,
 				47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */,
+				79181EF720C920AD006997DB /* UserServiceSpec.swift in Sources */,
 				47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */,
 				47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */,
 				47F819DC1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift in Sources */,
