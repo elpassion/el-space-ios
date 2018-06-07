@@ -18,7 +18,7 @@ extension DailyReportViewModelProtocol {
                 view.reportDetailsViews = viewModels.map { viewModel -> ReportDetailsView? in
                     guard viewModel.type == .normal || viewModel.type == .paidVacations else { return nil }
                     let control = ReportDetailsView(title: viewModel.title, subtitle: viewModel.subtitle)
-                    control.rx.controlEvent(.touchUpInside).debug()
+                    control.rx.controlEvent(.touchUpInside)
                         .bind(to: viewModel.action)
                         .disposed(by: disposeBag)
                     return control
