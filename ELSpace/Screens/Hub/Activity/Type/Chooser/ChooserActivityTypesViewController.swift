@@ -60,6 +60,8 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
             view.titleLabel.text = viewModel.title
             view.titleLabel.textColor = self.titleColorForState(false)
             view.imageView.image = viewModel.imageUnselected
+            view.isUserInteractionEnabled = viewModel.isUserInteractionEnabled
+            view.alpha = viewModel.isUserInteractionEnabled ? 1.0 : 0.5
             viewModel.isSelected
                 .subscribe(onNext: { [weak view, weak self] isSelected in
                     view?.imageView.image = isSelected ? viewModel.imageSelected : viewModel.imageUnselected

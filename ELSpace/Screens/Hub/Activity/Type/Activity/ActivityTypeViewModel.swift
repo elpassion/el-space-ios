@@ -7,6 +7,7 @@ protocol ActivityTypeViewModeling: class {
     var imageSelected: UIImage? { get }
     var imageUnselected: UIImage? { get }
     var title: String { get }
+    var isUserInteractionEnabled: Bool { get }
     var isSelected: BehaviorRelay<Bool> { get }
 }
 
@@ -14,6 +15,7 @@ class ActivityTypeViewModel: ActivityTypeViewModeling {
 
     init(type: ReportType) {
         self.type = type
+        self.isUserInteractionEnabled = false
         switch type {
         case .normal:
             imageUnselected = UIImage(named: "time_report_unselected")
@@ -42,7 +44,8 @@ class ActivityTypeViewModel: ActivityTypeViewModeling {
     let imageSelected: UIImage?
     let imageUnselected: UIImage?
     let title: String
+    let isUserInteractionEnabled: Bool
 
-    var isSelected = BehaviorRelay<Bool>(value: false)
+    var isSelected = BehaviorRelay(value: false)
 
 }
