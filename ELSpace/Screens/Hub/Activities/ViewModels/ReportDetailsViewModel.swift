@@ -34,6 +34,7 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         case .some(.paidVacations): return weekdaysHoursOfWork
         case .some(.unpaidDayOff): return weekdaysHoursOfWork
         case .some(.sickLeave): return weekdaysHoursOfWork
+        case .some(.conference): return weekdaysHoursOfWork
         default: return 0.0
         }
     }
@@ -66,4 +67,5 @@ enum ReportType: Int {
     case paidVacations
     case unpaidDayOff
     case sickLeave
+    case conference
 }
