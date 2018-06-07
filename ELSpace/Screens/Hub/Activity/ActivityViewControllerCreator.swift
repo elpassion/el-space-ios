@@ -12,7 +12,7 @@ struct ActivityViewControllerCreator: ActivityViewControllerCreating {
         let projectScope: [ProjectDTO]
 
         var typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling {
-            return ChooserActivityTypeAssembly().viewController()
+            return ChooserActivityTypeAssembly().viewController(report: report)
         }
 
         var formViewController: UIViewController & ActivityFormViewControlling {

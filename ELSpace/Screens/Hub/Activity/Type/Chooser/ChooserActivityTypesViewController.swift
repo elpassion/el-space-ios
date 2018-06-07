@@ -36,7 +36,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
         return AnyObserver(eventHandler: { [weak self] event in
             guard let type = event.element else { return }
             let reportTypeViewModel = self?.viewModel.activityTypeViewModels.filter { $0.type == type }.first
-            reportTypeViewModel?.isSelected.onNext(true)
+            reportTypeViewModel?.isSelected.accept(true)
         })
     }
 

@@ -1,12 +1,13 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 protocol ActivityTypeViewModeling: class {
     var type: ActivityType { get }
     var imageSelected: UIImage? { get }
     var imageUnselected: UIImage? { get }
     var title: String { get }
-    var isSelected: PublishSubject<Bool> { get }
+    var isSelected: BehaviorRelay<Bool> { get }
 }
 
 class ActivityTypeViewModel: ActivityTypeViewModeling {
@@ -42,6 +43,6 @@ class ActivityTypeViewModel: ActivityTypeViewModeling {
     let imageUnselected: UIImage?
     let title: String
 
-    var isSelected = PublishSubject<Bool>()
+    var isSelected = BehaviorRelay<Bool>(value: false)
 
 }

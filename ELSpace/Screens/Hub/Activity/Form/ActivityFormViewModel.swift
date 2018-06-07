@@ -26,9 +26,9 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         self.report = report
         self.projectScope = projectScope
         projectNamesSubject = BehaviorSubject<[String]>(value: projectScope.map { $0.name })
-        projectSelectedSubject = BehaviorSubject<String>(value: "Avenue")
+        projectSelectedSubject = BehaviorSubject<String>(value: projectScope.filter { $0.id == report.projectId }.first?.name ?? "")
         updateHoursSubject = BehaviorSubject<String>(value: "\(report.value)")
-        updateCommentSubject = BehaviorSubject<String>(value: report.comment!)
+        updateCommentSubject = BehaviorSubject<String>(value: report.comment ?? "")
     }
 
     // MARK: - ActivityFormViewInputModeling
