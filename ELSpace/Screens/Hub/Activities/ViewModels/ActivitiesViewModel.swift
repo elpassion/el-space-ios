@@ -151,10 +151,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 .bind(to: self.openReportSubject)
                 .disposed(by: self.disposeBag)
         }
-//        viewModel.action.asObservable().debug()
-//            .map { viewModel.reports }
-//            .bind(to: openActivitySubject)
-//            .disposed(by: disposeBag)
+        viewModel.action.asObservable().debug()
+            .map { viewModel.reports }
+            .bind(to: openActivitySubject)
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()

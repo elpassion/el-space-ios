@@ -7,6 +7,7 @@ protocol ReportDetailsViewModelProtocol {
     var hours: Double { get }
     var report: ReportDTO { get }
     var action: PublishSubject<Void> { get }
+    var disposeBag: DisposeBag { get }
 }
 
 class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
@@ -49,6 +50,8 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
     let report: ReportDTO
 
     let action = PublishSubject<Void>()
+
+    let disposeBag = DisposeBag()
 
     // MARK: - Private
 

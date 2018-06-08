@@ -68,7 +68,10 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
     private let addActivitySubject = PublishSubject<Void>()
 
     private func setDailyReports() {
-        activitiesView.stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        activitiesView.stackView.arrangedSubviews.forEach {
+            activitiesView.stackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
         let views = viewModels.map { viewModel -> ReportView in
             let view = ReportView()
             viewModel.bind(to: view).disposed(by: viewModel.disposeBag)
