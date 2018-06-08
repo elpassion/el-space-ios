@@ -7,7 +7,6 @@ protocol ActivitiesViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var month: String { get }
     var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
-    var openActivity: Observable<[ReportDTO]> { get }
     func getData()
 }
 
@@ -17,11 +16,6 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         self.activitiesController = activitiesController
         self.todayDate = todayDate
         setupBindings()
-        print("init activities")
-    }
-
-    deinit {
-        print("deinit activities")
     }
 
     // MARK: - ActivitiesViewModelProtocol
@@ -43,11 +37,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
-        return openReportSubject.asObservable()
-    }
-
-    var openActivity: Observable<[ReportDTO]> {
-        return openActivitySubject.asObservable()
+        return openReportRelay.asObservable()
     }
 
     // MARK: - Private
@@ -61,8 +51,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let reports = Variable<[ReportDTO]>([])
     private let holidays = BehaviorRelay<[Int]>(value: [])
     private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
-    private let openReportSubject = PublishSubject<(report: ReportDTO, projects: [ProjectDTO])>()
-    private let openActivitySubject = PublishSubject<[ReportDTO]>()
+    private let openReportRelay = PublishRelay<(report: ReportDTO, projects: [ProjectDTO])>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -151,15 +140,21 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func setupBindings(viewModel: DailyReportViewModelProtocol) {
-//        viewModel.reportsViewModel.forEach { viewModel in
-//            viewModel.action.asObservable().debug()
-//                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
-//                .bind(to: self.openReportSubject)
-//                .disposed(by: self.disposeBag)
-//        }
+        viewModel.reportsViewModel.forEach { viewModel in
+            viewModel.action
+                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
+                .bind(to: self.openReportRelay)
+                .disposed(by: self.disposeBag)
+        }
         viewModel.action
             .map { viewModel.reports }
-            .bind(to: openActivitySubject)
+            .filter { reports -> Bool in
+                guard reports.count == 1 else { return false }
+                guard let firstReport = reports.first, let reportType = ReportType(rawValue: firstReport.reportType) else { return false }
+                return reportType.isWholeDayActivity
+            }
+            .map { (report: $0[0], projects: []) }
+            .bind(to: openReportRelay)
             .disposed(by: viewModel.disposeBag)
     }
 
@@ -171,6 +166,14 @@ extension ActivitiesViewModelProtocol {
 
     var monthObservable: Observable<String> {
         return Observable.just(month)
+    }
+
+}
+
+extension ReportType {
+
+    var isWholeDayActivity: Bool {
+        return self == .unpaidDayOff || self == .sickLeave || self == .conference
     }
 
 }

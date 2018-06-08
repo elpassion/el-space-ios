@@ -9,15 +9,10 @@ class ReportDetailsView: UIControl {
         super.init(frame: .zero)
         addSubviews()
         setupLayout()
-        isUserInteractionEnabled = false
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    deinit {
-        print("deinit details VIEW")
     }
 
     // MARK: - Subviews

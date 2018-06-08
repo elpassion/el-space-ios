@@ -15,11 +15,6 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
     init(report: ReportDTO, project: ProjectDTO?) {
         self.report = report
         self.project = project
-        print("init details")
-    }
-
-    deinit {
-        print("deinit details")
     }
 
     // MARK: - ReportDetailsViewModelProtocol
