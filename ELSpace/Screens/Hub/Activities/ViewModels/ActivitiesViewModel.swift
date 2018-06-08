@@ -60,7 +60,6 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func createViewModels() {
-        self.viewModels.accept([])
         let viewModels = days.map { date -> DailyReportViewModel in
             let reports = self.reports.value.filter {
                 let reportDate = getDate(stringDate: $0.performedAt)
@@ -131,7 +130,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             .disposed(by: disposeBag)
 
         activitiesController.didFinishFetch
-            .subscribe(onNext: { [weak self] in self?.createViewModels()})
+            .subscribe(onNext: { [weak self] in self?.createViewModels() })
             .disposed(by: disposeBag)
 
         viewModels.asObservable()
