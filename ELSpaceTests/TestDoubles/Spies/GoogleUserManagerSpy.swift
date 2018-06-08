@@ -9,6 +9,7 @@ class GoogleUserManagerSpy: GoogleUserManaging {
     var resultError: Error?
     var resultUser: GIDGoogleUser?
     private(set) var viewController: UIViewController?
+    private(set) var didCallAutoSignIn = false
 
     // MARK: - GoogleUserManaging
 
@@ -27,6 +28,10 @@ class GoogleUserManagerSpy: GoogleUserManaging {
         } else if let user = resultUser {
             validationSuccessSubject.onNext(user)
         }
+    }
+
+    func autoSignIn() {
+        didCallAutoSignIn = true
     }
 
     // MARK: - Private

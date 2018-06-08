@@ -32,6 +32,11 @@ class LoginViewController: UIViewController, LoginViewControlling {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        googleUserManager.autoSignIn()
+    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

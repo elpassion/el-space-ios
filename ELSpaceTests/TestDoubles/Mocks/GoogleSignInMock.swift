@@ -12,6 +12,9 @@ class GoogleSignInMock: GoogleSignInProtocol {
 
     var signInCalled = false
     var disconnectCalled = false
+    var didCallSignInSilently = false
+    var didCallAuthInKeychain = false
+    var authInKeychainResult = false
 
     // MARK: - GoogleSignInProtocol
 
@@ -24,6 +27,15 @@ class GoogleSignInMock: GoogleSignInProtocol {
 
     func disconnect() {
         disconnectCalled = true
+    }
+
+    func signInSilently() {
+        didCallSignInSilently = true
+    }
+
+    func hasAuthInKeychain() -> Bool {
+        didCallAuthInKeychain = true
+        return authInKeychainResult
     }
 
     var hostedDomain: String!

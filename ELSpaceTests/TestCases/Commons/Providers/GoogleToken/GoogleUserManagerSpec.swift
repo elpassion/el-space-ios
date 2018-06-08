@@ -37,6 +37,18 @@ class GoogleUserManagerSpec: QuickSpec {
                                             hostedDomain: "abc@gmail.com")
                 }
 
+                context("when call autoSignIn") {
+                    beforeEach {
+                        sut.autoSignIn()
+                    }
+
+                    describe("googleUserProvider") {
+                        it("should call autoSignIn") {
+                            expect(googleUserProviderSpy.didCallAutoSignIn).to(beTrue())
+                        }
+                    }
+                }
+
                 context("when signIn") {
                     var fakeViewController: UIViewController!
 

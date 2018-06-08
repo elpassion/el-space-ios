@@ -55,6 +55,16 @@ class LoginViewControllerSpec: QuickSpec {
                     }
                 }
 
+                context("when viewDidAppear") {
+                    beforeEach {
+                        sut.viewDidAppear(true)
+                    }
+
+                    it("should call autoSignIn") {
+                        expect(googleUserManagerSpy.didCallAutoSignIn).to(beTrue())
+                    }
+                }
+
                 context("when viewWillAppear") {
                     beforeEach {
                         sut.viewWillAppear(true)
