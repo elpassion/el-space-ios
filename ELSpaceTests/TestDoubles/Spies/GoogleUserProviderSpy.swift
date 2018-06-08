@@ -9,6 +9,7 @@ class GoogleUserProviderSpy: GoogleUserProviding {
     private(set) var didDisconnect = false
     private(set) var didSignIn = false
     private(set) var didSignInOnViewController: UIViewController?
+    private(set) var didCallAutoSignIn = false
 
     var resultUser: GIDGoogleUser?
 
@@ -30,6 +31,10 @@ class GoogleUserProviderSpy: GoogleUserProviding {
 
     func disconnect() {
         didDisconnect = true
+    }
+
+    func autoSignIn() {
+        didCallAutoSignIn = true
     }
 
     // MARK: Private
