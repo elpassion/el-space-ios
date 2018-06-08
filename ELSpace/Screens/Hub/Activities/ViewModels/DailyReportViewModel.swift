@@ -9,6 +9,7 @@ protocol DailyReportViewModelProtocol {
     var topCornersRounded: Bool { get }
     var bottomCornersRounded: Bool { get }
     var isSeparatorHidden: Bool { get }
+    var hideAddReportButton: Bool { get }
     var didTapOnReport: PublishSubject<Void> { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var disposeBag: DisposeBag { get }
@@ -84,6 +85,10 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var topCornersRounded = false
     var bottomCornersRounded = false
     var isSeparatorHidden = false
+
+    var hideAddReportButton: Bool {
+        return viewModelsContainsConference || viewModelsContainsSickLeave || viewModelsContainsUnpaidVacations
+    }
 
     let didTapOnReport = PublishSubject<Void>()
     let reportsViewModel: [ReportDetailsViewModelProtocol]

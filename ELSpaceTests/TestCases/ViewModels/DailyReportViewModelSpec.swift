@@ -58,6 +58,10 @@ class DailyReportViewModelSpec: QuickSpec {
                     expect(sut.backgroundColor).to(equal(UIColor.white))
                 }
 
+                it("should have correct hideAddReportButton value") {
+                    expect(sut.hideAddReportButton).to(beFalse())
+                }
+
                 describe("ReportsViewModel") {
                     var reportsViewModel: [ReportDetailsViewModelProtocol]!
 
@@ -93,6 +97,10 @@ class DailyReportViewModelSpec: QuickSpec {
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.weekday))
                 }
+
+                it("should have correct hideAddReportButton value") {
+                    expect(sut.hideAddReportButton).to(beFalse())
+                }
             }
 
             context("when initialize with weekday report with type 2") {
@@ -116,6 +124,10 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.weekday))
+                }
+
+                it("should have correct hideAddReportButton value") {
+                    expect(sut.hideAddReportButton).to(beTrue())
                 }
             }
 
@@ -141,6 +153,10 @@ class DailyReportViewModelSpec: QuickSpec {
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.weekday))
                 }
+
+                it("should have correct hideAddReportButton value") {
+                    expect(sut.hideAddReportButton).to(beTrue())
+                }
             }
 
             context("when initialize with weekday report with type 3") {
@@ -160,6 +176,10 @@ class DailyReportViewModelSpec: QuickSpec {
 
                 it("should have correct dayType") {
                     expect(sut.dayType).to(equal(DayType.weekday))
+                }
+
+                it("should have correct hideAddReportButton value") {
+                    expect(sut.hideAddReportButton).to(beTrue())
                 }
             }
 

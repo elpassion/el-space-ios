@@ -71,7 +71,7 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
         activitiesView.stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         let views = viewModels.map { viewModel -> ReportView in
             let view = ReportView()
-            viewModel.bind(to: view).disposed(by: viewModel.disposeBag)
+            bind(viewModel: viewModel, to: view).disposed(by: viewModel.disposeBag)
             return view
         }
         views.forEach { activitiesView.stackView.addArrangedSubview($0) }
