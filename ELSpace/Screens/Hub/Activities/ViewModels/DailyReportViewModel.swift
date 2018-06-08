@@ -9,6 +9,7 @@ protocol DailyReportViewModelProtocol {
     var topCornersRounded: Bool { get }
     var bottomCornersRounded: Bool { get }
     var isSeparatorHidden: Bool { get }
+    var hideAddReportButton: Bool { get }
     var didTapOnReport: PublishSubject<Void> { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var disposeBag: DisposeBag { get }
@@ -85,6 +86,10 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     var bottomCornersRounded = false
     var isSeparatorHidden = false
 
+    var hideAddReportButton: Bool {
+        return viewModelsContainsConference || viewModelsContainsSickLeave || viewModelsContainsUnpaidVacations
+    }
+
     let didTapOnReport = PublishSubject<Void>()
     let reportsViewModel: [ReportDetailsViewModelProtocol]
     let disposeBag = DisposeBag()
@@ -96,7 +101,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     private let isHoliday: Bool
 
     private var dayHours: Double {
-        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.hours + result }
+        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in (viewModel.hours ?? 0) + result }
     }
 
     private let dayFormatter = DateFormatter.dayFormatter

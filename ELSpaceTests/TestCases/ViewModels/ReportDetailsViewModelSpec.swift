@@ -63,7 +63,7 @@ class ReportDetailsViewModelSpec: QuickSpec {
 
             context("when initialize with type 1") {
                 beforeEach {
-                    let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "8.0", comment: nil, reportType: 1)
+                    let fakeReport = ReportDTO.fakeReportDto(projectId: nil, value: "5.0", comment: nil, reportType: 1)
                     sut = ReportDetailsViewModel(report: fakeReport, project: nil)
                 }
 
@@ -80,7 +80,7 @@ class ReportDetailsViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct hours value") {
-                    expect(sut.hours).to(equal(8.0))
+                    expect(sut.hours).to(equal(5.0))
                 }
             }
 
@@ -103,7 +103,7 @@ class ReportDetailsViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct hours value") {
-                    expect(sut.hours).to(equal(8.0))
+                    expect(sut.hours).to(beNil())
                 }
             }
 
@@ -126,7 +126,7 @@ class ReportDetailsViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct hours value") {
-                    expect(sut.hours).to(equal(8.0))
+                    expect(sut.hours).to(beNil())
                 }
             }
 
@@ -149,7 +149,7 @@ class ReportDetailsViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct hours value") {
-                    expect(sut.hours).to(equal(8.0))
+                    expect(sut.hours).to(beNil())
                 }
             }
 
@@ -164,7 +164,7 @@ class ReportDetailsViewModelSpec: QuickSpec {
                 }
 
                 it("should have correct hours value") {
-                    expect(sut.hours).to(equal(0.0))
+                    expect(sut.hours).to(beNil())
                 }
             }
         }
