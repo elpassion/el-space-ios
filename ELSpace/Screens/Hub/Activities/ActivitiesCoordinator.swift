@@ -50,11 +50,11 @@ class ActivitiesCoordinator: Coordinator {
                 viewController?.navigationItemTitle = month
             }).disposed(by: disposeBag)
 
-        viewModel.openReport
+        viewModel.openReport.debug()
             .subscribe(onNext: { [weak self] in self?.showActivity(report: $0.report, projects: $0.projects) })
             .disposed(by: disposeBag)
 
-        viewModel.openActivity
+        viewModel.openActivity.debug()
             .subscribe(onNext: { [weak self] in
                 guard let firstActivity = $0.first else { return }
                 self?.showActivity(report: firstActivity, projects: []) })

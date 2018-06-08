@@ -29,11 +29,11 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
             return reportDetailsViewModel
         }
-        print("init parent")
+        print("init daily")
     }
 
     deinit {
-        print("deinit parent")
+        print("deinit daily")
     }
 
     var isWorkDayOrHaveReports: Bool {

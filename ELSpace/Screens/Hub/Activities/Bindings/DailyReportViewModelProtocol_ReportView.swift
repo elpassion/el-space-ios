@@ -23,6 +23,10 @@ extension ActivitiesViewController {
             return control
         }.compactMap { $0 }
 
+        view.contentContainer.rx.controlEvent(.touchUpInside).debug()
+            .bind(to: viewModel.action)
+            .disposed(by: disposeBag)
+
         return disposeBag
     }
 

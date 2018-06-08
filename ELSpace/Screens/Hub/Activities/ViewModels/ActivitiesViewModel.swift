@@ -17,6 +17,11 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         self.activitiesController = activitiesController
         self.todayDate = todayDate
         setupBindings()
+        print("init activities")
+    }
+
+    deinit {
+        print("deinit activities")
     }
 
     // MARK: - ActivitiesViewModelProtocol
@@ -66,6 +71,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func createViewModels() {
+        self.viewModels.accept([])
         let viewModels = days.map { date -> DailyReportViewModel in
             let reports = self.reports.value.filter {
                 let reportDate = getDate(stringDate: $0.performedAt)
@@ -145,16 +151,16 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func setupBindings(viewModel: DailyReportViewModelProtocol) {
-        viewModel.reportsViewModel.forEach { viewModel in
-            viewModel.action.asObservable()
-                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
-                .bind(to: self.openReportSubject)
-                .disposed(by: self.disposeBag)
-        }
-        viewModel.action.asObservable().debug()
+//        viewModel.reportsViewModel.forEach { viewModel in
+//            viewModel.action.asObservable().debug()
+//                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
+//                .bind(to: self.openReportSubject)
+//                .disposed(by: self.disposeBag)
+//        }
+        viewModel.action
             .map { viewModel.reports }
             .bind(to: openActivitySubject)
-            .disposed(by: disposeBag)
+            .disposed(by: viewModel.disposeBag)
     }
 
     private let disposeBag = DisposeBag()
