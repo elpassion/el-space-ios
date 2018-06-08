@@ -64,12 +64,8 @@ class ActivitiesCoordinatorSpec: QuickSpec {
 
             context("when presenting activity screen") {
                 beforeEach {
-                    let dailyReportViewModel = DailyReportViewModel(date: Date(),
-                                                                    todayDate: Date(),
-                                                                    reports: [],
-                                                                    projects: [],
-                                                                    isHoliday: false)
-                    activitiesViewModelSpy.openActivitySubject.onNext(dailyReportViewModel)
+                    let report = ReportDTO(id: 1, userId: 1, projectId: 1, value: "1", performedAt: "1", comment: "1", createdAt: "1", updatedAt: "1", billable: true, reportType: 1)
+                    activitiesViewModelSpy.openReportSubject.onNext((report: report, projects: []))
                 }
 
                 it("should push activity screen") {

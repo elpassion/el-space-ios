@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import RxTest
+import RxCocoa
 
 @testable import ELSpace
 
@@ -11,7 +12,17 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
             var sut: ChooserActivityTypesViewModel!
 
             beforeEach {
-                sut = ChooserActivityTypesViewModel()
+                let report = ReportDTO(id: 1,
+                                       userId: 2,
+                                       projectId: 3,
+                                       value: "4",
+                                       performedAt: "5",
+                                       comment: "6",
+                                       createdAt: "7",
+                                       updatedAt: "8",
+                                       billable: true,
+                                       reportType: 1)
+                sut = ChooserActivityTypesViewModel(report: report)
             }
 
             it("should return 5 report types") {
@@ -21,17 +32,17 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
             describe("types and order") {
                 it("should have first time report") {
                     let viewModel = sut.activityTypeViewModels[0] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .timeReport)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .normal)))
                 }
 
                 it("should have second time report") {
                     let viewModel = sut.activityTypeViewModels[1] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .vacation)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .paidVacations)))
                 }
 
                 it("should have third time report") {
                     let viewModel = sut.activityTypeViewModels[2] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .dayOff)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .unpaidDayOff)))
                 }
 
                 it("should have fourth time report") {
@@ -42,6 +53,10 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
                 it("should have fifth time report") {
                     let viewModel = sut.activityTypeViewModels[4] as! ActivityTypeViewModel
                     expect(viewModel).to(equal(ActivityTypeViewModel(type: .conference)))
+                }
+
+                it("should paid vacations be selected") {
+                    expect(sut.activityTypeViewModels[1].isSelected.value).to(beTrue())
                 }
             }
 
@@ -69,7 +84,7 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
 
                 context("when selecting time report") {
                     beforeEach {
-                        sut.activityTypeViewModels[0].isSelected.onNext(true)
+                        sut.activityTypeViewModels[0].isSelected.accept(true)
                     }
 
                     it("should properly update time report state") {
@@ -77,24 +92,24 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
                     }
 
                     it("should properly update vacation state") {
-                        expect(isVacationSelectedObserver.events.last).to(beNil())
+                        expect(isVacationSelectedObserver.events.last?.value.element).to(beFalse())
                     }
 
                     it("should properly update day off state") {
-                        expect(isDayOffSelectedObserver.events.last).to(beNil())
+                        expect(isDayOffSelectedObserver.events.last?.value.element).to(beFalse())
                     }
 
                     it("should properly update sick leave state") {
-                        expect(isSickLeaveSelectedObserver.events.last).to(beNil())
+                        expect(isSickLeaveSelectedObserver.events.last?.value.element).to(beFalse())
                     }
 
                     it("should properly update conference state") {
-                        expect(isConferenceSelectedObserver.events.last).to(beNil())
+                        expect(isConferenceSelectedObserver.events.last?.value.element).to(beFalse())
                     }
 
                     context("when selecting vacation") {
                         beforeEach {
-                            sut.activityTypeViewModels[1].isSelected.onNext(true)
+                            sut.activityTypeViewModels[1].isSelected.accept(true)
                         }
 
                         it("should properly update time report state") {
@@ -106,15 +121,15 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
                         }
 
                         it("should properly update day off state") {
-                            expect(isDayOffSelectedObserver.events.last).to(beNil())
+                            expect(isDayOffSelectedObserver.events.last?.value.element).to(beFalse())
                         }
 
                         it("should properly update sick leave state") {
-                            expect(isSickLeaveSelectedObserver.events.last).to(beNil())
+                            expect(isSickLeaveSelectedObserver.events.last?.value.element).to(beFalse())
                         }
 
                         it("should properly update conference state") {
-                            expect(isConferenceSelectedObserver.events.last).to(beNil())
+                            expect(isConferenceSelectedObserver.events.last?.value.element).to(beFalse())
                         }
                     }
                 }

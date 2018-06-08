@@ -11,11 +11,11 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("time report") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .timeReport)
+                    sut = ActivityTypeViewModel(type: .normal)
                 }
 
                 it("should be proper type") {
-                    expect(sut.type).to(equal(ActivityType.timeReport))
+                    expect(sut.type).to(equal(ReportType.normal))
                 }
 
                 it("shoud have proper title") {
@@ -33,11 +33,11 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("vacation") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .vacation)
+                    sut = ActivityTypeViewModel(type: .paidVacations)
                 }
 
                 it("should be proper type") {
-                    expect(sut.type).to(equal(ActivityType.vacation))
+                    expect(sut.type).to(equal(ReportType.paidVacations))
                 }
 
                 it("shoud have proper title") {
@@ -55,11 +55,11 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("day off") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .dayOff)
+                    sut = ActivityTypeViewModel(type: .unpaidDayOff)
                 }
 
                 it("should be proper type") {
-                    expect(sut.type).to(equal(ActivityType.dayOff))
+                    expect(sut.type).to(equal(ReportType.unpaidDayOff))
                 }
 
                 it("shoud have proper title") {
@@ -81,7 +81,7 @@ class ActivityTypeViewModelSpec: QuickSpec {
                 }
 
                 it("should be proper type") {
-                    expect(sut.type).to(equal(ActivityType.sickLeave))
+                    expect(sut.type).to(equal(ReportType.sickLeave))
                 }
 
                 it("shoud have proper title") {
@@ -103,7 +103,7 @@ class ActivityTypeViewModelSpec: QuickSpec {
                 }
 
                 it("should be proper type") {
-                    expect(sut.type).to(equal(ActivityType.conference))
+                    expect(sut.type).to(equal(ReportType.conference))
                 }
 
                 it("shoud have proper title") {
