@@ -96,7 +96,7 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     private let isHoliday: Bool
 
     private var dayHours: Double {
-        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in viewModel.hours + result }
+        return reportsViewModel.reduce(0.0) { (result, viewModel) -> Double in (viewModel.hours ?? 0) + result }
     }
 
     private let dayFormatter = DateFormatter.dayFormatter
