@@ -10,7 +10,7 @@ extension ActivitiesViewController {
         view.rightStripeView.backgroundColor = viewModel.stripeColor
         view.contentContainer.backgroundColor = viewModel.backgroundColor
         view.areTopCornersRounded = viewModel.topCornersRounded
-        view.areTopCornersRounded = viewModel.bottomCornersRounded
+        view.areBottomCornersRounded = viewModel.bottomCornersRounded
         view.separatorView.isHidden = viewModel.isSeparatorHidden
         view.addIconView.isHidden = viewModel.hideAddReportButton
 
