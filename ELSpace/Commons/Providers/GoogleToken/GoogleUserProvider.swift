@@ -8,12 +8,11 @@ import RxSwift
 import RxCocoa
 
 protocol GoogleUserProviding {
-
     var user: Observable<GIDGoogleUser> { get }
     var error: Observable<Error> { get }
     func signIn(on viewController: UIViewController)
+    func autoSignIn()
     func disconnect()
-
 }
 
 class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
@@ -33,6 +32,11 @@ class GoogleUserProvider: NSObject, GoogleUserProviding, GIDSignInDelegate {
 
     var error: Observable<Error> {
         return errorSubject.asObservable()
+    }
+
+    func autoSignIn() {
+        guard googleSignIn.hasAuthInKeychain() else { return }
+        googleSignIn.signInSilently()
     }
 
     func signIn(on viewController: UIViewController) {

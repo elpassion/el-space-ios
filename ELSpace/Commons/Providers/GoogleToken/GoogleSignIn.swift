@@ -6,13 +6,13 @@
 import GoogleSignIn
 
 protocol GoogleSignInProtocol: class {
-
     var delegate: GIDSignInDelegate! { get set }
     var uiDelegate: GIDSignInUIDelegate! { get set }
     func signIn()
     func disconnect()
+    func signInSilently()
+    func hasAuthInKeychain() -> Bool
     var hostedDomain: String! { get set }
-
 }
 
 extension GIDSignIn: GoogleSignInProtocol {}

@@ -4,7 +4,7 @@ protocol ReportDetailsViewModelProtocol {
     var title: String? { get }
     var subtitle: String? { get }
     var type: ReportType? { get }
-    var hours: Double { get }
+    var hours: Double? { get }
     var report: ReportDTO { get }
     var action: PublishSubject<Void> { get }
     var disposeBag: DisposeBag { get }
@@ -36,14 +36,11 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         return ReportType(rawValue: report.reportType)
     }
 
-    var hours: Double {
+    var hours: Double? {
         switch type {
         case .some(.normal): return doubleHours
-        case .some(.paidVacations): return weekdaysHoursOfWork
-        case .some(.unpaidDayOff): return weekdaysHoursOfWork
-        case .some(.sickLeave): return weekdaysHoursOfWork
-        case .some(.conference): return weekdaysHoursOfWork
-        default: return 0.0
+        case .some(.paidVacations): return doubleHours
+        default: return nil
         }
     }
 
@@ -56,7 +53,6 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
     // MARK: - Private
 
     private let project: ProjectDTO?
-    private let weekdaysHoursOfWork = 8.0
 
     private var typeTitle: String? {
         switch type {

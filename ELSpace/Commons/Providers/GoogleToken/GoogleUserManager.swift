@@ -7,11 +7,10 @@ import GoogleSignIn
 import RxSwift
 
 protocol GoogleUserManaging {
-
     var error: Observable<Error> { get }
     var validationSuccess: Observable<GIDGoogleUser> { get }
     func signIn(on viewController: UIViewController)
-
+    func autoSignIn()
 }
 
 class GoogleUserManager: GoogleUserManaging {
@@ -37,6 +36,10 @@ class GoogleUserManager: GoogleUserManaging {
 
     func signIn(on viewController: UIViewController) {
         googleUserProvider.signIn(on: viewController)
+    }
+
+    func autoSignIn() {
+        googleUserProvider.autoSignIn()
     }
 
     // MARK: - Private

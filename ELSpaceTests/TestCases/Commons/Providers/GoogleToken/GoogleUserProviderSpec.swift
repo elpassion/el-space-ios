@@ -10,6 +10,7 @@ import Nimble
 import ELSpace
 
 class GoogleUserProviderSpec: QuickSpec {
+
     override func spec() {
         context("GoogleUserProvider") {
 
@@ -52,6 +53,42 @@ class GoogleUserProviderSpec: QuickSpec {
                 }
             }
 
+            context("when googleSignIn has AuthInKeychain") {
+                beforeEach {
+                    googleSignInMock.authInKeychainResult = true
+                }
+
+                context("when call autoSignIn") {
+                    beforeEach {
+                        sut.autoSignIn()
+                    }
+
+                    describe("googleSignIn") {
+                        it("should call signInSilently") {
+                            expect(googleSignInMock.didCallSignInSilently).to(beTrue())
+                        }
+                    }
+                }
+            }
+
+            context("when googleSignIn has NOT AuthInKeychain") {
+                beforeEach {
+                    googleSignInMock.authInKeychainResult = false
+                }
+
+                context("when call autoSignIn") {
+                    beforeEach {
+                        sut.autoSignIn()
+                    }
+
+                    describe("googleSignIn") {
+                        it("should NOT call signInSilently") {
+                            expect(googleSignInMock.didCallSignInSilently).to(beFalse())
+                        }
+                    }
+                }
+            }
         }
     }
+
 }
