@@ -16,11 +16,15 @@ extension ActivitiesViewController {
 
         view.reportDetailsViews = viewModel.reportsViewModel.map { viewModel -> ReportDetailsView? in
             guard viewModel.type == .normal || viewModel.type == .paidVacations else { return nil }
-            return ReportDetailsView(title: viewModel.title, subtitle: viewModel.subtitle)
+            let control = ReportDetailsView(title: viewModel.title, subtitle: viewModel.subtitle)
+            control.rx.controlEvent(.touchUpInside)
+                .bind(to: viewModel.action)
+                .disposed(by: viewModel.disposeBag)
+            return control
         }.compactMap { $0 }
 
         view.contentContainer.rx.controlEvent(.touchUpInside)
-            .bind(to: viewModel.didTapOnReport)
+            .bind(to: viewModel.action)
             .disposed(by: disposeBag)
 
         return disposeBag

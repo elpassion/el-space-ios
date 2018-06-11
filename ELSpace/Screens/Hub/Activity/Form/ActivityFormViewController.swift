@@ -1,6 +1,11 @@
 import UIKit
 import RxSwift
 
+protocol ActivityFormViewControlling {
+    var type: AnyObserver<ReportType> { get }
+    var form: Observable<ActivityForm> { get }
+}
+
 class ActivityFormViewController: UIViewController, ActivityFormViewControlling, UITextFieldDelegate {
 
     init(viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling) {
@@ -26,12 +31,8 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
     // MARK: - ActivityFormViewControlling
 
-    var type: AnyObserver<ActivityType> {
+    var type: AnyObserver<ReportType> {
         return viewModel.type
-    }
-
-    var date: AnyObserver<Date> {
-        return viewModel.date
     }
 
     var form: Observable<ActivityForm> {

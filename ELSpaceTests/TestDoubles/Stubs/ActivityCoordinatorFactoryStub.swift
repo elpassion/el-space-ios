@@ -6,7 +6,7 @@ class ActivityCoordinatorCreationStub: ActivityCoordinatorCreation {
 
     // MARK: ActivityCoordinatorCreation
 
-    func activityCoordinator() -> Coordinator {
+    func activityCoordinator(report: ReportDTO, projectScope: [ProjectDTO]) -> Coordinator {
         return coordinatorStub
     }
 

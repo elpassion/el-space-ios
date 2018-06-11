@@ -6,7 +6,7 @@ protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     var month: String { get }
-    var openActivity: Observable<DailyReportViewModel> { get }
+    var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
     func getData()
 }
 
@@ -36,8 +36,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return monthFormatter.string(from: todayDate)
     }
 
-    var openActivity: Observable<DailyReportViewModel> {
-        return openActivitySubject.asObservable()
+    var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
+        return openReportRelay.asObservable()
     }
 
     // MARK: - Private
@@ -50,8 +50,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportDTO]>([])
     private let holidays = BehaviorRelay<[Int]>(value: [])
-    private let viewModels = Variable<[DailyReportViewModelProtocol]>([])
-    private let openActivitySubject = PublishSubject<DailyReportViewModel>()
+    private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
+    private let openReportRelay = PublishRelay<(report: ReportDTO, projects: [ProjectDTO])>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -70,20 +70,11 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                                                  reports: reports,
                                                  projects: projects.value,
                                                  isHoliday: holidays.value.contains(date.day))
-            setupBindings(viewModel: viewModel)
             return viewModel
         }
         setupSeparators(viewModels: viewModels)
         setupCornersRounding(viewModels: viewModels)
-        self.viewModels.value = viewModels
-    }
-
-    private func setupBindings(viewModel: DailyReportViewModel) {
-        viewModel.didTapOnReport
-            .map { [weak viewModel] in viewModel }
-            .unwrap()
-            .bind(to: openActivitySubject)
-            .disposed(by: disposeBag)
+        self.viewModels.accept(viewModels)
     }
 
     private func setupSeparators(viewModels: [DailyReportViewModel]) {
@@ -139,9 +130,31 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             .disposed(by: disposeBag)
 
         activitiesController.didFinishFetch
-            .subscribe(onNext: { [weak self] in
-                self?.createViewModels()
-            }).disposed(by: disposeBag)
+            .subscribe(onNext: { [weak self] in self?.createViewModels() })
+            .disposed(by: disposeBag)
+
+        viewModels.asObservable()
+            .subscribe(onNext: { [weak self] in $0.forEach { self?.setupBindings(viewModel: $0) } })
+            .disposed(by: disposeBag)
+    }
+
+    private func setupBindings(viewModel: DailyReportViewModelProtocol) {
+        viewModel.reportsViewModel.forEach { viewModel in
+            viewModel.action
+                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
+                .bind(to: self.openReportRelay)
+                .disposed(by: self.disposeBag)
+        }
+        viewModel.action
+            .map { viewModel.reports }
+            .filter { reports -> Bool in
+                guard reports.count == 1 else { return false }
+                guard let firstReport = reports.first, let reportType = ReportType(rawValue: firstReport.reportType) else { return false }
+                return reportType.isWholeDayActivity
+            }
+            .map { (report: $0[0], projects: []) }
+            .bind(to: openReportRelay)
+            .disposed(by: viewModel.disposeBag)
     }
 
     private let disposeBag = DisposeBag()
@@ -152,6 +165,14 @@ extension ActivitiesViewModelProtocol {
 
     var monthObservable: Observable<String> {
         return Observable.just(month)
+    }
+
+}
+
+extension ReportType {
+
+    var isWholeDayActivity: Bool {
+        return self == .unpaidDayOff || self == .sickLeave || self == .conference
     }
 
 }

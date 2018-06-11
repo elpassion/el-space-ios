@@ -31,7 +31,19 @@ class ActivityFormViewModelSpec: QuickSpec {
                 commentObserver = scheduler.createObserver(String.self)
                 commentInputHiddenObserver = scheduler.createObserver(Bool.self)
                 formObserver = scheduler.createObserver(ActivityForm.self)
-                sut  = ActivityFormViewModel()
+                let report = ReportDTO(id: 1,
+                                       userId: 2,
+                                       projectId: 3,
+                                       value: "4",
+                                       performedAt: "5",
+                                       comment: "6",
+                                       createdAt: "7",
+                                       updatedAt: "8",
+                                       billable: true,
+                                       reportType: 0)
+                let project1 = ProjectDTO(name: "test project name 1", id: 0)
+                let project2 = ProjectDTO(name: "test project name 2", id: 1)
+                sut  = ActivityFormViewModel(report: report, projectScope: [project1, project2])
                 _ = sut.performedAt.subscribe(performedAtObserver)
                 _ = sut.projectNames.subscribe(projectsNamesObserver)
                 _ = sut.projectSelected.subscribe(projectSelectedObserver)
@@ -43,65 +55,39 @@ class ActivityFormViewModelSpec: QuickSpec {
                 _ = sut.form.subscribe(formObserver)
             }
 
-            describe("date") {
-                beforeEach {
-                    let dateFormatter = DateFormatter.activityFormatter
-                    let date = dateFormatter.date(from: "Mon, 5 Sep 2016")!
-                    sut.date.onNext(date)
-                }
-
-                it("should have correct performed at") {
-                    expect(performedAtObserver.events.last?.value.element).to(equal("Mon, 5 Sep 2016"))
-                }
-            }
-
             describe("inputs") {
                 context("when selecting timeReport, vacation, dayOff, sickLeave, conference") {
                     beforeEach {
-                        sut.type.onNext(.timeReport)
-                        sut.type.onNext(.vacation)
-                        sut.type.onNext(.dayOff)
+                        sut.type.onNext(.normal)
+                        sut.type.onNext(.paidVacations)
+                        sut.type.onNext(.unpaidDayOff)
                         sut.type.onNext(.sickLeave)
                         sut.type.onNext(.conference)
                     }
 
                     it("should project input not be visible") {
-                        expect(projectInputHiddenObserver.events.map { $0.value.element! }).to(equal([false, true, true, true, true]))
+                        expect(projectInputHiddenObserver.events.map { $0.value.element! }).to(equal([false, false, true, true, true, true]))
                     }
 
                     it("should hours input not be visible") {
-                        expect(hoursInputHiddenObserver.events.map { $0.value.element! }).to(equal([false, false, true, true, true]))
+                        expect(hoursInputHiddenObserver.events.map { $0.value.element! }).to(equal([false, false, false, true, true, true]))
                     }
 
                     it("should comment input not be visible") {
-                        expect(commentInputHiddenObserver.events.map { $0.value.element! }).to(equal([false, true, true, true, true]))
+                        expect(commentInputHiddenObserver.events.map { $0.value.element! }).to(equal([false, false, true, true, true, true]))
                     }
                 }
             }
 
             describe("projects") {
                 it("should have correct project names") {
-                    expect(projectsNamesObserver.events.last?.value.element).to(equal(["Project 1", "Project 2"]))
-                }
-
-                it("should have project 1 selected") {
-                    expect(projectSelectedObserver.events.last?.value.element).to(equal("Project 1"))
-                }
-
-                context("when selecting") {
-                    beforeEach {
-                        sut.selectProject.onNext("Project 2")
-                    }
-
-                    it("should have project 2 selected") {
-                        expect(projectSelectedObserver.events.last?.value.element).to(equal("Project 2"))
-                    }
+                    expect(projectsNamesObserver.events.last?.value.element).to(equal(["test project name 1", "test project name 2"]))
                 }
             }
 
             describe("hours") {
-                it("should have proper initial hours (8)") {
-                    expect(hoursObserver.events.last?.value.element).to(equal("8"))
+                it("should have proper initial hours (4)") {
+                    expect(hoursObserver.events.last?.value.element).to(equal("4"))
                 }
 
                 context("when updating") {
@@ -117,7 +103,7 @@ class ActivityFormViewModelSpec: QuickSpec {
 
             describe("comment") {
                 it("should have proper initial comment") {
-                    expect(commentObserver.events.last?.value.element).to(equal("ElSpace report form implementation"))
+                    expect(commentObserver.events.last?.value.element).to(equal("6"))
                 }
 
                 context("when updating") {

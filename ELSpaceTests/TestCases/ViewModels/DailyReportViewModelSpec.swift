@@ -316,7 +316,11 @@ class DailyReportViewModelSpec: QuickSpec {
 
             context("when day isHoliday") {
                 beforeEach {
-                    sut = DailyReportViewModel(date: Date(), todayDate: Date(), reports: [], projects: [], isHoliday: true)
+                    sut = DailyReportViewModel(date: formatter.date(from: "2018/06/08 12:00")!,
+                                               todayDate: formatter.date(from: "2018/06/08 12:00")!,
+                                               reports: [],
+                                               projects: [],
+                                               isHoliday: true)
                 }
 
                 it("should have correct title") {

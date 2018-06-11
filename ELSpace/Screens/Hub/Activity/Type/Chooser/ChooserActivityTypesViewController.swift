@@ -1,6 +1,11 @@
 import UIKit
 import RxSwift
 
+protocol ChooserActivityTypesViewControlling {
+    var selected: Observable<ReportType> { get }
+    var select: AnyObserver<ReportType> { get }
+}
+
 class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypesViewControlling {
 
     init(viewModel: ChooserActivityTypesViewModeling) {
@@ -23,22 +28,22 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
 
     // MARK: ActivityTypeViewControlling
 
-    var selected: Observable<ActivityType> {
+    var selected: Observable<ReportType> {
         return selectedTypeSubject.asObservable()
     }
 
-    var select: AnyObserver<ActivityType> {
+    var select: AnyObserver<ReportType> {
         return AnyObserver(eventHandler: { [weak self] event in
             guard let type = event.element else { return }
             let reportTypeViewModel = self?.viewModel.activityTypeViewModels.filter { $0.type == type }.first
-            reportTypeViewModel?.isSelected.onNext(true)
+            reportTypeViewModel?.isSelected.accept(true)
         })
     }
 
     // MARK: Privates
 
     private let viewModel: ChooserActivityTypesViewModeling
-    private let selectedTypeSubject = PublishSubject<ActivityType>()
+    private let selectedTypeSubject = PublishSubject<ReportType>()
     private let disposeBag = DisposeBag()
 
     private var activityTypesView: ChooserActivityTypesView! {
@@ -55,6 +60,8 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
             view.titleLabel.text = viewModel.title
             view.titleLabel.textColor = self.titleColorForState(false)
             view.imageView.image = viewModel.imageUnselected
+            view.isUserInteractionEnabled = viewModel.isUserInteractionEnabled
+            view.alpha = viewModel.isUserInteractionEnabled ? 1.0 : 0.5
             viewModel.isSelected
                 .subscribe(onNext: { [weak view, weak self] isSelected in
                     view?.imageView.image = isSelected ? viewModel.imageSelected : viewModel.imageUnselected

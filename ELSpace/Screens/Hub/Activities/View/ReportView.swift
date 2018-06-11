@@ -1,7 +1,7 @@
 import UIKit
 import Anchorage
 
-class ReportView: UIView {
+class ReportView: UIControl {
 
     init() {
         super.init(frame: .zero)
@@ -142,7 +142,7 @@ private extension ReportView {
 
         static var reportDetailsContainer: UIView {
             let view = UIView(frame: .zero)
-            view.isUserInteractionEnabled = false
+            view.isUserInteractionEnabled = true
             return view
         }
     }

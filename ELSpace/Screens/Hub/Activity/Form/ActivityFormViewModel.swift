@@ -1,24 +1,44 @@
 import Foundation
 import RxSwift
+import RxCocoa
+
+protocol ActivityFormViewInputModeling {
+    var performedAt: Observable<String> { get }
+    var projectNames: Observable<[String]> { get }
+    var projectSelected: Observable<String> { get }
+    var projectInputHidden: Observable<Bool> { get }
+    var hours: Observable<String> { get }
+    var hoursInputHidden: Observable<Bool> { get }
+    var comment: Observable<String> { get }
+    var commentInputHidden: Observable<Bool> { get }
+    var form: Observable<ActivityForm> { get }
+}
+
+protocol ActivityFormViewOutputModeling {
+    var type: AnyObserver<ReportType> { get }
+    var selectProject: AnyObserver<String> { get }
+    var updateHours: AnyObserver<String> { get }
+    var updateComment: AnyObserver<String> { get }
+}
 
 class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutputModeling {
 
-    init() {
-        let projects = ["Project 1", "Project 2"]
-        projectNamesSubject = BehaviorSubject<[String]>(value: projects)
-        projectSelectedSubject = BehaviorSubject<String>(value: projects.first!)
-        updateHoursSubject = BehaviorSubject<String>(value: "8")
-        updateCommentSubject = BehaviorSubject<String>(value: "ElSpace report form implementation")
+    init(report: ReportDTO, projectScope: [ProjectDTO]) {
+        self.report = report
+        self.projectScope = projectScope
+        projectNamesSubject = BehaviorSubject<[String]>(value: projectScope.map { $0.name })
+        projectSelectedSubject = BehaviorSubject<String>(value: projectScope.filter { $0.id == report.projectId }.first?.name ?? "")
+        updateHoursSubject = BehaviorSubject<String>(value: "\(report.value)")
+        updateCommentSubject = BehaviorSubject<String>(value: report.comment ?? "")
+        if let reportType = ReportType(rawValue: report.reportType) {
+            type.onNext(reportType)
+        }
     }
 
     // MARK: - ActivityFormViewInputModeling
 
     var performedAt: Observable<String> {
-        return performedAtSubject.asObservable()
-            .map { date -> String in
-                let dateFormatter = DateFormatter.activityFormatter
-                return dateFormatter.string(from: date)
-            }
+        return Observable.of(report.performedAt)
     }
 
     var projectNames: Observable<[String]> {
@@ -29,24 +49,24 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         return projectSelectedSubject.asObservable()
     }
 
-    var projectInputHidden: Observable<Bool> {
-        return projectInputHiddenSubject.asObservable()
-    }
-
     var hours: Observable<String> {
         return updateHoursSubject.asObservable()
-    }
-
-    var hoursInputHidden: Observable<Bool> {
-        return hoursInputHiddenSubject.asObservable()
     }
 
     var comment: Observable<String> {
         return updateCommentSubject.asObservable()
     }
 
+    var projectInputHidden: Observable<Bool> {
+        return projectInputHiddenRelay.asObservable()
+    }
+
+    var hoursInputHidden: Observable<Bool> {
+        return hoursInputHiddenRelay.asObservable()
+    }
+
     var commentInputHidden: Observable<Bool> {
-        return commentInputHiddenSubject.asObservable()
+        return commentInputHiddenRelay.asObservable()
     }
 
     var form: Observable<ActivityForm> {
@@ -56,20 +76,16 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     // MARK: - ActivityFormViewOutputModeling
 
-    var type: AnyObserver<ActivityType> {
+    var type: AnyObserver<ReportType> {
         return AnyObserver(eventHandler: { [weak self]  in
-            let isProjectInputHidden = $0.element != .timeReport
-            let isHoursInputHidden = !($0.element == .timeReport || $0.element == .vacation)
-            let isCommentInputHidden = $0.element != .timeReport
+            let isProjectInputHidden = $0.element != .normal
+            let isHoursInputHidden = !($0.element == .normal || $0.element == .paidVacations)
+            let isCommentInputHidden = $0.element != .normal
 
-            self?.projectInputHiddenSubject.onNext(isProjectInputHidden)
-            self?.hoursInputHiddenSubject.onNext(isHoursInputHidden)
-            self?.commentInputHiddenSubject.onNext(isCommentInputHidden)
+            self?.projectInputHiddenRelay.accept(isProjectInputHidden)
+            self?.hoursInputHiddenRelay.accept(isHoursInputHidden)
+            self?.commentInputHiddenRelay.accept(isCommentInputHidden)
         })
-    }
-
-    var date: AnyObserver<Date> {
-        return performedAtSubject.asObserver()
     }
 
     var selectProject: AnyObserver<String> {
@@ -86,12 +102,13 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     // MARK: - Privates
 
-    private let performedAtSubject = PublishSubject<Date>()
+    private let report: ReportDTO
+    private let projectScope: [ProjectDTO]
     private let projectNamesSubject: BehaviorSubject<[String]>
-    private let projectInputHiddenSubject = PublishSubject<Bool>()
     private let projectSelectedSubject: BehaviorSubject<String>
-    private let hoursInputHiddenSubject = PublishSubject<Bool>()
-    private let commentInputHiddenSubject = PublishSubject<Bool>()
+    private let projectInputHiddenRelay = BehaviorRelay(value: false)
+    private let hoursInputHiddenRelay = BehaviorRelay(value: false)
+    private let commentInputHiddenRelay = BehaviorRelay(value: false)
     private let updateHoursSubject: BehaviorSubject<String>
     private let updateCommentSubject: BehaviorSubject<String>
 

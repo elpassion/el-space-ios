@@ -5,6 +5,9 @@ protocol ReportDetailsViewModelProtocol {
     var subtitle: String? { get }
     var type: ReportType? { get }
     var hours: Double? { get }
+    var report: ReportDTO { get }
+    var action: PublishSubject<Void> { get }
+    var disposeBag: DisposeBag { get }
 }
 
 class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
@@ -36,10 +39,13 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
         }
     }
 
+    let report: ReportDTO
+    let action = PublishSubject<Void>()
+    let disposeBag = DisposeBag()
+
     // MARK: - Private
 
     private let project: ProjectDTO?
-    private let report: ReportDTO
 
     private var typeTitle: String? {
         switch type {

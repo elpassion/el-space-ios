@@ -12,11 +12,11 @@ class ChooserActivityTypesViewControllerSpec: QuickSpec {
             var sut: ChooserActivityTypesViewController!
             var viewModelMock: ViewModelMock!
             var scheduler: TestScheduler!
-            var typeSelectedObserver: TestableObserver<ActivityType>!
+            var typeSelectedObserver: TestableObserver<ReportType>!
 
             beforeEach {
                 scheduler = TestScheduler(initialClock: 0)
-                typeSelectedObserver = scheduler.createObserver(ActivityType.self)
+                typeSelectedObserver = scheduler.createObserver(ReportType.self)
                 viewModelMock = ViewModelMock()
                 sut = ChooserActivityTypesViewController(viewModel: viewModelMock)
                 _ = sut.view
@@ -31,20 +31,20 @@ class ChooserActivityTypesViewControllerSpec: QuickSpec {
 
             context("when selecting time report") {
                 beforeEach {
-                    sut.select.onNext(ActivityType.timeReport)
+                    sut.select.onNext(ReportType.normal)
                 }
 
                 it("should select time report") {
-                    expect(typeSelectedObserver.events.last?.value.element).to(equal(ActivityType.timeReport))
+                    expect(typeSelectedObserver.events.last?.value.element).to(equal(ReportType.normal))
                 }
 
                 context("when selecting vacation") {
                     beforeEach {
-                        viewModelMock.activityTypeViewModels[1].isSelected.onNext(true)
+                        viewModelMock.activityTypeViewModels[1].isSelected.accept(true)
                     }
 
                     it("should select vacation") {
-                        expect(typeSelectedObserver.events.last?.value.element).to(equal(ActivityType.vacation))
+                        expect(typeSelectedObserver.events.last?.value.element).to(equal(ReportType.paidVacations))
                     }
                 }
             }
@@ -54,7 +54,7 @@ class ChooserActivityTypesViewControllerSpec: QuickSpec {
 
 private struct ViewModelMock: ChooserActivityTypesViewModeling {
 
-    var activityTypeViewModels: [ActivityTypeViewModeling] = [ActivityTypeViewModel(type: .timeReport),
-                                                              ActivityTypeViewModel(type: .vacation)]
+    var activityTypeViewModels: [ActivityTypeViewModeling] = [ActivityTypeViewModel(type: .normal),
+                                                              ActivityTypeViewModel(type: .paidVacations)]
 
 }

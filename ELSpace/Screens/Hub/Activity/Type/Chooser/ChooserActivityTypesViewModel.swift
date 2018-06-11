@@ -1,9 +1,14 @@
 import UIKit
 import RxSwift
 
+protocol ChooserActivityTypesViewModeling {
+    var activityTypeViewModels: [ActivityTypeViewModeling] { get }
+}
+
 class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
-    init() {
+    init(report: ReportDTO) {
+        self.report = report
         configureViewModels()
     }
 
@@ -15,9 +20,10 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     // MARK: - Private
 
-    private let timeReportViewModel = ActivityTypeViewModel(type: .timeReport)
-    private let vacationViewModel = ActivityTypeViewModel(type: .vacation)
-    private let dayOffViewModel = ActivityTypeViewModel(type: .dayOff)
+    private let report: ReportDTO
+    private let timeReportViewModel = ActivityTypeViewModel(type: .normal)
+    private let vacationViewModel = ActivityTypeViewModel(type: .paidVacations)
+    private let dayOffViewModel = ActivityTypeViewModel(type: .unpaidDayOff)
     private let sickLeaveViewModel = ActivityTypeViewModel(type: .sickLeave)
     private let conferenceViewModel = ActivityTypeViewModel(type: .conference)
 
@@ -30,12 +36,13 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
             viewModel.isSelected.asObservable()
                 .subscribe(onNext: { [weak self] _ in
                     if self?.lastSelectedViewModel !== viewModel {
-                        self?.lastSelectedViewModel?.isSelected.onNext(false)
+                        self?.lastSelectedViewModel?.isSelected.accept(false)
                         self?.lastSelectedViewModel = viewModel
                     }
                 })
                 .disposed(by: disposeBag)
         }
+        activityTypeViewModels[report.reportType].isSelected.accept(true)
     }
 
 }
