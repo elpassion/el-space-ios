@@ -26,7 +26,7 @@ class ActivitiesViewModelSpec: QuickSpec {
             }
 
             beforeEach {
-                fakeTodayDate = DateFormatter.shortDateFormatter.date(from: "2017-08-05")
+                fakeTodayDate = DateFormatter.shortDateFormatter.date(from: "2017-08-01")
                 activitiesControllerSpy = ActivitiesControllerSpy()
                 sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy,
                                           todayDate: fakeTodayDate)
@@ -97,25 +97,25 @@ class ActivitiesViewModelSpec: QuickSpec {
                                 expect(viewModel.isSeparatorHidden).to(beFalse())
                             }
 
-//                            context("when action on whole day activity") {
-//                                beforeEach {
-//                                    viewModel.action.onNext(())
-//                                }
-//
-//                                it("should emit correct event") {
-////                                    expect(openReportObserver.events).to(haveCount(1))
-//                                }
-//                            }
-//
-//                            context("when action on normal report") {
-//                                beforeEach {
-//                                    viewModel.reportsViewModel[0].action.onNext(())
-//                                }
-//
-//                                it("should emit correct event") {
-////                                    expect(openReportObserver.events).to(haveCount(1))
-//                                }
-//                            }
+                            context("when action on whole day activity") {
+                                beforeEach {
+                                    viewModel.action.onNext(())
+                                }
+
+                                it("should emit correct event") {
+                                    expect(openReportObserver.events).to(haveCount(1))
+                                }
+                            }
+
+                            context("when action on normal report") {
+                                beforeEach {
+                                    viewModel.reportsViewModel[0].action.onNext(())
+                                }
+
+                                it("should emit correct event") {
+                                    expect(openReportObserver.events).to(haveCount(1))
+                                }
+                            }
                         }
 
                         describe("2nd viewModel") {
