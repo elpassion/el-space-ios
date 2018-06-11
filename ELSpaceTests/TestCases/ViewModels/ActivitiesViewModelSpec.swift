@@ -26,7 +26,7 @@ class ActivitiesViewModelSpec: QuickSpec {
             }
 
             beforeEach {
-                fakeTodayDate = DateFormatter.shortDateFormatter.date(from: "2017-08-01")
+                fakeTodayDate = DateFormatter.shortDateFormatter.date(from: "2017-08-05")
                 activitiesControllerSpy = ActivitiesControllerSpy()
                 sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy,
                                           todayDate: fakeTodayDate)
