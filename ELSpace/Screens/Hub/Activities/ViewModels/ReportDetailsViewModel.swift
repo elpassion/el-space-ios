@@ -40,9 +40,7 @@ class ReportDetailsViewModel: ReportDetailsViewModelProtocol {
     }
 
     let report: ReportDTO
-
     let action = PublishSubject<Void>()
-
     let disposeBag = DisposeBag()
 
     // MARK: - Private
