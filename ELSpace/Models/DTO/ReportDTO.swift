@@ -38,8 +38,8 @@ extension ReportDTO {
                               value: String = "8.0",
                               performedAt: String = "2017-08-01",
                               comment: String? = "fake_comment",
-                              createdAt: String = "2017-08-02T12:07:52.752+02:00",
-                              updatedAt: String = "2017-08-02T12:07:52.752+02:00",
+                              createdAt: String = "2017-08-02T18:07:52.752+02:00",
+                              updatedAt: String = "2017-08-02T18:07:52.752+02:00",
                               billable: Bool = true,
                               reportType: Int = 0) -> ReportDTO {
         return ReportDTO(id: id,
