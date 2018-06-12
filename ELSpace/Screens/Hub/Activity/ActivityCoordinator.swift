@@ -29,6 +29,8 @@ class ActivityCoordinator: Coordinator {
                       to viewController: UIViewController & ActivityViewControlling) {
         viewController.addAction.bind(to: viewModel.addAction).disposed(by: disposeBag)
 
+        viewController.deleteAction.bind(to: viewModel.deleteAction).disposed(by: disposeBag)
+
         viewModel.isLoading.bind(to: viewController.isLoading).disposed(by: disposeBag)
 
         viewModel.dismiss
