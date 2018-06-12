@@ -26,12 +26,6 @@ extension DateFormatter {
         return dateFormatter
     }
 
-    static var fullDateFormatter: DateFormatter {
-        let dateFormatter = DateFormatter.warsawTimeZoneFormatter
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        return dateFormatter
-    }
-
     // MARK: - Private
 
     private static var warsawTimeZoneFormatter: DateFormatter {

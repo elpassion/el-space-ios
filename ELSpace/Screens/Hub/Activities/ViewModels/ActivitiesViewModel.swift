@@ -53,7 +53,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
     private let openReportRelay = PublishRelay<(report: ReportDTO, projects: [ProjectDTO])>()
 
-    var days: [Date] {
+    private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
                           and: todayDate.endOf(component: .month),
                           increment: 1.day)
