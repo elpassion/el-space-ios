@@ -35,7 +35,15 @@ class ActivityService: ActivityServiceProtocol {
     }
 
     func deleteActivity(_ activity: ReportDTO) -> Observable<Void> {
-        return Observable.of(()).delay(5, scheduler: MainScheduler.instance)
+        return apiClient.request(path: "activities/\(activity.id)",
+                                 method: .delete,
+                                 parameters: nil,
+                                 encoding: JSONEncoding.default,
+                                 headers: nil)
+            .map {
+                if let error = ApiError(response: $0) { throw error }
+                return Void()
+            }
     }
 
     // MARK: Private
