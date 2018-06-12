@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 protocol ActivityViewControllerAssembly {
     var typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling { get }
@@ -9,6 +10,7 @@ protocol ActivityViewControllerAssembly {
 
 protocol ActivityViewControlling {
     var addAction: Observable<Void> { get }
+    var deleteAction: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
     var type: ActivityViewController.`Type` { get set }
 }
@@ -52,6 +54,10 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
 //        return addBarButton.rx.tap.asObservable()
     }
 
+    var deleteAction: Observable<Void> {
+        return deleteActionRelay.asObservable()
+    }
+
     var isLoading: AnyObserver<Bool> {
         return AnyObserver(onNext: { [weak self] in self?.loadingIndicator?.loading($0) })
     }
@@ -68,6 +74,7 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     private let formViewController: UIViewController & ActivityFormViewControlling
     private let deleteButton = UIButton(frame: .zero)
     private let notificationCenter: NotificationCenter
+    private let deleteActionRelay = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
 
     private let addBarButton = NavigationItemSubviews.addBarButton
@@ -112,6 +119,17 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
             .subscribe(onNext: {
                 print("project: \($0.project ?? ""), hours: \($0.hours ?? 0), comment: \($0.comment ?? "")")
             }).disposed(by: disposeBag)
+
+        deleteButton.rx.controlEvent(.touchUpInside)
+            .flatMap { [weak self] _ -> Observable<Bool> in
+                guard let `self` = self else { return Observable.just(false) }
+                return self.showConfirmDeletion()
+            }
+            .filter { $0 }
+            .map { _ in }
+            .bind(to: deleteActionRelay)
+            .disposed(by: disposeBag)
+
     }
 
     private func adjustForKeyboard(notification: Notification) {
@@ -123,6 +141,19 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
                                                                 bottom: bottomInset,
                                                                 right: 0)
         }
+    }
+
+    private func showConfirmDeletion() -> Observable<Bool> {
+        return Observable.create({ [weak self] observer -> Disposable in
+            guard let `self` = self else { return Disposables.create() }
+            let alertController = UIAlertController(title: "Confirm report deletion", message: "Are you sure?", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in observer.onNext(false) })
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in observer.onNext(true) })
+            alertController.addAction(cancelAction)
+            alertController.addAction(deleteAction)
+            self.present(alertController, animated: true, completion: nil)
+            return Disposables.create()
+        })
     }
 
 }
