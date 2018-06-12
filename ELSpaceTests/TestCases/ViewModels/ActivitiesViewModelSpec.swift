@@ -45,6 +45,10 @@ class ActivitiesViewModelSpec: QuickSpec {
                 expect(sut.month).to(equal(DateFormatter.monthFormatter.string(from: fakeTodayDate)))
             }
 
+            it("test dates") {
+                expect(sut.days).to(haveCount(31))
+            }
+
             context("when call 'getData'") {
                 beforeEach {
                     sut.getData()
