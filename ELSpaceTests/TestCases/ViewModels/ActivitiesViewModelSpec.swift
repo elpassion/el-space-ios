@@ -28,8 +28,15 @@ class ActivitiesViewModelSpec: QuickSpec {
             beforeEach {
                 fakeTodayDate = DateFormatter.shortDateFormatter.date(from: "2017-08-05")
                 activitiesControllerSpy = ActivitiesControllerSpy()
+                let fakeMonthFormatter = DateFormatter.monthFormatter
+                fakeMonthFormatter.timeZone = TimeZone.current
+                let fakeShortDateFormatter = DateFormatter.shortDateFormatter
+                fakeShortDateFormatter.timeZone = TimeZone.current
+                let activitiesDateFormatters = ActivitiesDateFormatters(monthFormatter: fakeMonthFormatter,
+                                                                        shortDateFormatter: fakeShortDateFormatter  )
                 sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy,
-                                          todayDate: fakeTodayDate)
+                                          todayDate: fakeTodayDate,
+                                          dateFormatters: activitiesDateFormatters)
                 scheduler = TestScheduler(initialClock: 0)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
                 isLoadingObserver = scheduler.createObserver(Bool.self)
