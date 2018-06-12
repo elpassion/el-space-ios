@@ -14,6 +14,7 @@ class ActivitiesViewModelSpec: QuickSpec {
             var scheduler: TestScheduler!
             var dataSourceObserver: TestableObserver<[DailyReportViewModelProtocol]>!
             var isLoadingObserver: TestableObserver<Bool>!
+            var openReportObserver: TestableObserver<(report: ReportDTO, projects: [ProjectDTO])>!
             var fakeTodayDate: Date!
 
             afterEach {
@@ -27,13 +28,22 @@ class ActivitiesViewModelSpec: QuickSpec {
             beforeEach {
                 fakeTodayDate = DateFormatter.shortDateFormatter.date(from: "2017-08-05")
                 activitiesControllerSpy = ActivitiesControllerSpy()
+                let fakeMonthFormatter = DateFormatter.monthFormatter
+                fakeMonthFormatter.timeZone = TimeZone.current
+                let fakeShortDateFormatter = DateFormatter.shortDateFormatter
+                fakeShortDateFormatter.timeZone = TimeZone.current
+                let activitiesDateFormatters = ActivitiesDateFormatters(monthFormatter: fakeMonthFormatter,
+                                                                        shortDateFormatter: fakeShortDateFormatter  )
                 sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy,
-                                          todayDate: fakeTodayDate)
+                                          todayDate: fakeTodayDate,
+                                          dateFormatters: activitiesDateFormatters)
                 scheduler = TestScheduler(initialClock: 0)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
                 isLoadingObserver = scheduler.createObserver(Bool.self)
+                openReportObserver = scheduler.createObserver((report: ReportDTO, projects: [ProjectDTO]).self)
                 _ = sut.dataSource.subscribe(dataSourceObserver)
                 _ = sut.isLoading.subscribe(isLoadingObserver)
+                _ = sut.openReport.subscribe(openReportObserver)
                 activitiesControllerSpy.projectsSubject.onNext([ProjectDTO.fakeProjectDto()])
                 activitiesControllerSpy.reportsSubject.onNext([ReportDTO.fakeReportDto(reportType: 2)])
             }
@@ -93,6 +103,27 @@ class ActivitiesViewModelSpec: QuickSpec {
                             it("should have correct isSeparatoHidden value") {
                                 expect(viewModel.isSeparatorHidden).to(beFalse())
                             }
+
+                            context("when action on whole day activity") {
+                                beforeEach {
+                                    viewModel.action.onNext(())
+                                }
+
+                                it("should emit correct event") {
+                                    expect(openReportObserver.events).to(haveCount(1))
+                                }
+                            }
+
+                            context("when action on normal report") {
+                                beforeEach {
+                                    viewModel.reportsViewModel[0].action.onNext(())
+                                }
+
+                                it("should emit correct event") {
+                                    expect(openReportObserver.events).to(haveCount(1))
+                                }
+                            }
+
                         }
 
                         describe("2nd viewModel") {
