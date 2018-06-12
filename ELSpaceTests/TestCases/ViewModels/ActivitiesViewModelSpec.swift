@@ -14,7 +14,6 @@ class ActivitiesViewModelSpec: QuickSpec {
             var scheduler: TestScheduler!
             var dataSourceObserver: TestableObserver<[DailyReportViewModelProtocol]>!
             var isLoadingObserver: TestableObserver<Bool>!
-            var openReportObserver: TestableObserver<(report: ReportDTO, projects: [ProjectDTO])>!
             var fakeTodayDate: Date!
 
             afterEach {
@@ -40,10 +39,8 @@ class ActivitiesViewModelSpec: QuickSpec {
                 scheduler = TestScheduler(initialClock: 0)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
                 isLoadingObserver = scheduler.createObserver(Bool.self)
-                openReportObserver = scheduler.createObserver((report: ReportDTO, projects: [ProjectDTO]).self)
                 _ = sut.dataSource.subscribe(dataSourceObserver)
                 _ = sut.isLoading.subscribe(isLoadingObserver)
-                _ = sut.openReport.subscribe(openReportObserver)
                 activitiesControllerSpy.projectsSubject.onNext([ProjectDTO.fakeProjectDto()])
                 activitiesControllerSpy.reportsSubject.onNext([ReportDTO.fakeReportDto(reportType: 2)])
             }
@@ -102,26 +99,6 @@ class ActivitiesViewModelSpec: QuickSpec {
 
                             it("should have correct isSeparatoHidden value") {
                                 expect(viewModel.isSeparatorHidden).to(beFalse())
-                            }
-
-                            context("when action on whole day activity") {
-                                beforeEach {
-                                    viewModel.action.onNext(())
-                                }
-
-                                it("should emit correct event") {
-                                    expect(openReportObserver.events).to(haveCount(1))
-                                }
-                            }
-
-                            context("when action on normal report") {
-                                beforeEach {
-                                    viewModel.reportsViewModel[0].action.onNext(())
-                                }
-
-                                it("should emit correct event") {
-                                    expect(openReportObserver.events).to(haveCount(1))
-                                }
                             }
                         }
 
