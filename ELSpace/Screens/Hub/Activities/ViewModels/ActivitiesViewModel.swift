@@ -6,7 +6,7 @@ protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
     var month: String { get }
-    var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
+    var openReport: Observable<(date: Date, report: ReportDTO?, projects: [ProjectDTO])> { get }
     func getData()
 }
 
@@ -39,7 +39,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return dateFormatters.monthFormatter.string(from: todayDate)
     }
 
-    var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
+    var openReport: Observable<(date: Date, report: ReportDTO?, projects: [ProjectDTO])> {
         return openReportRelay.asObservable()
     }
 
@@ -53,7 +53,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let reports = Variable<[ReportDTO]>([])
     private let holidays = BehaviorRelay<[Int]>(value: [])
     private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
-    private let openReportRelay = PublishRelay<(report: ReportDTO, projects: [ProjectDTO])>()
+    private let openReportRelay = PublishRelay<(date: Date, report: ReportDTO?, projects: [ProjectDTO])>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -141,9 +141,9 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func setupBindings(viewModel: DailyReportViewModelProtocol) {
-        viewModel.reportsViewModel.forEach { viewModel in
+        viewModel.reportsViewModel.forEach { reportViewModel in
             viewModel.action
-                .map { [weak self] _ in (report: viewModel.report, projects: self?.projects.value ?? []) }
+                .map { [weak self] _ in (date: viewModel.date, report: reportViewModel.report, projects: self?.projects.value ?? []) }
                 .bind(to: self.openReportRelay)
                 .disposed(by: self.disposeBag)
         }
@@ -154,7 +154,12 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 guard let firstReport = reports.first, let reportType = ReportType(rawValue: firstReport.reportType) else { return false }
                 return reportType.isWholeDayActivity
             }
-            .map { (report: $0[0], projects: []) }
+            .map { (date: viewModel.date ,report: $0[0], projects: []) }
+            .bind(to: openReportRelay)
+            .disposed(by: viewModel.disposeBag)
+
+        viewModel.addReportAction
+            .map { [weak self] in (date: viewModel.date, report: nil, projects: self?.projects.value ?? []) }
             .bind(to: openReportRelay)
             .disposed(by: viewModel.disposeBag)
     }

@@ -23,22 +23,25 @@ protocol ActivityFormViewOutputModeling {
 
 class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutputModeling {
 
-    init(report: ReportDTO, projectScope: [ProjectDTO]) {
+    init(date: Date, report: ReportDTO?, projectScope: [ProjectDTO]) {
+        self.date = date
         self.report = report
         self.projectScope = projectScope
         projectNamesSubject = BehaviorSubject<[String]>(value: projectScope.map { $0.name })
-        projectSelectedSubject = BehaviorSubject<String>(value: projectScope.filter { $0.id == report.projectId }.first?.name ?? "")
-        updateHoursSubject = BehaviorSubject<String>(value: "\(report.value)")
-        updateCommentSubject = BehaviorSubject<String>(value: report.comment ?? "")
-        if let reportType = ReportType(rawValue: report.reportType) {
-            type.onNext(reportType)
+        projectSelectedSubject = BehaviorSubject<String>(value: projectScope.filter { $0.id == report?.projectId }.first?.name ?? "")
+        updateHoursSubject = BehaviorSubject<String>(value: "\(report?.value ?? "")")
+        updateCommentSubject = BehaviorSubject<String>(value: report?.comment ?? "")
+        if let type = report?.reportType, let reportType = ReportType(rawValue: type)  {
+            self.type.onNext(reportType)
         }
     }
 
     // MARK: - ActivityFormViewInputModeling
 
     var performedAt: Observable<String> {
-        return Observable.of(report.performedAt)
+        return Observable.empty()
+        // TODO
+//        return Observable.of(report.performedAt)
     }
 
     var projectNames: Observable<[String]> {
@@ -102,7 +105,8 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     // MARK: - Privates
 
-    private let report: ReportDTO
+    private let date: Date
+    private let report: ReportDTO?
     private let projectScope: [ProjectDTO]
     private let projectNamesSubject: BehaviorSubject<[String]>
     private let projectSelectedSubject: BehaviorSubject<String>

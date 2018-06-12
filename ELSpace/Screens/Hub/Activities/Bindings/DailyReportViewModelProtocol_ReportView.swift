@@ -12,7 +12,7 @@ extension ActivitiesViewController {
         view.areTopCornersRounded = viewModel.topCornersRounded
         view.areBottomCornersRounded = viewModel.bottomCornersRounded
         view.separatorView.isHidden = viewModel.isSeparatorHidden
-        view.addIconView.isHidden = viewModel.hideAddReportButton
+        view.addIconControl.isHidden = viewModel.hideAddReportButton
 
         view.reportDetailsViews = viewModel.reportsViewModel.map { viewModel -> ReportDetailsView? in
             guard viewModel.type == .normal || viewModel.type == .paidVacations else { return nil }
@@ -25,6 +25,10 @@ extension ActivitiesViewController {
 
         view.contentContainer.rx.controlEvent(.touchUpInside)
             .bind(to: viewModel.action)
+            .disposed(by: disposeBag)
+
+        view.addIconControl.rx.controlEvent(.touchUpInside)
+            .bind(to: viewModel.addReportAction)
             .disposed(by: disposeBag)
 
         return disposeBag

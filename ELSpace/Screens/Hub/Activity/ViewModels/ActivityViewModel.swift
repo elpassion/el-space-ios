@@ -9,7 +9,7 @@ protocol ActivityViewModelProtocol {
 
 class ActivityViewModel: ActivityViewModelProtocol {
 
-    init(report: ReportDTO,
+    init(report: ReportDTO?,
          service: ActivityServiceProtocol) {
         self.report = report
         self.service = service
@@ -35,7 +35,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     // MARK: Private
 
-    private let report: ReportDTO
+    private let report: ReportDTO?
     private let service: ActivityServiceProtocol
     private let dismissSubject = PublishSubject<Void>()
     private let activityIndicator = ActivityIndicator()
@@ -57,6 +57,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
     private func deleteActivity() {
+        guard let report = report else { return }
         service.deleteActivity(report)
             .trackActivity(activityIndicator)
             .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })

@@ -7,7 +7,7 @@ protocol ChooserActivityTypesViewModeling {
 
 class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
-    init(report: ReportDTO) {
+    init(report: ReportDTO?) {
         self.report = report
         configureViewModels()
     }
@@ -20,7 +20,7 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     // MARK: - Private
 
-    private let report: ReportDTO
+    private let report: ReportDTO?
     private let timeReportViewModel = ActivityTypeViewModel(type: .normal)
     private let vacationViewModel = ActivityTypeViewModel(type: .paidVacations)
     private let dayOffViewModel = ActivityTypeViewModel(type: .unpaidDayOff)
@@ -42,7 +42,11 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
                 })
                 .disposed(by: disposeBag)
         }
-        activityTypeViewModels[report.reportType].isSelected.accept(true)
+        if let reportType = report?.reportType {
+            activityTypeViewModels[reportType].isSelected.accept(true)
+        } else {
+            activityTypeViewModels[0].isSelected.accept(true)
+        }
     }
 
 }
