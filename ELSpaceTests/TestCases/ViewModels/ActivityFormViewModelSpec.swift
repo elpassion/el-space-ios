@@ -43,7 +43,7 @@ class ActivityFormViewModelSpec: QuickSpec {
                                        reportType: 0)
                 let project1 = ProjectDTO(name: "test project name 1", id: 0)
                 let project2 = ProjectDTO(name: "test project name 2", id: 1)
-                sut  = ActivityFormViewModel(report: report, projectScope: [project1, project2])
+                sut = ActivityFormViewModel(date: Date(), report: report, projectScope: [project1, project2])
                 _ = sut.performedAt.subscribe(performedAtObserver)
                 _ = sut.projectNames.subscribe(projectsNamesObserver)
                 _ = sut.projectSelected.subscribe(projectSelectedObserver)

@@ -14,7 +14,7 @@ class ActivitiesViewModelSpec: QuickSpec {
             var scheduler: TestScheduler!
             var dataSourceObserver: TestableObserver<[DailyReportViewModelProtocol]>!
             var isLoadingObserver: TestableObserver<Bool>!
-            var openReportObserver: TestableObserver<(report: ReportDTO, projects: [ProjectDTO])>!
+            var openReportObserver: TestableObserver<(date: Date, report: ReportDTO?, projects: [ProjectDTO])>!
             var fakeTodayDate: Date!
 
             afterEach {
@@ -40,7 +40,7 @@ class ActivitiesViewModelSpec: QuickSpec {
                 scheduler = TestScheduler(initialClock: 0)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
                 isLoadingObserver = scheduler.createObserver(Bool.self)
-                openReportObserver = scheduler.createObserver((report: ReportDTO, projects: [ProjectDTO]).self)
+                openReportObserver = scheduler.createObserver((date: Date, report: ReportDTO?, projects: [ProjectDTO]).self)
                 _ = sut.dataSource.subscribe(dataSourceObserver)
                 _ = sut.isLoading.subscribe(isLoadingObserver)
                 _ = sut.openReport.subscribe(openReportObserver)
@@ -109,7 +109,7 @@ class ActivitiesViewModelSpec: QuickSpec {
                                     viewModel.action.onNext(())
                                 }
 
-                                it("should emit correct event") {
+                                fit("should emit correct event") {
                                     expect(openReportObserver.events).to(haveCount(1))
                                 }
                             }

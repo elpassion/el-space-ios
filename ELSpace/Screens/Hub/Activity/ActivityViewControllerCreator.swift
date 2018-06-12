@@ -2,13 +2,14 @@ import UIKit
 
 struct ActivityViewControllerCreator: ActivityViewControllerCreating {
 
-    func activityViewController(report: ReportDTO, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling {
-        return ActivityViewController(assembly: Assembly(report: report, projectScope: projectScope))
+    func activityViewController(date: Date, report: ReportDTO?, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling {
+        return ActivityViewController(assembly: Assembly(date: date, report: report, projectScope: projectScope))
     }
 
     private struct Assembly: ActivityViewControllerAssembly {
 
-        let report: ReportDTO
+        let date: Date
+        let report: ReportDTO?
         let projectScope: [ProjectDTO]
 
         var typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling {
@@ -16,7 +17,7 @@ struct ActivityViewControllerCreator: ActivityViewControllerCreating {
         }
 
         var formViewController: UIViewController & ActivityFormViewControlling {
-            return ActivityFormAssembly().viewController(report: report, projectScope: projectScope)
+            return ActivityFormAssembly().viewController(date: date, report: report, projectScope: projectScope)
         }
 
         var notificationCenter: NotificationCenter {
@@ -27,5 +28,5 @@ struct ActivityViewControllerCreator: ActivityViewControllerCreating {
 }
 
 protocol ActivityViewControllerCreating {
-    func activityViewController(report: ReportDTO, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling
+    func activityViewController(date: Date, report: ReportDTO?, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling
 }

@@ -36,12 +36,16 @@ class ReportView: UIControl {
     let titleLabel = UILabel(frame: .zero)
     let rightStripeView = UIView(frame: .zero)
     let contentContainer = UIControl(frame: .zero)
-    let addIconView = UIImageView(image: UIImage(named: "add_icon"))
     let separatorView = SubviewsFactory.separatorView
+    let iconImageView = UIImageView(image: UIImage(named: "add_icon"))
+
+    lazy var addIconControl: UIControl = {
+        return SubviewsFactory.addIconControl(view: iconImageView)
+    }()
 
     private func addSubviews() {
         addSubview(contentContainer)
-        contentContainer.addSubview(addIconView)
+        contentContainer.addSubview(addIconControl)
         contentContainer.addSubview(rightStripeView)
         contentContainer.addSubview(dateLabel)
         contentContainer.addSubview(titleLabel)
@@ -61,7 +65,7 @@ class ReportView: UIControl {
 
         titleLabel.leftAnchor == rightStripeView.rightAnchor + 83
         titleLabel.topAnchor == contentContainer.topAnchor + 17
-        titleLabel.rightAnchor <= addIconView.leftAnchor - 10
+        titleLabel.rightAnchor <= addIconControl.leftAnchor - 10
         titleLabel.bottomAnchor <= contentContainer.bottomAnchor - 17
 
         dateLabel.leftAnchor == rightStripeView.rightAnchor + 17
@@ -79,10 +83,10 @@ class ReportView: UIControl {
         rightStripeView.leftAnchor == contentContainer.leftAnchor
         rightStripeView.bottomAnchor == contentContainer.bottomAnchor
 
-        addIconView.heightAnchor == 19
-        addIconView.widthAnchor == 19
-        addIconView.rightAnchor == contentContainer.rightAnchor - 20
-        addIconView.topAnchor == contentContainer.topAnchor + 17
+        addIconControl.heightAnchor == 19
+        addIconControl.widthAnchor == 19
+        addIconControl.rightAnchor == contentContainer.rightAnchor - 20
+        addIconControl.topAnchor == contentContainer.topAnchor + 17
 
         separatorView.heightAnchor == 0.5
         separatorView.leftAnchor == contentContainer.leftAnchor + 20
@@ -144,6 +148,13 @@ private extension ReportView {
             let view = UIView(frame: .zero)
             view.isUserInteractionEnabled = true
             return view
+        }
+
+        static func addIconControl(view: UIView) -> UIControl {
+            let control = UIControl(frame: .zero)
+            control.addSubview(view)
+            view.edgeAnchors == control.edgeAnchors
+            return control
         }
     }
 
