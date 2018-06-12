@@ -1,3 +1,5 @@
+import Foundation
+
 @testable import ELSpace
 
 class ActivityCoordinatorCreationStub: ActivityCoordinatorCreation {
@@ -6,7 +8,7 @@ class ActivityCoordinatorCreationStub: ActivityCoordinatorCreation {
 
     // MARK: ActivityCoordinatorCreation
 
-    func activityCoordinator(report: ReportDTO, projectScope: [ProjectDTO]) -> Coordinator {
+    func activityCoordinator(date: Date, report: ReportDTO?, projectScope: [ProjectDTO]) -> Coordinator {
         return coordinatorStub
     }
 

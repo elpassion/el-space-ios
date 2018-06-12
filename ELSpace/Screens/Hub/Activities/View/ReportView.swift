@@ -36,8 +36,12 @@ class ReportView: UIControl {
     let titleLabel = UILabel(frame: .zero)
     let rightStripeView = UIView(frame: .zero)
     let contentContainer = UIControl(frame: .zero)
-    let addIconControl = SubviewsFactory.addIconControl
     let separatorView = SubviewsFactory.separatorView
+    let iconImageView = UIImageView(image: UIImage(named: "add_icon"))
+
+    lazy var addIconControl: UIControl = {
+        return SubviewsFactory.addIconControl(view: iconImageView)
+    }()
 
     private func addSubviews() {
         addSubview(contentContainer)
@@ -146,11 +150,10 @@ private extension ReportView {
             return view
         }
 
-        static var addIconControl: UIControl {
+        static func addIconControl(view: UIView) -> UIControl {
             let control = UIControl(frame: .zero)
-            let iconImageView = UIImageView(image: UIImage(named: "add_icon"))
-            control.addSubview(iconImageView)
-            iconImageView.edgeAnchors == control.edgeAnchors
+            control.addSubview(view)
+            view.edgeAnchors == control.edgeAnchors
             return control
         }
     }

@@ -142,7 +142,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
     private func setupBindings(viewModel: DailyReportViewModelProtocol) {
         viewModel.reportsViewModel.forEach { reportViewModel in
-            viewModel.action
+            reportViewModel.action
                 .map { [weak self] _ in (date: viewModel.date, report: reportViewModel.report, projects: self?.projects.value ?? []) }
                 .bind(to: self.openReportRelay)
                 .disposed(by: self.disposeBag)

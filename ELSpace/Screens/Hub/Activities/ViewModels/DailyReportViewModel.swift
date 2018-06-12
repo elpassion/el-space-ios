@@ -31,6 +31,8 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
             let reportDetailsViewModel = ReportDetailsViewModel(report: report, project: project)
             return reportDetailsViewModel
         }
+//        super.init()
+//        action.asObservable().debug().subscribe().disposed(by: disposeBag)
     }
 
     var isWorkDayOrHaveReports: Bool {

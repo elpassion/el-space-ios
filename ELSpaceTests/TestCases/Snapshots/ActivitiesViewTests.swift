@@ -48,7 +48,7 @@ class ActivitiesViewTests: QuickSpec {
         view.rightStripeView.backgroundColor = .red
         view.contentContainer.backgroundColor = .yellow
         view.titleLabel.text = "very very very very very very long title"
-        view.addIconView.image = UIImage.fakeImage()
+        view.iconImageView.image = UIImage.fakeImage()
         view.separatorView.isHidden = true
         return view
     }
