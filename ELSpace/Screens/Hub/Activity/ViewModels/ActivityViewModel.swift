@@ -2,13 +2,16 @@ import RxSwift
 
 protocol ActivityViewModelProtocol {
     var addAction: AnyObserver<Void> { get }
+    var deleteAction: AnyObserver<Void> { get }
     var isLoading: Observable<Bool> { get }
     var dismiss: Observable<Void> { get }
 }
 
 class ActivityViewModel: ActivityViewModelProtocol {
 
-    init(service: ActivityServiceProtocol) {
+    init(report: ReportDTO,
+         service: ActivityServiceProtocol) {
+        self.report = report
         self.service = service
     }
 
@@ -18,8 +21,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
         return AnyObserver(onNext: { [weak self] in self?.addActivity() })
     }
 
+    var deleteAction: AnyObserver<Void> {
+        return AnyObserver(onNext: { [weak self] in self?.deleteActivity() })
+    }
+
     var isLoading: Observable<Bool> {
-        return isLoadingSubject.asObservable()
+        return activityIndicator.asSharedSequence().asObservable()
     }
 
     var dismiss: Observable<Void> {
@@ -28,14 +35,13 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     // MARK: Private
 
+    private let report: ReportDTO
     private let service: ActivityServiceProtocol
-    private let isLoadingSubject = PublishSubject<Bool>()
     private let dismissSubject = PublishSubject<Void>()
-    private var addActivityDisposeBag: DisposeBag?
+    private let activityIndicator = ActivityIndicator()
+    private let disposeBag = DisposeBag()
 
     private func addActivity() {
-        let disposeBag = DisposeBag()
-        addActivityDisposeBag = disposeBag
         let activity = NewActivityDTO( // TODO: data mocked up for now
             projectId: 294,
             userId: 40,
@@ -44,12 +50,16 @@ class ActivityViewModel: ActivityViewModelProtocol {
             comment: "EL SPACE TEST",
             reportType: 0
         )
-        isLoadingSubject.onNext(true)
         service.addActivity(activity)
-            .subscribe(onDisposed: { [weak self] in
-                self?.isLoadingSubject.onNext(false)
-                self?.dismissSubject.onNext(())
-            })
+            .trackActivity(activityIndicator)
+            .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
+            .disposed(by: disposeBag)
+    }
+
+    private func deleteActivity() {
+        service.deleteActivity(report)
+            .trackActivity(activityIndicator)
+            .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
             .disposed(by: disposeBag)
     }
 

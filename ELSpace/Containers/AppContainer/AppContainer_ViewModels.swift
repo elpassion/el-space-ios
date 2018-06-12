@@ -16,7 +16,7 @@ extension AppContainer: ActivitiesViewModelCreation,
     // MARK: ActivityViewModelCreation
 
     func activityViewModel(report: ReportDTO, projectScope: [ProjectDTO]) -> ActivityViewModelProtocol {
-        return ActivityViewModel(service: activityService)
+        return ActivityViewModel(report: report, service: activityService)
     }
 
 }
