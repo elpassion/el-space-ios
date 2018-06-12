@@ -632,8 +632,8 @@
 				47F8647B1F387501000C0FE9 /* ViewModels */,
 				47C1C4EA1F335BDB009946BE /* ActivitiesController.swift */,
 				47F1DCA81F309F320039B34E /* ActivitiesCoordinator.swift */,
-				47F1DCB11F30AC2C0039B34E /* ActivitiesViewController.swift */,
 				4711C04820CFE48600C78338 /* ActivitiesDateFormatters.swift */,
+				47F1DCB11F30AC2C0039B34E /* ActivitiesViewController.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -656,9 +656,9 @@
 				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
 				47F0AAB01FF69F0D0031D2E6 /* HolidaysServiceStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
+				0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
