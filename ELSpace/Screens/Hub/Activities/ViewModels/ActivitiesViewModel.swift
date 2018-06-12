@@ -2,11 +2,6 @@ import RxSwift
 import RxCocoa
 import SwiftDate
 
-struct ActivitiesDateFormatters {
-    let monthFormatter: DateFormatter
-    let shortDateFormatter: DateFormatter
-}
-
 protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
