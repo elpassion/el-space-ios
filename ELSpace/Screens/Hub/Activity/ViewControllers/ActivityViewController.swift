@@ -121,12 +121,10 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
             }).disposed(by: disposeBag)
 
         deleteButton.rx.controlEvent(.touchUpInside)
-            .flatMap { [weak self] _ -> Observable<Bool> in
-                guard let `self` = self else { return Observable.just(false) }
+            .flatMap { [weak self] _ -> Observable<Void> in
+                guard let `self` = self else { return Observable.never() }
                 return self.showConfirmDeletion()
             }
-            .filter { $0 }
-            .map { _ in }
             .bind(to: deleteActionRelay)
             .disposed(by: disposeBag)
 
@@ -143,12 +141,12 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         }
     }
 
-    private func showConfirmDeletion() -> Observable<Bool> {
+    private func showConfirmDeletion() -> Observable<Void> {
         return Observable.create({ [weak self] observer -> Disposable in
             guard let `self` = self else { return Disposables.create() }
             let alertController = UIAlertController(title: "Confirm report deletion", message: "Are you sure?", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in observer.onNext(false) })
-            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in observer.onNext(true) })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in observer.onNext(()) })
             alertController.addAction(cancelAction)
             alertController.addAction(deleteAction)
             self.present(alertController, animated: true, completion: nil)
