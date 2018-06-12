@@ -66,6 +66,7 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
 
     private let typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling
     private let formViewController: UIViewController & ActivityFormViewControlling
+    private let deleteButton = UIButton(frame: .zero)
     private let notificationCenter: NotificationCenter
     private let disposeBag = DisposeBag()
 
@@ -89,6 +90,11 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         addChildViewController(formViewController)
         formViewController.didMove(toParentViewController: self)
         activityView.addView(formViewController.view)
+
+        deleteButton.backgroundColor = .red
+        deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.layer.cornerRadius = 5.0
+        activityView.addView(deleteButton)
     }
 
     private func setupBindings() {
