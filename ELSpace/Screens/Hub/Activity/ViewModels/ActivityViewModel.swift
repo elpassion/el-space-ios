@@ -2,13 +2,16 @@ import RxSwift
 
 protocol ActivityViewModelProtocol {
     var addAction: AnyObserver<Void> { get }
+    var deleteAction: AnyObserver<Void> { get }
     var isLoading: Observable<Bool> { get }
     var dismiss: Observable<Void> { get }
 }
 
 class ActivityViewModel: ActivityViewModelProtocol {
 
-    init(service: ActivityServiceProtocol) {
+    init(report: ReportDTO,
+         service: ActivityServiceProtocol) {
+        self.report = report
         self.service = service
     }
 
@@ -16,6 +19,10 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var addAction: AnyObserver<Void> {
         return AnyObserver(onNext: { [weak self] in self?.addActivity() })
+    }
+
+    var deleteAction: AnyObserver<Void> {
+        return AnyObserver(onNext: { [weak self] in self?.deleteActivity() })
     }
 
     var isLoading: Observable<Bool> {
@@ -28,10 +35,12 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     // MARK: Private
 
+    private let report: ReportDTO
     private let service: ActivityServiceProtocol
     private let isLoadingSubject = PublishSubject<Bool>()
     private let dismissSubject = PublishSubject<Void>()
     private var addActivityDisposeBag: DisposeBag?
+    private var deleteActivityDisposeBag: DisposeBag?
 
     private func addActivity() {
         let disposeBag = DisposeBag()
@@ -46,6 +55,18 @@ class ActivityViewModel: ActivityViewModelProtocol {
         )
         isLoadingSubject.onNext(true)
         service.addActivity(activity)
+            .subscribe(onDisposed: { [weak self] in
+                self?.isLoadingSubject.onNext(false)
+                self?.dismissSubject.onNext(())
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func deleteActivity() {
+        let disposeBag = DisposeBag()
+        deleteActivityDisposeBag = disposeBag
+        isLoadingSubject.onNext(true)
+        service.deleteActivity(report)
             .subscribe(onDisposed: { [weak self] in
                 self?.isLoadingSubject.onNext(false)
                 self?.dismissSubject.onNext(())

@@ -3,6 +3,7 @@ import Alamofire
 
 protocol ActivityServiceProtocol {
     func addActivity(_ activity: NewActivityDTO) -> Observable<Void>
+    func deleteActivity(_ activity: ReportDTO) -> Observable<Void>
 }
 
 class ActivityService: ActivityServiceProtocol {
@@ -31,6 +32,10 @@ class ActivityService: ActivityServiceProtocol {
                 if let error = ApiError(response: $0) { throw error }
                 return Void()
             }
+    }
+
+    func deleteActivity(_ activity: ReportDTO) -> Observable<Void> {
+        return Observable.of(()).delay(5, scheduler: MainScheduler.instance)
     }
 
     // MARK: Private
