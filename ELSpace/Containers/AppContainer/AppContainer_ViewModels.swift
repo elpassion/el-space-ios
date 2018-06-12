@@ -6,7 +6,11 @@ extension AppContainer: ActivitiesViewModelCreation,
     // MARK: ActivitiesViewModelCreation
 
     func activitiesViewModel() -> ActivitiesViewModelProtocol {
-        return ActivitiesViewModel(activitiesController: activitiesController, todayDate: Date())
+        let dateFormatters = ActivitiesDateFormatters(monthFormatter: DateFormatter.monthFormatter,
+                                                      shortDateFormatter: DateFormatter.shortDateFormatter)
+        return ActivitiesViewModel(activitiesController: activitiesController,
+                                   todayDate: Date(),
+                                   dateFormatters: dateFormatters)
     }
 
     // MARK: ActivityViewModelCreation

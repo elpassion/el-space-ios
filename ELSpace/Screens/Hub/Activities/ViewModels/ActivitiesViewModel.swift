@@ -12,9 +12,12 @@ protocol ActivitiesViewModelProtocol {
 
 class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
-    init(activitiesController: ActivitiesControlling, todayDate: Date) {
+    init(activitiesController: ActivitiesControlling,
+         todayDate: Date,
+         dateFormatters: ActivitiesDateFormatters) {
         self.activitiesController = activitiesController
         self.todayDate = todayDate
+        self.dateFormatters = dateFormatters
         setupBindings()
     }
 
@@ -33,7 +36,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     var month: String {
-        return monthFormatter.string(from: todayDate)
+        return dateFormatters.monthFormatter.string(from: todayDate)
     }
 
     var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
@@ -44,8 +47,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
     private let activitiesController: ActivitiesControlling
     private let todayDate: Date
-    private let monthFormatter = DateFormatter.monthFormatter
-    private let shortDateFormatter = DateFormatter.shortDateFormatter
+    private let dateFormatters: ActivitiesDateFormatters
 
     private let projects = Variable<[ProjectDTO]>([])
     private let reports = Variable<[ReportDTO]>([])
@@ -110,7 +112,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private func getDate(stringDate: String) -> Date {
-        guard let date = shortDateFormatter.date(from: stringDate) else { fatalError("Wrong date format") }
+        guard let date = dateFormatters.shortDateFormatter.date(from: stringDate) else { fatalError("Wrong date format") }
         return date
     }
 
