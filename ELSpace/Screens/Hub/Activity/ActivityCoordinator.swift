@@ -27,7 +27,7 @@ class ActivityCoordinator: Coordinator {
 
     private func bind(viewModel: ActivityViewModelProtocol,
                       to viewController: UIViewController & ActivityViewControlling) {
-        viewController.addAction.bind(to: viewModel.addAction).disposed(by: disposeBag)
+        viewController.addActivity.bind(to: viewModel.addActivity).disposed(by: disposeBag)
 
         viewController.deleteAction.bind(to: viewModel.deleteAction).disposed(by: disposeBag)
 

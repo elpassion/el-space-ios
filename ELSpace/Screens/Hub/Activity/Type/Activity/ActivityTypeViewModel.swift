@@ -13,12 +13,12 @@ protocol ActivityTypeViewModeling: class {
 
 class ActivityTypeViewModel: ActivityTypeViewModeling {
 
-    init(type: ReportType) {
+    init(type: ReportType, isUserInteractionEnabled: Bool) {
         self.type = type
         imageSelected = type.imageSelected
         imageUnselected = type.imageUnselected
         title = type.title.uppercased()
-        isUserInteractionEnabled = false
+        self.isUserInteractionEnabled = isUserInteractionEnabled
     }
 
     let type: ReportType

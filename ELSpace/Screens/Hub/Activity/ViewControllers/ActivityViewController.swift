@@ -9,28 +9,28 @@ protocol ActivityViewControllerAssembly {
 }
 
 protocol ActivityViewControlling {
-    var addAction: Observable<Void> { get }
+    var addActivity: Observable<NewActivityDTO> { get }
     var deleteAction: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
-    var type: ActivityViewController.`Type` { get set }
+}
+
+enum ActivityType {
+    case report(ReportDTO)
+    case new(Date)
 }
 
 class ActivityViewController: UIViewController, ActivityViewControlling {
 
-    enum `Type` {
-        case add, update
-    }
-
-    init(assembly: ActivityViewControllerAssembly) {
+    init(activityType: ActivityType,
+         assembly: ActivityViewControllerAssembly) {
+        self.activityType = activityType
         self.typeChooserViewController = assembly.typeChooserViewController
         self.formViewController = assembly.formViewController
         self.notificationCenter = assembly.notificationCenter
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder aDecoder: NSCoder) { return nil }
 
     // MARK: View
 
@@ -48,10 +48,8 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
 
     // MARK: - ActivityViewControlling
 
-    // TODO
-    var addAction: Observable<Void> {
+    var addActivity: Observable<NewActivityDTO> {
         return Observable.empty()
-//        return addBarButton.rx.tap.asObservable()
     }
 
     var deleteAction: Observable<Void> {
@@ -62,22 +60,15 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         return AnyObserver(onNext: { [weak self] in self?.loadingIndicator?.loading($0) })
     }
 
-    var type: `Type` = .add {
-        didSet {
-            addBarButton.title = type == .add ? "Add" : "Update"
-        }
-    }
-
     // MARK: - Private
 
+    private let activityType: ActivityType
     private let typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling
     private let formViewController: UIViewController & ActivityFormViewControlling
     private let deleteButton = UIButton(frame: .zero)
     private let notificationCenter: NotificationCenter
     private let deleteActionRelay = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
-
-    private let addBarButton = NavigationItemSubviews.addBarButton
     private var loadingIndicator: LoadingIndicator?
 
     private var activityView: ActivityView! {
@@ -85,8 +76,8 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     }
 
     private func configureNavigationBar() {
-        navigationItem.titleView = NavigationItemSubviews.label
-        navigationItem.rightBarButtonItem = addBarButton
+        navigationItem.titleView = NavigationItemSubviews.label(activityType: activityType)
+        navigationItem.rightBarButtonItem = NavigationItemSubviews.addBarButton(activityType: activityType)
     }
 
     private func configureSubviews() {
@@ -98,10 +89,12 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         formViewController.didMove(toParentViewController: self)
         activityView.addView(formViewController.view)
 
-        deleteButton.backgroundColor = .red
-        deleteButton.setTitle("Delete", for: .normal)
-        deleteButton.layer.cornerRadius = 5.0
-        activityView.addView(deleteButton)
+        if case .report(_) = activityType {
+            deleteButton.backgroundColor = .red
+            deleteButton.setTitle("Delete", for: .normal)
+            deleteButton.layer.cornerRadius = 5.0
+            activityView.addView(deleteButton)
+        }
     }
 
     private func setupBindings() {
@@ -159,16 +152,24 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
 private extension ActivityViewController {
 
     struct NavigationItemSubviews {
-        static var label: UILabel {
+        static func label(activityType: ActivityType) -> UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "Gotham-Book", size: 17)
             label.textColor = .white
-            label.text = "New activity"
+            switch activityType {
+            case .report(_): label.text = "Report"
+            case .new(_): label.text = "New activity"
+            }
             return label
         }
 
-        static var addBarButton: UIBarButtonItem {
-            let barButton = UIBarButtonItem(title: "Add", style: .plain, target: nil, action: nil)
+        static func addBarButton(activityType: ActivityType) -> UIBarButtonItem {
+            var title = ""
+            switch activityType {
+            case .report(_): title = "Update"
+            case .new(_): title = "Add"
+            }
+            let barButton = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
             barButton.setTitleTextAttributes([
                 NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
             ], for: .normal)
