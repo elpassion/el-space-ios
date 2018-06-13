@@ -7,6 +7,7 @@ protocol ActivitiesViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var month: String { get }
     var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
+    var createReport: Observable<((date: Date, projects: [ProjectDTO]))> { get }
     func getData()
 }
 
@@ -43,6 +44,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return openReportRelay.asObservable()
     }
 
+    var createReport: Observable<((date: Date, projects: [ProjectDTO]))> {
+        return createReportRelay.asObservable()
+    }
+
     // MARK: - Private
 
     private let activitiesController: ActivitiesControlling
@@ -54,6 +59,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let holidays = BehaviorRelay<[Int]>(value: [])
     private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
     private let openReportRelay = PublishRelay<(report: ReportDTO, projects: [ProjectDTO])>()
+    private let createReportRelay = PublishRelay<(date: Date, projects: [ProjectDTO])>()
 
     private var days: [Date] {
         return Date.dates(between: todayDate.startOf(component: .month),
@@ -157,6 +163,11 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
             .map { (report: $0[0], projects: []) }
             .bind(to: openReportRelay)
             .disposed(by: viewModel.disposeBag)
+
+        viewModel.addReportAction
+            .map { [weak self] in (date: viewModel.date, projects: self?.projects.value ?? []) }
+            .bind(to: createReportRelay)
+            .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()

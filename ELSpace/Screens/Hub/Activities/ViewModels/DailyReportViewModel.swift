@@ -1,6 +1,8 @@
 import RxSwift
+import RxCocoa
 
 protocol DailyReportViewModelProtocol {
+    var date: Date { get }
     var title: NSAttributedString? { get }
     var day: NSAttributedString { get }
     var dayType: DayType { get }
@@ -13,6 +15,7 @@ protocol DailyReportViewModelProtocol {
     var didTapOnReport: PublishSubject<Void> { get }
     var reportsViewModel: [ReportDetailsViewModelProtocol] { get }
     var action: PublishSubject<Void> { get }
+    var addReportAction: PublishRelay<Void> { get }
     var reports: [ReportDTO] { get }
     var disposeBag: DisposeBag { get }
 }
@@ -36,6 +39,8 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     }
 
     // MARK: - DailReportViewModelProtocol
+
+    let date: Date
 
     var title: NSAttributedString? {
         switch dayType {
@@ -97,13 +102,13 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
     let reportsViewModel: [ReportDetailsViewModelProtocol]
 
     let action = PublishSubject<Void>()
+    let addReportAction = PublishRelay<Void>()
     let reports: [ReportDTO]
 
     let disposeBag = DisposeBag()
 
     // MARK: - Private
 
-    private let date: Date
     private let todayDate: Date
     private let isHoliday: Bool
 
