@@ -1,3 +1,5 @@
+import Foundation
+
 extension AppContainer: SelectionCoordinatorCreation,
                         ActivitiesCoordinatorCreation,
                         ActivityCoordinatorCreation {
@@ -24,9 +26,9 @@ extension AppContainer: SelectionCoordinatorCreation,
 
     // MARK: - ActivityCoordinatorCreation
 
-    func activityCoordinator(report: ReportDTO, projectScope: [ProjectDTO]) -> Coordinator {
-        return ActivityCoordinator(viewController: activityViewController(report: report, projectScope: projectScope),
-                                   viewModel: activityViewModel(report: report, projectScope: projectScope))
+    func activityCoordinator(activityType: ActivityType, projectScope: [ProjectDTO]) -> Coordinator {
+        return ActivityCoordinator(viewController: activityViewController(activityType: activityType, projectScope: projectScope),
+                                   viewModel: activityViewModel(activityType: activityType, projectScope: projectScope))
     }
 
 }
@@ -40,5 +42,5 @@ protocol ActivitiesCoordinatorCreation {
 }
 
 protocol ActivityCoordinatorCreation {
-    func activityCoordinator(report: ReportDTO, projectScope: [ProjectDTO]) -> Coordinator
+    func activityCoordinator(activityType: ActivityType, projectScope: [ProjectDTO]) -> Coordinator
 }
