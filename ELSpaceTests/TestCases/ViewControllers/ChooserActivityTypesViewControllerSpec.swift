@@ -54,7 +54,9 @@ class ChooserActivityTypesViewControllerSpec: QuickSpec {
 
 private struct ViewModelMock: ChooserActivityTypesViewModeling {
 
-    var activityTypeViewModels: [ActivityTypeViewModeling] = [ActivityTypeViewModel(type: .normal),
-                                                              ActivityTypeViewModel(type: .paidVacations)]
+    var activityTypeViewModels: [ActivityTypeViewModeling] = [ActivityTypeViewModel(type: .normal,
+                                                                                    isUserInteractionEnabled: false),
+                                                              ActivityTypeViewModel(type: .paidVacations,
+                                                                                    isUserInteractionEnabled: false)]
 
 }

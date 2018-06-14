@@ -4,8 +4,6 @@ import RxSwift
 
 class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
 
-    var type: ActivityViewController.`Type` = .add
-
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,7 +27,7 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
         return AnyObserver(eventHandler: { _ in })
     }
 
-    var addAction: Observable<Void> {
+    var addActivity: Observable<NewActivityDTO> {
         return Observable.empty()
     }
 

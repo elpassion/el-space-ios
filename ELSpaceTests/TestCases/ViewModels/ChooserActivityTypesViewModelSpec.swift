@@ -22,7 +22,7 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
                                        updatedAt: "8",
                                        billable: true,
                                        reportType: 1)
-                sut = ChooserActivityTypesViewModel(report: report)
+                sut = ChooserActivityTypesViewModel(activityType: ActivityType.report(report))
             }
 
             it("should return 5 report types") {
@@ -32,27 +32,27 @@ class ChooserActivityTypesViewModelSpec: QuickSpec {
             describe("types and order") {
                 it("should have first time report") {
                     let viewModel = sut.activityTypeViewModels[0] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .normal)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .normal, isUserInteractionEnabled: false)))
                 }
 
                 it("should have second time report") {
                     let viewModel = sut.activityTypeViewModels[1] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .paidVacations)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .paidVacations, isUserInteractionEnabled: false)))
                 }
 
                 it("should have third time report") {
                     let viewModel = sut.activityTypeViewModels[2] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .unpaidDayOff)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .unpaidDayOff, isUserInteractionEnabled: false)))
                 }
 
                 it("should have fourth time report") {
                     let viewModel = sut.activityTypeViewModels[3] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .sickLeave)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .sickLeave, isUserInteractionEnabled: false)))
                 }
 
                 it("should have fifth time report") {
                     let viewModel = sut.activityTypeViewModels[4] as! ActivityTypeViewModel
-                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .conference)))
+                    expect(viewModel).to(equal(ActivityTypeViewModel(type: .conference, isUserInteractionEnabled: false)))
                 }
 
                 it("should paid vacations be selected") {

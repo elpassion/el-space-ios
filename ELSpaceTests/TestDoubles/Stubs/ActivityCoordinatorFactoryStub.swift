@@ -10,4 +10,8 @@ class ActivityCoordinatorCreationStub: ActivityCoordinatorCreation {
         return coordinatorStub
     }
 
+    func activityCoordinator(activityType: ActivityType, projectScope: [ProjectDTO]) -> Coordinator {
+        return coordinatorStub
+    }
+
 }

@@ -11,7 +11,7 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("time report") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .normal)
+                    sut = ActivityTypeViewModel(type: .normal, isUserInteractionEnabled: false)
                 }
 
                 it("should be proper type") {
@@ -33,7 +33,7 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("vacation") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .paidVacations)
+                    sut = ActivityTypeViewModel(type: .paidVacations, isUserInteractionEnabled: false)
                 }
 
                 it("should be proper type") {
@@ -55,7 +55,7 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("day off") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .unpaidDayOff)
+                    sut = ActivityTypeViewModel(type: .unpaidDayOff, isUserInteractionEnabled: false)
                 }
 
                 it("should be proper type") {
@@ -77,7 +77,7 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("sick leave") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .sickLeave)
+                    sut = ActivityTypeViewModel(type: .sickLeave, isUserInteractionEnabled: false)
                 }
 
                 it("should be proper type") {
@@ -99,7 +99,7 @@ class ActivityTypeViewModelSpec: QuickSpec {
 
             context("conference") {
                 beforeEach {
-                    sut = ActivityTypeViewModel(type: .conference)
+                    sut = ActivityTypeViewModel(type: .conference, isUserInteractionEnabled: false)
                 }
 
                 it("should be proper type") {
