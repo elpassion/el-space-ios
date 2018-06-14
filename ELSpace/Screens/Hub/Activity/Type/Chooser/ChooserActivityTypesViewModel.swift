@@ -54,6 +54,8 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
         }
         if case .report(let report) = activityType {
             activityTypeViewModels[report.reportType].isSelected.accept(true)
+        } else if case .new(_) = activityType {
+            activityTypeViewModels.first?.isSelected.accept(true)
         }
     }
 
