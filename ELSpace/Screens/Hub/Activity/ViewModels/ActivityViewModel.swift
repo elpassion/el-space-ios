@@ -1,7 +1,7 @@
 import RxSwift
 
 protocol ActivityViewModelProtocol {
-    var addAction: AnyObserver<Void> { get }
+    var addActivity: AnyObserver<NewActivityDTO> { get }
     var deleteAction: AnyObserver<Void> { get }
     var isLoading: Observable<Bool> { get }
     var dismiss: Observable<Void> { get }
@@ -9,16 +9,16 @@ protocol ActivityViewModelProtocol {
 
 class ActivityViewModel: ActivityViewModelProtocol {
 
-    init(report: ReportDTO,
+    init(activityType: ActivityType,
          service: ActivityServiceProtocol) {
-        self.report = report
+        self.activityType = activityType
         self.service = service
     }
 
     // MARK: ActivityViewModelProtocol
 
-    var addAction: AnyObserver<Void> {
-        return AnyObserver(onNext: { [weak self] in self?.addActivity() })
+    var addActivity: AnyObserver<NewActivityDTO> {
+        return AnyObserver(onNext: { [weak self] in self?.addActivity($0) })
     }
 
     var deleteAction: AnyObserver<Void> {
@@ -35,21 +35,13 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     // MARK: Private
 
-    private let report: ReportDTO
+    private let activityType: ActivityType
     private let service: ActivityServiceProtocol
     private let dismissSubject = PublishSubject<Void>()
     private let activityIndicator = ActivityIndicator()
     private let disposeBag = DisposeBag()
 
-    private func addActivity() {
-        let activity = NewActivityDTO( // TODO: data mocked up for now
-            projectId: 294,
-            userId: 40,
-            value: 1,
-            performedAt: "2017-12-22",
-            comment: "EL SPACE TEST",
-            reportType: 0
-        )
+    private func addActivity(_ activity: NewActivityDTO) {
         service.addActivity(activity)
             .trackActivity(activityIndicator)
             .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
@@ -57,6 +49,7 @@ class ActivityViewModel: ActivityViewModelProtocol {
     }
 
     private func deleteActivity() {
+        guard case .report(let report) = activityType else { return }
         service.deleteActivity(report)
             .trackActivity(activityIndicator)
             .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })

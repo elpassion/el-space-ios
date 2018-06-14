@@ -51,14 +51,18 @@ class ActivitiesCoordinator: Coordinator {
             }).disposed(by: disposeBag)
 
         viewModel.openReport
-            .subscribe(onNext: { [weak self] in self?.showActivity(report: $0.report, projects: $0.projects) })
+            .subscribe(onNext: { [weak self] in self?.showActivity(activityType: ActivityType.report($0.report), projects: $0.projects) })
+            .disposed(by: disposeBag)
+
+        viewModel.createReport
+            .subscribe(onNext: { [weak self] in self?.showActivity(activityType: ActivityType.new($0.date), projects: $0.projects) })
             .disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()
 
-    private func showActivity(report: ReportDTO, projects: [ProjectDTO]) {
-        let coordinator = activityCoordinatorFactory.activityCoordinator(report: report, projectScope: projects)
+    private func showActivity(activityType: ActivityType, projects: [ProjectDTO]) {
+        let coordinator = activityCoordinatorFactory.activityCoordinator(activityType: activityType, projectScope: projects)
         presentedCoordinator = coordinator
         presenter.push(viewController: coordinator.initialViewController, on: activitiesViewController)
     }

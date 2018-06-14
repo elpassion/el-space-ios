@@ -15,14 +15,18 @@ class ActivityService: ActivityServiceProtocol {
     // MARK: ActivitiesServiceProtocol
 
     func addActivity(_ activity: NewActivityDTO) -> Observable<Void> {
-        let params: [String: Any] = [
-            "project_id": activity.projectId,
-            "user_id": activity.userId,
-            "value": activity.value,
-            "performed_at": activity.performedAt,
-            "comment": activity.comment,
-            "report_type": activity.reportType
-        ]
+        var params = [String: Any]()
+        params["performed_at"] = activity.performedAt
+        params["report_type"] = activity.reportType
+        if let projectId = activity.projectId {
+            params["project_id"] = projectId
+        }
+        if let value = activity.value {
+            params["value"] = value
+        }
+        if let comment = activity.comment {
+            params["comment"] = comment
+        }
         return apiClient.request(path: "activities",
                                  method: .post,
                                  parameters: params,

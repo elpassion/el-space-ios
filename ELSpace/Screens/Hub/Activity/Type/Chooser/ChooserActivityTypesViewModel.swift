@@ -7,8 +7,18 @@ protocol ChooserActivityTypesViewModeling {
 
 class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
-    init(report: ReportDTO) {
-        self.report = report
+    init(activityType: ActivityType) {
+        self.activityType = activityType
+        var isUserInteractionEnabled = false
+        switch activityType {
+        case .report(_): isUserInteractionEnabled = false
+        case .new(_): isUserInteractionEnabled = true
+        }
+        timeReportViewModel = ActivityTypeViewModel(type: .normal, isUserInteractionEnabled: isUserInteractionEnabled)
+        vacationViewModel = ActivityTypeViewModel(type: .paidVacations, isUserInteractionEnabled: isUserInteractionEnabled)
+        dayOffViewModel = ActivityTypeViewModel(type: .unpaidDayOff, isUserInteractionEnabled: isUserInteractionEnabled)
+        sickLeaveViewModel = ActivityTypeViewModel(type: .sickLeave, isUserInteractionEnabled: isUserInteractionEnabled)
+        conferenceViewModel = ActivityTypeViewModel(type: .conference, isUserInteractionEnabled: isUserInteractionEnabled)
         configureViewModels()
     }
 
@@ -20,12 +30,12 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
 
     // MARK: - Private
 
-    private let report: ReportDTO
-    private let timeReportViewModel = ActivityTypeViewModel(type: .normal)
-    private let vacationViewModel = ActivityTypeViewModel(type: .paidVacations)
-    private let dayOffViewModel = ActivityTypeViewModel(type: .unpaidDayOff)
-    private let sickLeaveViewModel = ActivityTypeViewModel(type: .sickLeave)
-    private let conferenceViewModel = ActivityTypeViewModel(type: .conference)
+    private let activityType: ActivityType
+    private let timeReportViewModel: ActivityTypeViewModel
+    private let vacationViewModel: ActivityTypeViewModel
+    private let dayOffViewModel: ActivityTypeViewModel
+    private let sickLeaveViewModel: ActivityTypeViewModel
+    private let conferenceViewModel: ActivityTypeViewModel
 
     private let disposeBag = DisposeBag()
 
@@ -42,7 +52,11 @@ class ChooserActivityTypesViewModel: ChooserActivityTypesViewModeling {
                 })
                 .disposed(by: disposeBag)
         }
-        activityTypeViewModels[report.reportType].isSelected.accept(true)
+        if case .report(let report) = activityType {
+            activityTypeViewModels[report.reportType].isSelected.accept(true)
+        } else if case .new(_) = activityType {
+            activityTypeViewModels.first?.isSelected.accept(true)
+        }
     }
 
 }

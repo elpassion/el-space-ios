@@ -25,8 +25,8 @@ class ActivitiesViewControllerSpec: QuickSpec {
                 viewDidAppearObserver = nil
             }
 
-            it("should throw fatalError when initailize with coder") {
-                expect { sut = ActivitiesViewController(coder: NSCoder()) }.to(throwAssertion())
+            it("should not create object with coder") {
+                expect(ActivitiesViewController(coder: NSCoder())).to(beNil())
             }
 
             context("when viewDidAppear") {

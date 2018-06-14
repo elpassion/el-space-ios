@@ -1,8 +1,7 @@
 struct NewActivityDTO {
-    let projectId: Int
-    let userId: Int
-    let value: Int
+    let projectId: Int?
+    let value: Double?
     let performedAt: String
-    let comment: String
+    let comment: String?
     let reportType: Int
 }

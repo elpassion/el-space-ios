@@ -23,38 +23,32 @@ protocol ActivityFormViewOutputModeling {
 
 class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutputModeling {
 
-    init(report: ReportDTO, projectScope: [ProjectDTO]) {
-        self.report = report
+    init(activityType: ActivityType, projectScope: [ProjectDTO]) {
+        self.activityType = activityType
         self.projectScope = projectScope
-        projectNamesSubject = BehaviorSubject<[String]>(value: projectScope.map { $0.name })
-        projectSelectedSubject = BehaviorSubject<String>(value: projectScope.filter { $0.id == report.projectId }.first?.name ?? "")
-        updateHoursSubject = BehaviorSubject<String>(value: "\(report.value)")
-        updateCommentSubject = BehaviorSubject<String>(value: report.comment ?? "")
-        if let reportType = ReportType(rawValue: report.reportType) {
-            type.onNext(reportType)
-        }
+        configure()
     }
 
     // MARK: - ActivityFormViewInputModeling
 
     var performedAt: Observable<String> {
-        return Observable.of(report.performedAt)
+        return performedAtRelay.asObservable()
     }
 
     var projectNames: Observable<[String]> {
-        return projectNamesSubject.asObservable()
+        return projectsRelay.asObservable().map { $0.map { $0.name } }
     }
 
     var projectSelected: Observable<String> {
-        return projectSelectedSubject.asObservable()
+        return projectSelectedRelay.asObservable().map { $0?.name }.unwrap()
     }
 
     var hours: Observable<String> {
-        return updateHoursSubject.asObservable()
+        return updateHoursRelay.asObservable()
     }
 
     var comment: Observable<String> {
-        return updateCommentSubject.asObservable()
+        return updateCommentRelay.asObservable()
     }
 
     var projectInputHidden: Observable<Bool> {
@@ -70,8 +64,18 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     }
 
     var form: Observable<ActivityForm> {
-        return Observable.combineLatest(projectSelected, updateHoursSubject, updateCommentSubject)
-            .map { ActivityForm(project: $0.0, hours: Double(from: $0.1), comment: $0.2) }
+        return Observable.combineLatest(projectSelectedRelay,
+                                        updateHoursRelay,
+                                        updateCommentRelay,
+                                        projectInputHiddenRelay,
+                                        hoursInputHiddenRelay,
+                                        commentInputHiddenRelay,
+                                        performedAtRelay)
+            .map { ActivityForm(projectId: $0.3 ? nil : $0.0?.id,
+                                hours: $0.4 ? nil : Double(from: $0.1),
+                                comment: $0.5 ? nil : $0.2,
+                                date: $0.6)
+            }
     }
 
     // MARK: - ActivityFormViewOutputModeling
@@ -89,27 +93,49 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     }
 
     var selectProject: AnyObserver<String> {
-        return projectSelectedSubject.asObserver()
+        return AnyObserver(onNext: { [weak self] name in
+            let project = self?.projectScope.filter { $0.name == name }.first
+            self?.projectSelectedRelay.accept(project)
+        })
     }
 
     var updateHours: AnyObserver<String> {
-        return updateHoursSubject.asObserver()
+        return AnyObserver(onNext: { [weak self] in self?.updateHoursRelay.accept($0) })
     }
 
     var updateComment: AnyObserver<String> {
-        return updateCommentSubject.asObserver()
+        return AnyObserver(onNext: { [weak self] in self?.updateCommentRelay.accept($0) })
     }
 
     // MARK: - Privates
 
-    private let report: ReportDTO
+    private let activityType: ActivityType
     private let projectScope: [ProjectDTO]
-    private let projectNamesSubject: BehaviorSubject<[String]>
-    private let projectSelectedSubject: BehaviorSubject<String>
+    private let performedAtRelay = BehaviorRelay<String>(value: "")
+    private let projectsRelay = BehaviorRelay<[ProjectDTO]>(value: [])
+    private let projectSelectedRelay = BehaviorRelay<ProjectDTO?>(value: nil)
     private let projectInputHiddenRelay = BehaviorRelay(value: false)
     private let hoursInputHiddenRelay = BehaviorRelay(value: false)
     private let commentInputHiddenRelay = BehaviorRelay(value: false)
-    private let updateHoursSubject: BehaviorSubject<String>
-    private let updateCommentSubject: BehaviorSubject<String>
+    private let updateHoursRelay = BehaviorRelay<String>(value: "")
+    private let updateCommentRelay = BehaviorRelay<String>(value: "")
+
+    private func configure() {
+        projectsRelay.accept(projectScope)
+        switch activityType {
+        case .report(let report): performedAtRelay.accept(report.performedAt)
+        case .new(let date):
+            let dateFormatter = DateFormatter.shortDateFormatter
+            performedAtRelay.accept(dateFormatter.string(from: date))
+        }
+        if case .report(let report) = activityType {
+            projectSelectedRelay.accept(projectScope.filter { $0.id == report.projectId }.first)
+            updateHoursRelay.accept(report.value)
+            updateCommentRelay.accept(report.comment ?? "")
+            if let reportType = ReportType(rawValue: report.reportType) {
+                type.onNext(reportType)
+            }
+        }
+    }
 
 }

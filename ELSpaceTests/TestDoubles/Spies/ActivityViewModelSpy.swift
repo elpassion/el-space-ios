@@ -31,4 +31,8 @@ class ActivitiesViewModelSpy: ActivitiesViewModelProtocol {
         return openReportSubject.asObservable()
     }
 
+    var createReport: Observable<((date: Date, projects: [ProjectDTO]))> {
+        return Observable.never()
+    }
+
 }
