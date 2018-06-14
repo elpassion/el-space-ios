@@ -33,6 +33,7 @@
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		06BE2E6D1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
+		06D4377620D27FBD00A49424 /* NewActivityDTO_Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */; };
 		06F3BF9F1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */; };
 		06F3BFA51FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3BFA41FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift */; };
 		06FBBB501FE12A5B0077F692 /* ActivityTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB4F1FE12A5B0077F692 /* ActivityTypeViewModel.swift */; };
@@ -211,6 +212,7 @@
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDTO_Validation.swift; sourceTree = "<group>"; };
 		06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerStub.swift; sourceTree = "<group>"; };
 		06F3BFA41FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportView.swift; sourceTree = "<group>"; };
 		06FBBB4F1FE12A5B0077F692 /* ActivityTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModel.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				47F0AAA81FF6567B0031D2E6 /* ActivityViewController.swift */,
+				06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1456,6 +1459,7 @@
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */,
 				4711C04920CFE48600C78338 /* ActivitiesDateFormatters.swift in Sources */,
+				06D4377620D27FBD00A49424 /* NewActivityDTO_Validation.swift in Sources */,
 				310E803E1FED2ACB0001E4A5 /* NewActivityDTO.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
