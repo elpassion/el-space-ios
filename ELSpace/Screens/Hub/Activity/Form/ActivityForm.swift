@@ -1,5 +1,6 @@
 struct ActivityForm {
-    let project: String?
+    let projectId: Int?
     let hours: Double?
     let comment: String?
+    let date: String
 }
