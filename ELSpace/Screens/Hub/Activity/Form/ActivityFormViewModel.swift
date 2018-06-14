@@ -32,18 +32,15 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     // MARK: - ActivityFormViewInputModeling
 
     var performedAt: Observable<String> {
-        switch activityType {
-        case .report(let report): return Observable.of(report.performedAt)
-        case .new(let date): return Observable.of(date.description)
-        }
+        return performedAtRelay.asObservable()
     }
 
     var projectNames: Observable<[String]> {
-        return projectNamesRelay.asObservable()
+        return projectsRelay.asObservable().map { $0.map { $0.name } }
     }
 
     var projectSelected: Observable<String> {
-        return projectSelectedRelay.asObservable()
+        return projectSelectedRelay.asObservable().map { $0?.name }.unwrap()
     }
 
     var hours: Observable<String> {
@@ -67,8 +64,18 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     }
 
     var form: Observable<ActivityForm> {
-        return Observable.combineLatest(projectSelected, updateHoursRelay, updateCommentRelay)
-            .map { ActivityForm(project: $0.0, hours: Double(from: $0.1), comment: $0.2) }
+        return Observable.combineLatest(projectSelectedRelay,
+                                        updateHoursRelay,
+                                        updateCommentRelay,
+                                        projectInputHiddenRelay,
+                                        hoursInputHiddenRelay,
+                                        commentInputHiddenRelay,
+                                        performedAtRelay)
+            .map { ActivityForm(projectId: $0.3 ? nil : $0.0?.id,
+                                hours: $0.4 ? nil : Double(from: $0.1),
+                                comment: $0.5 ? nil : $0.2,
+                                date: $0.6)
+            }
     }
 
     // MARK: - ActivityFormViewOutputModeling
@@ -86,7 +93,10 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     }
 
     var selectProject: AnyObserver<String> {
-        return AnyObserver(onNext: { [weak self] in self?.projectSelectedRelay.accept($0) })
+        return AnyObserver(onNext: { [weak self] name in
+            let project = self?.projectScope.filter { $0.name == name }.first
+            self?.projectSelectedRelay.accept(project)
+        })
     }
 
     var updateHours: AnyObserver<String> {
@@ -101,8 +111,9 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     private let activityType: ActivityType
     private let projectScope: [ProjectDTO]
-    private let projectNamesRelay = BehaviorRelay<[String]>(value: [])
-    private let projectSelectedRelay = BehaviorRelay<String>(value: "")
+    private let performedAtRelay = BehaviorRelay<String>(value: "")
+    private let projectsRelay = BehaviorRelay<[ProjectDTO]>(value: [])
+    private let projectSelectedRelay = BehaviorRelay<ProjectDTO?>(value: nil)
     private let projectInputHiddenRelay = BehaviorRelay(value: false)
     private let hoursInputHiddenRelay = BehaviorRelay(value: false)
     private let commentInputHiddenRelay = BehaviorRelay(value: false)
@@ -110,9 +121,15 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
     private let updateCommentRelay = BehaviorRelay<String>(value: "")
 
     private func configure() {
-        projectNamesRelay.accept(projectScope.map { $0.name })
+        projectsRelay.accept(projectScope)
+        switch activityType {
+        case .report(let report): performedAtRelay.accept(report.performedAt)
+        case .new(let date):
+            let dateFormatter = DateFormatter.shortDateFormatter
+            performedAtRelay.accept(dateFormatter.string(from: date))
+        }
         if case .report(let report) = activityType {
-            projectSelectedRelay.accept(projectScope.filter { $0.id == report.projectId }.first?.name ?? "")
+            projectSelectedRelay.accept(projectScope.filter { $0.id == report.projectId }.first)
             updateHoursRelay.accept(report.value)
             updateCommentRelay.accept(report.comment ?? "")
             if let reportType = ReportType(rawValue: report.reportType) {
