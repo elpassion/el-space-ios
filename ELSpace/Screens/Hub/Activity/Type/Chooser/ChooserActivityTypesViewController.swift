@@ -29,7 +29,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     // MARK: ActivityTypeViewControlling
 
     var selected: Observable<ReportType> {
-        return selectedTypeSubject.asObservable()
+        return selectedTypeSubject.asObservable().unwrap()
     }
 
     var select: AnyObserver<ReportType> {
@@ -43,7 +43,7 @@ class ChooserActivityTypesViewController: UIViewController, ChooserActivityTypes
     // MARK: Privates
 
     private let viewModel: ChooserActivityTypesViewModeling
-    private let selectedTypeSubject = PublishSubject<ReportType>()
+    private let selectedTypeSubject = BehaviorSubject<ReportType?>(value: nil)
     private let disposeBag = DisposeBag()
 
     private var activityTypesView: ChooserActivityTypesView! {

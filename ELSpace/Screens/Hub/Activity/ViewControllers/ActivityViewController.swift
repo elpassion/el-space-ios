@@ -49,7 +49,11 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     // MARK: - ActivityViewControlling
 
     var addActivity: Observable<NewActivityDTO> {
-        return Observable.empty()
+        return Observable.combineLatest(rightItemActionRelay.asObservable(),
+                                        formViewController.form,
+                                        typeChooserViewController.selected)
+            .map { NewActivityDTO.create(with: $0.1, type: $0.2) }
+            .filter { $0.isValid }
     }
 
     var deleteAction: Observable<Void> {
@@ -70,6 +74,7 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     private let deleteActionRelay = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     private var loadingIndicator: LoadingIndicator?
+    private let rightItemActionRelay = PublishRelay<Void>()
 
     private var activityView: ActivityView! {
         return view as? ActivityView
@@ -78,6 +83,8 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     private func configureNavigationBar() {
         navigationItem.titleView = NavigationItemSubviews.label(activityType: activityType)
         navigationItem.rightBarButtonItem = NavigationItemSubviews.addBarButton(activityType: activityType)
+        navigationItem.rightBarButtonItem?.action = #selector(ActivityViewController.rightItemAction)
+        navigationItem.rightBarButtonItem?.target = self
     }
 
     private func configureSubviews() {
@@ -108,10 +115,12 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
             .subscribe(onNext: { [weak self] in self?.adjustForKeyboard(notification: $0) })
             .disposed(by: disposeBag)
 
-        formViewController.form
-            .subscribe(onNext: {
-                print("project: \($0.project ?? ""), hours: \($0.hours ?? 0), comment: \($0.comment ?? "")")
-            }).disposed(by: disposeBag)
+        Observable.combineLatest(formViewController.form,
+                                 typeChooserViewController.selected)
+            .map { NewActivityDTO.create(with: $0.0, type: $0.1).isValid }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] in print($0);self?.navigationItem.rightBarButtonItem?.isEnabled = $0 })
+            .disposed(by: disposeBag)
 
         deleteButton.rx.controlEvent(.touchUpInside)
             .flatMap { [weak self] _ -> Observable<Void> in
@@ -147,6 +156,10 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         })
     }
 
+    @objc func rightItemAction() {
+        rightItemActionRelay.accept(())
+    }
+
 }
 
 private extension ActivityViewController {
@@ -176,6 +189,9 @@ private extension ActivityViewController {
             barButton.setTitleTextAttributes([
                 NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
             ], for: .highlighted)
+            barButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
+                ], for: .disabled)
             return barButton
         }
     }

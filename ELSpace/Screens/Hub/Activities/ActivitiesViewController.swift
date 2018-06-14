@@ -14,9 +14,7 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder aDecoder: NSCoder) { return nil }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
