@@ -10,6 +10,7 @@ protocol ActivityViewControllerAssembly {
 
 protocol ActivityViewControlling {
     var addActivity: Observable<NewActivityDTO> { get }
+    var updateActivity: Observable<NewActivityDTO> { get }
     var deleteAction: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
 }
@@ -49,11 +50,11 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     // MARK: - ActivityViewControlling
 
     var addActivity: Observable<NewActivityDTO> {
-        return Observable.combineLatest(rightItemActionRelay.asObservable(),
-                                        formViewController.form,
-                                        typeChooserViewController.selected)
-            .map { NewActivityDTO.create(with: $0.1, type: $0.2) }
-            .filter { $0.isValid }
+        return addActivityRelay.asObservable()
+    }
+
+    var updateActivity: Observable<NewActivityDTO> {
+        return updateActivityRelay.asObservable()
     }
 
     var deleteAction: Observable<Void> {
@@ -71,6 +72,8 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     private let formViewController: UIViewController & ActivityFormViewControlling
     private let deleteButton = UIButton(frame: .zero)
     private let notificationCenter: NotificationCenter
+    private let addActivityRelay = PublishRelay<NewActivityDTO>()
+    private let updateActivityRelay = PublishRelay<NewActivityDTO>()
     private let deleteActionRelay = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     private var loadingIndicator: LoadingIndicator?
@@ -117,9 +120,29 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
 
         Observable.combineLatest(formViewController.form,
                                  typeChooserViewController.selected)
-            .map { NewActivityDTO.create(with: $0.0, type: $0.1).isValid }
+            .map { [weak self] in
+                guard let `self` = self else { return false }
+                switch self.activityType {
+                case .new(_): return NewActivityDTO.create(with: $0.0, type: $0.1).isValid
+                case .report(_): return NewActivityDTO.create(with: $0.0, type: $0.1).isValid && $0.1 == .normal
+                }
+            }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] in print($0);self?.navigationItem.rightBarButtonItem?.isEnabled = $0 })
+            .subscribe(onNext: { [weak self] in self?.navigationItem.rightBarButtonItem?.isEnabled = $0 })
+            .disposed(by: disposeBag)
+
+        Observable.combineLatest(rightItemActionRelay.asObservable(),
+                                 formViewController.form,
+                                 typeChooserViewController.selected)
+            .map { NewActivityDTO.create(with: $0.1, type: $0.2) }
+            .filter { $0.isValid }
+            .subscribe(onNext: { [weak self] in
+                guard let `self` = self else { return }
+                switch self.activityType {
+                case .new(_): self.addActivityRelay.accept($0)
+                case .report(_): self.updateActivityRelay.accept($0)
+                }
+            })
             .disposed(by: disposeBag)
 
         deleteButton.rx.controlEvent(.touchUpInside)
@@ -184,13 +207,16 @@ private extension ActivityViewController {
             }
             let barButton = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any,
+                NSAttributedStringKey.foregroundColor: UIColor.white as Any
             ], for: .normal)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any,
+                NSAttributedStringKey.foregroundColor: UIColor.white as Any
             ], for: .highlighted)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any
+                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any,
+                NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 0.2) as Any
                 ], for: .disabled)
             return barButton
         }
