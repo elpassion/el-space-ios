@@ -31,6 +31,10 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
         return Observable.empty()
     }
 
+    var updateActivity: Observable<NewActivityDTO> {
+        return Observable.empty()
+    }
+
     var deleteAction: Observable<Void> {
         return Observable.empty()
     }
