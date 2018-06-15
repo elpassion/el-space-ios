@@ -122,19 +122,21 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
                                  typeChooserViewController.selected)
             .map { [weak self] in
                 guard let `self` = self else { return false }
+                let isFormValid = NewActivityDTO.create(with: $0.0, type: $0.1).isValid
                 switch self.activityType {
-                case .new(_): return NewActivityDTO.create(with: $0.0, type: $0.1).isValid
-                case .report(_): return NewActivityDTO.create(with: $0.0, type: $0.1).isValid && $0.1 == .normal
+                case .new(_): return isFormValid
+                case .report(_): return isFormValid && $0.1 == .normal
                 }
             }
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] in self?.navigationItem.rightBarButtonItem?.isEnabled = $0 })
             .disposed(by: disposeBag)
 
-        Observable.combineLatest(rightItemActionRelay.asObservable(),
-                                 formViewController.form,
-                                 typeChooserViewController.selected)
-            .map { NewActivityDTO.create(with: $0.1, type: $0.2) }
+        rightItemActionRelay
+            .flatMap { [weak self] _ -> Observable<NewActivityDTO> in
+                guard let `self` = self else { return Observable.never() }
+                return Observable.combineLatest(self.formViewController.form, self.typeChooserViewController.selected)
+                    .map { NewActivityDTO.create(with: $0.0, type: $0.1) }}
             .filter { $0.isValid }
             .subscribe(onNext: { [weak self] in
                 guard let `self` = self else { return }
