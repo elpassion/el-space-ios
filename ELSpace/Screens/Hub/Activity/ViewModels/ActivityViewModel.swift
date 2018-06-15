@@ -2,6 +2,7 @@ import RxSwift
 
 protocol ActivityViewModelProtocol {
     var addActivity: AnyObserver<NewActivityDTO> { get }
+    var updateActivity: AnyObserver<NewActivityDTO> { get }
     var deleteAction: AnyObserver<Void> { get }
     var isLoading: Observable<Bool> { get }
     var dismiss: Observable<Void> { get }
@@ -19,6 +20,10 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     var addActivity: AnyObserver<NewActivityDTO> {
         return AnyObserver(onNext: { [weak self] in self?.addActivity($0) })
+    }
+
+    var updateActivity: AnyObserver<NewActivityDTO> {
+        return AnyObserver(onNext: { [weak self] in self?.updateActivity($0) })
     }
 
     var deleteAction: AnyObserver<Void> {
@@ -43,6 +48,14 @@ class ActivityViewModel: ActivityViewModelProtocol {
 
     private func addActivity(_ activity: NewActivityDTO) {
         service.addActivity(activity)
+            .trackActivity(activityIndicator)
+            .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
+            .disposed(by: disposeBag)
+    }
+
+    private func updateActivity(_ activity: NewActivityDTO) {
+        guard case .report(let report) = activityType else { return }
+        service.updateActivity(activity, forId: report.id)
             .trackActivity(activityIndicator)
             .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
             .disposed(by: disposeBag)
