@@ -36,7 +36,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     }
 
     var form: Observable<ActivityForm> {
-        return viewModel.form
+        return viewModel.form.distinctUntilChanged()
     }
 
     // MARK: - Privates
