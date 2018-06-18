@@ -54,8 +54,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let todayDate: Date
     private let dateFormatters: ActivitiesDateFormatters
 
-    private let projects = Variable<[ProjectDTO]>([])
-    private let reports = Variable<[ReportDTO]>([])
+    private let projects = BehaviorRelay<[ProjectDTO]>(value: [])
+    private let reports = BehaviorRelay<[ReportDTO]>(value: [])
     private let holidays = BehaviorRelay<[Int]>(value: [])
     private let viewModels = BehaviorRelay<[DailyReportViewModelProtocol]>(value: [])
     private let openReportRelay = PublishRelay<(report: ReportDTO, projects: [ProjectDTO])>()

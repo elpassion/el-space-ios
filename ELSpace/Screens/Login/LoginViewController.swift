@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 import RxSwiftExt
 import GoogleSignIn
 
@@ -50,7 +51,7 @@ class LoginViewController: UIViewController, LoginViewControlling {
     private let alertFactory: AlertCreation
     private let viewControllerPresenter: ViewControllerPresenting
     private let googleUserMapper: GoogleUserMapping
-    private let isSigningIn = Variable<Bool>(false)
+    private let isSigningIn = BehaviorRelay<Bool>(value: false)
 
     // MARK: - Bindings
 
@@ -58,19 +59,19 @@ class LoginViewController: UIViewController, LoginViewControlling {
         loginView.loginButton.rx.tap
             .ignoreWhen { [weak self] in self?.isSigningIn.value == true }
             .subscribe(onNext: { [weak self] in
-                self?.isSigningIn.value = true
+                self?.isSigningIn.accept(true)
                 self?.signIn()
             }).disposed(by: disposeBag)
 
         googleUserManager.error
             .subscribe(onNext: { [weak self] error in
-                self?.isSigningIn.value = false
+                self?.isSigningIn.accept(false)
                 self?.handleError(error: error)
             }).disposed(by: disposeBag)
 
         googleUserManager.validationSuccess
             .subscribe(onNext: { [weak self] user in
-                self?.isSigningIn.value = false
+                self?.isSigningIn.accept(false)
                 self?.unwrapToken(user: user)
             }).disposed(by: disposeBag)
 
