@@ -39,7 +39,7 @@ class GoogleUserManagerSpec: QuickSpec {
 
                 context("when call autoSignIn") {
                     beforeEach {
-                        sut.autoSignIn()
+                        sut.autoSignIn.onNext(())
                     }
 
                     describe("googleUserProvider") {

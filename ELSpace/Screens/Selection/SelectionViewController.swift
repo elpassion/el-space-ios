@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 protocol SelectionViewControlling {
     var openHubWithToken: Observable<String> { get }
@@ -69,20 +70,17 @@ class SelectionViewController: UIViewController, SelectionViewControlling {
 
     private func setupBindings() {
         selectionView.hubButton.rx.tap.asObservable()
+            .filter { [weak self] in self?.isLoading.value == false }
+            .do(onNext: { [weak self] in self?.isLoading.accept(true) })
             .subscribe(onNext: { [weak self] in
                 self?.selectionController.signInToHub(success: { token in
-                    self?.isLoading.value = false
+                    self?.isLoading.accept(false)
                     self?.openHubWithTokenSubject.onNext(token)
                 }, failure: { error in
-                    self?.isLoading.value = false
+                    self?.isLoading.accept(false)
                     self?.presentError(error: error)
                 })
             }).disposed(by: disposeBag)
-
-        selectionView.hubButton.rx.tap.asObservable()
-            .map { true }
-            .bind(to: isLoading)
-            .disposed(by: disposeBag)
 
         isLoading.asObservable()
             .bind(to: loadingIndicator.rx.isLoading)
@@ -93,7 +91,7 @@ class SelectionViewController: UIViewController, SelectionViewControlling {
 
     // MARK: - Loading
 
-    private let isLoading = Variable<Bool>(false)
+    private let isLoading = BehaviorRelay<Bool>(value: false)
 
     private(set) lazy var loadingIndicator: LoadingIndicator = {
         return LoadingIndicator(superView: self.view)

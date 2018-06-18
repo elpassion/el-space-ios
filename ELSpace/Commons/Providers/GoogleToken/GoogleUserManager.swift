@@ -9,8 +9,8 @@ import RxSwift
 protocol GoogleUserManaging {
     var error: Observable<Error> { get }
     var validationSuccess: Observable<GIDGoogleUser> { get }
+    var autoSignIn: AnyObserver<Void> { get }
     func signIn(on viewController: UIViewController)
-    func autoSignIn()
 }
 
 class GoogleUserManager: GoogleUserManaging {
@@ -38,8 +38,8 @@ class GoogleUserManager: GoogleUserManaging {
         googleUserProvider.signIn(on: viewController)
     }
 
-    func autoSignIn() {
-        googleUserProvider.autoSignIn()
+    var autoSignIn: AnyObserver<Void> {
+        return AnyObserver(onNext: { [weak self] in self?.googleUserProvider.autoSignIn() })
     }
 
     // MARK: - Private

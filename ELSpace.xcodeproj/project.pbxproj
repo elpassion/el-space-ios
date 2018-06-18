@@ -47,6 +47,7 @@
 		31DEF84D1FED2554006DF14E /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */; };
 		358D6C6C62E8C93D9E41F5BF /* Pods_ELSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A380DA305A8B49E56FD215 /* Pods_ELSpace.framework */; };
 		470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */; };
+		470AA1E620D7A9A4004173CF /* Rx_UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470AA1E520D7A9A4004173CF /* Rx_UIViewController.swift */; };
 		4711C04920CFE48600C78338 /* ActivitiesDateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4711C04820CFE48600C78338 /* ActivitiesDateFormatters.swift */; };
 		4723B2221FDED3B6000FE3A6 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */; };
 		473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */; };
@@ -227,6 +228,7 @@
 		31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryStub.swift; sourceTree = "<group>"; };
 		31DEF84C1FED2554006DF14E /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModelSpec.swift; sourceTree = "<group>"; };
+		470AA1E520D7A9A4004173CF /* Rx_UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rx_UIViewController.swift; sourceTree = "<group>"; };
 		4711C04820CFE48600C78338 /* ActivitiesDateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesDateFormatters.swift; sourceTree = "<group>"; };
 		4723B2211FDED3B6000FE3A6 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		473CBF8E1F33142C00B80FA4 /* SelectionScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionScreenPresenter.swift; sourceTree = "<group>"; };
@@ -700,6 +702,7 @@
 				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
 				47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */,
+				470AA1E520D7A9A4004173CF /* Rx_UIViewController.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1453,6 +1456,7 @@
 				478B23E01FF4B82C0009C801 /* HolidaysDTO.swift in Sources */,
 				500BC97C1EE7F7380060D31B /* AppCoordinator.swift in Sources */,
 				066F65531FE95ACA005FE66C /* ActivityFormViewController.swift in Sources */,
+				470AA1E620D7A9A4004173CF /* Rx_UIViewController.swift in Sources */,
 				47FE97691F3469F6009EEE1C /* ReportView.swift in Sources */,
 				AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */,
 				50902FD31EE5B06B00D43254 /* Button.swift in Sources */,
