@@ -32,11 +32,6 @@ class LoginViewController: UIViewController, LoginViewControlling {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        googleUserManager.autoSignIn()
-    }
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -81,6 +76,11 @@ class LoginViewController: UIViewController, LoginViewControlling {
 
         isSigningIn.asObservable()
             .bind(to: loadingIndicator.rx.isLoading)
+            .disposed(by: disposeBag)
+
+        rx.viewDidAppear
+            .take(1)
+            .bind(to: googleUserManager.autoSignIn)
             .disposed(by: disposeBag)
     }
 
