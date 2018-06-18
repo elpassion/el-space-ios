@@ -30,8 +30,8 @@ class GoogleUserManagerSpy: GoogleUserManaging {
         }
     }
 
-    func autoSignIn() {
-        didCallAutoSignIn = true
+    var autoSignIn: AnyObserver<Void> {
+        return AnyObserver(onNext: { [weak self] in self?.didCallAutoSignIn = true })
     }
 
     // MARK: - Private
