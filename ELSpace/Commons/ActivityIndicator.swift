@@ -13,11 +13,11 @@ final class ActivityIndicator: SharedSequenceConvertibleType {
     typealias SharingStrategy = DriverSharingStrategy
 
     init() {
-        loading = variable.asDriver().map { $0 > 0 }.distinctUntilChanged()
+        loading = relay.asDriver().map { $0 > 0 }.distinctUntilChanged()
     }
 
     private let lock = NSRecursiveLock()
-    private let variable = Variable(0)
+    private let relay = BehaviorRelay(value: 0)
     private let loading: SharedSequence<SharingStrategy, Bool>
 
     fileprivate func trackActivityOfObservable<O: ObservableConvertibleType>(_ source: O) -> Observable<O.E> {
@@ -28,18 +28,18 @@ final class ActivityIndicator: SharedSequenceConvertibleType {
     }
 
     var isActive: Bool {
-        return variable.value > 0
+        return relay.value > 0
     }
 
     func increment() {
         lock.lock()
-        variable.value += 1
+        relay.accept(relay.value + 1)
         lock.unlock()
     }
 
     func decrement() {
         lock.lock()
-        variable.value -= 1
+        relay.accept(relay.value - 1)
         lock.unlock()
     }
 
