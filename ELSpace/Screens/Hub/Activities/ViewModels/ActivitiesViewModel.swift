@@ -8,6 +8,7 @@ protocol ActivitiesViewModelProtocol {
     var month: String { get }
     var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
     var createReport: Observable<((date: Date, projects: [ProjectDTO]))> { get }
+    var error: Observable<Error> { get }
     func getData()
 }
 
@@ -46,6 +47,10 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
     var createReport: Observable<((date: Date, projects: [ProjectDTO]))> {
         return createReportRelay.asObservable()
+    }
+
+    var error: Observable<Error> {
+        return activitiesController.error
     }
 
     // MARK: - Private
