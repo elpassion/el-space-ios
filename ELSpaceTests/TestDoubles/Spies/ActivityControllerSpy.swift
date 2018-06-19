@@ -12,6 +12,7 @@ class ActivitiesControllerSpy: ActivitiesControlling {
     let projectsSubject = PublishSubject<[ProjectDTO]>()
     let holidaysSubject = PublishSubject<[Int]>()
     let didFinishFetchSubject = PublishSubject<Void>()
+    let errorSubject = PublishSubject<Error>()
 
     // MARK: - ActivityControlling
 
@@ -33,6 +34,10 @@ class ActivitiesControllerSpy: ActivitiesControlling {
 
     var holidays: Observable<[Int]> {
         return holidaysSubject.asObservable()
+    }
+
+    var error: Observable<Error> {
+        return errorSubject.asObservable()
     }
 
     func fetchData(for date: Date) {

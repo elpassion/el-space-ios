@@ -12,11 +12,16 @@ class ActivitiesViewControllerSpec: QuickSpec {
             var sut: ActivitiesViewController!
             var scheduler: TestScheduler!
             var viewDidAppearObserver: TestableObserver<Void>!
+            var alertFactoryFake: AlertFactoryFake!
+            var viewControllerPresenterSpy: ViewControllerPresenterSpy!
 
             beforeEach {
                 scheduler = TestScheduler(initialClock: 0)
                 viewDidAppearObserver = scheduler.createObserver(Void.self)
-                sut = ActivitiesViewController()
+                alertFactoryFake = AlertFactoryFake()
+                viewControllerPresenterSpy = ViewControllerPresenterSpy()
+                sut = ActivitiesViewController(alertFactory: alertFactoryFake,
+                                               viewControllerPresenter: viewControllerPresenterSpy)
             }
 
             afterEach {

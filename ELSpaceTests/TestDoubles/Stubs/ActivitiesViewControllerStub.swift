@@ -12,6 +12,7 @@ class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling 
         return nil
     }
 
+    private(set) var caughtError: Error?
     let viewDidAppearSubject = PublishSubject<Void>()
     let addActivitySubject = PublishSubject<Void>()
 
@@ -30,6 +31,10 @@ class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling 
 
     var addActivity: Observable<Void> {
         return addActivitySubject.asObservable()
+    }
+
+    var error: AnyObserver<Error> {
+        return AnyObserver(onNext: { [weak self] in self?.caughtError = $0 })
     }
 
 }
