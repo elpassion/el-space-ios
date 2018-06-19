@@ -58,10 +58,9 @@ class ActivitiesController: ActivitiesControlling {
                 self?.reportsSubject.onNext(reports)
                 self?.projectsSubject.onNext(projects)
                 self?.holidaysRelay.accept(holidays.days)
+                self?.didFinishFetchSubject.onNext(())
             }, onError: { [weak self] in
                 self?.errorSubject.onNext($0)
-            }, onDisposed: { [weak self] in
-                self?.didFinishFetchSubject.onNext(())
             }).disposed(by: disposeBag)
     }
 

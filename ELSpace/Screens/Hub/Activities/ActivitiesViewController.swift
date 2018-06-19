@@ -6,11 +6,15 @@ protocol ActivitiesViewControlling: class {
     var navigationItemTitle: String? { get set }
     var viewDidAppear: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
+    var error: AnyObserver<Error> { get }
 }
 
 class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
 
-    init() {
+    init(alertFactory: AlertCreation,
+         viewControllerPresenter: ViewControllerPresenting) {
+        self.alertFactory = alertFactory
+        self.viewControllerPresenter = viewControllerPresenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -60,7 +64,14 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
         })
     }
 
+    var error: AnyObserver<Error> {
+        return AnyObserver(onNext: { [weak self] in self?.presentError(error: $0) })
+    }
+
     // MARK: - Private
+
+    private let alertFactory: AlertCreation
+    private let viewControllerPresenter: ViewControllerPresenting
 
     private let viewDidAppearSubject = PublishSubject<Void>()
     private let addActivitySubject = PublishSubject<Void>()
@@ -76,6 +87,13 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
             return view
         }
         views.forEach { activitiesView.stackView.addArrangedSubview($0) }
+    }
+
+    // MARK: - Error presenting
+
+    private func presentError(error: Error) {
+        let alert = alertFactory.messageAlertController(with: "Error", message: error.localizedDescription)
+        viewControllerPresenter.present(viewController: alert, on: self)
     }
 
     // MARK: - Subviews

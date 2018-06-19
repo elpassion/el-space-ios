@@ -39,7 +39,8 @@ extension AppContainer: LoginViewControllerCreation,
     // MARK: - ActivitiesViewControllerCreation
 
     func activitiesViewController() -> UIViewController & ActivitiesViewControlling {
-        return ActivitiesViewController()
+        return ActivitiesViewController(alertFactory: self,
+                                        viewControllerPresenter: viewControllerPresenter)
     }
 
     // MARK: - ActivityViewControllerCreation
