@@ -46,7 +46,10 @@ extension AppContainer: LoginViewControllerCreation,
     // MARK: - ActivityViewControllerCreation
 
     func activityViewController(activityType: ActivityType, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling {
-        return ActivityViewControllerCreator().activityViewController(activityType: activityType, projectScope: projectScope)
+        return ActivityViewControllerCreator().activityViewController(activityType: activityType,
+                                                                      projectScope: projectScope,
+                                                                      alertFactory: self,
+                                                                      viewControllerPresenter: viewControllerPresenter)
     }
 
 }

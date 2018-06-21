@@ -6,6 +6,8 @@ protocol ActivityViewControllerAssembly {
     var typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling { get }
     var formViewController: UIViewController & ActivityFormViewControlling { get }
     var notificationCenter: NotificationCenter { get }
+    var alertFactory: AlertCreation { get }
+    var viewControllerPresenter: ViewControllerPresenting { get }
 }
 
 protocol ActivityViewControlling {
@@ -13,6 +15,7 @@ protocol ActivityViewControlling {
     var updateActivity: Observable<NewActivityDTO> { get }
     var deleteAction: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
+    var showError: AnyObserver<Error> { get }
 }
 
 enum ActivityType {
@@ -28,6 +31,8 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         self.typeChooserViewController = assembly.typeChooserViewController
         self.formViewController = assembly.formViewController
         self.notificationCenter = assembly.notificationCenter
+        self.alertFactory = assembly.alertFactory
+        self.viewControllerPresenter = assembly.viewControllerPresenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -65,11 +70,17 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         return AnyObserver(onNext: { [weak self] in self?.loadingIndicator?.loading($0) })
     }
 
+    var showError: AnyObserver<Error> {
+        return AnyObserver(onNext: { [weak self] in self?.showError($0) })
+    }
+
     // MARK: - Private
 
     private let activityType: ActivityType
     private let typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling
     private let formViewController: UIViewController & ActivityFormViewControlling
+    private let alertFactory: AlertCreation
+    private let viewControllerPresenter: ViewControllerPresenting
     private let deleteButton = UIButton(frame: .zero)
     private let notificationCenter: NotificationCenter
     private let addActivityRelay = PublishRelay<NewActivityDTO>()

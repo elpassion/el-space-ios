@@ -6,6 +6,7 @@ protocol ActivityViewModelProtocol {
     var deleteAction: AnyObserver<Void> { get }
     var isLoading: Observable<Bool> { get }
     var dismiss: Observable<Void> { get }
+    var error: Observable<Error> { get }
 }
 
 class ActivityViewModel: ActivityViewModelProtocol {
