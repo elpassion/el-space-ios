@@ -147,7 +147,8 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
             .flatMap { [weak self] _ -> Observable<NewActivityDTO> in
                 guard let `self` = self else { return Observable.never() }
                 return Observable.combineLatest(self.formViewController.form, self.typeChooserViewController.selected)
-                    .map { NewActivityDTO.create(with: $0.0, type: $0.1) }}
+                    .map { NewActivityDTO.create(with: $0.0, type: $0.1) }
+                    .take(1) }
             .filter { $0.isValid }
             .subscribe(onNext: { [weak self] in
                 guard let `self` = self else { return }
@@ -155,7 +156,7 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
                 case .new(_): self.addActivityRelay.accept($0)
                 case .report(_): self.updateActivityRelay.accept($0)
                 }
-            })
+                })
             .disposed(by: disposeBag)
 
         deleteButton.rx.controlEvent(.touchUpInside)
@@ -165,7 +166,6 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
             }
             .bind(to: deleteActionRelay)
             .disposed(by: disposeBag)
-
     }
 
     private func adjustForKeyboard(notification: Notification) {
@@ -190,6 +190,11 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
             self.present(alertController, animated: true, completion: nil)
             return Disposables.create()
         })
+    }
+
+    private func showError(_ error: Error) {
+        let alert = alertFactory.messageAlertController(with: "Communication error", message: error.localizedDescription)
+        viewControllerPresenter.present(viewController: alert, on: self)
     }
 
     @objc func rightItemAction() {
