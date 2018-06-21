@@ -45,6 +45,10 @@ class ActivitiesCoordinator: Coordinator {
             .bind(to: viewController.isLoading)
             .disposed(by: disposeBag)
 
+        viewModel.error
+            .bind(to: viewController.error)
+            .disposed(by: disposeBag)
+
         viewModel.monthObservable
             .subscribe(onNext: { [weak viewController] month in
                 viewController?.navigationItemTitle = month

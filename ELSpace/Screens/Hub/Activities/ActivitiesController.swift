@@ -7,6 +7,7 @@ protocol ActivitiesControlling {
     var holidays: Observable<[Int]> { get }
     var isLoading: Observable<Bool> { get }
     var didFinishFetch: Observable<Void> { get }
+    var error: Observable<Error> { get }
     func fetchData(for date: Date)
 }
 
@@ -42,14 +43,8 @@ class ActivitiesController: ActivitiesControlling {
         return didFinishFetchSubject.asObservable()
     }
 
-    func startOfMonth(date: Date) -> String {
-        let startDay = date.startOf(component: .month)
-        return shortDateFormatter.string(from: startDay)
-    }
-
-    func endOfMonth(date: Date) -> String {
-        let endDay = date.endOf(component: .month)
-        return shortDateFormatter.string(from: endDay)
+    var error: Observable<Error> {
+        return errorSubject.asObservable()
     }
 
     func fetchData(for date: Date) {
@@ -63,8 +58,9 @@ class ActivitiesController: ActivitiesControlling {
                 self?.reportsSubject.onNext(reports)
                 self?.projectsSubject.onNext(projects)
                 self?.holidaysRelay.accept(holidays.days)
-            }, onDisposed: { [weak self] in
                 self?.didFinishFetchSubject.onNext(())
+            }, onError: { [weak self] in
+                self?.errorSubject.onNext($0)
             }).disposed(by: disposeBag)
     }
 
@@ -79,8 +75,19 @@ class ActivitiesController: ActivitiesControlling {
     private let reportsSubject = PublishSubject<[ReportDTO]>()
     private let projectsSubject = PublishSubject<[ProjectDTO]>()
     private let holidaysRelay = BehaviorRelay<[Int]>(value: [])
+    private let errorSubject = PublishSubject<Error>()
 
     private let didFinishFetchSubject = PublishSubject<Void>()
     private let shortDateFormatter = DateFormatter.shortDateFormatter
+
+    private func startOfMonth(date: Date) -> String {
+        let startDay = date.startOf(component: .month)
+        return shortDateFormatter.string(from: startDay)
+    }
+
+    private func endOfMonth(date: Date) -> String {
+        let endDay = date.endOf(component: .month)
+        return shortDateFormatter.string(from: endDay)
+    }
 
 }

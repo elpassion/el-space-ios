@@ -8,6 +8,7 @@ class ActivitiesViewModelSpy: ActivitiesViewModelProtocol {
 
     var dataSourceSubject = PublishSubject<[DailyReportViewModelProtocol]>()
     var openReportSubject = PublishSubject<(report: ReportDTO, projects: [ProjectDTO])>()
+    var errorSubject = PublishSubject<Error>()
 
     // MARK: - ActivityViewModelProtocol
 
@@ -33,6 +34,10 @@ class ActivitiesViewModelSpy: ActivitiesViewModelProtocol {
 
     var createReport: Observable<((date: Date, projects: [ProjectDTO]))> {
         return Observable.never()
+    }
+
+    var error: Observable<Error> {
+        return errorSubject.asObservable()
     }
 
 }

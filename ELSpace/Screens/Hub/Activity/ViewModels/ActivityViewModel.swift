@@ -6,6 +6,7 @@ protocol ActivityViewModelProtocol {
     var deleteAction: AnyObserver<Void> { get }
     var isLoading: Observable<Bool> { get }
     var dismiss: Observable<Void> { get }
+    var error: Observable<Error> { get }
 }
 
 class ActivityViewModel: ActivityViewModelProtocol {
@@ -38,18 +39,24 @@ class ActivityViewModel: ActivityViewModelProtocol {
         return dismissSubject.asObservable()
     }
 
+    var error: Observable<Error> {
+        return errorSubject.asObservable()
+    }
+
     // MARK: Private
 
     private let activityType: ActivityType
     private let service: ActivityServiceProtocol
     private let dismissSubject = PublishSubject<Void>()
+    private let errorSubject = PublishSubject<Error>()
     private let activityIndicator = ActivityIndicator()
     private let disposeBag = DisposeBag()
 
     private func addActivity(_ activity: NewActivityDTO) {
         service.addActivity(activity)
             .trackActivity(activityIndicator)
-            .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
+            .subscribe(onNext: { [weak self] in self?.dismissSubject.onNext(()) },
+                       onError: { [weak self] in self?.errorSubject.onNext($0) })
             .disposed(by: disposeBag)
     }
 
@@ -57,7 +64,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
         guard case .report(let report) = activityType else { return }
         service.updateActivity(activity, forId: report.id)
             .trackActivity(activityIndicator)
-            .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
+            .subscribe(onNext: { [weak self] in self?.dismissSubject.onNext(()) },
+                       onError: { [weak self] in self?.errorSubject.onNext($0) })
             .disposed(by: disposeBag)
     }
 
@@ -65,7 +73,8 @@ class ActivityViewModel: ActivityViewModelProtocol {
         guard case .report(let report) = activityType else { return }
         service.deleteActivity(report)
             .trackActivity(activityIndicator)
-            .subscribe(onDisposed: { [weak self] in self?.dismissSubject.onNext(()) })
+            .subscribe(onNext: { [weak self] in self?.dismissSubject.onNext(()) },
+                       onError: { [weak self] in self?.errorSubject.onNext($0) })
             .disposed(by: disposeBag)
     }
 

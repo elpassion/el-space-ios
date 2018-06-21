@@ -39,4 +39,8 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
         return Observable.empty()
     }
 
+    var showError: AnyObserver<Error> {
+        return AnyObserver()
+    }
+
 }
