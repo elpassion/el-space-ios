@@ -1689,7 +1689,7 @@
 				CODE_SIGN_ENTITLEMENTS = ELSpace/ELSpace.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1713,7 +1713,7 @@
 				CODE_SIGN_ENTITLEMENTS = ELSpace/ELSpace.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
