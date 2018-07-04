@@ -1,37 +1,52 @@
-fastlane_version "2.97.0"
-
+fastlane_version "2.96.1"
 default_platform :ios
 
+ATCH_GIT_URL = 'https://github.com/elpassion/apple-match-elpassion-standard.git'
+APP_IDENTIFIER = 'pl.elpassion.ELSpace'
+DEV_TEAM_ID = '8A6N473KSV'
+ITC_TEAM_ID = '119106237'
+APP_SCHEME = 'ELSpace'
+UNIT_TEST_SCHEME = 'ELSpaceTests'
+XC_WORKSPACE = 'ELSpace.xcworkspace'
+XC_PROJECT = 'ELSpace.xcodeproj'
+
 platform :ios do
+
   before_all do
     cocoapods
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    scan
+  desc 'Run unit tests'
+  lane :unit_test do
+    scan(
+      scheme: UNIT_TEST_SCHEME,
+      device: 'iPhone 8'
+    )
   end
 
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
-  lane :beta do
-    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
-
+  desc 'Bump build number'
+  lane :bump do
     ensure_git_status_clean
-    increment_build_number(xcodeproj: "ELSpace.xcodeproj", build_number: latest_testflight_build_number + 1)
-    scan(scheme: "ELSpace")
-    gym(scheme: "ELSpace", clean: true) # Build your app - more options available
-    pilot
-    
+    version = get_version_number
+    latestBuildNumber = latest_testflight_build_number(version: version)
+    build_number = latestBuildNumber + 1
+    increment_build_number(build_number: "#{build_number}")
+    # commit_version_bump(message: 'Build number bumped - v' + version + ' (' + build_number + ')')
+    add_git_tag(tag: 'v' + "#{version}" + '_' + "#{build_number}")
   end
 
-  desc "Deploy a new version to the App Store"
-  lane :release do
-    # match(type: "appstore")
-    # snapshot
-    gym(scheme: "ELSpace") # Build your app - more options available
-    deliver(force: true)
-    # frameit
+  desc 'Deploy to TestFLight'
+  lane :deploy do
+    ensure_git_status_clean
+    unit_test
+    gym(scheme: APP_SCHEME, clean: true)
+    pilot(
+      app_identifier: APP_IDENTIFIER,
+      dev_portal_team_id: DEV_TEAM_ID,
+      team_id: ITC_TEAM_ID,
+      skip_waiting_for_build_processing: true,
+      skip_submission: true
+    )
   end
 
   # You can define as many lanes as you want
