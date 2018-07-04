@@ -19,6 +19,8 @@ def pod_networking
 end
 
 def pod_infrastructure
+    pod 'Fabric'
+    pod 'Crashlytics'
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'SwiftLint', '~> 0.20'
 end

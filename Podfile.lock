@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.7.2)
   - Anchorage (4.2.2)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
   - ELDebate (1.0.1):
     - Alamofire (~> 4.4)
     - Anchorage (~> 4.0)
@@ -11,6 +13,7 @@ PODS:
     - Swinject (~> 2.0)
     - SwinjectAutoregistration (~> 2.0)
     - UIColor_Hex_Swift (~> 3.0.2)
+  - Fabric (1.7.7)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -91,7 +94,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Anchorage (~> 4.0)
+  - Crashlytics
   - ELDebate (from `https://github.com/elpassion/el-debate-ios.git`, commit `649c08f`)
+  - Fabric
   - FBSnapshotTestCase (~> 2.1)
   - GoogleSignIn (~> 4.0)
   - MBProgressHUD (~> 1.0)
@@ -114,6 +119,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Anchorage
+    - Crashlytics
+    - Fabric
     - FBSnapshotTestCase
     - GoogleSignIn
     - GoogleToolboxForMac
@@ -155,7 +162,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Anchorage: cba8707ea6475f604e04047882ba47c07e4b2ac1
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   ELDebate: c767a48d918af16e3fe9b6bd0528f9ea92998137
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
@@ -184,6 +193,6 @@ SPEC CHECKSUMS:
   SwinjectAutoregistration: d06b56bd8f912b9fb9c59c15181342558a734b1b
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 9c25cc8f8a7b15eb661aac002320d83ae9f5d313
+PODFILE CHECKSUM: ff71df24aef3c8d57b83a5b5c8693596999d8662
 
 COCOAPODS: 1.5.3

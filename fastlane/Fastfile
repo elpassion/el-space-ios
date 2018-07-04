@@ -1,40 +1,64 @@
-fastlane_version "2.97.0"
-
+fastlane_version "2.72.0"
 default_platform :ios
 
+ATCH_GIT_URL = 'git@github.com:elpassion/Avenue-iOS-match.git'
+APP_IDENTIFIER = 'pl.elpassion.ELSpace'
+DEV_TEAM_ID = 'H5QFB36W2F'
+ITC_TEAM_ID = '119106237'
+APP_SCHEME = 'ELSpace'
+UNIT_TEST_SCHEME = 'ELSpaceTests'
+XC_WORKSPACE = 'ELSpace.xcworkspace'
+XC_PROJECT = 'ELSpace.xcodeproj'
+
 platform :ios do
+
   before_all do
     cocoapods
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    scan
+  desc 'Run unit tests'
+  lane :unit_test do
+    scan(
+      scheme: UNIT_TEST_SCHEME,
+      device: 'iPhone 8'
+    )
   end
 
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
-  lane :beta do
-    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
-
+  desc 'Bump build number'
+  lane :bump do
     ensure_git_status_clean
-    increment_build_number(xcodeproj: "ELSpace.xcodeproj", build_number: latest_testflight_build_number + 1)
-    scan(scheme: "ELSpace")
-    gym(scheme: "ELSpace", clean: true) # Build your app - more options available
-    pilot
-    
+    version = get_version_number
+    latestBuildNumber = latest_testflight_build_number(version: version)
+    build_number = latestBuildNumber + 1
+    increment_build_number(build_number: "#{build_number}")
+    commit_version_bump(xcodeproj: XC_PROJECT)
+    add_git_tag(tag: 'v' + "#{version}" + '_' + "#{build_number}")
   end
 
-  desc "Deploy a new version to the App Store"
-  lane :release do
-    # match(type: "appstore")
-    # snapshot
-    gym(scheme: "ELSpace") # Build your app - more options available
-    deliver(force: true)
-    # frameit
+  desc 'Deploy to TestFLight'
+  lane :beta_tf do
+    ensure_git_status_clean
+    unit_test
+    gym(scheme: APP_SCHEME, clean: true)
+    pilot(
+      app_identifier: APP_IDENTIFIER,
+      dev_portal_team_id: DEV_TEAM_ID,
+      team_id: ITC_TEAM_ID,
+      skip_waiting_for_build_processing: true,
+      skip_submission: true
+    )
   end
 
-  # You can define as many lanes as you want
+  desc 'Deploy to Crashlitics'
+  lane :beta_crashlitics do
+    ensure_git_status_clean
+    unit_test
+    gym(scheme: APP_SCHEME, clean: true)
+    crashlytics(
+    api_token: "53859ed3accb8c102a036c6fd358b4d2aa083555",
+    build_secret: "e8aab39ec7b0a1a97829840c7fd6a04bbd899ec39910574361faf1d5f1bdf0db"
+  )
+  end
 
   desc "Auto deploy to TestFlight if merges pull request"  
   lane :autodeploy do  
@@ -78,7 +102,7 @@ platform :ios do
   after_all do |lane|
     # This block is called, only if the executed lane was successful
 
-    slack(message: "Successfully deployed new Beta version (" + get_version_number + ") of ELSpace.")
+    # slack(message: "Successfully deployed new Beta version (" + get_version_number + ") of ELSpace.")
   end
 end
 
