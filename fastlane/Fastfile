@@ -28,8 +28,7 @@ platform :ios do
   lane :bump do
     ensure_git_status_clean
     version = get_version_number
-    latestBuildNumber = latest_testflight_build_number(version: version)
-    build_number = latestBuildNumber + 1
+    build_number = get_build_number(xcodeproj: XC_PROJECT).to_i + 1
     increment_build_number(build_number: "#{build_number}")
     commit_version_bump(xcodeproj: XC_PROJECT)
     add_git_tag(tag: 'v' + "#{version}" + '_' + "#{build_number}")
