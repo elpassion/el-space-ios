@@ -38,7 +38,7 @@ class ProjectsServiceSpec: QuickSpec {
                 }
 
                 it("should have correct params") {
-                    expect(apiClientSpy.parameters).to(beNil())
+                    expect(apiClientSpy.parameters as? [String: String]).to(equal(["sort": "recent"]))
                 }
 
                 it("should have correct headers") {
