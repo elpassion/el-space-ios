@@ -43,7 +43,8 @@ class ActivityFormViewModelSpec: QuickSpec {
                                        reportType: 0)
                 let project1 = ProjectDTO(name: "test project name 1", id: 0)
                 let project2 = ProjectDTO(name: "test project name 2", id: 1)
-                sut  = ActivityFormViewModel(activityType: ActivityType.report(report), projectScope: [project1, project2])
+                let project3 = ProjectDTO(name: "test project name 3", id: 2)
+                sut  = ActivityFormViewModel(activityType: ActivityType.report(report), projectScope: [project1, project2, project3])
                 _ = sut.performedAt.subscribe(performedAtObserver)
                 _ = sut.projectNames.subscribe(projectsNamesObserver)
                 _ = sut.projectSelected.subscribe(projectSelectedObserver)
@@ -81,7 +82,7 @@ class ActivityFormViewModelSpec: QuickSpec {
 
             describe("projects") {
                 it("should have correct project names") {
-                    expect(projectsNamesObserver.events.last?.value.element).to(equal(["test project name 1", "test project name 2"]))
+                    expect(projectsNamesObserver.events.last?.value.element).to(equal(["test project name 1", "test project name 2", "test project name 3"]))
                 }
             }
 
