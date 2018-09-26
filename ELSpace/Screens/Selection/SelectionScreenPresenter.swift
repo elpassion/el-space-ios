@@ -1,27 +1,17 @@
-import ELDebate
+import UIKit
 
 protocol SelectionScreenPresenting {
-    func presentDebate()
     func presentHub()
 }
 
 class SelectionScreenPresenter: SelectionScreenPresenting {
 
-    init(debateRunner: DebateRunning,
-         activitiesCoordinatorFactory: ActivitiesCoordinatorCreation,
+    init(activitiesCoordinatorFactory: ActivitiesCoordinatorCreation,
          viewControllerPresenter: ViewControllerPresenting,
          presenterViewController: UIViewController) {
-        self.debateRunner = debateRunner
         self.activitiesCoordinatorFactory = activitiesCoordinatorFactory
         self.viewControllerPresenter = viewControllerPresenter
         self.presenterViewController = presenterViewController
-    }
-
-    func presentDebate() {
-        guard let navigationController = presenterViewController.navigationController else { return }
-        debateRunner.start(in: navigationController, applyingDebateStyle: true)
-        navigationController.setNavigationBarHidden(false, animated: true)
-        navigationController.navigationBar.setBackgroundImage(nil, for: .default)
     }
 
     func presentHub() {
@@ -34,7 +24,6 @@ class SelectionScreenPresenter: SelectionScreenPresenting {
 
     // MARK: Private
 
-    private let debateRunner: DebateRunning
     private let activitiesCoordinatorFactory: ActivitiesCoordinatorCreation
     private let viewControllerPresenter: ViewControllerPresenting
     private let presenterViewController: UIViewController

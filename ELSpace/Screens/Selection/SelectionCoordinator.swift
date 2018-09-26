@@ -1,5 +1,4 @@
 import UIKit
-import ELDebate
 import RxSwift
 
 class SelectionCoordinator: Coordinator {
@@ -35,11 +34,6 @@ class SelectionCoordinator: Coordinator {
             .subscribe(onNext: { [weak self] token in
                 self?.hubSession.accessToken = token
                 self?.selectionScreenPresenter.presentHub()
-            }).disposed(by: disposeBag)
-
-        selectionViewController.openDebate
-            .subscribe(onNext: { [weak self] in
-                self?.selectionScreenPresenter.presentDebate()
             }).disposed(by: disposeBag)
     }
 
