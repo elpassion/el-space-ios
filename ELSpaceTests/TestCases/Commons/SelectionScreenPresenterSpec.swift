@@ -9,41 +9,24 @@ class SelectionScreenPresenterSpec: QuickSpec {
         describe("SelectionScreenPresenter") {
 
             var sut: SelectionScreenPresenter!
-            var debateRunnerSpy: DebateRunnerSpy!
             var activitiesCoordinatorFactoryMock: ActivitiesCoordinatorFactoryMock!
             var viewControllerPresenterSpy: ViewControllerPresenterSpy!
             var viewControllerFake: UIViewController!
-            var navigationControllerFake: UINavigationController!
 
             beforeEach {
-                debateRunnerSpy = DebateRunnerSpy()
                 activitiesCoordinatorFactoryMock = ActivitiesCoordinatorFactoryMock()
                 viewControllerPresenterSpy = ViewControllerPresenterSpy()
                 viewControllerFake = UIViewController()
-                navigationControllerFake = UINavigationController(rootViewController: viewControllerFake)
-                sut = SelectionScreenPresenter(debateRunner: debateRunnerSpy,
-                                               activitiesCoordinatorFactory: activitiesCoordinatorFactoryMock,
+                sut = SelectionScreenPresenter(activitiesCoordinatorFactory: activitiesCoordinatorFactoryMock,
                                                viewControllerPresenter: viewControllerPresenterSpy,
                                                presenterViewController: viewControllerFake)
             }
 
             afterEach {
-                debateRunnerSpy = nil
                 activitiesCoordinatorFactoryMock = nil
                 viewControllerPresenterSpy = nil
                 viewControllerFake = nil
-                navigationControllerFake = nil
                 sut = nil
-            }
-
-            context("when present debate") {
-                beforeEach {
-                    sut.presentDebate()
-                }
-
-                it("should present debate on correct view controller") {
-                    expect(debateRunnerSpy.navigationController).to(equal(navigationControllerFake))
-                }
             }
 
             context("when present hub") {

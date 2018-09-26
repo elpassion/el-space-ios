@@ -37,16 +37,6 @@ class SelectionCoordinatorSpec: QuickSpec {
                 sut = nil
             }
 
-            context("when selection view controller emit openDebate next event") {
-                beforeEach {
-                    selectionViewControllerStub.openDebateSubject.onNext(())
-                }
-
-                it("should call presentDebate") {
-                    expect(selectionScreenPresenterMock.didCallPresentDebate).to(beTrue())
-                }
-            }
-
             context("when selection view controller emit openHubWithToken next event") {
                 beforeEach {
                     selectionViewControllerStub.openHubWithTokenSubject.onNext("fake_token")

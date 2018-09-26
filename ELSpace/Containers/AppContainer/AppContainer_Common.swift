@@ -1,11 +1,6 @@
 import UIKit
-import ELDebate
 
-extension AppContainer: SelectionScreenPresenterCreation {
-
-    var debateRunner: DebateRunning {
-        return DebateRunner()
-    }
+extension AppContainer {
 
     // MARK: - Controllers
 
@@ -34,14 +29,9 @@ extension AppContainer: SelectionScreenPresenterCreation {
     // MARK: - SelectionScreenPresenterCreation
 
     func selectionScreenPresenter(presenterViewController: UIViewController) -> SelectionScreenPresenting {
-        return SelectionScreenPresenter(debateRunner: debateRunner,
-                                        activitiesCoordinatorFactory: self,
+        return SelectionScreenPresenter(activitiesCoordinatorFactory: self,
                                         viewControllerPresenter: viewControllerPresenter,
                                         presenterViewController: presenterViewController)
     }
 
-}
-
-protocol SelectionScreenPresenterCreation {
-    func selectionScreenPresenter(presenterViewController: UIViewController) -> SelectionScreenPresenting
 }
