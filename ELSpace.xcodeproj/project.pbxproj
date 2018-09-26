@@ -399,10 +399,10 @@
 				47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */,
 				AFE916D81F32048300C4D27A /* Dictionary_Add.swift */,
 				0680CEA11FED4C95004CDA73 /* Double_FromString.swift */,
+				061325DD20D3E51B00BD2CA6 /* Error_String.swift */,
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
 				47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */,
-				061325DD20D3E51B00BD2CA6 /* Error_String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -465,8 +465,8 @@
 				066F65541FE95CD1005FE66C /* ActivityFormView.swift */,
 				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
 				066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */,
-				066F65561FE95D2D005FE66C /* TextView.swift */,
 				06DEC35C20D83B4D00ADC98F /* ActivityForm_Equatable.swift */,
+				066F65561FE95D2D005FE66C /* TextView.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -510,8 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				47F0AAA81FF6567B0031D2E6 /* ActivityViewController.swift */,
-				06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */,
 				06D4377720D2821100A49424 /* NewActivityDTO_Create.swift */,
+				06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -702,8 +702,8 @@
 				47F8647F1F38BCF0000C0FE9 /* Disposable.swift */,
 				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
-				47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */,
 				470AA1E520D7A9A4004173CF /* Rx_UIViewController.swift */,
+				47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
