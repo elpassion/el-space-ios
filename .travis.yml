@@ -1,4 +1,4 @@
-osx_image: xcode9.4
+osx_image: xcode10
 language: objective-c
 before_install:
 - openssl aes-256-cbc -K $encrypted_d8f7e519f3ce_key -iv $encrypted_d8f7e519f3ce_iv -in .autodeployment.sh.enc -out .autodeployment.sh -d
@@ -8,7 +8,7 @@ before_install:
 - pod repo update
 - pod install
 script:
-- set -o pipefail && xcodebuild test -workspace ELSpace.xcworkspace -scheme ELSpaceTests -enableCodeCoverage YES -sdk iphonesimulator11.4 -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest' ONLY_ACTIVE_ARCH=YES | xcpretty -f `xcpretty-travis-formatter`
+- set -o pipefail && xcodebuild test -workspace ELSpace.xcworkspace -scheme ELSpaceTests -enableCodeCoverage YES -sdk iphonesimulator12.0 -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest' ONLY_ACTIVE_ARCH=YES | xcpretty -f `xcpretty-travis-formatter`
 notifications:
   slack:
     rooms:
