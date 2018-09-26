@@ -1691,7 +1691,7 @@
 				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1716,7 +1716,7 @@
 				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = H5QFB36W2F;
 				INFOPLIST_FILE = "ELSpace/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
