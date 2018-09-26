@@ -159,38 +159,38 @@ class DailyReportViewModel: NSObject, DailyReportViewModelProtocol {
         return text
     }
 
-    private var bookFontAttributes: [NSAttributedStringKey: Any] {
+    private var bookFontAttributes: [NSAttributedString.Key: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
-            NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
+            NSAttributedString.Key.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor(color: .black5F5A6A)
         ]
     }
 
-    private var regularReportTimeAttributes: [NSAttributedStringKey: Any] {
+    private var regularReportTimeAttributes: [NSAttributedString.Key: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
-            NSAttributedStringKey.foregroundColor: UIColor(color: .black5F5A6A)
+            NSAttributedString.Key.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor(color: .black5F5A6A)
         ]
     }
 
-    private var missingAttributes: [NSAttributedStringKey: Any] {
+    private var missingAttributes: [NSAttributedString.Key: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
-            NSAttributedStringKey.foregroundColor: UIColor(color: .redBA6767)
+            NSAttributedString.Key.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor(color: .redBA6767)
         ]
     }
 
-    private var weekendDayAttributes: [NSAttributedStringKey: Any] {
+    private var weekendDayAttributes: [NSAttributedString.Key: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
-            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
+            NSAttributedString.Key.font: UIFont(name: "Gotham-Medium", size: 16) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor(color: .grayB3B3B8)
         ]
     }
 
-    private var weekendTitleAttributes: [NSAttributedStringKey: Any] {
+    private var weekendTitleAttributes: [NSAttributedString.Key: Any] {
         return [
-            NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 16) as Any,
-            NSAttributedStringKey.foregroundColor: UIColor(color: .grayB3B3B8)
+            NSAttributedString.Key.font: UIFont(name: "Gotham-Book", size: 16) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor(color: .grayB3B3B8)
         ]
     }
 

@@ -32,7 +32,7 @@ extension UINavigationController {
         navigationBar.isTranslucent = false
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.white
+            NSAttributedString.Key.foregroundColor: UIColor.white
         ]
         navigationBar.setBackgroundImage(backgroundImage, for: .default)
     }

@@ -102,12 +102,12 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     }
 
     private func configureSubviews() {
-        addChildViewController(typeChooserViewController)
-        typeChooserViewController.didMove(toParentViewController: self)
+        addChild(typeChooserViewController)
+        typeChooserViewController.didMove(toParent: self)
         activityView.addView(typeChooserViewController.view)
 
-        addChildViewController(formViewController)
-        formViewController.didMove(toParentViewController: self)
+        addChild(formViewController)
+        formViewController.didMove(toParent: self)
         activityView.addView(formViewController.view)
 
         if case .report(_) = activityType {
@@ -123,8 +123,8 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
             .bind(to: formViewController.type)
             .disposed(by: disposeBag)
 
-        Observable.of(notificationCenter.rx.notification(Notification.Name.UIKeyboardWillHide),
-                      notificationCenter.rx.notification(Notification.Name.UIKeyboardWillChangeFrame))
+        Observable.of(notificationCenter.rx.notification(UIResponder.keyboardWillHideNotification),
+                      notificationCenter.rx.notification(UIResponder.keyboardWillChangeFrameNotification))
             .merge()
             .subscribe(onNext: { [weak self] in self?.adjustForKeyboard(notification: $0) })
             .disposed(by: disposeBag)
@@ -169,9 +169,9 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
     }
 
     private func adjustForKeyboard(notification: Notification) {
-        if let userInfo = notification.userInfo, let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        if let userInfo = notification.userInfo, let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardView = view.convert(endFrame, from: view.window)
-            let bottomInset = notification.name == Notification.Name.UIKeyboardWillHide ? 0 : keyboardView.height
+            let bottomInset = notification.name == UIResponder.keyboardWillHideNotification ? 0 : keyboardView.height
             activityView.scrollView.contentInset = UIEdgeInsets(top: 0,
                                                                 left: 0,
                                                                 bottom: bottomInset,
@@ -225,16 +225,16 @@ private extension ActivityViewController {
             }
             let barButton = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any,
-                NSAttributedStringKey.foregroundColor: UIColor.white as Any
+                NSAttributedString.Key.font: UIFont(name: "Gotham-Book", size: 17) as Any,
+                NSAttributedString.Key.foregroundColor: UIColor.white as Any
             ], for: .normal)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any,
-                NSAttributedStringKey.foregroundColor: UIColor.white as Any
+                NSAttributedString.Key.font: UIFont(name: "Gotham-Book", size: 17) as Any,
+                NSAttributedString.Key.foregroundColor: UIColor.white as Any
             ], for: .highlighted)
             barButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Gotham-Book", size: 17) as Any,
-                NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 0.2) as Any
+                NSAttributedString.Key.font: UIFont(name: "Gotham-Book", size: 17) as Any,
+                NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.2) as Any
                 ], for: .disabled)
             return barButton
         }
