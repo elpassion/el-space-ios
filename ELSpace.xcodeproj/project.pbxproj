@@ -92,7 +92,6 @@
 		47F1DCB01F30A7460039B34E /* UIColor_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */; };
 		47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB11F30AC2C0039B34E /* ActivitiesViewController.swift */; };
 		47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */; };
-		47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */; };
 		47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */; };
 		47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */; };
 		47F819D81F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */; };
@@ -274,7 +273,6 @@
 		47F1DCAF1F30A7460039B34E /* UIColor_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Color.swift; sourceTree = "<group>"; };
 		47F1DCB11F30AC2C0039B34E /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerStub.swift; sourceTree = "<group>"; };
-		47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebateRunnerSpy.swift; sourceTree = "<group>"; };
 		47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinatorSpec.swift; sourceTree = "<group>"; };
 		47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoordinatorFactoryMock.swift; sourceTree = "<group>"; };
 		47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelSpec.swift; sourceTree = "<group>"; };
@@ -401,10 +399,10 @@
 				47C1C4F11F3366B0009946BE /* DateFormatter_Formatters.swift */,
 				AFE916D81F32048300C4D27A /* Dictionary_Add.swift */,
 				0680CEA11FED4C95004CDA73 /* Double_FromString.swift */,
+				061325DD20D3E51B00BD2CA6 /* Error_String.swift */,
 				060A936A1EEF01D000EA3293 /* String+Email.swift */,
 				862F49B01EF151A50033112C /* UIAlertController+Creation.swift */,
 				47F1DCAA1F30A49A0039B34E /* UINavigationController_HubStyling.swift */,
-				061325DD20D3E51B00BD2CA6 /* Error_String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,8 +465,8 @@
 				066F65541FE95CD1005FE66C /* ActivityFormView.swift */,
 				066F65521FE95ACA005FE66C /* ActivityFormViewController.swift */,
 				066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */,
-				066F65561FE95D2D005FE66C /* TextView.swift */,
 				06DEC35C20D83B4D00ADC98F /* ActivityForm_Equatable.swift */,
+				066F65561FE95D2D005FE66C /* TextView.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -512,8 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				47F0AAA81FF6567B0031D2E6 /* ActivityViewController.swift */,
-				06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */,
 				06D4377720D2821100A49424 /* NewActivityDTO_Create.swift */,
+				06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -704,8 +702,8 @@
 				47F8647F1F38BCF0000C0FE9 /* Disposable.swift */,
 				47F8647D1F38BC93000C0FE9 /* Reusable.swift */,
 				47F864811F38BD35000C0FE9 /* RxReusable.swift */,
-				47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */,
 				470AA1E520D7A9A4004173CF /* Rx_UIViewController.swift */,
+				47DF82E61FE13913009BF96A /* UIView_backgroundColor.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1002,7 +1000,6 @@
 				47F819E31F3B3E12003C1BD5 /* ActivityControllerSpy.swift */,
 				47F819E91F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift */,
 				AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */,
-				47F1DCB71F30DAF20039B34E /* DebateRunnerSpy.swift */,
 				47CA94A11F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift */,
 				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
 				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */,
@@ -1533,7 +1530,6 @@
 				470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */,
 				060EC3B11FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift in Sources */,
 				47F819E61F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift in Sources */,
-				47F1DCB81F30DAF20039B34E /* DebateRunnerSpy.swift in Sources */,
 				86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */,
 				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
