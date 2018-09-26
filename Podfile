@@ -1,7 +1,4 @@
-source 'git@github.com:elpassion/podspecs.git'
-source 'https://github.com/CocoaPods/Specs.git'
-
-platform :ios, '10.0'
+platform :ios, '11.0'
 inhibit_all_warnings!
 
 def pod_core
@@ -26,7 +23,7 @@ def pod_infrastructure
 end
 
 def pod_el
-     pod 'ELDebate', :git => 'https://github.com/elpassion/el-debate-ios.git', :commit => '649c08f'
+#     pod 'ELDebate', :git => 'https://github.com/elpassion/el-debate-ios.git', :commit => 'f45ea61'
 end
 
 def pod_ui
