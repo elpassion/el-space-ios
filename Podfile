@@ -22,10 +22,6 @@ def pod_infrastructure
     pod 'SwiftLint', '~> 0.20'
 end
 
-def pod_el
-#     pod 'ELDebate', :git => 'https://github.com/elpassion/el-debate-ios.git', :commit => 'f45ea61'
-end
-
 def pod_ui
     pod 'Anchorage', '~> 4.0'
     pod 'Pastel', '~> 0.3'
@@ -45,7 +41,6 @@ target 'ELSpace' do
     use_frameworks!
     pod_core
     pod_infrastructure
-    pod_el
     pod_ui
     pod_networking 
     target 'ELSpaceTests' do
