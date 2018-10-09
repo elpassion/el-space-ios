@@ -135,6 +135,7 @@
 		5048F2461EDEE7A2001A487E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048F2451EDEE7A2001A487E /* LoginViewController.swift */; };
 		50902FC61EE5AAC700D43254 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FC51EE5AAC700D43254 /* LoginView.swift */; };
 		50902FD31EE5B06B00D43254 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50902FD21EE5B06B00D43254 /* Button.swift */; };
+		790CAEB1216CECBA00B593D3 /* ProjectSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */; };
 		79181EF720C920AD006997DB /* UserServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79181EF620C920AD006997DB /* UserServiceSpec.swift */; };
 		7935D8EB20C829350024A00E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8EA20C829350024A00E /* UserService.swift */; };
 		7935D8EE20C82A430024A00E /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8ED20C82A430024A00E /* UserDTO.swift */; };
@@ -320,6 +321,7 @@
 		5048F25A1EDEE7A2001A487E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50902FC51EE5AAC700D43254 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		50902FD21EE5B06B00D43254 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Button.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchViewController.swift; sourceTree = "<group>"; };
 		79181EF620C920AD006997DB /* UserServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceSpec.swift; sourceTree = "<group>"; };
 		7935D8EA20C829350024A00E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7935D8ED20C82A430024A00E /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 		47DFB1601FDBEE33007293E3 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				790CAEAF216CEBD900B593D3 /* ProjectSearch */,
 				066F65511FE95A44005FE66C /* Form */,
 				062CCFC31FE0467600B04ACE /* Type */,
 				31DEF8401FED1944006DF14E /* ViewControllers */,
@@ -846,6 +849,14 @@
 				5048F2431EDEE7A2001A487E /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		790CAEAF216CEBD900B593D3 /* ProjectSearch */ = {
+			isa = PBXGroup;
+			children = (
+				790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */,
+			);
+			path = ProjectSearch;
 			sourceTree = "<group>";
 		};
 		8613F3401EEEDE050037A787 /* TestDoubles */ = {
@@ -1481,6 +1492,7 @@
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
 				47C1C4F21F3366B0009946BE /* DateFormatter_Formatters.swift in Sources */,
+				790CAEB1216CECBA00B593D3 /* ProjectSearchViewController.swift in Sources */,
 				0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */,
 				47C1C4F81F336C20009946BE /* AppContainer_ViewModels.swift in Sources */,
 				473CBF9A1F33414100B80FA4 /* ReportDTO.swift in Sources */,
