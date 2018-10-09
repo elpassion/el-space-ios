@@ -70,7 +70,6 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     private func setInitialState() {
         activityFormView.dateTextView.separatorLine.backgroundColor = titleColorForState(false)
         activityFormView.projectTextView.separatorLine.backgroundColor = titleColorForState(false)
-        activityFormView.pickerView.isHidden = true
         activityFormView.hoursTextView.separatorLine.backgroundColor = titleColorForState(false)
         activityFormView.commentTextView.separatorLine.backgroundColor = titleColorForState(false)
     }
@@ -88,7 +87,6 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] in
                 self?.setHidden($0, view: self?.activityFormView.projectTextView)
-                self?.setProjectPickerHidden(true)
             })
             .disposed(by: disposeBag)
 
@@ -115,16 +113,6 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
                 if $0 { self?.editingTextField = nil }
             })
             .disposed(by: disposeBag)
-
-        viewModel.projectNames
-            .bind(to: activityFormView.pickerView.rx.itemTitles) { _, item in return item }
-            .disposed(by: disposeBag)
-
-        activityFormView.pickerView.rx.modelSelected(String.self)
-            .map { $0.first }
-            .unwrap()
-            .bind(to: viewModel.selectProject)
-            .disposed(by: disposeBag)
     }
 
     private func setupOutputBindings() {
@@ -143,8 +131,10 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let isProjectField = textField == activityFormView.projectTextView.textField
-        setProjectPickerHidden(!isProjectField)
-        if isProjectField { editingTextField = nil }
+        if isProjectField {
+            editingTextField = nil
+            showProjectSearch()
+        }
         return !isProjectField
     }
 
@@ -163,11 +153,8 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
     // MARK: - Helpers
 
-    private func setProjectPickerHidden(_ isHidden: Bool) {
-        if activityFormView.pickerView.isHidden != isHidden {
-            setHidden(isHidden, view: activityFormView.pickerView)
-            activityFormView.projectTextView.separatorLine.backgroundColor = titleColorForState(!isHidden)
-        }
+    private func showProjectSearch() {
+        print("Something, something... Daaaaarkkk siiiiiddeee...")
     }
 
     private func setHidden(_ isHidden: Bool, view: UIView?) {
