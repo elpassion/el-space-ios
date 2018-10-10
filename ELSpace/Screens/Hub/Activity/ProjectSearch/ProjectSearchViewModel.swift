@@ -7,20 +7,20 @@ protocol ProjectSearchViewModelProtocol {
 
 class ProjectSearchViewModel: ProjectSearchViewModelProtocol {
 
-    init(projectId: Int?) {
+    init(projectId: Int?,
+         projectSearchController: ProjectSearchControlling) {
         self.selectedProjectId = projectId
+        self.projectSearchController = projectSearchController
     }
 
     let selectedProjectId: Int?
 
     var projects: Driver<[ProjectDTO]> {
-        return .just([
-            ProjectDTO.fakeProjectDto(name: "The Matrix", id: 1),
-            ProjectDTO.fakeProjectDto(name: "Inception", id: 2),
-            ProjectDTO.fakeProjectDto(name: "Die Hard Hotel", id: 3),
-            ProjectDTO.fakeProjectDto(name: "Ein Projekt", id: 237),
-            ProjectDTO.fakeProjectDto(name: "Ein Projekt 2", id: 5),
-            ])
+        return projectSearchController.reports.asDriver(onErrorDriveWith: .empty())
     }
+
+    // MARK: Privates
+
+    private let projectSearchController: ProjectSearchControlling
 
 }

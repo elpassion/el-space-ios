@@ -23,7 +23,8 @@ extension AppContainer: ActivitiesViewModelCreation,
     // MARK: ProjectSearchViewModelCreation
 
     func projectSearchViewModel(projectId: Int?) -> ProjectSearchViewModelProtocol {
-        return ProjectSearchViewModel(projectId: projectId)
+        return ProjectSearchViewModel(projectId: projectId,
+                                      projectSearchController: projectSearchController)
     }
 
 }
