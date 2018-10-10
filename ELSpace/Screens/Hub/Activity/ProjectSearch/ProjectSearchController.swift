@@ -2,7 +2,7 @@ import RxSwift
 import RxCocoa
 
 protocol ProjectSearchControlling {
-    var reports: Observable<[ProjectDTO]> { get }
+    var projects: Observable<[ProjectDTO]> { get }
 }
 
 class ProjectSearchController: ProjectSearchControlling {
@@ -13,7 +13,7 @@ class ProjectSearchController: ProjectSearchControlling {
 
     // MARK: ProjectSearchControlling
 
-    var reports: Observable<[ProjectDTO]> {
+    var projects: Observable<[ProjectDTO]> {
         return projectsService.getProjects()
     }
 

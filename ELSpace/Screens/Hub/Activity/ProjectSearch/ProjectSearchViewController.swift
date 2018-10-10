@@ -57,6 +57,11 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
                 self?.bind(project: element, to: cell)
             }
             .disposed(by: disposeBag)
+
+        projectSearchView.searchBar.rx.text
+            .unwrap()
+            .bind(to: viewModel.searchText)
+            .disposed(by: disposeBag)
     }
 
 }
@@ -79,6 +84,8 @@ private extension ProjectSearchViewController {
         if let selectedProject = viewModel.selectedProjectId,
             selectedProject == project.id {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
     }
 }
