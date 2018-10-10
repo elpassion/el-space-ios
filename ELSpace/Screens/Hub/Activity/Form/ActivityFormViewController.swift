@@ -86,7 +86,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             .disposed(by: disposeBag)
 
         viewModel.projectSelected
-            .subscribe(onNext: { [weak self] in self?.activityFormView.projectTextView.textField.text = $0 })
+            .subscribe(onNext: { [weak self] in self?.activityFormView.projectTextView.textField.text = $0.name })
             .disposed(by: disposeBag)
 
         viewModel.projectInputHidden
@@ -160,7 +160,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     // MARK: - Helpers
 
     private func showProjectSearch() {
-        projectSelectedRelay.onNext(nil)
+        projectSelectedRelay.onNext(viewModel.selectedProject?.id)
     }
 
     private func setHidden(_ isHidden: Bool, view: UIView?) {

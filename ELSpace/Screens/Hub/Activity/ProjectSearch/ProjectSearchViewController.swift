@@ -1,4 +1,10 @@
+import RxCocoa
+import RxSwift
 import UIKit
+
+protocol ProjectSearchViewControllerAssembly {
+    var viewModel: ProjectSearchViewModelProtocol { get }
+}
 
 protocol ProjectSearchViewControlling {
 
@@ -6,7 +12,8 @@ protocol ProjectSearchViewControlling {
 
 class ProjectSearchViewController: UIViewController, ProjectSearchViewControlling {
 
-    init() {
+    init(viewModel: ProjectSearchViewModelProtocol) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -18,7 +25,7 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
         view = ProjectSearchView()
     }
 
-    private var projectSearchView: UIView! {
+    private var projectSearchView: ProjectSearchView! {
         return view as? ProjectSearchView
     }
 
@@ -26,19 +33,35 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupNavBar()
+        configureTableView()
+        setupBindings()
     }
 
     // MARK: Privates
+
+    private let disposeBag = DisposeBag()
+    private let viewModel: ProjectSearchViewModelProtocol
 
     private func setupNavBar() {
         navigationItem.titleView = NavBarItemsFactory.titleView()
     }
 
+    private func configureTableView() {
+        projectSearchView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+
+    private func setupBindings() {
+        viewModel.projects
+            .drive(projectSearchView.tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { [weak self] (_, element, cell) in
+                self?.bind(project: element, to: cell)
+            }
+            .disposed(by: disposeBag)
+    }
+
 }
 
-extension ProjectSearchViewController {
+private extension ProjectSearchViewController {
     struct NavBarItemsFactory {
         static func titleView() -> UILabel {
             let label = UILabel(frame: .zero)
@@ -46,6 +69,16 @@ extension ProjectSearchViewController {
             label.textColor = .white
             label.text = "Project"
             return label
+        }
+    }
+}
+
+private extension ProjectSearchViewController {
+    private func bind(project: ProjectDTO, to cell: UITableViewCell) {
+        cell.textLabel?.text = project.name
+        if let selectedProject = viewModel.selectedProjectId,
+            selectedProject == project.id {
+            cell.accessoryType = .checkmark
         }
     }
 }

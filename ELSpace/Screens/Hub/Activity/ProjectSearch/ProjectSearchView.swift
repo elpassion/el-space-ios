@@ -10,7 +10,7 @@ class ProjectSearchView: UIView {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
-    // MARK: Subviewa
+    // MARK: Subviews
 
     let searchBar = UISearchBar(frame: .zero)
     let tableView = UITableView(frame: .zero, style: .plain)

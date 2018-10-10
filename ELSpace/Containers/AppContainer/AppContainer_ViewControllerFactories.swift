@@ -56,7 +56,7 @@ extension AppContainer: LoginViewControllerCreation,
     // MARK: ProjectSearchViewControllerCreation
 
     func projectSearchViewController(projectId: Int?) -> UIViewController & ProjectSearchViewControlling {
-        return ProjectSearchViewController()
+        return ProjectSearchViewController(viewModel: projectSearchViewModel(projectId: projectId))
     }
 
 }
