@@ -15,9 +15,11 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
     // MARK: View
 
     override func loadView() {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .red
-        self.view = view
+        view = ProjectSearchView()
+    }
+
+    private var projectSearchView: UIView! {
+        return view as? ProjectSearchView
     }
 
     // MARK: Lifecycle

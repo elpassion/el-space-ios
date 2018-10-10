@@ -141,6 +141,7 @@
 		7935D8EE20C82A430024A00E /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935D8ED20C82A430024A00E /* UserDTO.swift */; };
 		7969977E216CF8560083C7AE /* ProjectSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969977D216CF8560083C7AE /* ProjectSearchCoordinator.swift */; };
 		79699781216CF9590083C7AE /* ProjectSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */; };
+		79699783216DE6CA0083C7AE /* ProjectSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699782216DE6CA0083C7AE /* ProjectSearchView.swift */; };
 		862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */; };
 		862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49B01EF151A50033112C /* UIAlertController+Creation.swift */; };
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
@@ -329,6 +330,7 @@
 		7935D8ED20C82A430024A00E /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		7969977D216CF8560083C7AE /* ProjectSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchCoordinator.swift; sourceTree = "<group>"; };
 		79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchViewModel.swift; sourceTree = "<group>"; };
+		79699782216DE6CA0083C7AE /* ProjectSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchView.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManager.swift; sourceTree = "<group>"; };
 		862F49B01EF151A50033112C /* UIAlertController+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Creation.swift"; sourceTree = "<group>"; };
@@ -861,6 +863,7 @@
 				790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */,
 				7969977D216CF8560083C7AE /* ProjectSearchCoordinator.swift */,
 				79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */,
+				79699782216DE6CA0083C7AE /* ProjectSearchView.swift */,
 			);
 			path = ProjectSearch;
 			sourceTree = "<group>";
@@ -1417,6 +1420,7 @@
 				066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
+				79699783216DE6CA0083C7AE /* ProjectSearchView.swift in Sources */,
 				47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				062CCFC91FE04CBA00B04ACE /* ActivityTypeView.swift in Sources */,
