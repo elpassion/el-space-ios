@@ -2,7 +2,8 @@ import Foundation
 
 extension AppContainer: SelectionCoordinatorCreation,
                         ActivitiesCoordinatorCreation,
-                        ActivityCoordinatorCreation {
+                        ActivityCoordinatorCreation,
+                        ProjectSearchCoordinatorCreation {
 
     // MARK: - SelectionCoordinatorCreation
 
@@ -28,7 +29,16 @@ extension AppContainer: SelectionCoordinatorCreation,
 
     func activityCoordinator(activityType: ActivityType, projectScope: [ProjectDTO]) -> Coordinator {
         return ActivityCoordinator(viewController: activityViewController(activityType: activityType, projectScope: projectScope),
-                                   viewModel: activityViewModel(activityType: activityType, projectScope: projectScope))
+                                   viewModel: activityViewModel(activityType: activityType, projectScope: projectScope),
+                                   projectSearchCoordinatorFactory: self,
+                                   presenter: ViewControllerPresenter())
+    }
+
+    // MARK: - ProjectSearchCoordinatorCreation
+
+    func projectSearchCoordinator(projectId: Int?) -> Coordinator {
+        return ProjectSearchCoordinator(projectSearchViewController: projectSearchViewController(projectId: projectId),
+                                        projectSearchViewModel: projectSearchViewModel(projectId: projectId))
     }
 
 }
@@ -43,4 +53,8 @@ protocol ActivitiesCoordinatorCreation {
 
 protocol ActivityCoordinatorCreation {
     func activityCoordinator(activityType: ActivityType, projectScope: [ProjectDTO]) -> Coordinator
+}
+
+protocol ProjectSearchCoordinatorCreation {
+    func projectSearchCoordinator(projectId: Int?) -> Coordinator
 }

@@ -5,7 +5,8 @@ extension AppContainer: LoginViewControllerCreation,
                         SelectionViewControllerCreation,
                         AlertCreation,
                         ActivitiesViewControllerCreation,
-                        ActivityViewControllerCreation {
+                        ActivityViewControllerCreation,
+                        ProjectSearchViewControllerCreation {
 
     // MARK: - LoginViewControllerCreation
 
@@ -52,6 +53,12 @@ extension AppContainer: LoginViewControllerCreation,
                                                                       viewControllerPresenter: viewControllerPresenter)
     }
 
+    // MARK: ProjectSearchViewControllerCreation
+
+    func projectSearchViewController(projectId: Int?) -> UIViewController & ProjectSearchViewControlling {
+        return ProjectSearchViewController()
+    }
+
 }
 
 protocol LoginViewControllerCreation {
@@ -76,4 +83,8 @@ protocol AlertCreation {
 
 protocol ActivityViewControllerCreation {
     func activityViewController(activityType: ActivityType, projectScope: [ProjectDTO]) -> UIViewController & ActivityViewControlling
+}
+
+protocol ProjectSearchViewControllerCreation {
+    func projectSearchViewController(projectId: Int?) -> UIViewController & ProjectSearchViewControlling
 }
