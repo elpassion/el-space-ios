@@ -7,7 +7,6 @@ protocol ProjectSearchViewControllerAssembly {
 }
 
 protocol ProjectSearchViewControlling {
-
 }
 
 class ProjectSearchViewController: UIViewController, ProjectSearchViewControlling {
@@ -40,8 +39,8 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
 
     // MARK: Privates
 
-    private let disposeBag = DisposeBag()
-    private let viewModel: ProjectSearchViewModelProtocol
+    let disposeBag = DisposeBag()
+    let viewModel: ProjectSearchViewModelProtocol
 
     private func setupNavBar() {
         navigationItem.titleView = NavBarItemsFactory.titleView()
@@ -61,6 +60,11 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
         projectSearchView.searchBar.rx.text
             .unwrap()
             .bind(to: viewModel.searchText)
+            .disposed(by: disposeBag)
+
+        projectSearchView.tableView.rx
+            .modelSelected(ProjectDTO.self)
+            .bind(to: viewModel.selectProject)
             .disposed(by: disposeBag)
     }
 

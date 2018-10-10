@@ -5,6 +5,8 @@ protocol ProjectSearchViewModelProtocol {
     var selectedProjectId: Int? { get }
     var projects: Driver<[ProjectDTO]> { get }
     var searchText: AnyObserver<String> { get }
+    var selectProject: AnyObserver<ProjectDTO> { get }
+    var didSelectProject: Driver<ProjectDTO> { get }
 }
 
 class ProjectSearchViewModel: ProjectSearchViewModelProtocol {
@@ -26,11 +28,20 @@ class ProjectSearchViewModel: ProjectSearchViewModelProtocol {
         return AnyObserver(onNext: { [weak self] in self?.searchTextString = $0 })
     }
 
+    var selectProject: AnyObserver<ProjectDTO> {
+        return selectedProjectRelay.asObserver()
+    }
+
+    var didSelectProject: Driver<ProjectDTO> {
+        return selectedProjectRelay.asDriver(onErrorDriveWith: .never())
+    }
+
     // MARK: Privates
 
     private let disposeBag = DisposeBag()
     private let projectSearchController: ProjectSearchControlling
     private let projectsRelay = PublishRelay<[ProjectDTO]>()
+    private let selectedProjectRelay = PublishSubject<ProjectDTO>()
 
     private var allProjects: [ProjectDTO] = [] {
         didSet {

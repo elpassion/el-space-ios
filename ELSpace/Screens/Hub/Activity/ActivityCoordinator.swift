@@ -52,6 +52,12 @@ class ActivityCoordinator: Coordinator {
 
     private func showProjectSearch(projectId: Int?) {
         let projectSearchCoordinator = projectSearchCoordinatorFactory.projectSearchCoordinator(projectId: projectId)
+        guard let projectSearchViewController = projectSearchCoordinator.initialViewController as? ProjectSearchViewController else { return }
+        projectSearchViewController.viewModel.didSelectProject
+            .do(onNext: { [projectSearchViewController] _ in projectSearchViewController.navigationController?.popViewController(animated: true) })
+            .map { $0.name }
+            .drive(viewController.formViewController.viewModel.selectProject)
+            .disposed(by: projectSearchViewController.disposeBag)
         presenter.push(viewController: projectSearchCoordinator.initialViewController, on: self.viewController)
     }
 
