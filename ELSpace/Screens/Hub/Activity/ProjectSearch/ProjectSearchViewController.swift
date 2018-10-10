@@ -20,4 +20,30 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
         self.view = view
     }
 
+    // MARK: Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupNavBar()
+    }
+
+    // MARK: Privates
+
+    private func setupNavBar() {
+        navigationItem.titleView = NavBarItemsFactory.titleView()
+    }
+
+}
+
+extension ProjectSearchViewController {
+    struct NavBarItemsFactory {
+        static func titleView() -> UILabel {
+            let label = UILabel(frame: .zero)
+            label.font = UIFont(name: "Gotham-Book", size: 17)
+            label.textColor = .white
+            label.text = "Project"
+            return label
+        }
+    }
 }
