@@ -40,7 +40,6 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
     // MARK: ProjectSearchViewControlling
 
     let disposeBag = DisposeBag()
-    let viewModel: ProjectSearchViewModelProtocol
 
     let projectRelay = BehaviorRelay<[ProjectDTO]>(value: [])
 
@@ -54,6 +53,7 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
 
     // MARK: Privates
 
+    private let viewModel: ProjectSearchViewModelProtocol
     private let searchTextRelay = PublishRelay<String>()
     private let didSelectProjectRelay = PublishRelay<ProjectDTO>()
 
@@ -100,6 +100,7 @@ private extension ProjectSearchViewController {
 private extension ProjectSearchViewController {
     private func bind(project: ProjectDTO, to cell: UITableViewCell) {
         cell.textLabel?.text = project.name
+        cell.textLabel?.font = UIFont(name: "Gotham-Book", size: 16)
         if let selectedProject = viewModel.selectedProjectId,
             selectedProject == project.id {
             cell.accessoryType = .checkmark
