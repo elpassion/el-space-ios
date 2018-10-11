@@ -13,6 +13,7 @@ class ProjectSearchViewControllerStub: UIViewController, ProjectSearchViewContro
 
     let stubbedSearchText = PublishSubject<String>()
     let stubbedDidSelectProject = PublishSubject<ProjectDTO>()
+    var caughtSelectedId: Int?
 
     // MARK: ProjectSearchViewControlling
 
@@ -26,6 +27,10 @@ class ProjectSearchViewControllerStub: UIViewController, ProjectSearchViewContro
 
     var didSelectProject: Observable<ProjectDTO> {
         return stubbedDidSelectProject.asObservable()
+    }
+
+    var selectedProjectIdObserver: AnyObserver<Int?> {
+        return AnyObserver(onNext: { self.caughtSelectedId = $0 })
     }
 
 }

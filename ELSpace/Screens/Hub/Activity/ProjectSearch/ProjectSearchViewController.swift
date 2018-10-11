@@ -7,12 +7,12 @@ protocol ProjectSearchViewControlling {
     var projectRelay: BehaviorRelay<[ProjectDTO]> { get }
     var searchText: Observable<String> { get }
     var didSelectProject: Observable<ProjectDTO> { get }
+    var selectedProjectIdObserver: AnyObserver<Int?> { get }
 }
 
 class ProjectSearchViewController: UIViewController, ProjectSearchViewControlling {
 
-    init(viewModel: ProjectSearchViewModelProtocol) {
-        self.viewModel = viewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -51,11 +51,15 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
         return didSelectProjectRelay.asObservable()
     }
 
+    var selectedProjectIdObserver: AnyObserver<Int?> {
+        return AnyObserver(onNext: { [weak self] in self?.selectedProjectId = $0 })
+    }
+
     // MARK: Privates
 
-    private let viewModel: ProjectSearchViewModelProtocol
     private let searchTextRelay = PublishRelay<String>()
     private let didSelectProjectRelay = PublishRelay<ProjectDTO>()
+    private var selectedProjectId: Int?
 
     private func setupNavBar() {
         navigationItem.titleView = NavBarItemsFactory.titleView()
@@ -101,7 +105,7 @@ private extension ProjectSearchViewController {
     private func bind(project: ProjectDTO, to cell: UITableViewCell) {
         cell.textLabel?.text = project.name
         cell.textLabel?.font = UIFont(name: "Gotham-Book", size: 16)
-        if let selectedProject = viewModel.selectedProjectId,
+        if let selectedProject = selectedProjectId,
             selectedProject == project.id {
             cell.accessoryType = .checkmark
         } else {

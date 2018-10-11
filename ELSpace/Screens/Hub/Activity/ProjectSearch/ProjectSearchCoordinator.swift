@@ -38,6 +38,8 @@ class ProjectSearchCoordinator: Coordinator {
         viewController.didSelectProject
             .bind(to: viewModel.selectProject)
             .disposed(by: disposeBag)
+
+        viewController.selectedProjectIdObserver.onNext(viewModel.selectedProjectId)
     }
 
 }
