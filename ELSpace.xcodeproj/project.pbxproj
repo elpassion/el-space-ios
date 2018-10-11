@@ -144,6 +144,7 @@
 		79699783216DE6CA0083C7AE /* ProjectSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699782216DE6CA0083C7AE /* ProjectSearchView.swift */; };
 		79699787216E012C0083C7AE /* ProjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699786216E012C0083C7AE /* ProjectSearchController.swift */; };
 		79699789216F64D00083C7AE /* ActivityFormViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */; };
+		7969978B216F6E400083C7AE /* ProjectSearchControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969978A216F6E400083C7AE /* ProjectSearchControllerSpec.swift */; };
 		862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */; };
 		862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49B01EF151A50033112C /* UIAlertController+Creation.swift */; };
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
@@ -335,6 +336,7 @@
 		79699782216DE6CA0083C7AE /* ProjectSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchView.swift; sourceTree = "<group>"; };
 		79699786216E012C0083C7AE /* ProjectSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchController.swift; sourceTree = "<group>"; };
 		79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewControllerStub.swift; sourceTree = "<group>"; };
+		7969978A216F6E400083C7AE /* ProjectSearchControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchControllerSpec.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManager.swift; sourceTree = "<group>"; };
 		862F49B01EF151A50033112C /* UIAlertController+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Creation.swift"; sourceTree = "<group>"; };
@@ -1107,6 +1109,7 @@
 			children = (
 				47F819DB1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift */,
 				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
+				7969978A216F6E400083C7AE /* ProjectSearchControllerSpec.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1555,6 +1558,7 @@
 				47F1DCB61F30DADC0039B34E /* SelectionViewControllerStub.swift in Sources */,
 				AF4825851F2778D50081B2CC /* ApiClientSpec.swift in Sources */,
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
+				7969978B216F6E400083C7AE /* ProjectSearchControllerSpec.swift in Sources */,
 				47F819D81F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift in Sources */,
 				47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */,
 				47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */,
