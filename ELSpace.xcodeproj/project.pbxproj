@@ -143,6 +143,7 @@
 		79699781216CF9590083C7AE /* ProjectSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */; };
 		79699783216DE6CA0083C7AE /* ProjectSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699782216DE6CA0083C7AE /* ProjectSearchView.swift */; };
 		79699787216E012C0083C7AE /* ProjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699786216E012C0083C7AE /* ProjectSearchController.swift */; };
+		79699789216F64D00083C7AE /* ActivityFormViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */; };
 		862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */; };
 		862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49B01EF151A50033112C /* UIAlertController+Creation.swift */; };
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
@@ -333,6 +334,7 @@
 		79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchViewModel.swift; sourceTree = "<group>"; };
 		79699782216DE6CA0083C7AE /* ProjectSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchView.swift; sourceTree = "<group>"; };
 		79699786216E012C0083C7AE /* ProjectSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchController.swift; sourceTree = "<group>"; };
+		79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewControllerStub.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManager.swift; sourceTree = "<group>"; };
 		862F49B01EF151A50033112C /* UIAlertController+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Creation.swift"; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
+				79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -1534,6 +1537,7 @@
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
 				47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */,
+				79699789216F64D00083C7AE /* ActivityFormViewControllerStub.swift in Sources */,
 				47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */,
 				060795151FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift in Sources */,
 				47F1DCBA1F30DB100039B34E /* SelectionCoordinatorSpec.swift in Sources */,

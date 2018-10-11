@@ -12,7 +12,7 @@ class ActivityFormViewModelSpec: QuickSpec {
             var scheduler: TestScheduler!
             var performedAtObserver: TestableObserver<String>!
             var projectsNamesObserver: TestableObserver<[String]>!
-            var projectSelectedObserver: TestableObserver<String>!
+            var projectSelectedObserver: TestableObserver<ProjectDTO>!
             var projectInputHiddenObserver: TestableObserver<Bool>!
             var hoursObserver: TestableObserver<String>!
             var hoursInputHiddenObserver: TestableObserver<Bool>!
@@ -24,7 +24,7 @@ class ActivityFormViewModelSpec: QuickSpec {
                 scheduler = TestScheduler(initialClock: 0)
                 performedAtObserver = scheduler.createObserver(String.self)
                 projectsNamesObserver = scheduler.createObserver([String].self)
-                projectSelectedObserver = scheduler.createObserver(String.self)
+                projectSelectedObserver = scheduler.createObserver(ProjectDTO.self)
                 projectInputHiddenObserver = scheduler.createObserver(Bool.self)
                 hoursObserver = scheduler.createObserver(String.self)
                 hoursInputHiddenObserver = scheduler.createObserver(Bool.self)
