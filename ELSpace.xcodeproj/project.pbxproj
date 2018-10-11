@@ -149,6 +149,8 @@
 		7969978F216F71C30083C7AE /* ProjectSearchViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */; };
 		79699791216F72DC0083C7AE /* ProjectSearchViewModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */; };
 		79699793216F76750083C7AE /* ProjectSearchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699792216F76750083C7AE /* ProjectSearchViewControllerSpec.swift */; };
+		79699795216F8D560083C7AE /* ProjectSearchViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699794216F8D560083C7AE /* ProjectSearchViewModelSpec.swift */; };
+		79699797216F8D950083C7AE /* ProjectSearchControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */; };
 		862F49AF1EF14C3C0033112C /* GoogleUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */; };
 		862F49B11EF151A50033112C /* UIAlertController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F49B01EF151A50033112C /* UIAlertController+Creation.swift */; };
 		86D9F9201EEEBB9100788C1D /* GoogleUserProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9F91F1EEEBB9100788C1D /* GoogleUserProviderSpec.swift */; };
@@ -345,6 +347,8 @@
 		7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchViewControllerStub.swift; sourceTree = "<group>"; };
 		79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchViewModelStub.swift; sourceTree = "<group>"; };
 		79699792216F76750083C7AE /* ProjectSearchViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchViewControllerSpec.swift; sourceTree = "<group>"; };
+		79699794216F8D560083C7AE /* ProjectSearchViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchViewModelSpec.swift; sourceTree = "<group>"; };
+		79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchControllerStub.swift; sourceTree = "<group>"; };
 		85CAC09C2A97E9B29BF92420 /* Pods_ELSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862F49AE1EF14C3C0033112C /* GoogleUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUserManager.swift; sourceTree = "<group>"; };
 		862F49B01EF151A50033112C /* UIAlertController+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Creation.swift"; sourceTree = "<group>"; };
@@ -572,6 +576,7 @@
 				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
 				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
+				79699794216F8D560083C7AE /* ProjectSearchViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -698,6 +703,7 @@
 				79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */,
 				7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */,
 				79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */,
+				79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -1600,7 +1606,9 @@
 				47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */,
 				AFE916DB1F3204F100C4D27A /* DictionaryAddSpec.swift in Sources */,
 				AFE916DD1F3213D200C4D27A /* ApiClientHubDecoratorSpec.swift in Sources */,
+				79699797216F8D950083C7AE /* ProjectSearchControllerStub.swift in Sources */,
 				AF4825811F276C260081B2CC /* RequestPerformerSpec.swift in Sources */,
+				79699795216F8D560083C7AE /* ProjectSearchViewModelSpec.swift in Sources */,
 				0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */,
 				47F0AAB11FF69F0D0031D2E6 /* HolidaysServiceStub.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
