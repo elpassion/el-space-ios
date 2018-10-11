@@ -4,7 +4,6 @@ import UIKit
 
 protocol ProjectSearchViewControlling {
     var disposeBag: DisposeBag { get }
-
     var projectRelay: BehaviorRelay<[ProjectDTO]> { get }
     var searchText: Observable<String> { get }
     var didSelectProject: Observable<ProjectDTO> { get }

@@ -5,7 +5,7 @@ protocol ActivityFormViewControlling {
     var type: AnyObserver<ReportType> { get }
     var form: Observable<ActivityForm> { get }
     var projectFieldSelected: Observable<Int?> { get }
-    var viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling { get }
+    var didSelectProject: AnyObserver<String> { get }
 }
 
 class ActivityFormViewController: UIViewController, ActivityFormViewControlling, UITextFieldDelegate {
@@ -45,9 +45,15 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         return projectFieldSelectedRelay.asObservable()
     }
 
+    var didSelectProject: AnyObserver<String> {
+        return AnyObserver(onNext: { [weak self] in
+            self?.viewModel.selectProject.onNext($0)
+        })
+    }
+
     // MARK: - Privates
 
-    let viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling
+    private let viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling
     private let projectFieldSelectedRelay = PublishSubject<Int?>()
 
     private var editingTextField: UITextField? {

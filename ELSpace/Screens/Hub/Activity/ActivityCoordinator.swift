@@ -55,11 +55,15 @@ class ActivityCoordinator: Coordinator {
         let projectSearchCoordinator = projectSearchCoordinatorFactory.projectSearchCoordinator(projectId: projectId)
         presentedCoordinator = projectSearchCoordinator
         guard let projectSearchViewController = projectSearchCoordinator.initialViewController as? UIViewController & ProjectSearchViewControlling else { return }
+
         projectSearchViewController.didSelectProject
-            .do(onNext: { [projectSearchViewController] _ in projectSearchViewController.navigationController?.popViewController(animated: true) })
+            .do(onNext: { [projectSearchViewController] _ in
+                projectSearchViewController.navigationController?.popViewController(animated: true)
+            })
             .map { $0.name }
-            .bind(to: viewController.formViewController.viewModel.selectProject)
+            .bind(to: viewController.formViewController.didSelectProject)
             .disposed(by: projectSearchViewController.disposeBag)
+
         presenter.push(viewController: projectSearchCoordinator.initialViewController, on: self.viewController)
     }
 
