@@ -4,7 +4,7 @@ import RxSwift
 protocol ActivityFormViewControlling {
     var type: AnyObserver<ReportType> { get }
     var form: Observable<ActivityForm> { get }
-    var projectSelected: Observable<Int?> { get }
+    var projectFieldSelected: Observable<Int?> { get }
     var viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling { get }
 }
 
@@ -41,14 +41,14 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         return viewModel.form.distinctUntilChanged()
     }
 
-    var projectSelected: Observable<Int?> {
-        return projectSelectedRelay.asObservable()
+    var projectFieldSelected: Observable<Int?> {
+        return projectFieldSelectedRelay.asObservable()
     }
 
     // MARK: - Privates
 
     let viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling
-    private let projectSelectedRelay = PublishSubject<Int?>()
+    private let projectFieldSelectedRelay = PublishSubject<Int?>()
 
     private var editingTextField: UITextField? {
         didSet {
@@ -141,8 +141,9 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         if isProjectField {
             editingTextField = nil
             showProjectSearch()
+            return false
         }
-        return !isProjectField
+        return true
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -161,7 +162,7 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     // MARK: - Helpers
 
     private func showProjectSearch() {
-        projectSelectedRelay.onNext(viewModel.selectedProject?.id)
+        projectFieldSelectedRelay.onNext(viewModel.selectedProject?.id)
     }
 
     private func setHidden(_ isHidden: Bool, view: UIView?) {

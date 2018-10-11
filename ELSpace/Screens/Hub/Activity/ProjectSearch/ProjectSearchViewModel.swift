@@ -29,11 +29,11 @@ class ProjectSearchViewModel: ProjectSearchViewModelProtocol {
     }
 
     var selectProject: AnyObserver<ProjectDTO> {
-        return selectedProjectRelay.asObserver()
+        return selectedProjectSubject.asObserver()
     }
 
     var didSelectProject: Driver<ProjectDTO> {
-        return selectedProjectRelay.asDriver(onErrorDriveWith: .never())
+        return selectedProjectSubject.asDriver(onErrorDriveWith: .never())
     }
 
     // MARK: Privates
@@ -41,12 +41,10 @@ class ProjectSearchViewModel: ProjectSearchViewModelProtocol {
     private let disposeBag = DisposeBag()
     private let projectSearchController: ProjectSearchControlling
     private let projectsRelay = PublishRelay<[ProjectDTO]>()
-    private let selectedProjectRelay = PublishSubject<ProjectDTO>()
+    private let selectedProjectSubject = PublishSubject<ProjectDTO>()
 
     private var allProjects: [ProjectDTO] = [] {
-        didSet {
-            projectsRelay.accept(allProjects)
-        }
+        didSet { projectsRelay.accept(allProjects) }
     }
 
     private var searchTextString: String? {

@@ -2,11 +2,12 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol ProjectSearchViewControllerAssembly {
-    var viewModel: ProjectSearchViewModelProtocol { get }
-}
-
 protocol ProjectSearchViewControlling {
+    var disposeBag: DisposeBag { get }
+
+    var projectRelay: BehaviorRelay<[ProjectDTO]> { get }
+    var searchText: Observable<String> { get }
+    var didSelectProject: Observable<ProjectDTO> { get }
 }
 
 class ProjectSearchViewController: UIViewController, ProjectSearchViewControlling {
@@ -24,7 +25,7 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
         view = ProjectSearchView()
     }
 
-    private var projectSearchView: ProjectSearchView! {
+    var projectSearchView: ProjectSearchView! {
         return view as? ProjectSearchView
     }
 
@@ -37,10 +38,25 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
         setupBindings()
     }
 
-    // MARK: Privates
+    // MARK: ProjectSearchViewControlling
 
     let disposeBag = DisposeBag()
     let viewModel: ProjectSearchViewModelProtocol
+
+    let projectRelay = BehaviorRelay<[ProjectDTO]>(value: [])
+
+    var searchText: Observable<String> {
+        return searchTextRelay.asObservable()
+    }
+
+    var didSelectProject: Observable<ProjectDTO> {
+        return didSelectProjectRelay.asObservable()
+    }
+
+    // MARK: Privates
+
+    private let searchTextRelay = PublishRelay<String>()
+    private let didSelectProjectRelay = PublishRelay<ProjectDTO>()
 
     private func setupNavBar() {
         navigationItem.titleView = NavBarItemsFactory.titleView()
@@ -51,20 +67,20 @@ class ProjectSearchViewController: UIViewController, ProjectSearchViewControllin
     }
 
     private func setupBindings() {
-        viewModel.projects
-            .drive(projectSearchView.tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { [weak self] (_, element, cell) in
+        projectRelay
+            .bind(to: projectSearchView.tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { [weak self] (_, element, cell) in
                 self?.bind(project: element, to: cell)
             }
             .disposed(by: disposeBag)
 
         projectSearchView.searchBar.rx.text
             .unwrap()
-            .bind(to: viewModel.searchText)
+            .bind(to: searchTextRelay)
             .disposed(by: disposeBag)
 
         projectSearchView.tableView.rx
             .modelSelected(ProjectDTO.self)
-            .bind(to: viewModel.selectProject)
+            .bind(to: didSelectProjectRelay)
             .disposed(by: disposeBag)
     }
 

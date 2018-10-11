@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ProjectSearchCoordinator: Coordinator {
 
@@ -19,11 +21,23 @@ class ProjectSearchCoordinator: Coordinator {
 
     private let projectSearchViewController: UIViewController & ProjectSearchViewControlling
     private let projectSearchViewModel: ProjectSearchViewModelProtocol
+    private let disposeBag = DisposeBag()
 
     // MARK: Binding
 
     private func bind(viewModel: ProjectSearchViewModelProtocol, to viewController: UIViewController & ProjectSearchViewControlling) {
-        // @TODO
+
+        viewModel.projects
+            .drive(viewController.projectRelay)
+            .disposed(by: disposeBag)
+
+        viewController.searchText
+            .bind(to: viewModel.searchText)
+            .disposed(by: disposeBag)
+
+        viewController.didSelectProject
+            .bind(to: viewModel.selectProject)
+            .disposed(by: disposeBag)
     }
 
 }

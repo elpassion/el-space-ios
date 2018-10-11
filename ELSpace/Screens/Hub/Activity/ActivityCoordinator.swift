@@ -26,6 +26,7 @@ class ActivityCoordinator: Coordinator {
     private let viewModel: ActivityViewModelProtocol
     private let projectSearchCoordinatorFactory: ProjectSearchCoordinatorCreation
     private let presenter: ViewControllerPresenting
+    private var presentedCoordinator: Coordinator?
 
     // MARK: Bindings
 
@@ -45,18 +46,19 @@ class ActivityCoordinator: Coordinator {
             })
             .disposed(by: disposeBag)
 
-        viewController.formViewController.projectSelected
+        viewController.formViewController.projectFieldSelected
             .subscribe(onNext: { [weak self] in self?.showProjectSearch(projectId: $0) })
             .disposed(by: disposeBag)
     }
 
     private func showProjectSearch(projectId: Int?) {
         let projectSearchCoordinator = projectSearchCoordinatorFactory.projectSearchCoordinator(projectId: projectId)
-        guard let projectSearchViewController = projectSearchCoordinator.initialViewController as? ProjectSearchViewController else { return }
-        projectSearchViewController.viewModel.didSelectProject
+        presentedCoordinator = projectSearchCoordinator
+        guard let projectSearchViewController = projectSearchCoordinator.initialViewController as? UIViewController & ProjectSearchViewControlling else { return }
+        projectSearchViewController.didSelectProject
             .do(onNext: { [projectSearchViewController] _ in projectSearchViewController.navigationController?.popViewController(animated: true) })
             .map { $0.name }
-            .drive(viewController.formViewController.viewModel.selectProject)
+            .bind(to: viewController.formViewController.viewModel.selectProject)
             .disposed(by: projectSearchViewController.disposeBag)
         presenter.push(viewController: projectSearchCoordinator.initialViewController, on: self.viewController)
     }
