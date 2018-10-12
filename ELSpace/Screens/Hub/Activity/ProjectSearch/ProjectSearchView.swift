@@ -27,6 +27,9 @@ class ProjectSearchView: UIView {
         tableView.horizontalAnchors == safeAreaLayoutGuide.horizontalAnchors
         tableView.topAnchor == searchBar.bottomAnchor
         tableView.bottomAnchor == safeAreaLayoutGuide.bottomAnchor
+
+        searchBar.backgroundColor = .white
+        searchBar.searchBarStyle = .minimal
     }
 
 }
