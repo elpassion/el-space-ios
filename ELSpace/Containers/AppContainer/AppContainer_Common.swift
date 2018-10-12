@@ -14,6 +14,10 @@ extension AppContainer {
                                     holidaysService: holidaysService)
     }
 
+    var projectSearchController: ProjectSearchControlling {
+        return ProjectSearchController(projectsService: projectsService)
+    }
+
     // MARK: - Presenters
 
     var viewControllerPresenter: ViewControllerPresenting {

@@ -16,6 +16,7 @@ protocol ActivityViewControlling {
     var deleteAction: Observable<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
     var showError: AnyObserver<Error> { get }
+    var formViewController: UIViewController & ActivityFormViewControlling { get }
 }
 
 enum ActivityType {
@@ -74,11 +75,14 @@ class ActivityViewController: UIViewController, ActivityViewControlling {
         return AnyObserver(onNext: { [weak self] in self?.showError($0) })
     }
 
+    // MARK: - Public
+
+    let formViewController: UIViewController & ActivityFormViewControlling
+
     // MARK: - Private
 
     private let activityType: ActivityType
     private let typeChooserViewController: UIViewController & ChooserActivityTypesViewControlling
-    private let formViewController: UIViewController & ActivityFormViewControlling
     private let alertFactory: AlertCreation
     private let viewControllerPresenter: ViewControllerPresenting
     private let deleteButton = UIButton(frame: .zero)

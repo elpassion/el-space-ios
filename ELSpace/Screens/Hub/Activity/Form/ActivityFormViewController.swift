@@ -4,6 +4,8 @@ import RxSwift
 protocol ActivityFormViewControlling {
     var type: AnyObserver<ReportType> { get }
     var form: Observable<ActivityForm> { get }
+    var projectFieldSelected: Observable<Int?> { get }
+    var didSelectProject: AnyObserver<String> { get }
 }
 
 class ActivityFormViewController: UIViewController, ActivityFormViewControlling, UITextFieldDelegate {
@@ -39,9 +41,20 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
         return viewModel.form.distinctUntilChanged()
     }
 
+    var projectFieldSelected: Observable<Int?> {
+        return projectFieldSelectedRelay.asObservable()
+    }
+
+    var didSelectProject: AnyObserver<String> {
+        return AnyObserver(onNext: { [weak self] in
+            self?.viewModel.selectProject.onNext($0)
+        })
+    }
+
     // MARK: - Privates
 
     private let viewModel: ActivityFormViewInputModeling & ActivityFormViewOutputModeling
+    private let projectFieldSelectedRelay = PublishSubject<Int?>()
 
     private var editingTextField: UITextField? {
         didSet {
@@ -70,7 +83,6 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
     private func setInitialState() {
         activityFormView.dateTextView.separatorLine.backgroundColor = titleColorForState(false)
         activityFormView.projectTextView.separatorLine.backgroundColor = titleColorForState(false)
-        activityFormView.pickerView.isHidden = true
         activityFormView.hoursTextView.separatorLine.backgroundColor = titleColorForState(false)
         activityFormView.commentTextView.separatorLine.backgroundColor = titleColorForState(false)
     }
@@ -81,14 +93,13 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
             .disposed(by: disposeBag)
 
         viewModel.projectSelected
-            .subscribe(onNext: { [weak self] in self?.activityFormView.projectTextView.textField.text = $0 })
+            .subscribe(onNext: { [weak self] in self?.activityFormView.projectTextView.textField.text = $0.name })
             .disposed(by: disposeBag)
 
         viewModel.projectInputHidden
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] in
                 self?.setHidden($0, view: self?.activityFormView.projectTextView)
-                self?.setProjectPickerHidden(true)
             })
             .disposed(by: disposeBag)
 
@@ -115,16 +126,6 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
                 if $0 { self?.editingTextField = nil }
             })
             .disposed(by: disposeBag)
-
-        viewModel.projectNames
-            .bind(to: activityFormView.pickerView.rx.itemTitles) { _, item in return item }
-            .disposed(by: disposeBag)
-
-        activityFormView.pickerView.rx.modelSelected(String.self)
-            .map { $0.first }
-            .unwrap()
-            .bind(to: viewModel.selectProject)
-            .disposed(by: disposeBag)
     }
 
     private func setupOutputBindings() {
@@ -143,9 +144,12 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let isProjectField = textField == activityFormView.projectTextView.textField
-        setProjectPickerHidden(!isProjectField)
-        if isProjectField { editingTextField = nil }
-        return !isProjectField
+        if isProjectField {
+            editingTextField = nil
+            showProjectSearch()
+            return false
+        }
+        return true
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -163,11 +167,8 @@ class ActivityFormViewController: UIViewController, ActivityFormViewControlling,
 
     // MARK: - Helpers
 
-    private func setProjectPickerHidden(_ isHidden: Bool) {
-        if activityFormView.pickerView.isHidden != isHidden {
-            setHidden(isHidden, view: activityFormView.pickerView)
-            activityFormView.projectTextView.separatorLine.backgroundColor = titleColorForState(!isHidden)
-        }
+    private func showProjectSearch() {
+        projectFieldSelectedRelay.onNext(viewModel.selectedProject?.id)
     }
 
     private func setHidden(_ isHidden: Bool, view: UIView?) {

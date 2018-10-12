@@ -17,7 +17,6 @@ class ActivityFormView: UIView {
 
     let dateTextView = TextView(title: "PERFORMED AT")
     let projectTextView = TextView(title: "PROJECT")
-    let pickerView = Factory.pickerView()
     let hoursTextView = TextView(title: "HOURS")
     let commentTextView = TextView(title: "COMMENT")
 
@@ -35,7 +34,6 @@ class ActivityFormView: UIView {
 
     private lazy var stackView = Factory.stackView(views: [self.dateTextView,
                                                    self.projectTextView,
-                                                   self.pickerView,
                                                    self.hoursTextView,
                                                    self.commentTextView,
                                                    UIView(frame: .zero)])
@@ -63,12 +61,6 @@ private extension ActivityFormView {
             view.distribution = .fill
             view.spacing = 6
             return view
-        }
-
-        static func pickerView() -> UIPickerView {
-            let pickerView = UIPickerView(frame: .zero)
-            pickerView.showsSelectionIndicator = true
-            return pickerView
         }
 
     }

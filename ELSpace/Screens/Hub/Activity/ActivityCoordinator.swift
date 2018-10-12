@@ -4,9 +4,13 @@ import RxSwift
 class ActivityCoordinator: Coordinator {
 
     init(viewController: UIViewController & ActivityViewControlling,
-         viewModel: ActivityViewModelProtocol) {
+         viewModel: ActivityViewModelProtocol,
+         projectSearchCoordinatorFactory: ProjectSearchCoordinatorCreation,
+         presenter: ViewControllerPresenting) {
         self.viewController = viewController
         self.viewModel = viewModel
+        self.projectSearchCoordinatorFactory = projectSearchCoordinatorFactory
+        self.presenter = presenter
         bind(viewModel: viewModel, to: viewController)
     }
 
@@ -20,6 +24,9 @@ class ActivityCoordinator: Coordinator {
 
     private let viewController: UIViewController & ActivityViewControlling
     private let viewModel: ActivityViewModelProtocol
+    private let projectSearchCoordinatorFactory: ProjectSearchCoordinatorCreation
+    private let presenter: ViewControllerPresenting
+    private var presentedCoordinator: Coordinator?
 
     // MARK: Bindings
 
@@ -38,6 +45,26 @@ class ActivityCoordinator: Coordinator {
                 viewController?.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
+
+        viewController.formViewController.projectFieldSelected
+            .subscribe(onNext: { [weak self] in self?.showProjectSearch(projectId: $0) })
+            .disposed(by: disposeBag)
+    }
+
+    private func showProjectSearch(projectId: Int?) {
+        let projectSearchCoordinator = projectSearchCoordinatorFactory.projectSearchCoordinator(projectId: projectId)
+        presentedCoordinator = projectSearchCoordinator
+        guard let projectSearchViewController = projectSearchCoordinator.initialViewController as? UIViewController & ProjectSearchViewControlling else { return }
+
+        projectSearchViewController.didSelectProject
+            .do(onNext: { [projectSearchViewController] _ in
+                projectSearchViewController.navigationController?.popViewController(animated: true)
+            })
+            .map { $0.name }
+            .bind(to: viewController.formViewController.didSelectProject)
+            .disposed(by: projectSearchViewController.disposeBag)
+
+        presenter.push(viewController: projectSearchCoordinator.initialViewController, on: self.viewController)
     }
 
 }

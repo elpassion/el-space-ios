@@ -1,7 +1,8 @@
 import Foundation
 
 extension AppContainer: ActivitiesViewModelCreation,
-                        ActivityViewModelCreation {
+                        ActivityViewModelCreation,
+                        ProjectSearchViewModelCreation {
 
     // MARK: ActivitiesViewModelCreation
 
@@ -19,6 +20,13 @@ extension AppContainer: ActivitiesViewModelCreation,
         return ActivityViewModel(activityType: activityType, service: activityService)
     }
 
+    // MARK: ProjectSearchViewModelCreation
+
+    func projectSearchViewModel(projectId: Int?) -> ProjectSearchViewModelProtocol {
+        return ProjectSearchViewModel(projectId: projectId,
+                                      projectSearchController: projectSearchController)
+    }
+
 }
 
 protocol ActivitiesViewModelCreation {
@@ -27,4 +35,8 @@ protocol ActivitiesViewModelCreation {
 
 protocol ActivityViewModelCreation {
     func activityViewModel(activityType: ActivityType, projectScope: [ProjectDTO]) -> ActivityViewModelProtocol
+}
+
+protocol ProjectSearchViewModelCreation {
+    func projectSearchViewModel(projectId: Int?) -> ProjectSearchViewModelProtocol
 }

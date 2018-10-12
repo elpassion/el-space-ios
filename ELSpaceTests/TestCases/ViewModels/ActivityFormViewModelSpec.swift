@@ -12,19 +12,22 @@ class ActivityFormViewModelSpec: QuickSpec {
             var scheduler: TestScheduler!
             var performedAtObserver: TestableObserver<String>!
             var projectsNamesObserver: TestableObserver<[String]>!
-            var projectSelectedObserver: TestableObserver<String>!
+            var projectSelectedObserver: TestableObserver<ProjectDTO>!
             var projectInputHiddenObserver: TestableObserver<Bool>!
             var hoursObserver: TestableObserver<String>!
             var hoursInputHiddenObserver: TestableObserver<Bool>!
             var commentObserver: TestableObserver<String>!
             var commentInputHiddenObserver: TestableObserver<Bool>!
             var formObserver: TestableObserver<ActivityForm>!
+            var project1: ProjectDTO!
+            var project2: ProjectDTO!
+            var project3: ProjectDTO!
 
             beforeEach {
                 scheduler = TestScheduler(initialClock: 0)
                 performedAtObserver = scheduler.createObserver(String.self)
                 projectsNamesObserver = scheduler.createObserver([String].self)
-                projectSelectedObserver = scheduler.createObserver(String.self)
+                projectSelectedObserver = scheduler.createObserver(ProjectDTO.self)
                 projectInputHiddenObserver = scheduler.createObserver(Bool.self)
                 hoursObserver = scheduler.createObserver(String.self)
                 hoursInputHiddenObserver = scheduler.createObserver(Bool.self)
@@ -33,7 +36,7 @@ class ActivityFormViewModelSpec: QuickSpec {
                 formObserver = scheduler.createObserver(ActivityForm.self)
                 let report = ReportDTO(id: 1,
                                        userId: 2,
-                                       projectId: 3,
+                                       projectId: 2,
                                        value: "4",
                                        performedAt: "5",
                                        comment: "6",
@@ -41,9 +44,9 @@ class ActivityFormViewModelSpec: QuickSpec {
                                        updatedAt: "8",
                                        billable: true,
                                        reportType: 0)
-                let project1 = ProjectDTO(name: "test project name 1", id: 0)
-                let project2 = ProjectDTO(name: "test project name 2", id: 1)
-                let project3 = ProjectDTO(name: "test project name 3", id: 2)
+                project1 = ProjectDTO(name: "test project name 1", id: 0)
+                project2 = ProjectDTO(name: "test project name 2", id: 1)
+                project3 = ProjectDTO(name: "test project name 3", id: 2)
                 sut  = ActivityFormViewModel(activityType: ActivityType.report(report), projectScope: [project1, project2, project3])
                 _ = sut.performedAt.subscribe(performedAtObserver)
                 _ = sut.projectNames.subscribe(projectsNamesObserver)
@@ -54,6 +57,12 @@ class ActivityFormViewModelSpec: QuickSpec {
                 _ = sut.comment.subscribe(commentObserver)
                 _ = sut.commentInputHidden.subscribe(commentInputHiddenObserver)
                 _ = sut.form.subscribe(formObserver)
+            }
+
+            context("after sut creation") {
+                it("should have selected project") {
+                    expect(sut.selectedProject?.id) == project3.id
+                }
             }
 
             describe("inputs") {
@@ -115,6 +124,16 @@ class ActivityFormViewModelSpec: QuickSpec {
                     it("should have proper comment") {
                         expect(commentObserver.events.last?.value.element).to(equal("123"))
                     }
+                }
+            }
+
+            describe("selecting project") {
+                beforeEach {
+                    sut.selectProject.onNext(project2.name)
+                }
+
+                it("should set correct selected project") {
+                    expect(sut.selectedProject?.id) == project2.id
                 }
             }
         }

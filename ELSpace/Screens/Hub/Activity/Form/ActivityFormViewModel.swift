@@ -5,7 +5,8 @@ import RxCocoa
 protocol ActivityFormViewInputModeling {
     var performedAt: Observable<String> { get }
     var projectNames: Observable<[String]> { get }
-    var projectSelected: Observable<String> { get }
+    var projectSelected: Observable<ProjectDTO> { get }
+    var selectedProject: ProjectDTO? { get }
     var projectInputHidden: Observable<Bool> { get }
     var hours: Observable<String> { get }
     var hoursInputHidden: Observable<Bool> { get }
@@ -25,7 +26,7 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     init(activityType: ActivityType, projectScope: [ProjectDTO]) {
         self.activityType = activityType
-        self.projectScope = projectScope.prefix(upTo: 3) + projectScope.suffix(from: 3).sorted { $0.name < $1.name }
+        self.projectScope = projectScope
         configure()
     }
 
@@ -39,8 +40,12 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
         return projectsRelay.asObservable().map { $0.map { $0.name } }
     }
 
-    var projectSelected: Observable<String> {
-        return projectSelectedRelay.asObservable().map { $0?.name }.unwrap()
+    var projectSelected: Observable<ProjectDTO> {
+        return projectSelectedRelay.unwrap().asObservable()
+    }
+
+    var selectedProject: ProjectDTO? {
+        return projectSelectedRelay.value
     }
 
     var hours: Observable<String> {

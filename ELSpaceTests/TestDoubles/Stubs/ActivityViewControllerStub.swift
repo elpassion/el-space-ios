@@ -14,6 +14,8 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
 
     let viewDidAppearSubject = PublishSubject<Void>()
 
+    var stubbedFormViewController = ActivityFormViewControllerStub()
+
     // MARK: - ActivityViewControlling
 
     var viewModels: [DailyReportViewModelProtocol] = []
@@ -41,6 +43,10 @@ class ActivityViewControllerStub: UIViewController, ActivityViewControlling {
 
     var showError: AnyObserver<Error> {
         return AnyObserver()
+    }
+
+    var formViewController: UIViewController & ActivityFormViewControlling {
+        return stubbedFormViewController
     }
 
 }
