@@ -26,7 +26,7 @@ class ActivityFormViewModel: ActivityFormViewInputModeling, ActivityFormViewOutp
 
     init(activityType: ActivityType, projectScope: [ProjectDTO]) {
         self.activityType = activityType
-        self.projectScope = projectScope.prefix(upTo: 3) + projectScope.suffix(from: 3).sorted { $0.name < $1.name }
+        self.projectScope = projectScope
         configure()
     }
 

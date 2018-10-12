@@ -15,6 +15,11 @@ class ProjectSearchController: ProjectSearchControlling {
 
     var projects: Observable<[ProjectDTO]> {
         return projectsService.getProjects()
+            .map {
+                $0.reduce([]) { result, project in
+                    result.contains(where: { $0.id == project.id }) ? result : result + [project]
+                }
+            }
     }
 
     // MARK: Privates
