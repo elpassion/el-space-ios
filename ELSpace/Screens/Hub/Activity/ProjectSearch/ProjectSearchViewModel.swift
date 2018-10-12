@@ -50,7 +50,7 @@ class ProjectSearchViewModel: ProjectSearchViewModelProtocol {
     private var searchTextString: String? {
         didSet {
             if let searchTextString = searchTextString {
-                searchTextString != "" ? projectsRelay.accept(allProjects.filter { $0.name.contains(searchTextString) }) : projectsRelay.accept(allProjects)
+                searchTextString != "" ? projectsRelay.accept(allProjects.filter { $0.name.lowercased() .contains(searchTextString.lowercased()) }) : projectsRelay.accept(allProjects)
             }
         }
     }

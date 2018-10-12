@@ -42,9 +42,21 @@ class ProjectSearchViewModelSpec: QuickSpec {
                 }
 
                 context("when search text is supplied") {
-                    context("correct text") {
+                    context("correct capital letter text") {
                         beforeEach {
                             sut.searchText.onNext("T")
+                        }
+
+                        it("should emit filtered projects") {
+                            expect(caughtProjects).to(haveCount(2))
+                            expect(caughtProjects[0].id) == project2.id
+                            expect(caughtProjects[1].id) == project3.id
+                        }
+                    }
+
+                    context("correct lower letter text") {
+                        beforeEach {
+                            sut.searchText.onNext("t")
                         }
 
                         it("should emit filtered projects") {
