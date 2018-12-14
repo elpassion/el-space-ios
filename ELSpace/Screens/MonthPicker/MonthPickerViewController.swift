@@ -1,7 +1,14 @@
 import Anchorage
+import RxCocoa
+import RxSwift
+import NTMonthYearPicker
 import UIKit
 
-class MonthPickerViewController: UIViewController {
+protocol MonthPickerViewControlling {
+    var dismiss: Driver<Void> { get }
+}
+
+class MonthPickerViewController: UIViewController, MonthPickerViewControlling {
 
     init(raportDateProvider: RaportDateProviding) {
         self.raportDateProvider = raportDateProvider
@@ -11,26 +18,54 @@ class MonthPickerViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) { return nil }
 
     override func loadView() {
-        view = MonthPickerView()
+        view = BottomMenuView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        configureSubviews()
+        setupBindings()
+    }
+
+    // MARK: - MonthPickerViewControlling
+
+    var dismiss: Driver<Void> {
+        return dismissRelay.asDriver(onErrorDriveWith: .never())
     }
 
     // MARK: - Privates
 
     private let raportDateProvider: RaportDateProviding
+    private let dismissRelay = PublishRelay<Void>()
+    private let monthPicker = NTMonthYearPicker()
+    private let disposeBag = DisposeBag()
 
-    private var monthPickerView: MonthPickerView! {
-        return view as? MonthPickerView
+    private var bottomMenuView: BottomMenuView! {
+        return view as? BottomMenuView
     }
 
-    private func configure() {
-        monthPickerView.datePicker.minimumDate = raportDateProvider.firstRaportDate
-        monthPickerView.datePicker.maximumDate = raportDateProvider.currentRaportDateRelay.value
+    private func configureSubviews() {
+        bottomMenuView.headerView.title = "Change month"
+        bottomMenuView.headerView.doneButtonTitle = "Apply"
+        bottomMenuView.items = [monthPicker]
+        monthPicker.date = raportDateProvider.currentRaportDate.value
+        monthPicker.minimumDate = raportDateProvider.firstRaportDate
+        monthPicker.maximumDate = raportDateProvider.latestRaportDate
+    }
 
+    private func setupBindings() {
+        bottomMenuView.backgroundTap
+            .bind(to: dismissRelay)
+            .disposed(by: disposeBag)
+
+        bottomMenuView.headerView.doneButtonTap
+            .subscribe(onNext: { [weak self] in self?.doneAction() })
+            .disposed(by: disposeBag)
+    }
+
+    private func doneAction() {
+        raportDateProvider.currentRaportDate.accept(monthPicker.date)
+        dismissRelay.accept(())
     }
 
 }

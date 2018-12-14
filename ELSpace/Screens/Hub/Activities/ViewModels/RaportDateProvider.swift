@@ -3,8 +3,9 @@ import RxCocoa
 import Foundation
 
 protocol RaportDateProviding {
-    var currentRaportDateRelay: BehaviorRelay<Date> { get }
+    var currentRaportDate: BehaviorRelay<Date> { get }
     var firstRaportDate: Date { get }
+    var latestRaportDate: Date { get }
 }
 
 class RaportDateProvider: RaportDateProviding {
@@ -13,7 +14,12 @@ class RaportDateProvider: RaportDateProviding {
         firstRaportDate = monthFormatter.date(from: "January 2010") ?? Date.distantPast
     }
 
-    let currentRaportDateRelay = BehaviorRelay(value: Date())
+    let currentRaportDate = BehaviorRelay(value: Date())
+    
     let firstRaportDate: Date
+
+    var latestRaportDate: Date {
+        return Date()
+    }
 
 }

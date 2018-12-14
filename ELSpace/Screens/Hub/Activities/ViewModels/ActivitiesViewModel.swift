@@ -5,7 +5,7 @@ import SwiftDate
 protocol ActivitiesViewModelProtocol {
     var dataSource: Observable<[DailyReportViewModelProtocol]> { get }
     var isLoading: Observable<Bool> { get }
-    var month: String { get }
+    var month: Observable<String> { get }
     var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> { get }
     var createReport: Observable<((date: Date, projects: [ProjectDTO]))> { get }
     var error: Observable<Error> { get }
@@ -37,8 +37,11 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         return activitiesController.isLoading
     }
 
-    var month: String {
-        return dateFormatters.monthFormatter.string(from: todayDate)
+    var month: Observable<String> {
+        return raportDateProvider.currentRaportDate
+            .map { [dateFormatters] date in
+                dateFormatters.monthFormatter.string(from: date)
+            }
     }
 
     var openReport: Observable<(report: ReportDTO, projects: [ProjectDTO])> {
@@ -67,8 +70,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     private let createReportRelay = PublishRelay<(date: Date, projects: [ProjectDTO])>()
 
     private var days: [Date] {
-        return Date.dates(between: todayDate.startOf(component: .month),
-                          and: todayDate.endOf(component: .month),
+        return Date.dates(between: raportDateProvider.currentRaportDate.value.startOf(component: .month),
+                          and: raportDateProvider.currentRaportDate.value.endOf(component: .month),
                           increment: 1.day)
     }
 
@@ -79,7 +82,7 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
                 return date.isInSameDayOf(date: reportDate)
             }
             let viewModel = DailyReportViewModel(date: date,
-                                                 todayDate: todayDate,
+                                                 todayDate: raportDateProvider.currentRaportDate.value,
                                                  reports: reports,
                                                  projects: projects.value,
                                                  isHoliday: holidays.value.contains(date.day))
@@ -149,6 +152,12 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
         viewModels.asObservable()
             .subscribe(onNext: { [weak self] in $0.forEach { self?.setupBindings(viewModel: $0) } })
             .disposed(by: disposeBag)
+
+        raportDateProvider.currentRaportDate
+            .skip(1)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] _ in self?.getData() })
+            .disposed(by: disposeBag)
     }
 
     private func setupBindings(viewModel: DailyReportViewModelProtocol) {
@@ -176,14 +185,6 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     }
 
     private let disposeBag = DisposeBag()
-
-}
-
-extension ActivitiesViewModelProtocol {
-
-    var monthObservable: Observable<String> {
-        return Observable.just(month)
-    }
 
 }
 
