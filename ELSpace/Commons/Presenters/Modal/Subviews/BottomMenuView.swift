@@ -34,7 +34,7 @@ class BottomMenuView: UIView {
 
     let headerView = BottomMenuHeaderView()
 
-    private let backgroundView = UIControl()
+    let backgroundView = UIControl()
     private let contentView = UIView()
     private let scrollView = UIScrollView()
     private let stackView = UIStackView(arrangedSubviews: [])

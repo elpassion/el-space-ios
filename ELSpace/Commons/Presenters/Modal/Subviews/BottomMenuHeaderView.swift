@@ -29,8 +29,8 @@ class BottomMenuHeaderView: UIView {
 
     // MARK: Subviews
 
+    let doneButton = Button(frame: .zero)
     private let titleLabel = UILabel()
-    private let doneButton = Button(frame: .zero)
 
     private func setupSubviews() {
         backgroundColor = .white
