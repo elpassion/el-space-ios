@@ -11,6 +11,7 @@
 		060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */; };
 		060795191FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */; };
 		060A462D21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */; };
+		060A462F21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */; };
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060EC3B11FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
@@ -218,6 +219,7 @@
 		060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModelSpec.swift; sourceTree = "<group>"; };
 		060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControllerSpec.swift; sourceTree = "<group>"; };
 		060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerStub.swift; sourceTree = "<group>"; };
+		060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerCreationStub.swift; sourceTree = "<group>"; };
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModelSpec.swift; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
 				060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */,
+				060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -1625,6 +1628,7 @@
 				47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				478B23E21FF4BB4D0009C801 /* HolidaysServiceSpec.swift in Sources */,
+				060A462F21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
 				47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */,
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
