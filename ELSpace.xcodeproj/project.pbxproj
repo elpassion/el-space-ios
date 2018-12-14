@@ -10,6 +10,7 @@
 		060795151FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */; };
 		060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */; };
 		060795191FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */; };
+		060A462D21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */; };
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060EC3B11FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
@@ -216,6 +217,7 @@
 		060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModelSpec.swift; sourceTree = "<group>"; };
 		060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModelSpec.swift; sourceTree = "<group>"; };
 		060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControllerSpec.swift; sourceTree = "<group>"; };
+		060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerStub.swift; sourceTree = "<group>"; };
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModelSpec.swift; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
@@ -628,8 +630,8 @@
 				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
 				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
-				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				79699794216F8D560083C7AE /* ProjectSearchViewModelSpec.swift */,
+				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -677,8 +679,8 @@
 				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
 				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
-				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
 				79699792216F76750083C7AE /* ProjectSearchViewControllerSpec.swift */,
+				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -698,8 +700,8 @@
 		47DFB1601FDBEE33007293E3 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				790CAEAF216CEBD900B593D3 /* ProjectSearch */,
 				066F65511FE95A44005FE66C /* Form */,
+				790CAEAF216CEBD900B593D3 /* ProjectSearch */,
 				062CCFC31FE0467600B04ACE /* Type */,
 				31DEF8401FED1944006DF14E /* ViewControllers */,
 				31DEF84B1FED2542006DF14E /* ViewModels */,
@@ -748,16 +750,17 @@
 				47F819EB1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift */,
 				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
 				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
+				79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */,
 				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
 				47F0AAB01FF69F0D0031D2E6 /* HolidaysServiceStub.swift */,
+				79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */,
+				7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */,
+				79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */,
-				7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */,
-				79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */,
-				79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */,
+				060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -767,8 +770,8 @@
 			children = (
 				47F819E71F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift */,
 				47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */,
-				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
 				7969978C216F70BE0083C7AE /* ProjectSearchCoordinatorSpec.swift */,
+				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -941,11 +944,11 @@
 		790CAEAF216CEBD900B593D3 /* ProjectSearch */ = {
 			isa = PBXGroup;
 			children = (
-				790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */,
-				7969977D216CF8560083C7AE /* ProjectSearchCoordinator.swift */,
-				79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */,
-				79699782216DE6CA0083C7AE /* ProjectSearchView.swift */,
 				79699786216E012C0083C7AE /* ProjectSearchController.swift */,
+				7969977D216CF8560083C7AE /* ProjectSearchCoordinator.swift */,
+				79699782216DE6CA0083C7AE /* ProjectSearchView.swift */,
+				790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */,
+				79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */,
 			);
 			path = ProjectSearch;
 			sourceTree = "<group>";
@@ -1183,8 +1186,8 @@
 			isa = PBXGroup;
 			children = (
 				47F819DB1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift */,
-				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
 				7969978A216F6E400083C7AE /* ProjectSearchControllerSpec.swift */,
+				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1626,6 +1629,7 @@
 				47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */,
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
 				7969978F216F71C30083C7AE /* ProjectSearchViewControllerStub.swift in Sources */,
+				060A462D21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
 				79699793216F76750083C7AE /* ProjectSearchViewControllerSpec.swift in Sources */,
 				47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */,
