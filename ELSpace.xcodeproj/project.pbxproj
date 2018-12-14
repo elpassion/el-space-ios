@@ -13,6 +13,7 @@
 		060A462D21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */; };
 		060A462F21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */; };
 		060A463121C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A463021C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift */; };
+		060A463321C403ED00C096F4 /* MonthPickerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */; };
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060EC3B11FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
@@ -222,6 +223,7 @@
 		060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerStub.swift; sourceTree = "<group>"; };
 		060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerCreationStub.swift; sourceTree = "<group>"; };
 		060A463021C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
+		060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerSpec.swift; sourceTree = "<group>"; };
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModelSpec.swift; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
 				79699792216F76750083C7AE /* ProjectSearchViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
+				060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1695,6 +1698,7 @@
 				06810AB521BAE4AD00BC425E /* RaportDateProviderMock.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
 				79699791216F72DC0083C7AE /* ProjectSearchViewModelStub.swift in Sources */,
+				060A463321C403ED00C096F4 /* MonthPickerViewControllerSpec.swift in Sources */,
 				31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */,
 				AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */,
 				473CBF951F331D5000B80FA4 /* SelectionScreenPresenterMock.swift in Sources */,
