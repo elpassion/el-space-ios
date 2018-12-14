@@ -7,6 +7,7 @@ protocol AppPresenting {
 class AppContainer: AppPresenting {
 
     var hubSession: HubSession = HubSession()
+    let raportDateProvider = RaportDateProvider(monthFormatter: DateFormatter.monthFormatter)
 
     // MARK: - AppPresenting
 

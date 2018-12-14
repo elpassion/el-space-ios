@@ -4,12 +4,16 @@ import RxSwift
 class ActivitiesCoordinator: Coordinator {
 
     init(activitiesViewController: UIViewController & ActivitiesViewControlling,
+         monthPickerViewControllerFactory: MonthPickerViewControllerCreation,
          activitiesViewModel: ActivitiesViewModelProtocol,
          presenter: ViewControllerPresenting,
+         modalPresenter: ModalViewControllerPresenting,
          activityCoordinatorFactory: ActivityCoordinatorCreation) {
         self.activitiesViewController = activitiesViewController
+        self.monthPickerViewControllerFactory = monthPickerViewControllerFactory
         self.activitiesViewModel = activitiesViewModel
         self.presenter = presenter
+        self.modalPresenter = modalPresenter
         self.activityCoordinatorFactory = activityCoordinatorFactory
         bind(viewModel: self.activitiesViewModel, to: self.activitiesViewController)
     }
@@ -23,9 +27,11 @@ class ActivitiesCoordinator: Coordinator {
     // MARK: - Private
 
     private let activityCoordinatorFactory: ActivityCoordinatorCreation
+    private let monthPickerViewControllerFactory: MonthPickerViewControllerCreation
     private let activitiesViewController: UIViewController & ActivitiesViewControlling
     private let activitiesViewModel: ActivitiesViewModelProtocol
     private let presenter: ViewControllerPresenting
+    private let modalPresenter: ModalViewControllerPresenting
     private var presentedCoordinator: Coordinator?
 
     // MARK: - Bindings

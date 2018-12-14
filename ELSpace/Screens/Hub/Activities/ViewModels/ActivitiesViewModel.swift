@@ -15,18 +15,18 @@ protocol ActivitiesViewModelProtocol {
 class ActivitiesViewModel: ActivitiesViewModelProtocol {
 
     init(activitiesController: ActivitiesControlling,
-         todayDate: Date,
-         dateFormatters: ActivitiesDateFormatters) {
+         dateFormatters: ActivitiesDateFormatters,
+         raportDateProvider: RaportDateProviding) {
         self.activitiesController = activitiesController
-        self.todayDate = todayDate
         self.dateFormatters = dateFormatters
+        self.raportDateProvider = raportDateProvider
         setupBindings()
     }
 
     // MARK: - ActivitiesViewModelProtocol
 
     func getData() {
-        activitiesController.fetchData(for: todayDate)
+        activitiesController.fetchData(for: raportDateProvider.currentRaportDate.value)
     }
 
     var dataSource: Observable<[DailyReportViewModelProtocol]> {
@@ -56,8 +56,8 @@ class ActivitiesViewModel: ActivitiesViewModelProtocol {
     // MARK: - Private
 
     private let activitiesController: ActivitiesControlling
-    private let todayDate: Date
     private let dateFormatters: ActivitiesDateFormatters
+    private let raportDateProvider: RaportDateProviding
 
     private let projects = BehaviorRelay<[ProjectDTO]>(value: [])
     private let reports = BehaviorRelay<[ReportDTO]>(value: [])
