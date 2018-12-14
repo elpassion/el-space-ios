@@ -34,6 +34,7 @@
 		0680874321C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */; };
 		0680874421C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */; };
 		0680874721C2E52E00C3B8FB /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874621C2E52E00C3B8FB /* Animator.swift */; };
+		0680874921C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		06810AB521BAE4AD00BC425E /* RaportDateProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */; };
@@ -238,6 +239,7 @@
 		0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDismissTransition.swift; sourceTree = "<group>"; };
 		0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransition.swift; sourceTree = "<group>"; };
 		0680874621C2E52E00C3B8FB /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaportDateProviderMock.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 		0600C10A21C3AC040029A3DA /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */,
 				0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */,
 			);
 			path = Subviews;
@@ -1535,6 +1538,7 @@
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
 				AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */,
+				0680874921C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift in Sources */,
 				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
 				473CBF911F33191600B80FA4 /* AppContainer_Common.swift in Sources */,
 				AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */,
