@@ -19,7 +19,6 @@
 		062CCFC71FE04A3000B04ACE /* ChooserActivityTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */; };
 		062CCFC91FE04CBA00B04ACE /* ActivityTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */; };
 		064B965121C1672400ADB824 /* MonthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B965021C1672400ADB824 /* MonthPickerViewController.swift */; };
-		064B965321C168B300ADB824 /* MonthPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B965221C168B300ADB824 /* MonthPickerView.swift */; };
 		066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */; };
 		0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */; };
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
@@ -226,7 +225,6 @@
 		062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesView.swift; sourceTree = "<group>"; };
 		062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeView.swift; sourceTree = "<group>"; };
 		064B965021C1672400ADB824 /* MonthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewController.swift; sourceTree = "<group>"; };
-		064B965221C168B300ADB824 /* MonthPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerView.swift; sourceTree = "<group>"; };
 		066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerCreator.swift; sourceTree = "<group>"; };
 		0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
@@ -574,7 +572,6 @@
 		06EB819321C2CAAA00E3ACC6 /* MonthPicker */ = {
 			isa = PBXGroup;
 			children = (
-				064B965221C168B300ADB824 /* MonthPickerView.swift */,
 				064B965021C1672400ADB824 /* MonthPickerViewController.swift */,
 			);
 			path = MonthPicker;
@@ -1594,7 +1591,6 @@
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
-				064B965321C168B300ADB824 /* MonthPickerView.swift in Sources */,
 				066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */,
 				0680874521C2E40A00C3B8FB /* ModalViewControllerPresenter.swift in Sources */,
 				4711C04920CFE48600C78338 /* ActivitiesDateFormatters.swift in Sources */,
