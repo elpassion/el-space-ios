@@ -36,6 +36,7 @@
 		0680874721C2E52E00C3B8FB /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874621C2E52E00C3B8FB /* Animator.swift */; };
 		0680874921C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */; };
 		0680874B21C2E91A00C3B8FB /* BottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */; };
+		0680874D21C2EF6600C3B8FB /* BottomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		06810AB521BAE4AD00BC425E /* RaportDateProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */; };
@@ -242,6 +243,7 @@
 		0680874621C2E52E00C3B8FB /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuView.swift; sourceTree = "<group>"; };
+		0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuHeaderView.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaportDateProviderMock.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 		0600C10A21C3AC040029A3DA /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */,
 				0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */,
 				0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */,
 				0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */,
@@ -1579,6 +1582,7 @@
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 				31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */,
 				0680874B21C2E91A00C3B8FB /* BottomMenuView.swift in Sources */,
+				0680874D21C2EF6600C3B8FB /* BottomMenuHeaderView.swift in Sources */,
 				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
 				4750BB8C1FF4F2D9000FE203 /* ActivityIndicator.swift in Sources */,
 				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
