@@ -31,6 +31,7 @@
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
 		0674148520CFC76F00FEC50E /* ReportDTO_Fake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */; };
 		0680874221C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */; };
+		0680874321C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */; };
 		0680874421C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
@@ -233,6 +234,7 @@
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
 		0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDTO_Fake.swift; sourceTree = "<group>"; };
 		0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerBackgroundView.swift; sourceTree = "<group>"; };
+		0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDismissTransition.swift; sourceTree = "<group>"; };
 		0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransition.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				0600C10A21C3AC040029A3DA /* Subviews */,
+				0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */,
 				0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */,
 			);
 			path = Modal;
@@ -1548,6 +1551,7 @@
 				061325DE20D3E51B00BD2CA6 /* Error_String.swift in Sources */,
 				477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */,
 				47F8647A1F3873E4000C0FE9 /* DailyReportViewModel.swift in Sources */,
+				0680874321C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift in Sources */,
 				06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */,
 				477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */,
 				0680874421C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift in Sources */,
