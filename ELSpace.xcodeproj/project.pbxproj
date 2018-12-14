@@ -33,6 +33,7 @@
 		0680874221C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */; };
 		0680874321C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */; };
 		0680874421C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */; };
+		0680874721C2E52E00C3B8FB /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874621C2E52E00C3B8FB /* Animator.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		06810AB521BAE4AD00BC425E /* RaportDateProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */; };
@@ -236,6 +237,7 @@
 		0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerBackgroundView.swift; sourceTree = "<group>"; };
 		0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDismissTransition.swift; sourceTree = "<group>"; };
 		0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransition.swift; sourceTree = "<group>"; };
+		0680874621C2E52E00C3B8FB /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaportDateProviderMock.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				0600C10A21C3AC040029A3DA /* Subviews */,
+				0680874621C2E52E00C3B8FB /* Animator.swift */,
 				0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */,
 				0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */,
 			);
@@ -1489,6 +1492,7 @@
 				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				06DEC35D20D83B4D00ADC98F /* ActivityForm_Equatable.swift in Sources */,
+				0680874721C2E52E00C3B8FB /* Animator.swift in Sources */,
 				066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
