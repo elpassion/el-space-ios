@@ -30,6 +30,7 @@
 		066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */; };
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
 		0674148520CFC76F00FEC50E /* ReportDTO_Fake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */; };
+		0680874221C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		06810AB521BAE4AD00BC425E /* RaportDateProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */; };
@@ -230,6 +231,7 @@
 		066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModel.swift; sourceTree = "<group>"; };
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
 		0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDTO_Fake.swift; sourceTree = "<group>"; };
+		0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerBackgroundView.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaportDateProviderMock.swift; sourceTree = "<group>"; };
@@ -423,6 +425,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0600C10A21C3AC040029A3DA /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		060A93691EEF01B900EA3293 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +513,14 @@
 				066F65561FE95D2D005FE66C /* TextView.swift */,
 			);
 			path = Form;
+			sourceTree = "<group>";
+		};
+		0680873D21C2E3D300C3B8FB /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				0600C10A21C3AC040029A3DA /* Subviews */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		06BA11B01FE18C260021E159 /* Activity */ = {
@@ -621,6 +639,7 @@
 		477161FD1F2B5B970051EDE3 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				0680873D21C2E3D300C3B8FB /* Modal */,
 				477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */,
 			);
 			path = Presenters;
@@ -1551,6 +1570,7 @@
 				4711C04920CFE48600C78338 /* ActivitiesDateFormatters.swift in Sources */,
 				06D4377620D27FBD00A49424 /* NewActivityDTO_Validation.swift in Sources */,
 				310E803E1FED2ACB0001E4A5 /* NewActivityDTO.swift in Sources */,
+				0680874221C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
