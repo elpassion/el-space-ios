@@ -21,8 +21,7 @@ class ActivitiesViewControllerSpec: QuickSpec {
                 alertFactoryFake = AlertFactoryFake()
                 viewControllerPresenterSpy = ViewControllerPresenterSpy()
                 sut = ActivitiesViewController(alertFactory: alertFactoryFake,
-                                               viewControllerPresenter: viewControllerPresenterSpy,
-                                               raportDateProvider: RaportDateProviderMock())
+                                               viewControllerPresenter: viewControllerPresenterSpy)
             }
 
             afterEach {

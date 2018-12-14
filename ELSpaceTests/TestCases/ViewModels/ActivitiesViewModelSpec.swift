@@ -13,21 +13,24 @@ class ActivitiesViewModelSpec: QuickSpec {
             var activitiesControllerSpy: ActivitiesControllerSpy!
             var scheduler: TestScheduler!
             var dataSourceObserver: TestableObserver<[DailyReportViewModelProtocol]>!
+            var monthObserver: TestableObserver<String>!
             var isLoadingObserver: TestableObserver<Bool>!
             var openReportObserver: TestableObserver<(report: ReportDTO, projects: [ProjectDTO])>!
-            var fakeTodayDate: Date!
+            var raportDateProvider: RaportDateProviderMock!
+            let testDate = DateFormatter.shortDateFormatter.date(from: "2017-08-05")!
 
             afterEach {
                 sut = nil
                 activitiesControllerSpy = nil
                 scheduler = nil
+                monthObserver = nil
                 dataSourceObserver = nil
                 isLoadingObserver = nil
             }
 
             beforeEach {
-                fakeTodayDate = DateFormatter.shortDateFormatter.date(from: "2017-08-05")
                 activitiesControllerSpy = ActivitiesControllerSpy()
+                raportDateProvider = RaportDateProviderMock()
                 let fakeMonthFormatter = DateFormatter.monthFormatter
                 fakeMonthFormatter.timeZone = TimeZone.current
                 let fakeShortDateFormatter = DateFormatter.shortDateFormatter
@@ -35,21 +38,25 @@ class ActivitiesViewModelSpec: QuickSpec {
                 let activitiesDateFormatters = ActivitiesDateFormatters(monthFormatter: fakeMonthFormatter,
                                                                         shortDateFormatter: fakeShortDateFormatter  )
                 sut = ActivitiesViewModel(activitiesController: activitiesControllerSpy,
-                                          todayDate: fakeTodayDate,
-                                          dateFormatters: activitiesDateFormatters)
+                                          dateFormatters: activitiesDateFormatters,
+                                          raportDateProvider: raportDateProvider)
                 scheduler = TestScheduler(initialClock: 0)
+                monthObserver = scheduler.createObserver(String.self)
                 dataSourceObserver = scheduler.createObserver(Array<DailyReportViewModelProtocol>.self)
                 isLoadingObserver = scheduler.createObserver(Bool.self)
                 openReportObserver = scheduler.createObserver((report: ReportDTO, projects: [ProjectDTO]).self)
+                _ = sut.month.subscribe(monthObserver)
                 _ = sut.dataSource.subscribe(dataSourceObserver)
                 _ = sut.isLoading.subscribe(isLoadingObserver)
                 _ = sut.openReport.subscribe(openReportObserver)
                 activitiesControllerSpy.projectsSubject.onNext([ProjectDTO.fakeProjectDto()])
                 activitiesControllerSpy.reportsSubject.onNext([ReportDTO.fakeReportDto(reportType: 2)])
+                raportDateProvider.currentRaportDate.accept(testDate)
             }
 
             it("should have correct month") {
-                expect(sut.month).to(equal(DateFormatter.monthFormatter.string(from: fakeTodayDate)))
+                expect(monthObserver.events.last!.value.element)
+                    .to(equal(DateFormatter.monthFormatter.string(from: testDate)))
             }
 
             context("when call 'getData'") {
