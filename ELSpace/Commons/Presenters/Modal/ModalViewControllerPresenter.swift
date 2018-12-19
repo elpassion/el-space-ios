@@ -1,6 +1,6 @@
 import UIKit
 
-protocol ModalViewControllerPresenting: class {
+protocol ModalViewControllerPresenting {
     func present(viewController: UIViewController, on baseViewController: UIViewController)
     func dismiss(viewController: UIViewController)
 }
