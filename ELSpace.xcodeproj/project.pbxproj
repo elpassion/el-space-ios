@@ -56,6 +56,7 @@
 		06B6B3C121CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift */; };
 		06B6B3C321CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C221CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift */; };
 		06B6B3C521CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */; };
+		06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
@@ -279,6 +280,7 @@
 		06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorFactoriesSpec.swift; sourceTree = "<group>"; };
 		06B6B3C221CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ServiceFactoringSpec.swift; sourceTree = "<group>"; };
 		06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewModelsSpec.swift; sourceTree = "<group>"; };
+		06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllerFactoriesSpec.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 				06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift */,
 				06B6B3C221CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift */,
 				06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */,
+				06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -1741,6 +1744,7 @@
 				0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */,
 				06B6B3AE21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift in Sources */,
 				7969978D216F70BE0083C7AE /* ProjectSearchCoordinatorSpec.swift in Sources */,
+				06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift in Sources */,
 				06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */,
 				06B6B3C321CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift in Sources */,
 				47F819EC1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift in Sources */,
