@@ -4,8 +4,7 @@ import Nimble
 
 @testable import ELSpace
 
-class AppContainer_ServicesSpec
-: QuickSpec {
+class AppContainer_ServicesSpec: QuickSpec {
 
     override func spec() {
         describe("AppContainer_Services") {
