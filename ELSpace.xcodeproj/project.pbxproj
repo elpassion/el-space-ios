@@ -44,6 +44,7 @@
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
 		06810AB521BAE4AD00BC425E /* RaportDateProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */; };
+		06B6B3AE21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3AD21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift */; };
 		06B6B3B021CA8FC6007C42FB /* AnimationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3AF21CA8FC6007C42FB /* AnimationMock.swift */; };
 		06B6B3B221CA903A007C42FB /* ViewControllerTransitionContextStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
@@ -257,6 +258,7 @@
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
 		06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaportDateProviderMock.swift; sourceTree = "<group>"; };
+		06B6B3AD21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDismissTransitionSpec.swift; sourceTree = "<group>"; };
 		06B6B3AF21CA8FC6007C42FB /* AnimationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationMock.swift; sourceTree = "<group>"; };
 		06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionContextStub.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
@@ -551,6 +553,14 @@
 				0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */,
 				0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */,
 				0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		06B6B3AC21CA8F77007C42FB /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				06B6B3AD21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -1688,6 +1698,7 @@
 				473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */,
 				47FE97731F348078009EEE1C /* ProjectsServiceSpec.swift in Sources */,
 				0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */,
+				06B6B3AE21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift in Sources */,
 				7969978D216F70BE0083C7AE /* ProjectSearchCoordinatorSpec.swift in Sources */,
 				47F819EC1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift in Sources */,
 				06B6B3B221CA903A007C42FB /* ViewControllerTransitionContextStub.swift in Sources */,
