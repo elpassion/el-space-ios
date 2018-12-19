@@ -27,7 +27,7 @@ class AppContainer_CoordinatorFactoriesSpec: QuickSpec {
             }
 
             it("should build ProjectSearchCoordinator") {
-                expect(sut.projectSearchViewModel(projectId: nil)).to(beAnInstanceOf(ProjectSearchCoordinator.self))
+                expect(sut.projectSearchCoordinator(projectId: 1)).to(beAnInstanceOf(ProjectSearchCoordinator.self))
             }
         }
     }
