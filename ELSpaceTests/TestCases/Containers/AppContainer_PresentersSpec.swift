@@ -13,11 +13,11 @@ class AppContainer_PresentersSpec: QuickSpec {
                 sut = AppContainer()
             }
 
-            it("should return ViewControllerPresenter") {
+            it("should build ViewControllerPresenter") {
                 expect(sut.viewControllerPresenter).to(beAnInstanceOf(ViewControllerPresenter.self))
             }
 
-            it("should return ModalViewControllerPresenter") {
+            it("should build ModalViewControllerPresenter") {
                 expect(sut.modalViewControllerPresenter).to(beAnInstanceOf(ModalViewControllerPresenter.self))
             }
         }

@@ -13,23 +13,23 @@ class AppContainer_CommonSpec: QuickSpec {
                 sut = AppContainer()
             }
 
-            it("should return SelectionControllerSignIn") {
+            it("should build SelectionControllerSignIn") {
                 expect(sut.selectionController(googleIdToken: "")).to(beAnInstanceOf(SelectionController.self))
             }
 
-            it("should return ActivitiesController") {
+            it("should build ActivitiesController") {
                 expect(sut.activitiesController).to(beAnInstanceOf(ActivitiesController.self))
             }
 
-            it("should return ProjectSearchController") {
+            it("should build ProjectSearchController") {
                 expect(sut.projectSearchController).to(beAnInstanceOf(ProjectSearchController.self))
             }
 
-            it("should return GoogleUserMapper") {
+            it("should build GoogleUserMapper") {
                 expect(sut.googleUserMapper).to(beAnInstanceOf(GoogleUserMapper.self))
             }
 
-            it("should return SelectionScreenPresenter") {
+            it("should build SelectionScreenPresenter") {
                 expect(sut.selectionScreenPresenter(presenterViewController: UIViewController()))
                     .to(beAnInstanceOf(SelectionScreenPresenter.self))
             }
