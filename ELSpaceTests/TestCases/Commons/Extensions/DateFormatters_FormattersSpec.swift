@@ -58,5 +58,4 @@ class DateFormatters_FormattersSpec: QuickSpec {
             }
         }
     }
-    
 }

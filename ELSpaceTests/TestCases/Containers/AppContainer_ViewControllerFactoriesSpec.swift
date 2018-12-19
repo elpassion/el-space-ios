@@ -51,5 +51,4 @@ class AppContainer_ViewControllerFactoriesSpec: QuickSpec {
             }
         }
     }
-    
 }

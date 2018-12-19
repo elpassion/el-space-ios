@@ -54,7 +54,7 @@ class EmailValidatorSpec: QuickSpec {
 
                     beforeEach {
                         let error = observer.events.first!.value.element!
-                        emailValidationError = error as! EmailValidator.EmailValidationError
+                        emailValidationError = error as? EmailValidator.EmailValidationError
                     }
 
                     it("should emit one event") {
@@ -84,7 +84,7 @@ class EmailValidatorSpec: QuickSpec {
 
                     beforeEach {
                         let error = observer.events.first!.value.element!
-                        emailValidationError = error as! EmailValidator.EmailValidationError
+                        emailValidationError = error as? EmailValidator.EmailValidationError
                     }
 
                     it("should emit one event") {
