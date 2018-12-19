@@ -555,8 +555,8 @@
 				0600C10A21C3AC040029A3DA /* Subviews */,
 				0680874621C2E52E00C3B8FB /* Animator.swift */,
 				0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */,
-				0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */,
 				0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */,
+				0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -706,9 +706,9 @@
 				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
 				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
+				060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */,
 				79699792216F76750083C7AE /* ProjectSearchViewControllerSpec.swift */,
 				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
-				060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -781,6 +781,8 @@
 				79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */,
 				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
 				47F0AAB01FF69F0D0031D2E6 /* HolidaysServiceStub.swift */,
+				060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */,
+				060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */,
 				79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */,
 				7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */,
 				79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */,
@@ -788,8 +790,6 @@
 				0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */,
-				060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */,
 				06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */,
 			);
 			path = Stubs;
@@ -1122,11 +1122,11 @@
 			isa = PBXGroup;
 			children = (
 				47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */,
+				06B6B3AF21CA8FC6007C42FB /* AnimationMock.swift */,
 				86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */,
 				06810AB421BAE4AD00BC425E /* RaportDateProviderMock.swift */,
 				47F8623C1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift */,
 				473CBF941F331D5000B80FA4 /* SelectionScreenPresenterMock.swift */,
-				06B6B3AF21CA8FC6007C42FB /* AnimationMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1141,13 +1141,13 @@
 				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
 				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */,
 				AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */,
+				060A463021C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift */,
 				AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */,
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
 				0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */,
 				0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */,
 				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
-				060A463021C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
