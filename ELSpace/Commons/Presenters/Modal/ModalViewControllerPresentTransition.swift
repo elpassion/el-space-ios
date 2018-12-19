@@ -7,7 +7,7 @@ class ModalViewControllerPresentTransition: NSObject, UIViewControllerAnimatedTr
         self.animator = animator
     }
 
-    // MARK: UIViewControllerAnimatedTransitioning
+    // MARK: - UIViewControllerAnimatedTransitioning
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
@@ -39,7 +39,7 @@ class ModalViewControllerPresentTransition: NSObject, UIViewControllerAnimatedTr
         )
     }
 
-    // MARK: Private
+    // MARK: - Privates
 
     private let duration: TimeInterval = 0.4
     private let animator: Animating

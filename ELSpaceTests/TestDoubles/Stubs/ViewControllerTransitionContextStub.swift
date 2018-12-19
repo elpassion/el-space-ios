@@ -5,7 +5,7 @@ class ViewControllerTransitionContextStub: NSObject, UIViewControllerContextTran
     var toView: UIView?
     var fromView: UIView?
 
-    // MARK: UIViewControllerContextTransitioning
+    // MARK: - UIViewControllerContextTransitioning
 
     var containerView = UIView()
     var isAnimated = false

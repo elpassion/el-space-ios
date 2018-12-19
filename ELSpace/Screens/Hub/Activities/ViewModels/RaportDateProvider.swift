@@ -11,7 +11,7 @@ protocol RaportDateProviding {
 class RaportDateProvider: RaportDateProviding {
 
     init(monthFormatter: DateFormatter) {
-        firstRaportDate = monthFormatter.date(from: "January 2010") ?? Date.distantPast
+        firstRaportDate = monthFormatter.date(from: "January 2010") ?? .distantPast
     }
 
     let currentRaportDate = BehaviorRelay(value: Date())

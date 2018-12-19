@@ -30,7 +30,7 @@ class BottomMenuView: UIView {
         return backgroundView.rx.controlEvent(.touchUpInside)
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
 
     let headerView = BottomMenuHeaderView()
 
@@ -50,7 +50,7 @@ class BottomMenuView: UIView {
         stackView.axis = .vertical
     }
 
-    // MARK: Layout
+    // MARK: - Layout
 
     override func safeAreaInsetsDidChange() {
         scrollViewHeightConstraint?.constant = safeAreaBottomInset

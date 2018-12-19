@@ -27,7 +27,7 @@ class BottomMenuHeaderView: UIView {
         return doneButton.rx.controlEvent(.touchUpInside)
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
 
     let doneButton = Button(frame: .zero)
     private let titleLabel = UILabel()
@@ -43,7 +43,7 @@ class BottomMenuHeaderView: UIView {
         doneButton.backgroundColor = UIColor(color: .purpleAB9BFF)
     }
 
-    // MARK: Layout
+    // MARK: - Layout
 
     private func setupLayout() {
         heightAnchor == 40
