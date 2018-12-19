@@ -51,6 +51,7 @@
 		06B6B3B621CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */; };
 		06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */; };
 		06B6B3BD21CAA158007C42FB /* AppContainer_Presenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */; };
+		06B6B3BF21CAA227007C42FB /* AppContainer_PresentersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
@@ -269,6 +270,7 @@
 		06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters_FormattersSpec.swift; sourceTree = "<group>"; };
 		06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_Presenters.swift; sourceTree = "<group>"; };
+		06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_PresentersSpec.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -579,6 +581,7 @@
 			isa = PBXGroup;
 			children = (
 				06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */,
+				06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -1009,6 +1012,7 @@
 		8613F3411EEEDE2C0037A787 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				06B6B3B921CA9EAB007C42FB /* Containers */,
 				86D9F91C1EEEBB1A00788C1D /* Commons */,
 				AFB47B7F1F28D35C00E0A922 /* Controllers */,
 				47F8622F1F2F256100E7C518 /* Coordinators */,
@@ -1679,6 +1683,7 @@
 				7969978F216F71C30083C7AE /* ProjectSearchViewControllerStub.swift in Sources */,
 				060A462D21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
+				06B6B3BF21CAA227007C42FB /* AppContainer_PresentersSpec.swift in Sources */,
 				79699793216F76750083C7AE /* ProjectSearchViewControllerSpec.swift in Sources */,
 				060A463121C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift in Sources */,
 				47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */,
