@@ -1157,11 +1157,11 @@
 		AFB47B571F288E5B00E0A922 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */,
 				AFE916DA1F3204F100C4D27A /* DictionaryAddSpec.swift */,
 				AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */,
 				47C1C4FB1F337674009946BE /* JsonArraySpec.swift */,
 				AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */,
-				06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
