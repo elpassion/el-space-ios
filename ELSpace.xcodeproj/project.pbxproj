@@ -49,6 +49,7 @@
 		06B6B3B221CA903A007C42FB /* ViewControllerTransitionContextStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */; };
 		06B6B3B421CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B321CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift */; };
 		06B6B3B621CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */; };
+		06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
@@ -265,6 +266,7 @@
 		06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionContextStub.swift; sourceTree = "<group>"; };
 		06B6B3B321CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransitionSpec.swift; sourceTree = "<group>"; };
 		06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
+		06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters_FormattersSpec.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -1159,6 +1161,7 @@
 				AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */,
 				47C1C4FB1F337674009946BE /* JsonArraySpec.swift */,
 				AFB47B861F28DE2D00E0A922 /* UIAlertControllerCreation.swift */,
+				06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1708,6 +1711,7 @@
 				0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */,
 				06B6B3AE21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift in Sources */,
 				7969978D216F70BE0083C7AE /* ProjectSearchCoordinatorSpec.swift in Sources */,
+				06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */,
 				47F819EC1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift in Sources */,
 				06B6B3B221CA903A007C42FB /* ViewControllerTransitionContextStub.swift in Sources */,
 				47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */,
