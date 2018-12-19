@@ -18,12 +18,6 @@ extension AppContainer {
         return ProjectSearchController(projectsService: projectsService)
     }
 
-    // MARK: - Presenters
-
-    var viewControllerPresenter: ViewControllerPresenting {
-        return ViewControllerPresenter()
-    }
-
     // MARK: - Mappers
 
     var googleUserMapper: GoogleUserMapping {

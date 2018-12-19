@@ -50,6 +50,7 @@
 		06B6B3B421CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B321CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift */; };
 		06B6B3B621CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */; };
 		06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */; };
+		06B6B3BD21CAA158007C42FB /* AppContainer_Presenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
@@ -267,6 +268,7 @@
 		06B6B3B321CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransitionSpec.swift; sourceTree = "<group>"; };
 		06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters_FormattersSpec.swift; sourceTree = "<group>"; };
+		06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_Presenters.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -571,6 +573,14 @@
 				06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		06B6B3B921CA9EAB007C42FB /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */,
+			);
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		06BA11B01FE18C260021E159 /* Activity */ = {
@@ -1205,6 +1215,7 @@
 				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
 				47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */,
 				47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */,
+				06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */,
 			);
 			path = AppContainer;
 			sourceTree = "<group>";
@@ -1587,6 +1598,7 @@
 				0680874921C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift in Sources */,
 				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
 				473CBF911F33191600B80FA4 /* AppContainer_Common.swift in Sources */,
+				06B6B3BD21CAA158007C42FB /* AppContainer_Presenters.swift in Sources */,
 				AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */,
 				7935D8EB20C829350024A00E /* UserService.swift in Sources */,
 				AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */,

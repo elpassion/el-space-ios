@@ -23,7 +23,7 @@ extension AppContainer: SelectionCoordinatorCreation,
                                      monthPickerViewControllerFactory: self,
                                      activitiesViewModel: activitiesViewModel(),
                                      presenter: ViewControllerPresenter(),
-                                     modalPresenter: modalViewControllerPresenter(),
+                                     modalPresenter: modalViewControllerPresenter,
                                      activityCoordinatorFactory: self)
     }
 
@@ -41,15 +41,6 @@ extension AppContainer: SelectionCoordinatorCreation,
     func projectSearchCoordinator(projectId: Int?) -> Coordinator {
         return ProjectSearchCoordinator(projectSearchViewController: projectSearchViewController(projectId: projectId),
                                         projectSearchViewModel: projectSearchViewModel(projectId: projectId))
-    }
-
-    // MARK: -
-
-    func modalViewControllerPresenter() -> ModalViewControllerPresenting {
-        return ModalViewControllerPresenter(
-            presentTransition: { ModalViewControllerPresentTransition(animator: Animator()) },
-            dismissTransition: { ModalViewControllerDismissTransition(animator: Animator()) }
-        )
     }
 
 }
