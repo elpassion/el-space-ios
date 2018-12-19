@@ -53,10 +53,10 @@
 		06B6B3BB21CA9EF9007C42FB /* AppContainer_CommonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */; };
 		06B6B3BD21CAA158007C42FB /* AppContainer_Presenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */; };
 		06B6B3BF21CAA227007C42FB /* AppContainer_PresentersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */; };
-		06B6B3C121CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift */; };
-		06B6B3C321CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C221CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift */; };
+		06B6B3C121CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift */; };
+		06B6B3C321CAA3F2007C42FB /* AppContainer_ServicesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C221CAA3F2007C42FB /* AppContainer_ServicesSpec.swift */; };
 		06B6B3C521CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */; };
-		06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift */; };
+		06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
@@ -136,8 +136,8 @@
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
 		47F8623D1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8623C1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift */; };
-		47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */; };
-		47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */; };
+		47F8623F1F2F399700E7C518 /* AppContainer_Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8623E1F2F399700E7C518 /* AppContainer_Coordinators.swift */; };
+		47F862411F2F39F600E7C518 /* AppContainer_ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862401F2F39F500E7C518 /* AppContainer_ViewControllers.swift */; };
 		47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */; };
 		47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */; };
 		47F864781F387361000C0FE9 /* ReportDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */; };
@@ -204,7 +204,7 @@
 		AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */; };
 		AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B621F28A5EC00E0A922 /* ApiError.swift */; };
 		AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B681F28A6A800E0A922 /* AppContainer.swift */; };
-		AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */; };
+		AFB47B6E1F28B8ED00E0A922 /* AppContainer_Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B6D1F28B8ED00E0A922 /* AppContainer_Services.swift */; };
 		AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B731F28BACE00E0A922 /* Coordinator.swift */; };
 		AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */; };
 		AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */; };
@@ -277,10 +277,10 @@
 		06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_CommonSpec.swift; sourceTree = "<group>"; };
 		06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_Presenters.swift; sourceTree = "<group>"; };
 		06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_PresentersSpec.swift; sourceTree = "<group>"; };
-		06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorFactoriesSpec.swift; sourceTree = "<group>"; };
-		06B6B3C221CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ServiceFactoringSpec.swift; sourceTree = "<group>"; };
+		06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorsSpec.swift; sourceTree = "<group>"; };
+		06B6B3C221CAA3F2007C42FB /* AppContainer_ServicesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ServicesSpec.swift; sourceTree = "<group>"; };
 		06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewModelsSpec.swift; sourceTree = "<group>"; };
-		06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllerFactoriesSpec.swift; sourceTree = "<group>"; };
+		06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllersSpec.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -358,8 +358,8 @@
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
 		47F8623C1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinatorFactoryMock.swift; sourceTree = "<group>"; };
-		47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorFactories.swift; sourceTree = "<group>"; };
-		47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllerFactories.swift; sourceTree = "<group>"; };
+		47F8623E1F2F399700E7C518 /* AppContainer_Coordinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_Coordinators.swift; sourceTree = "<group>"; };
+		47F862401F2F39F500E7C518 /* AppContainer_ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllers.swift; sourceTree = "<group>"; };
 		47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionControllerSpy.swift; sourceTree = "<group>"; };
 		47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 		AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientSpy.swift; sourceTree = "<group>"; };
 		AFB47B621F28A5EC00E0A922 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		AFB47B681F28A6A800E0A922 /* AppContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
-		AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ServiceFactoring.swift; sourceTree = "<group>"; };
+		AFB47B6D1F28B8ED00E0A922 /* AppContainer_Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_Services.swift; sourceTree = "<group>"; };
 		AFB47B731F28BACE00E0A922 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinator.swift; sourceTree = "<group>"; };
 		AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
@@ -591,11 +591,11 @@
 			isa = PBXGroup;
 			children = (
 				06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */,
+				06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift */,
 				06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */,
-				06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift */,
-				06B6B3C221CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift */,
+				06B6B3C221CAA3F2007C42FB /* AppContainer_ServicesSpec.swift */,
+				06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift */,
 				06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */,
-				06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -1026,8 +1026,8 @@
 		8613F3411EEEDE2C0037A787 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
-				06B6B3B921CA9EAB007C42FB /* Containers */,
 				86D9F91C1EEEBB1A00788C1D /* Commons */,
+				06B6B3B921CA9EAB007C42FB /* Containers */,
 				AFB47B7F1F28D35C00E0A922 /* Controllers */,
 				47F8622F1F2F256100E7C518 /* Coordinators */,
 				AF48257F1F276C110081B2CC /* Network */,
@@ -1229,11 +1229,11 @@
 			children = (
 				AFB47B681F28A6A800E0A922 /* AppContainer.swift */,
 				473CBF901F33191600B80FA4 /* AppContainer_Common.swift */,
-				47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */,
-				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
-				47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */,
-				47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */,
+				47F8623E1F2F399700E7C518 /* AppContainer_Coordinators.swift */,
 				06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */,
+				AFB47B6D1F28B8ED00E0A922 /* AppContainer_Services.swift */,
+				47F862401F2F39F500E7C518 /* AppContainer_ViewControllers.swift */,
+				47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */,
 			);
 			path = AppContainer;
 			sourceTree = "<group>";
@@ -1587,7 +1587,7 @@
 				47DF82E71FE13913009BF96A /* UIView_backgroundColor.swift in Sources */,
 				79699781216CF9590083C7AE /* ProjectSearchViewModel.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
-				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
+				47F862411F2F39F600E7C518 /* AppContainer_ViewControllers.swift in Sources */,
 				066F65551FE95CD1005FE66C /* ActivityFormView.swift in Sources */,
 				47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */,
 				473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */,
@@ -1653,9 +1653,9 @@
 				31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */,
 				0680874B21C2E91A00C3B8FB /* BottomMenuView.swift in Sources */,
 				0680874D21C2EF6600C3B8FB /* BottomMenuHeaderView.swift in Sources */,
-				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
+				AFB47B6E1F28B8ED00E0A922 /* AppContainer_Services.swift in Sources */,
 				4750BB8C1FF4F2D9000FE203 /* ActivityIndicator.swift in Sources */,
-				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
+				47F8623F1F2F399700E7C518 /* AppContainer_Coordinators.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
@@ -1735,7 +1735,7 @@
 				79181EF720C920AD006997DB /* UserServiceSpec.swift in Sources */,
 				0674148520CFC76F00FEC50E /* ReportDTO_Fake.swift in Sources */,
 				47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */,
-				06B6B3C121CAA2C7007C42FB /* AppContainer_CoordinatorFactoriesSpec.swift in Sources */,
+				06B6B3C121CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift in Sources */,
 				47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */,
 				47F819DC1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift in Sources */,
 				47F819E81F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift in Sources */,
@@ -1744,9 +1744,9 @@
 				0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */,
 				06B6B3AE21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift in Sources */,
 				7969978D216F70BE0083C7AE /* ProjectSearchCoordinatorSpec.swift in Sources */,
-				06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllerFactoriesSpec.swift in Sources */,
+				06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift in Sources */,
 				06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */,
-				06B6B3C321CAA3F2007C42FB /* AppContainer_ServiceFactoringSpec.swift in Sources */,
+				06B6B3C321CAA3F2007C42FB /* AppContainer_ServicesSpec.swift in Sources */,
 				47F819EC1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift in Sources */,
 				06B6B3B221CA903A007C42FB /* ViewControllerTransitionContextStub.swift in Sources */,
 				47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */,

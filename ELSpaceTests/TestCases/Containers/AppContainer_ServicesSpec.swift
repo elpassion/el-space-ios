@@ -4,10 +4,11 @@ import Nimble
 
 @testable import ELSpace
 
-class AppContainer_ServiceFactoringSpec: QuickSpec {
+class AppContainer_ServicesSpec
+: QuickSpec {
 
     override func spec() {
-        describe("AppContainer_ServiceFactoring") {
+        describe("AppContainer_Services") {
             var sut: AppContainer!
 
             beforeEach {

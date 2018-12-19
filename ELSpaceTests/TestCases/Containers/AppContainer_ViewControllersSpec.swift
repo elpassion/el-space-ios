@@ -3,10 +3,10 @@ import Nimble
 
 @testable import ELSpace
 
-class AppContainer_ViewControllerFactoriesSpec: QuickSpec {
+class AppContainer_ViewControllersSpec: QuickSpec {
 
     override func spec() {
-        describe("AppContainer_ViewControllerFactories") {
+        describe("AppContainer_ViewControllers") {
             var sut: AppContainer!
 
             beforeEach {
