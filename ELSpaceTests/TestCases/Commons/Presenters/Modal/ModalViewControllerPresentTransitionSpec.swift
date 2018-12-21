@@ -7,11 +7,12 @@ class ModalViewControllerPresentTransitionSpec: QuickSpec {
 
     override func spec() {
         describe("ModalViewControllerPresentTransition") {
-            var sut: ModalViewControllerPresentTransition!
-            var animatorMock: AnimatorMock!
+            var sut: ModalViewControllerPresentTransition<AnimatorMock>!
+            var animatorMock: AnimatorMock.Type!
 
             beforeEach {
-                animatorMock = AnimatorMock()
+                animatorMock = AnimatorMock.self
+                animatorMock.prepare()
                 sut = ModalViewControllerPresentTransition(animator: animatorMock)
             }
 

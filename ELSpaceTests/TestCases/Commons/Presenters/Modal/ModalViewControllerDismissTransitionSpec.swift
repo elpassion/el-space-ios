@@ -7,11 +7,12 @@ class ModalViewControllerDismissTransitionSpec: QuickSpec {
 
     override func spec() {
         describe("ModalViewControllerDismissTransition") {
-            var sut: ModalViewControllerDismissTransition!
-            var animatorMock: AnimatorMock!
+            var sut: ModalViewControllerDismissTransition<AnimatorMock>!
+            var animatorMock: AnimatorMock.Type!
 
             beforeEach {
-                animatorMock = AnimatorMock()
+                animatorMock = AnimatorMock.self
+                animatorMock.prepare()
                 sut = ModalViewControllerDismissTransition(animator: animatorMock)
             }
 

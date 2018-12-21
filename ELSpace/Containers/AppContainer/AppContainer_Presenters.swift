@@ -8,8 +8,8 @@ extension AppContainer {
 
     var modalViewControllerPresenter: ModalViewControllerPresenting {
         return ModalViewControllerPresenter(
-            presentTransition: { ModalViewControllerPresentTransition(animator: Animator()) },
-            dismissTransition: { ModalViewControllerDismissTransition(animator: Animator()) }
+            presentTransition: { ModalViewControllerPresentTransition(animator: UIView.self) },
+            dismissTransition: { ModalViewControllerDismissTransition(animator: UIView.self) }
         )
     }
 

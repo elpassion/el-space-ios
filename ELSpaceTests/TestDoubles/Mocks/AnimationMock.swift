@@ -1,15 +1,21 @@
 import Foundation
 @testable import ELSpace
 
-class AnimatorMock: Animating {
+class AnimatorMock: ViewAnimating {
 
-    var animatingWithDuration: TimeInterval?
-    var animations: (() -> Void)?
-    var completion: ((Bool) -> Void)?
+    static var animatingWithDuration: TimeInterval?
+    static var animations: (() -> Void)?
+    static var completion: ((Bool) -> Void)?
 
-    // MARK: Animating
+    static func prepare() {
+        animatingWithDuration = nil
+        animations = nil
+        completion = nil
+    }
 
-    func animate(withDuration: TimeInterval, animations: @escaping () -> Void, completion: ((Bool) -> Void)?) {
+    // MARK: ViewAnimating
+
+    static func animate(withDuration: TimeInterval, animations: @escaping () -> Void, completion: ((Bool) -> Void)?) {
         animatingWithDuration = withDuration
         self.animations = animations
         self.completion = completion

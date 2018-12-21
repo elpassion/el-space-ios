@@ -37,7 +37,7 @@
 		0680874321C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */; };
 		0680874421C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */; };
 		0680874521C2E40A00C3B8FB /* ModalViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */; };
-		0680874721C2E52E00C3B8FB /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874621C2E52E00C3B8FB /* Animator.swift */; };
+		0680874721C2E52E00C3B8FB /* ViewAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874621C2E52E00C3B8FB /* ViewAnimating.swift */; };
 		0680874921C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */; };
 		0680874B21C2E91A00C3B8FB /* BottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */; };
 		0680874D21C2EF6600C3B8FB /* BottomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */; };
@@ -261,7 +261,7 @@
 		0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDismissTransition.swift; sourceTree = "<group>"; };
 		0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransition.swift; sourceTree = "<group>"; };
 		0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenter.swift; sourceTree = "<group>"; };
-		0680874621C2E52E00C3B8FB /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		0680874621C2E52E00C3B8FB /* ViewAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimating.swift; sourceTree = "<group>"; };
 		0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuView.swift; sourceTree = "<group>"; };
 		0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuHeaderView.swift; sourceTree = "<group>"; };
@@ -569,10 +569,10 @@
 			isa = PBXGroup;
 			children = (
 				0600C10A21C3AC040029A3DA /* Subviews */,
-				0680874621C2E52E00C3B8FB /* Animator.swift */,
 				0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */,
 				0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */,
 				0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */,
+				0680874621C2E52E00C3B8FB /* ViewAnimating.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -1570,7 +1570,7 @@
 				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				06DEC35D20D83B4D00ADC98F /* ActivityForm_Equatable.swift in Sources */,
-				0680874721C2E52E00C3B8FB /* Animator.swift in Sources */,
+				0680874721C2E52E00C3B8FB /* ViewAnimating.swift in Sources */,
 				066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
