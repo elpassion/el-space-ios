@@ -39,7 +39,7 @@ class ModalViewControllerDismissTransitionSpec: QuickSpec {
                     targetView = UIView()
                     backgroundView = ModalViewControllerBackgroundView()
                     transitionContext = ViewControllerTransitionContextStub()
-                    transitionContext.fromView = targetView
+                    transitionContext.stubbedFromView = targetView
                     transitionContext.containerView.addSubview(backgroundView)
                     transitionContext.containerView.addSubview(targetView)
                     sut.animateTransition(using: transitionContext)
@@ -69,6 +69,11 @@ class ModalViewControllerDismissTransitionSpec: QuickSpec {
                     context("when animations completes") {
                         beforeEach {
                             animatorMock.completion?(true)
+                        }
+
+                        it("should complete transition") {
+                            expect(transitionContext.invokedCompleteTransition?.count) == 1
+                            expect(transitionContext.invokedCompleteTransition?.didComplete) == true
                         }
 
                         it("should target view have correct alpha") {

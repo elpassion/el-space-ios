@@ -10,7 +10,7 @@ class MonthPickerViewControllerSpec: QuickSpec {
     override func spec() {
         describe("MonthPickerViewController") {
             var sut: MonthPickerViewController!
-            var raportDateProvider: RaportDateProviderMock!
+            var raportDateProvider: RaportDateProviderStub!
             var scheduler: TestScheduler!
             var dismissObserver: TestableObserver<Void>!
             var bottomMenuView: BottomMenuView! {
@@ -21,7 +21,7 @@ class MonthPickerViewControllerSpec: QuickSpec {
             }
 
             beforeEach {
-                raportDateProvider = RaportDateProviderMock()
+                raportDateProvider = RaportDateProviderStub()
                 scheduler = TestScheduler(initialClock: 0)
                 dismissObserver = scheduler.createObserver(Void.self)
                 sut = MonthPickerViewController(raportDateProvider: raportDateProvider)

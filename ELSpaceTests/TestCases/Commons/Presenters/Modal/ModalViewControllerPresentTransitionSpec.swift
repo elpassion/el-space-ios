@@ -35,7 +35,7 @@ class ModalViewControllerPresentTransitionSpec: QuickSpec {
 
                 beforeEach {
                     transitionContext = ViewControllerTransitionContextStub()
-                    transitionContext.toView = UIView()
+                    transitionContext.stubbedToView = UIView()
                     sut.animateTransition(using: transitionContext)
                 }
 
@@ -44,7 +44,7 @@ class ModalViewControllerPresentTransitionSpec: QuickSpec {
 
                     beforeEach {
                         targetView = transitionContext.containerView.subviews.first(where: {
-                            $0.isEqual(transitionContext.toView)
+                            $0.isEqual(transitionContext.stubbedToView)
                         })
                     }
 
@@ -89,12 +89,17 @@ class ModalViewControllerPresentTransitionSpec: QuickSpec {
                         animatorMock.completion?(true)
                     }
 
+                    it("should complete transition") {
+                        expect(transitionContext.invokedCompleteTransition?.count) == 1
+                        expect(transitionContext.invokedCompleteTransition?.didComplete) == true
+                    }
+
                     describe("target view") {
                         var targetView: UIView?
 
                         beforeEach {
                             targetView = transitionContext.containerView.subviews.first(where: {
-                                $0.isEqual(transitionContext.toView)
+                                $0.isEqual(transitionContext.stubbedToView)
                             })
                         }
 

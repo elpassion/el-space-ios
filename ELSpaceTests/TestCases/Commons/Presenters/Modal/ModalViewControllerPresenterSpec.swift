@@ -23,16 +23,20 @@ class ModalViewControllerPresenterSpec: QuickSpec {
                 sut = ModalViewControllerPresenter(configuration: configuration)
             }
 
-            it("should has correct animation controller for presenting") {
-                let controller = sut.animationController(forPresented: UIViewController(),
-                                                         presenting: UIViewController(),
-                                                         source: UIViewController())
-                expect(controller).to(be(presentTransitionStub))
+            it("should return correct presentAnimationController") {
+                let presentAnimationController = sut.animationController(
+                    forPresented: UIViewController(),
+                    presenting: UIViewController(),
+                    source: UIViewController()
+                )
+                expect(presentAnimationController).to(be(presentTransitionStub))
             }
 
-            it("should has correct animation controller for dismissing") {
-                let controller = sut.animationController(forDismissed: UIViewController())
-                expect(controller).to(be(dismissTransitionStub))
+            it("should return correct dismissAnimationController") {
+                let dismissAnimationController = sut.animationController(
+                    forDismissed: UIViewController()
+                )
+                expect(dismissAnimationController).to(be(dismissTransitionStub))
             }
 
             context("when presenting") {
@@ -53,7 +57,7 @@ class ModalViewControllerPresenterSpec: QuickSpec {
                     expect(viewController.transitioningDelegate).to(be(sut))
                 }
 
-                it("should present") {
+                it("should present correct viewController") {
                     expect(baseViewControllerSpy.didPresentViewController).to(be(viewController))
                 }
             }
@@ -80,32 +84,4 @@ class ModalViewControllerPresenterSpec: QuickSpec {
             }
         }
     }
-
-    private class TransitionStub: NSObject, UIViewControllerAnimatedTransitioning {
-
-        func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-            return 0
-        }
-
-        func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {}
-
-    }
-
-    private class ViewControllerSpy: UIViewController {
-
-        var didPresentViewController: UIViewController?
-        var didDismiss = false
-
-        override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-            super.present(viewControllerToPresent, animated: flag, completion: completion)
-            didPresentViewController = viewControllerToPresent
-        }
-
-        override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-            super.dismiss(animated: flag, completion: completion)
-            didDismiss = true
-        }
-
-    }
-
 }

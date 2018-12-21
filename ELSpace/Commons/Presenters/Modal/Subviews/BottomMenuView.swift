@@ -17,7 +17,6 @@ class BottomMenuView: UIView {
     var items: [UIControl] = [] {
         didSet {
             oldValue.forEach {
-                stackView.removeArrangedSubview($0)
                 $0.removeFromSuperview()
             }
             items.forEach {

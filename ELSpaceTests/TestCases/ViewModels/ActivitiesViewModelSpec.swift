@@ -16,7 +16,7 @@ class ActivitiesViewModelSpec: QuickSpec {
             var monthObserver: TestableObserver<String>!
             var isLoadingObserver: TestableObserver<Bool>!
             var openReportObserver: TestableObserver<(report: ReportDTO, projects: [ProjectDTO])>!
-            var raportDateProvider: RaportDateProviderMock!
+            var raportDateProvider: RaportDateProviderStub!
             let testDate = DateFormatter.shortDateFormatter.date(from: "2017-08-05")!
 
             afterEach {
@@ -30,7 +30,7 @@ class ActivitiesViewModelSpec: QuickSpec {
 
             beforeEach {
                 activitiesControllerSpy = ActivitiesControllerSpy()
-                raportDateProvider = RaportDateProviderMock()
+                raportDateProvider = RaportDateProviderStub()
                 let fakeMonthFormatter = DateFormatter.monthFormatter
                 fakeMonthFormatter.timeZone = TimeZone.current
                 let fakeShortDateFormatter = DateFormatter.shortDateFormatter

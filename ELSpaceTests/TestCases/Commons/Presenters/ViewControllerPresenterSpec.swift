@@ -24,7 +24,8 @@ class ViewControllerPresenterSpec: QuickSpec {
                 }
 
                 it("should present proper viewController") {
-                    expect(presentingViewControllerSpy.viewControllerToPresent).to(be(presentedViewController))
+                    expect(presentingViewControllerSpy.viewControllerToPresent)
+                        .to(be(presentedViewController))
                 }
 
                 it("should present with animation") {

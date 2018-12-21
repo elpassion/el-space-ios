@@ -6,18 +6,18 @@ class ModalViewControllerPresenterSpy: ModalViewControllerPresenting {
     // MARK: - ModalViewControllerPresenting
 
     func present(viewController: UIViewController, on baseViewController: UIViewController) {
-        presentedViewControllerSpy = viewController
-        baseViewControllerSpy = baseViewController
+        presentedViewController = viewController
+        self.baseViewController = baseViewController
     }
 
     func dismiss(viewController: UIViewController) {
-        dismissedViewControllerSpy = viewController
+        dismissedViewController = viewController
     }
 
     // MARK: - Spies
 
-    var presentedViewControllerSpy: UIViewController?
-    var baseViewControllerSpy: UIViewController?
-    var dismissedViewControllerSpy: UIViewController?
+    private(set) var presentedViewController: UIViewController?
+    private(set) var baseViewController: UIViewController?
+    private(set) var dismissedViewController: UIViewController?
 
 }

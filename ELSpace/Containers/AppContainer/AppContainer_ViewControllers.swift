@@ -7,7 +7,7 @@ extension AppContainer: LoginViewControllerCreation,
                         ActivitiesViewControllerCreation,
                         ActivityViewControllerCreation,
                         ProjectSearchViewControllerCreation,
-MonthPickerViewControllerCreation {
+                        MonthPickerViewControllerCreation {
 
     // MARK: - LoginViewControllerCreation
 

@@ -2,8 +2,8 @@ import UIKit
 
 class ViewControllerTransitionContextStub: NSObject, UIViewControllerContextTransitioning {
 
-    var toView: UIView?
-    var fromView: UIView?
+    var stubbedToView: UIView?
+    var stubbedFromView: UIView?
 
     // MARK: - UIViewControllerContextTransitioning
 
@@ -12,6 +12,7 @@ class ViewControllerTransitionContextStub: NSObject, UIViewControllerContextTran
     var isInteractive = false
     var transitionWasCancelled = false
     var presentationStyle: UIModalPresentationStyle = .none
+    private(set) var invokedCompleteTransition: (count: Int, didComplete: Bool)?
 
     func updateInteractiveTransition(_ percentComplete: CGFloat) {}
 
@@ -21,7 +22,12 @@ class ViewControllerTransitionContextStub: NSObject, UIViewControllerContextTran
 
     func pauseInteractiveTransition() {}
 
-    func completeTransition(_ didComplete: Bool) {}
+    func completeTransition(_ didComplete: Bool) {
+        var count = invokedCompleteTransition?.count ?? 0
+        count += 1
+
+        invokedCompleteTransition = (count: count, didComplete: didComplete)
+    }
 
     func viewController(forKey key: UITransitionContextViewControllerKey) -> UIViewController? {
         return nil
@@ -30,9 +36,9 @@ class ViewControllerTransitionContextStub: NSObject, UIViewControllerContextTran
     func view(forKey key: UITransitionContextViewKey) -> UIView? {
         switch key {
         case UITransitionContextViewKey.from:
-            return fromView
+            return stubbedFromView
         case UITransitionContextViewKey.to:
-            return toView
+            return stubbedToView
         default:
             return nil
         }

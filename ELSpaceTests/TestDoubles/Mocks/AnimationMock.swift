@@ -3,9 +3,9 @@ import Foundation
 
 class AnimatorMock: ViewAnimating {
 
-    static var animatingWithDuration: TimeInterval?
-    static var animations: (() -> Void)?
-    static var completion: ((Bool) -> Void)?
+    private(set) static var animatingWithDuration: TimeInterval?
+    private(set) static var animations: (() -> Void)?
+    private(set) static var completion: ((Bool) -> Void)?
 
     static func prepare() {
         animatingWithDuration = nil
