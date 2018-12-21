@@ -7,10 +7,8 @@ protocol ModalViewControllerPresenting {
 
 class ModalViewControllerPresenter: NSObject, ModalViewControllerPresenting, UIViewControllerTransitioningDelegate {
 
-    init(presentTransition: @escaping () -> UIViewControllerAnimatedTransitioning?,
-         dismissTransition: @escaping () -> UIViewControllerAnimatedTransitioning?) {
-        self.presentTransition = presentTransition
-        self.dismissTransition = dismissTransition
+    init(configuration: ModalPresentationConfiguration) {
+        self.configuration = configuration
     }
 
     // MARK: - ViewControllerPresenting
@@ -30,20 +28,19 @@ class ModalViewControllerPresenter: NSObject, ModalViewControllerPresenting, UIV
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return presentTransition()
+        return configuration.presentTransition
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return dismissTransition()
+        return configuration.dismissTransition
     }
 
     // MARK: - Privates
 
-    private let presentTransition: () -> UIViewControllerAnimatedTransitioning?
-    private let dismissTransition: () -> UIViewControllerAnimatedTransitioning?
+    private let configuration: ModalPresentationConfiguration
 
     private func prepare(_ viewController: UIViewController) {
-        viewController.modalPresentationStyle = .overFullScreen
+        viewController.modalPresentationStyle = configuration.presentationStyle
         viewController.transitioningDelegate = self
     }
 

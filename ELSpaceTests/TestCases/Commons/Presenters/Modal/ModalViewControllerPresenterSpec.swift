@@ -15,10 +15,12 @@ class ModalViewControllerPresenterSpec: QuickSpec {
             beforeEach {
                 presentTransitionStub = TransitionStub()
                 dismissTransitionStub = TransitionStub()
-                sut = ModalViewControllerPresenter(
-                    presentTransition: { presentTransitionStub },
-                    dismissTransition: { dismissTransitionStub }
-                )
+                let configuration = ModalPresentationConfiguration(
+                    animated: false,
+                    presentTransition: presentTransitionStub,
+                    dismissTransition: dismissTransitionStub,
+                    presentationStyle: .overFullScreen)
+                sut = ModalViewControllerPresenter(configuration: configuration)
             }
 
             it("should has correct animation controller for presenting") {

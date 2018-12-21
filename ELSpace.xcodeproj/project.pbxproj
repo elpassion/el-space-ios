@@ -61,6 +61,7 @@
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		06BE2E6D1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
+		06D267BC21CD4ACA0054F41E /* ModalPresentationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D267BB21CD4ACA0054F41E /* ModalPresentationConfiguration.swift */; };
 		06D4377620D27FBD00A49424 /* NewActivityDTO_Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */; };
 		06D4377820D2821100A49424 /* NewActivityDTO_Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D4377720D2821100A49424 /* NewActivityDTO_Create.swift */; };
 		06DEC35D20D83B4D00ADC98F /* ActivityForm_Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEC35C20D83B4D00ADC98F /* ActivityForm_Equatable.swift */; };
@@ -284,6 +285,7 @@
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06D267BB21CD4ACA0054F41E /* ModalPresentationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationConfiguration.swift; sourceTree = "<group>"; };
 		06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDTO_Validation.swift; sourceTree = "<group>"; };
 		06D4377720D2821100A49424 /* NewActivityDTO_Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDTO_Create.swift; sourceTree = "<group>"; };
 		06DEC35C20D83B4D00ADC98F /* ActivityForm_Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm_Equatable.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				0600C10A21C3AC040029A3DA /* Subviews */,
+				06D267BB21CD4ACA0054F41E /* ModalPresentationConfiguration.swift */,
 				0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */,
 				0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */,
 				0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */,
@@ -1568,6 +1571,7 @@
 			files = (
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
 				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
+				06D267BC21CD4ACA0054F41E /* ModalPresentationConfiguration.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				06DEC35D20D83B4D00ADC98F /* ActivityForm_Equatable.swift in Sources */,
 				0680874721C2E52E00C3B8FB /* ViewAnimating.swift in Sources */,
