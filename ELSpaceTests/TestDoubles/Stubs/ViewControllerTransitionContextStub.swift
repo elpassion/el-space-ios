@@ -7,11 +7,11 @@ class ViewControllerTransitionContextStub: NSObject, UIViewControllerContextTran
 
     // MARK: - UIViewControllerContextTransitioning
 
-    var containerView = UIView()
-    var isAnimated = false
-    var isInteractive = false
-    var transitionWasCancelled = false
-    var presentationStyle: UIModalPresentationStyle = .none
+    let containerView = UIView()
+    let isAnimated = false
+    let isInteractive = false
+    let transitionWasCancelled = false
+    let presentationStyle: UIModalPresentationStyle = .none
     private(set) var invokedCompleteTransition: (count: Int, didComplete: Bool)?
 
     func updateInteractiveTransition(_ percentComplete: CGFloat) {}

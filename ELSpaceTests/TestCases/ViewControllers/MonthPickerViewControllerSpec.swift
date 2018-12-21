@@ -11,25 +11,26 @@ class MonthPickerViewControllerSpec: QuickSpec {
         describe("MonthPickerViewController") {
             var sut: MonthPickerViewController!
             var raportDateProvider: RaportDateProviderStub!
-            var scheduler: TestScheduler!
-            var dismissObserver: TestableObserver<Void>!
-            var bottomMenuView: BottomMenuView! {
-                return sut.view as? BottomMenuView
-            }
-            var monthPicker: NTMonthYearPicker? {
-                return bottomMenuView.items.first as? NTMonthYearPicker
-            }
 
             beforeEach {
                 raportDateProvider = RaportDateProviderStub()
-                scheduler = TestScheduler(initialClock: 0)
-                dismissObserver = scheduler.createObserver(Void.self)
                 sut = MonthPickerViewController(raportDateProvider: raportDateProvider)
-                _ = sut.dismiss.drive(dismissObserver)
             }
 
             context("when view did load") {
+                var scheduler: TestScheduler!
+                var dismissObserver: TestableObserver<Void>!
+                var bottomMenuView: BottomMenuView! {
+                    return sut.view as? BottomMenuView
+                }
+                var monthPicker: NTMonthYearPicker? {
+                    return bottomMenuView.items.first as? NTMonthYearPicker
+                }
+
                 beforeEach {
+                    scheduler = TestScheduler(initialClock: 0)
+                    dismissObserver = scheduler.createObserver(Void.self)
+                    _ = sut.dismiss.drive(dismissObserver)
                     _ = sut.view
                 }
 

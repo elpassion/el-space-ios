@@ -31,18 +31,18 @@ class ModalViewControllerDismissTransitionSpec: QuickSpec {
             }
 
             context("when animating") {
-                var transitionContext: ViewControllerTransitionContextStub!
+                var transitionContextStub: ViewControllerTransitionContextStub!
                 var targetView: UIView!
                 var backgroundView: ModalViewControllerBackgroundView!
 
                 beforeEach {
                     targetView = UIView()
                     backgroundView = ModalViewControllerBackgroundView()
-                    transitionContext = ViewControllerTransitionContextStub()
-                    transitionContext.stubbedFromView = targetView
-                    transitionContext.containerView.addSubview(backgroundView)
-                    transitionContext.containerView.addSubview(targetView)
-                    sut.animateTransition(using: transitionContext)
+                    transitionContextStub = ViewControllerTransitionContextStub()
+                    transitionContextStub.stubbedFromView = targetView
+                    transitionContextStub.containerView.addSubview(backgroundView)
+                    transitionContextStub.containerView.addSubview(targetView)
+                    sut.animateTransition(using: transitionContextStub)
                 }
 
                 it("should animate with correct duration") {
@@ -72,8 +72,8 @@ class ModalViewControllerDismissTransitionSpec: QuickSpec {
                         }
 
                         it("should complete transition") {
-                            expect(transitionContext.invokedCompleteTransition?.count) == 1
-                            expect(transitionContext.invokedCompleteTransition?.didComplete) == true
+                            expect(transitionContextStub.invokedCompleteTransition?.count) == 1
+                            expect(transitionContextStub.invokedCompleteTransition?.didComplete) == true
                         }
 
                         it("should target view have correct alpha") {
