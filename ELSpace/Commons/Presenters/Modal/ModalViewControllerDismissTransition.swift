@@ -1,8 +1,8 @@
 import UIKit
 
-class ModalViewControllerDismissTransition<T: ViewAnimating>: NSObject, UIViewControllerAnimatedTransitioning {
+class ModalViewControllerDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
-    init(animator: T.Type) {
+    init(animator: ViewAnimating.Type) {
         self.animator = animator
     }
 
@@ -39,6 +39,6 @@ class ModalViewControllerDismissTransition<T: ViewAnimating>: NSObject, UIViewCo
     // MARK: Private
 
     private let duration: TimeInterval = 0.4
-    private let animator: T.Type
+    private let animator: ViewAnimating.Type
 
 }

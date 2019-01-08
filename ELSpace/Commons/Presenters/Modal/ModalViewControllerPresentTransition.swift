@@ -1,9 +1,9 @@
 import UIKit
 import Anchorage
 
-class ModalViewControllerPresentTransition<T: ViewAnimating>: NSObject, UIViewControllerAnimatedTransitioning {
+class ModalViewControllerPresentTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
-    init(animator: T.Type) {
+    init(animator: ViewAnimating.Type) {
         self.animator = animator
     }
 
@@ -42,6 +42,6 @@ class ModalViewControllerPresentTransition<T: ViewAnimating>: NSObject, UIViewCo
     // MARK: - Privates
 
     private let duration: TimeInterval = 0.4
-    private let animator: T.Type
+    private let animator: ViewAnimating.Type
 
 }

@@ -9,6 +9,10 @@ class DateFormatters_FormattersSpec: QuickSpec {
         describe("DateFormatters_Formatters") {
             var sut: DateFormatter!
 
+            afterEach {
+                sut = nil
+            }
+
             describe("shortDateFormatter") {
                 beforeEach {
                     sut = DateFormatter.shortDateFormatter
