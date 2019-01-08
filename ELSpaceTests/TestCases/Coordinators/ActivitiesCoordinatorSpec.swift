@@ -12,7 +12,9 @@ class ActivitiesCoordinatorSpec: QuickSpec {
             var activitiesViewControllerStub: ActivitiesViewControllerStub!
             var activitiesViewModelSpy: ActivitiesViewModelSpy!
             var presenterSpy: ViewControllerPresenterSpy!
+            var monthChangeViewControllerCreationStub: MonthPickerViewControllerCreationStub!
             var activityCoordinatorCreationStub: ActivityCoordinatorCreationStub!
+            var modalViewControllerPresenterSpy: ModalViewControllerPresenterSpy!
 
             afterEach {
                 sut = nil
@@ -27,11 +29,15 @@ class ActivitiesCoordinatorSpec: QuickSpec {
                 activitiesViewModelSpy = ActivitiesViewModelSpy()
                 presenterSpy = ViewControllerPresenterSpy()
                 activityCoordinatorCreationStub = ActivityCoordinatorCreationStub()
+                monthChangeViewControllerCreationStub = MonthPickerViewControllerCreationStub()
+                modalViewControllerPresenterSpy = ModalViewControllerPresenterSpy()
                 sut = ActivitiesCoordinator(activitiesViewController: activitiesViewControllerStub,
+                                            monthPickerViewControllerFactory: monthChangeViewControllerCreationStub,
                                             activitiesViewModel: activitiesViewModelSpy,
                                             presenter: presenterSpy,
+                                            modalPresenter: modalViewControllerPresenterSpy,
                                             activityCoordinatorFactory: activityCoordinatorCreationStub)
-            }
+                }
 
             it("should have correct initial view controller") {
                 expect(sut.initialViewController).to(equal(activitiesViewControllerStub))

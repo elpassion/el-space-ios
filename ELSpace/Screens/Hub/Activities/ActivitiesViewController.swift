@@ -1,10 +1,12 @@
 import UIKit
+import RxCocoa
 import RxSwift
 
 protocol ActivitiesViewControlling: class {
     var viewModels: [DailyReportViewModelProtocol] { get set }
     var navigationItemTitle: String? { get set }
     var viewDidAppear: Observable<Void> { get }
+    var changeMonth: Driver<Void> { get }
     var isLoading: AnyObserver<Bool> { get }
     var error: AnyObserver<Error> { get }
 }
@@ -39,6 +41,11 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
         view = ActivitiesView()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureMonthChanger()
+    }
+
     // MARK: - ActivitiesViewControlling
 
     var viewModels: [DailyReportViewModelProtocol] = [] {
@@ -58,6 +65,10 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
         return viewDidAppearSubject.asObservable()
     }
 
+    var changeMonth: Driver<Void> {
+        return changeMonthRelay.asDriver(onErrorDriveWith: .never())
+    }
+
     var isLoading: AnyObserver<Bool> {
         return AnyObserver(onNext: { [weak self] in
             self?.loadingIndicator.loading($0)
@@ -75,6 +86,8 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
 
     private let viewDidAppearSubject = PublishSubject<Void>()
     private let addActivitySubject = PublishSubject<Void>()
+    private let changeMonthRelay = PublishRelay<Void>()
+    private let disposeBag = DisposeBag()
 
     private func setDailyReports() {
         activitiesView.stackView.arrangedSubviews.forEach {
@@ -87,6 +100,16 @@ class ActivitiesViewController: UIViewController, ActivitiesViewControlling {
             return view
         }
         views.forEach { activitiesView.stackView.addArrangedSubview($0) }
+    }
+
+    private func configureMonthChanger() {
+        let tap = UITapGestureRecognizer()
+        navigationItemTitleLabel.isUserInteractionEnabled = true
+        navigationItemTitleLabel.addGestureRecognizer(tap)
+        tap.rx.event
+            .map { _ in }
+            .bind(to: changeMonthRelay)
+            .disposed(by: disposeBag)
     }
 
     // MARK: - Error presenting

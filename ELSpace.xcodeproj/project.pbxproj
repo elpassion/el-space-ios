@@ -10,6 +10,10 @@
 		060795151FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */; };
 		060795171FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */; };
 		060795191FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */; };
+		060A462D21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */; };
+		060A462F21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */; };
+		060A463121C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A463021C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift */; };
+		060A463321C403ED00C096F4 /* MonthPickerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */; };
 		060A936B1EEF01D000EA3293 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A936A1EEF01D000EA3293 /* String+Email.swift */; };
 		060EC3B11FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */; };
 		060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */; };
@@ -18,6 +22,7 @@
 		062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */; };
 		062CCFC71FE04A3000B04ACE /* ChooserActivityTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */; };
 		062CCFC91FE04CBA00B04ACE /* ActivityTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */; };
+		064B965121C1672400ADB824 /* MonthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B965021C1672400ADB824 /* MonthPickerViewController.swift */; };
 		066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */; };
 		0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */; };
 		0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */; };
@@ -28,15 +33,41 @@
 		066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */; };
 		066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */; };
 		0674148520CFC76F00FEC50E /* ReportDTO_Fake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */; };
+		0680874221C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */; };
+		0680874321C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */; };
+		0680874421C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */; };
+		0680874521C2E40A00C3B8FB /* ModalViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */; };
+		0680874721C2E52E00C3B8FB /* ViewAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874621C2E52E00C3B8FB /* ViewAnimating.swift */; };
+		0680874921C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */; };
+		0680874B21C2E91A00C3B8FB /* BottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */; };
+		0680874D21C2EF6600C3B8FB /* BottomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */; };
 		0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */; };
 		0680CEA21FED4C95004CDA73 /* Double_FromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680CEA11FED4C95004CDA73 /* Double_FromString.swift */; };
+		06810AB521BAE4AD00BC425E /* RaportDateProviderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06810AB421BAE4AD00BC425E /* RaportDateProviderStub.swift */; };
+		06B6B3AE21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3AD21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift */; };
+		06B6B3B021CA8FC6007C42FB /* AnimationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3AF21CA8FC6007C42FB /* AnimationMock.swift */; };
+		06B6B3B221CA903A007C42FB /* ViewControllerTransitionContextStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */; };
+		06B6B3B421CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B321CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift */; };
+		06B6B3B621CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */; };
+		06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */; };
+		06B6B3BB21CA9EF9007C42FB /* AppContainer_CommonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */; };
+		06B6B3BD21CAA158007C42FB /* AppContainer_Presenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */; };
+		06B6B3BF21CAA227007C42FB /* AppContainer_PresentersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */; };
+		06B6B3C121CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift */; };
+		06B6B3C321CAA3F2007C42FB /* AppContainer_ServicesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C221CAA3F2007C42FB /* AppContainer_ServicesSpec.swift */; };
+		06B6B3C521CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */; };
+		06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift */; };
 		06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */; };
 		06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */; };
 		06BE2E6C1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
 		06BE2E6D1EE88FD1002EED37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */; };
+		06D267BC21CD4ACA0054F41E /* ModalPresentationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D267BB21CD4ACA0054F41E /* ModalPresentationConfiguration.swift */; };
+		06D267BE21CD51E80054F41E /* TransitionStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D267BD21CD51E80054F41E /* TransitionStub.swift */; };
+		06D267C021CD52100054F41E /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D267BF21CD52100054F41E /* ViewControllerSpy.swift */; };
 		06D4377620D27FBD00A49424 /* NewActivityDTO_Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */; };
 		06D4377820D2821100A49424 /* NewActivityDTO_Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D4377720D2821100A49424 /* NewActivityDTO_Create.swift */; };
 		06DEC35D20D83B4D00ADC98F /* ActivityForm_Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEC35C20D83B4D00ADC98F /* ActivityForm_Equatable.swift */; };
+		06E84D4721B6D9E2004C3479 /* RaportDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E84D4621B6D9E2004C3479 /* RaportDateProvider.swift */; };
 		06F3BF9F1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */; };
 		06F3BFA51FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F3BFA41FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift */; };
 		06FBBB501FE12A5B0077F692 /* ActivityTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FBBB4F1FE12A5B0077F692 /* ActivityTypeViewModel.swift */; };
@@ -108,8 +139,8 @@
 		47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */; };
 		47F862371F2F324500E7C518 /* CoordinatorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862361F2F324500E7C518 /* CoordinatorFake.swift */; };
 		47F8623D1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8623C1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift */; };
-		47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */; };
-		47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */; };
+		47F8623F1F2F399700E7C518 /* AppContainer_Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8623E1F2F399700E7C518 /* AppContainer_Coordinators.swift */; };
+		47F862411F2F39F600E7C518 /* AppContainer_ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862401F2F39F500E7C518 /* AppContainer_ViewControllers.swift */; };
 		47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */; };
 		47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */; };
 		47F864781F387361000C0FE9 /* ReportDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */; };
@@ -176,7 +207,7 @@
 		AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */; };
 		AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B621F28A5EC00E0A922 /* ApiError.swift */; };
 		AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B681F28A6A800E0A922 /* AppContainer.swift */; };
-		AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */; };
+		AFB47B6E1F28B8ED00E0A922 /* AppContainer_Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B6D1F28B8ED00E0A922 /* AppContainer_Services.swift */; };
 		AFB47B741F28BACE00E0A922 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B731F28BACE00E0A922 /* Coordinator.swift */; };
 		AFB47B761F28BB3700E0A922 /* SelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */; };
 		AFB47B7C1F28C3FA00E0A922 /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */; };
@@ -205,6 +236,10 @@
 		060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModelSpec.swift; sourceTree = "<group>"; };
 		060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModelSpec.swift; sourceTree = "<group>"; };
 		060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewControllerSpec.swift; sourceTree = "<group>"; };
+		060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerStub.swift; sourceTree = "<group>"; };
+		060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerCreationStub.swift; sourceTree = "<group>"; };
+		060A463021C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenterSpy.swift; sourceTree = "<group>"; };
+		060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewControllerSpec.swift; sourceTree = "<group>"; };
 		060A936A1EEF01D000EA3293 /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		060EC3B01FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModelSpec.swift; sourceTree = "<group>"; };
 		060F4C8A1EE945D000AA2389 /* GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
@@ -213,6 +248,7 @@
 		062CCFC41FE0468A00B04ACE /* ChooserActivityTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewController.swift; sourceTree = "<group>"; };
 		062CCFC61FE04A3000B04ACE /* ChooserActivityTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesView.swift; sourceTree = "<group>"; };
 		062CCFC81FE04CBA00B04ACE /* ActivityTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeView.swift; sourceTree = "<group>"; };
+		064B965021C1672400ADB824 /* MonthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerViewController.swift; sourceTree = "<group>"; };
 		066523741FF3E74C008C41B3 /* ActivityViewControllerCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerCreator.swift; sourceTree = "<group>"; };
 		0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
 		0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpy.swift; sourceTree = "<group>"; };
@@ -224,14 +260,40 @@
 		066F65581FE96AD0005FE66C /* ActivityFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewModel.swift; sourceTree = "<group>"; };
 		066F655E1FE97A36005FE66C /* ActivityFormAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormAssembly.swift; sourceTree = "<group>"; };
 		0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDTO_Fake.swift; sourceTree = "<group>"; };
+		0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerBackgroundView.swift; sourceTree = "<group>"; };
+		0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDismissTransition.swift; sourceTree = "<group>"; };
+		0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransition.swift; sourceTree = "<group>"; };
+		0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenter.swift; sourceTree = "<group>"; };
+		0680874621C2E52E00C3B8FB /* ViewAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimating.swift; sourceTree = "<group>"; };
+		0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
+		0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuView.swift; sourceTree = "<group>"; };
+		0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuHeaderView.swift; sourceTree = "<group>"; };
 		0680CE9F1FED1DCD004CDA73 /* ActivityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
 		0680CEA11FED4C95004CDA73 /* Double_FromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_FromString.swift; sourceTree = "<group>"; };
+		06810AB421BAE4AD00BC425E /* RaportDateProviderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaportDateProviderStub.swift; sourceTree = "<group>"; };
+		06B6B3AD21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDismissTransitionSpec.swift; sourceTree = "<group>"; };
+		06B6B3AF21CA8FC6007C42FB /* AnimationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationMock.swift; sourceTree = "<group>"; };
+		06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionContextStub.swift; sourceTree = "<group>"; };
+		06B6B3B321CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresentTransitionSpec.swift; sourceTree = "<group>"; };
+		06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerPresenterSpec.swift; sourceTree = "<group>"; };
+		06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters_FormattersSpec.swift; sourceTree = "<group>"; };
+		06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_CommonSpec.swift; sourceTree = "<group>"; };
+		06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_Presenters.swift; sourceTree = "<group>"; };
+		06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_PresentersSpec.swift; sourceTree = "<group>"; };
+		06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorsSpec.swift; sourceTree = "<group>"; };
+		06B6B3C221CAA3F2007C42FB /* AppContainer_ServicesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ServicesSpec.swift; sourceTree = "<group>"; };
+		06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewModelsSpec.swift; sourceTree = "<group>"; };
+		06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllersSpec.swift; sourceTree = "<group>"; };
 		06BA11AC1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypesViewModel.swift; sourceTree = "<group>"; };
 		06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserActivityTypeAssembly.swift; sourceTree = "<group>"; };
 		06BE2E6B1EE88FD1002EED37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06D267BB21CD4ACA0054F41E /* ModalPresentationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationConfiguration.swift; sourceTree = "<group>"; };
+		06D267BD21CD51E80054F41E /* TransitionStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionStub.swift; sourceTree = "<group>"; };
+		06D267BF21CD52100054F41E /* ViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
 		06D4377520D27FBD00A49424 /* NewActivityDTO_Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDTO_Validation.swift; sourceTree = "<group>"; };
 		06D4377720D2821100A49424 /* NewActivityDTO_Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDTO_Create.swift; sourceTree = "<group>"; };
 		06DEC35C20D83B4D00ADC98F /* ActivityForm_Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityForm_Equatable.swift; sourceTree = "<group>"; };
+		06E84D4621B6D9E2004C3479 /* RaportDateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaportDateProvider.swift; sourceTree = "<group>"; };
 		06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewControllerStub.swift; sourceTree = "<group>"; };
 		06F3BFA41FF4F66000CCA24B /* DailyReportViewModelProtocol_ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewModelProtocol_ReportView.swift; sourceTree = "<group>"; };
 		06FBBB4F1FE12A5B0077F692 /* ActivityTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeViewModel.swift; sourceTree = "<group>"; };
@@ -302,8 +364,8 @@
 		47F862321F2F316300E7C518 /* LoginViewControllerFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFake.swift; sourceTree = "<group>"; };
 		47F862361F2F324500E7C518 /* CoordinatorFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFake.swift; sourceTree = "<group>"; };
 		47F8623C1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinatorFactoryMock.swift; sourceTree = "<group>"; };
-		47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_CoordinatorFactories.swift; sourceTree = "<group>"; };
-		47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllerFactories.swift; sourceTree = "<group>"; };
+		47F8623E1F2F399700E7C518 /* AppContainer_Coordinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_Coordinators.swift; sourceTree = "<group>"; };
+		47F862401F2F39F500E7C518 /* AppContainer_ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ViewControllers.swift; sourceTree = "<group>"; };
 		47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerSpec.swift; sourceTree = "<group>"; };
 		47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionControllerSpy.swift; sourceTree = "<group>"; };
 		47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -377,7 +439,7 @@
 		AFB47B5D1F2896D000E0A922 /* ApiClientSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientSpy.swift; sourceTree = "<group>"; };
 		AFB47B621F28A5EC00E0A922 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		AFB47B681F28A6A800E0A922 /* AppContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
-		AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_ServiceFactoring.swift; sourceTree = "<group>"; };
+		AFB47B6D1F28B8ED00E0A922 /* AppContainer_Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer_Services.swift; sourceTree = "<group>"; };
 		AFB47B731F28BACE00E0A922 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AFB47B751F28BB3700E0A922 /* SelectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCoordinator.swift; sourceTree = "<group>"; };
 		AFB47B7B1F28C3FA00E0A922 /* SelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
@@ -415,6 +477,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0600C10A21C3AC040029A3DA /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0680874C21C2EF6600C3B8FB /* BottomMenuHeaderView.swift */,
+				0680874A21C2E91A00C3B8FB /* BottomMenuView.swift */,
+				0680874821C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift */,
+				0680873E21C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		060A93691EEF01B900EA3293 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +551,7 @@
 		0666C2401FD8523B006D1883 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				06B6B3AC21CA8F77007C42FB /* Modal */,
 				0666C2411FD85261006D1883 /* ViewControllerPresenterSpec.swift */,
 			);
 			path = Presenters;
@@ -495,6 +569,42 @@
 				066F65561FE95D2D005FE66C /* TextView.swift */,
 			);
 			path = Form;
+			sourceTree = "<group>";
+		};
+		0680873D21C2E3D300C3B8FB /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				0600C10A21C3AC040029A3DA /* Subviews */,
+				0680874621C2E52E00C3B8FB /* ViewAnimating.swift */,
+				0680873F21C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift */,
+				0680874021C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift */,
+				0680874121C2E40A00C3B8FB /* ModalViewControllerPresenter.swift */,
+				06D267BB21CD4ACA0054F41E /* ModalPresentationConfiguration.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		06B6B3AC21CA8F77007C42FB /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				06B6B3AD21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift */,
+				06B6B3B321CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift */,
+				06B6B3B521CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		06B6B3B921CA9EAB007C42FB /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				06B6B3BA21CA9EF9007C42FB /* AppContainer_CommonSpec.swift */,
+				06B6B3C021CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift */,
+				06B6B3BE21CAA227007C42FB /* AppContainer_PresentersSpec.swift */,
+				06B6B3C221CAA3F2007C42FB /* AppContainer_ServicesSpec.swift */,
+				06B6B3C621CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift */,
+				06B6B3C421CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift */,
+			);
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		06BA11B01FE18C260021E159 /* Activity */ = {
@@ -522,6 +632,14 @@
 				06BA11B21FE18CA70021E159 /* ChooserActivityTypeAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		06EB819321C2CAAA00E3ACC6 /* MonthPicker */ = {
+			isa = PBXGroup;
+			children = (
+				064B965021C1672400ADB824 /* MonthPickerViewController.swift */,
+			);
+			path = MonthPicker;
 			sourceTree = "<group>";
 		};
 		06F3BFA31FF4F64A00CCA24B /* Bindings */ = {
@@ -575,8 +693,8 @@
 				060795161FE3151400A0DC12 /* ActivityTypeViewModelSpec.swift */,
 				060795141FE3114800A0DC12 /* ChooserActivityTypesViewModelSpec.swift */,
 				47F819D71F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift */,
-				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 				79699794216F8D560083C7AE /* ProjectSearchViewModelSpec.swift */,
+				470991D41F3A09440088E6BF /* ReportDetailsViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -604,6 +722,7 @@
 		477161FD1F2B5B970051EDE3 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				0680873D21C2E3D300C3B8FB /* Modal */,
 				477161FE1F2B5BA50051EDE3 /* ViewControllerPresenter.swift */,
 			);
 			path = Presenters;
@@ -623,8 +742,9 @@
 				47F819E51F3B4810003C1BD5 /* ActivitiesViewControllerSpec.swift */,
 				060795181FE320C000A0DC12 /* ChooserActivityTypesViewControllerSpec.swift */,
 				47CA94951F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift */,
-				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
+				060A463221C403ED00C096F4 /* MonthPickerViewControllerSpec.swift */,
 				79699792216F76750083C7AE /* ProjectSearchViewControllerSpec.swift */,
+				47F862421F2F461000E7C518 /* SelectionViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -644,8 +764,8 @@
 		47DFB1601FDBEE33007293E3 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				790CAEAF216CEBD900B593D3 /* ProjectSearch */,
 				066F65511FE95A44005FE66C /* Form */,
+				790CAEAF216CEBD900B593D3 /* ProjectSearch */,
 				062CCFC31FE0467600B04ACE /* Type */,
 				31DEF8401FED1944006DF14E /* ViewControllers */,
 				31DEF84B1FED2542006DF14E /* ViewModels */,
@@ -691,19 +811,24 @@
 		47F1DCB41F30DAB70039B34E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				06810AB421BAE4AD00BC425E /* RaportDateProviderStub.swift */,
 				47F819EB1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift */,
 				31DEF8461FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift */,
 				066C7EFF1FE6D8FF00D2AFBD /* ActivityCreatorStub.swift */,
+				79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */,
 				06F3BF9E1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift */,
 				47F0AAB01FF69F0D0031D2E6 /* HolidaysServiceStub.swift */,
+				060A462E21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift */,
+				060A462C21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift */,
+				79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */,
+				7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */,
+				79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */,
 				47F819DF1F3B1F89003C1BD5 /* ProjectsServiceStub.swift */,
 				0674148420CFC76F00FEC50E /* ReportDTO_Fake.swift */,
 				47F819DD1F3B1EC5003C1BD5 /* ReportsServiceStub.swift */,
 				47F1DCB51F30DADC0039B34E /* SelectionViewControllerStub.swift */,
-				79699788216F64D00083C7AE /* ActivityFormViewControllerStub.swift */,
-				7969978E216F71C30083C7AE /* ProjectSearchViewControllerStub.swift */,
-				79699790216F72DC0083C7AE /* ProjectSearchViewModelStub.swift */,
-				79699796216F8D950083C7AE /* ProjectSearchControllerStub.swift */,
+				06B6B3B121CA903A007C42FB /* ViewControllerTransitionContextStub.swift */,
+				06D267BD21CD51E80054F41E /* TransitionStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -713,8 +838,8 @@
 			children = (
 				47F819E71F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift */,
 				47F862301F2F256E00E7C518 /* AppCoordinatorSpec.swift */,
-				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
 				7969978C216F70BE0083C7AE /* ProjectSearchCoordinatorSpec.swift */,
+				47F1DCB91F30DB100039B34E /* SelectionCoordinatorSpec.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -724,6 +849,7 @@
 			children = (
 				47C1C4EE1F335E20009946BE /* ActivitiesViewModel.swift */,
 				47F864791F3873E4000C0FE9 /* DailyReportViewModel.swift */,
+				06E84D4621B6D9E2004C3479 /* RaportDateProvider.swift */,
 				47F864771F387361000C0FE9 /* ReportDetailsViewModel.swift */,
 			);
 			path = ViewModels;
@@ -860,6 +986,7 @@
 				50902FCA1EE5AD7300D43254 /* BaseViews */,
 				47F1DCA61F309ECC0039B34E /* Hub */,
 				509E0D771EDEEA0600414C1D /* Login */,
+				06EB819321C2CAAA00E3ACC6 /* MonthPicker */,
 				5034DA091EE99E150095D477 /* Selection */,
 			);
 			path = Screens;
@@ -885,11 +1012,11 @@
 		790CAEAF216CEBD900B593D3 /* ProjectSearch */ = {
 			isa = PBXGroup;
 			children = (
-				790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */,
-				7969977D216CF8560083C7AE /* ProjectSearchCoordinator.swift */,
-				79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */,
-				79699782216DE6CA0083C7AE /* ProjectSearchView.swift */,
 				79699786216E012C0083C7AE /* ProjectSearchController.swift */,
+				7969977D216CF8560083C7AE /* ProjectSearchCoordinator.swift */,
+				79699782216DE6CA0083C7AE /* ProjectSearchView.swift */,
+				790CAEB0216CECBA00B593D3 /* ProjectSearchViewController.swift */,
+				79699780216CF9590083C7AE /* ProjectSearchViewModel.swift */,
 			);
 			path = ProjectSearch;
 			sourceTree = "<group>";
@@ -909,6 +1036,7 @@
 			isa = PBXGroup;
 			children = (
 				86D9F91C1EEEBB1A00788C1D /* Commons */,
+				06B6B3B921CA9EAB007C42FB /* Containers */,
 				AFB47B7F1F28D35C00E0A922 /* Controllers */,
 				47F8622F1F2F256100E7C518 /* Coordinators */,
 				AF48257F1F276C110081B2CC /* Network */,
@@ -1033,6 +1161,7 @@
 			isa = PBXGroup;
 			children = (
 				47F1DCBB1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift */,
+				06B6B3AF21CA8FC6007C42FB /* AnimationMock.swift */,
 				86F3AAF91EEEBDC500A5C88B /* GoogleSignInMock.swift */,
 				47F8623C1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift */,
 				473CBF941F331D5000B80FA4 /* SelectionScreenPresenterMock.swift */,
@@ -1050,12 +1179,14 @@
 				AF4AD7C91F20B963005B5524 /* GoogleUserProviderSpy.swift */,
 				AF4AD7DB1F20E95D005B5524 /* GoogleUserValidatorSpy.swift */,
 				AFB47B821F28D3BC00E0A922 /* HubTokenServiceSpy.swift */,
+				060A463021C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift */,
 				AF4825861F2779260081B2CC /* RequestPerformerSpy.swift */,
 				AF4825821F276C6A0081B2CC /* RequestWrapperSpy.swift */,
 				47F862441F2F468400E7C518 /* SelectionControllerSpy.swift */,
 				0666C2451FD85384006D1883 /* UINavigationControllerSpy.swift */,
 				0666C2431FD852F9006D1883 /* UIViewControllerSpy.swift */,
 				47CA949F1F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift */,
+				06D267BF21CD52100054F41E /* ViewControllerSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -1063,6 +1194,7 @@
 		AFB47B571F288E5B00E0A922 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				06B6B3B721CA977A007C42FB /* DateFormatters_FormattersSpec.swift */,
 				AFE916DA1F3204F100C4D27A /* DictionaryAddSpec.swift */,
 				AFB47B581F288E7000E0A922 /* HubTokenSpec.swift */,
 				47C1C4FB1F337674009946BE /* JsonArraySpec.swift */,
@@ -1106,9 +1238,10 @@
 			children = (
 				AFB47B681F28A6A800E0A922 /* AppContainer.swift */,
 				473CBF901F33191600B80FA4 /* AppContainer_Common.swift */,
-				47F8623E1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift */,
-				AFB47B6D1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift */,
-				47F862401F2F39F500E7C518 /* AppContainer_ViewControllerFactories.swift */,
+				47F8623E1F2F399700E7C518 /* AppContainer_Coordinators.swift */,
+				06B6B3BC21CAA158007C42FB /* AppContainer_Presenters.swift */,
+				AFB47B6D1F28B8ED00E0A922 /* AppContainer_Services.swift */,
+				47F862401F2F39F500E7C518 /* AppContainer_ViewControllers.swift */,
 				47C1C4F71F336C20009946BE /* AppContainer_ViewModels.swift */,
 			);
 			path = AppContainer;
@@ -1126,8 +1259,8 @@
 			isa = PBXGroup;
 			children = (
 				47F819DB1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift */,
-				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
 				7969978A216F6E400083C7AE /* ProjectSearchControllerSpec.swift */,
+				AFB47B801F28D37100E0A922 /* SelectionControllerSpec.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1308,6 +1441,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
+				"${BUILT_PRODUCTS_DIR}/NTMonthYearPicker/NTMonthYearPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -1325,6 +1459,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NTMonthYearPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -1442,13 +1577,16 @@
 			files = (
 				AF4AD7DA1F20E325005B5524 /* GoogleUserValidator.swift in Sources */,
 				47F864801F38BCF0000C0FE9 /* Disposable.swift in Sources */,
+				06D267BC21CD4ACA0054F41E /* ModalPresentationConfiguration.swift in Sources */,
 				AFE916D51F31FAF000C4D27A /* ApiClientHubDecorator.swift in Sources */,
 				06DEC35D20D83B4D00ADC98F /* ActivityForm_Equatable.swift in Sources */,
+				0680874721C2E52E00C3B8FB /* ViewAnimating.swift in Sources */,
 				066523751FF3E74C008C41B3 /* ActivityViewControllerCreator.swift in Sources */,
 				500BC9771EE7EF920060D31B /* BackgroundGradientWithLogo.swift in Sources */,
 				47FE976F1F347A31009EEE1C /* ProjectsService.swift in Sources */,
 				79699783216DE6CA0083C7AE /* ProjectSearchView.swift in Sources */,
 				47F864821F38BD35000C0FE9 /* RxReusable.swift in Sources */,
+				06E84D4721B6D9E2004C3479 /* RaportDateProvider.swift in Sources */,
 				AF48258A1F27813C0081B2CC /* HubTokenService.swift in Sources */,
 				062CCFC91FE04CBA00B04ACE /* ActivityTypeView.swift in Sources */,
 				47C1C4EB1F335BDB009946BE /* ActivitiesController.swift in Sources */,
@@ -1459,7 +1597,7 @@
 				47DF82E71FE13913009BF96A /* UIView_backgroundColor.swift in Sources */,
 				79699781216CF9590083C7AE /* ProjectSearchViewModel.swift in Sources */,
 				5034DA0D1EE99E150095D477 /* SelectionViewController.swift in Sources */,
-				47F862411F2F39F600E7C518 /* AppContainer_ViewControllerFactories.swift in Sources */,
+				47F862411F2F39F600E7C518 /* AppContainer_ViewControllers.swift in Sources */,
 				066F65551FE95CD1005FE66C /* ActivityFormView.swift in Sources */,
 				47F8647E1F38BC93000C0FE9 /* Reusable.swift in Sources */,
 				473CBF8F1F33142C00B80FA4 /* SelectionScreenPresenter.swift in Sources */,
@@ -1472,6 +1610,7 @@
 				79699787216E012C0083C7AE /* ProjectSearchController.swift in Sources */,
 				06BA11AD1FE18BB60021E159 /* ChooserActivityTypesViewModel.swift in Sources */,
 				060F4C8D1EE945D000AA2389 /* GoogleUserProvider.swift in Sources */,
+				064B965121C1672400ADB824 /* MonthPickerViewController.swift in Sources */,
 				4723B2221FDED3B6000FE3A6 /* ActivitiesView.swift in Sources */,
 				47FE976B1F347285009EEE1C /* ReportDetailsView.swift in Sources */,
 				47F1DCAB1F30A49A0039B34E /* UINavigationController_HubStyling.swift in Sources */,
@@ -1484,8 +1623,10 @@
 				060F4C8C1EE945D000AA2389 /* GoogleSignIn.swift in Sources */,
 				AFB47B691F28A6A800E0A922 /* AppContainer.swift in Sources */,
 				AF48257E1F275D810081B2CC /* ApiClient.swift in Sources */,
+				0680874921C2E55800C3B8FB /* CustomIntensityVisualEffectView.swift in Sources */,
 				AF4825771F2758480081B2CC /* RequestWrapper.swift in Sources */,
 				473CBF911F33191600B80FA4 /* AppContainer_Common.swift in Sources */,
+				06B6B3BD21CAA158007C42FB /* AppContainer_Presenters.swift in Sources */,
 				AFE916D71F31FCC800C4D27A /* HubSession.swift in Sources */,
 				7935D8EB20C829350024A00E /* UserService.swift in Sources */,
 				AFE916D31F31E36200C4D27A /* LoadingIndicator.swift in Sources */,
@@ -1504,8 +1645,10 @@
 				061325DE20D3E51B00BD2CA6 /* Error_String.swift in Sources */,
 				477161FF1F2B5BA50051EDE3 /* ViewControllerPresenter.swift in Sources */,
 				47F8647A1F3873E4000C0FE9 /* DailyReportViewModel.swift in Sources */,
+				0680874321C2E40A00C3B8FB /* ModalViewControllerDismissTransition.swift in Sources */,
 				06BA11B31FE18CA70021E159 /* ChooserActivityTypeAssembly.swift in Sources */,
 				477161F91F2B2CFD0051EDE3 /* GoogleUserMapper.swift in Sources */,
+				0680874421C2E40A00C3B8FB /* ModalViewControllerPresentTransition.swift in Sources */,
 				0680CEA01FED1DCD004CDA73 /* ActivityForm.swift in Sources */,
 				47DF82E91FE1395D009BF96A /* AnyObserver_Factory.swift in Sources */,
 				478B23E01FF4B82C0009C801 /* HolidaysDTO.swift in Sources */,
@@ -1518,16 +1661,20 @@
 				47F0AAAF1FF69E840031D2E6 /* Data_Json.swift in Sources */,
 				5048F2441EDEE7A2001A487E /* AppDelegate.swift in Sources */,
 				31DEF8451FED1CC6006DF14E /* ActivityCoordinator.swift in Sources */,
-				AFB47B6E1F28B8ED00E0A922 /* AppContainer_ServiceFactoring.swift in Sources */,
+				0680874B21C2E91A00C3B8FB /* BottomMenuView.swift in Sources */,
+				0680874D21C2EF6600C3B8FB /* BottomMenuHeaderView.swift in Sources */,
+				AFB47B6E1F28B8ED00E0A922 /* AppContainer_Services.swift in Sources */,
 				4750BB8C1FF4F2D9000FE203 /* ActivityIndicator.swift in Sources */,
-				47F8623F1F2F399700E7C518 /* AppContainer_CoordinatorFactories.swift in Sources */,
+				47F8623F1F2F399700E7C518 /* AppContainer_Coordinators.swift in Sources */,
 				AFB47B631F28A5EC00E0A922 /* ApiError.swift in Sources */,
 				066F655F1FE97A36005FE66C /* ActivityFormAssembly.swift in Sources */,
 				AF48257C1F275C140081B2CC /* Response.swift in Sources */,
 				066F65591FE96AD0005FE66C /* ActivityFormViewModel.swift in Sources */,
+				0680874521C2E40A00C3B8FB /* ModalViewControllerPresenter.swift in Sources */,
 				4711C04920CFE48600C78338 /* ActivitiesDateFormatters.swift in Sources */,
 				06D4377620D27FBD00A49424 /* NewActivityDTO_Validation.swift in Sources */,
 				310E803E1FED2ACB0001E4A5 /* NewActivityDTO.swift in Sources */,
+				0680874221C2E40A00C3B8FB /* ModalViewControllerBackgroundView.swift in Sources */,
 				47F1DCAE1F30A7330039B34E /* UIColor_Hex.swift in Sources */,
 				062CCFC51FE0468A00B04ACE /* ChooserActivityTypesViewController.swift in Sources */,
 				47F1DCB21F30AC2C0039B34E /* ActivitiesViewController.swift in Sources */,
@@ -1553,12 +1700,17 @@
 				47F819EA1F3B4EA0003C1BD5 /* ActivityViewModelSpy.swift in Sources */,
 				86F3AAFA1EEEBDC500A5C88B /* GoogleSignInMock.swift in Sources */,
 				478B23E21FF4BB4D0009C801 /* HolidaysServiceSpec.swift in Sources */,
+				060A462F21C3F51E00C096F4 /* MonthPickerViewControllerCreationStub.swift in Sources */,
 				AFB47B831F28D3BC00E0A922 /* HubTokenServiceSpy.swift in Sources */,
 				47C1C4FC1F337674009946BE /* JsonArraySpec.swift in Sources */,
 				47CA94961F2A1EF200D5A9B7 /* LoginViewControllerSpec.swift in Sources */,
 				7969978F216F71C30083C7AE /* ProjectSearchViewControllerStub.swift in Sources */,
+				060A462D21C3F32A00C096F4 /* MonthPickerViewControllerStub.swift in Sources */,
 				AF4AD7CA1F20B963005B5524 /* GoogleUserProviderSpy.swift in Sources */,
+				06B6B3BF21CAA227007C42FB /* AppContainer_PresentersSpec.swift in Sources */,
 				79699793216F76750083C7AE /* ProjectSearchViewControllerSpec.swift in Sources */,
+				060A463121C3F78D00C096F4 /* ModalViewControllerPresenterSpy.swift in Sources */,
+				06B6B3C521CAB1D5007C42FB /* AppContainer_ViewModelsSpec.swift in Sources */,
 				47F862451F2F468400E7C518 /* SelectionControllerSpy.swift in Sources */,
 				79699789216F64D00083C7AE /* ActivityFormViewControllerStub.swift in Sources */,
 				47F862431F2F461000E7C518 /* SelectionViewControllerSpec.swift in Sources */,
@@ -1570,6 +1722,7 @@
 				AF4AD7DC1F20E95D005B5524 /* GoogleUserValidatorSpy.swift in Sources */,
 				47F862311F2F256E00E7C518 /* AppCoordinatorSpec.swift in Sources */,
 				AFB47B811F28D37100E0A922 /* SelectionControllerSpec.swift in Sources */,
+				06B6B3B621CA91E4007C42FB /* ModalViewControllerPresenterSpec.swift in Sources */,
 				47F819DE1F3B1EC5003C1BD5 /* ReportsServiceStub.swift in Sources */,
 				470991D51F3A09440088E6BF /* ReportDetailsViewModelSpec.swift in Sources */,
 				060EC3B11FF4DB6300B6FCBB /* ActivityFormViewModelSpec.swift in Sources */,
@@ -1580,28 +1733,39 @@
 				AFB47B871F28DE2D00E0A922 /* UIAlertControllerCreation.swift in Sources */,
 				7969978B216F6E400083C7AE /* ProjectSearchControllerSpec.swift in Sources */,
 				47F819D81F3B0C12003C1BD5 /* DailyReportViewModelSpec.swift in Sources */,
+				06D267C021CD52100054F41E /* ViewControllerSpy.swift in Sources */,
 				47CA94A01F2A2AA300D5A9B7 /* ViewControllerPresenterSpy.swift in Sources */,
 				47CA94A21F2A2B6200D5A9B7 /* GoogleUserManagerSpy.swift in Sources */,
 				AF4AD7C81F20B918005B5524 /* GoogleUserManagerSpec.swift in Sources */,
 				06F3BF9F1FF4F3DD00CCA24B /* ActivityViewControllerStub.swift in Sources */,
+				06B6B3B021CA8FC6007C42FB /* AnimationMock.swift in Sources */,
 				47F819E21F3B3DE4003C1BD5 /* ActivitiesViewModelSpec.swift in Sources */,
+				06B6B3B421CA9172007C42FB /* ModalViewControllerPresentTransitionSpec.swift in Sources */,
 				47CA949E1F2A2A4100D5A9B7 /* AlertFactoryFake.swift in Sources */,
 				47F819E01F3B1F89003C1BD5 /* ProjectsServiceStub.swift in Sources */,
 				79181EF720C920AD006997DB /* UserServiceSpec.swift in Sources */,
 				0674148520CFC76F00FEC50E /* ReportDTO_Fake.swift in Sources */,
 				47F1DCBC1F30DBCB0039B34E /* ActivityCoordinatorFactoryMock.swift in Sources */,
+				06B6B3C121CAA2C7007C42FB /* AppContainer_CoordinatorsSpec.swift in Sources */,
 				47AC67FD1FE959E6002ECDF7 /* ActivitiesViewTests.swift in Sources */,
 				47F819DC1F3B1A24003C1BD5 /* ActivitiesControllerSpec.swift in Sources */,
 				47F819E81F3B4B02003C1BD5 /* ActivitiesCoordinatorSpec.swift in Sources */,
 				473CBF931F3319BB00B80FA4 /* SelectionScreenPresenterSpec.swift in Sources */,
 				47FE97731F348078009EEE1C /* ProjectsServiceSpec.swift in Sources */,
 				0666C2441FD852F9006D1883 /* UIViewControllerSpy.swift in Sources */,
+				06B6B3AE21CA8F90007C42FB /* ModalViewControllerDismissTransitionSpec.swift in Sources */,
 				7969978D216F70BE0083C7AE /* ProjectSearchCoordinatorSpec.swift in Sources */,
+				06B6B3C721CAB29F007C42FB /* AppContainer_ViewControllersSpec.swift in Sources */,
+				06B6B3B821CA977A007C42FB /* DateFormatters_FormattersSpec.swift in Sources */,
+				06B6B3C321CAA3F2007C42FB /* AppContainer_ServicesSpec.swift in Sources */,
 				47F819EC1F3B4F3B003C1BD5 /* ActivitiesViewControllerStub.swift in Sources */,
+				06B6B3B221CA903A007C42FB /* ViewControllerTransitionContextStub.swift in Sources */,
 				47F862331F2F316300E7C518 /* LoginViewControllerFake.swift in Sources */,
 				AFB47B5C1F28969F00E0A922 /* HubTokenServiceSpec.swift in Sources */,
+				06D267BE21CD51E80054F41E /* TransitionStub.swift in Sources */,
 				AF4825871F2779260081B2CC /* RequestPerformerSpy.swift in Sources */,
 				477161FC1F2B35220051EDE3 /* GoogleUserMapperFake.swift in Sources */,
+				06B6B3BB21CA9EF9007C42FB /* AppContainer_CommonSpec.swift in Sources */,
 				47F8623D1F2F332C00E7C518 /* SelectionCoordinatorFactoryMock.swift in Sources */,
 				47AC68021FE95EAD002ECDF7 /* UIImage_fakeImage.swift in Sources */,
 				AFE916DB1F3204F100C4D27A /* DictionaryAddSpec.swift in Sources */,
@@ -1611,8 +1775,10 @@
 				79699795216F8D560083C7AE /* ProjectSearchViewModelSpec.swift in Sources */,
 				0666C2421FD85261006D1883 /* ViewControllerPresenterSpec.swift in Sources */,
 				47F0AAB11FF69F0D0031D2E6 /* HolidaysServiceStub.swift in Sources */,
+				06810AB521BAE4AD00BC425E /* RaportDateProviderStub.swift in Sources */,
 				AF4AD7D81F20DC63005B5524 /* EmailValidatorSpec.swift in Sources */,
 				79699791216F72DC0083C7AE /* ProjectSearchViewModelStub.swift in Sources */,
+				060A463321C403ED00C096F4 /* MonthPickerViewControllerSpec.swift in Sources */,
 				31DEF8471FED207B006DF14E /* ActivityCoordinatorFactoryStub.swift in Sources */,
 				AFB47B5E1F2896D000E0A922 /* ApiClientSpy.swift in Sources */,
 				473CBF951F331D5000B80FA4 /* SelectionScreenPresenterMock.swift in Sources */,

@@ -20,8 +20,8 @@ class ActivitiesViewModelSpy: ActivitiesViewModelProtocol {
         return Observable.empty()
     }
 
-    var month: String {
-        return ""
+    var month: Observable<String> {
+        return .just("")
     }
 
     func getData() {

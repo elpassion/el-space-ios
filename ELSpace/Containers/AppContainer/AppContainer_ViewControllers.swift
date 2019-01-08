@@ -6,7 +6,8 @@ extension AppContainer: LoginViewControllerCreation,
                         AlertCreation,
                         ActivitiesViewControllerCreation,
                         ActivityViewControllerCreation,
-                        ProjectSearchViewControllerCreation {
+                        ProjectSearchViewControllerCreation,
+                        MonthPickerViewControllerCreation {
 
     // MARK: - LoginViewControllerCreation
 
@@ -59,6 +60,12 @@ extension AppContainer: LoginViewControllerCreation,
         return ProjectSearchViewController()
     }
 
+    // MARK: - MonthPickerViewControllerCreation
+
+    func monthPicker() -> UIViewController & MonthPickerViewControlling {
+        return MonthPickerViewController(raportDateProvider: raportDateProvider)
+    }
+
 }
 
 protocol LoginViewControllerCreation {
@@ -87,4 +94,8 @@ protocol ActivityViewControllerCreation {
 
 protocol ProjectSearchViewControllerCreation {
     func projectSearchViewController(projectId: Int?) -> UIViewController & ProjectSearchViewControlling
+}
+
+protocol MonthPickerViewControllerCreation {
+    func monthPicker() -> UIViewController & MonthPickerViewControlling
 }

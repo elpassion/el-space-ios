@@ -1,5 +1,5 @@
 @testable import ELSpace
-
+import RxCocoa
 import RxSwift
 
 class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling {
@@ -14,12 +14,17 @@ class ActivitiesViewControllerStub: UIViewController, ActivitiesViewControlling 
 
     private(set) var caughtError: Error?
     let viewDidAppearSubject = PublishSubject<Void>()
+    let changeMonthSubject = PublishSubject<Void>()
     let addActivitySubject = PublishSubject<Void>()
 
     // MARK: - ActivityViewControlling
 
     var viewModels: [DailyReportViewModelProtocol] = []
     var navigationItemTitle: String?
+
+    var changeMonth: Driver<Void> {
+        return changeMonthSubject.asDriver(onErrorDriveWith: .never())
+    }
 
     var viewDidAppear: Observable<Void> {
         return viewDidAppearSubject.asObservable()

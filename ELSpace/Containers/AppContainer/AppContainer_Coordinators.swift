@@ -20,8 +20,10 @@ extension AppContainer: SelectionCoordinatorCreation,
 
     func activitiesCoordinator() -> Coordinator {
         return ActivitiesCoordinator(activitiesViewController: activitiesViewController(),
+                                     monthPickerViewControllerFactory: self,
                                      activitiesViewModel: activitiesViewModel(),
                                      presenter: ViewControllerPresenter(),
+                                     modalPresenter: modalViewControllerPresenter,
                                      activityCoordinatorFactory: self)
     }
 

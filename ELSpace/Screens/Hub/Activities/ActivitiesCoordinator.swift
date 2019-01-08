@@ -4,12 +4,16 @@ import RxSwift
 class ActivitiesCoordinator: Coordinator {
 
     init(activitiesViewController: UIViewController & ActivitiesViewControlling,
+         monthPickerViewControllerFactory: MonthPickerViewControllerCreation,
          activitiesViewModel: ActivitiesViewModelProtocol,
          presenter: ViewControllerPresenting,
+         modalPresenter: ModalViewControllerPresenting,
          activityCoordinatorFactory: ActivityCoordinatorCreation) {
         self.activitiesViewController = activitiesViewController
+        self.monthPickerViewControllerFactory = monthPickerViewControllerFactory
         self.activitiesViewModel = activitiesViewModel
         self.presenter = presenter
+        self.modalPresenter = modalPresenter
         self.activityCoordinatorFactory = activityCoordinatorFactory
         bind(viewModel: self.activitiesViewModel, to: self.activitiesViewController)
     }
@@ -23,9 +27,11 @@ class ActivitiesCoordinator: Coordinator {
     // MARK: - Private
 
     private let activityCoordinatorFactory: ActivityCoordinatorCreation
+    private let monthPickerViewControllerFactory: MonthPickerViewControllerCreation
     private let activitiesViewController: UIViewController & ActivitiesViewControlling
     private let activitiesViewModel: ActivitiesViewModelProtocol
     private let presenter: ViewControllerPresenting
+    private let modalPresenter: ModalViewControllerPresenting
     private var presentedCoordinator: Coordinator?
 
     // MARK: - Bindings
@@ -35,6 +41,12 @@ class ActivitiesCoordinator: Coordinator {
             .subscribe(onNext: { [weak self] in
                 self?.activitiesViewModel.getData()
             }).disposed(by: disposeBag)
+
+        viewController.changeMonth
+            .drive(onNext: { [weak self] in
+                self?.showMonthPicker(on: viewController)
+            })
+            .disposed(by: disposeBag)
 
         viewModel.dataSource
             .subscribe(onNext: { [weak viewController] viewModels in
@@ -49,7 +61,7 @@ class ActivitiesCoordinator: Coordinator {
             .bind(to: viewController.error)
             .disposed(by: disposeBag)
 
-        viewModel.monthObservable
+        viewModel.month
             .subscribe(onNext: { [weak viewController] month in
                 viewController?.navigationItemTitle = month
             }).disposed(by: disposeBag)
@@ -64,11 +76,23 @@ class ActivitiesCoordinator: Coordinator {
     }
 
     private let disposeBag = DisposeBag()
+    private var monthPickerDisposeBag = DisposeBag()
 
     private func showActivity(activityType: ActivityType, projects: [ProjectDTO]) {
         let coordinator = activityCoordinatorFactory.activityCoordinator(activityType: activityType, projectScope: projects)
         presentedCoordinator = coordinator
         presenter.push(viewController: coordinator.initialViewController, on: activitiesViewController)
+    }
+
+    private func showMonthPicker(on viewController: UIViewController) {
+        let monthPickerViewController = monthPickerViewControllerFactory.monthPicker()
+        modalPresenter.present(viewController: monthPickerViewController, on: viewController)
+        monthPickerViewController.dismiss
+            .drive(onNext: { [weak self] in
+                self?.modalPresenter.dismiss(viewController: monthPickerViewController)
+                self?.monthPickerDisposeBag = DisposeBag()
+            })
+            .disposed(by: monthPickerDisposeBag)
     }
 
 }

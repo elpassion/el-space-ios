@@ -10,8 +10,8 @@ extension AppContainer: ActivitiesViewModelCreation,
         let dateFormatters = ActivitiesDateFormatters(monthFormatter: DateFormatter.monthFormatter,
                                                       shortDateFormatter: DateFormatter.shortDateFormatter)
         return ActivitiesViewModel(activitiesController: activitiesController,
-                                   todayDate: Date(),
-                                   dateFormatters: dateFormatters)
+                                   dateFormatters: dateFormatters,
+                                   raportDateProvider: raportDateProvider)
     }
 
     // MARK: ActivityViewModelCreation

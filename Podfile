@@ -28,6 +28,7 @@ def pod_ui
     pod 'Anchorage', '~> 4.3'
     pod 'Pastel', '~> 0.5'
     pod 'MBProgressHUD', '~> 1.0'
+    pod 'NTMonthYearPicker', '~> 1.0'
 end
 
 def pod_tests

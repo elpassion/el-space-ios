@@ -16,7 +16,7 @@ extension DateFormatter {
 
     static var monthFormatter: DateFormatter {
         let dateFormatter = DateFormatter.warsawTimeZoneFormatter
-        dateFormatter.dateFormat = "MMMM"
+        dateFormatter.dateFormat = "MMMM yyyy"
         return dateFormatter
     }
 
