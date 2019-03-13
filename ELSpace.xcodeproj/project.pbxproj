@@ -1947,7 +1947,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.elpassion.ELSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7247116b-b952-4237-ac7a-afd81038ff6d";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc pl.elpassion.ELSpace";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore pl.elpassion.ELSpace";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
