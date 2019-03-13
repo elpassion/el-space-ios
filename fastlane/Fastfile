@@ -4,7 +4,7 @@ default_platform :ios
 ATCH_GIT_URL = 'https://github.com/elpassion/apple-match-elpassion-standard.git'
 APP_IDENTIFIER = 'pl.elpassion.ELSpace'
 DEV_TEAM_ID = 'H5QFB36W2F'
-ITC_TEAM_ID = '119106237'
+ITC_TEAM_ID = '33869801'
 APP_SCHEME = 'ELSpace'
 UNIT_TEST_SCHEME = 'ELSpaceTests'
 XC_WORKSPACE = 'ELSpace.xcworkspace'
